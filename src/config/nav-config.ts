@@ -76,6 +76,14 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
+    title: 'Routes',
+    url: '/routes',
+    icon: 'kanban',
+    shortcut: ['r', 'r'],
+    isActive: false,
+    items: []
+  },
+  {
     title: 'Product',
     url: '/dashboard/product',
     icon: 'product',

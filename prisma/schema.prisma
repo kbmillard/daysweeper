@@ -195,6 +195,7 @@ model Target {
   User              User?                    @relation(fields: [userId], references: [id])
   TargetEnrichment  TargetEnrichment?
   TargetNote        TargetNote[]
+  RouteStop         RouteStop[]
 
   @@index([category])
   @@index([company])
@@ -298,4 +299,40 @@ model ScrapedCompany {
   createdAt   DateTime @default(now())
 
   @@index([domain])
+}
+
+enum StopOutcome {
+  VISITED
+  NO_ANSWER
+  WRONG_ADDRESS
+  FOLLOW_UP
+}
+
+model Route {
+  id               String     @id @default(cuid())
+  name             String
+  assignedToUserId String?
+  scheduledFor     DateTime?
+  stops            RouteStop[]
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  @@index([assignedToUserId])
+}
+
+model RouteStop {
+  id        String      @id @default(cuid())
+  routeId   String
+  route     Route       @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  targetId  String
+  target    Target      @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  seq       Int
+  outcome   StopOutcome?
+  visitedAt DateTime?
+  note      String?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  @@unique([routeId, seq])
+  @@index([targetId])
 }
