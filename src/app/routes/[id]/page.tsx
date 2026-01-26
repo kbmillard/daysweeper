@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { DndContext, PointerSensor, useSensor, useSensors, closestCenter } from "@dnd-kit/core";
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import OutcomeButtons from "@/components/routes/OutcomeButtons";
 
 export default function RouteBuilderPage() {
   const params = useParams();
@@ -75,9 +76,19 @@ export default function RouteBuilderPage() {
           }}>
             <SortableContext items={ordered} strategy={verticalListSortingStrategy}>
               <div className="space-y-2">
-                {ordered.map((tid, idx) => (
-                  <SortableStop key={tid} id={tid} idx={idx} targets={targets as any[]} onRemove={() => setOrdered((cur) => cur.filter(x => x !== tid))} />
-                ))}
+                {ordered.map((tid, idx) => {
+                  const stop = route.stops.find(s => s.target.id === tid);
+                  return (
+                    <SortableStop 
+                      key={tid} 
+                      id={tid} 
+                      idx={idx} 
+                      targets={targets as any[]} 
+                      stopId={stop?.id}
+                      onRemove={() => setOrdered((cur) => cur.filter(x => x !== tid))} 
+                    />
+                  );
+                })}
               </div>
             </SortableContext>
           </DndContext>
@@ -87,25 +98,53 @@ export default function RouteBuilderPage() {
   );
 }
 
-function SortableStop({ id, idx, targets, onRemove }: { id: string; idx: number; targets: any[]; onRemove: () => void }) {
+function SortableStop({ 
+  id, 
+  idx, 
+  targets, 
+  stopId, 
+  onRemove 
+}: { 
+  id: string; 
+  idx: number; 
+  targets: any[]; 
+  stopId?: string;
+  onRemove: () => void;
+}) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
   };
   const t = targets.find((x) => x.id === id);
+  
   return (
-    <div ref={setNodeRef} style={style} className="flex items-center justify-between rounded border p-2 bg-card" {...attributes} {...listeners}>
-      <div className="flex items-center gap-3">
-        <div className="w-6 h-6 text-xs grid place-items-center rounded bg-muted">{idx + 1}</div>
-        <div>
-          <div className="font-medium">{t?.company ?? id}</div>
-          <div className="text-xs text-muted-foreground">{t?.addressRaw ?? ""}</div>
+    <div ref={setNodeRef} style={style} className="flex flex-col gap-2 rounded border p-2 bg-card">
+      <div className="flex items-center justify-between" {...attributes} {...listeners}>
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 text-xs grid place-items-center rounded bg-muted">{idx + 1}</div>
+          <div>
+            <div className="font-medium">{t?.company ?? id}</div>
+            <div className="text-xs text-muted-foreground">{t?.addressRaw ?? ""}</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <button 
+            className="text-xs rounded border px-2 py-1" 
+            onClick={(e) => {
+              e.stopPropagation();
+              onRemove();
+            }}
+          >
+            Remove
+          </button>
         </div>
       </div>
-      <div className="flex items-center gap-2">
-        <button className="text-xs rounded border px-2 py-1" onClick={onRemove}>Remove</button>
-      </div>
+      {stopId && (
+        <div className="pl-9">
+          <OutcomeButtons stopId={stopId} />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,63 +1,64 @@
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import dayjs from 'dayjs';
 
-export async function GET(request: Request) {
+export async function GET(req: Request) {
   try {
-    const { searchParams } = new URL(request.url);
-    const range = searchParams.get('range') || '30d';
-    
-    // Calculate date range
-    const days = range === '30d' ? 30 : range === '7d' ? 7 : 30;
-    const startDate = dayjs().subtract(days, 'day').toDate();
+    const url = new URL(req.url);
+    const daysParam = url.searchParams.get("range") ?? "30d";
+    const days = Number(daysParam.replace("d", "")) || 30;
+    const to = new Date();
+    const from = new Date(to.getTime() - days * 24 * 60 * 60 * 1000);
 
-    // Get card metrics
-    const totalTargets = await prisma.target.count();
-    const newLeads = await prisma.target.count({
-      where: {
-        createdAt: {
-          gte: startDate
-        }
-      }
-    });
-    const accounts = await prisma.target.count({
-      where: {
-        accountState: 'ACCOUNT'
-      }
-    });
-    const completionRate = 0; // TODO: implement when routes are added
+    const [totalTargets, newLeads, accounts] = await Promise.all([
+      prisma.target.count(),
+      prisma.target.count({ where: { createdAt: { gte: from } } }),
+      prisma.target.count({ where: { accountState: "ACCOUNT" } }),
+    ]);
+
+    // Get outcome data from RouteStop for completion rate and byDay chart
+    const outcomeRows = await prisma.$queryRawUnsafe<any[]>(`
+      SELECT date("visitedAt") as day,
+        sum(CASE WHEN outcome='VISITED' THEN 1 ELSE 0 END) as visited,
+        sum(CASE WHEN outcome='NO_ANSWER' THEN 1 ELSE 0 END) as no_answer,
+        sum(CASE WHEN outcome='WRONG_ADDRESS' THEN 1 ELSE 0 END) as wrong_address,
+        sum(CASE WHEN outcome='FOLLOW_UP' THEN 1 ELSE 0 END) as follow_up
+      FROM "RouteStop"
+      WHERE "visitedAt" IS NOT NULL
+        AND "visitedAt" >= '${from.toISOString()}'
+      GROUP BY date("visitedAt")
+      ORDER BY day ASC
+    `);
+
+    const visited = outcomeRows.reduce((n: number, r: any) => n + Number(r.visited || 0), 0);
+    const other = outcomeRows.reduce(
+      (n: number, r: any) => 
+        n + Number(r.no_answer || 0) + Number(r.wrong_address || 0) + Number(r.follow_up || 0), 
+      0
+    );
+    const denom = visited + other;
+    const completionRate = denom === 0 ? 0 : visited / denom;
 
     // Get state distribution
-    const stateDistribution = await prisma.target.groupBy({
-      by: ['accountState'],
-      _count: {
-        id: true
-      }
+    const stateCounts = await prisma.target.groupBy({
+      by: ["accountState"],
+      _count: { _all: true },
     });
 
-    // Get byDay data (empty for now, will be populated when visit data exists)
-    const byDay: Array<{
-      day: string;
-      visited: number;
-      noAnswer: number;
-      wrongAddress: number;
-      followUp: number;
-    }> = [];
+    // Map byDay data from outcome rows
+    const byDay = outcomeRows.map((r: any) => ({
+      day: r.day,
+      visited: Number(r.visited || 0),
+      noAnswer: Number(r.no_answer || 0),
+      wrongAddress: Number(r.wrong_address || 0),
+      followUp: Number(r.follow_up || 0),
+    }));
 
     return NextResponse.json({
-      cards: {
-        totalTargets,
-        newLeads,
-        accounts,
-        completionRate
-      },
+      cards: { totalTargets, newLeads, accounts, completionRate },
       charts: {
         byDay,
-        stateDistribution: stateDistribution.map((s: { accountState: string | null; _count: { id: number } }) => ({
-          state: s.accountState,
-          count: s._count.id
-        }))
-      }
+        stateDistribution: stateCounts.map(s => ({ state: s.accountState, count: s._count._all })),
+      },
     });
   } catch (error) {
     console.error('Analytics overview error:', error);
