@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     if (!data.company) {
       return NextResponse.json({ error: "company is required" }, { status: 400 });
     }
-    const created = await prisma.target.create({ data });
+    const created = await prisma.target.create({ data: data as any });
     return NextResponse.json(created, { status: 201 });
   } catch (e: any) {
     return NextResponse.json({ error: e?.message ?? "Create failed" }, { status: 500 });
