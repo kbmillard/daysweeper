@@ -1,20 +1,5 @@
-import { prisma } from '@/lib/prisma';
-import { listGroups, listSubtypes } from '@/taxonomy/automotive';
-import { auth } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
-import { z } from 'zod';
-
-const updateTargetSchema = z.object({
-  company: z.string().min(1).optional(),
-  website: z.string().url().optional().nullable(),
-  phone: z.string().optional().nullable(),
-  email: z.string().email().optional().nullable(),
-  addressRaw: z.string().optional(),
-  accountState: z.enum(['ACCOUNT', 'NEW_UNCONTACTED', 'NEW_CONTACTED_NO_ANSWER']).optional(),
-  supplyTier: z.enum(['OEM', 'TIER_1', 'TIER_2', 'TIER_3', 'LOGISTICS_3PL', 'TOOLING_CAPITAL_EQUIPMENT', 'AFTERMARKET_SERVICES']).optional().nullable(),
-  supplyGroup: z.string().optional().nullable(),
-  supplySubtype: z.string().optional().nullable()
-});
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export async function GET(
   request: Request,
@@ -47,110 +32,48 @@ export async function GET(
   }
 }
 
-export async function PATCH(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+// PATCH /api/targets/:id
+// iOS sends { latitude, longitude, addressNormalized?, accuracy?, meta? }
+export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const { id } = await params;
-    const body = await request.json();
-    const data = updateTargetSchema.parse(body);
+    const b = await req.json();
 
-    // Validate taxonomy
-    if (data.supplyTier) {
-      if (data.supplyTier === 'TIER_1') {
-        if (data.supplyGroup) {
-          const validGroups = listGroups('Tier_1');
-          if (!validGroups.includes(data.supplyGroup)) {
-            return NextResponse.json(
-              { error: `Invalid supplyGroup for TIER_1. Must be one of: ${validGroups.join(', ')}` },
-              { status: 400 }
-            );
-          }
-          if (data.supplySubtype) {
-            const validSubtypes = listSubtypes('Tier_1', data.supplyGroup);
-            if (!validSubtypes.includes(data.supplySubtype)) {
-              return NextResponse.json(
-                { error: `Invalid supplySubtype for group ${data.supplyGroup}` },
-                { status: 400 }
-              );
-            }
-          }
-        }
-      } else {
-        // For other tiers, validate subtype if provided
-        if (data.supplySubtype) {
-          const validSubtypes = listSubtypes(data.supplyTier as any);
-          if (!validSubtypes.includes(data.supplySubtype)) {
-            return NextResponse.json(
-              { error: `Invalid supplySubtype for tier ${data.supplyTier}` },
-              { status: 400 }
-            );
-          }
-        }
-        // Allow "General" or null for group
-        if (data.supplyGroup && data.supplyGroup !== 'General') {
-          return NextResponse.json(
-            { error: 'supplyGroup must be "General" or null for non-Tier_1 tiers' },
-            { status: 400 }
-          );
-        }
-      }
+    const lat = b.latitude ?? b.lat ?? null;
+    const lon = b.longitude ?? b.lng ?? b.lon ?? null;
+
+    const data: any = {};
+    if (lat != null) data.latitude = String(lat);
+    if (lon != null) data.longitude = String(lon);
+    if (b.addressNormalized != null) data.addressNormalized = String(b.addressNormalized);
+
+    if (lat != null || lon != null || b.addressNormalized != null) {
+      data.geocodeStatus   = "geocoded";
+      data.geocodeProvider = "ios-clgeocoder";
+      if (b.accuracy != null) data.geocodeAccuracy = String(b.accuracy);
+      if (b.meta != null)     data.geocodeMeta     = b.meta;
+      data.geocodedAt = new Date();
+      data.geocodeLastError = null;
+      data.geocodeAttempts  = 0;
     }
 
-    // Ensure addressRaw defaults to empty string if provided but empty
-    const updateData: any = { ...data };
-    if (updateData.addressRaw !== undefined && updateData.addressRaw === null) {
-      updateData.addressRaw = '';
-    }
+    // Optional safe passthroughs; ignore if not present
+    for (const k of ["company","parentCompany","website","phone","category","segment","addressRaw","notes","accountState","tier","focus"])
+      if (b[k] != null) data[k] = b[k];
 
-    const target = await prisma.target.update({
-      where: { id },
-      data: updateData
-    });
-
-    return NextResponse.json(target);
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json(
-        { error: 'Validation error', details: error.issues },
-        { status: 400 }
-      );
-    }
-    console.error('Update target error:', error);
-    return NextResponse.json(
-      { error: 'Failed to update target' },
-      { status: 500 }
-    );
+    const updated = await prisma.target.update({ where: { id }, data });
+    return NextResponse.json(updated);
+  } catch (e: any) {
+    return NextResponse.json({ error: e?.message ?? "Update failed" }, { status: 500 });
   }
 }
 
-export async function DELETE(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const { id } = await params;
-    await prisma.target.delete({
-      where: { id }
-    });
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Delete target error:', error);
-    return NextResponse.json(
-      { error: 'Failed to delete target' },
-      { status: 500 }
-    );
+    await prisma.target.delete({ where: { id } });
+    return NextResponse.json({ ok: true });
+  } catch (e: any) {
+    return NextResponse.json({ error: e?.message ?? "Delete failed" }, { status: 500 });
   }
 }

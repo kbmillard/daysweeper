@@ -1,44 +1,35 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-const MAPBOX = process.env.MAPBOX_TOKEN; // set in Vercel env as MAPBOX_TOKEN
+const MAPBOX = process.env.MAPBOX_TOKEN; // set in env
 
-function toNum(n: any) {
-  if (n == null) return null;
-  const v = Number(n);
-  return Number.isFinite(v) ? v : null;
-}
+function num(n: any) { const v = Number(n); return Number.isFinite(v) ? v : null; }
 
 export async function POST(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!MAPBOX) return NextResponse.json({ error: "MAPBOX_TOKEN missing" }, { status: 500 });
 
   const { id } = await params;
 
-  // 1) Load stops with coords
   const route = await prisma.route.findUnique({
     where: { id },
-    include: { stops: { orderBy: { seq: "asc" }, include: { target: true } } },
+    include: {
+      stops: {
+        orderBy: { seq: "asc" },
+        include: { target: { select: { id: true, latitude: true, longitude: true } } }
+      }
+    }
   });
   if (!route) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
   const pts = route.stops.map(s => {
-    const lat = toNum(s.target?.latitude);
-    const lon = toNum(s.target?.longitude);
-    return { stopId: s.id, targetId: s.targetId, lat, lon };
+    const lat = num(s.target?.latitude), lon = num(s.target?.longitude);
+    return { stopId: s.id, lat, lon };
   });
-
-  const bad = pts.filter(p => p.lat == null || p.lon == null);
-  if (bad.length) {
-    return NextResponse.json({
-      error: "Some stops missing coordinates",
-      missing: bad.map(b => b.targetId),
-    }, { status: 400 });
+  if (pts.some(p => p.lat == null || p.lon == null)) {
+    return NextResponse.json({ error: "Some stops missing coordinates" }, { status: 400 });
   }
 
-  // 2) Build coordinates string in lon,lat order (Mapbox format)
   const coords = pts.map(p => `${p.lon},${p.lat}`).join(";");
-
-  // Prefer fixed start and fixed end if you already order the first/last
   const url = new URL(`https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${coords}`);
   url.searchParams.set("source", "first");
   url.searchParams.set("destination", "last");
@@ -52,18 +43,14 @@ export async function POST(_req: Request, { params }: { params: Promise<{ id: st
     return NextResponse.json({ error: "Mapbox error", detail: t }, { status: 502 });
   }
   const j = await resp.json();
+  const waypoints: Array<{ waypoint_index: number }> = j.waypoints || [];
+  if (!waypoints.length) return NextResponse.json({ error: "No waypoints" }, { status: 500 });
 
-  // 3) Mapbox waypoints carry waypoint_index (new order)
-  const waypoints: Array<{ waypoint_index: number; waypoint?: number; name?: string }> = j.waypoints || [];
-  if (!waypoints.length) return NextResponse.json({ error: "No waypoints returned" }, { status: 500 });
-
-  // Build new order indices for our pts; Mapbox preserves input order in waypoints array
   const order = waypoints
     .map((w, i) => ({ inputIdx: i, orderIdx: w.waypoint_index }))
     .sort((a, b) => a.orderIdx - b.orderIdx)
     .map(x => x.inputIdx);
 
-  // 4) Write new seq to DB (1..n)
   await prisma.$transaction(async (tx) => {
     for (let i = 0; i < order.length; i++) {
       const stop = route.stops[order[i]];

@@ -6,8 +6,18 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   const route = await prisma.route.findUnique({
     where: { id },
     include: {
-      stops: { orderBy: { seq: "asc" }, include: { target: { select: { id: true, company: true, addressRaw: true } } } }
-    },
+      stops: {
+        orderBy: { seq: "asc" },
+        include: {
+          target: {
+            select: {
+              id: true, company: true,
+              addressRaw: true, latitude: true, longitude: true
+            }
+          }
+        }
+      }
+    }
   });
   if (!route) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(route);
