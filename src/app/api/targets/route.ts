@@ -16,11 +16,7 @@ export async function GET(req: Request) {
   if (group) where.supplyGroup = group;
   if (subtype) where.supplySubtype = subtype;
 
-  const rows = await prisma.target.findMany({
-    where,
-    orderBy: { createdAt: "desc" },
-    take: 200,
-  });
+  const rows = await prisma.target.findMany({ where, orderBy: { createdAt: "desc" }, take: 200 });
   return NextResponse.json(rows);
 }
 
@@ -29,7 +25,7 @@ export async function POST(req: Request) {
     const b = await req.json();
     const data = {
       company: String(b.company ?? "").trim(),
-      addressRaw: String(b.addressRaw ?? ""), // <= default so Prisma never gets null
+      addressRaw: String(b.addressRaw ?? ""), // default to empty so Prisma never gets null
       website: b.website ?? null,
       phone: b.phone ?? null,
       email: b.email ?? null,
@@ -38,9 +34,7 @@ export async function POST(req: Request) {
       supplyGroup: b.supplyGroup ?? null,
       supplySubtype: b.supplySubtype ?? null,
     };
-    if (!data.company) {
-      return NextResponse.json({ error: "company is required" }, { status: 400 });
-    }
+    if (!data.company) return NextResponse.json({ error: "company is required" }, { status: 400 });
     const created = await prisma.target.create({ data: data as any });
     return NextResponse.json(created, { status: 201 });
   } catch (e: any) {

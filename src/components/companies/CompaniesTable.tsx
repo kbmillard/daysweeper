@@ -37,7 +37,7 @@ export default function CompaniesTable() {
   const [tags, setTags] = useState<string[]>([]);
   const [tagInput, setTagInput] = useState('');
 
-  const debouncedSearch = useDebounce(search, 300);
+  const [debouncedSearch] = useDebounce(search, 300);
 
   const filters: TargetFilters = {
     q: debouncedSearch || undefined,
