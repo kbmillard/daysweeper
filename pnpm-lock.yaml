@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@apple/mapkit-loader':
+        specifier: ^0.2.1
+        version: 0.2.1
       '@clerk/nextjs':
         specifier: ^6.12.12
         version: 6.36.10(next@16.1.4(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -137,6 +140,9 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.21.2
         version: 8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@types/apple-mapkit-js':
+        specifier: ^5.50.0
+        version: 5.50.0
       '@types/mapbox-gl':
         specifier: ^3.4.1
         version: 3.4.1
@@ -349,6 +355,9 @@ packages:
 
   '@apm-js-collab/tracing-hooks@0.3.1':
     resolution: {integrity: sha512-Vu1CbmPURlN5fTboVuKMoJjbO5qcq9fA5YXpskx3dXe/zTBvjODFoerw+69rVBlRLrJpwPqSDqEuJDEKIrTldw==}
+
+  '@apple/mapkit-loader@0.2.1':
+    resolution: {integrity: sha512-yJtHBuNtmWlykLUy85OUlb5r7owhVWRoDWvI2Zp0bfR0DfwZgGqTrcSqvGlh27RmQwyZLL3xNYz9wY00MarFuw==}
 
   '@babel/code-frame@7.28.6':
     resolution: {integrity: sha512-JYgintcMjRiCvS8mMECzaEn+m3PfoQiyqukOMCCVQtoJGYJw8j/8LBJEiqkHLkfwCcs74E3pbAUFNg7d9VNJ+Q==}
@@ -2316,6 +2325,12 @@ packages:
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
+
+  '@types/apple-mapkit-js@5.50.0':
+    resolution: {integrity: sha512-l8RX66r7PNzatTh1FzVGMLRbcMNGi9AnzmGAo8+g0o7mhBDMUB88cXEziZmxqE4urVmusU1JuPGb7V0vIP3Eog==}
+
+  '@types/apple-mapkit@5.80.0':
+    resolution: {integrity: sha512-CEpk8aPTa8yMG/026SxmkSEYEvABdH/YxCuiRff+6irwFkV0P/Gub38YKojgH7a+xiFtvFKjVefouf7BoM6vlQ==}
 
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
@@ -5465,6 +5480,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@apple/mapkit-loader@0.2.1':
+    dependencies:
+      '@types/apple-mapkit': 5.80.0
+
   '@babel/code-frame@7.28.6':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
@@ -7518,6 +7537,12 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
+
+  '@types/apple-mapkit-js@5.50.0': {}
+
+  '@types/apple-mapkit@5.80.0':
+    dependencies:
+      '@types/geojson': 7946.0.16
 
   '@types/connect@3.4.38':
     dependencies:
