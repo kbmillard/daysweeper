@@ -29,7 +29,7 @@ function RoutesList() {
       const route = await create.mutateAsync({ name: name.trim() });
       toast.success("Route created successfully");
       setName("");
-      router.push(`/routes/${route.id}`);
+      router.push(`/dashboard/routes/${route.id}`);
     } catch (error: any) {
       toast.error(error?.message || "Failed to create route");
     }
@@ -87,7 +87,7 @@ function RoutesList() {
             ) : (
               routes.map((r) => (
                 <tr key={r.id} className="hover:bg-muted/30">
-                  <td className="px-3 py-2"><Link href={`/routes/${r.id}`} className="underline">{r.name}</Link></td>
+                  <td className="px-3 py-2"><Link href={`/dashboard/routes/${r.id}`} className="underline">{r.name}</Link></td>
                   <td className="px-3 py-2">{r.assignedToUserId ?? "-"}</td>
                   <td className="px-3 py-2">{r.scheduledFor ? new Date(r.scheduledFor).toLocaleDateString() : "-"}</td>
                   <td className="px-3 py-2">{r._count?.stops ?? 0}</td>

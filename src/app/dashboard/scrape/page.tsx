@@ -90,7 +90,7 @@ export default function ScrapePage() {
       qc.invalidateQueries({ queryKey: ["targets"] });
       qc.invalidateQueries({ queryKey: ["overview"] });
       toast.success("Company created successfully");
-      router.push(`/companies/${created.id}`);
+      router.push(`/dashboard/companies/${created.id}`);
     } catch (error: any) {
       toast.error(error.message || "Failed to create company");
     } finally {
@@ -190,7 +190,7 @@ export default function ScrapePage() {
                     )}
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="secondary" onClick={() => router.push(`/companies/${c.id}`)}>
+                    <Button variant="secondary" onClick={() => router.push(`/dashboard/companies/${c.id}`)}>
                       Open
                     </Button>
                   </div>

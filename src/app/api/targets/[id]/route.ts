@@ -9,7 +9,7 @@ const updateTargetSchema = z.object({
   website: z.string().url().optional().nullable(),
   phone: z.string().optional().nullable(),
   email: z.string().email().optional().nullable(),
-  addressRaw: z.string().min(1).optional(),
+  addressRaw: z.string().optional(),
   accountState: z.enum(['ACCOUNT', 'NEW_UNCONTACTED', 'NEW_CONTACTED_NO_ANSWER']).optional(),
   supplyTier: z.enum(['OEM', 'TIER_1', 'TIER_2', 'TIER_3', 'LOGISTICS_3PL', 'TOOLING_CAPITAL_EQUIPMENT', 'AFTERMARKET_SERVICES']).optional().nullable(),
   supplyGroup: z.string().optional().nullable(),
@@ -103,9 +103,15 @@ export async function PATCH(
       }
     }
 
+    // Ensure addressRaw defaults to empty string if provided but empty
+    const updateData: any = { ...data };
+    if (updateData.addressRaw !== undefined && updateData.addressRaw === null) {
+      updateData.addressRaw = '';
+    }
+
     const target = await prisma.target.update({
       where: { id },
-      data
+      data: updateData
     });
 
     return NextResponse.json(target);

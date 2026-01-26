@@ -61,7 +61,7 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Companies',
-    url: '/companies',
+    url: '/dashboard/companies',
     icon: 'product',
     shortcut: ['c', 'c'],
     isActive: false,
@@ -69,7 +69,7 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Scrape',
-    url: '/scrape',
+    url: '/dashboard/scrape',
     icon: 'product',
     shortcut: ['s', 's'],
     isActive: false,
@@ -77,7 +77,7 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Routes',
-    url: '/routes',
+    url: '/dashboard/routes',
     icon: 'kanban',
     shortcut: ['r', 'r'],
     isActive: false,

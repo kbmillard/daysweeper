@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useTargets, type TargetFilters } from '@/lib/targets';
+import { useTargets, useCreateTarget, type TargetFilters } from '@/lib/targets';
 import { useDebounce } from '@/hooks/use-debounce';
 import { Input } from '@/components/ui/input';
 import {
@@ -25,6 +25,7 @@ import {
 import { normalizeTierLabel, listGroups, listSubtypes, type SupplyTier } from '@/taxonomy/automotive';
 import dayjs from 'dayjs';
 import PageContainer from '@/components/layout/page-container';
+import { toast } from 'sonner';
 
 export default function CompaniesTable() {
   const router = useRouter();
@@ -105,12 +106,71 @@ export default function CompaniesTable() {
   const availableGroups = tier ? listGroups(tier as SupplyTier) : [];
   const availableSubtypes = tier && group ? listSubtypes(tier as SupplyTier, group) : [];
 
+  const createTarget = useCreateTarget();
+  const [quickAddCompany, setQuickAddCompany] = useState('');
+  const [quickAddAddress, setQuickAddAddress] = useState('');
+
+  const handleQuickAdd = async () => {
+    if (!quickAddCompany.trim()) {
+      toast.error('Company name is required');
+      return;
+    }
+    try {
+      await createTarget.mutateAsync({
+        company: quickAddCompany.trim(),
+        addressRaw: quickAddAddress.trim() || '',
+      });
+      toast.success('Company created successfully');
+      setQuickAddCompany('');
+      setQuickAddAddress('');
+    } catch (error: any) {
+      toast.error(error?.message || 'Failed to create company');
+    }
+  };
+
   return (
     <PageContainer>
       <div className='flex flex-1 flex-col space-y-4'>
         <div className='flex items-center justify-between'>
           <h2 className='text-2xl font-bold tracking-tight'>Companies</h2>
         </div>
+        
+        {/* QuickAddCompany inline form */}
+        <div className='flex gap-2 items-end rounded-lg border p-3 bg-muted/30'>
+          <div className='flex-1'>
+            <label className='text-xs text-muted-foreground mb-1 block'>Company Name</label>
+            <Input
+              placeholder='Company name'
+              value={quickAddCompany}
+              onChange={(e) => setQuickAddCompany(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && quickAddCompany.trim()) {
+                  handleQuickAdd();
+                }
+              }}
+            />
+          </div>
+          <div className='flex-1'>
+            <label className='text-xs text-muted-foreground mb-1 block'>Address (optional)</label>
+            <Input
+              placeholder='Address'
+              value={quickAddAddress}
+              onChange={(e) => setQuickAddAddress(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && quickAddCompany.trim()) {
+                  handleQuickAdd();
+                }
+              }}
+            />
+          </div>
+          <Button
+            onClick={handleQuickAdd}
+            disabled={!quickAddCompany.trim() || createTarget.isPending}
+          >
+            {createTarget.isPending ? 'Creating...' : 'Add Company'}
+          </Button>
+        </div>
+
         <div className='space-y-4'>
       <div className='flex flex-wrap gap-4'>
         <Input
@@ -238,7 +298,7 @@ export default function CompaniesTable() {
                   <TableRow
                     key={target.id}
                     className='cursor-pointer'
-                    onClick={() => router.push(`/companies/${target.id}`)}
+                    onClick={() => router.push(`/dashboard/companies/${target.id}`)}
                   >
                     <TableCell className='font-medium'>{target?.company || '-'}</TableCell>
                     <TableCell>
