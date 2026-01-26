@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { listGroups, listSubtypes } from '@/taxonomy/automotive';
+import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
@@ -51,6 +52,11 @@ export async function PATCH(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { userId } = await auth();
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { id } = await params;
     const body = await request.json();
     const data = updateTargetSchema.parse(body);
@@ -123,6 +129,11 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { userId } = await auth();
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { id } = await params;
     await prisma.target.delete({
       where: { id }

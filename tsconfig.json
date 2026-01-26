@@ -41,7 +41,10 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "tanstack-start-dashboard/**",
+    "**/dist/**",
+    "**/.next/**"
   ],
   "moduleResolution": [
     "node_modules",
