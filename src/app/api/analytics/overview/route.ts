@@ -53,7 +53,7 @@ export async function GET(request: Request) {
       },
       charts: {
         byDay,
-        stateDistribution: stateDistribution.map((s) => ({
+        stateDistribution: stateDistribution.map((s: { accountState: string | null; _count: { id: number } }) => ({
           state: s.accountState,
           count: s._count.id
         }))
