@@ -45,10 +45,5 @@
     "tanstack-start-dashboard/**",
     "**/dist/**",
     "**/.next/**"
-  ],
-  "moduleResolution": [
-    "node_modules",
-    ".next",
-    "node"
   ]
 }

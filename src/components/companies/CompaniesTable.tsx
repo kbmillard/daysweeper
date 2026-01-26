@@ -24,8 +24,9 @@ import {
 } from '@/components/ui/table';
 import { normalizeTierLabel, listGroups, listSubtypes, type SupplyTier } from '@/taxonomy/automotive';
 import dayjs from 'dayjs';
+import PageContainer from '@/components/layout/page-container';
 
-export function CompaniesTable() {
+export default function CompaniesTable() {
   const router = useRouter();
   const [search, setSearch] = useState('');
   const [state, setState] = useState<string>('');
@@ -46,7 +47,7 @@ export function CompaniesTable() {
     tags: tags.length > 0 ? tags : undefined
   };
 
-  const { data: targets, isLoading } = useTargets(filters);
+  const { data = [], isLoading, isFetching } = useTargets(filters);
 
   const handleAddTag = () => {
     if (tagInput.trim() && !tags.includes(tagInput.trim())) {
@@ -71,30 +72,46 @@ export function CompaniesTable() {
   };
 
   // Extract city from addressRaw (best effort)
-  const extractCity = (address: string): string => {
-    // Simple extraction - look for common patterns
-    const parts = address.split(',').map((p) => p.trim());
-    if (parts.length >= 2) {
-      return parts[parts.length - 2]; // Usually city is second to last
+  const extractCity = (address: string | null | undefined): string => {
+    if (!address) return 'N/A';
+    try {
+      // Simple extraction - look for common patterns
+      const parts = address.split(',').map((p) => p.trim());
+      if (parts.length >= 2) {
+        return parts[parts.length - 2]; // Usually city is second to last
+      }
+      return address.split(' ')[0] || 'N/A';
+    } catch {
+      return 'N/A';
     }
-    return address.split(' ')[0] || 'N/A';
   };
 
   // Get tags from notes (union of all tags from recent notes)
   const getTagsFromNotes = (target: any): string[] => {
-    if (!target.TargetNote || target.TargetNote.length === 0) return [];
-    const allTags = new Set<string>();
-    target.TargetNote.forEach((note: any) => {
-      note.tags?.forEach((tag: string) => allTags.add(tag));
-    });
-    return Array.from(allTags);
+    try {
+      if (!target?.TargetNote || !Array.isArray(target.TargetNote) || target.TargetNote.length === 0) return [];
+      const allTags = new Set<string>();
+      target.TargetNote.forEach((note: any) => {
+        if (note?.tags && Array.isArray(note.tags)) {
+          note.tags.forEach((tag: string) => allTags.add(tag));
+        }
+      });
+      return Array.from(allTags);
+    } catch {
+      return [];
+    }
   };
 
   const availableGroups = tier ? listGroups(tier as SupplyTier) : [];
   const availableSubtypes = tier && group ? listSubtypes(tier as SupplyTier, group) : [];
 
   return (
-    <div className='space-y-4'>
+    <PageContainer>
+      <div className='flex flex-1 flex-col space-y-4'>
+        <div className='flex items-center justify-between'>
+          <h2 className='text-2xl font-bold tracking-tight'>Companies</h2>
+        </div>
+        <div className='space-y-4'>
       <div className='flex flex-wrap gap-4'>
         <Input
           placeholder='Search companies...'
@@ -212,8 +229,10 @@ export function CompaniesTable() {
                   Loading...
                 </TableCell>
               </TableRow>
-            ) : targets && targets.length > 0 ? (
-              targets.map((target: any) => {
+            ) : Array.isArray(data) && data.length > 0 ? (
+              data
+                .filter((target: any) => target && target.id)
+                .map((target: any) => {
                 const targetTags = getTagsFromNotes(target);
                 return (
                   <TableRow
@@ -221,9 +240,9 @@ export function CompaniesTable() {
                     className='cursor-pointer'
                     onClick={() => router.push(`/companies/${target.id}`)}
                   >
-                    <TableCell className='font-medium'>{target.company}</TableCell>
+                    <TableCell className='font-medium'>{target?.company || '-'}</TableCell>
                     <TableCell>
-                      {target.supplyTier ? (
+                      {target?.supplyTier ? (
                         <Badge variant='outline'>
                           {normalizeTierLabel(target.supplyTier)}
                         </Badge>
@@ -232,24 +251,28 @@ export function CompaniesTable() {
                       )}
                     </TableCell>
                     <TableCell>
-                      {target.supplySubtype || (
+                      {target?.supplySubtype || (
                         <span className='text-muted-foreground'>-</span>
                       )}
                     </TableCell>
                     <TableCell>
-                      <Badge
-                        variant={
-                          target.accountState === 'ACCOUNT'
-                            ? 'default'
-                            : target.accountState === 'NEW_UNCONTACTED'
-                              ? 'secondary'
-                              : 'outline'
-                        }
-                      >
-                        {target.accountState.replace('_', ' ')}
-                      </Badge>
+                      {target?.accountState ? (
+                        <Badge
+                          variant={
+                            target.accountState === 'ACCOUNT'
+                              ? 'default'
+                              : target.accountState === 'NEW_UNCONTACTED'
+                                ? 'secondary'
+                                : 'outline'
+                          }
+                        >
+                          {String(target.accountState).replace('_', ' ')}
+                        </Badge>
+                      ) : (
+                        <span className='text-muted-foreground'>-</span>
+                      )}
                     </TableCell>
-                    <TableCell>{extractCity(target.addressRaw)}</TableCell>
+                    <TableCell>{extractCity(target?.addressRaw)}</TableCell>
                     <TableCell>
                       {targetTags.length > 0 ? (
                         <div className='flex flex-wrap gap-1'>
@@ -269,7 +292,7 @@ export function CompaniesTable() {
                       )}
                     </TableCell>
                     <TableCell>
-                      {dayjs(target.createdAt).format('MMM D, YYYY')}
+                      {target?.createdAt ? dayjs(target.createdAt).format('MMM D, YYYY') : '-'}
                     </TableCell>
                   </TableRow>
                 );
@@ -284,6 +307,11 @@ export function CompaniesTable() {
           </TableBody>
         </Table>
       </div>
-    </div>
+      {isFetching && data.length > 0 && (
+        <div className="text-xs text-muted-foreground">Refreshing…</div>
+      )}
+        </div>
+      </div>
+    </PageContainer>
   );
 }
