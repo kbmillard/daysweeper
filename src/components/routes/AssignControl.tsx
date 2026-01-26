@@ -48,32 +48,33 @@ export default function AssignControl({
         title="Assign to me"
       >Assign to me</button>
 
-      <div className="relative">
-        <button className="border rounded px-3 py-1 text-sm" onClick={() => setOpen(v => !v)}>
-          {currentAssigneeId ? "Reassign…" : "Assign to user…"}
-        </button>
-        {open && (
-          <div className="absolute z-50 mt-2 w-80 rounded border bg-white dark:bg-neutral-900 shadow-xl p-2">
-            <input
-              autoFocus
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-              placeholder="Search name or email…"
-              className="w-full border rounded px-2 py-1 mb-2"
-            />
-            {loading && <div className="text-xs p-2">Searching…</div>}
-            {!loading && items.length === 0 && <div className="text-xs p-2 text-gray-500">Type to search users</div>}
-            <ul className="max-h-64 overflow-auto">
-              {items.map(u => (
-                <li key={u.id}
-                  onClick={() => assign(u.id)}
-                  className="px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer rounded">
-                  <div className="text-sm font-medium">{u.name}</div>
-                  {u.email && <div className="text-xs text-gray-500">{u.email}</div>}
-                </li>
-              ))}
-            </ul>
-          </div>
+      {canReassign && (
+        <div className="relative">
+          <button className="border rounded px-3 py-1 text-sm" onClick={() => setOpen(v => !v)}>
+            {currentAssigneeId ? "Reassign…" : "Assign to user…"}
+          </button>
+          {open && (
+            <div className="absolute z-50 mt-2 w-80 rounded border bg-white dark:bg-neutral-900 shadow-xl p-2">
+              <input
+                autoFocus
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder="Search name or email…"
+                className="w-full border rounded px-2 py-1 mb-2"
+              />
+              {loading && <div className="text-xs p-2">Searching…</div>}
+              {!loading && items.length === 0 && <div className="text-xs p-2 text-gray-500">Type to search users</div>}
+              <ul className="max-h-64 overflow-auto">
+                {items.map(u => (
+                  <li key={u.id}
+                    onClick={() => assign(u.id)}
+                    className="px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer rounded">
+                    <div className="text-sm font-medium">{u.name}</div>
+                    {u.email && <div className="text-xs text-gray-500">{u.email}</div>}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
       )}
