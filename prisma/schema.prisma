@@ -318,15 +318,18 @@ enum StopOutcome {
 }
 
 model Route {
-  id               String       @id @default(cuid())
-  name             String
-  assignedToUserId String?
-  scheduledFor     DateTime?
-  stops            RouteStop[]
-  TargetNote       TargetNote[]
-  Meeting          Meeting[]
-  createdAt        DateTime     @default(now())
-  updatedAt        DateTime     @updatedAt
+  id                  String       @id @default(cuid())
+  name                String
+  assignedToUserId    String?       // Clerk id (universal tie)
+  assignedToName      String?       // human display name
+  assignedToEmail     String?       // primary email
+  assignedToExternalId String?      // optional: provider id (e.g., Google sub)
+  scheduledFor        DateTime?
+  stops               RouteStop[]
+  TargetNote          TargetNote[]
+  Meeting             Meeting[]
+  created             DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
 
   @@index([assignedToUserId])
 }

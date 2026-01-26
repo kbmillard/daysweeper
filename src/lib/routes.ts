@@ -5,15 +5,19 @@ export type RouteDTO = {
   id: string;
   name: string;
   assignedToUserId?: string | null;
+  assignedToName?: string | null;
+  assignedToEmail?: string | null;
   scheduledFor?: string | null;
   _count?: { stops: number };
-  createdAt?: string;
+  created?: string;
 };
 
 export type RouteDetailDTO = {
   id: string;
   name: string;
   assignedToUserId?: string | null;
+  assignedToName?: string | null;
+  assignedToEmail?: string | null;
   scheduledFor?: string | null;
   stops: Array<{
     id: string;

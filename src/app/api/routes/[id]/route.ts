@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { clerkClient } from "@clerk/nextjs/server";
+
+function deriveName(u: any): string | null {
+  const parts = [u?.firstName, u?.lastName].filter(Boolean).join(" ").trim();
+  return parts || u?.username || u?.emailAddresses?.[0]?.emailAddress || null;
+}
 
 export async function GET(_req: Request, { params }: { params: { id: string } }) {
   const route = await prisma.route.findUnique({
@@ -17,13 +23,36 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
 
 export async function PATCH(req: Request, { params }: { params: { id: string } }) {
   try {
-    const { id } = params;
     const b = await req.json();
     const data: any = {};
     if (b.name !== undefined) data.name = String(b.name).trim();
-    if (b.assignedToUserId !== undefined) data.assignedToUserId = b.assignedToUserId || null;
     if (b.scheduledFor !== undefined) data.scheduledFor = b.scheduledFor ? new Date(b.scheduledFor) : null;
-    const updated = await prisma.route.update({ where: { id }, data });
+
+    if ("assignedToUserId" in b) {
+      const id: string | null = b.assignedToUserId ?? null;
+      data.assignedToUserId = id;
+      if (id) {
+        try {
+          const u = await clerkClient.users.getUser(id);
+          data.assignedToName = deriveName(u);
+          data.assignedToEmail = u?.emailAddresses?.[0]?.emailAddress ?? null;
+          const g = (u?.externalAccounts ?? []).find((ea: any) =>
+            ea.provider === "google" || ea.provider === "oauth_google"
+          );
+          data.assignedToExternalId = g?.externalId ?? null;
+        } catch {
+          data.assignedToName = null;
+          data.assignedToEmail = null;
+          data.assignedToExternalId = null;
+        }
+      } else {
+        data.assignedToName = null;
+        data.assignedToEmail = null;
+        data.assignedToExternalId = null;
+      }
+    }
+
+    const updated = await prisma.route.update({ where: { id: params.id }, data });
     return NextResponse.json(updated);
   } catch (e: any) {
     return NextResponse.json({ error: e?.message ?? "Update failed" }, { status: 500 });

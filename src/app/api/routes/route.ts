@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { clerkClient } from "@clerk/nextjs/server";
+
+function deriveName(u: any): string | null {
+  const parts = [u?.firstName, u?.lastName].filter(Boolean).join(" ").trim();
+  return parts || u?.username || u?.emailAddresses?.[0]?.emailAddress || null;
+}
 
 export async function GET(req: Request) {
   const u = new URL(req.url);
@@ -14,7 +20,7 @@ export async function GET(req: Request) {
 
   const routes = await prisma.route.findMany({
     where: Object.keys(where).length > 0 ? where : undefined,
-    orderBy: { createdAt: "desc" },
+    orderBy: { created: "desc" },
     include: { _count: { select: { stops: true } } },
   });
 
@@ -23,15 +29,31 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    if (!body?.name || !String(body.name).trim()) {
-      return NextResponse.json({ error: "Name is required" }, { status: 400 });
+    const b = await req.json();
+    let name: string | null = null;
+    let email: string | null = null;
+    let ext: string | null = null;
+
+    if (b.assignedToUserId) {
+      try {
+        const u = await clerkClient.users.getUser(b.assignedToUserId);
+        name = deriveName(u);
+        email = u?.emailAddresses?.[0]?.emailAddress ?? null;
+        const g = (u?.externalAccounts ?? []).find((ea: any) =>
+          ea.provider === "google" || ea.provider === "oauth_google"
+        );
+        ext = g?.externalId ?? null;
+      } catch {}
     }
+
     const created = await prisma.route.create({
       data: {
-        name: String(body.name).trim(),
-        assignedToUserId: body.assignedToUserId ?? null,
-        scheduledFor: body.scheduledFor ? new Date(body.scheduledFor) : null,
+        name: String(b.name ?? "").trim(),
+        assignedToUserId: b.assignedToUserId ?? null,
+        assignedToName: name,
+        assignedToEmail: email,
+        assignedToExternalId: ext,
+        scheduledFor: b.scheduledFor ? new Date(b.scheduledFor) : null,
       },
     });
     return NextResponse.json(created, { status: 201 });

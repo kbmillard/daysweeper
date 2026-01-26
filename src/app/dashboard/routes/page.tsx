@@ -93,7 +93,7 @@ function RoutesList() {
             ) : routes.map((r:any)=>(
               <tr key={r.id} className="hover:bg-muted/30">
                 <td className="px-3 py-2"><Link href={`/dashboard/routes/${r.id}`} className="underline">{r.name}</Link></td>
-                <td className="px-3 py-2">{r.assignedToUserId ?? "-"}</td>
+                <td className="px-3 py-2">{r.assignedToName ?? r.assignedToEmail ?? r.assignedToUserId ?? "—"}</td>
                 <td className="px-3 py-2">{r.scheduledFor ? new Date(r.scheduledFor).toLocaleDateString() : "-"}</td>
                 <td className="px-3 py-2">{r._count?.stops ?? 0}</td>
                 <td className="px-3 py-2"><Button variant="destructive" size="sm" onClick={() => handleDelete(r.id, r.name)} disabled={del.isPending}>Delete</Button></td>
