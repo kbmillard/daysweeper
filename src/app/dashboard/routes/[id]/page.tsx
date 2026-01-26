@@ -15,7 +15,7 @@ import OutcomeButtons from "@/components/routes/OutcomeButtons";
 export default function RouteBuilderPage() {
   const params = useParams();
   const id = String(params?.id);
-  const { data: route, isLoading } = useRoute(id);
+  const { data: route, isLoading, refetch } = useRoute(id);
   const { data: targets = [] } = useTargets({});
   const replaceStops = useReplaceStops(id);
   const updateRoute = useUpdateRoute(id);
@@ -40,7 +40,7 @@ export default function RouteBuilderPage() {
     <div className="p-4 space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <Input className="w-64" value={name} onChange={(e) => setName(e.target.value)} />
-        <Button onClick={() => updateRoute.mutate({ name })}>Save Name</Button>
+        <Button onClick={() => updateRoute.mutate({ name }, { onSuccess: () => refetch() })}>Save Name</Button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -62,7 +62,7 @@ export default function RouteBuilderPage() {
         <div className="rounded-md border p-3">
           <div className="mb-2 flex items-center justify-between">
             <div className="font-medium">Route Stops</div>
-            <Button size="sm" onClick={() => replaceStops.mutate(ordered)}>Save Order</Button>
+            <Button size="sm" onClick={() => replaceStops.mutate(ordered, { onSuccess: () => refetch() })}>Save Order</Button>
           </div>
 
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={(e) => {
