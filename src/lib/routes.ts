@@ -1,114 +1,129 @@
-'use client';
+"use client";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+export type RouteDTO = {
+  id: string;
+  name: string;
+  assignedToUserId?: string | null;
+  scheduledFor?: string | null;
+  _count?: { stops: number };
+  createdAt?: string;
+};
 
-export interface RouteFilters {
-  assignedTo?: 'me';
-}
+export type RouteDetailDTO = {
+  id: string;
+  name: string;
+  assignedToUserId?: string | null;
+  scheduledFor?: string | null;
+  stops: Array<{
+    id: string;
+    seq: number;
+    target: { id: string; company: string; addressRaw?: string | null };
+  }>;
+};
 
-export function useRoutes(filters: RouteFilters = {}) {
-  const params = new URLSearchParams();
-  if (filters.assignedTo) {
-    params.append('assignedTo', filters.assignedTo);
-  }
-
+export function useRoutes() {
   return useQuery({
-    queryKey: ['routes', filters],
+    queryKey: ["routes"],
     queryFn: async () => {
-      const res = await fetch(`/api/routes?${params.toString()}`);
-      if (!res.ok) throw new Error('Failed to fetch routes');
-      return res.json();
-    }
+      const r = await fetch(`/api/routes`);
+      if (!r.ok) return [];
+      return (await r.json()) as RouteDTO[];
+    },
   });
 }
 
-export function useRoute(id: string | undefined) {
+export function useRoute(id: string) {
   return useQuery({
-    queryKey: ['route', id],
+    queryKey: ["route", id],
+    enabled: !!id,
     queryFn: async () => {
-      if (!id) throw new Error('Route ID is required');
-      const res = await fetch(`/api/routes/${id}`);
-      if (!res.ok) throw new Error('Failed to fetch route');
-      return res.json();
+      const r = await fetch(`/api/routes/${id}`);
+      if (!r.ok) throw new Error("Failed to load route");
+      return (await r.json()) as RouteDetailDTO;
     },
-    enabled: !!id
   });
 }
 
 export function useCreateRoute() {
-  const queryClient = useQueryClient();
-
+  const qc = useQueryClient();
   return useMutation({
-    mutationFn: async (data: { name: string; assignedToUserId?: string | null; scheduledFor?: string | null }) => {
-      const res = await fetch('/api/routes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+    mutationFn: async (data: { name: string; assignedToUserId?: string; scheduledFor?: string }) => {
+      const r = await fetch(`/api/routes`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('Failed to create route');
-      return res.json();
+      if (!r.ok) throw new Error("Create route failed");
+      return r.json();
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['routes'] });
-    }
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["routes"] }),
   });
 }
 
-export function useUpdateRoute(id: string | undefined) {
-  const queryClient = useQueryClient();
-
+export function useUpdateRoute(id: string) {
+  const qc = useQueryClient();
   return useMutation({
-    mutationFn: async (data: { name?: string; assignedToUserId?: string | null; scheduledFor?: string | null }) => {
-      if (!id) throw new Error('Route ID is required');
-      const res = await fetch(`/api/routes/${id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+    mutationFn: async (data: Partial<{ name: string; assignedToUserId?: string; scheduledFor?: string }>) => {
+      const r = await fetch(`/api/routes/${id}`, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('Failed to update route');
-      return res.json();
+      if (!r.ok) throw new Error("Update route failed");
+      return r.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['route', id] });
-      queryClient.invalidateQueries({ queryKey: ['routes'] });
-    }
-  });
-}
-
-export function useReplaceStops(id: string | undefined) {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: async (targetIds: string[]) => {
-      if (!id) throw new Error('Route ID is required');
-      const res = await fetch(`/api/routes/${id}/stops`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ targetIds })
-      });
-      if (!res.ok) throw new Error('Failed to replace stops');
-      return res.json();
+      qc.invalidateQueries({ queryKey: ["route", id] });
+      qc.invalidateQueries({ queryKey: ["routes"] });
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['route', id] });
-      queryClient.invalidateQueries({ queryKey: ['routes'] });
-    }
   });
 }
 
 export function useDeleteRoute() {
-  const queryClient = useQueryClient();
-
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: async (id: string) => {
-      const res = await fetch(`/api/routes/${id}`, {
-        method: 'DELETE'
+      const r = await fetch(`/api/routes/${id}`, { method: "DELETE" });
+      if (!r.ok) throw new Error("Delete route failed");
+      return r.json();
+    },
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["routes"] }),
+  });
+}
+
+export function useReplaceStops(id: string) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: async (targetIds: string[]) => {
+      const r = await fetch(`/api/routes/${id}/stops`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ targetIds }),
       });
-      if (!res.ok) throw new Error('Failed to delete route');
-      return res.json();
+      if (!r.ok) throw new Error("Save stops failed");
+      return r.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['routes'] });
-    }
+      qc.invalidateQueries({ queryKey: ["route", id] });
+    },
+  });
+}
+
+export function usePatchStopOutcome() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: async ({ stopId, outcome, note }: { stopId: string; outcome: "VISITED"|"NO_ANSWER"|"WRONG_ADDRESS"|"FOLLOW_UP"; note?: string }) => {
+      const r = await fetch(`/api/routes/stops/${stopId}`, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ outcome, note }),
+      });
+      if (!r.ok) throw new Error("Outcome update failed");
+      return r.json();
+    },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ["routes"] });
+    },
   });
 }
