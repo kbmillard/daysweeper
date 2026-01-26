@@ -11,7 +11,7 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && bun format",
+    "lint:fix": "eslint src --fix && pnpm format",
     "lint:strict": "eslint --max-warnings=0 src",
     "format": "prettier --write .",
     "format:check": "prettier -c -w .",
