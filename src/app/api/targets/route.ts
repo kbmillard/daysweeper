@@ -16,7 +16,20 @@ export async function GET(req: Request) {
   if (group) where.supplyGroup = group;
   if (subtype) where.supplySubtype = subtype;
 
-  const rows = await prisma.target.findMany({ where, orderBy: { createdAt: "desc" }, take: 200 });
+  const rows = await prisma.target.findMany({ 
+    where, 
+    orderBy: { createdAt: "desc" }, 
+    take: 200,
+    include: {
+      TargetNote: {
+        orderBy: { createdAt: "desc" },
+        take: 10, // Only need recent notes for tag extraction
+        select: {
+          tags: true,
+        },
+      },
+    },
+  });
   return NextResponse.json(rows);
 }
 

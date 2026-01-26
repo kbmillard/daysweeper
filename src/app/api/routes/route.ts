@@ -3,10 +3,17 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(req: Request) {
   const u = new URL(req.url);
-  const assignedTo = u.searchParams.get("assignedTo") ?? undefined;
+  const assignedTo = u.searchParams.get("assignedTo");
+
+  const where: any = {};
+  if (assignedTo === "unassigned" || assignedTo === "") {
+    where.assignedToUserId = null;
+  } else if (assignedTo) {
+    where.assignedToUserId = assignedTo;
+  }
 
   const routes = await prisma.route.findMany({
-    where: assignedTo ? { assignedToUserId: assignedTo } : undefined,
+    where: Object.keys(where).length > 0 ? where : undefined,
     orderBy: { createdAt: "desc" },
     include: { _count: { select: { stops: true } } },
   });

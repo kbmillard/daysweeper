@@ -92,6 +92,30 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
+    title: 'Import',
+    url: '/dashboard/import',
+    icon: 'product',
+    shortcut: ['i', 'i'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Inventory',
+    url: '/dashboard/inventory',
+    icon: 'product',
+    shortcut: ['v', 'v'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Preferences',
+    url: '/dashboard/preferences',
+    icon: 'settings',
+    shortcut: ['p', 'p'],
+    isActive: false,
+    items: []
+  },
+  {
     title: 'Product',
     url: '/dashboard/product',
     icon: 'product',

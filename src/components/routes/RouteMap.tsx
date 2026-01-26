@@ -5,7 +5,7 @@ import * as React from "react";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? "";
 
-type Stop = { id: string; company: string; latitude?: number | null; longitude?: number | null; addressRaw?: string | null };
+type Stop = { id: string; company: string; latitude?: number | string | null; longitude?: number | string | null; addressRaw?: string | null };
 
 export default function RouteMap({ stops }: { stops: Stop[] }) {
   const ref = React.useRef<HTMLDivElement>(null);

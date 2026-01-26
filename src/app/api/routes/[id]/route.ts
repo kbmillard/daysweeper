@@ -1,31 +1,23 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export async function GET(_req: Request, { params }: { params: { id: string } }) {
   const route = await prisma.route.findUnique({
-    where: { id },
+    where: { id: params.id },
     include: {
       stops: {
         orderBy: { seq: "asc" },
-        include: {
-          target: {
-            select: {
-              id: true, company: true,
-              addressRaw: true, latitude: true, longitude: true
-            }
-          }
-        }
+        include: { target: { select: { id: true, company: true, addressRaw: true, latitude: true, longitude: true } } }
       }
     }
   });
-  if (!route) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  if (!route) return NextResponse.json({ error: "not found" }, { status: 404 });
   return NextResponse.json(route);
 }
 
-export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function PATCH(req: Request, { params }: { params: { id: string } }) {
   try {
-    const { id } = await params;
+    const { id } = params;
     const b = await req.json();
     const data: any = {};
     if (b.name !== undefined) data.name = String(b.name).trim();
@@ -38,9 +30,9 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   }
 }
 
-export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
   try {
-    const { id } = await params;
+    const { id } = params;
     await prisma.route.delete({ where: { id } });
     return NextResponse.json({ ok: true });
   } catch (e: any) {

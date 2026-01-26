@@ -18,15 +18,19 @@ export type RouteDetailDTO = {
   stops: Array<{
     id: string;
     seq: number;
-    target: { id: string; company: string; addressRaw?: string | null };
+    target: { id: string; company: string; addressRaw?: string | null; latitude?: string | number | null; longitude?: string | number | null };
   }>;
 };
 
-export function useRoutes() {
+export function useRoutes(assignedTo?: string) {
   return useQuery({
-    queryKey: ["routes"],
+    queryKey: ["routes", assignedTo],
     queryFn: async () => {
-      const r = await fetch(`/api/routes`);
+      let url = `/api/routes`;
+      if (assignedTo) {
+        url += `?assignedTo=${encodeURIComponent(assignedTo)}`;
+      }
+      const r = await fetch(url);
       if (!r.ok) return [];
       return (await r.json()) as RouteDTO[];
     },
@@ -123,6 +127,26 @@ export function usePatchStopOutcome() {
       return r.json();
     },
     onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ["routes"] });
+      qc.invalidateQueries({ queryKey: ["route"] });
+      qc.invalidateQueries({ queryKey: ["overview"] });
+    },
+  });
+}
+
+export function useOptimizeRoute(id: string) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: async () => {
+      const r = await fetch(`/api/routes/${id}/optimize`, { method: "POST" });
+      if (!r.ok) {
+        const text = await r.text().catch(() => "");
+        throw new Error(`Optimize failed: ${text || r.status}`);
+      }
+      return r.json();
+    },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ["route", id] });
       qc.invalidateQueries({ queryKey: ["routes"] });
     },
   });

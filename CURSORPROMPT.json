@@ -1,783 +1,1328 @@
-Perfect — here is a single, strict Cursor prompt that rewrites the app around your LastLeg schema (the one you pasted), keeps Apple client-side geocoding, adds true directions polylines, ICS export, Chat, Import, Sentry tunnel, and aligns web + iOS + MCP. It uses RouteTarget as the UI “company” entity (to match your schema), and RouteStop → RouteTarget everywhere so it’s consistent with LastLeg.
 
-DO NOT DEVIATE. If anything below is ambiguous, STOP and print what you found before guessing.
-
-⸻
-
-Title: DAYSWeeper × LastLeg — Harmonized Rewrite (Schema-First, RouteTarget, Apple Geocode) — DO NOT DEVIATE
-
-You are a senior engineer. Rewrite the web app to use the LastLeg Prisma schema the user provided (harmonized), with RouteTarget as the primary “company/lead” entity. Build working endpoints and pages under the dashboard shell, Apple client geocoding, Mapbox map + Directions polyline, ICS export, Chat, JSON Import, Sentry tunnel, and MCP server. Every button must hit a live endpoint.
-
-Non-negotiables
-	•	Single Prisma schema (LastLeg-based). Do NOT create a second one.
-	•	Import Prisma from @/lib/prisma (or @daysweeper/db if monorepo).
-	•	Dashboard shell: put all pages under the same layout segment (app/(dashboard) or app/dashboard).
-	•	Hooks must not throw during render; return safe defaults.
-	•	If a required field is missing (e.g., addressRaw), default it in APIs (empty string). No 500s.
+Prereqs
+pnpm add ics xlsx
+If you don’t have the Location/TargetNote fields below, run the schema patch (A) + migrate, then apply files B-L.
+Set env for web: MAPBOX_TOKEN (already if you use optimizer); ICS needs no extra env.
 
 ⸻
 
-0) Detect dashboard base (set BASE)
-	•	If app/(dashboard)/layout.tsx exists → BASE = app/(dashboard)
-	•	Else if app/dashboard/layout.tsx exists → BASE = app/dashboard
-	•	Else STOP and print: “Dashboard layout not found.”
+A) PRISMA SCHEMA PATCH (notes → route, meetings, inventory)
 
-⸻
+file: prisma/schema.prisma – append or merge fields
 
-1) Dependencies & env (run)
-
-pnpm add @tanstack/react-query @tanstack/react-table use-debounce dayjs mapbox-gl @types/mapbox-gl ics cheerio @sentry/nextjs jose openai
-pnpm prisma generate
-
-Env (Vercel & .env.local)
-
-DATABASE_URL=its in vercel project already
-NEXT_PUBLIC_MAPBOX_TOKEN= its in vercel project already
-NEXT_PUBLIC_SENTRY_DSN=its in vercel project already
-OPENAI_API_KEY=integrated with vercel ai
-APPLE_TEAM_ID=its in vercel project already
-INTERNAL_API_KEY=its in vercel project already
-
-If Vercel blocks builds later: pnpm approve-builds locally → allow prisma, @prisma/engines, @sentry/cli, sharp → commit pnpm-*-allow-scripts.json.
-
-⸻
-
-2) Prisma schema — harmonize from user’s LastLeg schema
-
-Overwrite /prisma/schema.prisma with this deduped version (no duplicate enums; preserve Unsupported geometry; add url in datasource):
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-model User {
-  id                String             @id @default(cuid())
-  email             String             @unique
-  createdAt         DateTime           @default(now())
-  updatedAt         DateTime           @updatedAt
-  targets           Target[]
-  // DaySweeper relations (optional - doesn't affect LastLeg)
-  daySweeperTasks   DaySweeperTask[]
-  daySweeperClients DaySweeperClient[]
-}
-
-enum GeocodeStatus {
-  missing
-  queued
-  geocoded
-  failed
-}
-
-model Target {
-  id String @id @default(cuid())
-
-  // Auth / tenancy
-  userId String?
-  user   User?   @relation(fields: [userId], references: [id])
-  orgId  String?
-
-  // Identity
-  company       String
-  parentCompany String?
-  website       String?
-  phone         String?
-
-  // Classification
-  category String?
-  segment  String?
-  tier     String? // OEM | Tier 1 | Tier 2 | Tier 3 | 3PL | Unknown
-  focus    String?
-
-  // Address (text is source of truth)
-  addressRaw        String
-  addressNormalized String?
-  addressComponents Json?
-  addressConfidence Float?
-
-  // Coordinates (ONLY from iOS Apple CLGeocoder)
-  latitude  Decimal?                             @db.Decimal(9, 6)
-  longitude Decimal?                             @db.Decimal(9, 6)
-  geom      Unsupported("geometry(Point,4326)")?
-
-  geocodeStatus    GeocodeStatus @default(missing)
-  geocodeProvider  String?
-  geocodeAccuracy  String?
-  geocodeMeta      Json?
-  geocodedAt       DateTime?
-  geocodeAttempts  Int           @default(0)
-  geocodeLastError String?
-
-  // Enrichment
-  enrichment TargetEnrichment?
-
-  // Legacy preservation
-  legacyJson Json?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([orgId])
-  @@index([company])
-  @@index([parentCompany])
-  @@index([category])
-  @@index([segment])
-  @@index([tier])
-  @@index([geocodeStatus])
-}
-
-model TargetEnrichment {
-  id       String @id @default(cuid())
-  targetId String @unique
-  target   Target @relation(fields: [targetId], references: [id], onDelete: Cascade)
-
-  corporateOverview   String?
-  plantOverview       String?
-  primaryProduct      String?
-  plantRole           String?
-  primaryCustomer     String?
-  uniquePainPoints    String?
-  recommendedNextStep String?
-
-  salesAngles                Json?
-  decisionMakers             Json?
-  verificationChecklist      Json?
-  firstConversationQuestions Json?
-
-  enrichedJson Json?
-  sources      Json?
-  model        String?
-  confidence   Float?
-  version      Int     @default(1)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model GeocodeCache {
+// 1) extend existing TargetNote so a note can be attached to a route/stop
+model TargetNote {
   id        String   @id @default(cuid())
-  key       String   @unique
-  query     String
-  country   String?
-  label     String
-  lat       Decimal  @db.Decimal(9, 6)
-  lng       Decimal  @db.Decimal(9, 6)
-  source    String // "primary" | "fallback" | "manual"
+  targetId  String
+  target    Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  content   String
+  tags      String[] @default([])
+  userId    String
+  // NEW:
+  routeId     String?
+  route       Route?  @relation(fields: [routeId], references: [id])
+  routeStopId String?
+  routeStop   RouteStop? @relation(fields: [routeStopId], references: [id])
+  mentions    String[] @default([]) // auto-linked slugs of companies, e.g. ["honda-marysville"]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([query, country])
+  @@index([targetId])
+  @@index([routeId])
+  @@index([routeStopId])
+  @@index([userId])
+  @@index([tags])
 }
 
-// Research Knowledge Base
-model ResearchKnowledgeBase {
+// 2) meetings linked to company or route or stop
+model Meeting {
+  id         String   @id @default(cuid())
+  title      String
+  startAt    DateTime
+  endAt      DateTime?
+  targetId   String?
+  target     Target?  @relation(fields: [targetId], references: [id])
+  routeId    String?
+  route      Route?   @relation(fields: [routeId], references: [id])
+  routeStopId String?
+  routeStop   RouteStop? @relation(fields: [routeStopId], references: [id])
+  location   String?
+  notes      String?
+  attendees  String[] @default([]) // comma sep emails/users
+  createdById String?
+  calendarProvider String? // "google"|"outlook"|"ics"
+  externalId String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([targetId])
+  @@index([routeId])
+  @@index([startAt])
+}
+
+// 3) inventory table (separate from Product so you don't break it)
+model WarehouseItem {
   id          String   @id @default(cuid())
-  orgId       String?
-  source      String?
-  contentType String?
-  rawData     String
-  keywords    String[]
-  notes       String?
+  partNumber  String   @unique
+  description String?
+  bin         String?
+  quantity    Int      @default(0)
+  price       Decimal? @db.Decimal(12,2)
+  meta        Json?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  @@index([orgId])
-  @@index([source])
+  @@index([partNumber])
+  @@index([bin])
 }
 
-// DaySweeper Task Management
-model DaySweeperClient {
-  id        String           @id @default(cuid())
-  userId    String?
-  user      User?            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  name      String
-  tasks     DaySweeperTask[]
-  createdAt DateTime         @default(now())
-  updatedAt DateTime         @updatedAt
-
-  @@index([userId])
-}
-
-model DaySweeperTask {
-  id             String            @id @default(cuid())
-  userId         String?
-  user           User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  clientId       String?
-  client         DaySweeperClient? @relation(fields: [clientId], references: [id], onDelete: SetNull)
-  title          String
-  notes          String?
-  completed      Boolean           @default(false)
-  dueDate        DateTime?
-  serverRevision Int?
-  deletedAt      DateTime?
-  createdAt      DateTime          @default(now())
-  updatedAt      DateTime          @updatedAt
-
-  @@index([userId])
-  @@index([clientId])
-  @@index([deletedAt])
-  @@index([updatedAt])
-}
-
-enum DaySweeperOutboxEntity { task client }
-enum DaySweeperOutboxAction { upsert delete }
-
-model DaySweeperOutboxEvent {
-  id            String                 @id @default(cuid())
-  userId        String?
-  entity        DaySweeperOutboxEntity
-  action        DaySweeperOutboxAction
-  entityId      String
-  payloadJSON   Json?
-  createdAt     DateTime               @default(now())
-  attempts      Int                    @default(0)
-  lastAttemptAt DateTime?
-
-  @@index([userId])
-  @@index([createdAt])
-}
-
-// Organizer (Superlist-style)
-model OrganizerList {
-  id          String          @id @default(cuid())
-  userId      String?
-  name        String
-  description String?
-  color       String?         @default("#6366f1")
-  icon        String?         @default("list")
-  position    Int             @default(0)
-  items       OrganizerItem[]
-  createdAt   DateTime        @default(now())
-  updatedAt   DateTime        @updatedAt
-
-  @@index([userId])
-  @@index([position])
-}
-
-model OrganizerItem {
-  id          String          @id @default(cuid())
-  listId      String
-  list        OrganizerList   @relation(fields: [listId], references: [id], onDelete: Cascade)
-  userId      String?
-  title       String
-  notes       String?
-  completed   Boolean         @default(false)
-  dueDate     DateTime?
-  priority    String?         @default("normal")
-  position    Int             @default(0)
-  tags        String[]        @default([])
-  createdAt   DateTime        @default(now())
-  updatedAt   DateTime        @updatedAt
-
-  @@index([listId])
-  @@index([userId])
-  @@index([completed])
-  @@index([position])
-}
-
-// CRM — Company / Location / Customer
-model Company {
-  id                String     @id @default(cuid())
-  externalId        String?    @unique
-  userId            String?
-  orgId             String?
-
-  name              String
-  parentCompanyDbId String?
-  parentCompany     Company?   @relation("CompanyParent", fields: [parentCompanyDbId], references: [id], onDelete: SetNull)
-  childCompanies    Company[]  @relation("CompanyParent")
-  externalParentId  String?
-
-  website     String?
-  companyKey  String?
-  phone       String?
-  email       String?
-
-  tier        String?
-  segment     String?
-  category    String?
-  subtype     String?
-  subtypeGroup String?
-
-  legacyJson  Json?
-  metadata    Json?
-
-  locations   Location[]
-  customers   Customer[]
-
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-
-  @@index([userId])
-  @@index([orgId])
-  @@index([externalId])
-  @@index([parentCompanyDbId])
-  @@index([externalParentId])
-  @@index([companyKey])
-  @@index([tier])
-}
-
-model Location {
-  id                String     @id @default(cuid())
-  externalId        String?    @unique
-  companyId         String
-  company           Company    @relation(fields: [companyId], references: [id], onDelete: Cascade)
-
-  addressRaw        String
-  addressNormalized String?
-  addressComponents Json?
-  addressConfidence Float?
-
-  latitude  Decimal?   @db.Decimal(9, 6)
-  longitude Decimal?   @db.Decimal(9, 6)
-  geom      Unsupported("geometry(Point,4326)")?
-
-  legacyJson Json?
-  metadata   Json?
-
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-
-  @@index([companyId])
-  @@index([externalId])
-}
-
-model Customer {
-  id         String     @id @default(cuid())
-  userId     String?
-  orgId      String?
-  companyId  String?
-  company    Company?   @relation(fields: [companyId], references: [id], onDelete: SetNull)
-
-  name       String
-  email      String?
-  phone      String?
-  title      String?
-  department String?
-
-  notes      String?
-  tags       String[]   @default([])
-  metadata   Json?
-
-  interactions CustomerInteraction[]
-
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
-
-  @@index([userId])
-  @@index([orgId])
-  @@index([companyId])
-  @@index([email])
-}
-
-model CustomerInteraction {
-  id        String     @id @default(cuid())
-  customerId String
-  customer  Customer   @relation(fields: [customerId], references: [id], onDelete: Cascade)
-  userId    String?
-
-  type      String
-  subject   String?
-  content   String
-  metadata  Json?
-
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-
-  @@index([customerId])
-  @@index([userId])
-  @@index([createdAt])
-}
-
-// Route Management (DAYSweeper/LastLeg)
-enum AccountState { ACCOUNT NEW_UNCONTACTED NEW_CONTACTED_NO_ANSWER }
-enum StopOutcome { VISITED NO_ANSWER WRONG_ADDRESS FOLLOW_UP }
-enum SupplyTier { OEM TIER_1 TIER_2 TIER_3 LOGISTICS_3PL TOOLING_CAPITAL_EQUIPMENT AFTERMARKET_SERVICES }
-
-model RouteTarget {
-  id             String       @id @default(cuid())
-  company        String
-  website        String?
-  phone          String?
-  email          String?
-  addressRaw     String
-  latitude       Decimal?     @db.Decimal(9, 6)
-  longitude      Decimal?     @db.Decimal(9, 6)
-  accountState   AccountState @default(NEW_UNCONTACTED)
-  supplyTier     SupplyTier?
-  supplyGroup    String?
-  supplySubtype  String?
-
-  notes          RouteTargetNote[] @relation("RouteTargetNotes")
-  routeStops     RouteStop[]       @relation("RouteTargetStops")
-  createdAt      DateTime          @default(now())
-  updatedAt      DateTime          @updatedAt
-
-  // rollups mirrored from RouteStop outcomes
-  lastOutcome       StopOutcome?
-  lastVisitedAt     DateTime?
-  visitedCount      Int         @default(0)
-  noAnswerCount     Int         @default(0)
-  wrongAddressCount Int         @default(0)
-  followUpCount     Int         @default(0)
-
-  @@index([company])
-  @@index([accountState])
-  @@index([supplyTier])
-  @@index([supplyGroup, supplySubtype])
-}
-
-model RouteTargetNote {
-  id        String      @id @default(cuid())
-  targetId  String
-  target    RouteTarget @relation("RouteTargetNotes", fields: [targetId], references: [id], onDelete: Cascade)
-  content   String
-  tags      String[]
-  userId    String
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-
-  @@index([targetId])
-  @@index([userId])
-}
-
-model Route {
-  id               String     @id @default(cuid())
-  name             String
-  assignedToUserId String?
-  scheduledFor     DateTime?
-  stops            RouteStop[]
-  createdAt        DateTime   @default(now())
-  updatedAt        DateTime   @updatedAt
-
-  @@index([assignedToUserId])
-}
-
-model RouteStop {
-  id        String      @id @default(cuid())
-  routeId   String
-  route     Route       @relation(fields: [routeId], references: [id], onDelete: Cascade)
-  targetId  String
-  target    RouteTarget @relation("RouteTargetStops", fields: [targetId], references: [id], onDelete: Cascade)
-  seq       Int
-  outcome   StopOutcome?
-  visitedAt DateTime?
-  note      String?
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-
-  @@unique([routeId, seq])
-  @@index([targetId])
-}
-
-Then:
+Run:
 
 pnpm prisma generate
-pnpm prisma migrate dev -n init_lastleg_harmonized
+pnpm prisma migrate dev -n add_route_notes_meetings_inventory
+
+Attach a csv upload for any amount of rows, any amount of columns, any new product number. Tie all the unique identifiers together. Upload: kylemillard/daysweeper/bins.csv
+⸻
+
+B) UPDATE: TARGET NOTES API to accept route/stop/mentions
+
+file: app/api/targets/[id]/notes/route.ts – replace file
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+
+const slug = (s:string)=>s.toLowerCase().trim().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"").slice(0,64);
+
+export async function GET(_req: Request, { params }: { params:{id:string} }) {
+  const items = await prisma.targetNote.findMany({
+    where:{ targetId: params.id },
+    orderBy:{ createdAt:"desc" }
+  });
+  return NextResponse.json(items);
+}
+
+// POST { content, tags?:string[], userId?:string, routeId?, routeStopId?, mentions?:string[] }
+export async function POST(req: Request, { params }:{params:{id:string}}) {
+  try {
+    const b = await req.json();
+    const content = String(b.content ?? "");
+    if (!content.trim()) return NextResponse.json({error:"content required"}, {status:400});
+    const tags:string[] = (b.tags||[]).map((t:string)=>slug(t)).slice(0,50);
+    const mentions:string[] = Array.isArray(b.mentions)? b.mentions.map((m:string)=>slug(m)).slice(0,100) : [];
+
+    const note = await prisma.targetNote.create({
+      data:{
+        targetId: params.id,
+        content,
+        tags,
+        userId: b.userId ?? "web",
+        routeId: b.routeId ?? null,
+        routeStopId: b.routeStopId ?? null,
+        mentions
+      }
+    });
+    return NextResponse.json(note, {status:201});
+  } catch(e:any){
+    return NextResponse.json({error:e.message??"create note failed"},{status:500});
+  }
+}
 
 
 ⸻
 
-3) Sentry (tunnel) + instrumentation (confirm)
-	•	sentry.client.config.ts → tunnel: "/api/monitoring", tracesSampleRate: 0.2.
-	•	sentry.server.config.ts and sentry.edge.config.ts init with DSN.
-	•	instrumentation.ts loads server/edge configs and exports onRequestError.
-	•	app/api/monitoring/route.ts forwards envelopes to Sentry (edge).
-(You already have these; keep them.)
+C) ROUTE DETAIL GET includes embedded target coords (if not done)
+
+file: app/api/routes/[id]/route.ts – ensure GET looks like this
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+
+export async function GET(_req: Request, { params }:{params:{id:string}}) {
+  const route = await prisma.route.findUnique({
+    where:{ id: params.id },
+    include:{
+      stops:{
+        orderBy:{ seq:"asc" },
+        include:{ target:{ select:{ id:true, company:true, addressRaw:true, latitude:true, longitude:true } } }
+      }
+    }
+  });
+  if(!route) return NextResponse.json({error:"not found"},{status:404});
+  return NextResponse.json(route);
+}
+
 
 ⸻
 
-4) Apple MapKit JS token (server) + client loader
-	•	app/api/mapkit/token/route.ts (jose SignJWT; origins from NEXT_PUBLIC_MAPKIT_ORIGIN).
-	•	src/lib/mapkit-loader.ts (loads MapKit JS and calls /api/mapkit/token).
-	•	src/lib/apple-geocode.ts (appleGeocodeOne, appleGeocodeBatch).
+D) MEETINGS API (create/list) + ICS
 
-⸻
-
-5) APIs (RouteTarget-first)
-
-Create/overwrite under app/api:
-
-5.1 RouteTargets
-
-route-targets/route.ts
+file: app/api/meetings/route.ts
 
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 export async function GET(req: Request) {
   const u = new URL(req.url);
-  const q = u.searchParams.get("q") ?? undefined;
-  const state = u.searchParams.get("state") ?? undefined;
-  const tier = u.searchParams.get("tier") ?? undefined;
-  const group = u.searchParams.get("group") ?? undefined;
-  const subtype = u.searchParams.get("subtype") ?? undefined;
-
-  const where:any = {};
-  if (q) where.company = { contains: q, mode: "insensitive" };
-  if (state) where.accountState = state;
-  if (tier) where.supplyTier = tier;
-  if (group) where.supplyGroup = group;
-  if (subtype) where.supplySubtype = subtype;
-
-  const rows = await prisma.routeTarget.findMany({
-    where, orderBy: { createdAt:"desc" }, take: 200
+  const targetId = u.searchParams.get("targetId") ?? undefined;
+  const routeId = u.searchParams.get("routeId") ?? undefined;
+  const since = u.timeOrigin ? undefined : undefined; // optional filter
+  const rows = await prisma.meeting.findMany({
+    where:{
+      ...(targetId?{targetId}:{ }),
+      ...(routeId?{routeId}:{ })
+    },
+    orderBy:{ startAt:"asc" }
   });
   return NextResponse.json(rows);
 }
 
 export async function POST(req: Request) {
-  try {
+  try{
     const b = await req.json();
-    const data = {
-      company: String(b.company ?? "").trim(),
-      addressRaw: String(b.addressRaw ?? ""),
-      website: b.website ?? null,
-      phone: b.phone ?? null,
-      email: b.email ?? null,
-      accountState: b.accountState ?? "NEW_UNCONTACTED",
-      supplyTier: b.supplyTier ?? null,
-      supplyGroup: b.supplyGroup ?? null,
-      supplySubtype: b.supplySubtype ?? null,
-    };
-    if (!data.company) return NextResponse.json({ error: "company is required" }, { status: 400 });
-    const created = await prisma.routeTarget.create({ data });
-    return NextResponse.json(created, { status: 201 });
-  } catch (e:any) {
-    return NextResponse.json({ error: e?.message ?? "Create failed" }, { status: 500 });
-  }
-}
-
-route-targets/[id]/route.ts
-
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
-  const t = await prisma.routeTarget.findUnique({ where: { id: params.id } });
-  if (!t) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  return NextResponse.json(t);
-}
-
-export async function PATCH(req: Request, { params }: { params: { id: string } }) {
-  try {
-    const b = await req.json();
-    const updated = await prisma.routeTarget.update({ where: { id: params.id }, data: b });
-    return NextResponse.json(updated);
-  } catch (e:any) {
-    return NextResponse.json({ error: e?.message ?? "Update failed" }, { status: 500 });
-  }
-}
-
-export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
-  await prisma.routeTarget.delete({ where: { id: params.id } });
-  return NextResponse.json({ ok: true });
-}
-
-route-targets/[id]/notes/route.ts
-
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-
-const slug = (s:string)=> s.toLowerCase().trim().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"").slice(0,32);
-
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
-  const rows = await prisma.routeTargetNote.findMany({ where: { targetId: params.id }, orderBy: { createdAt: "desc" } });
-  return NextResponse.json(rows);
-}
-
-export async function POST(req: Request, { params }: { params: { id: string } }) {
-  const { content, tags = [], userId = "system" } = await req.json();
-  const normalized = (tags as string[]).map(slug).slice(0, 20);
-  const note = await prisma.routeTargetNote.create({ data: { targetId: params.id, content, tags: normalized, userId } });
-  return NextResponse.json(note, { status: 201 });
-}
-
-5.2 Routes
-
-routes/route.ts (GET + POST), routes/[id]/route.ts (GET/PATCH/DELETE), routes/[id]/stops/route.ts (PUT replace), routes/stops/[stopId]/route.ts (PATCH outcome & mirror):
-
-Use the same structure we already used, but with RouteTarget relationship for stops. In PATCH stop, increment the appropriate counter and set mirrors on RouteTarget (lastOutcome, lastVisitedAt, counts), wrapped in try/catch so it’s safe if columns change.
-
-5.3 Analytics
-
-analytics/overview/route.ts: compute cards + charts from RouteStop.visitedAt/outcome and RouteTarget state distribution.
-
-5.4 Scraper
-
-scrape/company/route.ts: Cheerio extraction + candidates based on domain/name/last7 phone — return profileDraft & candidates (RouteTarget). Provide route-targets create endpoint for “Create Company”, and /api/route-targets/[id]/merge to merge empty fields.
-
-route-targets/[id]/merge/route.ts
-
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-
-export async function PATCH(req: Request, { params }: { params: { id: string } }) {
-  try {
-    const b = await req.json();
-    const existing = await prisma.routeTarget.findUnique({ where: { id: params.id } });
-    if (!existing) return NextResponse.json({ error: "Not found" }, { status: 404 });
-    const patch:any = {};
-    if (!existing.website && b.website) patch.website = b.website;
-    if (!existing.phone && b.phone) patch.phone = b.phone;
-    if (!existing.email && b.email) patch.email = b.email;
-    if (!existing.addressRaw && b.addressRaw !== undefined) patch.addressRaw = String(b.addressRaw);
-    if (!existing.supplyTier && b.supplyTier) patch.supplyTier = b.supplyTier;
-    if (!existing.supplyGroup && b.supplyGroup) patch.supplyGroup = b.supplyGroup;
-    if (!existing.supplySubtype && b.supplySubtype) patch.supplySubtype = b.supplySubtype;
-    if (Object.keys(patch).length === 0) return NextResponse.json({ ok:true, message:"Nothing to merge" });
-    const updated = await prisma.routeTarget.update({ where: { id: params.id }, data: patch });
-    return NextResponse.json(updated);
-  } catch (e:any) {
-    return NextResponse.json({ error: e?.message ?? "Merge failed" }, { status: 500 });
-  }
-}
-
-5.5 MapKit token
-
-mapkit/token/route.ts (SignJWT with jose — we already provided earlier; reuse).
-
-5.6 Chat
-
-chat/route.ts using OpenAI with optional routeTargetId and routeId context: pull last 10 notes for target, plus route stop list; prompt to produce sales-useful answers.
-
-5.7 Import
-
-import/targets/route.ts — accept JSON array of RouteTarget data and createMany.
-
-5.8 ICS
-
-routes/[id]/ical/route.ts — create .ics events (1-hour slots) from ordered stops, location text from addressRaw.
-
-⸻
-
-6) Client: hooks
-
-Create src/lib/routeTargets.ts:
-	•	useRouteTargets(filters)
-	•	useRouteTarget(id)
-	•	useCreateRouteTarget()
-	•	useUpdateRouteTarget(id)
-
-Create/update src/lib/routes.ts:
-	•	useRoutes, useRoute(id), useCreateRoute, useUpdateRoute(id), useDeleteRoute, useReplaceStops(id), usePatchStopOutcome()
-
-Add debounce wrapper:
-
-// src/hooks/use-debounce.ts
-export { useDebounce, useDebouncedCallback } from "use-debounce";
-
-
-⸻
-
-7) Components
-	•	components/companies/NotesPanel.tsx — the highlight→tag panel, but for RouteTarget.
-	•	components/routes/OutcomeButtons.tsx — buttons to mark outcome on a stop.
-	•	components/routes/RouteMap.tsx — Mapbox map with markers + Directions polyline (use Directions API if ≥ 2 points).
-
-⸻
-
-8) Pages (under ${BASE})
-
-Create/overwrite:
-
-${BASE}/overview/page.tsx
-${BASE}/route-targets/page.tsx            # list + Quick Add form
-${BASE}/route-targets/[id]/page.tsx       # profile + taxonomy + NotesPanel
-${BASE}/routes/page.tsx                   # list + Assigned + Date + #Stops
-${BASE}/routes/[id]/page.tsx              # builder: Assign, Schedule, Available, Sortable stops, Save Order, Outcome buttons, RouteMap, "Geocode Missing (Apple)"
-${BASE}/scrape/page.tsx                   # URL scrape → draft + candidates; Create or Link & Merge
-${BASE}/chat/page.tsx                     # simple chat UI; optional routeTargetId/routeId fields
-${BASE}/import/page.tsx                   # JSON import textarea → POST
-
-List page (route-targets/page.tsx) must:
-	•	Show filters: Search, AccountState, Tier→Group→Subtype
-	•	Quick Add (company + optional address) posts to /api/route-targets
-	•	Table columns: Company, Tier, Subtype, State, Address, Created
-	•	Row click → detail
-
-Detail page (route-targets/[id]/page.tsx) must:
-	•	Show/edit core fields + taxonomy selects
-	•	NotesPanel targetId=routeTarget.id
-
-Route builder (routes/[id]/page.tsx) must:
-	•	Header: Name, Save Name; Date input + Save Date; Assign to me (Clerk userId or string)
-	•	Left pane: Available companies (from useRouteTargets({})) with Add
-	•	Right pane: sortable stops; Save Order; Outcome buttons per stop
-	•	Top: RouteMap with polyline; a “Geocode Missing (Apple)” button that runs appleGeocodeBatch on stops missing lat/lon and PATCHes each RouteTarget with { latitude, longitude }; then refetch.
-
-Scrape page must show draft values read-only and suggested matches with Open and Link & Merge; Create posts to RouteTarget endpoint.
-
-Overview page must use /api/analytics/overview to populate KPI cards, by-day outcome chart, and state distribution.
-
-⸻
-
-9) Sentry tunnel route (confirm)
-
-Ensure app/api/monitoring/route.ts forwards envelopes to sentry.io. Client config uses tunnel: "/api/monitoring".
-
-⸻
-
-10) MCP server (optional but recommended)
-
-Create .cursor/mcp.json:
-
-{
-  "mcpServers": {
-    "daysweeper": {
-      "command": "node",
-      "args": ["apps/mcp/index.js"],
-      "env": {
-        "API_BASE": "http://localhost:3000",
-        "INTERNAL_API_KEY": "dev_only_long_random_string"
+    const created = await prisma.meeting.create({
+      data:{
+        title: String(b.title||"Meeting"),
+        startAt: new Date(b.startAt),
+        endAt: b.endAt ? new Date(b.endAt) : null,
+        targetId: b.targetId ?? null,
+        routeId: b.routeId ?? null,
+        routeStopId: b.routeStopId ?? null,
+        location: b.location ?? null,
+        notes: b.notes ?? null,
+        attendees: Array.isArray(b.attendees)? b.attendees.slice(0,50):[],
+        createdById: b.createdById ?? null,
+        calendarProvider: b.calendarProvider ?? null
       }
-    },
-    "sentry": {
-      "command": "npx",
-      "args": ["-y", "@sentry/mcp"],
-      "env": {
-        "SENTRY_ORG": "${SENTRY_ORG}",
-        "SENTRY_PROJECT": "${SENTRY_PROJECT}",
-        "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}"
-      }
+    });
+    return NextResponse.json(created,{status:201});
+  }catch(e:any){
+    return NextResponse.json({error:e.message??"create meeting failed"},{status:500});
+  }
+}
+
+file: app/api/meetings/[id]/ical/route.ts
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+import { createEvent } from "ics";
+
+export async function GET(_req: Request, { params }:{params:{id:string}}) {
+  const m = await prisma.meeting.findUnique({ where:{ id: params.id } });
+  if(!m) return NextResponse.json({error:"not found"},{status:404});
+  const start = new Date(m.startAt);
+  const end   = m.endAt ? new Date(m.endAt) : new Date(start.getTime()+60*60*1000);
+  const evt = {
+    title: m.title,
+    start: [start.getUTCFullYear(), start.getUTCMonth()+1, start.getUTCDate(), start.getUTCHours(), start.getUTCMinutes()],
+    end:   [end.getUTCFullYear(), end.getUTCMonth()+1, end.getUTCDate(), end.getUTCMinutes()? end.getUTCMinutes(): (start.getUTCMinutes()+60)],
+    location: m.location || "",
+    description: m.notes || "",
+    url: process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL}/dashboard/companies/${m.targetId}` : undefined
+  };
+  const { error, value } = createEvent(evt as any);
+  if (error) return NextResponse.json({error:String(error)},{status:500});
+  return new Response(value, { headers:{ "content-type":"text/calendar", "content-disposition":`attachment; filename="meeting_${m.id}.ics"` }});
+}
+
+
+⸻
+
+E) ROUTE ACTIVITY PANEL (move outcomes here, not on dashboard)
+
+file: app/dashboard/routes/[id]/page.tsx – inject after your header & stops table
+
+import RouteActivity from "@/components/routes/RouteActivity";
+import { prisma } from "@/lib/prisma";
+
+export default async function RoutePage({ params }:{params:{id:string}}){
+  const route = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/api/routes/${params.id}`, { cache:"no-store" })
+    .then(r=>r.json());
+
+  // existing layout...
+  return (
+    <div className="space-y-6 p-4">
+      {/* your current route header + stops table */}
+      <RouteActivity routeId={params.id} initialRoute={route} />
+    </div>
+  );
+}
+
+file: src/components/routes/RouteActivity.tsx
+
+"use strict";
+import * as React from "react";
+import Link from "next/link";
+
+type RouteType = {
+  id:string;
+  stops: { id:string; seq:number; target:{id:string; company:string; addressRaw?:string|null} }[];
+};
+
+type Note = {
+  id:string; content:string; tags:string[]; userId:string;
+  createdAt:string; routeId?:string|null; routeStopId?:string|null; targetId:string;
+  mentions?: string[];
+};
+
+const MENTION_RE = /([A-Za-z0-9][A-Za-z0-9\s\-\&]{2,50})/g;
+
+function linkifyCompanies(text:string, companies:{id:string;name:string;slug:string}[]) {
+  // naive: replace exact company names with links (longest first)
+  const sorted = [...companies].sort((a,b)=> b.name.length - a.name.length);
+  let html = text;
+  for(const c of sorted){
+    const esc = c.name.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&");
+    const reg = new RegExp(`\\b${esc}\\b`,"gi");
+    html = html.replace(reg, `<a class="underline text-blue-600" href="/dashboard/companies/${c.id}">${c.name}</a>`);
+  }
+  return html;
+}
+
+export default function RouteActivity({routeId, initialRoute}:{routeId:string; initialRoute:RouteType}){
+  const [route, setRoute] = React.useState<RouteType>(initialRoute);
+  const [notes, setNotes] = React.useState<Note[]>([]);
+  const [content,setContent] = React.useState("");
+  const [tags,setTags] = React.useState<string[]>([]);
+  const [stopId,setStopId] = React.useState<string|undefined>(route.stops[0]?.id);
+  const [targetId,setTargetId] = React.useState<string|undefined>(route.stops[0]?.target?.id);
+  const [outcome,setOutcome] = React.useState<string>("VISITED");
+  const [schedule,setSchedule] = React.useState(false);
+  const [startAt,setStartAt] = React.useState<string>("");
+
+  const companyIndex = React.useMemo(()=> route.stops.map(s=>({id:s.target.id, name:s.target.company, slug: s.target.company.toLowerCase().replace(/\s+/g,'-')})),[route]);
+
+  const load = async()=>{
+    const r = await fetch(`/api/routes/${routeId}`,{ cache:"no-store" }).then(r=>r.json());
+    setRoute(r);
+    // pull all target notes for these stops
+    const allNotes:Note[] = [];
+    for(const s of r.stops){
+      const ns = await fetch(`/api/targets/${s.target.id}/notes`).then(r=>r.json());
+      for(const n of ns){ allNotes.push(n); }
     }
+    allNotes.sort((a,b)=> (new Date(b.createdAt).getTime()-new Date(a.createdAt).getTime()));
+    setNotes(allNotes);
+  };
+  React.useEffect(()=>{ load(); },[routeId]);
+
+  const onSelectStop = (stopId:string)=>{
+    setStopId(stopId);
+    const st = route.stops.find(s=> s.id===stopId);
+    setTargetId(st?.target?.id);
+  };
+
+  const submit = async()=>{
+    if(!targetId) return;
+    // 1) optional outcome → PATCH stop
+    if (stopId && outcome){
+      await fetch(`/api/routes/stops/${stopId}`,{
+        method:"PATCH",
+        headers:{"content-type":"application/json"},
+        body: JSON.stringify({ outcome, visitedAt: new Date().toISOString() })
+      });
+    }
+    // 2) create note on target, attach route/stop ids, compute mentions
+    const mentions = Array.from(new Set((content.match(MENTION_RE)||[])
+      .map(s=> s.toLowerCase().trim().replace(/\s+/g,"-"))
+      .filter(x=> companyIndex.some(c=> c.slug===x))
+    ));
+    await fetch(`/api/targets/${targetId}/notes`,{
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body: JSON.stringify({
+        content, tags, userId:"web", routeId, routeStopId: stopId, mentions
+      })
+    });
+
+    // 3) optional schedule
+    if (schedule && startAt){
+      await fetch(`/api/meetings`,{
+        method:"POST",
+        headers:{ "content-type":"application/json" },
+        body: JSON.stringify({
+          title:`Meeting: ${content.slice(0,80) || "Route meeting"}`,
+          startAt,
+          targetId,
+          routeId,
+          routeStopId: stopId,
+          location: route.stops.find(s=> s.id===stopId)?.target?.addressRaw ?? ""
+        })
+      });
+    }
+
+    setContent(""); setTags([]); setSchedule(false); setStartAt("");
+    await load();
+  };
+
+  return (
+    <div className="grid gap-6 lg:grid-cols-3">
+      {/* left: composer */}
+      <div className="col-span-1 space-y-3">
+        <h3 className="font-semibold">Log outcome / note</h3>
+        <div className="space-y-2 p-3 rounded border">
+          <label className="text-sm">Stop</label>
+          <select className="border rounded px-2 py-1 w-full"
+            value={stopId} onChange={e=> onSelectStop(e.target.value)}>
+            {route.stops.map(s=> (
+              <option key={s.id} value={s.id}>{s.seq}. {s.target.company}</option>
+            ))}
+          </select>
+
+          <label className="text-sm">Outcome</label>
+          <select className="border rounded px-2 py-1 w-full"
+            value={outcome} onChange={e=> setOutcome(e.target.value)}>
+            <option value="VISITED">Visited</option>
+            <option value="NO_ANSWER">No Answer</option>
+            <option value="WRONG_ADDRESS">Wrong Address</option>
+            <option value="FOLLOW_UP">Follow-Up</option>
+          </select>
+
+          <label className="text-sm">Note</label>
+          <textarea className="w-full border rounded p-2 min-h-[120px]"
+            value={content} onChange={e=> setContent(e.target.value)}
+            placeholder="Type. Company names auto-link. Add free tags with commas." />
+
+          <label className="text-sm">Tags (comma separated)</label>
+          <input className="border rounded px-2 py-1 w-full"
+            value={tags.join(", ")}
+            onChange={e=> setTags(e.target.value.split(",").map(s=>s.trim()).filter(Boolean))} />
+
+          <div className="flex items-center gap-2">
+            <input id="sch" type="checkbox" checked={schedule} onChange={e=> setSchedule(e.target.checked)} />
+            <label htmlFor="sch">Also schedule a meeting</label>
+            {schedule && (
+              <input type="datetime-local" className="border rounded px-2 py-1" value={startAt} onChange={e=> setStartAt(e.target.value)} />
+            )}
+          </div>
+
+          <div className="flex gap-2">
+            <button onClick={submit} className="px-3 py-1 rounded bg-blue-600 text-white">Save</button>
+            {schedule && (
+              <a
+                className="px-3 py-1 rounded border"
+                href="#"
+                onClick={(e)=>{ e.preventDefault(); alert("Meeting will appear after save; ICS link in detail view."); }}
+              >Create ICS</a>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* right: timeline */}
+      <div className="col-span-2 space-y-3">
+        <h3 className="font-semibold">Route Notes</h3>
+        <div className="space-y-3">
+          {notes.length===0 && <div className="text-sm text-muted-foreground">No notes yet.</div>}
+          {notes.map(n=>{
+            const stop = route.stops.find(s=> s.id===n.routeStopId);
+            const html = linkifyCompanies(n.content, route.stops.map(s=>({id:s.target.id,name:s.target.company,slug:s.target.company.toLowerCase().replace(/\s+/g,'-')})));
+            return (
+              <div key={n.id} className="border rounded p-3">
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <div>Target: {stop ? <Link className="underline" href={`/dashboard/companies/${stop.target.id}`}>{stop.target.company}</Link> : <span>—</span>}</div>
+                  <div>{new Date(n.createdAt).toLocaleString()}</div>
+                </div>
+                <div className="[&_a]:underline [&_a]:text-blue-600 mt-1" dangerouslySetInnerHTML={{__html: html}} />
+                {n.tags?.length>0 && (
+                  <div className="mt-2 flex gap-1 flex-wrap">
+                    {n.tags.map(t=><span key={t} className="text-[11px] border rounded px-2 py-0.5">{t}</span>)}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+⸻
+
+F) Place widget on dashboard with “Upcoming Meetings”
+
+file: app/dashboard/overview/page.tsx – remove/hide the “Visit Outcomes by Day” card; add:
+
+import UpcomingMeetings from "@/components/dashboard/UpcomingMeetings";
+
+{/* ...within your grid: */}
+<UpcomingMeetings />
+
+file: src/components/dashboard/Upcoming.js or UpcomingMeetings.tsx
+
+"use client";
+import * as React from "react";
+
+export default function UpcomingMeetings(){
+  const [rows,setRows]=React.useState<any[]>([]);
+  React.useEffect(()=>{
+    fetch("/api/meetings").then(r=>r.json()).then(setRows).catch(()=>{});
+  },[]);
+  return (
+    <div className="rounded border p-4">
+      <div className="font-semibold mb-2">Upcoming Meetings</div>
+      {rows.length===0 ? <div className="text-sm text-muted-foreground">No meetings scheduled</div> :
+        <ul className="space-y-2">
+          {rows.slice(0,6).map(r=>(
+            <li key={r.id} className="text-sm">
+              <div className="flex justify-between">
+                <div className="font-medium">{r.title}</div>
+                <div className="text-xs text-muted-foreground">{new Date(r.startAt).toLocaleString()}</div>
+              </div>
+              {r.targetId && <div className="text-xs"><a className="underline" href={`/dashboard/companies/${r.targetId}`}>View company</a></div>}
+            </li>
+          ))}
+        </ul>
+      }
+    </div>
+  );
+}
+
+This keeps the dashboard clean; outcomes now live exclusively on each Route page.
+
+⸻
+
+G) INVENTORY API (separate from Product; won’t affect your Product tables)
+
+file: app/api/inventory/route.ts
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+
+export async function GET(req: Request) {
+  const u = new URL(req.url);
+  const q = u.searchParams.get("q")?.trim();
+  const page = Number(u.items?.length ?? 1) ? Number(u.searchParams.get("page") ?? 1) : 1;
+  const take = Number(u.searchParams.get("take") ?? 50);
+  const where = q ? {
+    OR:[
+      { partNumber: { contains: q, mode:"insensitive" } },
+      { description:{ contains: q, mode:"insensitive" } },
+      { bin:{ contains: q, mode:"insensitive" } }
+    ]
+  } : {};
+  const [items,count] = await Promise.all([
+    prisma.warehouseItem.findMany({ where, orderBy:{ partNumber:"asc" }, skip: (page-1)*take, take }),
+    prisma.warehouseItem.count({ where })
+  ]);
+  return NextResponse.json({ items, total: count });
+}
+
+export async function POST(req: Request) {
+  try{
+    const b = await req.json(); // { partNumber, description?, bin?, quantity?, price? }
+    if(!b.partNumber) return NextResponse.json({error:"partNumber required"},{status:400});
+    const item = await prisma.warehouseItem.upsert({
+      where:{ partNumber: String(b.partNumber) },
+      update:{
+        description: b.description ?? undefined,
+        bin: b.bin ?? undefined,
+        quantity: b.quantity ?? undefined,
+        price: b.price ?? undefined,
+        meta: b.meta ?? undefined
+      },
+      create:{
+        partNumber: String(b.partNumber),
+        description: b.description ?? null,
+        bin: b.bin ?? null,
+        quantity: Number.isFinite(b.quantity)? b.quantity : 0,
+        price: b.price ?? null,
+        meta: b.meta ?? null
+      }
+    });
+    return NextResponse.json(item,{status:201});
+  }catch(e:any){ return NextResponse.json({error:e.message??"save failed"},{status:500}); }
+}
+
+file: app/api/inventory/[id]/route.ts
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+
+export async function GET(_req:Request,{params}:{params:{id:string}}){
+  const row = await prisma.warehouseItem.findUnique({ where:{ id: params.id } });
+  if(!row) return NextResponse.json({error:"not found"},{status:404});
+  return NextResponse.json(row);
+}
+
+export async function PATCH(req:Request,{params}:{params:{id:string}}){
+  try{
+    const b = await req.json();
+    const updated = await prisma.warehouseItem.update({
+      where:{ id: params.id },
+      data:{
+        description: b.description ?? undefined,
+        bin: b.bin ?? undefined,
+        quantity: b.quantity ?? undefined,
+        price: b.price ?? undefined,
+        meta: b.meta ?? undefined
+      }
+    });
+    return NextResponse.json(updated);
+  }catch(e:any){ return NextResponse.json({error:e.message??"update failed"},{status:500});}
+}
+
+export async function DELETE(_req:Request,{params}:{params:{id:string}}){
+  await prisma.warehouseItem.delete({ where:{ id: params.id }});
+  return NextResponse.json({ok:true});
+}
+
+file: app/api/inventory/import/route.ts
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+import * as XLSX from "xlsx";
+
+export const runtime = "nodejs";
+
+export async function POST(req: Request){
+  try{
+    const form = await req.formData();
+    const file = form.get("file");
+    if(!(file instanceof File)) return NextResponse.json({error:"file required"},{status:400});
+    const buf = Buffer.from(await file.arrayBuffer());
+    const wb = XLSX.read(buf, { type:"buffer" });
+    const ws = wb.Sheets[wb.SheetNames[0]];
+    const rows:any[] = XLSX.utils.sheet_to_json(ws, { defval:"" }); // reads xls/xlsx/csv
+
+    // auto-detect column names (part number, description, bin, qty, price)
+    const headers = Object.keys(rows[0]||{}).reduce((acc:Record<string,string>,k)=>{
+      const lk = k.toLowerCase();
+      if(lk.includes("part") && lk.includes("num")) acc.partNumber = k;
+      if(lk.includes("desc")) acc.description = k;
+      if(lk.includes("bin")) acc.bin = k;
+      if(lk.includes("qty") || lk.includes("quantity")) acc.quantity = k;
+      if(lk.includes("price") || lk.includes("cost")) acc.price = k;
+      return acc;
+    },{} as Record<string,string>);
+
+    const upserts = rows.map((r,i)=> {
+      const pn = String(r[headers.partNumber] || "").trim();
+      if(!pn) return null;
+      const data:any = {
+        partNumber: pn,
+        description: (r[headers.description] ?? "").toString().slice(0,512) || null,
+        bin: (r[headers.bin] ?? "").toString().slice(0,64) || null,
+        quantity: Number.isFinite(Number(r[headers.quantity])) ? Number(r[headers.quantity]) : 0,
+        price: r[headers.price] ? Number(r[headers.price]) : null
+      };
+      return prisma.warehouseItem.upsert({
+        where:{ partNumber: pn }, update: data, create: data
+      });
+    }).filter(Boolean) as any[];
+
+    await prisma.$transaction(upserts);
+    return NextResponse.json({ ok:true, count: upserts.length });
+  }catch(e:any){
+    return NextResponse.json({error:e.message??"import failed"},{status:500});
   }
 }
 
-If not using monorepo, put a simple mcp/index.js like earlier that proxies /api/route-targets and /api/routes.
 
 ⸻
 
-11) iOS (align with RouteTarget)
+H) INVENTORY UI (new menu, does not touch existing Product table)
 
-Ensure your iOS client calls:
-	•	GET /api/routes → [ { id, name, scheduledFor, assignedToUserId, stops:[ { id, seq, target:{ id, company, addressRaw, latitude, longitude } } ] } ]
-	•	GET /api/routes/:id
-	•	PATCH /api/routes/stops/:stopId { outcome: "...", note? }
-These match your LastLeg schema (RouteStop → RouteTarget). The earlier Swift stubs can be retained but rename model Target → RouteTarget if preferred. Outcomes mirror to RouteTarget counters.
+file: app/dashboard/inventory/page.tsx
+
+"use client";
+import * as React from "react";
+
+type Item = { id:string; partNumber:string; description?:string; bin?:string; quantity:number; price?:string };
+
+export default function InventoryPage(){
+  const [q,setQ]=React.useState("");
+  const [rows,setRows]=React.useState<Item[]>([]);
+  const [total,setTotal]=React.useState(0);
+  const [page,setPage]=React.useState(1);
+  const [take,setTake]=React.useState(50);
+  const [file,setFile]=React.useState<File|null>(null);
+  const [uploading,setUploading]=React.useState(false);
+
+  const load = async (p=page)=>{
+    const r = await fetch(`/api/inventory?q=${encodeURIComponent(q)}&page=${p}&take=${take}`).then(r=>r.json());
+    setRows(r.items||[]); setTotal(r.total||0);
+  };
+  React.useEffect(()=>{ load(1); },[]);
+
+  const onImport = async ()=>{
+    if(!file) return;
+    setUploading(true);
+    const fd = new FormData(); fd.append("file", file);
+    const r = await fetch("/api/inventory/import",{ method:"POST", body: fd });
+    setUploading(false);
+    if(r.ok){ await load(1); setFile(null); alert("Imported"); } else { alert("Import failed"); }
+  };
+
+  const updateCell = async (id:string, patch:Partial<Item>)=>{
+    const r = await fetch(`/api/inventory/${id}`,{
+      method:"PATCH", headers:{"content-type":"application/json"},
+      body: JSON.stringify(patch)
+    });
+    if(r.ok) await load();
+  };
+
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex items-center justify-between">
+        <h1 className="text-lg font-semibold">Inventory (Warehouse)</h1>
+        <div className="flex gap-2 items-center">
+          <input className="border rounded px-2 py-1" placeholder="Search part/desc/bin" value={q} onChange={e=> setTimeout(()=> setQ(e.target.value),0)} onKeyDown={e=> e.key==="Enter" && load(1)} />
+          <button className="border rounded px-3 py-1" onClick={()=> load(1)}>Search</button>
+          <input type="file" onChange={e=> setFile(e.target.files?.[0]||null)} />
+          <button className="border rounded px-3 py-1 bg-blue-600 text-white" disabled={!file||uploading} onClick={onImport}>
+            {uploading? "Uploading…" : "Import CSV/XLS"}
+          </button>
+        </div>
+      </div>
+
+      <div className="rounded border overflow-hidden">
+        <table className="w-full text-sm">
+          <thead className="bg-muted">
+            <tr>
+              <th className="p-2 text-left">Part #</th>
+              <th className="p-2 text-left">Description</th>
+              <th className="p-2 text-left">Bin</th>
+              <th className="p-2 text-right">Qty</th>
+              <th className="p-2 text-right">Price</th>
+              <th className="p-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r=>(
+              <tr key={r.id} className="border-t">
+                <td className="p-2 font-mono">{r.partNumber}</td>
+                <td className="p-2">
+                  <InlineEdit value={r.description||""} onSave={(v)=> updateCell(r.id,{description:v})} />
+                </td>
+                <td className="p-2"><InlineEdit value={r.bin||""} onSave={(v)=> updateCell(r.id,{bin:v})} /></td>
+                <td className="p-2 text-right"><InlineEdit value={String(r.quantity)} onSave={(v)=> updateCell(r.id,{quantity:Number(v)||0})} /></td>
+                <td className="p-2 text-right"><InlineEdit value={r.price??""} onSave={(v)=> updateCell(r.id,{price: v? Number(v):null})} /></td>
+                <td className="p-2 text-right">
+                  <button className="text-red-600" onClick={async()=>{ await fetch(`/api/inventory/${r.id}`,{method:"DELETE"}); load(); }}>Delete</button>
+                </td>
+              </tr>
+            ))}
+            {rows.length===0 && <tr><td className="p-4 text-sm text-muted-foreground" colSpan={6}>No items</td></tr>}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="flex items-center justify-between text-sm">
+        <div>{total} total</div>
+        <div className="flex items-center gap-2">
+          <button className="border rounded px-2 py-1" onClick={()=> { if(page>1) { setPage(p=>p-1); load(page-1);} }} disabled={page<=1}>Prev</button>
+          <div>Page {page}</div>
+          <button className="border rounded px-2 py-1" onClick={()=> { if(page*take<total) { setPage(p=>p+1); load(page+1);} }} disabled={page*take>=total}>Next</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function InlineEdit({value,onSave}:{value:string; onSave:(v:string)=>Promise<void>|void}){
+  const [v,setV]=React.useState(value); const [editing,setE]=React.useState(false);
+  return (
+    <div onBlur={()=> { if(editing){ setE(false); if(v!==value) onSave(v); }}} onDoubleClick={()=> setE(true)}>
+      {editing ? <input className="border rounded px-1 py-0.5 w-full" autoFocus value={v} onChange={e=> setV(e.target.value)} /> : <span className="cursor-text">{value||<span className="text-muted-standalone">—</span>}</span>}
+    </div>
+  );
+}
+
+Nav: add an “Inventory” entry to your sidebar config (where you define Product, Routes, etc.). This page is separate; does not touch your Product tables.
 
 ⸻
 
-12) Build & verify (local)
+I) OPTIONAL – wire the Route Runner to use the new notes sheet
 
-pnpm prisma generate
-pnpm prisma migrate dev -n init_lastleg_harmonized   # if not done
-pnpm dev
-
-	•	/dashboard/route-targets → Quick Add works (no 500), list shows row
-	•	/dashboard/route-targets/[id] → Notes save, tags show
-	•	/dashboard/routes → create, open, add stops, drag, Save Order
-	•	/dashboard/routes/[id] → Assign/Schedule persist; Geocode Missing (Apple) fills coords; map shows markers + polyline
-	•	/dashboard/scrape → draft + candidates; Create or Link & Merge
-	•	/dashboard/chat → replies (OpenAI key set)
-	•	/dashboard/import → JSON array imports and count shown
-	•	/api/routes/:id/ical → downloads .ics; Google/Outlook links work
-	•	Sentry: test error posts to /api/monitoring
+If you applied the iOS RouteRunner earlier, it already posts outcomes. Update the web RouteActivity (E) handles notes/meetings. No web changes needed for iOS.
 
 ⸻
 
-End of hard rewrite.
+Final checks
+	1.	Visit outcomes moved
+	•	Dashboard “Visit Outcomes by Day” removed or replaced with Upcoming Meetings (F).
+	•	Route page now shows RouteActivity with outcomes + notepad + optional meeting creation.
+	•	Notes are saved to TargetNote with routeId/routeStopId + mentions[] and auto-link company names to company pages.
+	2.	Meetings
+	•	POST /api/meetings to create; GET /api/meetings?routeId=... or ?targetId=... to list; GET /api/meetings/:id/ical to download ICS.
+	•	You can add links “Add to Google/Outlook” using the URL templates you already used.
+	3.	Inventory
+	•	New WarehouseItem table, separate from Product.
+	•	Import CSV/XLS via /api/inventory/import (your uploaded Parts by Bin 251212.xls will load).
+	•	Inline edit quantity/bin/description/price without breaking Product tables.
+
+If any file throws a TS/build error, paste the file name + first error line and I’ll give you the exact fix.
+
+
+
+
+
+
+
+
+
+
+
+
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copy+paste this single patch into your DaySweeper (web) repo. It turns the Route page into a proper, clickable Mapbox planner:
+	•	Interactive map (clustered markers, popups, fly-to, click-to-select)
+	•	Type-ahead “iOS bubble” search (shrinks as you type; nothing auto-populates until you choose)
+	•	Drop-pin mode (click to place a draft pin → quick “New Company” dialog; nothing is created until you hit Save)
+	•	Assign control (Assign to me or search any Clerk user)
+	•	Append stop to route without breaking your existing tables or grid
+	•	Keeps your Route Stops table and Save Order button exactly as-is.
+	•	No web geocoding unless you explicitly click “Geocode Missing”. iOS stays the source of truth for lat/lon if you want.
+
+Prereqs: You’re already using mapbox-gl. Ensure mapbox-gl and its CSS are installed and imported once in app/layout.tsx or globals.css:
+
+// app/layout.tsx
+import "mapbox-gl/dist/mapbox-gl.css";
+
+Env: MAPBOX_TOKEN (server) and NEXT_PUBLIC_MAPBOX_TOKEN (client) set to your Mapbox token.
+
+⸻
+
+A) Backend: search and user lookup (type-ahead & assignee search)
+
+A1. Target search API (no auto-populate; returns up to 20)
+
+app/api/targets/search/route.ts
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+
+export async function GET(req: Request) {
+  const u = new URL(req.url);
+  const q = (u.searchParams.get("q") || "").trim();
+  const limit = Math.min(50, Number(u.searchParams.get("limit") || 20));
+
+  if (!q || q.length < 2) return NextResponse.json({ items: [] });
+
+  const items = await prisma.target.findMany({
+    where: {
+      OR: [
+        { company: { contains: q, mode: "insensitive" } },
+        { addressRaw: { contains: q, mode: "insensitive" } }
+      ]
+    },
+    take: limit,
+    select: {
+      id: true,
+      company: true,
+      addressRaw: true,
+      latitude: true,
+      longitude: true
+    }
+  });
+
+  return NextResponse.json({ items });
+}
+
+A2. Clerk user search (for “Assign to …”)
+
+app/api/users/search/route.ts
+
+import { NextResponse } from "next/server";
+import { auth, clerkClient } from "@clerk/nextjs/server";
+
+export async function GET(req: Request) {
+  const { userId } = auth();
+  if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const u = new URL(req.url);
+  const q = (u.searchParams.get("q") || "").trim();
+  const limit = Math.min(25, Number(u.searchParams.get("limit") || 10));
+
+  const res = await clerkClient.users.getUserList({
+    query: q,
+    limit,
+  });
+
+  const items = res.data.map(u => ({
+    id: u.id,
+    name: [u.firstName, u.lastName].filter(Boolean).join(" ") || u.username || u.emailAddresses?.[0]?.emailAddress || "User",
+    email: u.emailAddresses?.[0]?.emailAddress || "",
+    imageUrl: u.imageUrl || null
+  }));
+  return NextResponse.json({ items });
+}
+
+
+⸻
+
+B) UI: Assign control (me or any user)
+
+src/components/routes/AssignControl.tsx
+
+"use client";
+import * as React from "react";
+
+type UserItem = { id:string; name:string; email?:string; imageUrl?:string|null };
+
+export default function AssignControl({
+  routeId,
+  currentAssigneeId,
+  meId
+}:{ routeId:string; currentAssigneeId?:string|null; meId?:string|null }) {
+  const [query,setQuery] = React.useState("");
+  const [open,setOpen] = useState(false);
+  const [items,setItems] = React.useState<UserItem[]>([]);
+  const [loading,setLoading] = React.useState(false);
+  const [assigning,setAssigning] = React.useState(false);
+
+  const search = async (q:string)=>{
+    setLoading(true);
+    const r = await fetch(`/api/users/search?q=${encodeURIComponent(q)}`).then(r=>r.json()).catch(()=>({items:[]}));
+    setItems(r.items||[]);
+    setLoading(false);
+  };
+
+  React.useEffect(()=>{
+    if (!open || query.length < 1) { setItems([]); return; }
+    const t = setTimeout(()=> search(query), 180);
+    return ()=> clearTimeout(t);
+  },[query, open]);
+
+  const assign = async (userId:string|null)=>{
+    setAssigning(true);
+    await fetch(`/api/routes/${routeId}`,{
+      method:"PATCH", headers:{ "content-type":"application/json" },
+      body: JSON.stringify({ assignedToUserId: userId })
+    });
+    setAssigning(false); setOpen(false);
+  };
+
+  return (
+    <div className="relative inline-flex items-center gap-2">
+      <button
+        className="border rounded px-3 py-1 text-sm"
+        disabled={assigning}
+        onClick={()=> meId && assign(meId)}
+        title="Assign to me"
+      >Assign to me</button>
+
+      <div className="relative">
+        <button className="border rounded px-3 py-1 text-sm" onClick={()=> setOpen(v=>!v)}>
+          {currentAssigneeId ? "Reassign…" : "Assign to user…"}
+        </button>
+        {open && (
+          <div className="absolute z-50 mt-2 w-80 rounded border bg-white shadow-xl p-2">
+            <input
+              autoFocus
+              value={query}
+              onChange={e=> setQuery(e.target.value)}
+              placeholder="Search name or email…"
+              className="w-full border rounded px-2 py-1 mb-2"
+            />
+            {loading && <div className="text-xs p-2">Searching…</div>}
+            {!loading && items.length===0 && <div className="text-xs p-2 text-gray-500">Type to search users</div>}
+            <ul className="max-h-64 overflow-auto">
+              {items.map(u=>(
+                <li key={u.id}
+                    onClick={()=> assign(u.id)}
+                    className="px-2 py-2 hover:bg-gray-100 cursor-pointer rounded">
+                  <div className="text-sm font-medium">{u.name}</div>
+                  {u.email && <div className="text-xs text-gray-500">{u.email}</div>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
+⸻
+
+C) UI: New-stop dialog (explicit create; nothing auto-populates)
+
+src/components/routes/NewStopDialog.tsx
+
+"use client";
+import * as React from "react";
+
+export default function NewStopDialog({
+  open, onClose, lat, lon, routeId
+}:{ open:boolean; onClose:()=>void; lat:number; lon:number; routeId:string }) {
+  const [company,setCompany] = React.useState("");
+  const [address,setAddress] = React.useState("");
+  const [phone,setPhone] = React.useState("");
+  const [website,setWebsite] = React.useState("");
+  const [saving,setSaving] = React.useState(false);
+  const [error,setError] = React.useState<string|null>(null);
+
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={onClose}>
+      <div className="bg-white dark:bg-neutral-900 rounded shadow-xl w-full max-w-lg p-4" onClick={e=> e.stopPropagation()}>
+        <h3 className="font-semibold mb-2">New Company at pin</h3>
+        <div className="space-y-2">
+          <label className="text-sm">Company Name *</label>
+          <input className="w-full border rounded px-2 py-1" value={company} onChange={e=>setCompany(e.target.value)} placeholder="Acme Plastics" />
+
+          <label className="text-sm">Address</label>
+          <input className="w-full border rounded px-2 py-1" value={address} onChange={e=>setAddress(e.target.value)} placeholder="123 Main St, City, ST" />
+
+          <div className="grid grid-cols-2 gap-2">
+            <div>
+              <label className="text-sm">Phone</label>
+              <input className="w-full border rounded px-2 py-1" value={phone} onChange={e=>setPhone(e.target.value)} />
+            </div>
+            <div>
+              <label className="text-sm">Website</label>
+              <input className="w-full border rounded px-2 py-1" value={website} onChange={e=>setWebsite(e.target.value)} placeholder="https://…" />
+            </div>
+          </div>
+        </div>
+        {error && <div className="text-sm text-red-600 mt-2">{error}</div>}
+
+        <div className="flex justify-end gap-2 mt-3">
+          <button className="border rounded px-3 py-1" onClick={onClose}>Cancel</button>
+          <button
+            className="bg-blue-600 text-white rounded px-3 py-1"
+            disabled={!company.trim() || saving}
+            onClick={async ()=>{
+              try{
+                setSaving(true); setError(null);
+                // 1) create target (no auto-populate)
+                const created = await fetch("/api/targets",{
+                  method:"POST", headers:{ "content-type":"application/json" },
+                  body: JSON.stringify({ company: company.trim(), addressRaw: address||"", phone: phone||null, website: website||null })
+                }).then(r=>r.json());
+                if (!created?.id) throw new Error("Create failed");
+                // 2) patch coords explicitly (no auto unless you want)
+                await fetch(`/api/targets/${created.id}`,{
+                  method:"PATCH", headers:{ "content-type":"application/json" },
+                  body: JSON.stringify({ latitude: String(lat), longitude: String(lon), addressNormalized: address||null, accuracy:"manual-pin", meta:{ source:"web-pin" }})
+                });
+                // 3) append to route
+                await fetch(`/api/routes/${routeId}/stops/append`,{
+                  method:"POST", headers:{ "content-type":"application/json" },
+                  body: JSON.stringify({ targetId: created.id })
+                });
+                onClose();
+                // let parent refresh list/map
+                window.dispatchEvent(new CustomEvent("route:refresh"));
+              }catch(e:any){
+                setError(e?.message||"Save failed");
+              }finally{ setSaving(false); }
+            }}
+          >Save & Add to Route</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+⸻
+
+D) UI: Interactive Map (clustered, clickable, search chips, drop-pin)
+
+src/components/routes/RouteMapInteractive.tsx
+
+"use client";
+import * as React from "react";
+import mapboxgl, { Map, LngLatLike, MapLayerMouseEvent } from "mapbox-gl";
+import NewStopDialog from "./NewStopDialog";
+
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+
+type Stop = { id:string; seq:number; target:{ id:string; company:string; addressRaw?:string|null; latitude?:string|null; longitude?:string|null } };
+type Route = { id:string; stops: Stop[] };
+type SearchItem = { id:string; company:string; addressRaw?:string; latitude?:string; longitude?:string };
+
+export default function RouteMapInteractive({
+  route,
+  routeId
+}:{ route: Route; routeId:string }) {
+  const mapRef = React.useRef<Map|null>(null);
+  const containerRef = React.useRef<HTMLDivElement|null>(null);
+  const [search,setSearch] = React.useState("");
+  const [suggest,setSuggest] = React.useState<SearchItem[]>([]);
+  const [draftPin,setDraftPin] = React.useState<{lat:number;lon:number}|null>(null);
+  const [newOpen,setNewOpen] = React.useState(false);
+
+  const features = React.useMemo(()=>{
+    const pts = route.stops
+      .map(s=>{
+        const lat = s.target.latitude ? Number(s.target.latitude) : undefined;
+        const lon = s.target.longitude ? Number(s.target.longitude) : undefined;
+        if (Number.isFinite(lat) && Number.isFinite(lon)) {
+          return {
+            type:"Feature",
+            geometry:{ type:"Point", coordinates:[lon!,lat!] },
+            properties:{ stopId: s.id, targetId: s.target.id, title: s.target.company, seq: s.seq }
+          };
+        }
+        return null;
+      })
+      .filter(Boolean);
+    return { type:"FeatureCollection", features: pts as any[] };
+  },[route]);
+
+  // init map
+  React.useEffect(()=>{
+    if (mapRef.current || !containerRef.current) return;
+    const m = new mapboxgl.Map({
+      container: containerRef.current,
+      style: "mapbox://styles/mapbox/satellite-streets-v12",
+      center: [-96.8, 37.8],
+      zoom: 3.7
+    });
+    mapRef.current = m;
+
+    m.on("load", ()=>{
+      m.addSource("stops", { type:"geojson", data: features, cluster:true, clusterRadius:40, clusterMaxZoom:14 });
+      m.addLayer({ id:"clusters", type:"circle", source:"stops", filter:["has","point_count"],
+        paint:{ "circle-color":"#3b82f6","circle-radius":["step",["get","point_count"],16,10,22,30,28] }});
+      m.addLayer({ id:"cluster-count", type:"symbol", source:"stops", filter:["has","point_count"],
+        layout:{ "text-field":"{point_count_abbreviated}","text-size":12 }, paint:{ "text-color":"#fff" }});
+      m.addLayer({ id:"unclustered", type:"circle", source:"stops", filter:["!has","point_count"],
+        paint:{ "circle-color":"#60a5fa","circle-radius":6,"circle-stroke-width":1.2,"circle-stroke-color":"#fff" }});
+
+      m.on("click","clusters", (e:any)=>{
+        const clusterId = e.features[0].properties.cluster_id;
+        const src = m.getSource("stops") as any;
+        src.getClusterExpansionZoom(clusterId, (err:number, zoom:number)=>{
+          if (err) return;
+          m.easeTo({ center: (e as any).lngLat, zoom });
+        });
+      });
+
+      m.on("click","unclustered", (e:MapLayerMouseEvent)=>{
+        const f = e.features?.[0];
+        if(!f) return;
+        const { title, targetId, seq } = f.properties as any;
+        const [lon,lat] = f.geometry?.type==="Point" ? (f.geometry as any).coordinates : [e.lngLat.lng, e.lngLat.lat];
+
+        new mapboxgl.Popup({ closeButton:true, closeOnClick:true })
+          .setLngLat([Number(lon),Number(lat)] as [number,number])
+          .setHTML(`
+            <div style="font-family:ui-sans-serif;min-width:220px">
+              <div style="font-weight:600">${title}</div>
+              <div style="font-size:12px;color:#6b7280">Stop #${seq}</div>
+              <div style="margin-top:8px;display:flex;gap:8px;">
+                <a href="/dashboard/companies/${targetId}" class="px-2 py-1 border rounded text-sm">Open company</a>
+              </div>
+            </div>
+          `).addTo(m);
+      });
+    });
+
+    // click background in drop-pin mode
+    m.on("click", (e)=>{
+      if (dropModeActive.current){
+        setTimeout(()=> {
+          setDraftPin({lat: e.lngLat.lat, lon: e.lngLat.lng});
+          setNewOpen(true);
+        }, 0);
+      }
+    });
+
+    return ()=> { m.remove(); mapRef.current = null; }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
+
+  // update source data on route change
+  React.useEffect(()=>{
+    const m = mapRef.current;
+    const src = m?.getSource("stops") as any;
+    if (m && src) { src.setData(features); }
+  },[features]);
+
+  // type-ahead search (no auto-populate; just suggestion bubble)
+  React.useEffect(()=>{
+    if (search.trim().length < 2){ setSuggest([]); return; }
+    const t = setTimeout(async ()=>{
+      const r = await fetch(`/api/targets/search?q=${encodeURIComponent(search)}&limit=20`).then(r=>r.json()).catch(()=>({items:[]}));
+      setSuggest(r.items || []);
+    },170);
+    return ()=> clearTimeout(t);
+  },[search]);
+
+  // drop-mode flag
+  const [dropMode,setDropMode] = React.useState(false);
+  const dropModeActive = React.useRef(false);
+  React.useEffect(()=> { dropModeActive.current = dropMode; }, [dropMode]);
+
+  return (
+    <div className="relative w-full">
+      {/* search bubble */}
+      <div className="absolute z-30 left-3 top-3 flex gap-2 items-start">
+        <div className="relative">
+          <input
+            value={search}
+            onChange={e=> setSearch(e.target.value)}
+            placeholder="Search company or address…"
+            className="px-3 py-2 rounded-2xl shadow border bg-white/90 backdrop-blur w-80"
+          />
+          {suggest.length>0 && (
+            <div className="absolute mt-1 bg-white rounded-xl shadow-xl border w-full max-h-72 overflow-auto">
+              {suggest.map((s:SearchItem)=>(
+                <div key={s.id}
+                     className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                     onClick={()=>{
+                       setSuggest([]); setSearch(s.company);
+                       // fly to marker if coord present
+                       const m = mapRef.current;
+                       const lat = s.latitude ? Number(s.latitude) : null;
+                       const lon = s.longitude ? Number(s.longitude) : null;
+                       if (m && lat!=null && lon!=null) {
+                         m.easeTo({ center:[lon,lat] as LngLatLike, zoom: 14 });
+                         new mapboxgl.Popup().setLngLat([lon,lat] as [number,number])
+                          .setHTML(`<div style="font-weight:600">${s.company}</div><div style="font-size:12px;color:#6b7280">${s.addressRaw||""}</div>
+                            <div style="margin-top:8px"><a class="px-2 py-1 border rounded text-sm" href="/dashboard/companies/${s.id}">Open company</a>
+                            <button id="add-${s.id}" style="margin-left:8px" class="px-2 py-1 bg-blue-600 text-white rounded text-sm">Add to route</button></div>`)
+                          .addTo(m);
+                         // wire popup button after mount
+                         setTimeout(()=>{
+                           const btn = document.getElementById(`add-${s.id}`);
+                           if (btn) btn.onclick = async ()=>{
+                             await fetch(`/api/routes/${routeId}/stops/append`,{
+                               method:"POST", headers:{ "content-type":"application/json" },
+                               body: JSON.stringify({ targetId: s.id })
+                             }).then(()=> window.dispatchEvent(new Event("route:refresh")));
+                           };
+                         },0);
+                       }
+                     }}>
+                  <div className="text-sm font-medium">{s.company}</div>
+                  {s.addressRaw && <div className="text-xs text-gray-500">{s.addressRaw}</div>}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <button
+          className={`px-3 py-2 rounded-2xl border shadow bg-white/90 backdrop-blur text-sm ${dropMode ? "border-blue-600" : ""}`}
+          onClick={()=> setDropMode(v=>!v)}
+          title="Click, then tap on the map to drop a pin"
+        >
+          {dropMode ? "Tap map to drop pin…" : "➕ Pin"}
+        </button>
+      </div>
+
+      {/* map container */}
+      <div ref={containerRef} className="h-[520px] w-full rounded-md overflow-hidden" />
+
+      {/* dialog for new company at pin */}
+      <NewStopDialog
+        open={newOpen}
+        onClose={()=> { setNewOpen(false); setDraftPin(null); }}
+        lat={draftPin?.lat ?? 0}
+        lon={draftPin?.lon ?? 0}
+        routeId={routeId}
+      />
+    </div>
+  );
+}
+
+
+⸻
+
+E) Wire everything into your current Route page (no breakage)
+
+Open app/dashboard/routes/[id]/page.tsx. Keep your header, Save Name, Save Date, Assign to me, Download .ics, Route Stops grid, etc.
+Add these imports and render blocks:
+
+// app/dashboard/routes/[id]/page.tsx
+import { auth } from "@clerk/nextjs/server";
+import { prisma } from "@/lib/prisma";
+import AssignControl from "@/components/routes/AssignControl";
+import RouteMap from "@/components/routes/RouteMapInteractive";
+
+export default async function RouteDetail({ params }:{ params:{ id:string }}) {
+  const route = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/api/routes/${params.id}`, { cache: "no-store" }).then(r=>r.json());
+  const { userId } = auth(); // for "assign to me"
+
+  return (
+    <div className="space-y-6 p-4">
+      {/* your existing top controls (name/date/save/assign to me/Download .ics) */}
+      <div className="flex gap-3 items-center">
+        {/* keep your own Save Name/Date/etc */}
+        <AssignControl routeId={params.id} currentAssigneeId={route.assignedToUserId} meId={userId||undefined} />
+      </div>
+
+      {/* Interactive Map */}
+      <RouteMap route={route} routeId={params.id} />
+
+      {/* keep your existing Available Companies / Route Stops / Save Order UI below */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* existing panels unchanged */}
+        {/* <AvailableCompanies .../> */}
+        {/* <RouteStops .../> */}
+      </div>
+    </div>
+  );
+}
+
+Hook the “refresh after append” event once where you load route client-side (if you’re using client hooks), or keep the server fetch with no-store and let users refresh the page. If you have a client wrapper already fetching route, add:
+
+React.useEffect(()=>{
+  const handler = ()=> refetch();  // your existing fetcher
+  window.addEventListener("route:refresh", handler);
+  return ()=> window.removeEventListener("route:refresh", handler);
+},[refetch]);
+
+
+⸻
+
+What you get right now
+	•	Click-able map: cluster → zoom; point popup with “Open company / Add to route”.
+	•	Type-ahead bubble: nothing populates until you type ≥2 chars; list shrinks as you type; click to fly + popup.
+	•	Drop-pin mode: explicit; opens dialog; no auto-create until Save.
+	•	Assignee: one-click “Assign to me” and a search box to assign any Clerk user.
+	•	No impact on your existing Products or tables; they stay exactly as you like them.
+	•	No auto-adding anywhere—everything is explicit.
+
+⸻
+
+If something isn’t clickable
+
+If the input or map still won’t click:
+	•	Check you don’t have a global overlay with pointer-events: none; on a parent.
+	•	Ensure the map container has position: relative and no sibling overlay covering it.
+	•	Verify mapbox-gl/dist/mapbox-gl.css is imported once at app root.
+
+⸻
+
+Next steps (when you’re ready)
+	•	Draw true route polyline on web using Mapbox Directions (already added on iOS).
+	•	Server-side “nearest neighbor” or Mapbox Optimization button in the header (we added /api/routes/:id/optimize; you can call it from a button).
+	•	Permissions: hide “Assign to user” if not admin (quick check in auth() role).
+	•	Search facets: add a chip bar to filter by capabilityTags (you’ve got the arrays & API for it now).
+
+Paste the patch; if anything errors, send me the file name + first error line and I’ll give you the exact fix.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,6 +13,7 @@ import {
 import { IconTrendingUp } from '@tabler/icons-react';
 import React from 'react';
 import { useOverview } from '@/lib/overview';
+import UpcomingMeetings from '@/components/dashboard/UpcomingMeetings';
 
 export default function OverViewLayout({
   sales,
@@ -132,8 +133,11 @@ export default function OverViewLayout({
             {/* sales arallel routes */}
             {sales}
           </div>
-          <div className='col-span-4'>{area_stats}</div>
           <div className='col-span-4 md:col-span-3'>{pie_stats}</div>
+          <div className='col-span-4 md:col-span-3'>
+            <UpcomingMeetings />
+          </div>
+          {/* area_stats (Visit Outcomes by Day) removed - outcomes now live on Route pages */}
         </div>
       </div>
     </PageContainer>

@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import { useTarget, useUpdateTarget } from '@/lib/targets';
 import { NotesPanel } from '@/components/companies/NotesPanel';
+import GeoMap from '@/components/GeoMap';
 import PageContainer from '@/components/layout/page-container';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -27,7 +28,7 @@ import { toast } from 'sonner';
 export default function CompanyDetailPage() {
   const params = useParams();
   const id = params.id as string;
-  const { data: target, isLoading } = useTarget(id);
+  const { data: target, isLoading, refetch } = useTarget(id);
   const updateTarget = useUpdateTarget(id);
 
   const [accountState, setAccountState] = useState<string>('');
@@ -46,7 +47,7 @@ export default function CompanyDetailPage() {
 
   const handleSaveAccountState = async () => {
     try {
-      await updateTarget.mutateAsync({ accountState });
+      await updateTarget.mutateAsync({ accountState }, { onSuccess: () => refetch() });
       toast.success('Account state updated');
     } catch (error) {
       toast.error('Failed to update account state');
@@ -59,7 +60,7 @@ export default function CompanyDetailPage() {
         supplyTier: supplyTier || null,
         supplyGroup: supplyGroup || null,
         supplySubtype: supplySubtype || null
-      });
+      }, { onSuccess: () => refetch() });
       toast.success('Taxonomy updated');
     } catch (error) {
       toast.error('Failed to update taxonomy');
@@ -292,9 +293,13 @@ export default function CompanyDetailPage() {
               <CardDescription>Location visualization</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className='h-64 rounded-lg border bg-muted flex items-center justify-center'>
-                <p className='text-sm text-muted-foreground'>Map placeholder</p>
-              </div>
+              {target.latitude && target.longitude ? (
+                <GeoMap targets={[target]} />
+              ) : (
+                <div className='h-64 rounded-lg border bg-muted flex items-center justify-center'>
+                  <p className='text-sm text-muted-foreground'>No coordinates available</p>
+                </div>
+              )}
             </CardContent>
           </Card>
 

@@ -196,6 +196,7 @@ model Target {
   TargetEnrichment  TargetEnrichment?
   TargetNote        TargetNote[]
   RouteStop         RouteStop[]
+  Meeting           Meeting[]
 
   @@index([category])
   @@index([company])
@@ -234,17 +235,25 @@ model TargetEnrichment {
 }
 
 model TargetNote {
-  id        String   @id @default(cuid())
-  targetId  String
-  target    Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
-  content   String
-  tags      String[]
-  userId    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String     @id @default(cuid())
+  targetId    String
+  target      Target     @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  content     String
+  tags        String[]   @default([])
+  userId      String
+  routeId     String?
+  route       Route?     @relation(fields: [routeId], references: [id])
+  routeStopId String?
+  routeStop   RouteStop? @relation(fields: [routeStopId], references: [id])
+  mentions    String[]   @default([]) // auto-linked slugs of companies, e.g. ["honda-marysville"]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 
   @@index([targetId])
+  @@index([routeId])
+  @@index([routeStopId])
   @@index([userId])
+  @@index([tags])
 }
 
 model User {
@@ -309,32 +318,76 @@ enum StopOutcome {
 }
 
 model Route {
-  id               String     @id @default(cuid())
+  id               String       @id @default(cuid())
   name             String
   assignedToUserId String?
   scheduledFor     DateTime?
   stops            RouteStop[]
-  createdAt        DateTime   @default(now())
-  updatedAt        DateTime   @updatedAt
+  TargetNote       TargetNote[]
+  Meeting          Meeting[]
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
 
   @@index([assignedToUserId])
 }
 
 model RouteStop {
-  id        String      @id @default(cuid())
-  routeId   String
-  route     Route       @relation(fields: [routeId], references: [id], onDelete: Cascade)
-  targetId  String
-  target    Target      @relation(fields: [targetId], references: [id], onDelete: Cascade)
-  seq       Int
-  outcome   StopOutcome?
-  visitedAt DateTime?
-  note      String?
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
+  id         String       @id @default(cuid())
+  routeId    String
+  route      Route        @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  targetId   String
+  target     Target       @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  seq        Int
+  outcome    StopOutcome?
+  visitedAt  DateTime?
+  note       String?
+  TargetNote TargetNote[]
+  Meeting    Meeting[]
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
 
   @@unique([routeId, seq])
   @@index([targetId])
+}
+
+model Meeting {
+  id               String     @id @default(cuid())
+  title            String
+  startAt          DateTime
+  endAt            DateTime?
+  targetId         String?
+  target           Target?    @relation(fields: [targetId], references: [id])
+  routeId          String?
+  route            Route?     @relation(fields: [routeId], references: [id])
+  routeStopId      String?
+  routeStop        RouteStop? @relation(fields: [routeStopId], references: [id])
+  location         String?
+  notes            String?
+  attendees        String[]   @default([]) // comma sep emails/users
+  createdById      String?
+  calendarProvider String?    // "google"|"outlook"|"ics"
+  externalId       String?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  @@index([targetId])
+  @@index([routeId])
+  @@index([startAt])
+}
+
+model WarehouseItem {
+  id          String   @id @default(cuid())
+  partNumber  String   @unique
+  description String?
+  bin         String?
+  quantity    Int      @default(0)
+  price       Decimal? @db.Decimal(12, 2)
+  meta        Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([partNumber])
+  @@index([bin])
 }
 
 model MetaKV {
