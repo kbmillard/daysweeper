@@ -33,7 +33,7 @@ export async function GET(
 }
 
 // PATCH /api/targets/:id
-// iOS sends { latitude, longitude, addressNormalized?, accuracy?, meta? }
+// Accepts { latitude, longitude, addressNormalized?, accuracy?, meta? }
 export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
@@ -49,7 +49,7 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
 
     if (lat != null || lon != null || b.addressNormalized != null) {
       data.geocodeStatus   = "geocoded";
-      data.geocodeProvider = "ios-clgeocoder";
+      data.geocodeProvider = "manual";
       if (b.accuracy != null) data.geocodeAccuracy = String(b.accuracy);
       if (b.meta != null)     data.geocodeMeta     = b.meta;
       data.geocodedAt = new Date();

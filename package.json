@@ -25,7 +25,6 @@
     ]
   },
   "dependencies": {
-    "@apple/mapkit-loader": "^0.2.1",
     "@clerk/nextjs": "^6.12.12",
     "@clerk/themes": "^2.2.26",
     "@dnd-kit/core": "^6.3.1",

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-// Accept geocode from iOS: { latitude, longitude, addressNormalized?, accuracy?, meta? }
+// Accept geocode data: { latitude, longitude, addressNormalized?, accuracy?, meta? }
 export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
@@ -19,7 +19,7 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
     // stamp provider metadata if any geocode fields present
     if (lat != null || lon != null || b.addressNormalized != null) {
       data.geocodeStatus   = "geocoded";
-      data.geocodeProvider = "ios-clgeocoder";
+      data.geocodeProvider = "manual";
       if (b.accuracy != null) data.geocodeAccuracy = String(b.accuracy); // e.g. "rooftop"/"approx"
       if (b.meta != null)     data.geocodeMeta     = b.meta;             // raw CLPlacemark bits if you send them
       data.geocodedAt = new Date();
