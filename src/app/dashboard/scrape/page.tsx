@@ -193,6 +193,28 @@ export default function ScrapePage() {
                     <Button variant="secondary" onClick={() => router.push(`/dashboard/companies/${c.id}`)}>
                       Open
                     </Button>
+                    <Button
+                      variant="secondary"
+                      onClick={async () => {
+                        try {
+                          await fetch(`/api/targets/${c.id}/merge`, {
+                            method: "PATCH",
+                            headers: { "content-type": "application/json" },
+                            body: JSON.stringify({
+                              website: draft?.website ?? null,
+                              phone: draft?.phone ?? null,
+                              email: draft?.email ?? null,
+                              addressRaw: draft?.addressRaw ?? ""
+                            })
+                          });
+                          router.push(`/dashboard/companies/${c.id}`);
+                        } catch (error: any) {
+                          toast.error(error?.message || "Merge failed");
+                        }
+                      }}
+                    >
+                      Link & Merge
+                    </Button>
                   </div>
                 </div>
               ))}

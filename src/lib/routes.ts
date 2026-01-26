@@ -64,7 +64,7 @@ export function useCreateRoute() {
 export function useUpdateRoute(id: string) {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: async (data: Partial<{ name: string; assignedToUserId?: string; scheduledFor?: string }>) => {
+    mutationFn: async (data: Partial<{ name: string; assignedToUserId?: string | null; scheduledFor?: string | null }>) => {
       const r = await fetch(`/api/routes/${id}`, {
         method: "PATCH",
         headers: { "content-type": "application/json" },

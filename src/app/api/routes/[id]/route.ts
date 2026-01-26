@@ -21,7 +21,6 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
     if (b.name !== undefined) data.name = String(b.name).trim();
     if (b.assignedToUserId !== undefined) data.assignedToUserId = b.assignedToUserId || null;
     if (b.scheduledFor !== undefined) data.scheduledFor = b.scheduledFor ? new Date(b.scheduledFor) : null;
-
     const updated = await prisma.route.update({ where: { id }, data });
     return NextResponse.json(updated);
   } catch (e: any) {
