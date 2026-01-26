@@ -1,76 +1,46 @@
-import { prisma } from '@/lib/prisma';
-import { slugify } from '@/lib/slugify';
-import { auth } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
-import { z } from 'zod';
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-const createNoteSchema = z.object({
-  content: z.string().min(1),
-  tags: z.array(z.string()).optional().default([])
-});
+const slug = (s: string) =>
+  s.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "").slice(0, 32);
 
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  try {
-    const { id } = await params;
-    const notes = await prisma.targetNote.findMany({
-      where: { targetId: id },
-      orderBy: {
-        createdAt: 'desc'
-      }
-    });
-
-    return NextResponse.json(notes);
-  } catch (error) {
-    console.error('Get notes error:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch notes' },
-      { status: 500 }
-    );
-  }
+// GET /api/targets/:id/notes
+export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const rows = await prisma.targetNote.findMany({
+    where: { targetId: id },
+    orderBy: { createdAt: "desc" }
+  });
+  return NextResponse.json(rows);
 }
 
-export async function POST(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+/**
+ * POST /api/targets/:id/notes
+ * body: { content: string, tags?: string[], userId?: string, stopId?: string }
+ * Writes a note on the company account (Target). `stopId` is optional context only.
+ */
+export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const body = await request.json();
-    const data = createNoteSchema.parse(body);
+    const body = await req.json();
+    const content: string = (body.content ?? "").toString();
+    if (!content.trim()) return NextResponse.json({ error: "content required" }, { status: 400 });
 
-    // Normalize tags
-    const normalizedTags = data.tags.map((tag) => slugify(tag)).filter(Boolean);
-
-    // Get userId from Clerk
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const tags: string[] = Array.isArray(body.tags) ? body.tags : [];
+    const normalized = tags.map(slug).filter(Boolean).slice(0, 20);
+    const userId: string = body.userId ?? "mobile";
 
     const note = await prisma.targetNote.create({
       data: {
         targetId: id,
-        content: data.content,
-        tags: normalizedTags,
+        content,
+        tags: normalized,
         userId
+        // If you want to store stopId context, add a column later and set it here.
       }
     });
-
     return NextResponse.json(note, { status: 201 });
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json(
-        { error: 'Validation error', details: error.issues },
-        { status: 400 }
-      );
-    }
-    console.error('Create note error:', error);
-    return NextResponse.json(
-      { error: 'Failed to create note' },
-      { status: 500 }
-    );
+  } catch (e: any) {
+    return NextResponse.json({ error: e?.message ?? "create note failed" }, { status: 500 });
   }
 }
