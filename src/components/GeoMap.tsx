@@ -14,7 +14,7 @@ export default function GeoMap({ targets }: { targets: Target[] }) {
     if (!el.current || mapRef.current) return;
     mapRef.current = new mapboxgl.Map({
       container: el.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/mapbox/satellite-streets-v12",
       center: [-86.7816, 36.1627],
       zoom: 4,
     });

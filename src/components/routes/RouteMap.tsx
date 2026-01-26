@@ -15,7 +15,7 @@ export default function RouteMap({ stops }: { stops: Stop[] }) {
     if (!ref.current || mapRef.current) return;
     const m = new mapboxgl.Map({
       container: ref.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/mapbox/satellite-streets-v12",
       center: [-86.7816, 36.1627], // default center (Nashville)
       zoom: 5,
     });
