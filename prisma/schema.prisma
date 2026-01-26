@@ -336,3 +336,9 @@ model RouteStop {
   @@unique([routeId, seq])
   @@index([targetId])
 }
+
+model MetaKV {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
