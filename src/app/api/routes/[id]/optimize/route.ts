@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-const MAPBOX = process.env.MAPBOX_TOKEN; // set in env
-
-function num(n: any) { const v = Number(n); return Number.isFinite(v) ? v : null; }
+const MAPBOX = process.env.MAPBOX_TOKEN;
+const num = (n:any) => (Number.isFinite(Number(n)) ? Number(n) : null);
 
 export async function POST(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!MAPBOX) return NextResponse.json({ error: "MAPBOX_TOKEN missing" }, { status: 500 });
@@ -12,22 +11,12 @@ export async function POST(_req: Request, { params }: { params: Promise<{ id: st
 
   const route = await prisma.route.findUnique({
     where: { id },
-    include: {
-      stops: {
-        orderBy: { seq: "asc" },
-        include: { target: { select: { id: true, latitude: true, longitude: true } } }
-      }
-    }
+    include: { stops: { orderBy: { seq: "asc" }, include: { target: true } } }
   });
   if (!route) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const pts = route.stops.map(s => {
-    const lat = num(s.target?.latitude), lon = num(s.target?.longitude);
-    return { stopId: s.id, lat, lon };
-  });
-  if (pts.some(p => p.lat == null || p.lon == null)) {
-    return NextResponse.json({ error: "Some stops missing coordinates" }, { status: 400 });
-  }
+  const pts = route.stops.map(s => ({ id: s.id, lat: num(s.target?.latitude), lon: num(s.target?.longitude) }));
+  if (pts.some(p => p.lat == null || p.lon == null)) return NextResponse.json({ error: "missing coords" }, { status: 400 });
 
   const coords = pts.map(p => `${p.lon},${p.lat}`).join(";");
   const url = new URL(`https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${coords}`);
@@ -37,26 +26,20 @@ export async function POST(_req: Request, { params }: { params: Promise<{ id: st
   url.searchParams.set("overview", "false");
   url.searchParams.set("access_token", MAPBOX);
 
-  const resp = await fetch(url.toString());
-  if (!resp.ok) {
-    const t = await resp.text().catch(() => "");
-    return NextResponse.json({ error: "Mapbox error", detail: t }, { status: 502 });
-  }
-  const j = await resp.json();
-  const waypoints: Array<{ waypoint_index: number }> = j.waypoints || [];
-  if (!waypoints.length) return NextResponse.json({ error: "No waypoints" }, { status: 500 });
-
+  const r = await fetch(url.toString());
+  if (!r.ok) return NextResponse.json({ error: await r.text().catch(()=> "Mapbox error") }, { status: 502 });
+  const j = await r.json();
+  const waypoints = Array.isArray(j.waypoints) ? j.waypoints : [];
   const order = waypoints
-    .map((w, i) => ({ inputIdx: i, orderIdx: w.waypoint_index }))
-    .sort((a, b) => a.orderIdx - b.orderIdx)
-    .map(x => x.inputIdx);
+    .map((w:any, i:number) => ({ inIdx: i, ord: w.waypoint_index }))
+    .sort((a:any, b:any)=> a.ord - b.ord)
+    .map((x:any)=> x.inIdx);
 
-  await prisma.$transaction(async (tx) => {
-    for (let i = 0; i < order.length; i++) {
+  await prisma.$transaction(async tx => {
+    for (let i=0; i<order.length; i++) {
       const stop = route.stops[order[i]];
-      await tx.routeStop.update({ where: { id: stop.id }, data: { seq: i + 1 } });
+      await tx.routeStop.update({ where: { id: stop.id }, data: { seq: i+1 }});
     }
   });
-
-  return NextResponse.json({ ok: true, newOrder: order.map(i => route.stops[i].id) });
+  return NextResponse.json({ ok: true, newOrder: order.map((i:number)=> route.stops[i].id) });
 }
