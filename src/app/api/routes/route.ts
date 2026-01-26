@@ -1,11 +1,16 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(req: Request) {
+  const u = new URL(req.url);
+  const assignedTo = u.searchParams.get("assignedTo") ?? undefined;
+
   const routes = await prisma.route.findMany({
+    where: assignedTo ? { assignedToUserId: assignedTo } : undefined,
     orderBy: { createdAt: "desc" },
     include: { _count: { select: { stops: true } } },
   });
+
   return NextResponse.json(routes);
 }
 
