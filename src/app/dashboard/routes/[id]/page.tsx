@@ -10,6 +10,9 @@ import { useUser } from "@clerk/nextjs";
 import { DndContext, PointerSensor, useSensor, useSensors, closestCenter } from "@dnd-kit/core";
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import RouteMap from "@/components/routes/RouteMap";
+import { useGeocodeTarget } from "@/lib/geocode";
+import { appleGeocodeBatch } from "@/lib/apple-geocode";
 
 export default function RouteBuilderPage() {
   const id = String((useParams() as any).id);
@@ -37,6 +40,10 @@ export default function RouteBuilderPage() {
     return (targets as any[]).filter(t => !set.has(t.id));
   }, [targets, ordered]);
 
+  const stopObjs = ordered
+    .map((tid) => (targets as any[]).find((t) => t.id === tid))
+    .filter(Boolean) as any[];
+
   if (isLoading || !route) return <div className="p-4">Loading…</div>;
 
   return (
@@ -57,6 +64,24 @@ export default function RouteBuilderPage() {
         </Button>
       </div>
 
+      <div className="flex flex-wrap items-center gap-2">
+        <a className="rounded border px-2 py-1 text-xs" href={`/api/routes/${id}/ical`} target="_blank">Download .ics</a>
+        {route?.scheduledFor && (
+          <>
+            <a className="rounded border px-2 py-1 text-xs" target="_blank"
+               href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(route.name)}&dates=${new Date(route.scheduledFor).toISOString().replace(/[-:]/g,"").split(".")[0]}Z/${new Date(new Date(route.scheduledFor).getTime()+60*60*1000).toISOString().replace(/[-:]/g,"").split(".")[0]}Z&details=Route%20in%20Daysweeper`}>
+              Add to Google
+            </a>
+            <a className="rounded border px-2 py-1 text-xs" target="_blank"
+               href={`https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(route.name)}&body=Route%20via%20Daysweeper`}>
+              Add to Outlook
+            </a>
+          </>
+        )}
+      </div>
+
+      <RouteMap stops={stopObjs} />
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="rounded-md border p-3">
           <div className="mb-2 font-medium">Available Companies</div>
@@ -76,7 +101,47 @@ export default function RouteBuilderPage() {
         <div className="rounded-md border p-3">
           <div className="mb-2 flex items-center justify-between">
             <div className="font-medium">Route Stops</div>
-            <Button size="sm" onClick={() => replaceStops.mutate(ordered, { onSuccess: () => refetch() })}>Save Order</Button>
+            <div className="flex gap-2">
+              <Button size="sm" onClick={() => replaceStops.mutate(ordered, { onSuccess: () => refetch() })}>Save Order</Button>
+              <Button
+                size="sm"
+                variant="secondary"
+                onClick={async () => {
+                  const missing = stopObjs
+                    .filter((t: any) => !(t.latitude && t.longitude));
+                  if (missing.length === 0) return;
+
+                  for (const t of missing) {
+                    await fetch(`/api/targets/${t.id}/geocode`, { method: "POST" });
+                  }
+                  await refetch();
+                }}
+              >
+                Geocode Missing
+              </Button>
+              <Button
+                size="sm"
+                variant="secondary"
+                onClick={async () => {
+                  const missing = stopObjs
+                    .filter((t: any) => !(t.latitude && t.longitude))
+                    .map((t: any) => ({ id: t.id, query: t.addressRaw || t.company }));
+                  if (missing.length === 0) return;
+
+                  const results = await appleGeocodeBatch(missing);
+                  for (const r of results) {
+                    await fetch(`/api/targets/${r.id}`, {
+                      method: "PATCH",
+                      headers: { "content-type": "application/json" },
+                      body: JSON.stringify({ latitude: String(r.lat), longitude: String(r.lon) }),
+                    });
+                  }
+                  await refetch();
+                }}
+              >
+                Geocode Missing (Apple)
+              </Button>
+            </div>
           </div>
 
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={({ active, over }) => {
@@ -106,6 +171,12 @@ function SortableStop({ id, idx, targets, onRemove }: { id: string; idx: number;
         <div>
           <div className="font-medium">{t?.company ?? id}</div>
           <div className="text-xs text-muted-foreground">{t?.addressRaw ?? ""}</div>
+          {t?.latitude && t?.longitude && (
+            <div className="flex gap-2 text-xs mt-1">
+              <a target="_blank" className="underline" href={`http://maps.apple.com/?daddr=${t.latitude},${t.longitude}`}>Apple Maps</a>
+              <a target="_blank" className="underline" href={`https://www.google.com/maps/search/?api=1&query=${t.latitude},${t.longitude}`}>Google Maps</a>
+            </div>
+          )}
         </div>
       </div>
       <button className="text-xs rounded border px-2 py-1" onClick={onRemove}>Remove</button>

@@ -1,0 +1,7 @@
+{
+  "name": "mcp-server-daysweeper",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": { "@modelcontextprotocol/sdk": "^0.2.0", "node-fetch": "^3.3.2" }
+}

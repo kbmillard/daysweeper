@@ -84,6 +84,22 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
+    title: 'Chat',
+    url: '/dashboard/chat',
+    icon: 'product',
+    shortcut: ['h', 'h'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Import',
+    url: '/dashboard/import',
+    icon: 'product',
+    shortcut: ['i', 'i'],
+    isActive: false,
+    items: []
+  },
+  {
     title: 'Product',
     url: '/dashboard/product',
     icon: 'product',

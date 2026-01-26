@@ -1,836 +1,367 @@
-Build out the next layer end-to-end:
-	•	Route planner map embed (Mapbox GL) with geocode-missing button
-	•	Scraper merge/link (already spec’d; unchanged here)
-	•	Assign & Schedule (already added; kept)
-	•	AI Chat: /api/chat + a dashboard Chat page w/ company/route context
-	•	Bulk JSON import: /api/import/targets + dashboard Import page
-	•	Calendar sync: per-route ICS export + “Add to Google/Outlook/Apple” buttons
-	•	Deep links: Open in Google/Apple Maps per stop
-	•	MCP server skeleton (separate folder) wired to your HTTPS APIs w/ an INTERNAL_API_KEY
+Perfect — since you chose #3: rewrite new, here’s a single, strict Cursor hard-rewrite prompt that builds a clean monorepo with:
+	•	Web app (Next.js 16) under the dashboard shell
+	•	All working features: Companies (+notes highlight→tags), Routes (create/assign/schedule/drag order/outcomes), RouteMap with true directions polyline, Apple client-side geocoding, ICS export + Add to Calendar, Chat tab (/api/chat), Bulk JSON import UI, Sentry (tunneled)
+	•	MCP server (editor tools against your APIs)
+	•	DB package (Prisma schema + indexes + seed)
+	•	iOS: drop-in Swift files to paste into your Xcode project:
+Users/kylemillard/desktop_nocloud/dev/rb-copilot/rb-last-leg/LastLeg.xcodeproj
 
-Copy-paste this exact prompt into Cursor. Do not break it up. Do not deviate.
+Copy-paste everything below into Cursor and run. Do not break it up. Do not deviate.
 
 ⸻
 
-Title: DAYSWeeper — Hard Patch #3 (Map, Chat, Import, ICS, MCP) DO NOT DEVIATE
+Title: DAYSWeeper — MONOREPO REWRITE (Web + DB + MCP + iOS) — DO NOT DEVIATE
 
-You are a senior Next.js engineer. Update this repo (Next.js App Router + Prisma + shadcn + Clerk).
-Do NOT change frameworks or auth. Do NOT create another schema.prisma.
-All pages must live under the existing dashboard layout (sidebar/topbar).
+You are a senior engineer. Create a fresh monorepo and migrate working code into it with all features wired and shippable.
+Do NOT change frameworks or auth choices.
+All pages must inherit the dashboard shell (sidebar/topbar).
+Every button must reach a working endpoint; no stubs.
 
-Guardrails
-	•	Import Prisma only from @/lib/prisma.
-	•	Detect dashboard base once:
-	•	If app/(dashboard)/layout.tsx exists → BASE = app/(dashboard)
-	•	Else if app/dashboard/layout.tsx exists → BASE = app/dashboard
-	•	Else STOP and print: “Dashboard layout not found.”
-	•	Hooks must not throw during render; return safe defaults if a fetch fails.
-	•	If a required field is missing, APIs must default it (e.g., addressRaw: "") and never 500.
+0) Monorepo scaffold (pnpm workspaces)
 
-⸻
+# repo root
+mkdir -p daysweeper && cd daysweeper
+printf '{ "name":"daysweeper","private":true,"packageManager":"pnpm@10","workspaces":["apps/*","packages/*"] }\n' > package.json
+pnpm init -y
 
-0) Pre-flight (run exactly)
+Add .gitignore:
 
-pnpm add mapbox-gl @types/mapbox-gl ics @sentry/nextjs openai
-# If you prefer Gemini later, add: pnpm add @google/generative-ai
+node_modules
+.next
+dist
+.env*
+pnpm-*-allow-scripts.json
 
-# If Vercel blocks build scripts on deploy:
-#   pnpm approve-builds   # allow prisma, @prisma/engines, @sentry/cli, sharp
-pnpm prisma generate
+1) Packages: DB (Prisma) + shared config
 
-Env (Vercel & local .env.local):
+mkdir -p packages/db/prisma packages/config
+pnpm add -w prisma @prisma/client zod
 
-NEXT_PUBLIC_MAPBOX_TOKEN=pk_...
-NEXT_PUBLIC_SENTRY_DSN= (optional, if using Sentry)
-OPENAI_API_KEY=sk_...     # or leave blank if you’ll wire Gemini later
-INTERNAL_API_KEY=dev_only_long_random_string
+packages/db/package.json
 
+{ "name":"@daysweeper/db","version":"0.1.0","type":"module","main":"index.ts","dependencies":{"@prisma/client":"^7.3.0"},"devDependencies":{"prisma":"^7.3.0"},"scripts":{"generate":"prisma generate","migrate":"prisma migrate dev","deploy":"prisma migrate deploy"} }
 
-⸻
+packages/db/prisma/schema.prisma
 
-1) MAP: RouteMap embed + geocode-missing
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
 
-1.1 Component
+enum AccountState { ACCOUNT NEW_UNCONTACTED NEW_CONTACTED_NO_ANSWER }
+enum StopOutcome { VISITED NO_ANSWER WRONG_ADDRESS FOLLOW_UP }
+enum SupplyTier { OEM TIER_1 TIER_2 TIER_3 LOGISTICS_3PL TOOLING_CAPITAL_EQUIPMENT AFTERMARKET_SERVICES }
 
-Create src/components/routes/RouteMap.tsx
+model Target {
+  id             String   @id @default(cuid())
+  company        String
+  website        String?
+  phone          String?
+  email          String?
+  addressRaw     String
+  latitude       Decimal?
+  longitude      Decimal?
+  accountState   AccountState  @default(NEW_UNCONTACTED)
+  supplyTier     SupplyTier?
+  supplyGroup    String?
+  supplySubtype  String?
+
+  notes          TargetNote[]
+  routeStops     RouteStop[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // rollups mirrored from RouteStop outcomes
+  lastOutcome       StopOutcome?
+  lastVisitedAt     DateTime?
+  visitedCount      Int @default(0)
+  noAnswerCount     Int @default(0)
+  wrongAddressCount Int @default(0)
+  followUpCount     Int @default(0)
+
+  @@index([company])
+  @@index([accountState])
+  @@index([supplyTier])
+  @@index([supplyGroup, supplySubtype])
+}
+
+model TargetNote {
+  id        String   @id @default(cuid())
+  targetId  String
+  target    Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  content   String
+  tags      String[]
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([targetId])
+  @@index([userId])
+}
+
+model Route {
+  id               String     @id @default(cuid())
+  name             String
+  assignedToUserId String?
+  scheduledFor     DateTime?
+  stops            RouteStop[]
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  @@index([assignedToUserId])
+}
+
+model RouteStop {
+  id        String      @id @default(cuid())
+  routeId   String
+  route     Route       @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  targetId  String
+  target    Target      @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  seq       Int
+  outcome   StopOutcome?
+  visitedAt DateTime?
+  note      String?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  @@unique([routeId, seq])
+  @@index([targetId])
+}
+
+packages/db/index.ts
+
+import { PrismaClient } from "@prisma/client";
+const globalForPrisma = global as unknown as { prisma?: PrismaClient };
+export const prisma = globalForPrisma.prisma ?? new PrismaClient({ log: ["error"] });
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+
+packages/db/prisma/seed.ts (optional)
+
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+async function main(){
+  if (await prisma.target.count()) return;
+  await prisma.target.createMany({ data:[
+    { company:"APR Containers - Louisville", addressRaw:"Louisville, KY" },
+    { company:"River City Plastics", addressRaw:"Clarksville, IN" }
+  ]});
+}
+main().finally(()=>prisma.$disconnect());
+
+2) App: Web (Next.js 16)
+
+pnpm dlx create-next-app@latest apps/web --ts --eslint --src-dir --app --import-alias @/*
+cd apps/web
+pnpm add @daysweeper/db @tanstack/react-query @tanstack/react-table dayjs use-debounce mapbox-gl @types/mapbox-gl ics @sentry/nextjs openai
+pnpm add -D tailwindcss postcss autoprefixer
+
+apps/web/tailwind.config.ts / postcss.config.js / globals.css → initialize Tailwind (keep starter defaults).
+
+apps/web/next.config.ts
+
+import { withSentryConfig } from "@sentry/nextjs";
+const nextConfig: import("next").NextConfig = { experimental: { clientTraceMetadata: true } };
+export default withSentryConfig(nextConfig, { silent: true }, { hideSourceMaps: true });
+
+apps/web/instrumentation.ts
+
+import * as Sentry from "@sentry/nextjs";
+export async function register(){
+  if (process.env.NEXT_RUNTIME === "nodejs") await import("./sentry.server.config");
+  if (process.env.NEXT_RUNTIME === "edge")   await import("./sentry.edge.config");
+}
+export const onRequestError = Sentry.captureRequestError;
+
+apps/web/sentry.client.config.ts
+
+import * as Sentry from "@sentry/nextjs";
+Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, tunnel:"/api/monitoring", tracesSampleRate:0.2 });
+
+apps/web/sentry.server.config.ts
+
+import * as Sentry from "@sentry/nextjs";
+Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, tracesSampleRate:0.2 });
+
+apps/web/sentry.edge.config.ts
+
+import * as Sentry from "@sentry/nextjs";
+Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, tunnel:"/api/monitoring", tracesSampleRate:0.2 });
+
+apps/web/app/api/monitoring/route.ts (Sentry tunnel)
+
+export const runtime = "edge";
+export async function POST(req: Request){
+  const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN!;
+  const u = new URL(dsn); const proj = u.pathname.replace("/","");
+  const ingest = `https://${u.host}/api/${proj}/envelope/`;
+  const body = await req.text();
+  const r = await fetch(ingest, { method:"POST", headers:{ "Content-Type":"application/x-sentry-envelope" }, body });
+  return new Response(null, { status: r.status });
+}
+
+apps/web/app/layout.tsx
+
+import "./globals.css";
+import Providers from "./providers";
+export default function RootLayout({ children }:{ children:React.ReactNode }){
+  return <html lang="en"><body><Providers>{children}</Providers></body></html>;
+}
+
+apps/web/app/providers.tsx
 
 "use client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const qc = new QueryClient({ defaultOptions:{ queries:{ retry:1, refetchOnWindowFocus:false, staleTime:30000 } }});
+export default function Providers({ children }:{children:React.ReactNode}){ return <QueryClientProvider client={qc}>{children}</QueryClientProvider>; }
 
-import mapboxgl from "mapbox-gl";
-import * as React from "react";
+2.1 Web APIs (use shared Prisma client)
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? "";
+Create these in apps/web/app/api and import from @daysweeper/db.
+	•	Targets: targets/route.ts, targets/[id]/route.ts, targets/[id]/notes/route.ts
+	•	Routes: routes/route.ts, routes/[id]/route.ts, routes/[id]/stops/route.ts, routes/stops/[stopId]/route.ts
+	•	Analytics: analytics/overview/route.ts
+	•	Scrape: scrape/company/route.ts (Cheerio)
+	•	MapKit token: mapkit/token/route.ts (jose)
+	•	Chat: chat/route.ts (OpenAI)
+	•	Import: import/targets/route.ts
+	•	ICS: routes/[id]/ical/route.ts
 
-type Stop = { id: string; company: string; latitude?: number | null; longitude?: number | null; addressRaw?: string | null };
+Use the exact implementations I sent earlier in this thread (they’re already complete and consistent) but import prisma from @daysweeper/db.
 
-export default function RouteMap({ stops }: { stops: Stop[] }) {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const mapRef = React.useRef<mapboxgl.Map | null>(null);
+Example (apps/web/app/api/targets/route.ts):
 
-  React.useEffect(() => {
-    if (!ref.current || mapRef.current) return;
-    const m = new mapboxgl.Map({
-      container: ref.current,
-      style: "mapbox://styles/mapbox/streets-v12",
-      center: [-86.7816, 36.1627], // default center (Nashville)
-      zoom: 5,
-    });
-    mapRef.current = m;
-    return () => m.remove();
-  }, []);
-
-  React.useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-
-    // clear previous markers/layers
-    (map as any)._routeMarkers?.forEach((mk: mapboxgl.Marker) => mk.remove());
-    (map as any)._routeMarkers = [];
-
-    const pts = stops
-      .filter((s) => s.latitude != null && s.longitude != null)
-      .map((s) => ({ id: s.id, company: s.company, coord: [Number(s.longitude), Number(s.latitude)] as [number, number] }));
-
-    if (pts.length === 0) return;
-
-    const bounds = new mapboxgl.LngLatBounds();
-    pts.forEach((p) => {
-      bounds.extend(p.coord);
-      const el = document.createElement("div");
-      el.className = "rounded-full bg-blue-600/90 text-white text-[10px] px-2 py-1 shadow";
-      el.textContent = "●";
-      const mk = new mapboxgl.Marker(el).setLngLat(p.coord).setPopup(new mapboxgl.Popup().setHTML(`<b>${p.company}</b>`)).addTo(map);
-      (map as any)._routeMarkers.push(mk);
-    });
-    map.fitBounds(bounds, { padding: 60, duration: 0 });
-
-    // polyline
-    const geojson = {
-      type: "Feature" as const,
-      geometry: { type: "LineString" as const, coordinates: pts.map((p) => p.coord) },
-      properties: {},
+import { NextResponse } from "next/server";
+import { prisma } from "@daysweeper/db";
+export async function GET(req:Request){
+  const u = new URL(req.url); const q = u.searchParams.get("q") ?? undefined;
+  const state = u.searchParams.get("state") ?? undefined;
+  const tier = u.searchParams.get("tier") ?? undefined;
+  const group = u.searchParams.get("group") ?? undefined;
+  const subtype = u.searchParams.get("subtype") ?? undefined;
+  const where:any = {};
+  if(q) where.company = { contains:q, mode:"insensitive" };
+  if(state) where.accountState = state;
+  if(tier) where.supplyTier = tier;
+  if(group) where.supplyGroup = group;
+  if(subtype) where.supplySubtype = subtype;
+  const rows = await prisma.target.findMany({ where, orderBy:{ createdAt:"desc" }, take:200 });
+  return NextResponse.json(rows);
+}
+export async function POST(req:Request){
+  try{
+    const b = await req.json();
+    const data = {
+      company:String(b.company??"").trim(),
+      addressRaw:String(b.addressRaw??""),
+      website:b.website??null, phone:b.phone??null, email:b.email??null,
+      accountState:b.accountState??"NEW_UNCONTACTED",
+      supplyTier:b.supplyTier??null, supplyGroup:b.supplyGroup??null, supplySubtype:b.supplySubtype??null,
     };
-    if (map.getSource("route-line")) {
-      (map.getSource("route-line") as mapboxgl.GeoJSONSource).setData(geojson as any);
-    } else {
-      map.addSource("route-line", { type: "geojson", data: geojson as any });
-      map.addLayer({
-        id: "route-line-layer",
-        type: "line",
-        source: "route-line",
-        paint: { "line-color": "#2563eb", "line-width": 3 },
-      });
+    if(!data.company) return NextResponse.json({error:"company is required"},{status:400});
+    const created = await prisma.target.create({ data }); return NextResponse.json(created,{status:201});
+  }catch(e:any){ return NextResponse.json({error:e?.message??"Create failed"},{status:500}); }
+}
+
+(Repeat for the other API routes using the earlier code you already applied — no surprises.)
+
+2.2 Web UI (dashboard shell)
+
+Use a single base: /dashboard (or (dashboard) group if your starter uses that). Create pages:
+
+apps/web/app/dashboard/overview/page.tsx
+apps/web/app/dashboard/companies/page.tsx
+apps/web/app/dashboard/companies/[id]/page.tsx
+apps/web/app/dashboard/routes/page.tsx
+apps/web/app/dashboard/routes/[id]/page.tsx
+apps/web/app/dashboard/scrape/page.tsx
+apps/web/app/dashboard/chat/page.tsx
+apps/web/app/dashboard/import/page.tsx
+
+	•	Companies list: search + filters + Quick Add + table (TanStack Table)
+	•	Company profile: overview (inline account state), taxonomy selects, NotesPanel (highlight→tag, from earlier)
+	•	Routes list: create/delete; shows Assigned + Date + #stops
+	•	Route builder: Assign & Schedule buttons, Available companies (left), Sortable stops (right), Save Order, Outcome buttons, RouteMap (Mapbox) with true directions polyline and Geocode Missing (Apple) button
+	•	Scrape: URL paste → draft + candidates → Create or Link & Merge
+	•	Chat: simple chat box; optional fields for targetId/routeId context
+	•	Import: textarea to POST JSON array → shows result
+	•	Overview: wired to analytics endpoint
+
+RouteMap with true directions polyline (Mapbox Directions)
+Add helper: src/components/routes/RouteMap.tsx extending the previous map to call the Directions API when ≥2 points exist:
+
+// inside effect after pts computed
+if (pts.length >= 2) {
+  const coords = pts.map(p => p.coord.join(",")).join(";");
+  const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${coords}?overview=full&geometries=geojson&access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`;
+  fetch(url).then(r=>r.json()).then(j=>{
+    const line = j.routes?.[0]?.geometry;
+    if (!line) return;
+    if (map.getSource("route-line"))
+      (map.getSource("route-line") as mapboxgl.GeoJSONSource).setData({ type:"Feature", geometry: line, properties:{} } as any);
+    else {
+      map.addSource("route-line", { type:"geojson", data:{ type:"Feature", geometry: line, properties:{} } as any });
+      map.addLayer({ id:"route-line-layer", type:"line", source:"route-line", paint:{ "line-color":"#2563eb","line-width":4 }});
     }
-  }, [stops.map((s) => `${s.latitude},${s.longitude}`).join("|")]);
-
-  return <div ref={ref} className="h-[420px] w-full rounded-lg border" />;
+  }).catch(()=>{ /* fallback to straight line if desired */ });
 }
 
-Add CSS once (if not present) in your global CSS:
+Apple client geocoding
+Add src/lib/mapkit-loader.ts + src/lib/apple-geocode.ts (from the previous patch) and Geocode Missing (Apple) button in the builder header (already specified).
 
-/* globals.css */
-@import "mapbox-gl/dist/mapbox-gl.css";
+Deep links in StopRow: open Apple/Google Maps if lat/lon exists.
 
-1.2 Add geocoding API & hook
+ICS: add “Download .ics”, “Add to Google”, “Add to Outlook” buttons (from earlier).
 
-Create app/api/targets/[id]/geocode/route.ts
+Sentry: tunnel points to /api/monitoring. Confirm DSN env set.
 
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+3) App: MCP server
 
-export async function POST(_req: Request, { params }: { params: { id: string } }) {
-  const target = await prisma.target.findUnique({ where: { id: params.id } });
-  if (!target) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  const q = target.addressRaw || target.company;
-  if (!q) return NextResponse.json({ error: "No address/company to geocode" }, { status: 400 });
+mkdir -p apps/mcp
+printf '{ "name":"@daysweeper/mcp","version":"0.1.0","type":"module","dependencies":{"@modelcontextprotocol/sdk":"^0.2.0","node-fetch":"^3.3.2"},"scripts":{"start":"node index.js"} }\n' > apps/mcp/package.json
 
-  const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-  if (!token) return NextResponse.json({ error: "Mapbox token missing" }, { status: 500 });
+apps/mcp/index.js
 
-  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json?access_token=${token}&limit=1`;
-  const r = await fetch(url);
-  if (!r.ok) return NextResponse.json({ error: "Geocode failed" }, { status: 502 });
-  const j = await r.json();
-  const first = j.features?.[0];
-  if (!first) return NextResponse.json({ error: "No result" }, { status: 404 });
-
-  const [lon, lat] = first.center;
-  const updated = await prisma.target.update({
-    where: { id: params.id },
-    data: { latitude: String(lat), longitude: String(lon) },
-  });
-  return NextResponse.json({ ok: true, target: updated });
-}
-
-Create src/lib/geocode.ts
-
-"use client";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-
-export function useGeocodeTarget(id: string) {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationFn: async () => {
-      const r = await fetch(`/api/targets/${id}/geocode`, { method: "POST" });
-      if (!r.ok) throw new Error("geocode failed");
-      return r.json();
-    },
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ["target", id] });
-      qc.invalidateQueries({ queryKey: ["targets"] });
-    },
-  });
-}
-
-1.3 Use map & geocode in the Route Builder
-
-Edit ${BASE}/routes/[id]/page.tsx:
-	•	import & render:
-
-import RouteMap from "@/components/routes/RouteMap";
-import { useGeocodeTarget } from "@/lib/geocode";
-
-	•	after you compute ordered and have targets, derive full stop objects:
-
-const stopObjs = ordered
-  .map((tid) => (targets as any[]).find((t) => t.id === tid))
-  .filter(Boolean) as any[];
-
-	•	render above the two panes:
-
-<RouteMap stops={stopObjs} />
-
-	•	add a “Geocode Missing” button next to “Save Order” that POSTs each missing target’s /geocode (sequentially).
-	•	for each stop row, add Open in Maps links:
-
-{/* inside StopRow */}
-{t?.latitude && t?.longitude && (
-  <div className="flex gap-2 text-xs">
-    <a className="underline" target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${t.latitude},${t.longitude}`}>Google Maps</a>
-    <a className="underline" target="_blank" href={`http://maps.apple.com/?daddr=${t.latitude},${t.longitude}`}>Apple Maps</a>
-  </div>
-)}
-
-
-⸻
-
-2) CHAT: /api/chat + dashboard Chat
-
-2.1 API: app/api/chat/route.ts
-
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-
-// OPENAI default; set OPENAI_API_KEY in env
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-
-export async function POST(req: Request) {
-  const { messages, targetId, routeId } = await req.json();
-
-  let context = "";
-  if (targetId) {
-    const t = await prisma.target.findUnique({
-      where: { id: String(targetId) },
-      include: { notes: { orderBy: { createdAt: "desc" }, take: 10 } },
-    });
-    if (t) {
-      const noteText = t.notes.map((n) => `- ${n.content} [tags: ${(n.tags || []).join(", ")}]`).join("\n");
-      context += `Company: ${t.company}\nAddress: ${t.addressRaw}\nAccountState: ${t.accountState}\nNotes:\n${noteText}\n`;
-    }
-  }
-  if (routeId) {
-    const r = await prisma.route.findUnique({
-      where: { id: String(routeId) },
-      include: { stops: { orderBy: { seq: "asc" }, include: { target: true } } },
-    });
-    if (r) {
-      const stops = r.stops.map((s) => `${s.seq}. ${s.target.company} (${s.target.addressRaw || ""})`).join("\n");
-      context += `\nRoute: ${r.name}\nAssignedTo: ${r.assignedToUserId || "-"}\nDate: ${r.scheduledFor || "-"}\nStops:\n${stops}\n`;
-    }
-  }
-
-  const sys = {
-    role: "system",
-    content:
-      "You are Daysweeper's sales assistant. Use the provided context (companies, routes, notes) to answer briefly and practically. Suggest next best actions.",
-  };
-  const ctx = context ? [{ role: "system", content: `CONTEXT:\n${context}` }] : [];
-  const payload = {
-    model: "gpt-4o-mini",
-    messages: [sys, ...ctx, ...messages],
-    temperature: 0.3,
-  };
-
-  if (!OPENAI_API_KEY) {
-    return NextResponse.json({ error: "OPENAI_API_KEY missing" }, { status: 500 });
-  }
-
-  const r = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: { "content-type": "application/json", authorization: `Bearer ${OPENAI_API_KEY}` },
-    body: JSON.stringify(payload),
-  });
-  if (!r.ok) {
-    const t = await r.text().catch(() => "");
-    return NextResponse.json({ error: t || "chat failed" }, { status: 502 });
-  }
-  const j = await r.json();
-  return NextResponse.json({ reply: j.choices?.[0]?.message?.content ?? "" });
-}
-
-2.2 Page: ${BASE}/chat/page.tsx
-
-"use client";
-
-import * as React from "react";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
-type Msg = { role: "user"|"assistant"; content: string };
-
-export default function ChatPage() {
-  const [messages, setMessages] = React.useState<Msg[]>([]);
-  const [text, setText] = React.useState("");
-  const [targetId, setTargetId] = React.useState("");
-  const [routeId, setRouteId] = React.useState("");
-
-  const send = async () => {
-    if (!text.trim()) return;
-    const next = [...messages, { role: "user", content: text }];
-    setMessages(next);
-    setText("");
-    const r = await fetch("/api/chat", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ messages: next, targetId: targetId || undefined, routeId: routeId || undefined }),
-    });
-    const j = await r.json();
-    setMessages((m) => [...m, { role: "assistant", content: j.reply ?? "(no reply)" }]);
-  };
-
-  return (
-    <div className="space-y-4 p-4">
-      <h1 className="text-lg font-semibold tracking-tight">AI Chat</h1>
-      <div className="flex flex-wrap gap-2">
-        <Input className="w-64" placeholder="Company ID (optional)" value={targetId} onChange={(e)=>setTargetId(e.target.value)} />
-        <Input className="w-64" placeholder="Route ID (optional)" value={routeId} onChange={(e)=>setRouteId(e.target.value)} />
-      </div>
-      <div className="rounded border p-3 min-h-[240px] space-y-2 bg-card">
-        {messages.map((m,i)=>(
-          <div key={i} className={m.role==="user"?"text-right":""}>
-            <div className={`inline-block rounded px-3 py-2 text-sm ${m.role==="user"?"bg-primary text-primary-foreground":"bg-muted"}`}>
-              {m.content}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="flex items-start gap-2">
-        <Textarea value={text} onChange={(e)=>setText(e.target.value)} placeholder="Ask about a company, a route, or notes…" />
-        <Button onClick={send}>Send</Button>
-      </div>
-    </div>
-  );
-}
-
-(Optional) also mount Chat on a company profile tab by pre-filling targetId.
-
-⸻
-
-3) BULK JSON Import
-
-3.1 API: app/api/import/targets/route.ts
-
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-
-type T = {
-  company: string;
-  addressRaw?: string;
-  website?: string | null;
-  phone?: string | null;
-  email?: string | null;
-  accountState?: "ACCOUNT"|"NEW_UNCONTACTED"|"NEW_CONTACTED_NO_ANSWER";
-  supplyTier?: string | null;
-  supplyGroup?: string | null;
-  supplySubtype?: string | null;
-};
-
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const rows: T[] = Array.isArray(body) ? body : body?.items;
-    if (!Array.isArray(rows) || rows.length === 0) {
-      return NextResponse.json({ error: "Provide JSON array of targets or {items: [...]}" }, { status: 400 });
-    }
-    const toCreate = rows.map((r) => ({
-      company: String(r.company ?? "").trim(),
-      addressRaw: String(r.addressRaw ?? ""),
-      website: r.website ?? null,
-      phone: r.phone ?? null,
-      email: r.email ?? null,
-      accountState: (r.accountState as any) ?? "NEW_UNCONTACTED",
-      supplyTier: r.supplyTier ?? null,
-      supplyGroup: r.supplyGroup ?? null,
-      supplySubtype: r.supplySubtype ?? null,
-    })).filter((x) => x.company.length > 0);
-
-    // simple createMany; if you need dedupe, do it client-side or add unique constraints separately
-    const created = await prisma.target.createMany({ data: toCreate, skipDuplicates: false });
-    return NextResponse.json({ ok: true, created: created.count });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message ?? "import failed" }, { status: 500 });
-  }
-}
-
-3.2 Page: ${BASE}/import/page.tsx
-
-"use client";
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-
-export default function ImportPage() {
-  const [json, setJson] = React.useState("[]");
-  const [result, setResult] = React.useState<string>("");
-
-  const run = async () => {
-    try {
-      const parsed = JSON.parse(json);
-      const r = await fetch("/api/import/targets", {
-        method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(parsed),
-      });
-      const j = await r.json();
-      setResult(JSON.stringify(j, null, 2));
-    } catch (e: any) {
-      setResult(String(e?.message || e));
-    }
-  };
-
-  return (
-    <div className="space-y-4 p-4">
-      <h1 className="text-lg font-semibold tracking-tight">Bulk Import (JSON)</h1>
-      <p className="text-sm text-muted-foreground">Paste a JSON array of targets. Fields: company, addressRaw, website, phone, email, accountState, supplyTier, supplyGroup, supplySubtype.</p>
-      <Textarea value={json} onChange={(e)=>setJson(e.target.value)} className="min-h-[240px]" />
-      <Button onClick={run}>Import</Button>
-      {result && <pre className="rounded border p-3 text-xs bg-card whitespace-pre-wrap">{result}</pre>}
-    </div>
-  );
-}
-
-Add a sidebar link to /dashboard/import.
-
-⸻
-
-4) CALENDAR SYNC: route ICS + add-to-calendar links
-
-4.1 API: app/api/routes/[id]/ical/route.ts
-
-import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-import { createEvents } from "ics";
-
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
-  const r = await prisma.route.findUnique({
-    where: { id: params.id },
-    include: { stops: { orderBy: { seq: "asc" }, include: { target: true } } },
-  });
-  if (!r) return NextResponse.json({ error: "Not found" }, { status: 404 });
-
-  const date = r.scheduledFor ? new Date(r.scheduledFor) : new Date();
-  const y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
-
-  const events = r.stops.map((s, i) => ({
-    title: `${i+1}. ${s.target.company}`,
-    description: s.target.addressRaw || "",
-    start: [y, m, d, 9 + i, 0], // naive stagger 1h per stop
-    duration: { hours: 1 },
-    location: s.target.addressRaw || "",
-  }));
-
-  const { error, value } = createEvents(events);
-  if (error || !value) return NextResponse.json({ error: String(error) }, { status: 500 });
-
-  return new Response(value, {
-    headers: { "content-type": "text/calendar", "content-disposition": `attachment; filename="route_${r.id}.ics"` },
-  });
-}
-
-4.2 Buttons in builder header (under the name/date/assign row)
-
-<a className="rounded border px-2 py-1 text-xs" href={`/api/routes/${id}/ical`} target="_blank">Download .ics</a>
-{route?.scheduledFor && (
-  <>
-    <a className="rounded border px-2 py-1 text-xs" target="_blank"
-       href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(route.name)}&dates=${new Date(route.scheduledFor).toISOString().replace(/[-:]/g,"").split(".")[0]}Z/${new Date(new Date(route.scheduledFor).getTime()+60*60*1000).toISOString().replace(/[-:]/g,"").split(".")[0]}Z&details=Route%20in%20Daysweeper`}>
-      Add to Google
-    </a>
-    <a className="rounded border px-2 py-1 text-xs" target="_blank"
-       href={`https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(route.name)}&body=Route%20via%20Daysweeper`}>
-      Add to Outlook
-    </a>
-  </>
-)}
-
-(Apple Calendar opens the downloaded .ics by default.)
-
-⸻
-
-5) MCP server skeleton (separate folder; dev-only key)
-
-Create folder mcp-server-daysweeper/ at repo root:
-
-mcp-server-daysweeper/package.json
-
-{
-  "name": "mcp-server-daysweeper",
-  "version": "0.1.0",
-  "type": "module",
-  "main": "index.ts",
-  "dependencies": { "@modelcontextprotocol/sdk": "^0.2.0", "node-fetch": "^3.3.2" }
-}
-
-mcp-server-daysweeper/index.ts
-
-import { Server, Tool } from "@modelcontextprotocol/sdk/server/index.js";
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import fetch from "node-fetch";
 
-const API_BASE = process.env.API_BASE || "https://daysweeper.vercel.app";
+const API = process.env.API_BASE || "http://localhost:3000";
 const KEY = process.env.INTERNAL_API_KEY || "";
 
-async function api(path: string, init: any = {}) {
-  const r = await fetch(`${API_BASE}${path}`, {
-    ...init,
-    headers: { "content-type": "application/json", "x-api-key": KEY, ...(init.headers || {}) }
-  });
+async function api(path) {
+  const r = await fetch(`${API}${path}`, { headers: { "x-api-key": KEY } });
   if (!r.ok) throw new Error(`API ${path} ${r.status}`);
   return r.json();
 }
 
-// Tools
-const listCompanies: Tool = {
-  name: "list_companies",
-  description: "List companies with optional search",
-  inputSchema: { type: "object", properties: { q: { type: "string" } } },
-  async *call({ q }) { return { ok: true, items: await api(`/api/targets?q=${encodeURIComponent(q || "")}`) }; }
-};
+const server = new Server({ name:"daysweeper-mcp", version:"0.1.0" });
 
-const getRoute: Tool = {
-  name: "get_route",
-  description: "Get route details by id",
-  inputSchema: { type: "object", properties: { id: { type: "string" } }, required: ["id"] },
+server.tool({
+  name:"list_companies",
+  description:"List companies with optional search",
+  inputSchema:{ type:"object", properties:{ q:{ type:"string" } } },
+  async *call({ q }) { return { items: await api(`/api/targets${q?`?q=${encodeURIComponent(q)}`:""}`) }; }
+});
+
+server.tool({
+  name:"get_route",
+  description:"Get route details by id",
+  inputSchema:{ type:"object", properties:{ id:{ type:"string" } }, required:["id"] },
   async *call({ id }) { return await api(`/api/routes/${id}`); }
-};
-
-const server = new Server({ name: "daysweeper-mcp", version: "0.1.0" });
-server.tool(listCompanies);
-server.tool(getRoute);
+});
 
 server.start();
 
-API key gate (dev-only): in your existing API routes’ handlers (targets/routes) accept x-api-key = INTERNAL_API_KEY as an alternative auth if present.
+Editor config (Cursor) .cursor/mcp.json:
 
-Run MCP server:
-
-cd mcp-server-daysweeper
-pnpm install
-API_BASE=https://daysweeper.vercel.app INTERNAL_API_KEY=dev_only_long_random_string node index.ts
-
-Connect it from your MCP-capable client with the same API base and key.
-
-⸻
-
-6) Wire sidebar links
-
-Add nav items (wherever your sidebar config lives):
-	•	${BASE}/chat
-	•	${BASE}/import
-
-⸻
-
-7) Acceptance checklist
-	•	Route map shows markers/polyline for geocoded stops; Geocode Missing fills lat/lon for stops with only address.
-	•	Chat replies; when you pass targetId or routeId, it uses context.
-	•	Import accepts a JSON array and creates rows (POST never 500s).
-	•	Calendar: .ics downloads; Google/Outlook links open a compose window.
-	•	MCP: list_companies and get_route tools return data using INTERNAL_API_KEY.
-
-⸻
-
-Yes—we can (and should) do client-side Apple geocoding for the web too, to mirror what LastLeg iOS does with CLGeocoder. Below is a single, strict Cursor patch that:
-	•	keeps your existing Mapbox map for rendering (no visual rewrite),
-	•	adds Apple MapKit JS geocoding on the client, no server geocoder needed,
-	•	mints a MapKit token on your server (Apple requires a signed JWT),
-	•	wires a “Geocode Missing (Apple)” button into the Route Builder to fill lat/lon and save them,
-	•	persists coordinates via your existing PATCH /api/targets/:id.
-
-Copy-paste this entire prompt into Cursor and run it.
-
-⸻
-
-Title: DAYSWeeper — Hard Patch #4 (Client-side Apple Geocoding for Web) — DO NOT DEVIATE
-
-You are a senior Next.js engineer. Implement client-side Apple geocoding using MapKit JS, while keeping the Mapbox map renderer.
-Do NOT change frameworks or auth. Do NOT create another schema.prisma.
-All pages must live under the existing dashboard layout (sidebar/topbar).
-
-Guardrails
-	•	Import Prisma only from @/lib/prisma.
-	•	Determine dashboard base once:
-	•	If app/(dashboard)/layout.tsx exists → BASE = app/(dashboard)
-	•	Else if app/dashboard/layout.tsx exists → BASE = app/dashboard
-	•	Else STOP and print: “Dashboard layout not found.”
-	•	Client hooks must not throw during render; return safe defaults.
-	•	If an API field is missing (e.g., addressRaw) default it (empty string), never 500.
-
-⸻
-
-0) Pre-flight (run exactly)
-
-pnpm add jose       # for signing Apple MapKit JS tokens
-# (map stays Mapbox; no change to mapbox deps)
-pnpm prisma generate
-
-Add env (Vercel & .env.local):
-
-APPLE_TEAM_ID=XXXXXXXXXX
-APPLE_MAPKIT_KEY_ID=YYYYYYYYYY
-# Paste the .p8 private key; if multiline, keep the BEGIN/END lines and \n escapes are fine
-APPLE_MAPKIT_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\nMIIE...snip...\n-----END PRIVATE KEY-----
-# Limit token to your origin; include both local and prod when developing
-NEXT_PUBLIC_MAPKIT_ORIGIN=https://daysweeper.apr.recyclicbravery.com
-
-You can add a second origin for local dev by returning multiple values in the token (see code notes).
-
-⸻
-
-1) MapKit token endpoint (server)
-
-Create app/api/mapkit/token/route.ts
-
-import { NextResponse } from "next/server";
-import { SignJWT, importPKCS8 } from "jose";
-
-function readRequired(name: string) {
-  const v = process.env[name];
-  if (!v) throw new Error(`${name} missing`);
-  return v;
-}
-
-export async function GET() {
-  try {
-    const teamId = readRequired("APPLE_TEAM_ID");
-    const keyId  = readRequired("APPLE_MAPKIT_KEY_ID");
-    let pk = readRequired("APPLE_MAPKIT_PRIVATE_KEY");
-    // Handle base64 or raw PEM
-    if (!pk.includes("BEGIN PRIVATE KEY")) {
-      // assume base64 without headers
-      pk = Buffer.from(pk, "base64").toString("utf8");
-    }
-    const origin = process.env.NEXT_PUBLIC_MAPKIT_ORIGIN || "";
-    const origins = origin.split(",").map(s => s.trim()).filter(Boolean);
-
-    const alg = "ES256";
-    const privateKey = await importPKCS8(pk, alg);
-    const now = Math.floor(Date.now()/1000);
-    const jwt = await new SignJWT({ origin: origins })
-      .setProtectedHeader({ alg, kid: keyId, typ: "JWT" })
-      .setIssuer(teamId)
-      .setIssuedAt(now)
-      .setExpirationTime(now + 30 * 60) // 30 minutes
-      .sign(privateKey);
-
-    // MapKit expects raw token text
-    return new Response(jwt, { headers: { "content-type": "text/plain" } });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message ?? "token error" }, { status: 500 });
-  }
-}
-
-
-⸻
-
-2) MapKit loader + Apple geocode hook (client)
-
-Create src/lib/mapkit-loader.ts
-
-"use client";
-
-let loading: Promise<typeof mapkit> | null = null;
-
-export async function loadMapKit(): Promise<typeof mapkit> {
-  if (typeof window === "undefined") throw new Error("mapkit only in browser");
-  if ((window as any).mapkit?.loaded) return (window as any).mapkit as typeof mapkit;
-
-  if (!loading) {
-    loading = new Promise(async (resolve, reject) => {
-      try {
-        // Inject script
-        const el = document.createElement("script");
-        el.src = "https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js";
-        el.async = true;
-        el.onload = async () => {
-          try {
-            const mk = (window as any).mapkit as typeof mapkit;
-            // Auth callback: fetch token from our API
-            mk.init({
-              authorizationCallback: (done) => {
-                fetch("/api/mapkit/token")
-                  .then(r => r.text())
-                  .then(token => done(token))
-                  .catch(reject);
-              },
-            });
-            (mk as any).loaded = true;
-            resolve(mk);
-          } catch (e) {
-            reject(e);
-          }
-        };
-        el.onerror = (e) => reject(e);
-        document.head.appendChild(el);
-      } catch (e) {
-        reject(e);
+{
+  "mcpServers": {
+    "daysweeper": {
+      "command": "node",
+      "args": ["apps/mcp/index.js"],
+      "env": {
+        "API_BASE": "http://localhost:3000",
+        "INTERNAL_API_KEY": "dev_only_long_random_string"
       }
-    });
-  }
-  return loading;
-}
-
-Create src/lib/apple-geocode.ts
-
-"use client";
-import { loadMapKit } from "./mapkit-loader";
-
-export async function appleGeocodeOne(query: string): Promise<{ lat: number, lon: number } | null> {
-  const mk = await loadMapKit();
-  return new Promise((resolve) => {
-    const geocoder = new mk.Geocoder({ language: navigator.language || "en-US" });
-    geocoder.lookup(query, (err: any, data: any) => {
-      if (err || !data || !data.results || data.results.length === 0) return resolve(null);
-      const item = data.results[0];
-      // MapKit JS gives coordinates under item.coordinate.{latitude,longitude}
-      const coord = item.coordinate || item.center || {};
-      const lat = Number(coord.latitude);
-      const lon = Number(coord.longitude);
-      if (Number.isFinite(lat) && Number.isFinite(lon)) return resolve({ lat, lon });
-      resolve(null);
-    });
-  });
-}
-
-export async function appleGeocodeBatch(queries: Array<{ id: string, query: string }>): Promise<Array<{ id: string, lat: number, lon: number }>> {
-  const out: Array<{ id: string, lat: number, lon: number }> = [];
-  for (const q of queries) {
-    const r = await appleGeocodeOne(q.query);
-    if (r) out.push({ id: q.id, lat: r.lat, lon: r.lon });
-  }
-  return out;
-}
-
-
-⸻
-
-3) Wire “Geocode Missing (Apple)” into the Route Builder
-
-Edit ${BASE}/routes/[id]/page.tsx:
-	1.	Imports
-
-import RouteMap from "@/components/routes/RouteMap";         // if not present yet
-import { appleGeocodeBatch } from "@/lib/apple-geocode";
-import { useUpdateTarget } from "@/lib/targets";              // add this helper mutation
-
-	2.	Helper mutation for saving lat/lon (top level of component)
-
-const saveTarget = useUpdateTarget(""); // we'll pass id manually (see note below)
-
-If your useUpdateTarget is bound to a fixed id at hook creation, create a small helper:
-
-async function patchTarget(id: string, data: any) {
-  await fetch(`/api/targets/${id}`, { method: "PATCH", headers: { "content-type": "application/json" }, body: JSON.stringify(data) });
-}
-
-	3.	Compute stops and render map
-
-const stopObjs = ordered
-  .map((tid) => (targets as any[]).find((t) => t.id === tid))
-  .filter(Boolean) as any[];
-
-<RouteMap stops={stopObjs} />
-
-	4.	Add “Geocode Missing (Apple)” button next to “Save Order”
-
-<Button
-  size="sm"
-  variant="secondary"
-  onClick={async () => {
-    const missing = stopObjs
-      .filter((t: any) => !(t.latitude && t.longitude))
-      .map((t: any) => ({ id: t.id, query: t.addressRaw || t.company }));
-    if (missing.length === 0) return;
-
-    const results = await appleGeocodeBatch(missing);
-    for (const r of results) {
-      // persist to DB
-      await fetch(`/api/targets/${r.id}`, {
-        method: "PATCH",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ latitude: String(r.lat), longitude: String(r.lon) }),
-      });
     }
-    await refetch(); // refresh route data so map updates
-  }}
->
-  Geocode Missing (Apple)
-</Button>
+  }
+}
 
-	5.	Optional: per-stop “Open in Apple/Google Maps”
-Inside your stop row:
-
-{t?.latitude && t?.longitude && (
-  <div className="flex gap-2 text-xs">
-    <a target="_blank" className="underline" href={`http://maps.apple.com/?daddr=${t.latitude},${t.longitude}`}>Apple Maps</a>
-    <a target="_blank" className="underline" href={`https://www.google.com/maps/search/?api=1&query=${t.latitude},${t.longitude}`}>Google Maps</a>
-  </div>
-)}
-
-Keep the Mapbox map render (RouteMap) unchanged—we’re only swapping the geocode source to Apple client-side.
-
-⸻
-
-4) Keep company POST safe (no null address 500s)
-
-Ensure app/api/targets/route.ts POST defaults addressRaw to "":
-
-addressRaw: String(b.addressRaw ?? ""),
-
-
-⸻
-
-5) (Optional) Remove or keep the old server geocode
-
-If you previously added app/api/targets/[id]/geocode/route.ts (Mapbox server geocode), you can keep it as a fallback or delete it. The new flow uses client-side Apple.
-
-⸻
-
-6) Minimal test plan (do this in the browser)
-	1.	Open /dashboard/routes/[id].
-	2.	Stop list has companies with no lat/lon → click Geocode Missing (Apple).
-	3.	Verify network only hits:
-	•	GET /api/mapkit/token
-	•	PATCH /api/targets/:id for each target updated
-	4.	Map renders markers (Mapbox) and polyline; deep links open Apple/Google Maps.
-	5.	Refresh page → lat/lon persist.
-
-If token fails, check:
-	•	APPLE_TEAM_ID, APPLE_MAPKIT_KEY_ID, APPLE_MAPKIT_PRIVATE_KEY are set,
-	•	NEXT_PUBLIC_MAPKIT_ORIGIN matches your site origin (e.g., https://daysweeper.apr.recyclicbravery.com),
-	•	The MapKit token endpoint returns a JWT string (open /api/mapkit/token directly).
-
-⸻
-
-What’s next
-	•	Directions polyline: call Mapbox Directions API for the true route path instead of a straight line between stops.
-	•	Outcome buttons on stop rows (you already have the PATCH API) + reflect in analytics.
-	•	Chat & Import & ICS patches are ready—say the word and I’ll deliver them as one hard patch.
-	•	iOS remains on native CLGeocoder; it now matches web behavior (Apple geocode everywhere).
+(Optional: also keep Sentry MCP config as earlier if you like.)
