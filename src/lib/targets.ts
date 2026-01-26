@@ -1,15 +1,22 @@
 "use client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
+export interface TargetFilters {
+  q?: string;
+  state?: string;
+  tier?: string;
+  group?: string;
+  subtype?: string;
+  tags?: string[];
+}
+
 const qs = (o: Record<string, any>) =>
   Object.entries(o)
     .filter(([, v]) => v !== undefined && v !== null && String(v).length > 0)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join("&");
 
-export function useTargets(params: {
-  q?: string; state?: string; tier?: string; group?: string; subtype?: string; tags?: string[];
-} = {}) {
+export function useTargets(params: TargetFilters = {}) {
   return useQuery({
     queryKey: ["targets", params],
     queryFn: async () => {
