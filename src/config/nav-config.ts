@@ -60,6 +60,14 @@ export const navItems: NavItem[] = [
     // access: { requireOrg: true, permission: 'org:teams:view' }
   },
   {
+    title: 'Companies',
+    url: '/companies',
+    icon: 'product',
+    shortcut: ['c', 'c'],
+    isActive: false,
+    items: []
+  },
+  {
     title: 'Product',
     url: '/dashboard/product',
     icon: 'product',

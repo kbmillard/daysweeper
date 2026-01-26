@@ -1,7 +1,14 @@
-import { delay } from '@/constants/mock-api';
-import { PieGraph } from '@/features/overview/components/pie-graph';
+'use client';
 
-export default async function Stats() {
-  await delay(1000);
-  return <PieGraph />;
+import { PieGraph } from '@/features/overview/components/pie-graph';
+import { useOverview } from '@/lib/overview';
+
+export default function Stats() {
+  const { data, isLoading } = useOverview('30d');
+
+  if (isLoading) {
+    return <div className="h-[250px] animate-pulse bg-muted rounded-lg" />;
+  }
+
+  return <PieGraph data={data?.charts?.stateDistribution || []} />;
 }

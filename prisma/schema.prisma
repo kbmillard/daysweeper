@@ -1,0 +1,287 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Company {
+  id                String     @id
+  externalId        String?    @unique
+  userId            String?
+  orgId             String?
+  name              String
+  parentCompanyDbId String?
+  externalParentId  String?
+  website           String?
+  companyKey        String?
+  phone             String?
+  email             String?
+  tier              String?
+  segment           String?
+  category          String?
+  subtype           String?
+  subtypeGroup      String?
+  legacyJson        Json?
+  metadata          Json?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime
+  Company           Company?   @relation("CompanyToCompany", fields: [parentCompanyDbId], references: [id])
+  other_Company     Company[]  @relation("CompanyToCompany")
+  Customer          Customer[]
+  Location          Location[]
+
+  @@index([companyKey])
+  @@index([externalId])
+  @@index([externalParentId])
+  @@index([orgId])
+  @@index([parentCompanyDbId])
+  @@index([tier])
+  @@index([userId])
+}
+
+model Customer {
+  id                  String                @id
+  userId              String?
+  orgId               String?
+  companyId           String?
+  name                String
+  email               String?
+  phone               String?
+  title               String?
+  department          String?
+  notes               String?
+  tags                String[]              @default([])
+  metadata            Json?
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime
+  Company             Company?              @relation(fields: [companyId], references: [id])
+  CustomerInteraction CustomerInteraction[]
+
+  @@index([companyId])
+  @@index([email])
+  @@index([orgId])
+  @@index([userId])
+}
+
+model CustomerInteraction {
+  id         String   @id
+  customerId String
+  userId     String?
+  type       String
+  subject    String?
+  content    String
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+  Customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([createdAt])
+  @@index([customerId])
+  @@index([userId])
+}
+
+model GeocodeCache {
+  id        String   @id
+  key       String   @unique
+  query     String
+  country   String?
+  label     String
+  lat       Decimal  @db.Decimal(9, 6)
+  lng       Decimal  @db.Decimal(9, 6)
+  source    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+
+  @@index([query, country])
+}
+
+model Location {
+  id                String                   @id
+  externalId        String?                  @unique
+  companyId         String
+  addressRaw        String
+  addressNormalized String?
+  addressComponents Json?
+  addressConfidence Float?
+  latitude          Decimal?                 @db.Decimal(9, 6)
+  longitude         Decimal?                 @db.Decimal(9, 6)
+  geom              Unsupported("geometry")?
+  legacyJson        Json?
+  metadata          Json?
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime
+  Company           Company                  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([companyId])
+  @@index([externalId])
+}
+
+model OrganizerItem {
+  id            String        @id
+  listId        String
+  userId        String?
+  title         String
+  notes         String?
+  completed     Boolean       @default(false)
+  dueDate       DateTime?
+  priority      String?       @default("normal")
+  position      Int           @default(0)
+  tags          String[]      @default([])
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime
+  OrganizerList OrganizerList @relation(fields: [listId], references: [id], onDelete: Cascade)
+
+  @@index([completed])
+  @@index([listId])
+  @@index([position])
+  @@index([userId])
+}
+
+model OrganizerList {
+  id            String          @id
+  userId        String?
+  name          String
+  description   String?
+  color         String?         @default("#6366f1")
+  icon          String?         @default("list")
+  position      Int             @default(0)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime
+  OrganizerItem OrganizerItem[]
+
+  @@index([position])
+  @@index([userId])
+}
+
+model Target {
+  id                String                   @id
+  userId            String?
+  orgId             String?
+  company           String
+  parentCompany     String?
+  website           String?
+  phone             String?
+  email             String?
+  category          String?
+  segment           String?
+  tier              String?
+  focus             String?
+  addressRaw        String
+  addressNormalized String?
+  addressComponents Json?
+  addressConfidence Float?
+  latitude          Decimal?                 @db.Decimal(9, 6)
+  longitude         Decimal?                 @db.Decimal(9, 6)
+  geom              Unsupported("geometry")?
+  geocodeStatus     GeocodeStatus            @default(missing)
+  geocodeProvider   String?
+  geocodeAccuracy   String?
+  geocodeMeta       Json?
+  geocodedAt        DateTime?
+  geocodeAttempts   Int                      @default(0)
+  geocodeLastError  String?
+  legacyJson        Json?
+  
+  // SPEC-1: Account state and taxonomy fields
+  accountState      AccountState?            @default(NEW_UNCONTACTED)
+  supplyTier        SupplyTier?
+  supplyGroup       String?
+  supplySubtype     String?
+  
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime
+  User              User?                    @relation(fields: [userId], references: [id])
+  TargetEnrichment  TargetEnrichment?
+  TargetNote        TargetNote[]
+
+  @@index([category])
+  @@index([company])
+  @@index([geocodeStatus])
+  @@index([orgId])
+  @@index([parentCompany])
+  @@index([segment])
+  @@index([tier])
+  @@index([accountState])
+  @@index([supplyTier])
+  @@index([supplyGroup, supplySubtype])
+}
+
+model TargetEnrichment {
+  id                         String   @id
+  targetId                   String   @unique
+  corporateOverview          String?
+  plantOverview              String?
+  primaryProduct             String?
+  plantRole                  String?
+  primaryCustomer            String?
+  uniquePainPoints           String?
+  recommendedNextStep        String?
+  salesAngles                Json?
+  decisionMakers             Json?
+  verificationChecklist      Json?
+  firstConversationQuestions Json?
+  enrichedJson               Json?
+  sources                    Json?
+  model                      String?
+  confidence                 Float?
+  version                    Int      @default(1)
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime
+  Target                     Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
+}
+
+model TargetNote {
+  id        String   @id @default(cuid())
+  targetId  String
+  target    Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  content   String
+  tags      String[]
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([targetId])
+  @@index([userId])
+}
+
+model User {
+  id        String   @id
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  Target    Target[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model spatial_ref_sys {
+  srid      Int     @id
+  auth_name String? @db.VarChar(256)
+  auth_srid Int?
+  srtext    String? @db.VarChar(2048)
+  proj4text String? @db.VarChar(2048)
+}
+
+enum GeocodeStatus {
+  missing
+  queued
+  geocoded
+  failed
+}
+
+enum AccountState {
+  ACCOUNT
+  NEW_UNCONTACTED
+  NEW_CONTACTED_NO_ANSWER
+}
+
+enum SupplyTier {
+  OEM
+  TIER_1
+  TIER_2
+  TIER_3
+  LOGISTICS_3PL
+  TOOLING_CAPITAL_EQUIPMENT
+  AFTERMARKET_SERVICES
+}

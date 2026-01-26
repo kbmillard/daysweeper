@@ -1,4 +1,5 @@
 import Providers from '@/components/layout/providers';
+import { QueryProvider } from '@/components/layout/query-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { fontVariables } from '@/lib/font';
 import ThemeProvider from '@/components/layout/ThemeToggle/theme-provider';
@@ -66,8 +67,10 @@ export default async function RootLayout({
             enableColorScheme
           >
             <Providers activeThemeValue={activeThemeValue as string}>
-              <Toaster />
-              {children}
+              <QueryProvider>
+                <Toaster />
+                {children}
+              </QueryProvider>
             </Providers>
           </ThemeProvider>
         </NuqsAdapter>
