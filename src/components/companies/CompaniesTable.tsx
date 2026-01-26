@@ -40,7 +40,7 @@ export default function CompaniesTable() {
 
   const filters: TargetFilters = {
     q: debouncedSearch || undefined,
-    state: state || undefined,
+    state: state && state !== 'ALL' ? state : undefined,
     tier: tier || undefined,
     group: group || undefined,
     subtype: subtype || undefined,
@@ -61,13 +61,13 @@ export default function CompaniesTable() {
   };
 
   const handleTierChange = (newTier: string) => {
-    setTier(newTier);
+    setTier(newTier === 'ALL_TIERS' ? '' : newTier);
     setGroup('');
     setSubtype('');
   };
 
   const handleGroupChange = (newGroup: string) => {
-    setGroup(newGroup);
+    setGroup(newGroup === 'ALL_GROUPS' ? '' : newGroup);
     setSubtype('');
   };
 
@@ -119,23 +119,23 @@ export default function CompaniesTable() {
           onChange={(e) => setSearch(e.target.value)}
           className='max-w-sm'
         />
-        <Select value={state} onValueChange={setState}>
+        <Select value={state || undefined} onValueChange={(v) => setState(v || '')}>
           <SelectTrigger className='w-[200px]'>
             <SelectValue placeholder='Account State' />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value=''>All States</SelectItem>
+            <SelectItem value='ALL'>All States</SelectItem>
             <SelectItem value='ACCOUNT'>Account</SelectItem>
             <SelectItem value='NEW_UNCONTACTED'>New - Uncontacted</SelectItem>
             <SelectItem value='NEW_CONTACTED_NO_ANSWER'>New - No Answer</SelectItem>
           </SelectContent>
         </Select>
-        <Select value={tier} onValueChange={handleTierChange}>
+        <Select value={tier || undefined} onValueChange={handleTierChange}>
           <SelectTrigger className='w-[200px]'>
             <SelectValue placeholder='Supply Tier' />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value=''>All Tiers</SelectItem>
+            <SelectItem value='ALL_TIERS'>All Tiers</SelectItem>
             <SelectItem value='OEM'>OEM</SelectItem>
             <SelectItem value='TIER_1'>Tier 1</SelectItem>
             <SelectItem value='TIER_2'>Tier 2</SelectItem>
@@ -151,7 +151,7 @@ export default function CompaniesTable() {
               <SelectValue placeholder='Group' />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value=''>All Groups</SelectItem>
+              <SelectItem value='ALL_GROUPS'>All Groups</SelectItem>
               {availableGroups.map((g) => (
                 <SelectItem key={g} value={g}>
                   {g}
@@ -161,12 +161,12 @@ export default function CompaniesTable() {
           </Select>
         )}
         {tier && group && availableSubtypes.length > 0 && (
-          <Select value={subtype} onValueChange={setSubtype}>
+          <Select value={subtype || undefined} onValueChange={(v) => setSubtype(v === 'ALL_SUBTYPES' ? '' : v)}>
             <SelectTrigger className='w-[200px]'>
               <SelectValue placeholder='Subtype' />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value=''>All Subtypes</SelectItem>
+              <SelectItem value='ALL_SUBTYPES'>All Subtypes</SelectItem>
               {availableSubtypes.map((s) => (
                 <SelectItem key={s} value={s}>
                   {s}

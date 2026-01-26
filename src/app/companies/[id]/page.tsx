@@ -67,13 +67,13 @@ export default function CompanyDetailPage() {
   };
 
   const handleTierChange = (newTier: string) => {
-    setSupplyTier(newTier);
+    setSupplyTier(newTier === 'NONE' ? '' : newTier);
     setSupplyGroup('');
     setSupplySubtype('');
   };
 
   const handleGroupChange = (newGroup: string) => {
-    setSupplyGroup(newGroup);
+    setSupplyGroup(newGroup === 'NONE_GROUP' ? '' : newGroup);
     setSupplySubtype('');
   };
 
@@ -191,12 +191,12 @@ export default function CompanyDetailPage() {
             <CardContent className='space-y-4'>
               <div>
                 <label className='text-sm font-medium mb-2 block'>Supply Tier</label>
-                <Select value={supplyTier} onValueChange={handleTierChange}>
+                <Select value={supplyTier || undefined} onValueChange={handleTierChange}>
                   <SelectTrigger>
                     <SelectValue placeholder='Select tier' />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value=''>None</SelectItem>
+                    <SelectItem value='NONE'>None</SelectItem>
                     <SelectItem value='OEM'>OEM</SelectItem>
                     <SelectItem value='TIER_1'>Tier 1</SelectItem>
                     <SelectItem value='TIER_2'>Tier 2</SelectItem>
@@ -215,12 +215,12 @@ export default function CompanyDetailPage() {
               {supplyTier && availableGroups.length > 0 && (
                 <div>
                   <label className='text-sm font-medium mb-2 block'>Group</label>
-                  <Select value={supplyGroup} onValueChange={handleGroupChange}>
+                  <Select value={supplyGroup || undefined} onValueChange={handleGroupChange}>
                     <SelectTrigger>
                       <SelectValue placeholder='Select group' />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value=''>None</SelectItem>
+                      <SelectItem value='NONE_GROUP'>None</SelectItem>
                       {availableGroups.map((g) => (
                         <SelectItem key={g} value={g}>
                           {g}
@@ -239,7 +239,7 @@ export default function CompanyDetailPage() {
                       <SelectValue placeholder='Select subtype' />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value=''>None</SelectItem>
+                      <SelectItem value='NONE_SUBTYPE'>None</SelectItem>
                       {availableSubtypes.map((s) => (
                         <SelectItem key={s} value={s}>
                           {s}
@@ -253,12 +253,12 @@ export default function CompanyDetailPage() {
               {supplyTier && !availableGroups.length && (
                 <div>
                   <label className='text-sm font-medium mb-2 block'>Subtype</label>
-                  <Select value={supplySubtype} onValueChange={setSupplySubtype}>
+                  <Select value={supplySubtype || undefined} onValueChange={(v) => setSupplySubtype(v === 'NONE_SUBTYPE' ? '' : v)}>
                     <SelectTrigger>
                       <SelectValue placeholder='Select subtype' />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value=''>None</SelectItem>
+                      <SelectItem value='NONE_SUBTYPE'>None</SelectItem>
                       {listSubtypes(supplyTier as SupplyTier).map((s) => (
                         <SelectItem key={s} value={s}>
                           {s}
