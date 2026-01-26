@@ -12,7 +12,6 @@ import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } 
 import { CSS } from "@dnd-kit/utilities";
 import RouteMap from "@/components/routes/RouteMap";
 import { useGeocodeTarget } from "@/lib/geocode";
-import { appleGeocodeBatch } from "@/lib/apple-geocode";
 
 export default function RouteBuilderPage() {
   const id = String((useParams() as any).id);
@@ -118,28 +117,6 @@ export default function RouteBuilderPage() {
                 }}
               >
                 Geocode Missing
-              </Button>
-              <Button
-                size="sm"
-                variant="secondary"
-                onClick={async () => {
-                  const missing = stopObjs
-                    .filter((t: any) => !(t.latitude && t.longitude))
-                    .map((t: any) => ({ id: t.id, query: t.addressRaw || t.company }));
-                  if (missing.length === 0) return;
-
-                  const results = await appleGeocodeBatch(missing);
-                  for (const r of results) {
-                    await fetch(`/api/targets/${r.id}`, {
-                      method: "PATCH",
-                      headers: { "content-type": "application/json" },
-                      body: JSON.stringify({ latitude: String(r.lat), longitude: String(r.lon) }),
-                    });
-                  }
-                  await refetch();
-                }}
-              >
-                Geocode Missing (Apple)
               </Button>
             </div>
           </div>

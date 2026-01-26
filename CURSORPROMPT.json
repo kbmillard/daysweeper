@@ -1,81 +1,429 @@
-Perfect — since you chose #3: rewrite new, here’s a single, strict Cursor hard-rewrite prompt that builds a clean monorepo with:
-	•	Web app (Next.js 16) under the dashboard shell
-	•	All working features: Companies (+notes highlight→tags), Routes (create/assign/schedule/drag order/outcomes), RouteMap with true directions polyline, Apple client-side geocoding, ICS export + Add to Calendar, Chat tab (/api/chat), Bulk JSON import UI, Sentry (tunneled)
-	•	MCP server (editor tools against your APIs)
-	•	DB package (Prisma schema + indexes + seed)
-	•	iOS: drop-in Swift files to paste into your Xcode project:
-Users/kylemillard/desktop_nocloud/dev/rb-copilot/rb-last-leg/LastLeg.xcodeproj
+Perfect — here is a single, strict Cursor prompt that rewrites the app around your LastLeg schema (the one you pasted), keeps Apple client-side geocoding, adds true directions polylines, ICS export, Chat, Import, Sentry tunnel, and aligns web + iOS + MCP. It uses RouteTarget as the UI “company” entity (to match your schema), and RouteStop → RouteTarget everywhere so it’s consistent with LastLeg.
 
-Copy-paste everything below into Cursor and run. Do not break it up. Do not deviate.
+DO NOT DEVIATE. If anything below is ambiguous, STOP and print what you found before guessing.
 
 ⸻
 
-Title: DAYSWeeper — MONOREPO REWRITE (Web + DB + MCP + iOS) — DO NOT DEVIATE
+Title: DAYSWeeper × LastLeg — Harmonized Rewrite (Schema-First, RouteTarget, Apple Geocode) — DO NOT DEVIATE
 
-You are a senior engineer. Create a fresh monorepo and migrate working code into it with all features wired and shippable.
-Do NOT change frameworks or auth choices.
-All pages must inherit the dashboard shell (sidebar/topbar).
-Every button must reach a working endpoint; no stubs.
+You are a senior engineer. Rewrite the web app to use the LastLeg Prisma schema the user provided (harmonized), with RouteTarget as the primary “company/lead” entity. Build working endpoints and pages under the dashboard shell, Apple client geocoding, Mapbox map + Directions polyline, ICS export, Chat, JSON Import, Sentry tunnel, and MCP server. Every button must hit a live endpoint.
 
-0) Monorepo scaffold (pnpm workspaces)
+Non-negotiables
+	•	Single Prisma schema (LastLeg-based). Do NOT create a second one.
+	•	Import Prisma from @/lib/prisma (or @daysweeper/db if monorepo).
+	•	Dashboard shell: put all pages under the same layout segment (app/(dashboard) or app/dashboard).
+	•	Hooks must not throw during render; return safe defaults.
+	•	If a required field is missing (e.g., addressRaw), default it in APIs (empty string). No 500s.
 
-# repo root
-mkdir -p daysweeper && cd daysweeper
-printf '{ "name":"daysweeper","private":true,"packageManager":"pnpm@10","workspaces":["apps/*","packages/*"] }\n' > package.json
-pnpm init -y
+⸻
 
-Add .gitignore:
+0) Detect dashboard base (set BASE)
+	•	If app/(dashboard)/layout.tsx exists → BASE = app/(dashboard)
+	•	Else if app/dashboard/layout.tsx exists → BASE = app/dashboard
+	•	Else STOP and print: “Dashboard layout not found.”
 
-node_modules
-.next
-dist
-.env*
-pnpm-*-allow-scripts.json
+⸻
 
-1) Packages: DB (Prisma) + shared config
+1) Dependencies & env (run)
 
-mkdir -p packages/db/prisma packages/config
-pnpm add -w prisma @prisma/client zod
+pnpm add @tanstack/react-query @tanstack/react-table use-debounce dayjs mapbox-gl @types/mapbox-gl ics cheerio @sentry/nextjs jose openai
+pnpm prisma generate
 
-packages/db/package.json
+Env (Vercel & .env.local)
 
-{ "name":"@daysweeper/db","version":"0.1.0","type":"module","main":"index.ts","dependencies":{"@prisma/client":"^7.3.0"},"devDependencies":{"prisma":"^7.3.0"},"scripts":{"generate":"prisma generate","migrate":"prisma migrate dev","deploy":"prisma migrate deploy"} }
+DATABASE_URL=its in vercel project already
+NEXT_PUBLIC_MAPBOX_TOKEN= its in vercel project already
+NEXT_PUBLIC_SENTRY_DSN=its in vercel project already
+OPENAI_API_KEY=integrated with vercel ai
+APPLE_TEAM_ID=its in vercel project already
+INTERNAL_API_KEY=its in vercel project already
 
-packages/db/prisma/schema.prisma
+If Vercel blocks builds later: pnpm approve-builds locally → allow prisma, @prisma/engines, @sentry/cli, sharp → commit pnpm-*-allow-scripts.json.
 
-generator client { provider = "prisma-client-js" }
-datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+⸻
 
+2) Prisma schema — harmonize from user’s LastLeg schema
+
+Overwrite /prisma/schema.prisma with this deduped version (no duplicate enums; preserve Unsupported geometry; add url in datasource):
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String             @id @default(cuid())
+  email             String             @unique
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  targets           Target[]
+  // DaySweeper relations (optional - doesn't affect LastLeg)
+  daySweeperTasks   DaySweeperTask[]
+  daySweeperClients DaySweeperClient[]
+}
+
+enum GeocodeStatus {
+  missing
+  queued
+  geocoded
+  failed
+}
+
+model Target {
+  id String @id @default(cuid())
+
+  // Auth / tenancy
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id])
+  orgId  String?
+
+  // Identity
+  company       String
+  parentCompany String?
+  website       String?
+  phone         String?
+
+  // Classification
+  category String?
+  segment  String?
+  tier     String? // OEM | Tier 1 | Tier 2 | Tier 3 | 3PL | Unknown
+  focus    String?
+
+  // Address (text is source of truth)
+  addressRaw        String
+  addressNormalized String?
+  addressComponents Json?
+  addressConfidence Float?
+
+  // Coordinates (ONLY from iOS Apple CLGeocoder)
+  latitude  Decimal?                             @db.Decimal(9, 6)
+  longitude Decimal?                             @db.Decimal(9, 6)
+  geom      Unsupported("geometry(Point,4326)")?
+
+  geocodeStatus    GeocodeStatus @default(missing)
+  geocodeProvider  String?
+  geocodeAccuracy  String?
+  geocodeMeta      Json?
+  geocodedAt       DateTime?
+  geocodeAttempts  Int           @default(0)
+  geocodeLastError String?
+
+  // Enrichment
+  enrichment TargetEnrichment?
+
+  // Legacy preservation
+  legacyJson Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orgId])
+  @@index([company])
+  @@index([parentCompany])
+  @@index([category])
+  @@index([segment])
+  @@index([tier])
+  @@index([geocodeStatus])
+}
+
+model TargetEnrichment {
+  id       String @id @default(cuid())
+  targetId String @unique
+  target   Target @relation(fields: [targetId], references: [id], onDelete: Cascade)
+
+  corporateOverview   String?
+  plantOverview       String?
+  primaryProduct      String?
+  plantRole           String?
+  primaryCustomer     String?
+  uniquePainPoints    String?
+  recommendedNextStep String?
+
+  salesAngles                Json?
+  decisionMakers             Json?
+  verificationChecklist      Json?
+  firstConversationQuestions Json?
+
+  enrichedJson Json?
+  sources      Json?
+  model        String?
+  confidence   Float?
+  version      Int     @default(1)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GeocodeCache {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  query     String
+  country   String?
+  label     String
+  lat       Decimal  @db.Decimal(9, 6)
+  lng       Decimal  @db.Decimal(9, 6)
+  source    String // "primary" | "fallback" | "manual"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([query, country])
+}
+
+// Research Knowledge Base
+model ResearchKnowledgeBase {
+  id          String   @id @default(cuid())
+  orgId       String?
+  source      String?
+  contentType String?
+  rawData     String
+  keywords    String[]
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([orgId])
+  @@index([source])
+}
+
+// DaySweeper Task Management
+model DaySweeperClient {
+  id        String           @id @default(cuid())
+  userId    String?
+  user      User?            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  tasks     DaySweeperTask[]
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  @@index([userId])
+}
+
+model DaySweeperTask {
+  id             String            @id @default(cuid())
+  userId         String?
+  user           User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clientId       String?
+  client         DaySweeperClient? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  title          String
+  notes          String?
+  completed      Boolean           @default(false)
+  dueDate        DateTime?
+  serverRevision Int?
+  deletedAt      DateTime?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@index([userId])
+  @@index([clientId])
+  @@index([deletedAt])
+  @@index([updatedAt])
+}
+
+enum DaySweeperOutboxEntity { task client }
+enum DaySweeperOutboxAction { upsert delete }
+
+model DaySweeperOutboxEvent {
+  id            String                 @id @default(cuid())
+  userId        String?
+  entity        DaySweeperOutboxEntity
+  action        DaySweeperOutboxAction
+  entityId      String
+  payloadJSON   Json?
+  createdAt     DateTime               @default(now())
+  attempts      Int                    @default(0)
+  lastAttemptAt DateTime?
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+// Organizer (Superlist-style)
+model OrganizerList {
+  id          String          @id @default(cuid())
+  userId      String?
+  name        String
+  description String?
+  color       String?         @default("#6366f1")
+  icon        String?         @default("list")
+  position    Int             @default(0)
+  items       OrganizerItem[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([userId])
+  @@index([position])
+}
+
+model OrganizerItem {
+  id          String          @id @default(cuid())
+  listId      String
+  list        OrganizerList   @relation(fields: [listId], references: [id], onDelete: Cascade)
+  userId      String?
+  title       String
+  notes       String?
+  completed   Boolean         @default(false)
+  dueDate     DateTime?
+  priority    String?         @default("normal")
+  position    Int             @default(0)
+  tags        String[]        @default([])
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([listId])
+  @@index([userId])
+  @@index([completed])
+  @@index([position])
+}
+
+// CRM — Company / Location / Customer
+model Company {
+  id                String     @id @default(cuid())
+  externalId        String?    @unique
+  userId            String?
+  orgId             String?
+
+  name              String
+  parentCompanyDbId String?
+  parentCompany     Company?   @relation("CompanyParent", fields: [parentCompanyDbId], references: [id], onDelete: SetNull)
+  childCompanies    Company[]  @relation("CompanyParent")
+  externalParentId  String?
+
+  website     String?
+  companyKey  String?
+  phone       String?
+  email       String?
+
+  tier        String?
+  segment     String?
+  category    String?
+  subtype     String?
+  subtypeGroup String?
+
+  legacyJson  Json?
+  metadata    Json?
+
+  locations   Location[]
+  customers   Customer[]
+
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([userId])
+  @@index([orgId])
+  @@index([externalId])
+  @@index([parentCompanyDbId])
+  @@index([externalParentId])
+  @@index([companyKey])
+  @@index([tier])
+}
+
+model Location {
+  id                String     @id @default(cuid())
+  externalId        String?    @unique
+  companyId         String
+  company           Company    @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  addressRaw        String
+  addressNormalized String?
+  addressComponents Json?
+  addressConfidence Float?
+
+  latitude  Decimal?   @db.Decimal(9, 6)
+  longitude Decimal?   @db.Decimal(9, 6)
+  geom      Unsupported("geometry(Point,4326)")?
+
+  legacyJson Json?
+  metadata   Json?
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([companyId])
+  @@index([externalId])
+}
+
+model Customer {
+  id         String     @id @default(cuid())
+  userId     String?
+  orgId      String?
+  companyId  String?
+  company    Company?   @relation(fields: [companyId], references: [id], onDelete: SetNull)
+
+  name       String
+  email      String?
+  phone      String?
+  title      String?
+  department String?
+
+  notes      String?
+  tags       String[]   @default([])
+  metadata   Json?
+
+  interactions CustomerInteraction[]
+
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@index([userId])
+  @@index([orgId])
+  @@index([companyId])
+  @@index([email])
+}
+
+model CustomerInteraction {
+  id        String     @id @default(cuid())
+  customerId String
+  customer  Customer   @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  userId    String?
+
+  type      String
+  subject   String?
+  content   String
+  metadata  Json?
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([customerId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+// Route Management (DAYSweeper/LastLeg)
 enum AccountState { ACCOUNT NEW_UNCONTACTED NEW_CONTACTED_NO_ANSWER }
 enum StopOutcome { VISITED NO_ANSWER WRONG_ADDRESS FOLLOW_UP }
 enum SupplyTier { OEM TIER_1 TIER_2 TIER_3 LOGISTICS_3PL TOOLING_CAPITAL_EQUIPMENT AFTERMARKET_SERVICES }
 
-model Target {
-  id             String   @id @default(cuid())
+model RouteTarget {
+  id             String       @id @default(cuid())
   company        String
   website        String?
   phone          String?
   email          String?
   addressRaw     String
-  latitude       Decimal?
-  longitude      Decimal?
-  accountState   AccountState  @default(NEW_UNCONTACTED)
+  latitude       Decimal?     @db.Decimal(9, 6)
+  longitude      Decimal?     @db.Decimal(9, 6)
+  accountState   AccountState @default(NEW_UNCONTACTED)
   supplyTier     SupplyTier?
   supplyGroup    String?
   supplySubtype  String?
 
-  notes          TargetNote[]
-  routeStops     RouteStop[]
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  notes          RouteTargetNote[] @relation("RouteTargetNotes")
+  routeStops     RouteStop[]       @relation("RouteTargetStops")
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
 
   // rollups mirrored from RouteStop outcomes
   lastOutcome       StopOutcome?
   lastVisitedAt     DateTime?
-  visitedCount      Int @default(0)
-  noAnswerCount     Int @default(0)
-  wrongAddressCount Int @default(0)
-  followUpCount     Int @default(0)
+  visitedCount      Int         @default(0)
+  noAnswerCount     Int         @default(0)
+  wrongAddressCount Int         @default(0)
+  followUpCount     Int         @default(0)
 
   @@index([company])
   @@index([accountState])
@@ -83,15 +431,15 @@ model Target {
   @@index([supplyGroup, supplySubtype])
 }
 
-model TargetNote {
-  id        String   @id @default(cuid())
+model RouteTargetNote {
+  id        String      @id @default(cuid())
   targetId  String
-  target    Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  target    RouteTarget @relation("RouteTargetNotes", fields: [targetId], references: [id], onDelete: Cascade)
   content   String
   tags      String[]
   userId    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
 
   @@index([targetId])
   @@index([userId])
@@ -114,242 +462,269 @@ model RouteStop {
   routeId   String
   route     Route       @relation(fields: [routeId], references: [id], onDelete: Cascade)
   targetId  String
-  target    Target      @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  target    RouteTarget @relation("RouteTargetStops", fields: [targetId], references: [id], onDelete: Cascade)
   seq       Int
   outcome   StopOutcome?
   visitedAt DateTime?
   note      String?
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
 
   @@unique([routeId, seq])
   @@index([targetId])
 }
 
-packages/db/index.ts
+Then:
 
-import { PrismaClient } from "@prisma/client";
-const globalForPrisma = global as unknown as { prisma?: PrismaClient };
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({ log: ["error"] });
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+pnpm prisma generate
+pnpm prisma migrate dev -n init_lastleg_harmonized
 
-packages/db/prisma/seed.ts (optional)
 
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
-async function main(){
-  if (await prisma.target.count()) return;
-  await prisma.target.createMany({ data:[
-    { company:"APR Containers - Louisville", addressRaw:"Louisville, KY" },
-    { company:"River City Plastics", addressRaw:"Clarksville, IN" }
-  ]});
-}
-main().finally(()=>prisma.$disconnect());
+⸻
 
-2) App: Web (Next.js 16)
+3) Sentry (tunnel) + instrumentation (confirm)
+	•	sentry.client.config.ts → tunnel: "/api/monitoring", tracesSampleRate: 0.2.
+	•	sentry.server.config.ts and sentry.edge.config.ts init with DSN.
+	•	instrumentation.ts loads server/edge configs and exports onRequestError.
+	•	app/api/monitoring/route.ts forwards envelopes to Sentry (edge).
+(You already have these; keep them.)
 
-pnpm dlx create-next-app@latest apps/web --ts --eslint --src-dir --app --import-alias @/*
-cd apps/web
-pnpm add @daysweeper/db @tanstack/react-query @tanstack/react-table dayjs use-debounce mapbox-gl @types/mapbox-gl ics @sentry/nextjs openai
-pnpm add -D tailwindcss postcss autoprefixer
+⸻
 
-apps/web/tailwind.config.ts / postcss.config.js / globals.css → initialize Tailwind (keep starter defaults).
+4) Apple MapKit JS token (server) + client loader
+	•	app/api/mapkit/token/route.ts (jose SignJWT; origins from NEXT_PUBLIC_MAPKIT_ORIGIN).
+	•	src/lib/mapkit-loader.ts (loads MapKit JS and calls /api/mapkit/token).
+	•	src/lib/apple-geocode.ts (appleGeocodeOne, appleGeocodeBatch).
 
-apps/web/next.config.ts
+⸻
 
-import { withSentryConfig } from "@sentry/nextjs";
-const nextConfig: import("next").NextConfig = { experimental: { clientTraceMetadata: true } };
-export default withSentryConfig(nextConfig, { silent: true }, { hideSourceMaps: true });
+5) APIs (RouteTarget-first)
 
-apps/web/instrumentation.ts
+Create/overwrite under app/api:
 
-import * as Sentry from "@sentry/nextjs";
-export async function register(){
-  if (process.env.NEXT_RUNTIME === "nodejs") await import("./sentry.server.config");
-  if (process.env.NEXT_RUNTIME === "edge")   await import("./sentry.edge.config");
-}
-export const onRequestError = Sentry.captureRequestError;
+5.1 RouteTargets
 
-apps/web/sentry.client.config.ts
-
-import * as Sentry from "@sentry/nextjs";
-Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, tunnel:"/api/monitoring", tracesSampleRate:0.2 });
-
-apps/web/sentry.server.config.ts
-
-import * as Sentry from "@sentry/nextjs";
-Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, tracesSampleRate:0.2 });
-
-apps/web/sentry.edge.config.ts
-
-import * as Sentry from "@sentry/nextjs";
-Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, tunnel:"/api/monitoring", tracesSampleRate:0.2 });
-
-apps/web/app/api/monitoring/route.ts (Sentry tunnel)
-
-export const runtime = "edge";
-export async function POST(req: Request){
-  const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN!;
-  const u = new URL(dsn); const proj = u.pathname.replace("/","");
-  const ingest = `https://${u.host}/api/${proj}/envelope/`;
-  const body = await req.text();
-  const r = await fetch(ingest, { method:"POST", headers:{ "Content-Type":"application/x-sentry-envelope" }, body });
-  return new Response(null, { status: r.status });
-}
-
-apps/web/app/layout.tsx
-
-import "./globals.css";
-import Providers from "./providers";
-export default function RootLayout({ children }:{ children:React.ReactNode }){
-  return <html lang="en"><body><Providers>{children}</Providers></body></html>;
-}
-
-apps/web/app/providers.tsx
-
-"use client";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-const qc = new QueryClient({ defaultOptions:{ queries:{ retry:1, refetchOnWindowFocus:false, staleTime:30000 } }});
-export default function Providers({ children }:{children:React.ReactNode}){ return <QueryClientProvider client={qc}>{children}</QueryClientProvider>; }
-
-2.1 Web APIs (use shared Prisma client)
-
-Create these in apps/web/app/api and import from @daysweeper/db.
-	•	Targets: targets/route.ts, targets/[id]/route.ts, targets/[id]/notes/route.ts
-	•	Routes: routes/route.ts, routes/[id]/route.ts, routes/[id]/stops/route.ts, routes/stops/[stopId]/route.ts
-	•	Analytics: analytics/overview/route.ts
-	•	Scrape: scrape/company/route.ts (Cheerio)
-	•	MapKit token: mapkit/token/route.ts (jose)
-	•	Chat: chat/route.ts (OpenAI)
-	•	Import: import/targets/route.ts
-	•	ICS: routes/[id]/ical/route.ts
-
-Use the exact implementations I sent earlier in this thread (they’re already complete and consistent) but import prisma from @daysweeper/db.
-
-Example (apps/web/app/api/targets/route.ts):
+route-targets/route.ts
 
 import { NextResponse } from "next/server";
-import { prisma } from "@daysweeper/db";
-export async function GET(req:Request){
-  const u = new URL(req.url); const q = u.searchParams.get("q") ?? undefined;
+import { prisma } from "@/lib/prisma";
+
+export async function GET(req: Request) {
+  const u = new URL(req.url);
+  const q = u.searchParams.get("q") ?? undefined;
   const state = u.searchParams.get("state") ?? undefined;
   const tier = u.searchParams.get("tier") ?? undefined;
   const group = u.searchParams.get("group") ?? undefined;
   const subtype = u.searchParams.get("subtype") ?? undefined;
+
   const where:any = {};
-  if(q) where.company = { contains:q, mode:"insensitive" };
-  if(state) where.accountState = state;
-  if(tier) where.supplyTier = tier;
-  if(group) where.supplyGroup = group;
-  if(subtype) where.supplySubtype = subtype;
-  const rows = await prisma.target.findMany({ where, orderBy:{ createdAt:"desc" }, take:200 });
+  if (q) where.company = { contains: q, mode: "insensitive" };
+  if (state) where.accountState = state;
+  if (tier) where.supplyTier = tier;
+  if (group) where.supplyGroup = group;
+  if (subtype) where.supplySubtype = subtype;
+
+  const rows = await prisma.routeTarget.findMany({
+    where, orderBy: { createdAt:"desc" }, take: 200
+  });
   return NextResponse.json(rows);
 }
-export async function POST(req:Request){
-  try{
+
+export async function POST(req: Request) {
+  try {
     const b = await req.json();
     const data = {
-      company:String(b.company??"").trim(),
-      addressRaw:String(b.addressRaw??""),
-      website:b.website??null, phone:b.phone??null, email:b.email??null,
-      accountState:b.accountState??"NEW_UNCONTACTED",
-      supplyTier:b.supplyTier??null, supplyGroup:b.supplyGroup??null, supplySubtype:b.supplySubtype??null,
+      company: String(b.company ?? "").trim(),
+      addressRaw: String(b.addressRaw ?? ""),
+      website: b.website ?? null,
+      phone: b.phone ?? null,
+      email: b.email ?? null,
+      accountState: b.accountState ?? "NEW_UNCONTACTED",
+      supplyTier: b.supplyTier ?? null,
+      supplyGroup: b.supplyGroup ?? null,
+      supplySubtype: b.supplySubtype ?? null,
     };
-    if(!data.company) return NextResponse.json({error:"company is required"},{status:400});
-    const created = await prisma.target.create({ data }); return NextResponse.json(created,{status:201});
-  }catch(e:any){ return NextResponse.json({error:e?.message??"Create failed"},{status:500}); }
+    if (!data.company) return NextResponse.json({ error: "company is required" }, { status: 400 });
+    const created = await prisma.routeTarget.create({ data });
+    return NextResponse.json(created, { status: 201 });
+  } catch (e:any) {
+    return NextResponse.json({ error: e?.message ?? "Create failed" }, { status: 500 });
+  }
 }
 
-(Repeat for the other API routes using the earlier code you already applied — no surprises.)
+route-targets/[id]/route.ts
 
-2.2 Web UI (dashboard shell)
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-Use a single base: /dashboard (or (dashboard) group if your starter uses that). Create pages:
-
-apps/web/app/dashboard/overview/page.tsx
-apps/web/app/dashboard/companies/page.tsx
-apps/web/app/dashboard/companies/[id]/page.tsx
-apps/web/app/dashboard/routes/page.tsx
-apps/web/app/dashboard/routes/[id]/page.tsx
-apps/web/app/dashboard/scrape/page.tsx
-apps/web/app/dashboard/chat/page.tsx
-apps/web/app/dashboard/import/page.tsx
-
-	•	Companies list: search + filters + Quick Add + table (TanStack Table)
-	•	Company profile: overview (inline account state), taxonomy selects, NotesPanel (highlight→tag, from earlier)
-	•	Routes list: create/delete; shows Assigned + Date + #stops
-	•	Route builder: Assign & Schedule buttons, Available companies (left), Sortable stops (right), Save Order, Outcome buttons, RouteMap (Mapbox) with true directions polyline and Geocode Missing (Apple) button
-	•	Scrape: URL paste → draft + candidates → Create or Link & Merge
-	•	Chat: simple chat box; optional fields for targetId/routeId context
-	•	Import: textarea to POST JSON array → shows result
-	•	Overview: wired to analytics endpoint
-
-RouteMap with true directions polyline (Mapbox Directions)
-Add helper: src/components/routes/RouteMap.tsx extending the previous map to call the Directions API when ≥2 points exist:
-
-// inside effect after pts computed
-if (pts.length >= 2) {
-  const coords = pts.map(p => p.coord.join(",")).join(";");
-  const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${coords}?overview=full&geometries=geojson&access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`;
-  fetch(url).then(r=>r.json()).then(j=>{
-    const line = j.routes?.[0]?.geometry;
-    if (!line) return;
-    if (map.getSource("route-line"))
-      (map.getSource("route-line") as mapboxgl.GeoJSONSource).setData({ type:"Feature", geometry: line, properties:{} } as any);
-    else {
-      map.addSource("route-line", { type:"geojson", data:{ type:"Feature", geometry: line, properties:{} } as any });
-      map.addLayer({ id:"route-line-layer", type:"line", source:"route-line", paint:{ "line-color":"#2563eb","line-width":4 }});
-    }
-  }).catch(()=>{ /* fallback to straight line if desired */ });
+export async function GET(_req: Request, { params }: { params: { id: string } }) {
+  const t = await prisma.routeTarget.findUnique({ where: { id: params.id } });
+  if (!t) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  return NextResponse.json(t);
 }
 
-Apple client geocoding
-Add src/lib/mapkit-loader.ts + src/lib/apple-geocode.ts (from the previous patch) and Geocode Missing (Apple) button in the builder header (already specified).
-
-Deep links in StopRow: open Apple/Google Maps if lat/lon exists.
-
-ICS: add “Download .ics”, “Add to Google”, “Add to Outlook” buttons (from earlier).
-
-Sentry: tunnel points to /api/monitoring. Confirm DSN env set.
-
-3) App: MCP server
-
-mkdir -p apps/mcp
-printf '{ "name":"@daysweeper/mcp","version":"0.1.0","type":"module","dependencies":{"@modelcontextprotocol/sdk":"^0.2.0","node-fetch":"^3.3.2"},"scripts":{"start":"node index.js"} }\n' > apps/mcp/package.json
-
-apps/mcp/index.js
-
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import fetch from "node-fetch";
-
-const API = process.env.API_BASE || "http://localhost:3000";
-const KEY = process.env.INTERNAL_API_KEY || "";
-
-async function api(path) {
-  const r = await fetch(`${API}${path}`, { headers: { "x-api-key": KEY } });
-  if (!r.ok) throw new Error(`API ${path} ${r.status}`);
-  return r.json();
+export async function PATCH(req: Request, { params }: { params: { id: string } }) {
+  try {
+    const b = await req.json();
+    const updated = await prisma.routeTarget.update({ where: { id: params.id }, data: b });
+    return NextResponse.json(updated);
+  } catch (e:any) {
+    return NextResponse.json({ error: e?.message ?? "Update failed" }, { status: 500 });
+  }
 }
 
-const server = new Server({ name:"daysweeper-mcp", version:"0.1.0" });
+export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
+  await prisma.routeTarget.delete({ where: { id: params.id } });
+  return NextResponse.json({ ok: true });
+}
 
-server.tool({
-  name:"list_companies",
-  description:"List companies with optional search",
-  inputSchema:{ type:"object", properties:{ q:{ type:"string" } } },
-  async *call({ q }) { return { items: await api(`/api/targets${q?`?q=${encodeURIComponent(q)}`:""}`) }; }
-});
+route-targets/[id]/notes/route.ts
 
-server.tool({
-  name:"get_route",
-  description:"Get route details by id",
-  inputSchema:{ type:"object", properties:{ id:{ type:"string" } }, required:["id"] },
-  async *call({ id }) { return await api(`/api/routes/${id}`); }
-});
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-server.start();
+const slug = (s:string)=> s.toLowerCase().trim().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"").slice(0,32);
 
-Editor config (Cursor) .cursor/mcp.json:
+export async function GET(_req: Request, { params }: { params: { id: string } }) {
+  const rows = await prisma.routeTargetNote.findMany({ where: { targetId: params.id }, orderBy: { createdAt: "desc" } });
+  return NextResponse.json(rows);
+}
+
+export async function POST(req: Request, { params }: { params: { id: string } }) {
+  const { content, tags = [], userId = "system" } = await req.json();
+  const normalized = (tags as string[]).map(slug).slice(0, 20);
+  const note = await prisma.routeTargetNote.create({ data: { targetId: params.id, content, tags: normalized, userId } });
+  return NextResponse.json(note, { status: 201 });
+}
+
+5.2 Routes
+
+routes/route.ts (GET + POST), routes/[id]/route.ts (GET/PATCH/DELETE), routes/[id]/stops/route.ts (PUT replace), routes/stops/[stopId]/route.ts (PATCH outcome & mirror):
+
+Use the same structure we already used, but with RouteTarget relationship for stops. In PATCH stop, increment the appropriate counter and set mirrors on RouteTarget (lastOutcome, lastVisitedAt, counts), wrapped in try/catch so it’s safe if columns change.
+
+5.3 Analytics
+
+analytics/overview/route.ts: compute cards + charts from RouteStop.visitedAt/outcome and RouteTarget state distribution.
+
+5.4 Scraper
+
+scrape/company/route.ts: Cheerio extraction + candidates based on domain/name/last7 phone — return profileDraft & candidates (RouteTarget). Provide route-targets create endpoint for “Create Company”, and /api/route-targets/[id]/merge to merge empty fields.
+
+route-targets/[id]/merge/route.ts
+
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+
+export async function PATCH(req: Request, { params }: { params: { id: string } }) {
+  try {
+    const b = await req.json();
+    const existing = await prisma.routeTarget.findUnique({ where: { id: params.id } });
+    if (!existing) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    const patch:any = {};
+    if (!existing.website && b.website) patch.website = b.website;
+    if (!existing.phone && b.phone) patch.phone = b.phone;
+    if (!existing.email && b.email) patch.email = b.email;
+    if (!existing.addressRaw && b.addressRaw !== undefined) patch.addressRaw = String(b.addressRaw);
+    if (!existing.supplyTier && b.supplyTier) patch.supplyTier = b.supplyTier;
+    if (!existing.supplyGroup && b.supplyGroup) patch.supplyGroup = b.supplyGroup;
+    if (!existing.supplySubtype && b.supplySubtype) patch.supplySubtype = b.supplySubtype;
+    if (Object.keys(patch).length === 0) return NextResponse.json({ ok:true, message:"Nothing to merge" });
+    const updated = await prisma.routeTarget.update({ where: { id: params.id }, data: patch });
+    return NextResponse.json(updated);
+  } catch (e:any) {
+    return NextResponse.json({ error: e?.message ?? "Merge failed" }, { status: 500 });
+  }
+}
+
+5.5 MapKit token
+
+mapkit/token/route.ts (SignJWT with jose — we already provided earlier; reuse).
+
+5.6 Chat
+
+chat/route.ts using OpenAI with optional routeTargetId and routeId context: pull last 10 notes for target, plus route stop list; prompt to produce sales-useful answers.
+
+5.7 Import
+
+import/targets/route.ts — accept JSON array of RouteTarget data and createMany.
+
+5.8 ICS
+
+routes/[id]/ical/route.ts — create .ics events (1-hour slots) from ordered stops, location text from addressRaw.
+
+⸻
+
+6) Client: hooks
+
+Create src/lib/routeTargets.ts:
+	•	useRouteTargets(filters)
+	•	useRouteTarget(id)
+	•	useCreateRouteTarget()
+	•	useUpdateRouteTarget(id)
+
+Create/update src/lib/routes.ts:
+	•	useRoutes, useRoute(id), useCreateRoute, useUpdateRoute(id), useDeleteRoute, useReplaceStops(id), usePatchStopOutcome()
+
+Add debounce wrapper:
+
+// src/hooks/use-debounce.ts
+export { useDebounce, useDebouncedCallback } from "use-debounce";
+
+
+⸻
+
+7) Components
+	•	components/companies/NotesPanel.tsx — the highlight→tag panel, but for RouteTarget.
+	•	components/routes/OutcomeButtons.tsx — buttons to mark outcome on a stop.
+	•	components/routes/RouteMap.tsx — Mapbox map with markers + Directions polyline (use Directions API if ≥ 2 points).
+
+⸻
+
+8) Pages (under ${BASE})
+
+Create/overwrite:
+
+${BASE}/overview/page.tsx
+${BASE}/route-targets/page.tsx            # list + Quick Add form
+${BASE}/route-targets/[id]/page.tsx       # profile + taxonomy + NotesPanel
+${BASE}/routes/page.tsx                   # list + Assigned + Date + #Stops
+${BASE}/routes/[id]/page.tsx              # builder: Assign, Schedule, Available, Sortable stops, Save Order, Outcome buttons, RouteMap, "Geocode Missing (Apple)"
+${BASE}/scrape/page.tsx                   # URL scrape → draft + candidates; Create or Link & Merge
+${BASE}/chat/page.tsx                     # simple chat UI; optional routeTargetId/routeId fields
+${BASE}/import/page.tsx                   # JSON import textarea → POST
+
+List page (route-targets/page.tsx) must:
+	•	Show filters: Search, AccountState, Tier→Group→Subtype
+	•	Quick Add (company + optional address) posts to /api/route-targets
+	•	Table columns: Company, Tier, Subtype, State, Address, Created
+	•	Row click → detail
+
+Detail page (route-targets/[id]/page.tsx) must:
+	•	Show/edit core fields + taxonomy selects
+	•	NotesPanel targetId=routeTarget.id
+
+Route builder (routes/[id]/page.tsx) must:
+	•	Header: Name, Save Name; Date input + Save Date; Assign to me (Clerk userId or string)
+	•	Left pane: Available companies (from useRouteTargets({})) with Add
+	•	Right pane: sortable stops; Save Order; Outcome buttons per stop
+	•	Top: RouteMap with polyline; a “Geocode Missing (Apple)” button that runs appleGeocodeBatch on stops missing lat/lon and PATCHes each RouteTarget with { latitude, longitude }; then refetch.
+
+Scrape page must show draft values read-only and suggested matches with Open and Link & Merge; Create posts to RouteTarget endpoint.
+
+Overview page must use /api/analytics/overview to populate KPI cards, by-day outcome chart, and state distribution.
+
+⸻
+
+9) Sentry tunnel route (confirm)
+
+Ensure app/api/monitoring/route.ts forwards envelopes to sentry.io. Client config uses tunnel: "/api/monitoring".
+
+⸻
+
+10) MCP server (optional but recommended)
+
+Create .cursor/mcp.json:
 
 {
   "mcpServers": {
@@ -360,8 +735,49 @@ Editor config (Cursor) .cursor/mcp.json:
         "API_BASE": "http://localhost:3000",
         "INTERNAL_API_KEY": "dev_only_long_random_string"
       }
+    },
+    "sentry": {
+      "command": "npx",
+      "args": ["-y", "@sentry/mcp"],
+      "env": {
+        "SENTRY_ORG": "${SENTRY_ORG}",
+        "SENTRY_PROJECT": "${SENTRY_PROJECT}",
+        "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}"
+      }
     }
   }
 }
 
-(Optional: also keep Sentry MCP config as earlier if you like.)
+If not using monorepo, put a simple mcp/index.js like earlier that proxies /api/route-targets and /api/routes.
+
+⸻
+
+11) iOS (align with RouteTarget)
+
+Ensure your iOS client calls:
+	•	GET /api/routes → [ { id, name, scheduledFor, assignedToUserId, stops:[ { id, seq, target:{ id, company, addressRaw, latitude, longitude } } ] } ]
+	•	GET /api/routes/:id
+	•	PATCH /api/routes/stops/:stopId { outcome: "...", note? }
+These match your LastLeg schema (RouteStop → RouteTarget). The earlier Swift stubs can be retained but rename model Target → RouteTarget if preferred. Outcomes mirror to RouteTarget counters.
+
+⸻
+
+12) Build & verify (local)
+
+pnpm prisma generate
+pnpm prisma migrate dev -n init_lastleg_harmonized   # if not done
+pnpm dev
+
+	•	/dashboard/route-targets → Quick Add works (no 500), list shows row
+	•	/dashboard/route-targets/[id] → Notes save, tags show
+	•	/dashboard/routes → create, open, add stops, drag, Save Order
+	•	/dashboard/routes/[id] → Assign/Schedule persist; Geocode Missing (Apple) fills coords; map shows markers + polyline
+	•	/dashboard/scrape → draft + candidates; Create or Link & Merge
+	•	/dashboard/chat → replies (OpenAI key set)
+	•	/dashboard/import → JSON array imports and count shown
+	•	/api/routes/:id/ical → downloads .ics; Google/Outlook links work
+	•	Sentry: test error posts to /api/monitoring
+
+⸻
+
+End of hard rewrite.
