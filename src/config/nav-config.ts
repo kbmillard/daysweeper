@@ -68,6 +68,14 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
+    title: 'Scrape',
+    url: '/scrape',
+    icon: 'product',
+    shortcut: ['s', 's'],
+    isActive: false,
+    items: []
+  },
+  {
     title: 'Product',
     url: '/dashboard/product',
     icon: 'product',

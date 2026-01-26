@@ -285,3 +285,17 @@ enum SupplyTier {
   TOOLING_CAPITAL_EQUIPMENT
   AFTERMARKET_SERVICES
 }
+
+model ScrapedCompany {
+  id          String   @id @default(cuid())
+  url         String   @unique
+  companyName String?
+  address     String?
+  phone       String?
+  email       String?
+  domain      String?
+  scrapedData Json?
+  createdAt   DateTime @default(now())
+
+  @@index([domain])
+}
