@@ -1,0 +1,400 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Company {
+  id                String     @id
+  externalId        String?    @unique
+  userId            String?
+  orgId             String?
+  name              String
+  parentCompanyDbId String?
+  externalParentId  String?
+  website           String?
+  companyKey        String?
+  phone             String?
+  email             String?
+  tier              String?
+  segment           String?
+  category          String?
+  subtype           String?
+  subtypeGroup      String?
+  legacyJson        Json?
+  metadata          Json?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime
+  Company           Company?   @relation("CompanyToCompany", fields: [parentCompanyDbId], references: [id])
+  other_Company     Company[]  @relation("CompanyToCompany")
+  Customer          Customer[]
+  Location          Location[]
+
+  @@index([companyKey])
+  @@index([externalId])
+  @@index([externalParentId])
+  @@index([orgId])
+  @@index([parentCompanyDbId])
+  @@index([tier])
+  @@index([userId])
+}
+
+model Customer {
+  id                  String                @id
+  userId              String?
+  orgId               String?
+  companyId           String?
+  name                String
+  email               String?
+  phone               String?
+  title               String?
+  department          String?
+  notes               String?
+  tags                String[]              @default([])
+  metadata            Json?
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime
+  Company             Company?              @relation(fields: [companyId], references: [id])
+  CustomerInteraction CustomerInteraction[]
+
+  @@index([companyId])
+  @@index([email])
+  @@index([orgId])
+  @@index([userId])
+}
+
+model CustomerInteraction {
+  id         String   @id
+  customerId String
+  userId     String?
+  type       String
+  subject    String?
+  content    String
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+  Customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([createdAt])
+  @@index([customerId])
+  @@index([userId])
+}
+
+model GeocodeCache {
+  id        String   @id
+  key       String   @unique
+  query     String
+  country   String?
+  label     String
+  lat       Decimal  @db.Decimal(9, 6)
+  lng       Decimal  @db.Decimal(9, 6)
+  source    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+
+  @@index([query, country])
+}
+
+model Location {
+  id                String                   @id
+  externalId        String?                  @unique
+  companyId         String
+  addressRaw        String
+  addressNormalized String?
+  addressComponents Json?
+  addressConfidence Float?
+  latitude          Decimal?                 @db.Decimal(9, 6)
+  longitude         Decimal?                 @db.Decimal(9, 6)
+  geom              Unsupported("geometry")?
+  legacyJson        Json?
+  metadata          Json?
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime
+  Company           Company                  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([companyId])
+  @@index([externalId])
+}
+
+model OrganizerItem {
+  id            String        @id
+  listId        String
+  userId        String?
+  title         String
+  notes         String?
+  completed     Boolean       @default(false)
+  dueDate       DateTime?
+  priority      String?       @default("normal")
+  position      Int           @default(0)
+  tags          String[]      @default([])
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime
+  OrganizerList OrganizerList @relation(fields: [listId], references: [id], onDelete: Cascade)
+
+  @@index([completed])
+  @@index([listId])
+  @@index([position])
+  @@index([userId])
+}
+
+model OrganizerList {
+  id            String          @id
+  userId        String?
+  name          String
+  description   String?
+  color         String?         @default("#6366f1")
+  icon          String?         @default("list")
+  position      Int             @default(0)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime
+  OrganizerItem OrganizerItem[]
+
+  @@index([position])
+  @@index([userId])
+}
+
+model Target {
+  id                String                   @id
+  userId            String?
+  orgId             String?
+  company           String
+  parentCompany     String?
+  website           String?
+  phone             String?
+  email             String?
+  category          String?
+  segment           String?
+  tier              String?
+  focus             String?
+  addressRaw        String
+  addressNormalized String?
+  addressComponents Json?
+  addressConfidence Float?
+  latitude          Decimal?                 @db.Decimal(9, 6)
+  longitude         Decimal?                 @db.Decimal(9, 6)
+  geom              Unsupported("geometry")?
+  geocodeStatus     GeocodeStatus            @default(missing)
+  geocodeProvider   String?
+  geocodeAccuracy   String?
+  geocodeMeta       Json?
+  geocodedAt        DateTime?
+  geocodeAttempts   Int                      @default(0)
+  geocodeLastError  String?
+  legacyJson        Json?
+  
+  // SPEC-1: Account state and taxonomy fields
+  accountState      AccountState?            @default(NEW_UNCONTACTED)
+  supplyTier        SupplyTier?
+  supplyGroup       String?
+  supplySubtype     String?
+  
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime
+  User              User?                    @relation(fields: [userId], references: [id])
+  TargetEnrichment  TargetEnrichment?
+  TargetNote        TargetNote[]
+  RouteStop         RouteStop[]
+  Meeting           Meeting[]
+
+  @@index([category])
+  @@index([company])
+  @@index([geocodeStatus])
+  @@index([orgId])
+  @@index([parentCompany])
+  @@index([segment])
+  @@index([tier])
+  @@index([accountState])
+  @@index([supplyTier])
+  @@index([supplyGroup, supplySubtype])
+}
+
+model TargetEnrichment {
+  id                         String   @id
+  targetId                   String   @unique
+  corporateOverview          String?
+  plantOverview              String?
+  primaryProduct             String?
+  plantRole                  String?
+  primaryCustomer            String?
+  uniquePainPoints           String?
+  recommendedNextStep        String?
+  salesAngles                Json?
+  decisionMakers             Json?
+  verificationChecklist      Json?
+  firstConversationQuestions Json?
+  enrichedJson               Json?
+  sources                    Json?
+  model                      String?
+  confidence                 Float?
+  version                    Int      @default(1)
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime
+  Target                     Target   @relation(fields: [targetId], references: [id], onDelete: Cascade)
+}
+
+model TargetNote {
+  id          String     @id @default(cuid())
+  targetId    String
+  target      Target     @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  content     String
+  tags        String[]   @default([])
+  userId      String
+  routeId     String?
+  route       Route?     @relation(fields: [routeId], references: [id])
+  routeStopId String?
+  routeStop   RouteStop? @relation(fields: [routeStopId], references: [id])
+  mentions    String[]   @default([]) // auto-linked slugs of companies, e.g. ["honda-marysville"]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([targetId])
+  @@index([routeId])
+  @@index([routeStopId])
+  @@index([userId])
+  @@index([tags])
+}
+
+model User {
+  id        String   @id
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  Target    Target[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model spatial_ref_sys {
+  srid      Int     @id
+  auth_name String? @db.VarChar(256)
+  auth_srid Int?
+  srtext    String? @db.VarChar(2048)
+  proj4text String? @db.VarChar(2048)
+}
+
+enum GeocodeStatus {
+  missing
+  queued
+  geocoded
+  failed
+}
+
+enum AccountState {
+  ACCOUNT
+  NEW_UNCONTACTED
+  NEW_CONTACTED_NO_ANSWER
+}
+
+enum SupplyTier {
+  OEM
+  TIER_1
+  TIER_2
+  TIER_3
+  LOGISTICS_3PL
+  TOOLING_CAPITAL_EQUIPMENT
+  AFTERMARKET_SERVICES
+}
+
+model ScrapedCompany {
+  id          String   @id @default(cuid())
+  url         String   @unique
+  companyName String?
+  address     String?
+  phone       String?
+  email       String?
+  domain      String?
+  scrapedData Json?
+  createdAt   DateTime @default(now())
+
+  @@index([domain])
+}
+
+enum StopOutcome {
+  VISITED
+  NO_ANSWER
+  WRONG_ADDRESS
+  FOLLOW_UP
+}
+
+model Route {
+  id                  String       @id @default(cuid())
+  name                String
+  assignedToUserId    String?       // Clerk id (universal tie)
+  assignedToName      String?       // human display name
+  assignedToEmail     String?       // primary email
+  assignedToExternalId String?      // optional: provider id (e.g., Google sub)
+  scheduledFor        DateTime?
+  stops               RouteStop[]
+  TargetNote          TargetNote[]
+  Meeting             Meeting[]
+  created             DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([assignedToUserId])
+}
+
+model RouteStop {
+  id         String       @id @default(cuid())
+  routeId    String
+  route      Route        @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  targetId   String
+  target     Target       @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  seq        Int
+  outcome    StopOutcome?
+  visitedAt  DateTime?
+  note       String?
+  TargetNote TargetNote[]
+  Meeting    Meeting[]
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  @@unique([routeId, seq])
+  @@index([targetId])
+}
+
+model Meeting {
+  id               String     @id @default(cuid())
+  title            String
+  startAt          DateTime
+  endAt            DateTime?
+  targetId         String?
+  target           Target?    @relation(fields: [targetId], references: [id])
+  routeId          String?
+  route            Route?     @relation(fields: [routeId], references: [id])
+  routeStopId      String?
+  routeStop        RouteStop? @relation(fields: [routeStopId], references: [id])
+  location         String?
+  notes            String?
+  attendees        String[]   @default([]) // comma sep emails/users
+  createdById      String?
+  calendarProvider String?    // "google"|"outlook"|"ics"
+  externalId       String?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  @@index([targetId])
+  @@index([routeId])
+  @@index([startAt])
+}
+
+model WarehouseItem {
+  id          String   @id @default(cuid())
+  partNumber  String   @unique
+  description String?
+  bin         String?
+  quantity    Int      @default(0)
+  price       Decimal? @db.Decimal(12, 2)
+  meta        Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([partNumber])
+  @@index([bin])
+}
+
+model MetaKV {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
