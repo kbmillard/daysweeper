@@ -7,6 +7,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { parseAsInteger, useQueryState } from 'nuqs';
 import { columns } from './columns';
 
+// Type matches the Company type from columns.tsx
 type Company = {
   id: string;
   name: string;
