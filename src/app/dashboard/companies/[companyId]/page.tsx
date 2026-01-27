@@ -32,6 +32,46 @@ export default async function Page(props: PageProps) {
           addressRaw: true,
           addressComponents: true
         }
+      },
+      Company: {
+        // Parent company
+        select: {
+          id: true,
+          name: true,
+          website: true,
+          phone: true,
+          category: true,
+          subtype: true,
+          metadata: true,
+          Location: {
+            take: 1,
+            orderBy: { createdAt: 'desc' },
+            select: {
+              addressRaw: true,
+              addressComponents: true
+            }
+          }
+        }
+      },
+      other_Company: {
+        // Child companies
+        select: {
+          id: true,
+          name: true,
+          website: true,
+          phone: true,
+          category: true,
+          subtype: true,
+          metadata: true,
+          Location: {
+            take: 1,
+            orderBy: { createdAt: 'desc' },
+            select: {
+              addressRaw: true,
+              addressComponents: true
+            }
+          }
+        }
       }
     }
   });
