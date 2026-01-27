@@ -165,7 +165,7 @@ export async function POST(req: Request) {
               id: randomUUID(),
               externalId: locationExternalId,
               companyId: companyDbId,
-              addressRaw: supplier.addressRaw,
+              addressRaw: supplier.addressRaw || '',
               addressNormalized: null,
               addressComponents: supplier.addressComponents ?? null,
               addressConfidence: supplier.addressConfidence ?? null,
