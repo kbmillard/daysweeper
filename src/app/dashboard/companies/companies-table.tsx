@@ -9,16 +9,18 @@ import { columns } from './columns';
 
 type Company = {
   id: string;
-  company: string;
-  addressRaw: string;
+  name: string;
   website: string | null;
   phone: string | null;
   email: string | null;
   segment: string | null;
   tier: string | null;
-  accountState: string | null;
   createdAt: Date;
   updatedAt: Date;
+  Location: Array<{
+    addressRaw: string;
+    addressComponents: any;
+  }>;
 };
 
 interface CompaniesTableParams {
