@@ -10,8 +10,66 @@ import {
 } from '@/components/ui/card';
 import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-react';
 import React from 'react';
+import { prisma } from '@/lib/prisma';
 
-export default function OverViewLayout({
+async function getCompanyStats() {
+  const [
+    totalCompanies,
+    totalLocations,
+    companiesThisMonth,
+    companiesLastMonth,
+    companiesWithParent,
+    companiesWithChildren
+  ] = await Promise.all([
+    prisma.company.count(),
+    prisma.location.count(),
+    prisma.company.count({
+      where: {
+        createdAt: {
+          gte: new Date(new Date().getFullYear(), new Date().getMonth(), 1)
+        }
+      }
+    }),
+    prisma.company.count({
+      where: {
+        createdAt: {
+          gte: new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1),
+          lt: new Date(new Date().getFullYear(), new Date().getMonth(), 1)
+        }
+      }
+    }),
+    prisma.company.count({
+      where: {
+        parentCompanyDbId: {
+          not: null
+        }
+      }
+    }),
+    prisma.company.count({
+      where: {
+        other_Company: {
+          some: {}
+        }
+      }
+    })
+  ]);
+
+  const monthOverMonthChange = companiesLastMonth > 0
+    ? ((companiesThisMonth - companiesLastMonth) / companiesLastMonth) * 100
+    : 0;
+
+  return {
+    totalCompanies,
+    totalLocations,
+    companiesThisMonth,
+    companiesLastMonth,
+    monthOverMonthChange,
+    companiesWithParent,
+    companiesWithChildren
+  };
+}
+
+export default async function OverViewLayout({
   sales,
   pie_stats,
   bar_stats,
@@ -22,6 +80,8 @@ export default function OverViewLayout({
   bar_stats: React.ReactNode;
   area_stats: React.ReactNode;
 }) {
+  const stats = await getCompanyStats();
+
   return (
     <PageContainer>
       <div className='flex flex-1 flex-col space-y-2'>
@@ -34,90 +94,90 @@ export default function OverViewLayout({
         <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Total Revenue</CardDescription>
+              <CardDescription>Total Companies</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                $1,250.00
+                {stats.totalCompanies.toLocaleString()}
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingUp />
-                  +12.5%
+                  {stats.companiesThisMonth} this month
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Trending up this month <IconTrendingUp className='size-4' />
+                {stats.companiesThisMonth} added this month <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Visitors for the last 6 months
+                Companies in your database
               </div>
             </CardFooter>
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>New Customers</CardDescription>
+              <CardDescription>Total Locations</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                1,234
+                {stats.totalLocations.toLocaleString()}
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
-                  <IconTrendingDown />
-                  -20%
+                  <IconTrendingUp />
+                  {stats.totalCompanies > 0 ? (stats.totalLocations / stats.totalCompanies).toFixed(1) : 0} avg
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Down 20% this period <IconTrendingDown className='size-4' />
+                {stats.totalCompanies > 0 ? (stats.totalLocations / stats.totalCompanies).toFixed(1) : 0} locations per company <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Acquisition needs attention
+                All company locations tracked
               </div>
             </CardFooter>
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Active Accounts</CardDescription>
+              <CardDescription>Companies with Parent</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                45,678
+                {stats.companiesWithParent.toLocaleString()}
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingUp />
-                  +12.5%
+                  {stats.totalCompanies > 0 ? ((stats.companiesWithParent / stats.totalCompanies) * 100).toFixed(1) : 0}%
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Strong user retention <IconTrendingUp className='size-4' />
+                {stats.totalCompanies > 0 ? ((stats.companiesWithParent / stats.totalCompanies) * 100).toFixed(1) : 0}% have parent companies <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Engagement exceed targets
+                Hierarchical company structure
               </div>
             </CardFooter>
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Growth Rate</CardDescription>
+              <CardDescription>Month-over-Month Growth</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                4.5%
+                {stats.monthOverMonthChange >= 0 ? '+' : ''}{stats.monthOverMonthChange.toFixed(1)}%
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
-                  <IconTrendingUp />
-                  +4.5%
+                  {stats.monthOverMonthChange >= 0 ? <IconTrendingUp /> : <IconTrendingDown />}
+                  {stats.monthOverMonthChange >= 0 ? '+' : ''}{stats.monthOverMonthChange.toFixed(1)}%
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Steady performance increase{' '}
-                <IconTrendingUp className='size-4' />
+                {stats.monthOverMonthChange >= 0 ? 'Growing' : 'Declining'} this period{' '}
+                {stats.monthOverMonthChange >= 0 ? <IconTrendingUp className='size-4' /> : <IconTrendingDown className='size-4' />}
               </div>
               <div className='text-muted-foreground'>
-                Meets growth projections
+                Compared to last month
               </div>
             </CardFooter>
           </Card>
