@@ -31,6 +31,7 @@ export default async function Page(props: pageProps) {
   const emailFilter = searchParamsCache.get('email');
   const phoneFilter = searchParamsCache.get('phone');
   const websiteFilter = searchParamsCache.get('website');
+  const sort = searchParamsCache.get('sort');
 
   const skip = (Number(page) - 1) * Number(perPage);
   const take = Number(perPage);
@@ -63,12 +64,34 @@ export default async function Page(props: pageProps) {
     where.website = { contains: websiteFilter, mode: 'insensitive' as const };
   }
 
+  // Build orderBy from sort parameter
+  let orderBy: any = { createdAt: 'desc' }; // default
+  if (sort && sort.length > 0) {
+    const firstSort = sort[0];
+    // Map column IDs to Prisma field names
+    const fieldMap: Record<string, string> = {
+      name: 'name',
+      email: 'email',
+      phone: 'phone',
+      website: 'website',
+      segment: 'segment',
+      tier: 'tier',
+      createdAt: 'createdAt',
+      locations: 'createdAt' // locations is computed, fallback to createdAt
+    };
+    
+    const field = fieldMap[firstSort.id] || 'createdAt';
+    orderBy = {
+      [field]: firstSort.desc ? 'desc' : 'asc'
+    };
+  }
+
   const [companies, total] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
       take,
-      orderBy: { createdAt: 'desc' },
+      orderBy,
       select: {
         id: true,
         name: true,
