@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+// Using native fetch (Node 18+)
 
 const prod = process.env.PROD_URL || 'https://daysweeper.vercel.app';
 const local = process.env.LOCAL_URL || 'http://localhost:3000';
