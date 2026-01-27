@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { randomUUID } from "crypto";
 
 type SupplierJson = {
   company: string;
@@ -71,6 +72,7 @@ export async function POST(req: Request) {
           // Create new company
           const company = await prisma.company.create({
             data: {
+              id: randomUUID(),
               externalId,
               name: supplier.company.trim(),
               companyKey: supplier.companyKey ?? null,
@@ -160,6 +162,7 @@ export async function POST(req: Request) {
           // Create location
           const location = await prisma.location.create({
             data: {
+              id: randomUUID(),
               externalId: locationExternalId,
               companyId: companyDbId,
               addressRaw: supplier.addressRaw,
