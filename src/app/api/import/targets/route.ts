@@ -61,6 +61,7 @@ export async function POST(req: Request) {
 
       const tx = slice.map((r) => {
         const id = idFor(r);
+        const now = new Date();
         const data: any = {
           company: String(r.company).trim(),
           addressRaw: String(r.addressRaw ?? ""),
@@ -68,6 +69,7 @@ export async function POST(req: Request) {
           phone: r.phone ?? null,
           email: r.email ?? null,
           geocodeStatus: "missing",
+          updatedAt: now,
           geocodeMeta: {
             ...(r.legacyJson ? { legacyJson: r.legacyJson } : {}),
             ...(r.addressComponents ? { addressComponents: r.addressComponents } : {}),
