@@ -19,7 +19,7 @@ export function useCreateNote(targetId: string | undefined) {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: { content: string; tags?: string[] }) => {
+    mutationFn: async (data: { content: string; tags?: string[]; mentions?: string[] }) => {
       if (!targetId) throw new Error('Target ID is required');
       const res = await fetch(`/api/targets/${targetId}/notes`, {
         method: 'POST',
