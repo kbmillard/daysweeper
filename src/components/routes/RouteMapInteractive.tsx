@@ -162,6 +162,15 @@ export default function RouteMapInteractive({ route, routeId }: { route: Route; 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords.map(c => c.join(",")).join(";")]);
 
+  // Listen for redraw keyboard shortcut
+  React.useEffect(() => {
+    const handler = () => {
+      if (coords.length >= 2) drawDirections();
+    };
+    window.addEventListener("route:redraw", handler);
+    return () => window.removeEventListener("route:redraw", handler);
+  }, [coords]);
+
   // bbox helper
   const bboxFor = (line: any) => {
     if (!line) return null;
@@ -191,6 +200,7 @@ export default function RouteMapInteractive({ route, routeId }: { route: Route; 
         {/* search bubble */}
         <div className="relative" style={{ pointerEvents: "auto" }}>
           <input
+            data-route-search
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search company or address…"

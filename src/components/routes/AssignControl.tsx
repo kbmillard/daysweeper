@@ -1,14 +1,41 @@
 "use client";
 import * as React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 type UserItem = { id: string; name: string; email?: string; imageUrl?: string | null };
+
+function UserAvatar({ user, size = "sm" }: { user: UserItem; size?: "sm" | "md" }) {
+  const initials = user.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+  return (
+    <Avatar className={`${size === "sm" ? "h-6 w-6" : "h-8 w-8"}`}>
+      <AvatarImage src={user.imageUrl || undefined} alt={user.name} />
+      <AvatarFallback className="text-xs">{initials}</AvatarFallback>
+    </Avatar>
+  );
+}
 
 export default function AssignControl({
   routeId,
   currentAssigneeId,
+  currentAssigneeName,
+  currentAssigneeEmail,
+  currentAssigneeImage,
   meId,
   canReassign
-}: { routeId: string; currentAssigneeId?: string | null; meId?: string | null; canReassign?: boolean }) {
+}: { 
+  routeId: string; 
+  currentAssigneeId?: string | null; 
+  currentAssigneeName?: string | null;
+  currentAssigneeEmail?: string | null;
+  currentAssigneeImage?: string | null;
+  meId?: string | null; 
+  canReassign?: boolean 
+}) {
   const [query, setQuery] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [items, setItems] = React.useState<UserItem[]>([]);
@@ -39,6 +66,13 @@ export default function AssignControl({
     window.dispatchEvent(new CustomEvent("route:refresh"));
   };
 
+  const currentUser: UserItem | null = currentAssigneeId ? {
+    id: currentAssigneeId,
+    name: currentAssigneeName || currentAssigneeEmail || currentAssigneeId,
+    email: currentAssigneeEmail || undefined,
+    imageUrl: currentAssigneeImage || null
+  } : null;
+
   return (
     <div className="relative inline-flex items-center gap-2">
       <button
@@ -50,8 +84,15 @@ export default function AssignControl({
 
       {canReassign && (
         <div className="relative">
-          <button className="border rounded px-3 py-1 text-sm" onClick={() => setOpen(v => !v)}>
-            {currentAssigneeId ? "Reassign…" : "Assign to user…"}
+          <button className="border rounded px-3 py-1 text-sm flex items-center gap-2" onClick={() => setOpen(v => !v)}>
+            {currentUser ? (
+              <>
+                <UserAvatar user={currentUser} size="sm" />
+                <span>{currentUser.name}</span>
+              </>
+            ) : (
+              "Assign to user…"
+            )}
           </button>
           {open && (
             <div className="absolute z-50 mt-2 w-80 rounded border bg-white dark:bg-neutral-900 shadow-xl p-2">
@@ -68,14 +109,23 @@ export default function AssignControl({
                 {items.map(u => (
                   <li key={u.id}
                     onClick={() => assign(u.id)}
-                    className="px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer rounded">
-                    <div className="text-sm font-medium">{u.name}</div>
-                    {u.email && <div className="text-xs text-gray-500">{u.email}</div>}
+                    className="px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800 cursor-pointer rounded flex items-center gap-2">
+                    <UserAvatar user={u} size="sm" />
+                    <div>
+                      <div className="text-sm font-medium">{u.name}</div>
+                      {u.email && <div className="text-xs text-gray-500">{u.email}</div>}
+                    </div>
                   </li>
                 ))}
               </ul>
             </div>
           )}
+        </div>
+      )}
+      {!canReassign && currentUser && (
+        <div className="flex items-center gap-2 text-sm">
+          <UserAvatar user={currentUser} size="sm" />
+          <span>{currentUser.name}</span>
         </div>
       )}
     </div>

@@ -6,9 +6,30 @@ import { useRoutes, useCreateRoute, useDeleteRoute } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
 import { toast } from "sonner";
+
+function AssigneeCell({ route }: { route: any }) {
+  if (!route.assignedToUserId) return <span>—</span>;
+  const name = route.assignedToName || route.assignedToEmail || route.assignedToUserId;
+  const initials = name
+    .split(" ")
+    .map((n: string) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+  return (
+    <div className="flex items-center gap-2">
+      <Avatar className="h-6 w-6">
+        <AvatarImage src={undefined} alt={name} />
+        <AvatarFallback className="text-xs">{initials}</AvatarFallback>
+      </Avatar>
+      <span>{name}</span>
+    </div>
+  );
+}
 
 export default function RoutesPage() { 
   return <RoutesList />; 
@@ -93,7 +114,7 @@ function RoutesList() {
             ) : routes.map((r:any)=>(
               <tr key={r.id} className="hover:bg-muted/30">
                 <td className="px-3 py-2"><Link href={`/dashboard/routes/${r.id}`} className="underline">{r.name}</Link></td>
-                <td className="px-3 py-2">{r.assignedToName ?? r.assignedToEmail ?? r.assignedToUserId ?? "—"}</td>
+                <td className="px-3 py-2"><AssigneeCell route={r} /></td>
                 <td className="px-3 py-2">{r.scheduledFor ? new Date(r.scheduledFor).toLocaleDateString() : "-"}</td>
                 <td className="px-3 py-2">{r._count?.stops ?? 0}</td>
                 <td className="px-3 py-2"><Button variant="destructive" size="sm" onClick={() => handleDelete(r.id, r.name)} disabled={del.isPending}>Delete</Button></td>
