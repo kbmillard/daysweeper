@@ -56,12 +56,6 @@ export default async function Page(props: pageProps) {
       skip,
       take,
       orderBy: { createdAt: 'desc' },
-      include: {
-        Location: {
-          take: 1,
-          orderBy: { createdAt: 'desc' }
-        }
-      },
       select: {
         id: true,
         name: true,
@@ -73,6 +67,8 @@ export default async function Page(props: pageProps) {
         createdAt: true,
         updatedAt: true,
         Location: {
+          take: 1,
+          orderBy: { createdAt: 'desc' },
           select: {
             addressRaw: true,
             addressComponents: true
