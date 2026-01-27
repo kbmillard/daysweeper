@@ -36,9 +36,9 @@ export default async function Page(props: pageProps) {
   
   if (companyFilter) {
     where.OR = [
-      { company: { contains: companyFilter, mode: 'insensitive' as const } },
-      { addressRaw: { contains: companyFilter, mode: 'insensitive' as const } },
-      { email: { contains: companyFilter, mode: 'insensitive' as const } }
+      { name: { contains: companyFilter, mode: 'insensitive' as const } },
+      { email: { contains: companyFilter, mode: 'insensitive' as const } },
+      { website: { contains: companyFilter, mode: 'insensitive' as const } }
     ];
   }
   
@@ -49,32 +49,38 @@ export default async function Page(props: pageProps) {
   if (tierFilter) {
     where.tier = { equals: tierFilter, mode: 'insensitive' as const };
   }
-  
-  if (accountStateFilter) {
-    where.accountState = accountStateFilter;
-  }
 
   const [companies, total] = await Promise.all([
-    prisma.target.findMany({
+    prisma.company.findMany({
       where,
       skip,
       take,
       orderBy: { createdAt: 'desc' },
+      include: {
+        Location: {
+          take: 1,
+          orderBy: { createdAt: 'desc' }
+        }
+      },
       select: {
         id: true,
-        company: true,
-        addressRaw: true,
+        name: true,
         website: true,
         phone: true,
         email: true,
         segment: true,
         tier: true,
-        accountState: true,
         createdAt: true,
-        updatedAt: true
+        updatedAt: true,
+        Location: {
+          select: {
+            addressRaw: true,
+            addressComponents: true
+          }
+        }
       }
     }),
-    prisma.target.count({ where })
+    prisma.company.count({ where })
   ]);
 
   return (

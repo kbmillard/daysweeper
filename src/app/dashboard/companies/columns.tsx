@@ -7,38 +7,41 @@ import Link from 'next/link';
 
 type Company = {
   id: string;
-  company: string;
-  addressRaw: string;
+  name: string;
   website: string | null;
   phone: string | null;
   email: string | null;
   segment: string | null;
   tier: string | null;
-  accountState: string | null;
   createdAt: Date;
   updatedAt: Date;
+  Location: Array<{
+    addressRaw: string;
+    addressComponents: any;
+  }>;
 };
 
 export const columns: ColumnDef<Company>[] = [
   {
-    id: 'company',
-    accessorKey: 'company',
+    id: 'name',
+    accessorKey: 'name',
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Company' />
     ),
     cell: ({ row }) => {
       const company = row.original;
+      const primaryLocation = company.Location?.[0];
       return (
         <div className='flex flex-col'>
           <Link
             href={`/dashboard/companies/${company.id}`}
             className='font-medium hover:underline'
           >
-            {company.company}
+            {company.name}
           </Link>
-          {company.addressRaw && (
+          {primaryLocation?.addressRaw && (
             <span className='text-xs text-muted-foreground'>
-              {company.addressRaw}
+              {primaryLocation.addressRaw}
             </span>
           )}
         </div>
@@ -135,32 +138,16 @@ export const columns: ColumnDef<Company>[] = [
     }
   },
   {
-    id: 'accountState',
-    accessorKey: 'accountState',
-    header: ({ column }: { column: Column<Company, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Status' />
-    ),
-    cell: ({ cell }) => {
-      const state = cell.getValue<Company['accountState']>();
-      if (!state) return <span className='text-muted-foreground'>—</span>;
-      
-      const variants: Record<string, 'default' | 'secondary' | 'outline'> = {
-        ACCOUNT: 'default',
-        NEW_UNCONTACTED: 'outline',
-        NEW_CONTACTED_NO_ANSWER: 'secondary'
-      };
-      
-      return (
-        <Badge variant={variants[state] || 'outline'} className='capitalize'>
-          {state.replace(/_/g, ' ')}
-        </Badge>
+    id: 'locations',
+    header: 'Locations',
+    cell: ({ row }) => {
+      const company = row.original;
+      const locationCount = company.Location?.length || 0;
+      return locationCount > 0 ? (
+        <Badge variant='outline'>{locationCount} location{locationCount !== 1 ? 's' : ''}</Badge>
+      ) : (
+        <span className='text-muted-foreground'>—</span>
       );
-    },
-    enableColumnFilter: true,
-    meta: {
-      label: 'Status',
-      variant: 'text',
-      icon: Text
     }
   },
   {
