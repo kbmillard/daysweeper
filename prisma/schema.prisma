@@ -156,7 +156,7 @@ model OrganizerList {
 }
 
 model Target {
-  id                String                   @id
+  id                String                   @id @default(cuid())
   userId            String?
   orgId             String?
   company           String
@@ -168,7 +168,7 @@ model Target {
   segment           String?
   tier              String?
   focus             String?
-  addressRaw        String
+  addressRaw        String                   @default("")
   addressNormalized String?
   addressComponents Json?
   addressConfidence Float?
