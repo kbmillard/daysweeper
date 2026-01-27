@@ -42,60 +42,12 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
-    title: 'Workspaces',
-    url: '/dashboard/workspaces',
-    icon: 'workspace',
-    isActive: false,
-    items: []
-  },
-  {
-    title: 'Teams',
-    url: '/dashboard/workspaces/team',
-    icon: 'teams',
-    isActive: false,
-    items: [],
-    // Require organization to be active
-    access: { requireOrg: true }
-    // Alternative: require specific permission
-    // access: { requireOrg: true, permission: 'org:teams:view' }
-  },
-  {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
-    shortcut: ['p', 'p'],
-    isActive: false,
-    items: []
-  },
-  {
-    title: 'Kanban',
-    url: '/dashboard/kanban',
-    icon: 'kanban',
-    shortcut: ['k', 'k'],
-    isActive: false,
-    items: []
-  },
-  {
     title: 'Companies',
     url: '/dashboard/companies',
     icon: 'companies',
     shortcut: ['c', 'c'],
     isActive: false,
     items: []
-  },
-  {
-    title: 'Pro',
-    url: '#', // Placeholder as there is no direct link for the parent
-    icon: 'pro',
-    isActive: true,
-    items: [
-      {
-        title: 'Exclusive',
-        url: '/dashboard/exclusive',
-        icon: 'exclusive',
-        shortcut: ['m', 'm']
-      }
-    ]
   },
   {
     title: 'Account',
