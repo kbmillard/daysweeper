@@ -33,7 +33,8 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
       data.assignedToUserId = id;
       if (id) {
         try {
-          const u = await clerkClient.users.getUser(id);
+          const client = await clerkClient();
+          const u = await client.users.getUser(id);
           data.assignedToName = deriveName(u);
           data.assignedToEmail = u?.emailAddresses?.[0]?.emailAddress ?? null;
           const g = (u?.externalAccounts ?? []).find((ea: any) =>

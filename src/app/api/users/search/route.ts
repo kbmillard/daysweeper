@@ -8,7 +8,8 @@ export async function GET(req: Request) {
   const q = (u.searchParams.get("q") || "").trim();
   const limit = Math.min(25, Number(u.searchParams.get("limit") || 10));
 
-  const res = await clerkClient.users.getUserList({
+  const client = await clerkClient();
+  const res = await client.users.getUserList({
     query: q,
     limit,
   });

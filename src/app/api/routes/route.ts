@@ -36,7 +36,8 @@ export async function POST(req: Request) {
 
     if (b.assignedToUserId) {
       try {
-        const u = await clerkClient.users.getUser(b.assignedToUserId);
+        const client = await clerkClient();
+        const u = await client.users.getUser(b.assignedToUserId);
         name = deriveName(u);
         email = u?.emailAddresses?.[0]?.emailAddress ?? null;
         const g = (u?.externalAccounts ?? []).find((ea: any) =>
