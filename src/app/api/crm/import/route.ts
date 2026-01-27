@@ -112,7 +112,7 @@ export async function POST(req: Request) {
 
     // PASS 2: Link Parent Companies
     let parentsLinked = 0;
-    for (const [externalId, externalParentId] of parentMap.entries()) {
+    for (const [externalId, externalParentId] of Array.from(parentMap.entries())) {
       const companyDbId = companyMap.get(externalId);
       if (!companyDbId) continue;
 
