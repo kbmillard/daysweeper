@@ -25,6 +25,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'name',
     accessorKey: 'name',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Company' />
     ),
@@ -58,6 +60,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'email',
     accessorKey: 'email',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Email' />
     ),
@@ -83,6 +87,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'phone',
     accessorKey: 'phone',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Phone' />
     ),
@@ -108,6 +114,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'website',
     accessorKey: 'website',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Website' />
     ),
@@ -140,6 +148,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'segment',
     accessorKey: 'segment',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Segment' />
     ),
@@ -163,6 +173,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'tier',
     accessorKey: 'tier',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Tier' />
     ),
@@ -185,6 +197,7 @@ export const columns: ColumnDef<Company>[] = [
   },
   {
     id: 'locations',
+    accessorFn: (row) => row.Location?.length || 0,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Locations' />
     ),
@@ -197,6 +210,7 @@ export const columns: ColumnDef<Company>[] = [
         <span className='text-muted-foreground'>—</span>
       );
     },
+    enableSorting: true,
     enableColumnFilter: true,
     meta: {
       label: 'Locations',
@@ -219,6 +233,8 @@ export const columns: ColumnDef<Company>[] = [
   {
     id: 'createdAt',
     accessorKey: 'createdAt',
+    enableSorting: true,
+    enableHiding: true,
     header: ({ column }: { column: Column<Company, unknown> }) => (
       <DataTableColumnHeader column={column} title='Created' />
     ),
