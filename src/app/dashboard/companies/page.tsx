@@ -24,21 +24,23 @@ export default async function Page(props: pageProps) {
 
   const page = searchParamsCache.get('page') ?? 1;
   const perPage = searchParamsCache.get('perPage') ?? 10;
+  const nameFilter = searchParamsCache.get('name');
   const companyFilter = searchParamsCache.get('company');
   const segmentFilter = searchParamsCache.get('segment');
   const tierFilter = searchParamsCache.get('tier');
+  const emailFilter = searchParamsCache.get('email');
+  const phoneFilter = searchParamsCache.get('phone');
+  const websiteFilter = searchParamsCache.get('website');
 
   const skip = (Number(page) - 1) * Number(perPage);
   const take = Number(perPage);
 
   const where: any = {};
   
-  if (companyFilter) {
-    where.OR = [
-      { name: { contains: companyFilter, mode: 'insensitive' as const } },
-      { email: { contains: companyFilter, mode: 'insensitive' as const } },
-      { website: { contains: companyFilter, mode: 'insensitive' as const } }
-    ];
+  // Company name filter (from 'name' or 'company' param)
+  if (nameFilter || companyFilter) {
+    const filterValue = nameFilter || companyFilter;
+    where.name = { contains: filterValue, mode: 'insensitive' as const };
   }
   
   if (segmentFilter) {
@@ -47,6 +49,18 @@ export default async function Page(props: pageProps) {
   
   if (tierFilter) {
     where.tier = { equals: tierFilter, mode: 'insensitive' as const };
+  }
+
+  if (emailFilter) {
+    where.email = { contains: emailFilter, mode: 'insensitive' as const };
+  }
+
+  if (phoneFilter) {
+    where.phone = { contains: phoneFilter, mode: 'insensitive' as const };
+  }
+
+  if (websiteFilter) {
+    where.website = { contains: websiteFilter, mode: 'insensitive' as const };
   }
 
   const [companies, total] = await Promise.all([

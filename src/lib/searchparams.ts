@@ -14,7 +14,12 @@ export const searchParams = {
   company: parseAsString,
   segment: parseAsString,
   tier: parseAsString,
-  accountState: parseAsString
+  accountState: parseAsString,
+  email: parseAsString,
+  phone: parseAsString,
+  website: parseAsString,
+  locations: parseAsString,
+  createdAt: parseAsString
   // advanced filter
   // filters: getFiltersStateParser().withDefault([]),
   // joinOperator: parseAsStringEnum(['and', 'or']).withDefault('and')
