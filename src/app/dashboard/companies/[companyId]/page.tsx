@@ -17,22 +17,20 @@ export default async function Page(props: PageProps) {
 
   const company = await prisma.company.findUnique({
     where: { id: companyId },
-    include: {
+    select: {
+      id: true,
+      name: true,
+      website: true,
+      phone: true,
+      category: true,
+      subtype: true,
+      metadata: true,
       Location: {
-        orderBy: { createdAt: 'desc' }
-      },
-      Company: {
+        take: 1,
+        orderBy: { createdAt: 'desc' },
         select: {
-          id: true,
-          name: true,
-          website: true
-        }
-      },
-      other_Company: {
-        select: {
-          id: true,
-          name: true,
-          website: true
+          addressRaw: true,
+          addressComponents: true
         }
       }
     }
