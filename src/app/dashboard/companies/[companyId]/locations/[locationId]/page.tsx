@@ -19,9 +19,27 @@ export default async function Page(props: PageProps) {
 
   const location = await prisma.location.findUnique({
     where: { id: locationId },
-    include: {
+    select: {
+      id: true,
+      externalId: true,
+      companyId: true,
+      addressRaw: true,
+      addressNormalized: true,
+      addressComponents: true,
+      addressConfidence: true,
+      latitude: true,
+      longitude: true,
+      legacyJson: true,
+      metadata: true,
+      createdAt: true,
+      updatedAt: true,
       Company: {
-        include: {
+        select: {
+          id: true,
+          name: true,
+          website: true,
+          phone: true,
+          email: true,
           Location: {
             select: {
               id: true,

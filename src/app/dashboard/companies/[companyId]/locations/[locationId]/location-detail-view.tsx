@@ -22,7 +22,7 @@ type LocationWithCompany = {
   addressConfidence: number | null;
   latitude: any;
   longitude: any;
-  geom: any;
+  geom?: any;
   legacyJson: any;
   metadata: any;
   createdAt: Date;
