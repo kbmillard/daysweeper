@@ -15,6 +15,10 @@ export async function POST(req: Request) {
     prisma.routeStop.deleteMany({}),
     prisma.route.deleteMany({}),
     prisma.target.deleteMany({}),
+    prisma.location.deleteMany({}),
+    prisma.customerInteraction.deleteMany({}),
+    prisma.customer.deleteMany({}),
+    prisma.company.deleteMany({}),
   ]);
   return NextResponse.json({ ok: true, purged: true });
 }
