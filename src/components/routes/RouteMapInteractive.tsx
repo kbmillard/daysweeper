@@ -5,8 +5,8 @@ import NewStopDialog from "./NewStopDialog";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
-type Stop = { id: string; seq: number; target: { id: string; company: string; addressRaw?: string | null; latitude?: string | null; longitude?: string | null } };
-type Route = { id: string; stops: Stop[] };
+type Stop = { id: string; seq: number; target: { id: string; company: string; addressRaw?: string | null; latitude?: string | number | null; longitude?: string | number | null } };
+type Route = { id: string; name?: string; stops: Stop[] };
 type SearchItem = { id: string; company: string; addressRaw?: string; latitude?: string; longitude?: string };
 
 export default function RouteMapInteractive({ route, routeId }: { route: Route; routeId: string }) {
