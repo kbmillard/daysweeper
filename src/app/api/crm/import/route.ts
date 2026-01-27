@@ -83,7 +83,6 @@ export async function POST(req: Request) {
               updatedAt: now,
             },
             create: {
-            data: {
               id: randomUUID(),
               externalId,
               name: supplier.company.trim(),
@@ -156,24 +155,28 @@ export async function POST(req: Request) {
           const locationExternalId = supplier.locationId!;
           const companyExternalId = supplier.companyId!;
 
-          // Check if location already exists
-          const existing = await prisma.location.findUnique({
-            where: { externalId: locationExternalId },
-          });
-
-          if (existing) {
-            return null;
-          }
-
           const companyDbId = companyMap.get(companyExternalId);
           if (!companyDbId) {
             console.warn(`Company not found for location ${locationExternalId}`);
             return null;
           }
 
-          // Create location
-          const location = await prisma.location.create({
-            data: {
+          // Upsert location (create or update)
+          const location = await prisma.location.upsert({
+            where: { externalId: locationExternalId },
+            update: {
+              companyId: companyDbId,
+              addressRaw: supplier.addressRaw || '',
+              addressNormalized: null,
+              addressComponents: supplier.addressComponents ?? null,
+              addressConfidence: supplier.addressConfidence ?? null,
+              metadata: {
+                _importedAt: now.toISOString(),
+                _importSource: "crm_import_v1"
+              },
+              updatedAt: now,
+            },
+            create: {
               id: randomUUID(),
               externalId: locationExternalId,
               companyId: companyDbId,
