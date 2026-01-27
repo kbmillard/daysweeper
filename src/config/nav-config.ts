@@ -76,6 +76,14 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
+    title: 'Companies',
+    url: '/dashboard/companies',
+    icon: 'companies',
+    shortcut: ['c', 'c'],
+    isActive: false,
+    items: []
+  },
+  {
     title: 'Pro',
     url: '#', // Placeholder as there is no direct link for the parent
     icon: 'pro',
