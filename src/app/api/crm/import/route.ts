@@ -59,18 +59,30 @@ export async function POST(req: Request) {
         .map(async (supplier) => {
           const externalId = supplier.companyId!;
           
-          // Check if company already exists
-          const existing = await prisma.company.findUnique({
+          // Upsert company (create or update)
+          const company = await prisma.company.upsert({
             where: { externalId },
-          });
-
-          if (existing) {
-            companyMap.set(externalId, existing.id);
-            return null;
-          }
-
-          // Create new company
-          const company = await prisma.company.create({
+            update: {
+              name: supplier.company.trim(),
+              companyKey: supplier.companyKey ?? null,
+              website: supplier.website ?? null,
+              phone: supplier.contactInfo?.phone ?? null,
+              email: supplier.contactInfo?.email ?? null,
+              tier: supplier.tier ?? null,
+              segment: supplier.segment ?? null,
+              category: supplier.supplyChainCategory ?? null,
+              subtype: supplier.supplyChainSubtype ?? null,
+              externalParentId: supplier.parentCompanyId ?? null,
+              metadata: {
+                ...(supplier.industryKeywords ? { industryKeywords: supplier.industryKeywords } : {}),
+                ...(supplier.capabilityTags ? { capabilityTags: supplier.capabilityTags } : {}),
+                ...(supplier.keyProducts ? { keyProducts: supplier.keyProducts } : {}),
+                _importedAt: now.toISOString(),
+                _importSource: "crm_import_v1"
+              },
+              updatedAt: now,
+            },
+            create: {
             data: {
               id: randomUUID(),
               externalId,
@@ -103,7 +115,7 @@ export async function POST(req: Request) {
             parentMap.set(externalId, supplier.parentCompanyId);
           }
 
-          return company;
+          return company.id; // Return ID to count new vs updated
         });
 
       const results = await Promise.all(tx);
