@@ -27,7 +27,6 @@ export default async function Page(props: pageProps) {
   const companyFilter = searchParamsCache.get('company');
   const segmentFilter = searchParamsCache.get('segment');
   const tierFilter = searchParamsCache.get('tier');
-  const accountStateFilter = searchParamsCache.get('accountState');
 
   const skip = (Number(page) - 1) * Number(perPage);
   const take = Number(perPage);
