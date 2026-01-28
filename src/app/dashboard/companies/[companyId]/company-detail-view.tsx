@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
+import CompanyInteractions from './company-interactions';
 
 type CompanyData = {
   id: string;
@@ -285,6 +286,9 @@ export default function CompanyDetailView({ company }: Props) {
           </div>
         </div>
       )}
+
+      {/* Interactions */}
+      <CompanyInteractions companyId={company.id} />
     </div>
   );
 }

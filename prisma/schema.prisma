@@ -7,30 +7,31 @@ datasource db {
 }
 
 model Company {
-  id                String     @id
-  externalId        String?    @unique
-  userId            String?
-  orgId             String?
-  name              String
-  parentCompanyDbId String?
-  externalParentId  String?
-  website           String?
-  companyKey        String?
-  phone             String?
-  email             String?
-  tier              String?
-  segment           String?
-  category          String?
-  subtype           String?
-  subtypeGroup      String?
-  legacyJson        Json?
-  metadata          Json?
-  createdAt         DateTime   @default(now())
-  updatedAt         DateTime
-  Company           Company?   @relation("CompanyToCompany", fields: [parentCompanyDbId], references: [id])
-  other_Company     Company[]  @relation("CompanyToCompany")
-  Customer          Customer[]
-  Location          Location[]
+  id                 String               @id
+  externalId         String?              @unique
+  userId             String?
+  orgId              String?
+  name               String
+  parentCompanyDbId  String?
+  externalParentId   String?
+  website            String?
+  companyKey         String?
+  phone              String?
+  email              String?
+  tier               String?
+  segment            String?
+  category           String?
+  subtype            String?
+  subtypeGroup       String?
+  legacyJson         Json?
+  metadata           Json?
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime
+  Company            Company?             @relation("CompanyToCompany", fields: [parentCompanyDbId], references: [id])
+  other_Company      Company[]            @relation("CompanyToCompany")
+  Customer           Customer[]
+  Location           Location[]
+  CompanyInteraction CompanyInteraction[]
 
   @@index([companyKey])
   @@index([externalId])
@@ -80,6 +81,27 @@ model CustomerInteraction {
   @@index([createdAt])
   @@index([customerId])
   @@index([userId])
+}
+
+model CompanyInteraction {
+  id        String   @id @default(cuid())
+  companyId String
+  userId    String?
+  orgId     String?
+  type      String // "comment", "phone_call", "email", "meeting", "note", etc.
+  subject   String?
+  content   String
+  duration  Int? // For phone calls, duration in seconds
+  metadata  Json? // Store additional data like call outcome, email subject, etc.
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([createdAt])
+  @@index([companyId])
+  @@index([userId])
+  @@index([orgId])
+  @@index([type])
 }
 
 model GeocodeCache {
@@ -183,20 +205,20 @@ model Target {
   geocodeAttempts   Int                      @default(0)
   geocodeLastError  String?
   legacyJson        Json?
-  
+
   // SPEC-1: Account state and taxonomy fields
-  accountState      AccountState?            @default(NEW_UNCONTACTED)
-  supplyTier        SupplyTier?
-  supplyGroup       String?
-  supplySubtype     String?
-  
-  createdAt         DateTime                 @default(now())
-  updatedAt         DateTime
-  User              User?                    @relation(fields: [userId], references: [id])
-  TargetEnrichment  TargetEnrichment?
-  TargetNote        TargetNote[]
-  RouteStop         RouteStop[]
-  Meeting           Meeting[]
+  accountState  AccountState? @default(NEW_UNCONTACTED)
+  supplyTier    SupplyTier?
+  supplyGroup   String?
+  supplySubtype String?
+
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime
+  User             User?             @relation(fields: [userId], references: [id])
+  TargetEnrichment TargetEnrichment?
+  TargetNote       TargetNote[]
+  RouteStop        RouteStop[]
+  Meeting          Meeting[]
 
   @@index([category])
   @@index([company])
@@ -318,18 +340,18 @@ enum StopOutcome {
 }
 
 model Route {
-  id                  String       @id @default(cuid())
-  name                String
-  assignedToUserId    String?       // Clerk id (universal tie)
-  assignedToName      String?       // human display name
-  assignedToEmail     String?       // primary email
-  assignedToExternalId String?      // optional: provider id (e.g., Google sub)
-  scheduledFor        DateTime?
-  stops               RouteStop[]
-  TargetNote          TargetNote[]
-  Meeting             Meeting[]
-  created             DateTime      @default(now())
-  updatedAt           DateTime      @updatedAt
+  id                   String       @id @default(cuid())
+  name                 String
+  assignedToUserId     String? // Clerk id (universal tie)
+  assignedToName       String? // human display name
+  assignedToEmail      String? // primary email
+  assignedToExternalId String? // optional: provider id (e.g., Google sub)
+  scheduledFor         DateTime?
+  stops                RouteStop[]
+  TargetNote           TargetNote[]
+  Meeting              Meeting[]
+  created              DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
 
   @@index([assignedToUserId])
 }
@@ -368,7 +390,7 @@ model Meeting {
   notes            String?
   attendees        String[]   @default([]) // comma sep emails/users
   createdById      String?
-  calendarProvider String?    // "google"|"outlook"|"ics"
+  calendarProvider String? // "google"|"outlook"|"ics"
   externalId       String?
   createdAt        DateTime   @default(now())
   updatedAt        DateTime   @updatedAt
