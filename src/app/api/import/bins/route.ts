@@ -127,11 +127,11 @@ export async function POST(req: Request) {
             updatedAt: now,
           },
           update: {
-            description: r.description !== undefined ? r.description : undefined,
-            bin: r.bin !== undefined ? r.bin : undefined,
-            quantity: r.quantity !== undefined ? r.quantity : undefined,
-            price: r.price !== undefined ? (r.price !== null ? r.price : null) : undefined,
-            meta: r.meta !== undefined ? r.meta : undefined,
+            ...(r.description !== undefined && { description: r.description }),
+            ...(r.bin !== undefined && { bin: r.bin }),
+            ...(r.quantity !== undefined && typeof r.quantity === 'number' && { quantity: r.quantity }),
+            ...(r.price !== undefined && { price: r.price !== null && r.price !== undefined ? r.price : null }),
+            ...(r.meta !== undefined && { meta: r.meta }),
             updatedAt: now,
           },
         });
