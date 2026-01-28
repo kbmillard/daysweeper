@@ -26,7 +26,7 @@ This template uses the following stack:
 - Framework - [Next.js 16](https://nextjs.org/16)
 - Language - [TypeScript](https://www.typescriptlang.org)
 - Auth - [Clerk](https://go.clerk.com/ILdYhn7)
-- Error tracking - [Sentry](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy26q2-nextjs&utm_content=github-banner-project-tryfree)
+- Error tracking - [Sentry](https://sentry.io/for/nextjs/)
 - Styling - [Tailwind CSS v4](https://tailwindcss.com)
 - Components - [Shadcn-ui](https://ui.shadcn.com)
 - Schema Validations - [Zod](https://zod.dev)
@@ -39,7 +39,6 @@ This template uses the following stack:
 - Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
 - Formatting - [Prettier](https://prettier.io)
 
-_If you are looking for a Tanstack start dashboard template, here is the [repo](https://git.new/tanstack-start-dashboard)._
 
 ## Features
 
@@ -140,11 +139,7 @@ src/
 > [!NOTE]  
 > This admin dashboard starter uses **Next.js 16 (App Router)** with **React 19** and **Shadcn UI**. Follow these steps to run it locally:
 
-Clone the repo:
-
-```
-git clone https://github.com/Kiranism/next-shadcn-dashboard-starter.git
-```
+Get started:
 
 - `bun install`
 - Create a `.env.local` file by copying the example environment file:
