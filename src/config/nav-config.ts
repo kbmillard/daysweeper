@@ -48,5 +48,13 @@ export const navItems: NavItem[] = [
     shortcut: ['c', 'c'],
     isActive: false,
     items: []
+  },
+  {
+    title: 'Bins',
+    url: '/dashboard/bins',
+    icon: 'package',
+    shortcut: ['b', 'b'],
+    isActive: false,
+    items: []
   }
 ];
