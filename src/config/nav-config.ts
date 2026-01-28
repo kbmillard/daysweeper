@@ -52,7 +52,7 @@ export const navItems: NavItem[] = [
   {
     title: 'Bins',
     url: '/dashboard/bins',
-    icon: 'package',
+    icon: 'product',
     shortcut: ['b', 'b'],
     isActive: false,
     items: []

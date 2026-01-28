@@ -22,6 +22,7 @@ type WarehouseItem = {
   bin: string | null;
   quantity: number;
   price: number | null;
+  meta: any;
   createdAt: Date;
   updatedAt: Date;
 };

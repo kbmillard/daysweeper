@@ -17,6 +17,12 @@ export default async function BinsPage() {
     take: 1000,
   });
 
+  // Convert Decimal to number for the frontend
+  const binsWithNumbers = bins.map(bin => ({
+    ...bin,
+    price: bin.price ? Number(bin.price) : null,
+  }));
+
   return (
     <PageContainer>
       <div className="flex flex-1 flex-col space-y-4">
@@ -29,7 +35,7 @@ export default async function BinsPage() {
           </div>
           <BinsUploadButton />
         </div>
-        <BinsTable initialData={bins} />
+        <BinsTable initialData={binsWithNumbers} />
       </div>
     </PageContainer>
   );
