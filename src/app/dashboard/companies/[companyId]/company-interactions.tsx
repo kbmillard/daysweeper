@@ -88,7 +88,8 @@ export default function CompanyInteractions({ companyId }: Props) {
       });
 
       if (!res.ok) {
-        throw new Error('Failed to create interaction');
+        const errorData = await res.json().catch(() => ({ error: 'Unknown error' }));
+        throw new Error(errorData.error || 'Failed to create interaction');
       }
 
       const data = await res.json();
@@ -96,9 +97,10 @@ export default function CompanyInteractions({ companyId }: Props) {
       setFormData({ type: 'comment', subject: '', content: '', duration: '' });
       setShowForm(false);
       toast.success('Interaction added successfully');
-    } catch (error) {
-      toast.error('Failed to add interaction');
-      console.error(error);
+    } catch (error: any) {
+      const errorMessage = error?.message || 'Failed to add interaction';
+      toast.error(errorMessage);
+      console.error('Interaction error:', error);
     }
   };
 

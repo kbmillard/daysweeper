@@ -70,6 +70,14 @@ export async function POST(
 
     return NextResponse.json({ interaction }, { status: 201 });
   } catch (error: any) {
+    console.error('Error creating interaction:', error);
+    // Check if it's a Prisma error about missing table
+    if (error?.code === 'P2021' || error?.message?.includes('does not exist')) {
+      return NextResponse.json(
+        { error: 'Database table not found. Please run migrations.' },
+        { status: 500 }
+      );
+    }
     return NextResponse.json(
       { error: error?.message ?? 'Failed to create interaction' },
       { status: 500 }
