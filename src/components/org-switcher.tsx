@@ -149,6 +149,8 @@ export function OrgSwitcher() {
                     width={32}
                     height={32}
                     className='size-full object-cover'
+                    loading='eager'
+                    priority
                   />
                 ) : (
                   <GalleryVerticalEnd className='size-4' />
@@ -207,6 +209,7 @@ export function OrgSwitcher() {
                         width={24}
                         height={24}
                         className='size-full object-cover'
+                        loading='lazy'
                       />
                     ) : (
                       <GalleryVerticalEnd className='size-3.5 shrink-0' />

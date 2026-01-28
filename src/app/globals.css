@@ -120,6 +120,31 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Prevent layout shift */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Prevent image layout shift */
+  img,
+  picture,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* Prevent font layout shift */
+  body {
+    font-display: swap;
+  }
+  /* Stabilize layout during transitions */
+  [data-sidebar] {
+    contain: layout style paint;
+  }
+  /* Prevent content jumping */
+  main,
+  [role='main'] {
+    min-height: 0;
+  }
 }
 
 /* View Transition Wave Effect */

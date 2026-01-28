@@ -55,6 +55,9 @@ export default async function RootLayout({
           isScaled ? 'theme-scaled' : '',
           fontVariables
         )}
+        style={{
+          fontDisplay: 'swap'
+        }}
       >
         <NextTopLoader color='var(--primary)' showSpinner={false} />
         <NuqsAdapter>

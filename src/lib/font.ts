@@ -11,32 +11,44 @@ import { cn } from '@/lib/utils';
 
 const fontSans = Geist({
   subsets: ['latin'],
-  variable: '--font-sans'
+  variable: '--font-sans',
+  display: 'swap',
+  preload: true
 });
 
 const fontMono = Geist_Mono({
   subsets: ['latin'],
-  variable: '--font-mono'
+  variable: '--font-mono',
+  display: 'swap',
+  preload: false
 });
 
 const fontInstrument = Instrument_Sans({
   subsets: ['latin'],
-  variable: '--font-instrument'
+  variable: '--font-instrument',
+  display: 'swap',
+  preload: false
 });
 
 const fontNotoMono = Noto_Sans_Mono({
   subsets: ['latin'],
-  variable: '--font-noto-mono'
+  variable: '--font-noto-mono',
+  display: 'swap',
+  preload: false
 });
 
 const fontMullish = Mulish({
   subsets: ['latin'],
-  variable: '--font-mullish'
+  variable: '--font-mullish',
+  display: 'swap',
+  preload: false
 });
 
 const fontInter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter'
+  variable: '--font-inter',
+  display: 'swap',
+  preload: false
 });
 
 export const fontVariables = cn(
