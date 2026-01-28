@@ -59,11 +59,18 @@ export async function POST(req: Request) {
         .map(async (supplier) => {
           const externalId = supplier.companyId!;
           
+          // Clean company name - remove 'x' prefix if it's a UUID pattern
+          let companyName = supplier.company.trim();
+          const uuidPattern = /^x[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$/;
+          if (uuidPattern.test(companyName)) {
+            companyName = companyName.substring(1); // Remove 'x' prefix
+          }
+          
           // Upsert company (create or update)
           const company = await prisma.company.upsert({
             where: { externalId },
             update: {
-              name: supplier.company.trim(),
+              name: companyName,
               companyKey: supplier.companyKey ?? null,
               website: supplier.website ?? null,
               phone: supplier.contactInfo?.phone ?? null,
@@ -85,7 +92,7 @@ export async function POST(req: Request) {
             create: {
               id: randomUUID(),
               externalId,
-              name: supplier.company.trim(),
+              name: companyName,
               companyKey: supplier.companyKey ?? null,
               website: supplier.website ?? null,
               phone: supplier.contactInfo?.phone ?? null,
