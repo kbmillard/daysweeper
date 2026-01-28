@@ -11,6 +11,7 @@ import {
 } from '@tanstack/react-table';
 import { DataTable } from '@/components/ui/table/data-table';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
+import { DataTableToolbar } from '@/components/ui/table/data-table-toolbar';
 import { Badge } from '@/components/ui/badge';
 import { formatCurrency } from '@/lib/format';
 
@@ -136,10 +137,8 @@ export function BinsTable({ initialData }: { initialData: WarehouseItem[] }) {
   });
 
   return (
-    <DataTable
-      table={table}
-      columns={columns}
-      isPending={isPending}
-    />
+    <DataTable table={table}>
+      <DataTableToolbar table={table} />
+    </DataTable>
   );
 }
