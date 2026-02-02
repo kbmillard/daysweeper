@@ -134,6 +134,12 @@ src/
 └── index.ts
 ```
 
+## Deploying to Vercel
+
+Migrations run during `npm run build` (`prisma migrate deploy`). In Vercel, add **DATABASE_URL** to **Build** environment variables (not only Production/Runtime) so migrations can run and create/update tables. Otherwise the build may succeed but the app will show "Interactions require a database migration" on company pages.
+
+**Integrations:** NEON is integrated (database). SENTRY is integrated (error tracking).
+
 ## Getting Started
 
 > [!NOTE]  
