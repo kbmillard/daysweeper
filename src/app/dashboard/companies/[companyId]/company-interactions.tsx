@@ -44,6 +44,7 @@ export default function CompanyInteractions({ companyId }: Props) {
   const [interactions, setInteractions] = useState<Interaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [migrationsRequired, setMigrationsRequired] = useState(false);
   const [formData, setFormData] = useState({
     type: 'comment',
     subject: '',
@@ -59,7 +60,8 @@ export default function CompanyInteractions({ companyId }: Props) {
     try {
       const res = await fetch(`/api/companies/${companyId}/interactions`);
       const data = await res.json();
-      setInteractions(data.interactions || []);
+      setInteractions(data.interactions ?? []);
+      setMigrationsRequired(Boolean(data.migrationsRequired));
     } catch (error) {
       console.error('Failed to fetch interactions:', error);
     } finally {
@@ -89,6 +91,11 @@ export default function CompanyInteractions({ companyId }: Props) {
 
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({ error: 'Unknown error' }));
+        if (errorData.migrationsRequired || errorData.error === 'migrations_required') {
+          setMigrationsRequired(true);
+          toast.error('Run database migrations to enable interactions: prisma migrate deploy');
+          return;
+        }
         throw new Error(errorData.error || 'Failed to create interaction');
       }
 
@@ -138,18 +145,28 @@ export default function CompanyInteractions({ companyId }: Props) {
       <CardHeader>
         <div className='flex items-center justify-between'>
           <CardTitle>Interactions ({interactions.length})</CardTitle>
-          <Button
-            onClick={() => setShowForm(!showForm)}
-            size='sm'
-            variant={showForm ? 'outline' : 'default'}
-          >
-            <IconPlus className='mr-2 h-4 w-4' />
-            {showForm ? 'Cancel' : 'Add Interaction'}
-          </Button>
+          {!migrationsRequired && (
+            <Button
+              onClick={() => setShowForm(!showForm)}
+              size='sm'
+              variant={showForm ? 'outline' : 'default'}
+            >
+              <IconPlus className='mr-2 h-4 w-4' />
+              {showForm ? 'Cancel' : 'Add Interaction'}
+            </Button>
+          )}
         </div>
       </CardHeader>
       <CardContent className='space-y-4'>
-        {showForm && (
+        {migrationsRequired && (
+          <div className='rounded-lg border border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30 p-4 text-sm text-amber-800 dark:text-amber-200'>
+            <p className='font-medium'>Interactions require a database migration.</p>
+            <p className='mt-1 text-muted-foreground'>
+              Run <code className='rounded bg-muted px-1'>prisma migrate deploy</code> (or redeploy so migrations run) to enable adding comments and calls.
+            </p>
+          </div>
+        )}
+        {!migrationsRequired && showForm && (
           <form onSubmit={handleSubmit} className='space-y-4 p-4 border rounded-lg'>
             <div className='space-y-2'>
               <Label>Type</Label>
@@ -217,11 +234,11 @@ export default function CompanyInteractions({ companyId }: Props) {
         )}
 
         <div className='space-y-3'>
-          {interactions.length === 0 ? (
+          {interactions.length === 0 && !migrationsRequired ? (
             <p className='text-center text-muted-foreground py-8'>
               No interactions yet. Add one to get started!
             </p>
-          ) : (
+          ) : interactions.length === 0 && migrationsRequired ? null : (
             interactions.map((interaction) => {
               const Icon = getTypeIcon(interaction.type);
               return (
