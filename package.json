@@ -7,8 +7,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
-    "postbuild": "prisma migrate deploy || true",
+    "build": "prisma generate && prisma migrate deploy && next build",
+    "postbuild": "echo Migrations run in build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && bun format",

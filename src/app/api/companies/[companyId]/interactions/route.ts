@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
+import { ensureCompanyInteractionTable } from '@/lib/ensure-company-interaction-table';
 
 // GET - Fetch all interactions for a company
 export async function GET(
@@ -10,23 +11,34 @@ export async function GET(
   try {
     const { companyId } = await params;
 
-    const interactions = await prisma.companyInteraction.findMany({
-      where: { companyId },
-      orderBy: { createdAt: 'desc' },
-      take: 100
-    });
+    let interactions: Awaited<ReturnType<typeof prisma.companyInteraction.findMany>>;
+    try {
+      interactions = await prisma.companyInteraction.findMany({
+        where: { companyId },
+        orderBy: { createdAt: 'desc' },
+        take: 100
+      });
+    } catch (error: any) {
+      // Table may not exist if migrations haven't run (e.g. Vercel deploy)
+      const isMissingTable =
+        error?.code === 'P2021' || error?.message?.includes('does not exist');
+      if (!isMissingTable) throw error;
+      const created = await ensureCompanyInteractionTable();
+      if (!created) {
+        return NextResponse.json(
+          { interactions: [], migrationsRequired: true },
+          { status: 200 }
+        );
+      }
+      interactions = await prisma.companyInteraction.findMany({
+        where: { companyId },
+        orderBy: { createdAt: 'desc' },
+        take: 100
+      });
+    }
 
     return NextResponse.json({ interactions });
   } catch (error: any) {
-    // Table may not exist if migrations haven't run (e.g. new deploy)
-    const isMissingTable =
-      error?.code === 'P2021' || error?.message?.includes('does not exist');
-    if (isMissingTable) {
-      return NextResponse.json(
-        { interactions: [], migrationsRequired: true },
-        { status: 200 }
-      );
-    }
     return NextResponse.json(
       { error: error?.message ?? 'Failed to fetch interactions' },
       { status: 500 }
@@ -65,30 +77,46 @@ export async function POST(
       );
     }
 
-    const interaction = await prisma.companyInteraction.create({
-      data: {
-        companyId,
-        userId: userId || null,
-        type,
-        subject: subject || null,
-        content,
-        duration: duration || null,
-        metadata: metadata || null
+    let interaction;
+    try {
+      interaction = await prisma.companyInteraction.create({
+        data: {
+          companyId,
+          userId: userId || null,
+          type,
+          subject: subject || null,
+          content,
+          duration: duration || null,
+          metadata: metadata || null
+        }
+      });
+    } catch (createError: any) {
+      const isMissingTable =
+        createError?.code === 'P2021' || createError?.message?.includes('does not exist');
+      if (!isMissingTable) throw createError;
+      const created = await ensureCompanyInteractionTable();
+      if (!created) {
+        return NextResponse.json(
+          { error: 'migrations_required', migrationsRequired: true },
+          { status: 503 }
+        );
       }
-    });
+      interaction = await prisma.companyInteraction.create({
+        data: {
+          companyId,
+          userId: userId || null,
+          type,
+          subject: subject || null,
+          content,
+          duration: duration || null,
+          metadata: metadata || null
+        }
+      });
+    }
 
     return NextResponse.json({ interaction }, { status: 201 });
   } catch (error: any) {
     console.error('Error creating interaction:', error);
-    // Table may not exist if migrations haven't run
-    const isMissingTable =
-      error?.code === 'P2021' || error?.message?.includes('does not exist');
-    if (isMissingTable) {
-      return NextResponse.json(
-        { error: 'migrations_required', migrationsRequired: true },
-        { status: 503 }
-      );
-    }
     return NextResponse.json(
       { error: error?.message ?? 'Failed to create interaction' },
       { status: 500 }
