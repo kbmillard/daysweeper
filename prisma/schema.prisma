@@ -23,6 +23,7 @@ model Company {
   category           String?
   subtype            String?
   subtypeGroup       String?
+  status             String?              // Contacted - no answer | Contacted - answered - not interested | Contacted - answered - meeting set | APR Account
   legacyJson         Json?
   metadata           Json?
   createdAt          DateTime             @default(now())
@@ -40,6 +41,7 @@ model Company {
   @@index([parentCompanyDbId])
   @@index([tier])
   @@index([userId])
+  @@index([status])
 }
 
 model Customer {

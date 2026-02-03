@@ -24,6 +24,7 @@ export default async function Page(props: PageProps) {
       phone: true,
       category: true,
       subtype: true,
+      status: true,
       metadata: true,
       Location: {
         take: 1,
@@ -42,6 +43,7 @@ export default async function Page(props: PageProps) {
           phone: true,
           category: true,
           subtype: true,
+          status: true,
           metadata: true,
           Location: {
             take: 1,
@@ -62,6 +64,7 @@ export default async function Page(props: PageProps) {
           phone: true,
           category: true,
           subtype: true,
+          status: true,
           metadata: true,
           Location: {
             take: 1,

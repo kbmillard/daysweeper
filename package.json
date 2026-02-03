@@ -10,14 +10,17 @@
     "build": "prisma generate && prisma migrate deploy && next build",
     "postbuild": "echo Migrations run in build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "eslint src --fix && bun format",
+    "lint": "eslint --no-eslintrc -c .eslintrc.lint.json \"src/**/*.{ts,tsx,js,jsx}\" --max-warnings 999",
+    "lint:fix": "eslint src --fix && pnpm format",
     "lint:strict": "eslint --max-warnings=0 src",
     "format": "prettier --write .",
     "format:check": "prettier -c -w .",
     "prepare": "husky",
     "db:migrate:deploy": "prisma migrate deploy",
-    "db:status": "prisma migrate status"
+    "db:status": "prisma migrate status",
+    "geocode:run": "node scripts/geocode-locations.mjs",
+    "geocode:until-done": "node scripts/geocode-until-done.mjs",
+    "geocode:apple": "./scripts/run-geocode-apple.sh"
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,css,less,scss,sass}": [
@@ -76,6 +79,7 @@
     "input-otp": "^1.4.2",
     "kbar": "^0.1.0-beta.45",
     "lucide-react": "^0.476.0",
+    "mapbox-gl": "^3.18.1",
     "match-sorter": "^8.0.0",
     "motion": "^11.17.0",
     "next": "^16.0.7",

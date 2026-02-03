@@ -4,11 +4,14 @@ import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
 import { searchParamsCache } from '@/lib/searchparams';
 import { cn } from '@/lib/utils';
 import { IconPlus } from '@tabler/icons-react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
 import CompaniesTable from './companies-table';
+
+const CompaniesMap = dynamic(() => import('./companies-map'), { ssr: false });
 
 export const metadata = {
   title: 'Dashboard: Companies'
@@ -31,6 +34,7 @@ export default async function Page(props: pageProps) {
   const emailFilter = searchParamsCache.get('email');
   const phoneFilter = searchParamsCache.get('phone');
   const websiteFilter = searchParamsCache.get('website');
+  const statusFilter = searchParamsCache.get('status');
   const sort = searchParamsCache.get('sort');
 
   const skip = (Number(page) - 1) * Number(perPage);
@@ -64,6 +68,10 @@ export default async function Page(props: pageProps) {
     where.website = { contains: websiteFilter, mode: 'insensitive' as const };
   }
 
+  if (statusFilter) {
+    where.status = { equals: statusFilter, mode: 'insensitive' as const };
+  }
+
   // Build orderBy from sort parameter
   let orderBy: any = { createdAt: 'desc' }; // default
   if (sort && sort.length > 0) {
@@ -76,6 +84,7 @@ export default async function Page(props: pageProps) {
       website: 'website',
       segment: 'segment',
       tier: 'tier',
+      status: 'status',
       createdAt: 'createdAt',
       locations: 'createdAt' // locations is computed, fallback to createdAt
     };
@@ -100,6 +109,7 @@ export default async function Page(props: pageProps) {
         email: true,
         segment: true,
         tier: true,
+        status: true,
         createdAt: true,
         updatedAt: true,
         Location: {
@@ -136,6 +146,12 @@ export default async function Page(props: pageProps) {
       >
         <CompaniesTable data={companies} totalItems={total} />
       </Suspense>
+      <section className="mt-6">
+        <h2 className="text-sm font-medium text-muted-foreground mb-2">
+          Map
+        </h2>
+        <CompaniesMap />
+      </section>
     </PageContainer>
   );
 }

@@ -13,6 +13,7 @@ type Company = {
   email: string | null;
   segment: string | null;
   tier: string | null;
+  status: string | null;
   createdAt: Date;
   updatedAt: Date;
   Location: Array<{
@@ -143,6 +144,31 @@ export const columns: ColumnDef<Company>[] = [
       placeholder: 'Search by website...',
       variant: 'text',
       icon: Globe
+    }
+  },
+  {
+    id: 'status',
+    accessorKey: 'status',
+    enableSorting: true,
+    enableHiding: true,
+    header: ({ column }: { column: Column<Company, unknown> }) => (
+      <DataTableColumnHeader column={column} title='Status' />
+    ),
+    cell: ({ cell }) => {
+      const status = cell.getValue<Company['status']>();
+      return status ? (
+        <Badge variant='outline' className='text-xs'>
+          {status}
+        </Badge>
+      ) : (
+        <span className='text-muted-foreground'>—</span>
+      );
+    },
+    enableColumnFilter: true,
+    meta: {
+      label: 'Status',
+      variant: 'text',
+      icon: Text
     }
   },
   {

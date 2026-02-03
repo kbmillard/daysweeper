@@ -2,6 +2,29 @@
 
 This guide covers the setup and configuration of Clerk features used in this starter template.
 
+## Domains & CNAMEs (Production)
+
+CNAMEs are **not** set automatically. You configure them yourself so Clerk can serve auth and emails from your domain.
+
+### Where to see required records
+
+1. Open **[Clerk Dashboard → Domains](https://dashboard.clerk.com/~/domains)**.
+2. Use your **production** instance (switch from Development if needed).
+3. The Domains page lists the **exact CNAME (and other DNS) records** you need.
+
+### What to do
+
+1. **Add the records at your DNS provider** (Vercel Domains, Cloudflare, Namecheap, etc.):
+   - Create each CNAME (and any other record) exactly as shown in the Dashboard (host/subdomain and target).
+2. **Wait for DNS** – propagation can take up to 48 hours.
+3. **Deploy certificates** – when all required steps are done, a **Deploy certificates** button appears on the Clerk Dashboard home; use it to finish deployment.
+
+### Notes
+
+- You need a **production** Clerk instance and a domain you control.
+- If you use **Cloudflare**, set the CNAME subdomain to **DNS only** (no proxy) so Clerk’s DNS check can succeed.
+- Full details: [Deploy your Clerk app to production](https://clerk.com/docs/deployments/overview) and [DNS records](https://clerk.com/docs/deployments/overview#dns-records).
+
 ## Clerk Scopes Required
 
 - **Authentication** - User sign-in/sign-up and session management

@@ -136,7 +136,9 @@ src/
 
 ## Deploying to Vercel
 
-Migrations run during `npm run build` (`prisma migrate deploy`). In Vercel, add **DATABASE_URL** to **Build** environment variables (not only Production/Runtime) so migrations can run and create/update tables. Otherwise the build may succeed but the app will show "Interactions require a database migration" on company pages.
+**Every push to `main` automatically deploys to Vercel.** No manual deploy step—push and Vercel builds and deploys.
+
+Migrations run during `pnpm run build` (`prisma migrate deploy`). In Vercel, add **DATABASE_URL** to **Build** environment variables (not only Production/Runtime) so migrations can run and create/update tables. Otherwise the build may succeed but the app will show "Interactions require a database migration" on company pages.
 
 **Integrations:** NEON is integrated and authorized (database). SENTRY is integrated (error tracking).
 
@@ -147,11 +149,11 @@ Migrations run during `npm run build` (`prisma migrate deploy`). In Vercel, add 
 
 Get started:
 
-- `bun install`
+- `pnpm install`
 - Create a `.env.local` file by copying the example environment file:
   `cp env.example.txt .env.local`
 - Add the required environment variables to the `.env.local` file.
-- `bun run dev`
+- `pnpm dev`
 
 ##### Environment Configuration Setup
 

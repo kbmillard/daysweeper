@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
 import CompanyInteractions from './company-interactions';
+import CompanyStatusSelect from './company-status-select';
 
 type CompanyData = {
   id: string;
@@ -11,6 +12,7 @@ type CompanyData = {
   phone: string | null;
   category: string | null;
   subtype: string | null;
+  status: string | null;
   metadata: any;
   Location: Array<{
     addressRaw: string;
@@ -171,6 +173,13 @@ export default function CompanyDetailView({ company }: Props) {
             <div>
               <label className='text-sm font-medium text-muted-foreground'>Company</label>
               <p className='text-base font-semibold mt-1'>{company.name}</p>
+            </div>
+
+            <div>
+              <label className='text-sm font-medium text-muted-foreground'>Status</label>
+              <div className='mt-1'>
+                <CompanyStatusSelect companyId={company.id} currentStatus={company.status} />
+              </div>
             </div>
 
             <div>

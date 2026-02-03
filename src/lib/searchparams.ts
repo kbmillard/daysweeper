@@ -19,6 +19,7 @@ export const searchParams = {
   email: parseAsString,
   phone: parseAsString,
   website: parseAsString,
+  status: parseAsString,
   locations: parseAsString,
   createdAt: parseAsString,
   sort: getSortingStateParser()
