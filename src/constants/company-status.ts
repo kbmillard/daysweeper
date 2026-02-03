@@ -1,8 +1,8 @@
 /** Company status options for CRM pipeline */
 export const COMPANY_STATUSES = [
   'Contacted - no answer',
-  'Contacted - answered - not interested',
-  'Contacted - answered - meeting set',
+  'Contacted - not interested',
+  'Contacted - meeting set',
   'APR Account'
 ] as const;
 
