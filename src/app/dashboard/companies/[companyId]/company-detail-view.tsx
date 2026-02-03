@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { IconArrowLeft } from '@tabler/icons-react';
+import { IconArrowLeft, IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
 import CompanyInteractions from './company-interactions';
 import CompanyStatusSelect from './company-status-select';
@@ -15,6 +15,7 @@ type CompanyData = {
   status: string | null;
   metadata: any;
   Location: Array<{
+    id: string;
     addressRaw: string;
     addressComponents: any;
   }>;
@@ -275,24 +276,99 @@ export default function CompanyDetailView({ company }: Props) {
         </CardContent>
       </Card>
 
-      {/* Parent Company */}
-      {company.Company && (
-        <CompanyCard company={company.Company} title='Parent Company' />
+      {/* Parent Company – only show when there is a parent (no empty parent) */}
+      {company.Company ? (
+        <div className='space-y-2'>
+          <h2 className='text-xl font-semibold'>Parent Company</h2>
+          <CompanyCard company={company.Company} title='Parent Company' />
+          <Link href={`/dashboard/companies/${company.id}/set-parent`}>
+            <Button variant='ghost' size='sm'>Change or clear parent</Button>
+          </Link>
+        </div>
+      ) : (
+        <div className='flex items-center gap-2'>
+          <span className='text-muted-foreground text-sm'>No parent company.</span>
+          <Link href={`/dashboard/companies/${company.id}/set-parent`}>
+            <Button variant='outline' size='sm'>
+              <IconPlus className='mr-2 h-4 w-4' />
+              Add parent
+            </Button>
+          </Link>
+        </div>
       )}
 
-      {/* Child Companies */}
-      {company.other_Company && company.other_Company.length > 0 && (
-        <div className='space-y-4'>
-          <h2 className='text-xl font-semibold'>Child Companies ({company.other_Company.length})</h2>
-          <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
-            {company.other_Company.map((childCompany) => (
-              <CompanyCard
-                key={childCompany.id}
-                company={childCompany}
-                title={childCompany.name}
-              />
+      {/* Locations – add other locations for this company */}
+      <div className='space-y-4'>
+        <div className='flex items-center justify-between'>
+          <h2 className='text-xl font-semibold'>
+            Locations ({company.Location?.length ?? 0})
+          </h2>
+          <Link href={`/dashboard/companies/${company.id}/locations/new`}>
+            <Button size='sm'>
+              <IconPlus className='mr-2 h-4 w-4' />
+              Add location
+            </Button>
+          </Link>
+        </div>
+        {company.Location && company.Location.length > 0 ? (
+          <ul className='space-y-2'>
+            {company.Location.map((loc) => (
+              <li key={loc.id}>
+                <Link
+                  href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
+                  className='text-primary hover:underline'
+                >
+                  {loc.addressRaw || 'Address not specified'}
+                </Link>
+                <Link href={`/dashboard/companies/${company.id}/locations/${loc.id}`}>
+                  <Button variant='ghost' size='sm' className='ml-2'>
+                    View
+                  </Button>
+                </Link>
+              </li>
             ))}
+          </ul>
+        ) : (
+          <p className='text-muted-foreground text-sm'>No locations yet. Add one to get started.</p>
+        )}
+      </div>
+
+      {/* Child companies – only show when this company has children; list each with link to its page */}
+      {company.other_Company && company.other_Company.length > 0 ? (
+        <div className='space-y-4'>
+          <div className='flex items-center justify-between'>
+            <h2 className='text-xl font-semibold'>Child Companies ({company.other_Company.length})</h2>
+            <Link href={`/dashboard/companies/new?parentId=${company.id}`}>
+              <Button size='sm'>
+                <IconPlus className='mr-2 h-4 w-4' />
+                Add child company
+              </Button>
+            </Link>
           </div>
+          <ul className='space-y-2'>
+            {company.other_Company.map((child) => (
+              <li key={child.id} className='flex items-center justify-between gap-2'>
+                <Link
+                  href={`/dashboard/companies/${child.id}`}
+                  className='text-primary font-medium hover:underline'
+                >
+                  {child.name}
+                </Link>
+                <Link href={`/dashboard/companies/${child.id}`}>
+                  <Button variant='outline' size='sm'>View Details</Button>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div className='flex items-center gap-2'>
+          <Link href={`/dashboard/companies/new?parentId=${company.id}`}>
+            <Button variant='outline' size='sm'>
+              <IconPlus className='mr-2 h-4 w-4' />
+              Add child company
+            </Button>
+          </Link>
         </div>
       )}
 

@@ -27,9 +27,9 @@ export default async function Page(props: PageProps) {
       status: true,
       metadata: true,
       Location: {
-        take: 1,
         orderBy: { createdAt: 'desc' },
         select: {
+          id: true,
           addressRaw: true,
           addressComponents: true
         }
