@@ -2,20 +2,41 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { IconArrowLeft, IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
+import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
-import CompanyStatusSelect from './company-status-select';
+
+type CompanyMetadata = {
+  keyProducts?: string[] | null;
+  industryKeywords?: string[] | null;
+  profile?: {
+    summary?: string | null;
+    keyFacts?: Record<string, unknown> | null;
+    businessActivities?: string | null;
+    roleWithinGroup?: string | null;
+    localPresence?: string | null;
+    profileMarkdown?: string | null;
+  } | null;
+  contactInfo?: { phone?: string; email?: string } | null;
+  supplyChainCategory?: string | null;
+};
 
 type CompanyData = {
   id: string;
+  externalId?: string | null;
   name: string;
   website: string | null;
   phone: string | null;
+  email: string | null;
+  tier: string | null;
+  segment: string | null;
   category: string | null;
   subtype: string | null;
+  subtypeGroup: string | null;
   status: string | null;
-  metadata: any;
+  companyKey: string | null;
+  metadata: unknown;
   Location: Array<{
-    id: string;
+    id?: string;
     addressRaw: string;
     addressComponents: any;
   }>;
@@ -28,15 +49,27 @@ type Props = {
 };
 
 // Component to render a company card (reusable for parent/child)
-function CompanyCard({ company, title }: { company: CompanyData; title: string }) {
+function CompanyCard({
+  company,
+  title
+}: {
+  company: CompanyData;
+  title: string;
+}) {
   const primaryLocation = company.Location?.[0];
   const addressComponents = primaryLocation?.addressComponents || {};
-  
+
   // Get phone from metadata.contactInfo if phone field is empty
-  const phone = company.phone || company.metadata?.contactInfo?.phone || null;
-  
+  const phone =
+    company.phone ||
+    (company.metadata as CompanyMetadata | null)?.contactInfo?.phone ||
+    null;
+
   // Get supply chain fields from metadata if not in direct fields
-  const supplyChainCategory = company.category || company.metadata?.supplyChainCategory || null;
+  const supplyChainCategory =
+    company.category ||
+    (company.metadata as CompanyMetadata | null)?.supplyChainCategory ||
+    null;
 
   return (
     <Card>
@@ -53,14 +86,18 @@ function CompanyCard({ company, title }: { company: CompanyData; title: string }
       <CardContent className='space-y-4'>
         <div className='grid gap-4 md:grid-cols-2'>
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Company</label>
-            <p className='text-base font-semibold mt-1'>{company.name}</p>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Company
+            </label>
+            <p className='mt-1 text-base font-semibold'>{company.name}</p>
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Website</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Website
+            </label>
             {company.website ? (
-              <p className='text-base mt-1'>
+              <p className='mt-1 text-base'>
                 <a
                   href={company.website}
                   target='_blank'
@@ -71,70 +108,84 @@ function CompanyCard({ company, title }: { company: CompanyData; title: string }
                 </a>
               </p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Phone</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Phone
+            </label>
             {phone ? (
-              <p className='text-base mt-1'>{phone}</p>
+              <p className='mt-1 text-base'>{phone}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Address</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Address
+            </label>
             {primaryLocation?.addressRaw ? (
-              <p className='text-base mt-1'>{primaryLocation.addressRaw}</p>
+              <p className='mt-1 text-base'>{primaryLocation.addressRaw}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>City</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              City
+            </label>
             {addressComponents.city ? (
-              <p className='text-base mt-1'>{addressComponents.city}</p>
+              <p className='mt-1 text-base'>{addressComponents.city}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>State</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              State
+            </label>
             {addressComponents.state ? (
-              <p className='text-base mt-1'>{addressComponents.state}</p>
+              <p className='mt-1 text-base'>{addressComponents.state}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Postal Code</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Postal Code
+            </label>
             {addressComponents.postal_code ? (
-              <p className='text-base mt-1'>{addressComponents.postal_code}</p>
+              <p className='mt-1 text-base'>{addressComponents.postal_code}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Country</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Country
+            </label>
             {addressComponents.country ? (
-              <p className='text-base mt-1'>{addressComponents.country}</p>
+              <p className='mt-1 text-base'>{addressComponents.country}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
 
           <div>
-            <label className='text-sm font-medium text-muted-foreground'>Supply Chain Category</label>
+            <label className='text-muted-foreground text-sm font-medium'>
+              Supply Chain Category
+            </label>
             {supplyChainCategory ? (
-              <p className='text-base mt-1'>{supplyChainCategory}</p>
+              <p className='mt-1 text-base'>{supplyChainCategory}</p>
             ) : (
-              <p className='text-base text-muted-foreground mt-1'>—</p>
+              <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
           </div>
         </div>
@@ -144,15 +195,14 @@ function CompanyCard({ company, title }: { company: CompanyData; title: string }
 }
 
 export default function CompanyDetailView({ company }: Props) {
+  const meta = (company.metadata ?? null) as CompanyMetadata | null;
   const primaryLocation = company.Location?.[0];
-  const addressComponents = primaryLocation?.addressComponents || {};
-  
-  // Get phone from metadata.contactInfo if phone field is empty
-  const phone = company.phone || company.metadata?.contactInfo?.phone || null;
-  
-  // Get supply chain fields from metadata if not in direct fields
-  const supplyChainCategory = company.category || company.metadata?.supplyChainCategory || null;
-  const supplyChainSubtype = company.subtype || company.metadata?.supplyChainSubtype || null;
+  const addressComponents = (primaryLocation?.addressComponents || {}) as {
+    city?: string;
+    state?: string;
+    postal_code?: string;
+    country?: string;
+  };
 
   return (
     <div className='space-y-6'>
@@ -165,129 +215,180 @@ export default function CompanyDetailView({ company }: Props) {
         </Link>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Company Details</CardTitle>
-        </CardHeader>
-        <CardContent className='space-y-4'>
-          <div className='grid gap-4 md:grid-cols-2'>
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Company</label>
-              <p className='text-base font-semibold mt-1'>{company.name}</p>
-            </div>
+      <CompanyEditableFields
+        company={{
+          id: company.id,
+          name: company.name,
+          website: company.website,
+          phone: company.phone,
+          email: company.email ?? null,
+          tier: company.tier ?? null,
+          segment: company.segment ?? null,
+          category: company.category ?? null,
+          subtype: company.subtype ?? null,
+          subtypeGroup: company.subtypeGroup ?? null,
+          status: company.status ?? null,
+          companyKey: company.companyKey ?? null
+        }}
+      />
 
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Status</label>
-              <div className='mt-1'>
-                <CompanyStatusSelect companyId={company.id} currentStatus={company.status} />
+      {/* Company profile (summary, key facts, business activities, role, local presence, markdown) */}
+      {meta?.profile && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Company profile</CardTitle>
+          </CardHeader>
+          <CardContent className='space-y-4'>
+            {meta.profile.summary && (
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Summary
+                </label>
+                <p className='mt-1 text-base'>{meta.profile.summary}</p>
+              </div>
+            )}
+            {meta.profile.keyFacts &&
+              typeof meta.profile.keyFacts === 'object' &&
+              Object.keys(meta.profile.keyFacts).length > 0 && (
+                <div>
+                  <label className='text-muted-foreground text-sm font-medium'>
+                    Key facts
+                  </label>
+                  <ul className='mt-1 list-inside list-disc space-y-0.5 text-sm'>
+                    {Object.entries(meta.profile.keyFacts).map(([k, v]) => {
+                      if (v == null) return null;
+                      const disp = Array.isArray(v)
+                        ? (v as string[]).join(', ')
+                        : String(v);
+                      return (
+                        <li key={k}>
+                          <span className='font-medium capitalize'>
+                            {k.replace(/([A-Z])/g, ' $1').trim()}:
+                          </span>{' '}
+                          {disp}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            {meta.profile.businessActivities && (
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Business activities
+                </label>
+                <p className='mt-1 text-base'>
+                  {meta.profile.businessActivities}
+                </p>
+              </div>
+            )}
+            {meta.profile.roleWithinGroup && (
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Role within group
+                </label>
+                <p className='mt-1 text-base'>{meta.profile.roleWithinGroup}</p>
+              </div>
+            )}
+            {meta.profile.localPresence && (
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Local presence
+                </label>
+                <p className='mt-1 text-base'>{meta.profile.localPresence}</p>
+              </div>
+            )}
+            {meta.profile.profileMarkdown && (
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Profile (markdown)
+                </label>
+                <pre className='bg-muted mt-1 rounded-md p-3 font-sans text-sm whitespace-pre-wrap'>
+                  {meta.profile.profileMarkdown}
+                </pre>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
+
+      {primaryLocation && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Primary address</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className='grid gap-4 md:grid-cols-2'>
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Address
+                </label>
+                <p className='mt-1 text-base'>
+                  {primaryLocation.addressRaw || '—'}
+                </p>
+              </div>
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  City
+                </label>
+                <p className='mt-1 text-base'>
+                  {addressComponents.city ?? '—'}
+                </p>
+              </div>
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  State
+                </label>
+                <p className='mt-1 text-base'>
+                  {addressComponents.state ?? '—'}
+                </p>
+              </div>
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Postal Code
+                </label>
+                <p className='mt-1 text-base'>
+                  {addressComponents.postal_code ?? '—'}
+                </p>
+              </div>
+              <div>
+                <label className='text-muted-foreground text-sm font-medium'>
+                  Country
+                </label>
+                <p className='mt-1 text-base'>
+                  {addressComponents.country ?? '—'}
+                </p>
               </div>
             </div>
+            {primaryLocation.id && (
+              <Link
+                href={`/dashboard/companies/${company.id}/locations/${primaryLocation.id}`}
+              >
+                <Button variant='outline' size='sm' className='mt-4'>
+                  Edit location
+                </Button>
+              </Link>
+            )}
+          </CardContent>
+        </Card>
+      )}
 
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Website</label>
-              {company.website ? (
-                <p className='text-base mt-1'>
-                  <a
-                    href={company.website}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-primary hover:underline'
-                  >
-                    {company.website}
-                  </a>
-                </p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Phone</label>
-              {phone ? (
-                <p className='text-base mt-1'>{phone}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Address</label>
-              {primaryLocation?.addressRaw ? (
-                <p className='text-base mt-1'>{primaryLocation.addressRaw}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>City</label>
-              {addressComponents.city ? (
-                <p className='text-base mt-1'>{addressComponents.city}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>State</label>
-              {addressComponents.state ? (
-                <p className='text-base mt-1'>{addressComponents.state}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Postal Code</label>
-              {addressComponents.postal_code ? (
-                <p className='text-base mt-1'>{addressComponents.postal_code}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Country</label>
-              {addressComponents.country ? (
-                <p className='text-base mt-1'>{addressComponents.country}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Supply Chain Category</label>
-              {supplyChainCategory ? (
-                <p className='text-base mt-1'>{supplyChainCategory}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-
-            <div>
-              <label className='text-sm font-medium text-muted-foreground'>Supply Chain Subtype</label>
-              {supplyChainSubtype ? (
-                <p className='text-base mt-1'>{supplyChainSubtype}</p>
-              ) : (
-                <p className='text-base text-muted-foreground mt-1'>—</p>
-              )}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Parent Company – only show when there is a parent (no empty parent) */}
-      {company.Company ? (
+      {/* Parent Company – only show when there is a parent and it's different from this company */}
+      {company.Company && company.Company.id !== company.id ? (
         <div className='space-y-2'>
           <h2 className='text-xl font-semibold'>Parent Company</h2>
           <CompanyCard company={company.Company} title='Parent Company' />
           <Link href={`/dashboard/companies/${company.id}/set-parent`}>
-            <Button variant='ghost' size='sm'>Change or clear parent</Button>
+            <Button variant='ghost' size='sm'>
+              Change or clear parent
+            </Button>
           </Link>
         </div>
       ) : (
         <div className='flex items-center gap-2'>
-          <span className='text-muted-foreground text-sm'>No parent company.</span>
+          <span className='text-muted-foreground text-sm'>
+            No parent company.
+          </span>
           <Link href={`/dashboard/companies/${company.id}/set-parent`}>
             <Button variant='outline' size='sm'>
               <IconPlus className='mr-2 h-4 w-4' />
@@ -312,24 +413,36 @@ export default function CompanyDetailView({ company }: Props) {
         </div>
         {company.Location && company.Location.length > 0 ? (
           <ul className='space-y-2'>
-            {company.Location.map((loc) => (
-              <li key={loc.id}>
-                <Link
-                  href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
-                  className='text-primary hover:underline'
-                >
-                  {loc.addressRaw || 'Address not specified'}
-                </Link>
-                <Link href={`/dashboard/companies/${company.id}/locations/${loc.id}`}>
-                  <Button variant='ghost' size='sm' className='ml-2'>
-                    View
-                  </Button>
-                </Link>
+            {company.Location.map((loc, idx) => (
+              <li key={loc.id ?? idx}>
+                {loc.id ? (
+                  <>
+                    <Link
+                      href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
+                      className='text-primary hover:underline'
+                    >
+                      {loc.addressRaw || 'Address not specified'}
+                    </Link>
+                    <Link
+                      href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
+                    >
+                      <Button variant='ghost' size='sm' className='ml-2'>
+                        View
+                      </Button>
+                    </Link>
+                  </>
+                ) : (
+                  <span className='text-muted-foreground'>
+                    {loc.addressRaw || 'Address not specified'}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
         ) : (
-          <p className='text-muted-foreground text-sm'>No locations yet. Add one to get started.</p>
+          <p className='text-muted-foreground text-sm'>
+            No locations yet. Add one to get started.
+          </p>
         )}
       </div>
 
@@ -337,7 +450,9 @@ export default function CompanyDetailView({ company }: Props) {
       {company.other_Company && company.other_Company.length > 0 ? (
         <div className='space-y-4'>
           <div className='flex items-center justify-between'>
-            <h2 className='text-xl font-semibold'>Child Companies ({company.other_Company.length})</h2>
+            <h2 className='text-xl font-semibold'>
+              Child Companies ({company.other_Company.length})
+            </h2>
             <Link href={`/dashboard/companies/new?parentId=${company.id}`}>
               <Button size='sm'>
                 <IconPlus className='mr-2 h-4 w-4' />
@@ -347,7 +462,10 @@ export default function CompanyDetailView({ company }: Props) {
           </div>
           <ul className='space-y-2'>
             {company.other_Company.map((child) => (
-              <li key={child.id} className='flex items-center justify-between gap-2'>
+              <li
+                key={child.id}
+                className='flex items-center justify-between gap-2'
+              >
                 <Link
                   href={`/dashboard/companies/${child.id}`}
                   className='text-primary font-medium hover:underline'
@@ -355,7 +473,9 @@ export default function CompanyDetailView({ company }: Props) {
                   {child.name}
                 </Link>
                 <Link href={`/dashboard/companies/${child.id}`}>
-                  <Button variant='outline' size='sm'>View Details</Button>
+                  <Button variant='outline' size='sm'>
+                    View Details
+                  </Button>
                 </Link>
               </li>
             ))}
