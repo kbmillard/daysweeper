@@ -20,6 +20,9 @@ export const searchParams = {
   phone: parseAsString,
   website: parseAsString,
   status: parseAsString,
+  state: parseAsString,
+  subCategory: parseAsString,
+  subCategoryGroup: parseAsString,
   locations: parseAsString,
   createdAt: parseAsString,
   sort: getSortingStateParser()

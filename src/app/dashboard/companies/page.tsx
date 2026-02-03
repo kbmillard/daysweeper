@@ -9,7 +9,6 @@ import { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
 import CompaniesTable from './companies-table';
-import CompaniesMap from './companies-map';
 
 export const metadata = {
   title: 'Dashboard: Companies'
@@ -27,45 +26,50 @@ export default async function Page(props: pageProps) {
   const perPage = searchParamsCache.get('perPage') ?? 10;
   const nameFilter = searchParamsCache.get('name');
   const companyFilter = searchParamsCache.get('company');
-  const segmentFilter = searchParamsCache.get('segment');
-  const tierFilter = searchParamsCache.get('tier');
-  const emailFilter = searchParamsCache.get('email');
-  const phoneFilter = searchParamsCache.get('phone');
-  const websiteFilter = searchParamsCache.get('website');
-  const statusFilter = searchParamsCache.get('status');
+  const stateFilterRaw = searchParamsCache.get('state');
+  const subCategoryFilterRaw = searchParamsCache.get('subCategory');
+  const subCategoryGroupFilterRaw = searchParamsCache.get('subCategoryGroup');
+  const statusFilterRaw = searchParamsCache.get('status');
+  const stateFilter = Array.isArray(stateFilterRaw) ? stateFilterRaw[0] : stateFilterRaw;
+  const subCategoryFilter = Array.isArray(subCategoryFilterRaw) ? subCategoryFilterRaw[0] : subCategoryFilterRaw;
+  const subCategoryGroupFilter = Array.isArray(subCategoryGroupFilterRaw) ? subCategoryGroupFilterRaw[0] : subCategoryGroupFilterRaw;
+  const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const sort = searchParamsCache.get('sort');
 
   const skip = (Number(page) - 1) * Number(perPage);
   const take = Number(perPage);
 
   const where: any = {};
-  
-  // Company name filter (from 'name' or 'company' param)
+
+  // Search companies (name)
   if (nameFilter || companyFilter) {
     const filterValue = nameFilter || companyFilter;
     where.name = { contains: filterValue, mode: 'insensitive' as const };
   }
-  
-  if (segmentFilter) {
-    where.segment = { equals: segmentFilter, mode: 'insensitive' as const };
-  }
-  
-  if (tierFilter) {
-    where.tier = { equals: tierFilter, mode: 'insensitive' as const };
+
+  // State: companies that have at least one location in this state
+  if (stateFilter) {
+    where.Location = {
+      some: {
+        addressComponents: {
+          path: ['state'],
+          equals: stateFilter
+        }
+      }
+    };
   }
 
-  if (emailFilter) {
-    where.email = { contains: emailFilter, mode: 'insensitive' as const };
+  // Sub category (Company.subtype)
+  if (subCategoryFilter) {
+    where.subtype = { equals: subCategoryFilter, mode: 'insensitive' as const };
   }
 
-  if (phoneFilter) {
-    where.phone = { contains: phoneFilter, mode: 'insensitive' as const };
+  // Sub category group (Company.subtypeGroup)
+  if (subCategoryGroupFilter) {
+    where.subtypeGroup = { equals: subCategoryGroupFilter, mode: 'insensitive' as const };
   }
 
-  if (websiteFilter) {
-    where.website = { contains: websiteFilter, mode: 'insensitive' as const };
-  }
-
+  // Status (APR Account, Contacted - meeting set, etc.)
   if (statusFilter) {
     where.status = { equals: statusFilter, mode: 'insensitive' as const };
   }
@@ -77,12 +81,10 @@ export default async function Page(props: pageProps) {
     // Map column IDs to Prisma field names
     const fieldMap: Record<string, string> = {
       name: 'name',
-      email: 'email',
-      phone: 'phone',
       website: 'website',
-      segment: 'segment',
-      tier: 'tier',
       status: 'status',
+      subCategory: 'subtype',
+      subCategoryGroup: 'subtypeGroup',
       createdAt: 'createdAt',
       locations: 'createdAt' // locations is computed, fallback to createdAt
     };
@@ -93,7 +95,7 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  const [companies, total] = await Promise.all([
+  const [companies, total, locationStates, subtypes, subtypeGroups] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
@@ -103,13 +105,11 @@ export default async function Page(props: pageProps) {
         id: true,
         name: true,
         website: true,
-        phone: true,
-        email: true,
-        segment: true,
-        tier: true,
         status: true,
         createdAt: true,
         updatedAt: true,
+        subtype: true,
+        subtypeGroup: true,
         Location: {
           take: 1,
           orderBy: { createdAt: 'desc' },
@@ -120,8 +120,41 @@ export default async function Page(props: pageProps) {
         }
       }
     }),
-    prisma.company.count({ where })
+    prisma.company.count({ where }),
+    prisma.location.findMany({
+      select: { addressComponents: true }
+    }),
+    prisma.company.findMany({
+      where: { subtype: { not: null } },
+      select: { subtype: true },
+      distinct: ['subtype'],
+      orderBy: { subtype: 'asc' }
+    }),
+    prisma.company.findMany({
+      where: { subtypeGroup: { not: null } },
+      select: { subtypeGroup: true },
+      distinct: ['subtypeGroup'],
+      orderBy: { subtypeGroup: 'asc' }
+    })
   ]);
+
+  const stateOptions = Array.from(
+    new Set(
+      locationStates
+        .map((loc) => (loc.addressComponents as { state?: string } | null)?.state)
+        .filter(Boolean) as string[]
+    )
+  )
+    .sort()
+    .map((value) => ({ label: value, value }));
+
+  const subCategoryOptions = (subtypes.map((c) => c.subtype).filter(Boolean) as string[]).map(
+    (value) => ({ label: value, value })
+  );
+
+  const subCategoryGroupOptions = (subtypeGroups.map((c) => c.subtypeGroup).filter(Boolean) as string[]).map(
+    (value) => ({ label: value, value })
+  );
 
   return (
     <PageContainer
@@ -139,17 +172,17 @@ export default async function Page(props: pageProps) {
     >
       <Suspense
         fallback={
-          <DataTableSkeleton columnCount={7} rowCount={8} filterCount={2} />
+          <DataTableSkeleton columnCount={7} rowCount={8} filterCount={3} />
         }
       >
-        <CompaniesTable data={companies} totalItems={total} />
+        <CompaniesTable
+          data={companies}
+          totalItems={total}
+          stateOptions={stateOptions}
+          subCategoryOptions={subCategoryOptions}
+          subCategoryGroupOptions={subCategoryGroupOptions}
+        />
       </Suspense>
-      <section className="mt-6">
-        <h2 className="text-sm font-medium text-muted-foreground mb-2">
-          Map
-        </h2>
-        <CompaniesMap mapboxToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN} />
-      </section>
     </PageContainer>
   );
 }
