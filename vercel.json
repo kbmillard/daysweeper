@@ -1,3 +1,5 @@
 {
-  "buildCommand": "prisma generate && prisma migrate deploy && next build --webpack"
+  "buildCommand": "prisma generate && next build --webpack",
+  "installCommand": "pnpm install",
+  "alias": ["daysweeper.apr.recyclicbravery.com"]
 }

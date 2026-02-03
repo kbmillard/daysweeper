@@ -15,7 +15,7 @@ export function BinsUploadButton() {
     try {
       const res = await fetch('/api/import/bins', {
         method: 'POST',
-        body: formData,
+        body: formData
       });
 
       if (!res.ok) {
@@ -26,19 +26,27 @@ export function BinsUploadButton() {
       const data = await res.json();
       toast.success(`Successfully imported ${data.upserted} items`);
       window.location.reload();
-    } catch (error: any) {
-      toast.error(error.message || 'Failed to import bins');
+    } catch (error: unknown) {
+      toast.error(
+        error instanceof Error ? error.message : 'Failed to import bins'
+      );
       throw error;
     }
   };
 
   return (
     <FileUploader
-      accept={{ 'text/csv': ['.csv'], 'application/vnd.ms-excel': ['.xls', '.xlsx'] }}
+      accept={{
+        'text/csv': ['.csv'],
+        'application/vnd.ms-excel': ['.xls', '.xlsx'],
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': [
+          '.xlsx'
+        ]
+      }}
       maxFiles={1}
       onUpload={handleUpload}
     >
-      <Button>Import CSV</Button>
+      <Button>Import CSV / Excel</Button>
     </FileUploader>
   );
 }

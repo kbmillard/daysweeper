@@ -3,7 +3,13 @@
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
 import { toast } from 'sonner';
 
 type WarehouseItemForCsv = {
@@ -12,8 +18,8 @@ type WarehouseItemForCsv = {
   description: string | null;
   bin: string | null;
   quantity: number;
-  price: number | null;
-  meta: unknown;
+  changedAt: Date | null;
+  changedBy: string | null;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -28,24 +34,41 @@ function escapeCsvValue(val: string | number | null | undefined): string {
 }
 
 function binsToCsv(bins: WarehouseItemForCsv[]): string {
-  const header = 'partNumber,description,bin,quantity,price';
-  const rows = bins.map(
-    (b) =>
-      [
-        escapeCsvValue(b.partNumber),
-        escapeCsvValue(b.description),
-        escapeCsvValue(b.bin),
-        escapeCsvValue(b.quantity),
-        escapeCsvValue(b.price),
-      ].join(',')
+  const header = 'BIN,PART NUMBER,PART DESCRIPTION';
+  const rows = bins.map((b) =>
+    [
+      escapeCsvValue(b.bin),
+      escapeCsvValue(b.partNumber),
+      escapeCsvValue(b.description)
+    ].join(',')
   );
   return [header, ...rows].join('\n');
 }
 
-export function BinsCsvSection({ initialBins }: { initialBins: WarehouseItemForCsv[] }) {
+export function BinsCsvSection({
+  initialBins,
+  defaultCsv = null,
+  value: controlledValue,
+  onChange: controlledOnChange
+}: {
+  initialBins: WarehouseItemForCsv[];
+  defaultCsv?: string | null;
+  value?: string;
+  onChange?: (v: string) => void;
+}) {
   const router = useRouter();
-  const initialCsv = useMemo(() => binsToCsv(initialBins), [initialBins]);
-  const [csv, setCsv] = useState(initialCsv);
+  const initialCsv = useMemo(
+    () =>
+      defaultCsv != null && defaultCsv.trim() !== ''
+        ? defaultCsv
+        : binsToCsv(initialBins),
+    [initialBins, defaultCsv]
+  );
+  const [uncontrolledCsv, setUncontrolledCsv] = useState(initialCsv);
+  const isControlled =
+    controlledValue !== undefined && controlledOnChange !== undefined;
+  const csv = isControlled ? controlledValue : uncontrolledCsv;
+  const setCsv = isControlled ? controlledOnChange : setUncontrolledCsv;
   const [isApplying, setIsApplying] = useState(false);
 
   const handleDownload = () => {
@@ -69,7 +92,7 @@ export function BinsCsvSection({ initialBins }: { initialBins: WarehouseItemForC
       const res = await fetch('/api/import/bins', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ csv: csv.trim() }),
+        body: JSON.stringify({ csv: csv.trim() })
       });
       if (!res.ok) {
         const err = await res.json();
@@ -78,7 +101,7 @@ export function BinsCsvSection({ initialBins }: { initialBins: WarehouseItemForC
       const data = await res.json();
       toast.success(`Applied CSV: ${data.upserted} items updated`);
       router.refresh();
-      setCsv(csv);
+      if (!isControlled) setCsv(csv);
     } catch (e: unknown) {
       toast.error(e instanceof Error ? e.message : 'Failed to apply CSV');
     } finally {
@@ -91,22 +114,23 @@ export function BinsCsvSection({ initialBins }: { initialBins: WarehouseItemForC
       <CardHeader>
         <CardTitle>Bins CSV</CardTitle>
         <CardDescription>
-          Edit the CSV below and click Apply to update warehouse items, or download the current data.
+          Edit the CSV below and click Apply to update warehouse items, or
+          download the current data.
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className='space-y-3'>
         <textarea
-          className="min-h-[200px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm font-mono focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className='border-input focus-visible:ring-ring min-h-[200px] w-full rounded-md border bg-transparent px-3 py-2 font-mono text-sm focus-visible:ring-2 focus-visible:outline-none'
           value={csv}
           onChange={(e) => setCsv(e.target.value)}
-          placeholder="partNumber,description,bin,quantity,price"
+          placeholder='BIN,PART NUMBER,PART DESCRIPTION'
           spellCheck={false}
         />
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" onClick={handleDownload}>
+        <div className='flex flex-wrap gap-2'>
+          <Button variant='outline' size='sm' onClick={handleDownload}>
             Download CSV
           </Button>
-          <Button size="sm" onClick={handleApply} disabled={isApplying}>
+          <Button size='sm' onClick={handleApply} disabled={isApplying}>
             {isApplying ? 'Applying…' : 'Apply CSV'}
           </Button>
         </div>
