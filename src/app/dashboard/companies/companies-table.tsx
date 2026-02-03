@@ -1,6 +1,7 @@
 'use client';
 
 import { DataTable } from '@/components/ui/table/data-table';
+import { DataTableAddColumn } from '@/components/ui/table/data-table-add-column';
 import { DataTableToolbar } from '@/components/ui/table/data-table-toolbar';
 import { useDataTable } from '@/hooks/use-data-table';
 import type { ColumnDef } from '@tanstack/react-table';
@@ -66,7 +67,9 @@ export default function CompaniesTable({
 
   return (
     <DataTable table={table}>
-      <DataTableToolbar table={table} />
+      <DataTableToolbar table={table} showViewOptions={false}>
+        <DataTableAddColumn table={table} />
+      </DataTableToolbar>
     </DataTable>
   );
 }
