@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   description: 'Daysweeper – admin dashboard for companies and locations',
   icons: {
     icon: [
-      { url: '/icon.png', type: 'image/png' },
-      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon.png', sizes: '16x16', type: 'image/png' }
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon.png', type: 'image/png', sizes: '16x16' }
     ],
     apple: '/apple-icon.png'
   },

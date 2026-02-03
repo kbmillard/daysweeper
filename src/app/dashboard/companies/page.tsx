@@ -9,7 +9,7 @@ import { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
 import CompaniesTable from './companies-table';
-import CompaniesMapClient from './companies-map-client';
+import CompaniesMap from './companies-map';
 
 export const metadata = {
   title: 'Dashboard: Companies'
@@ -148,7 +148,7 @@ export default async function Page(props: pageProps) {
         <h2 className="text-sm font-medium text-muted-foreground mb-2">
           Map
         </h2>
-        <CompaniesMapClient />
+        <CompaniesMap mapboxToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN} />
       </section>
     </PageContainer>
   );
