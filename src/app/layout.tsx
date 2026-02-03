@@ -16,8 +16,20 @@ const META_THEME_COLORS = {
 };
 
 export const metadata: Metadata = {
-  title: 'Next Shadcn',
-  description: 'Basic dashboard with Next.js and Shadcn'
+  title: {
+    default: 'Daysweeper',
+    template: '%s | Daysweeper'
+  },
+  description: 'Daysweeper – admin dashboard for companies and locations',
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' }
+    ],
+    apple: '/apple-icon.png'
+  },
+  manifest: '/site.webmanifest'
 };
 
 export const viewport: Viewport = {
