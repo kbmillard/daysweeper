@@ -5,6 +5,7 @@ import { randomUUID } from "crypto";
 type SupplierJson = {
   company: string;
   website?: string | null;
+  phone?: string | null;
   addressRaw?: string;
   addressComponents?: any;
   addressConfidence?: number | null;
