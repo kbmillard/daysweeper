@@ -5,6 +5,7 @@ import { join } from 'path';
 import { prisma } from '@/lib/prisma';
 import { BinsTable } from './bins-table';
 import { BinsCsvDisplayTable } from './bins-csv-display-table';
+import { BinsUploadButton } from './bins-upload-button';
 import PageContainer from '@/components/layout/page-container';
 
 const DEFAULT_CSV_HEADER = 'BIN,PART NUMBER,PART DESCRIPTION';
@@ -125,7 +126,10 @@ export default async function BinsPage() {
   return (
     <PageContainer>
       <div className='flex flex-1 flex-col space-y-4'>
-        <h2 className='text-2xl font-bold tracking-tight'>Bins</h2>
+        <div className='flex items-center justify-between'>
+          <h2 className='text-2xl font-bold tracking-tight'>Bins</h2>
+          <BinsUploadButton />
+        </div>
         {displayFromCsv ? (
           <BinsCsvDisplayTable rows={csvRows} />
         ) : (
