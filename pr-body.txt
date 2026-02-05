@@ -1,0 +1,35 @@
+Add bins Excel import functionality with editable interface
+
+This PR adds comprehensive Excel/CSV import functionality for the bins system and ensures all imported data is fully editable in the web interface.
+
+Features Added:
+- Upload button integration on bins page
+- Excel to CSV conversion script
+- Sample data with 315 rows included
+- Comprehensive documentation
+- Fully editable interface for all imported data
+
+Import Workflow:
+1. Navigate to Bins page
+2. Click Import CSV / Excel button
+3. Select file
+4. Data is imported and immediately editable
+
+Technical Details:
+- Uses existing /api/import/bins endpoint
+- Upsert logic based on unique bin + partNumber combination
+- Tracks who changed each record and when
+- Supports batch processing of large files
+
+Testing:
+- Tested with 315-row Excel file
+- Verified quantity parsing handles large numbers correctly
+- Confirmed all data is editable after import
+- Upload button displays correctly on bins page
+
+Files Changed:
+- src/app/dashboard/bins/page.tsx - Added upload button
+- scripts/import-bins-simple.js - New conversion script
+- BINS_IMPORT_GUIDE.md - New documentation
+- bins-import.csv - Sample data (315 rows)
+- Parts by Bin 251212.xls - Original Excel file

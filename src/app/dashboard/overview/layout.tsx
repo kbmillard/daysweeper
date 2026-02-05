@@ -11,6 +11,7 @@ import {
 import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-react';
 import React from 'react';
 import { prisma } from '@/lib/prisma';
+import DashboardMapClient from './dashboard-map-client';
 
 async function getCompanyStats() {
   const [
@@ -54,9 +55,10 @@ async function getCompanyStats() {
     })
   ]);
 
-  const monthOverMonthChange = companiesLastMonth > 0
-    ? ((companiesThisMonth - companiesLastMonth) / companiesLastMonth) * 100
-    : 0;
+  const monthOverMonthChange =
+    companiesLastMonth > 0
+      ? ((companiesThisMonth - companiesLastMonth) / companiesLastMonth) * 100
+      : 0;
 
   return {
     totalCompanies,
@@ -73,12 +75,14 @@ export default async function OverViewLayout({
   sales,
   pie_stats,
   bar_stats,
-  area_stats
+  area_stats,
+  children
 }: {
   sales: React.ReactNode;
   pie_stats: React.ReactNode;
   bar_stats: React.ReactNode;
   area_stats: React.ReactNode;
+  children: React.ReactNode;
 }) {
   const stats = await getCompanyStats();
 
@@ -90,6 +94,9 @@ export default async function OverViewLayout({
             Hi, Welcome back 👋
           </h2>
         </div>
+
+        {/* Map Section */}
+        <div className='w-full'>{children}</div>
 
         <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
           <Card className='@container/card'>
@@ -107,7 +114,8 @@ export default async function OverViewLayout({
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                {stats.companiesThisMonth} added this month <IconTrendingUp className='size-4' />
+                {stats.companiesThisMonth} added this month{' '}
+                <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
                 Companies in your database
@@ -123,13 +131,19 @@ export default async function OverViewLayout({
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingUp />
-                  {stats.totalCompanies > 0 ? (stats.totalLocations / stats.totalCompanies).toFixed(1) : 0} avg
+                  {stats.totalCompanies > 0
+                    ? (stats.totalLocations / stats.totalCompanies).toFixed(1)
+                    : 0}{' '}
+                  avg
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                {stats.totalCompanies > 0 ? (stats.totalLocations / stats.totalCompanies).toFixed(1) : 0} locations per company <IconTrendingUp className='size-4' />
+                {stats.totalCompanies > 0
+                  ? (stats.totalLocations / stats.totalCompanies).toFixed(1)
+                  : 0}{' '}
+                locations per company <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
                 All company locations tracked
@@ -145,13 +159,25 @@ export default async function OverViewLayout({
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingUp />
-                  {stats.totalCompanies > 0 ? ((stats.companiesWithParent / stats.totalCompanies) * 100).toFixed(1) : 0}%
+                  {stats.totalCompanies > 0
+                    ? (
+                        (stats.companiesWithParent / stats.totalCompanies) *
+                        100
+                      ).toFixed(1)
+                    : 0}
+                  %
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                {stats.totalCompanies > 0 ? ((stats.companiesWithParent / stats.totalCompanies) * 100).toFixed(1) : 0}% have parent companies <IconTrendingUp className='size-4' />
+                {stats.totalCompanies > 0
+                  ? (
+                      (stats.companiesWithParent / stats.totalCompanies) *
+                      100
+                    ).toFixed(1)
+                  : 0}
+                % have parent companies <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
                 Hierarchical company structure
@@ -162,19 +188,30 @@ export default async function OverViewLayout({
             <CardHeader>
               <CardDescription>Month-over-Month Growth</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                {stats.monthOverMonthChange >= 0 ? '+' : ''}{stats.monthOverMonthChange.toFixed(1)}%
+                {stats.monthOverMonthChange >= 0 ? '+' : ''}
+                {stats.monthOverMonthChange.toFixed(1)}%
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
-                  {stats.monthOverMonthChange >= 0 ? <IconTrendingUp /> : <IconTrendingDown />}
-                  {stats.monthOverMonthChange >= 0 ? '+' : ''}{stats.monthOverMonthChange.toFixed(1)}%
+                  {stats.monthOverMonthChange >= 0 ? (
+                    <IconTrendingUp />
+                  ) : (
+                    <IconTrendingDown />
+                  )}
+                  {stats.monthOverMonthChange >= 0 ? '+' : ''}
+                  {stats.monthOverMonthChange.toFixed(1)}%
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                {stats.monthOverMonthChange >= 0 ? 'Growing' : 'Declining'} this period{' '}
-                {stats.monthOverMonthChange >= 0 ? <IconTrendingUp className='size-4' /> : <IconTrendingDown className='size-4' />}
+                {stats.monthOverMonthChange >= 0 ? 'Growing' : 'Declining'} this
+                period{' '}
+                {stats.monthOverMonthChange >= 0 ? (
+                  <IconTrendingUp className='size-4' />
+                ) : (
+                  <IconTrendingDown className='size-4' />
+                )}
               </div>
               <div className='text-muted-foreground'>
                 Compared to last month
