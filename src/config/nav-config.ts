@@ -56,13 +56,5 @@ export const navItems: NavItem[] = [
     shortcut: ['b', 'b'],
     isActive: false,
     items: []
-  },
-  {
-    title: 'Geocoding',
-    url: '/dashboard/geocoding',
-    icon: 'mapPin',
-    shortcut: ['g', 'g'],
-    isActive: false,
-    items: []
   }
 ];
