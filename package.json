@@ -38,6 +38,7 @@
     "@dnd-kit/modifiers": "^7.0.0",
     "@dnd-kit/sortable": "^8.0.0",
     "@dnd-kit/utilities": "^3.2.2",
+    "@googlemaps/google-maps-services-js": "^3.4.2",
     "@hookform/resolvers": "^5.2.1",
     "@neondatabase/serverless": "^1.0.2",
     "@prisma/adapter-pg": "^7.3.0",
