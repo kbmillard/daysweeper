@@ -19,12 +19,18 @@ export default async function Page(props: PageProps) {
     where: { id: companyId },
     select: {
       id: true,
+      externalId: true,
       name: true,
       website: true,
       phone: true,
+      email: true,
+      tier: true,
+      segment: true,
       category: true,
       subtype: true,
+      subtypeGroup: true,
       status: true,
+      companyKey: true,
       metadata: true,
       Location: {
         orderBy: { createdAt: 'desc' },
@@ -38,12 +44,18 @@ export default async function Page(props: PageProps) {
         // Parent company
         select: {
           id: true,
+          externalId: true,
           name: true,
           website: true,
           phone: true,
+          email: true,
+          tier: true,
+          segment: true,
           category: true,
           subtype: true,
+          subtypeGroup: true,
           status: true,
+          companyKey: true,
           metadata: true,
           Location: {
             take: 1,
@@ -59,12 +71,18 @@ export default async function Page(props: PageProps) {
         // Child companies
         select: {
           id: true,
+          externalId: true,
           name: true,
           website: true,
           phone: true,
+          email: true,
+          tier: true,
+          segment: true,
           category: true,
           subtype: true,
+          subtypeGroup: true,
           status: true,
+          companyKey: true,
           metadata: true,
           Location: {
             take: 1,
