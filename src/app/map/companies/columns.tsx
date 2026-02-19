@@ -3,7 +3,7 @@ import type { Option } from '@/types/data-table';
 import { Badge } from '@/components/ui/badge';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Column, ColumnDef } from '@tanstack/react-table';
-import { Text, Globe, MapPin, Tags } from 'lucide-react';
+import { Text, Globe, MapPin, Tags, Layers, Folder } from 'lucide-react';
 import Link from 'next/link';
 import { CellAction } from './cell-action';
 
@@ -12,6 +12,8 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
+  tier: string | null;
+  category: string | null;
   subtype: string | null;
   subtypeGroup: string | null;
   createdAt: Date;
@@ -24,10 +26,12 @@ type Company = {
 
 export function getColumns(options: {
   stateOptions: Option[];
+  tierOptions: Option[];
+  categoryOptions: Option[];
   subCategoryOptions: Option[];
   subCategoryGroupOptions: Option[];
 }): ColumnDef<Company>[] {
-  const { stateOptions, subCategoryOptions, subCategoryGroupOptions } = options;
+  const { stateOptions, tierOptions, categoryOptions, subCategoryOptions, subCategoryGroupOptions } = options;
 
   return [
     {
@@ -108,6 +112,54 @@ export function getColumns(options: {
         variant: 'select',
         options: stateOptions,
         icon: MapPin
+      },
+      enableColumnFilter: true
+    },
+    {
+      id: 'tier',
+      accessorKey: 'tier',
+      enableSorting: true,
+      enableHiding: true,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Tier' />
+      ),
+      cell: ({ row }) => {
+        const value = row.original.tier;
+        return value ? (
+          <span className='text-sm'>{value}</span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
+      meta: {
+        label: 'Tier',
+        variant: 'select',
+        options: tierOptions,
+        icon: Layers
+      },
+      enableColumnFilter: true
+    },
+    {
+      id: 'category',
+      accessorKey: 'category',
+      enableSorting: true,
+      enableHiding: true,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Category' />
+      ),
+      cell: ({ row }) => {
+        const value = row.original.category;
+        return value ? (
+          <span className='text-sm'>{value}</span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
+      meta: {
+        label: 'Category',
+        variant: 'select',
+        options: categoryOptions,
+        icon: Folder
       },
       enableColumnFilter: true
     },

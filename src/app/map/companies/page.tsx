@@ -27,10 +27,14 @@ export default async function Page(props: pageProps) {
   const nameFilter = searchParamsCache.get('name');
   const companyFilter = searchParamsCache.get('company');
   const stateFilterRaw = searchParamsCache.get('state');
+  const tierFilterRaw = searchParamsCache.get('tier');
+  const categoryFilterRaw = searchParamsCache.get('category');
   const subCategoryFilterRaw = searchParamsCache.get('subCategory');
   const subCategoryGroupFilterRaw = searchParamsCache.get('subCategoryGroup');
   const statusFilterRaw = searchParamsCache.get('status');
   const stateFilter = Array.isArray(stateFilterRaw) ? stateFilterRaw[0] : stateFilterRaw;
+  const tierFilter = Array.isArray(tierFilterRaw) ? tierFilterRaw[0] : tierFilterRaw;
+  const categoryFilter = Array.isArray(categoryFilterRaw) ? categoryFilterRaw[0] : categoryFilterRaw;
   const subCategoryFilter = Array.isArray(subCategoryFilterRaw) ? subCategoryFilterRaw[0] : subCategoryFilterRaw;
   const subCategoryGroupFilter = Array.isArray(subCategoryGroupFilterRaw) ? subCategoryGroupFilterRaw[0] : subCategoryGroupFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
@@ -59,6 +63,16 @@ export default async function Page(props: pageProps) {
     };
   }
 
+  // Tier (Company.tier)
+  if (tierFilter) {
+    where.tier = { equals: tierFilter, mode: 'insensitive' as const };
+  }
+
+  // Category (Company.category)
+  if (categoryFilter) {
+    where.category = { equals: categoryFilter, mode: 'insensitive' as const };
+  }
+
   // Sub category (Company.subtype)
   if (subCategoryFilter) {
     where.subtype = { equals: subCategoryFilter, mode: 'insensitive' as const };
@@ -83,6 +97,8 @@ export default async function Page(props: pageProps) {
       name: 'name',
       website: 'website',
       status: 'status',
+      tier: 'tier',
+      category: 'category',
       subCategory: 'subtype',
       subCategoryGroup: 'subtypeGroup',
       createdAt: 'createdAt',
@@ -95,7 +111,7 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  const [companies, total, locationStates, subtypes, subtypeGroups] = await Promise.all([
+  const [companies, total, locationStates, tiers, categories, subtypes, subtypeGroups] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
@@ -110,6 +126,8 @@ export default async function Page(props: pageProps) {
         updatedAt: true,
         subtype: true,
         subtypeGroup: true,
+        tier: true,
+        category: true,
         Location: {
           take: 1,
           orderBy: { createdAt: 'desc' },
@@ -123,6 +141,18 @@ export default async function Page(props: pageProps) {
     prisma.company.count({ where }),
     prisma.location.findMany({
       select: { addressComponents: true }
+    }),
+    prisma.company.findMany({
+      where: { tier: { not: null } },
+      select: { tier: true },
+      distinct: ['tier'],
+      orderBy: { tier: 'asc' }
+    }),
+    prisma.company.findMany({
+      where: { category: { not: null } },
+      select: { category: true },
+      distinct: ['category'],
+      orderBy: { category: 'asc' }
     }),
     prisma.company.findMany({
       where: { subtype: { not: null } },
@@ -156,6 +186,14 @@ export default async function Page(props: pageProps) {
     (value) => ({ label: value, value })
   );
 
+  const tierOptions = (tiers.map((c) => c.tier).filter(Boolean) as string[]).map(
+    (value) => ({ label: value, value })
+  );
+
+  const categoryOptions = (categories.map((c) => c.category).filter(Boolean) as string[]).map(
+    (value) => ({ label: value, value })
+  );
+
   return (
     <PageContainer
       scrollable={false}
@@ -179,6 +217,8 @@ export default async function Page(props: pageProps) {
           data={companies}
           totalItems={total}
           stateOptions={stateOptions}
+          tierOptions={tierOptions}
+          categoryOptions={categoryOptions}
           subCategoryOptions={subCategoryOptions}
           subCategoryGroupOptions={subCategoryGroupOptions}
         />

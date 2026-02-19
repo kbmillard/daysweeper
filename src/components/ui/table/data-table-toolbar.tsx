@@ -46,11 +46,14 @@ export function DataTableToolbar<TData>({
       )}
       {...props}
     >
-      <div className='flex flex-1 flex-wrap items-center gap-2'>
+      <div className='flex flex-1 min-w-0 items-center gap-2 overflow-x-auto overflow-y-hidden'>
         {columns.map((column) => (
-          <DataTableToolbarFilter key={column.id} column={column} />
+          <div key={column.id} className='shrink-0'>
+            <DataTableToolbarFilter column={column} />
+          </div>
         ))}
         {isFiltered && (
+          <div className='shrink-0'>
           <Button
             aria-label='Reset filters'
             variant='outline'
@@ -61,6 +64,7 @@ export function DataTableToolbar<TData>({
             <Cross2Icon />
             Reset
           </Button>
+          </div>
         )}
       </div>
       <div className='flex items-center gap-2'>
