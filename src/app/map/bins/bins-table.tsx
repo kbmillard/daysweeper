@@ -242,6 +242,7 @@ export function BinsTable({ initialData }: BinsTableProps) {
           partNumber: `NEW-${Date.now()}`,
           bin: '',
           description: null,
+          quantity: 0,
           changedByDisplayName: displayName || undefined
         })
       });
