@@ -219,10 +219,12 @@ export function getColumns(options: {
       id: 'actions',
       enableSorting: false,
       enableHiding: false,
-      header: () => null,
+      header: () => <span className="text-xs">Actions</span>,
       cell: ({ row }) => (
         <CellAction companyId={row.original.id} companyName={row.original.name} />
-      )
+      ),
+      size: 200,
+      minSize: 200
     }
   ];
 }
