@@ -3,6 +3,20 @@ import { withSentryConfig } from '@sentry/nextjs';
 
 // Define the base Next.js configuration
 const baseConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        // Disable caching for page/document requests so users always get fresh content after deploy
+        source: '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'private, no-cache, no-store, max-age=0, must-revalidate'
+          }
+        ]
+      }
+    ];
+  },
   async rewrites() {
     return [
       {

@@ -5,7 +5,7 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const search = searchParams.get('search')?.trim();
-    const limit = Math.min(Number(searchParams.get('limit')) || 50, 100);
+    const limit = Math.min(Number(searchParams.get('limit')) || 50, 500);
     const companies = await prisma.company.findMany({
       where: search
         ? { name: { contains: search, mode: 'insensitive' } }

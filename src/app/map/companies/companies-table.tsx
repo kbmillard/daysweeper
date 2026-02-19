@@ -61,7 +61,7 @@ export default function CompaniesTable({
     shallow: false,
     debounceMs: 500,
     initialState: {
-      columnVisibility: { state: false, subCategory: false, subCategoryGroup: false }
+      columnVisibility: { state: false, subCategory: false, subCategoryGroup: false, actions: true }
     }
   });
 

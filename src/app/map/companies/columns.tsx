@@ -5,6 +5,7 @@ import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-h
 import { Column, ColumnDef } from '@tanstack/react-table';
 import { Text, Globe, MapPin, Tags } from 'lucide-react';
 import Link from 'next/link';
+import { CellAction } from './cell-action';
 
 type Company = {
   id: string;
@@ -43,7 +44,7 @@ export function getColumns(options: {
         return (
           <div className='flex flex-col'>
             <Link
-              href={`/dashboard/companies/${company.id}`}
+              href={`/map/companies/${company.id}`}
               className='font-medium hover:underline'
             >
               {company.name}
@@ -87,11 +88,21 @@ export function getColumns(options: {
     },
     {
       id: 'state',
-      accessorFn: () => undefined,
+      accessorFn: (row) =>
+        (row.Location?.[0]?.addressComponents as { state?: string } | null)?.state ?? '',
       enableSorting: false,
       enableHiding: true,
-      header: () => null,
-      cell: () => null,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='State' />
+      ),
+      cell: ({ row }) => {
+        const state = (row.original.Location?.[0]?.addressComponents as { state?: string } | null)?.state;
+        return state ? (
+          <span className='text-sm'>{state}</span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
       meta: {
         label: 'State',
         variant: 'select',
@@ -102,11 +113,20 @@ export function getColumns(options: {
     },
     {
       id: 'subCategory',
-      accessorFn: () => undefined,
-      enableSorting: false,
+      accessorKey: 'subtype',
+      enableSorting: true,
       enableHiding: true,
-      header: () => null,
-      cell: () => null,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Sub category' />
+      ),
+      cell: ({ row }) => {
+        const value = row.original.subtype;
+        return value ? (
+          <span className='text-sm'>{value}</span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
       meta: {
         label: 'Sub category',
         variant: 'select',
@@ -117,11 +137,20 @@ export function getColumns(options: {
     },
     {
       id: 'subCategoryGroup',
-      accessorFn: () => undefined,
-      enableSorting: false,
+      accessorKey: 'subtypeGroup',
+      enableSorting: true,
       enableHiding: true,
-      header: () => null,
-      cell: () => null,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Sub category group' />
+      ),
+      cell: ({ row }) => {
+        const value = row.original.subtypeGroup;
+        return value ? (
+          <span className='text-sm'>{value}</span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
       meta: {
         label: 'Sub category group',
         variant: 'select',
@@ -213,6 +242,17 @@ export function getColumns(options: {
         );
       },
       enableColumnFilter: false
+    },
+    {
+      id: 'actions',
+      enableSorting: false,
+      enableHiding: false,
+      header: () => <span className="text-xs">Actions</span>,
+      cell: ({ row }) => (
+        <CellAction companyId={row.original.id} companyName={row.original.name} />
+      ),
+      size: 200,
+      minSize: 200
     }
   ];
 }

@@ -4,6 +4,7 @@ import { IconArrowLeft, IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
 import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
+import { AddChildCompanySearch } from './add-child-company-search';
 import { DeleteCompanyButton } from './delete-company-button';
 
 type CompanyMetadata = {
@@ -448,20 +449,20 @@ export default function CompanyDetailView({ company }: Props) {
         )}
       </div>
 
-      {/* Child companies – only show when this company has children; list each with link to its page */}
-      {company.other_Company && company.other_Company.length > 0 ? (
-        <div className='space-y-4'>
-          <div className='flex items-center justify-between'>
-            <h2 className='text-xl font-semibold'>
-              Child Companies ({company.other_Company.length})
-            </h2>
-            <Link href={`/dashboard/companies/new?parentId=${company.id}`}>
-              <Button size='sm'>
-                <IconPlus className='mr-2 h-4 w-4' />
-                Add child company
-              </Button>
-            </Link>
-          </div>
+      {/* Child companies – list with option to create new or link existing */}
+      <div className='space-y-4'>
+        <div className='flex items-center justify-between flex-wrap gap-2'>
+          <h2 className='text-xl font-semibold'>
+            Child Companies ({company.other_Company?.length ?? 0})
+          </h2>
+          <Link href={`/dashboard/companies/new?parentId=${company.id}`}>
+            <Button size='sm'>
+              <IconPlus className='mr-2 h-4 w-4' />
+              Add child company
+            </Button>
+          </Link>
+        </div>
+        {company.other_Company && company.other_Company.length > 0 ? (
           <ul className='space-y-2'>
             {company.other_Company.map((child) => (
               <li
@@ -482,17 +483,19 @@ export default function CompanyDetailView({ company }: Props) {
               </li>
             ))}
           </ul>
+        ) : (
+          <p className='text-muted-foreground text-sm'>
+            No child companies yet.
+          </p>
+        )}
+        <div className='pt-2 border-t'>
+          <p className='text-sm font-medium mb-2'>Link existing company as child</p>
+          <AddChildCompanySearch
+            parentCompanyId={company.id}
+            existingChildIds={(company.other_Company ?? []).map((c) => c.id)}
+          />
         </div>
-      ) : (
-        <div className='flex items-center gap-2'>
-          <Link href={`/dashboard/companies/new?parentId=${company.id}`}>
-            <Button variant='outline' size='sm'>
-              <IconPlus className='mr-2 h-4 w-4' />
-              Add child company
-            </Button>
-          </Link>
-        </div>
-      )}
+      </div>
 
       {/* Interactions */}
       <CompanyInteractions companyId={company.id} />

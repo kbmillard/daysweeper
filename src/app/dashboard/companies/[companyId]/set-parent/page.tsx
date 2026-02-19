@@ -36,7 +36,7 @@ export default function SetParentPage() {
       return;
     }
     setLoading(true);
-    fetch(`/api/companies?search=${encodeURIComponent(search)}&limit=30`)
+    fetch(`/api/companies?search=${encodeURIComponent(search)}&limit=200`)
       .then((r) => r.json())
       .then((data) => {
         const list = data.companies ?? [];
