@@ -127,8 +127,8 @@ export default async function BinsPage() {
   const displayFromCsv = binsWithNumbers.length === 0 && csvRows.length > 0;
 
   return (
-    <PageContainer>
-      <div className='flex flex-1 flex-col space-y-4'>
+    <PageContainer scrollable={false}>
+      <div className='flex flex-1 flex-col space-y-4 min-h-0'>
         <div className='flex items-center justify-between'>
           <h2 className='text-2xl font-bold tracking-tight'>Bins</h2>
           <BinsUploadButton />
