@@ -121,7 +121,7 @@ export function getColumns(options: {
       enableSorting: true,
       enableHiding: true,
       header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Tier' />
+        <DataTableColumnHeader column={column} title='Category' />
       ),
       cell: ({ row }) => {
         const value = row.original.tier;
@@ -132,7 +132,7 @@ export function getColumns(options: {
         );
       },
       meta: {
-        label: 'Tier',
+        label: 'Category',
         variant: 'select',
         options: tierOptions,
         icon: Layers
@@ -145,7 +145,7 @@ export function getColumns(options: {
       enableSorting: true,
       enableHiding: true,
       header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Category' />
+        <DataTableColumnHeader column={column} title='Tier' />
       ),
       cell: ({ row }) => {
         const value = row.original.category;
@@ -156,7 +156,7 @@ export function getColumns(options: {
         );
       },
       meta: {
-        label: 'Category',
+        label: 'Tier',
         variant: 'select',
         options: categoryOptions,
         icon: Folder

@@ -190,9 +190,10 @@ export default async function Page(props: pageProps) {
     (value) => ({ label: value, value })
   );
 
-  const categoryOptions = (categories.map((c) => c.category).filter(Boolean) as string[]).map(
-    (value) => ({ label: value, value })
-  );
+  const categoryOptions = (categories
+    .map((c) => c.category)
+    .filter((v): v is string => Boolean(v) && v.toLowerCase() !== 'yes') as string[]
+  ).map((value) => ({ label: value, value }));
 
   return (
     <PageContainer
