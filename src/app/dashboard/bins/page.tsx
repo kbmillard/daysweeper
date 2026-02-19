@@ -107,7 +107,10 @@ export default async function BinsPage() {
 
   const binsWithNumbers = bins.map((bin) => ({
     ...bin,
-    price: bin.price ? Number(bin.price) : null
+    price: bin.price ? Number(bin.price) : null,
+    changedAt: bin.changedAt ? new Date(bin.changedAt) : null,
+    createdAt: new Date(bin.createdAt),
+    updatedAt: new Date(bin.updatedAt)
   }));
 
   let csvRows: CsvBinRow[] = [];

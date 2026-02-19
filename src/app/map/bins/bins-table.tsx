@@ -466,18 +466,33 @@ export function BinsTable({ initialData }: BinsTableProps) {
     }
   ];
 
-  const filteredData = useMemo(
-    () => filterBinsBySearch(data, globalFilter),
-    [data, globalFilter]
-  );
-
   const table = useReactTable({
-    data: filteredData,
+    data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    globalFilterFn: (row, columnId, filterValue) => {
+      const search = String(filterValue).toLowerCase();
+      if (!search) return true;
+      const item = row.original;
+      const searchableText = [
+        item.partNumber,
+        item.description,
+        item.bin,
+        item.changedBy,
+        item.changedAt ? new Date(item.changedAt).toISOString() : ''
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+      return searchableText.includes(search);
+    },
+    state: {
+      globalFilter
+    },
+    onGlobalFilterChange: setGlobalFilter,
     initialState: { pagination: { pageSize: 50 } }
   });
 
