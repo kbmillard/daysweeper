@@ -11,7 +11,6 @@ import {
 import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-react';
 import React from 'react';
 import { prisma } from '@/lib/prisma';
-import DashboardMapClient from './dashboard-map-client';
 
 async function getCompanyStats() {
   const [
@@ -75,14 +74,13 @@ export default async function OverViewLayout({
   sales,
   pie_stats,
   bar_stats,
-  area_stats,
-  children
+  area_stats
 }: {
   sales: React.ReactNode;
   pie_stats: React.ReactNode;
   bar_stats: React.ReactNode;
   area_stats: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) {
   const stats = await getCompanyStats();
 
@@ -95,9 +93,7 @@ export default async function OverViewLayout({
           </h2>
         </div>
 
-        {/* Map Section */}
-        <div className='w-full'>{children}</div>
-
+        {/* KPI Widgets */}
         <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
           <Card className='@container/card'>
             <CardHeader>
