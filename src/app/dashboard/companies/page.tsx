@@ -95,7 +95,7 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  const [companies, total, locationStates, subtypes, subtypeGroups] = await Promise.all([
+  const [companies, total, subtypes, subtypeGroups] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
@@ -105,11 +105,17 @@ export default async function Page(props: pageProps) {
         id: true,
         name: true,
         website: true,
+        phone: true,
+        email: true,
+        tier: true,
+        segment: true,
+        category: true,
+        subtype: true,
+        subtypeGroup: true,
+        companyKey: true,
         status: true,
         createdAt: true,
         updatedAt: true,
-        subtype: true,
-        subtypeGroup: true,
         Location: {
           take: 1,
           orderBy: { createdAt: 'desc' },
@@ -121,9 +127,6 @@ export default async function Page(props: pageProps) {
       }
     }),
     prisma.company.count({ where }),
-    prisma.location.findMany({
-      select: { addressComponents: true }
-    }),
     prisma.company.findMany({
       where: { subtype: { not: null } },
       select: { subtype: true },
@@ -137,16 +140,6 @@ export default async function Page(props: pageProps) {
       orderBy: { subtypeGroup: 'asc' }
     })
   ]);
-
-  const stateOptions = Array.from(
-    new Set(
-      locationStates
-        .map((loc) => (loc.addressComponents as { state?: string } | null)?.state)
-        .filter(Boolean) as string[]
-    )
-  )
-    .sort()
-    .map((value) => ({ label: value, value }));
 
   const subCategoryOptions = (subtypes.map((c) => c.subtype).filter(Boolean) as string[]).map(
     (value) => ({ label: value, value })
@@ -178,7 +171,6 @@ export default async function Page(props: pageProps) {
         <CompaniesTable
           data={companies}
           totalItems={total}
-          stateOptions={stateOptions}
           subCategoryOptions={subCategoryOptions}
           subCategoryGroupOptions={subCategoryGroupOptions}
         />
