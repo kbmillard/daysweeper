@@ -65,6 +65,27 @@ export function getColumns(options: {
       enableColumnFilter: true
     },
     {
+      id: 'address',
+      accessorFn: (row) => row.Location?.[0]?.addressRaw || '',
+      enableSorting: false,
+      enableHiding: true,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Address' />
+      ),
+      cell: ({ row }) => {
+        const company = row.original;
+        const primaryLocation = company.Location?.[0];
+        return primaryLocation?.addressRaw ? (
+          <span className='text-sm text-muted-foreground max-w-[300px] truncate block'>
+            {primaryLocation.addressRaw}
+          </span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
+      enableColumnFilter: false
+    },
+    {
       id: 'state',
       accessorFn: () => undefined,
       enableSorting: false,
