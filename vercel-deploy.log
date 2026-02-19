@@ -1,0 +1,8 @@
+Vercel CLI 50.19.1
+Retrieving project…
+Deploying kyles-projects-3553d68c/daysweeper
+Uploading [--------------------] (0.0B/236B)
+Uploading [=======-------------] (86.0B/236B)
+Uploading [====================] (236.0B/236B)
+Error: Git author kyle@vercel.com must have access to the team Kyle's projects on Vercel to create deployments.
+Learn more: https://vercel.com/docs/deployments/troubleshoot-project-collaboration
