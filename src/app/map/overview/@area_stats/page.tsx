@@ -2,7 +2,7 @@ import { CompanyAreaGraph } from '@/features/overview/components/company-area-gr
 import { prisma } from '@/lib/prisma';
 
 export default async function AreaStats() {
-  // Get companies added over the last 6 months
+  // Get leads added over the last 6 months
   const sixMonthsAgo = new Date();
   sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
 

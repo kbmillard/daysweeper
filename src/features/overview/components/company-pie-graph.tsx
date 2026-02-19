@@ -27,7 +27,7 @@ type ChartData = {
 
 const chartConfig = {
   count: {
-    label: 'Companies'
+    label: 'Leads'
   }
 } satisfies ChartConfig;
 
@@ -40,11 +40,11 @@ export function CompanyPieGraph({ data }: { data: ChartData[] }) {
     return (
       <Card className='@container/card'>
         <CardHeader>
-          <CardTitle>Companies by Category</CardTitle>
+          <CardTitle>Leads by Category</CardTitle>
           <CardDescription>No category data available</CardDescription>
         </CardHeader>
         <CardContent className='flex items-center justify-center h-[250px]'>
-          <p className='text-muted-foreground'>No companies with categories</p>
+          <p className='text-muted-foreground'>No leads with categories</p>
         </CardContent>
       </Card>
     );
@@ -59,10 +59,10 @@ export function CompanyPieGraph({ data }: { data: ChartData[] }) {
   return (
     <Card className='@container/card'>
       <CardHeader>
-        <CardTitle>Companies by Category</CardTitle>
+        <CardTitle>Leads by Category</CardTitle>
         <CardDescription>
           <span className='hidden @[540px]/card:block'>
-            Distribution of companies by supply chain category
+            Distribution of leads by supply chain category
           </span>
           <span className='@[540px]/card:hidden'>Category distribution</span>
         </CardDescription>
@@ -130,7 +130,7 @@ export function CompanyPieGraph({ data }: { data: ChartData[] }) {
                           y={(viewBox.cy || 0) + 24}
                           className='fill-muted-foreground text-sm'
                         >
-                          Total Companies
+                          Total Leads
                         </tspan>
                       </text>
                     );

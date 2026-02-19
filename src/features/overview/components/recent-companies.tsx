@@ -20,9 +20,9 @@ export function RecentCompanies({ companies }: { companies: Company[] }) {
   return (
     <Card className='h-full'>
       <CardHeader>
-        <CardTitle>Recent Companies</CardTitle>
+        <CardTitle>Recent Leads</CardTitle>
         <CardDescription>
-          {companies.length} most recently added companies
+          {companies.length} most recently added leads
         </CardDescription>
       </CardHeader>
       <CardContent>

@@ -60,10 +60,10 @@ export function CompanyBarGraph({ data }: { data: ChartData[] }) {
     <Card className='@container/card !pt-3'>
       <CardHeader className='flex flex-col items-stretch space-y-0 border-b !p-0 sm:flex-row'>
         <div className='flex flex-1 flex-col justify-center gap-1 px-6 !py-0'>
-          <CardTitle>Companies Added - Last 3 Months</CardTitle>
+          <CardTitle>Leads Added - Last 3 Months</CardTitle>
           <CardDescription>
             <span className='hidden @[540px]/card:block'>
-              Companies added by category and segment
+              Leads added by category and segment
             </span>
             <span className='@[540px]/card:hidden'>Last 3 months</span>
           </CardDescription>

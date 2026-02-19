@@ -26,7 +26,7 @@ type ChartData = {
 
 const chartConfig = {
   companies: {
-    label: 'Companies'
+    label: 'Leads'
   },
   withCategory: {
     label: 'With Category',
@@ -48,9 +48,9 @@ export function CompanyAreaGraph({ data }: { data: ChartData[] }) {
   return (
     <Card className='@container/card'>
       <CardHeader>
-        <CardTitle>Company Growth - Last 6 Months</CardTitle>
+        <CardTitle>Lead Growth - Last 6 Months</CardTitle>
         <CardDescription>
-          Companies added with category and segment data
+          Leads added with category and segment data
         </CardDescription>
       </CardHeader>
       <CardContent className='px-2 pt-4 sm:px-6 sm:pt-6'>
