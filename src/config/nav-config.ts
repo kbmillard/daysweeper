@@ -34,11 +34,19 @@ import { NavItem } from '@/types';
  */
 export const navItems: NavItem[] = [
   {
-    title: 'Map',
-    url: '/map/overview',
+    title: 'Dashboard',
+    url: '/dashboard/overview',
     icon: 'dashboard',
     isActive: false,
     shortcut: ['d', 'd'],
+    items: []
+  },
+  {
+    title: 'Map',
+    url: '/map/overview',
+    icon: 'mapPin',
+    isActive: false,
+    shortcut: ['m', 'm'],
     items: []
   },
   {
