@@ -28,10 +28,9 @@ export function getColumns(options: {
   stateOptions: Option[];
   tierOptions: Option[];
   categoryOptions: Option[];
-  subCategoryOptions: Option[];
   subCategoryGroupOptions: Option[];
 }): ColumnDef<Company>[] {
-  const { stateOptions, tierOptions, categoryOptions, subCategoryOptions, subCategoryGroupOptions } = options;
+  const { stateOptions, tierOptions, categoryOptions, subCategoryGroupOptions } = options;
 
   return [
     {
@@ -160,30 +159,6 @@ export function getColumns(options: {
         variant: 'select',
         options: categoryOptions,
         icon: Folder
-      },
-      enableColumnFilter: true
-    },
-    {
-      id: 'subCategory',
-      accessorKey: 'subtype',
-      enableSorting: true,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Sub category' />
-      ),
-      cell: ({ row }) => {
-        const value = row.original.subtype;
-        return value ? (
-          <span className='text-sm'>{value}</span>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
-      },
-      meta: {
-        label: 'Sub category',
-        variant: 'select',
-        options: subCategoryOptions,
-        icon: Tags
       },
       enableColumnFilter: true
     },

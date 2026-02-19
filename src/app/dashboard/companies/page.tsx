@@ -29,13 +29,11 @@ export default async function Page(props: pageProps) {
   const stateFilterRaw = searchParamsCache.get('state');
   const tierFilterRaw = searchParamsCache.get('tier');
   const categoryFilterRaw = searchParamsCache.get('category');
-  const subCategoryFilterRaw = searchParamsCache.get('subCategory');
   const subCategoryGroupFilterRaw = searchParamsCache.get('subCategoryGroup');
   const statusFilterRaw = searchParamsCache.get('status');
   const stateFilter = Array.isArray(stateFilterRaw) ? stateFilterRaw[0] : stateFilterRaw;
   const tierFilter = Array.isArray(tierFilterRaw) ? tierFilterRaw[0] : tierFilterRaw;
   const categoryFilter = Array.isArray(categoryFilterRaw) ? categoryFilterRaw[0] : categoryFilterRaw;
-  const subCategoryFilter = Array.isArray(subCategoryFilterRaw) ? subCategoryFilterRaw[0] : subCategoryFilterRaw;
   const subCategoryGroupFilter = Array.isArray(subCategoryGroupFilterRaw) ? subCategoryGroupFilterRaw[0] : subCategoryGroupFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const sort = searchParamsCache.get('sort');
@@ -73,11 +71,6 @@ export default async function Page(props: pageProps) {
     where.category = { equals: categoryFilter, mode: 'insensitive' as const };
   }
 
-  // Sub category (Company.subtype)
-  if (subCategoryFilter) {
-    where.subtype = { equals: subCategoryFilter, mode: 'insensitive' as const };
-  }
-
   // Sub category group (Company.subtypeGroup)
   if (subCategoryGroupFilter) {
     where.subtypeGroup = { equals: subCategoryGroupFilter, mode: 'insensitive' as const };
@@ -99,7 +92,6 @@ export default async function Page(props: pageProps) {
       status: 'status',
       tier: 'tier',
       category: 'category',
-      subCategory: 'subtype',
       subCategoryGroup: 'subtypeGroup',
       createdAt: 'createdAt',
       locations: 'createdAt' // locations is computed, fallback to createdAt
@@ -111,7 +103,7 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  const [companies, total, locationStates, tiers, categories, subtypes, subtypeGroups] = await Promise.all([
+  const [companies, total, locationStates, tiers, categories, subtypeGroups] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
@@ -155,12 +147,6 @@ export default async function Page(props: pageProps) {
       orderBy: { category: 'asc' }
     }),
     prisma.company.findMany({
-      where: { subtype: { not: null } },
-      select: { subtype: true },
-      distinct: ['subtype'],
-      orderBy: { subtype: 'asc' }
-    }),
-    prisma.company.findMany({
       where: { subtypeGroup: { not: null } },
       select: { subtypeGroup: true },
       distinct: ['subtypeGroup'],
@@ -177,10 +163,6 @@ export default async function Page(props: pageProps) {
   )
     .sort()
     .map((value) => ({ label: value, value }));
-
-  const subCategoryOptions = (subtypes.map((c) => c.subtype).filter(Boolean) as string[]).map(
-    (value) => ({ label: value, value })
-  );
 
   const subCategoryGroupOptions = (subtypeGroups.map((c) => c.subtypeGroup).filter(Boolean) as string[]).map(
     (value) => ({ label: value, value })
@@ -220,7 +202,6 @@ export default async function Page(props: pageProps) {
           stateOptions={stateOptions}
           tierOptions={tierOptions}
           categoryOptions={categoryOptions}
-          subCategoryOptions={subCategoryOptions}
           subCategoryGroupOptions={subCategoryGroupOptions}
         />
       </Suspense>

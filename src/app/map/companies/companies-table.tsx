@@ -33,7 +33,6 @@ interface CompaniesTableParams {
   stateOptions?: { label: string; value: string }[];
   tierOptions?: { label: string; value: string }[];
   categoryOptions?: { label: string; value: string }[];
-  subCategoryOptions?: { label: string; value: string }[];
   subCategoryGroupOptions?: { label: string; value: string }[];
 }
 
@@ -43,7 +42,6 @@ export default function CompaniesTable({
   stateOptions = [],
   tierOptions = [],
   categoryOptions = [],
-  subCategoryOptions = [],
   subCategoryGroupOptions = []
 }: CompaniesTableParams) {
   const [pageSize] = useQueryState('perPage', parseAsInteger.withDefault(10));
@@ -56,10 +54,9 @@ export default function CompaniesTable({
         stateOptions,
         tierOptions,
         categoryOptions,
-        subCategoryOptions,
         subCategoryGroupOptions
       }) as ColumnDef<Company>[],
-    [stateOptions, tierOptions, categoryOptions, subCategoryOptions, subCategoryGroupOptions]
+    [stateOptions, tierOptions, categoryOptions, subCategoryGroupOptions]
   );
 
   const { table } = useDataTable({
@@ -69,7 +66,7 @@ export default function CompaniesTable({
     shallow: false,
     debounceMs: 500,
     initialState: {
-      columnVisibility: { state: false, tier: false, category: false, subCategory: false, subCategoryGroup: false, actions: true }
+      columnVisibility: { state: false, tier: false, category: false, subCategoryGroup: false, actions: true }
     }
   });
 
