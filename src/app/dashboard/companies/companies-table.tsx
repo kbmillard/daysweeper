@@ -9,19 +9,14 @@ import { parseAsInteger, useQueryState } from 'nuqs';
 import { useMemo } from 'react';
 import { getColumns } from './columns';
 
+// Type matches the Company type from columns.tsx
 type Company = {
   id: string;
   name: string;
   website: string | null;
-  phone: string | null;
-  email: string | null;
-  tier: string | null;
-  segment: string | null;
-  category: string | null;
+  status: string | null;
   subtype: string | null;
   subtypeGroup: string | null;
-  companyKey: string | null;
-  status: string | null;
   createdAt: Date;
   updatedAt: Date;
   Location: Array<{
@@ -33,6 +28,7 @@ type Company = {
 interface CompaniesTableParams {
   data: Company[];
   totalItems: number;
+  stateOptions?: { label: string; value: string }[];
   subCategoryOptions?: { label: string; value: string }[];
   subCategoryGroupOptions?: { label: string; value: string }[];
 }
@@ -40,6 +36,7 @@ interface CompaniesTableParams {
 export default function CompaniesTable({
   data,
   totalItems,
+  stateOptions = [],
   subCategoryOptions = [],
   subCategoryGroupOptions = []
 }: CompaniesTableParams) {
@@ -50,10 +47,11 @@ export default function CompaniesTable({
   const columns = useMemo(
     () =>
       getColumns({
+        stateOptions,
         subCategoryOptions,
         subCategoryGroupOptions
       }) as ColumnDef<Company>[],
-    [subCategoryOptions, subCategoryGroupOptions]
+    [stateOptions, subCategoryOptions, subCategoryGroupOptions]
   );
 
   const { table } = useDataTable({
@@ -63,17 +61,7 @@ export default function CompaniesTable({
     shallow: false,
     debounceMs: 500,
     initialState: {
-      columnVisibility: {
-        phone: false,
-        email: false,
-        tier: false,
-        segment: false,
-        category: false,
-        subCategory: false,
-        subCategoryGroup: false,
-        companyKey: false,
-        locations: false
-      }
+      columnVisibility: { state: false, subCategory: false, subCategoryGroup: false }
     }
   });
 

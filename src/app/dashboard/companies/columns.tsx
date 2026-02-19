@@ -3,22 +3,16 @@ import type { Option } from '@/types/data-table';
 import { Badge } from '@/components/ui/badge';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Column, ColumnDef } from '@tanstack/react-table';
-import { Text, Globe, MapPin, Tags, Phone, Mail, Layers, Hash, Key, Building2 } from 'lucide-react';
+import { Text, Globe, MapPin, Tags } from 'lucide-react';
 import Link from 'next/link';
 
 type Company = {
   id: string;
   name: string;
   website: string | null;
-  phone: string | null;
-  email: string | null;
-  tier: string | null;
-  segment: string | null;
-  category: string | null;
+  status: string | null;
   subtype: string | null;
   subtypeGroup: string | null;
-  companyKey: string | null;
-  status: string | null;
   createdAt: Date;
   updatedAt: Date;
   Location: Array<{
@@ -28,10 +22,11 @@ type Company = {
 };
 
 export function getColumns(options: {
+  stateOptions: Option[];
   subCategoryOptions: Option[];
   subCategoryGroupOptions: Option[];
 }): ColumnDef<Company>[] {
-  const { subCategoryOptions, subCategoryGroupOptions } = options;
+  const { stateOptions, subCategoryOptions, subCategoryGroupOptions } = options;
 
   return [
     {
@@ -44,13 +39,21 @@ export function getColumns(options: {
       ),
       cell: ({ row }) => {
         const company = row.original;
+        const primaryLocation = company.Location?.[0];
         return (
-          <Link
-            href={`/dashboard/companies/${company.id}`}
-            className='font-medium hover:underline'
-          >
-            {company.name}
-          </Link>
+          <div className='flex flex-col'>
+            <Link
+              href={`/dashboard/companies/${company.id}`}
+              className='font-medium hover:underline'
+            >
+              {company.name}
+            </Link>
+            {primaryLocation?.addressRaw && (
+              <span className='text-xs text-muted-foreground'>
+                {primaryLocation.addressRaw}
+              </span>
+            )}
+          </div>
         );
       },
       meta: {
@@ -62,73 +65,49 @@ export function getColumns(options: {
       enableColumnFilter: true
     },
     {
-      id: 'address',
-      accessorFn: (row) => row.Location?.[0]?.addressRaw ?? null,
+      id: 'state',
+      accessorFn: () => undefined,
       enableSorting: false,
       enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Address' />
-      ),
-      cell: ({ row }) => {
-        const address = row.original.Location?.[0]?.addressRaw;
-        return address ? (
-          <div className='flex items-center gap-1'>
-            <MapPin className='h-3 w-3 shrink-0 text-muted-foreground' />
-            <span className='text-xs text-muted-foreground'>{address}</span>
-          </div>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
-      },
+      header: () => null,
+      cell: () => null,
       meta: {
-        label: 'Address',
+        label: 'State',
+        variant: 'select',
+        options: stateOptions,
         icon: MapPin
       },
-      enableColumnFilter: false
+      enableColumnFilter: true
     },
     {
-      id: 'phone',
-      accessorKey: 'phone',
+      id: 'subCategory',
+      accessorFn: () => undefined,
       enableSorting: false,
       enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Phone' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? (
-          <div className='flex items-center gap-1'>
-            <Phone className='h-3 w-3 shrink-0 text-muted-foreground' />
-            <span className='text-xs'>{val}</span>
-          </div>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
+      header: () => null,
+      cell: () => null,
+      meta: {
+        label: 'Sub category',
+        variant: 'select',
+        options: subCategoryOptions,
+        icon: Tags
       },
-      meta: { label: 'Phone', icon: Phone },
-      enableColumnFilter: false
+      enableColumnFilter: true
     },
     {
-      id: 'email',
-      accessorKey: 'email',
+      id: 'subCategoryGroup',
+      accessorFn: () => undefined,
       enableSorting: false,
       enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Email' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? (
-          <div className='flex items-center gap-1'>
-            <Mail className='h-3 w-3 shrink-0 text-muted-foreground' />
-            <a href={`mailto:${val}`} className='text-xs text-primary hover:underline'>{val}</a>
-          </div>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
+      header: () => null,
+      cell: () => null,
+      meta: {
+        label: 'Sub category group',
+        variant: 'select',
+        options: subCategoryGroupOptions,
+        icon: Tags
       },
-      meta: { label: 'Email', icon: Mail },
-      enableColumnFilter: false
+      enableColumnFilter: true
     },
     {
       id: 'website',
@@ -156,7 +135,6 @@ export function getColumns(options: {
           <span className='text-muted-foreground'>—</span>
         );
       },
-      meta: { label: 'Website', icon: Globe },
       enableColumnFilter: false
     },
     {
@@ -177,118 +155,6 @@ export function getColumns(options: {
           <span className='text-muted-foreground'>—</span>
         );
       },
-      meta: { label: 'Status' },
-      enableColumnFilter: false
-    },
-    {
-      id: 'tier',
-      accessorKey: 'tier',
-      enableSorting: false,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Tier' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? (
-          <Badge variant='secondary' className='text-xs'>{val}</Badge>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
-      },
-      meta: { label: 'Tier', icon: Layers },
-      enableColumnFilter: false
-    },
-    {
-      id: 'segment',
-      accessorKey: 'segment',
-      enableSorting: false,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Segment' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? <span className='text-xs'>{val}</span> : <span className='text-muted-foreground'>—</span>;
-      },
-      meta: { label: 'Segment', icon: Building2 },
-      enableColumnFilter: false
-    },
-    {
-      id: 'category',
-      accessorKey: 'category',
-      enableSorting: false,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Category' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? <span className='text-xs'>{val}</span> : <span className='text-muted-foreground'>—</span>;
-      },
-      meta: { label: 'Category', icon: Tags },
-      enableColumnFilter: false
-    },
-    {
-      id: 'subCategory',
-      accessorKey: 'subtype',
-      enableSorting: false,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Subtype' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? <span className='text-xs'>{val}</span> : <span className='text-muted-foreground'>—</span>;
-      },
-      meta: {
-        label: 'Subtype',
-        variant: 'select',
-        options: subCategoryOptions,
-        icon: Tags
-      },
-      enableColumnFilter: true
-    },
-    {
-      id: 'subCategoryGroup',
-      accessorKey: 'subtypeGroup',
-      enableSorting: false,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Subtype group' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? <span className='text-xs'>{val}</span> : <span className='text-muted-foreground'>—</span>;
-      },
-      meta: {
-        label: 'Subtype group',
-        variant: 'select',
-        options: subCategoryGroupOptions,
-        icon: Tags
-      },
-      enableColumnFilter: true
-    },
-    {
-      id: 'companyKey',
-      accessorKey: 'companyKey',
-      enableSorting: false,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Company key' />
-      ),
-      cell: ({ cell }) => {
-        const val = cell.getValue<string | null>();
-        return val ? (
-          <div className='flex items-center gap-1'>
-            <Key className='h-3 w-3 shrink-0 text-muted-foreground' />
-            <span className='text-xs font-mono'>{val}</span>
-          </div>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
-      },
-      meta: { label: 'Company key', icon: Key },
       enableColumnFilter: false
     },
     {
@@ -298,7 +164,8 @@ export function getColumns(options: {
         <DataTableColumnHeader column={column} title='Locations' />
       ),
       cell: ({ row }) => {
-        const locationCount = row.original.Location?.length || 0;
+        const company = row.original;
+        const locationCount = company.Location?.length || 0;
         return locationCount > 0 ? (
           <Badge variant='outline'>{locationCount} location{locationCount !== 1 ? 's' : ''}</Badge>
         ) : (
@@ -306,8 +173,6 @@ export function getColumns(options: {
         );
       },
       enableSorting: true,
-      enableHiding: true,
-      meta: { label: 'Locations', icon: Hash },
       enableColumnFilter: false
     },
     {
@@ -326,7 +191,6 @@ export function getColumns(options: {
           </span>
         );
       },
-      meta: { label: 'Created' },
       enableColumnFilter: false
     }
   ];

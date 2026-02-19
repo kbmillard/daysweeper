@@ -31,7 +31,7 @@ export async function PATCH(
     const { companyId } = await params;
     const body = await req.json();
 
-    const { status, parentCompanyId, name, website, phone, email, tier, segment, category, subtype, subtypeGroup, companyKey } = body;
+    const { status, parentCompanyId } = body;
 
     if (status !== undefined && status !== null) {
       if (typeof status !== 'string' || (status !== '' && !(COMPANY_STATUSES as readonly string[]).includes(status))) {
@@ -71,16 +71,6 @@ export async function PATCH(
     const company = await prisma.company.update({
       where: { id: companyId },
       data: {
-        ...(name !== undefined && { name }),
-        ...(website !== undefined && { website }),
-        ...(phone !== undefined && { phone }),
-        ...(email !== undefined && { email }),
-        ...(tier !== undefined && { tier }),
-        ...(segment !== undefined && { segment }),
-        ...(category !== undefined && { category }),
-        ...(subtype !== undefined && { subtype }),
-        ...(subtypeGroup !== undefined && { subtypeGroup }),
-        ...(companyKey !== undefined && { companyKey }),
         ...(status !== undefined && { status: status === '' ? null : status }),
         ...(parentCompanyId !== undefined && {
           parentCompanyDbId: parentCompanyId === '' || parentCompanyId === null ? null : parentCompanyId
