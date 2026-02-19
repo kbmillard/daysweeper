@@ -5,6 +5,7 @@ import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-h
 import { Column, ColumnDef } from '@tanstack/react-table';
 import { Text, Globe, MapPin, Tags } from 'lucide-react';
 import Link from 'next/link';
+import { CellAction } from './cell-action';
 
 type Company = {
   id: string;
@@ -213,6 +214,15 @@ export function getColumns(options: {
         );
       },
       enableColumnFilter: false
+    },
+    {
+      id: 'actions',
+      enableSorting: false,
+      enableHiding: false,
+      header: () => null,
+      cell: ({ row }) => (
+        <CellAction companyId={row.original.id} companyName={row.original.name} />
+      )
     }
   ];
 }

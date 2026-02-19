@@ -22,6 +22,26 @@ export async function GET(
   }
 }
 
+// DELETE - Delete a company
+export async function DELETE(
+  _req: Request,
+  { params }: { params: Promise<{ companyId: string }> }
+) {
+  try {
+    const { companyId } = await params;
+    await prisma.company.delete({ where: { id: companyId } });
+    return NextResponse.json({ success: true });
+  } catch (error: any) {
+    if (error?.code === 'P2025') {
+      return NextResponse.json({ error: 'Company not found' }, { status: 404 });
+    }
+    return NextResponse.json(
+      { error: error?.message ?? 'Failed to delete company' },
+      { status: 500 }
+    );
+  }
+}
+
 // PATCH - Update company (e.g. status)
 export async function PATCH(
   req: Request,

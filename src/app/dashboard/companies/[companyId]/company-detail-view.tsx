@@ -4,6 +4,7 @@ import { IconArrowLeft, IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
 import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
+import { DeleteCompanyButton } from './delete-company-button';
 
 type CompanyMetadata = {
   keyProducts?: string[] | null;
@@ -213,6 +214,7 @@ export default function CompanyDetailView({ company }: Props) {
             Back to Companies
           </Button>
         </Link>
+        <DeleteCompanyButton companyId={company.id} companyName={company.name} />
       </div>
 
       <CompanyEditableFields
