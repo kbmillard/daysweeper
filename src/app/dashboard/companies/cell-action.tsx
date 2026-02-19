@@ -1,14 +1,7 @@
 'use client';
 import { AlertModal } from '@/components/modal/alert-modal';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
-import { IconDotsVertical, IconEdit, IconTrash } from '@tabler/icons-react';
+import { IconEdit, IconTrash } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
@@ -50,23 +43,14 @@ export function CellAction({ companyId, companyName }: CellActionProps) {
         onConfirm={onConfirm}
         loading={loading}
       />
-      <DropdownMenu modal={false}>
-        <DropdownMenuTrigger asChild>
-          <Button variant='ghost' className='h-8 w-8 p-0'>
-            <span className='sr-only'>Open menu</span>
-            <IconDotsVertical className='h-4 w-4' />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align='end'>
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => router.push(`/dashboard/companies/${companyId}`)}>
-            <IconEdit className='mr-2 h-4 w-4' /> Edit
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setOpen(true)} className='text-destructive focus:text-destructive'>
-            <IconTrash className='mr-2 h-4 w-4' /> Delete
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className='flex items-center gap-2'>
+        <Button variant='outline' size='sm' onClick={() => router.push(`/dashboard/companies/${companyId}`)}>
+          <IconEdit className='mr-2 h-4 w-4' /> Edit
+        </Button>
+        <Button variant='destructive' size='sm' onClick={() => setOpen(true)} disabled={loading}>
+          <IconTrash className='mr-2 h-4 w-4' /> Delete
+        </Button>
+      </div>
     </>
   );
 }
