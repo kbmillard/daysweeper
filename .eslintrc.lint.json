@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
+  },
+  "env": { "browser": true, "es2022": true, "node": true },
+  "globals": {
+    "React": "readonly",
+    "JSX": "readonly"
+  },
+  "ignorePatterns": ["node_modules", ".next", "*.config.*"],
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-redeclare": "warn",
+    "no-empty-pattern": "warn",
+    "no-undef": "off",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

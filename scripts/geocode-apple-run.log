@@ -1,0 +1,6 @@
+
+> next-shadcn-dashboard-starter@1.0.0 geocode:apple /Users/kylemillard/daysweeper
+> ./scripts/run-geocode-apple.sh
+
+Fetching locations from http://localhost:3000 (missingOnly=true)...
+Found 218 locations to geocode.
