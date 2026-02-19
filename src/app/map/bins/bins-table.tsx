@@ -393,6 +393,34 @@ export function BinsTable({ initialData }: BinsTableProps) {
       minSize: 180
     },
     {
+      accessorKey: 'quantity',
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title='QTY' />
+      ),
+      cell: ({ row }) => (
+        <EditableCell
+          value={row.original.quantity}
+          rowId={row.original.id}
+          accessorKey='quantity'
+          type='number'
+          align='right'
+          onSave={updateCell}
+          editing={editing}
+          editValue={editValue}
+          onStartEdit={startEdit}
+          onEditValueChange={setEditValue}
+          onClearEdit={() => setEditing(null)}
+          displayFormat={(v) => (
+            <span className='font-mono text-right'>
+              {v == null || v === 0 ? '-' : Number(v).toLocaleString()}
+            </span>
+          )}
+        />
+      ),
+      enableSorting: true,
+      enableColumnFilter: false
+    },
+    {
       accessorKey: 'changedAt',
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title='Date Changed' />
