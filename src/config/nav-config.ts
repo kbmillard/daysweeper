@@ -35,7 +35,7 @@ import { NavItem } from '@/types';
 export const navItems: NavItem[] = [
   {
     title: 'Dashboard',
-    url: '/dashboard/overview',
+    url: '/map/overview',
     icon: 'dashboard',
     isActive: false,
     shortcut: ['d', 'd'],
@@ -43,7 +43,7 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Companies',
-    url: '/dashboard/companies',
+    url: '/map/companies',
     icon: 'companies',
     shortcut: ['c', 'c'],
     isActive: false,
@@ -51,7 +51,7 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Bins',
-    url: '/dashboard/bins',
+    url: '/map/bins',
     icon: 'product',
     shortcut: ['b', 'b'],
     isActive: false,

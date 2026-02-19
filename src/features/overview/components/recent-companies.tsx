@@ -35,7 +35,7 @@ export function RecentCompanies({ companies }: { companies: Company[] }) {
             companies.map((company) => (
               <Link
                 key={company.id}
-                href={`/dashboard/companies/${company.id}`}
+                href={`/map/companies/${company.id}`}
                 className='flex items-center gap-3 p-2 rounded-lg hover:bg-accent transition-colors'
               >
                 <div className='flex h-10 w-10 items-center justify-center rounded-full bg-primary/10'>
