@@ -192,7 +192,7 @@ export default async function Page(props: pageProps) {
 
   const categoryOptions = (categories
     .map((c) => c.category)
-    .filter((v): v is string => Boolean(v) && v.toLowerCase() !== 'yes') as string[]
+    .filter((v): v is string => v != null && v !== '' && v.toLowerCase() !== 'yes')
   ).map((value) => ({ label: value, value }));
 
   return (
