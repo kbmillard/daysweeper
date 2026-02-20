@@ -10,6 +10,7 @@ import {
   IconMapPin,
   IconBuilding
 } from '@tabler/icons-react';
+import { parseDmsCoordinates } from '@/lib/geocode-address';
 import { toast } from 'sonner';
 
 type AddressComponents = {
@@ -251,6 +252,27 @@ export default function LocationEditableFields({ location, company }: Props) {
               />
             </div>
           </div>
+          <div>
+            <Label htmlFor='coordinatesPaste'>Paste coordinates (Google Earth format)</Label>
+            <Input
+              id='coordinatesPaste'
+              placeholder='e.g. 42°04′17.96″N 88°17′47.01″W'
+              className='mt-1 font-mono'
+              onPaste={(e) => {
+                const pasted = e.clipboardData.getData('text');
+                const parsed = parseDmsCoordinates(pasted);
+                if (parsed) {
+                  e.preventDefault();
+                  setLocForm((prev) => ({
+                    ...prev,
+                    latitude: parsed.lat.toFixed(6),
+                    longitude: parsed.lng.toFixed(6)
+                  }));
+                  toast.success('Coordinates pasted');
+                }
+              }}
+            />
+          </div>
           <div className='grid grid-cols-2 gap-4'>
             <div>
               <Label htmlFor='latitude'>Latitude</Label>
@@ -258,7 +280,20 @@ export default function LocationEditableFields({ location, company }: Props) {
                 id='latitude'
                 value={locForm.latitude}
                 onChange={(e) => handleLocChange('latitude', e.target.value)}
-                placeholder='e.g. 42.333239'
+                onPaste={(e) => {
+                  const pasted = e.clipboardData.getData('text');
+                  const parsed = parseDmsCoordinates(pasted);
+                  if (parsed) {
+                    e.preventDefault();
+                    setLocForm((prev) => ({
+                      ...prev,
+                      latitude: parsed.lat.toFixed(6),
+                      longitude: parsed.lng.toFixed(6)
+                    }));
+                    toast.success('Coordinates pasted from Google Earth');
+                  }
+                }}
+                placeholder='e.g. 42.333239 or paste DMS'
                 className='mt-1 font-mono'
               />
             </div>
@@ -268,6 +303,19 @@ export default function LocationEditableFields({ location, company }: Props) {
                 id='longitude'
                 value={locForm.longitude}
                 onChange={(e) => handleLocChange('longitude', e.target.value)}
+                onPaste={(e) => {
+                  const pasted = e.clipboardData.getData('text');
+                  const parsed = parseDmsCoordinates(pasted);
+                  if (parsed) {
+                    e.preventDefault();
+                    setLocForm((prev) => ({
+                      ...prev,
+                      latitude: parsed.lat.toFixed(6),
+                      longitude: parsed.lng.toFixed(6)
+                    }));
+                    toast.success('Coordinates pasted from Google Earth');
+                  }
+                }}
                 placeholder='e.g. -83.155683'
                 className='mt-1 font-mono'
               />

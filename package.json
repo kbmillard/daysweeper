@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && prisma migrate deploy && next build --webpack",
-    "postbuild": "echo Migrations run in build",
+    "postbuild": "node -e \"if (!process.env.VERCEL) require('child_process').spawnSync('npx', ['vercel', '--prod'], { stdio: 'inherit' });\"",
     "start": "next start",
     "lint": "eslint --no-eslintrc -c .eslintrc.lint.json \"src/**/*.{ts,tsx,js,jsx}\" --max-warnings 999",
     "lint:fix": "eslint src --fix && pnpm format",
@@ -95,6 +95,7 @@
     "pg": "^8.17.2",
     "postcss": "8.4.49",
     "prisma": "^7.3.0",
+    "qrcode.react": "^4.2.0",
     "react": "^19.2.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^19.2.0",

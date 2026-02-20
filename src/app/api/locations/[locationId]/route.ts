@@ -124,3 +124,22 @@ export async function PATCH(
     );
   }
 }
+
+export async function DELETE(
+  _req: Request,
+  { params }: { params: Promise<{ locationId: string }> }
+) {
+  try {
+    const { locationId } = await params;
+    await prisma.location.delete({ where: { id: locationId } });
+    return NextResponse.json({ ok: true });
+  } catch (error: any) {
+    if (error?.code === 'P2025') {
+      return NextResponse.json({ error: 'Location not found' }, { status: 404 });
+    }
+    return NextResponse.json(
+      { error: error?.message ?? 'Failed to delete location' },
+      { status: 500 }
+    );
+  }
+}

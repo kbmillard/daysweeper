@@ -5,6 +5,7 @@ import Link from 'next/link';
 import LocationEditableFields from '@/features/locations/location-editable-fields';
 import LocationMapCard from '@/features/locations/location-map-card';
 import { AddToLastLegButton } from '@/features/locations/add-to-lastleg-button';
+import { DeleteLocationButton } from '@/features/locations/delete-location-button';
 
 type LocationWithCompany = {
   id: string;
@@ -38,9 +39,10 @@ const BASE = '/map';
 
 type Props = {
   location: LocationWithCompany;
+  baseUrl?: string;
 };
 
-export default function LocationDetailView({ location }: Props) {
+export default function LocationDetailView({ location, baseUrl }: Props) {
   const company = location.Company;
   const otherLocations = company.Location.filter((loc) => loc.id !== location.id);
 
@@ -62,6 +64,15 @@ export default function LocationDetailView({ location }: Props) {
             locationId={location.id}
             addressRaw={location.addressRaw}
             companyId={company.id}
+            baseUrl={baseUrl}
+            latitude={lat}
+            longitude={lng}
+          />
+          <DeleteLocationButton
+            locationId={location.id}
+            companyId={company.id}
+            basePath='map'
+            buttonText='Remove as location'
           />
         </div>
         <Link href={`${BASE}/companies`}>
@@ -118,20 +129,6 @@ export default function LocationDetailView({ location }: Props) {
                 </Link>
               ))}
             </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Legacy JSON */}
-      {location.legacyJson && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Legacy Data</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <pre className='text-xs bg-muted p-4 rounded-lg overflow-auto'>
-              {JSON.stringify(location.legacyJson, null, 2)}
-            </pre>
           </CardContent>
         </Card>
       )}

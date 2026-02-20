@@ -1,5 +1,6 @@
 import PageContainer from '@/components/layout/page-container';
 import { prisma } from '@/lib/prisma';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import FormCardSkeleton from '@/components/form-card-skeleton';
@@ -9,11 +10,23 @@ export const metadata = {
   title: 'Dashboard: Company Details'
 };
 
+async function getBaseUrl(): Promise<string> {
+  try {
+    const h = await headers();
+    const host = h.get('x-forwarded-host') ?? h.get('host') ?? '';
+    const proto = h.get('x-forwarded-proto') === 'https' ? 'https' : 'http';
+    return host ? `${proto}://${host}` : '';
+  } catch {
+    return '';
+  }
+}
+
 type PageProps = { params: Promise<{ companyId: string }> };
 
 export default async function Page(props: PageProps) {
   const params = await props.params;
   const companyId = params.companyId;
+  const baseUrl = await getBaseUrl();
 
   const company = await prisma.company.findUnique({
     where: { id: companyId },
@@ -30,8 +43,15 @@ export default async function Page(props: PageProps) {
         orderBy: { createdAt: 'desc' },
         select: {
           id: true,
+          externalId: true,
           addressRaw: true,
-          addressComponents: true
+          addressNormalized: true,
+          addressComponents: true,
+          addressConfidence: true,
+          latitude: true,
+          longitude: true,
+          createdAt: true,
+          updatedAt: true
         }
       },
       Company: {
@@ -88,7 +108,7 @@ export default async function Page(props: PageProps) {
   return (
     <PageContainer scrollable pageTitle={company.name} pageDescription='Company details and locations'>
       <Suspense fallback={<FormCardSkeleton />}>
-        <CompanyDetailView company={company} />
+        <CompanyDetailView company={company} baseUrl={baseUrl} />
       </Suspense>
     </PageContainer>
   );

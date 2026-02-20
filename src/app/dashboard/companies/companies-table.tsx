@@ -26,22 +26,19 @@ type Company = {
 interface CompaniesTableParams {
   data: Company[];
   totalItems: number;
-  stateOptions?: { label: string; value: string }[];
 }
 
 export default function CompaniesTable({
   data,
-  totalItems,
-  stateOptions = []
+  totalItems
 }: CompaniesTableParams) {
   const [pageSize] = useQueryState('perPage', parseAsInteger.withDefault(10));
 
   const pageCount = Math.ceil(totalItems / pageSize);
 
   const columns = useMemo(
-    () =>
-      getColumns({ stateOptions }) as ColumnDef<Company>[],
-    [stateOptions]
+    () => getColumns() as ColumnDef<Company>[],
+    []
   );
 
   const { table } = useDataTable({

@@ -43,6 +43,49 @@ export function toMapboxCoordinates(lat: number | null | undefined, lng: number 
   return [Number(lng), Number(lat)];
 }
 
+/**
+ * Parse DMS (degrees minutes seconds) coordinates from Google Earth format.
+ * Example: 42°04'17.96"N 88°17'47.01"W
+ * Returns { lat, lng } in decimal degrees or null if unparseable.
+ */
+export function parseDmsCoordinates(text: string): { lat: number; lng: number } | null {
+  const t = text.trim();
+  if (!t) return null;
+
+  // Match DMS: degrees°minutes'seconds"N/S or E/W (supports ° ' " and unicode ′ ″)
+  const dms =
+    /(-?\d+(?:\.\d+)?)\s*[°º]\s*(\d+(?:\.\d+)?)\s*['′]\s*(\d+(?:\.\d+)?)\s*["″]?\s*([NS])/gi;
+  const dmsLng =
+    /(-?\d+(?:\.\d+)?)\s*[°º]\s*(\d+(?:\.\d+)?)\s*['′]\s*(\d+(?:\.\d+)?)\s*["″]?\s*([EW])/gi;
+
+  const toDecimal = (d: number, m: number, s: number, dir: string): number => {
+    const dec = Math.abs(d) + m / 60 + s / 3600;
+    if (/^[SW]$/i.test(dir)) return -dec;
+    return dec;
+  };
+
+  const latMatch = dms.exec(t);
+  const lngMatch = dmsLng.exec(t);
+
+  if (!latMatch || !lngMatch) return null;
+
+  const lat = toDecimal(
+    Number(latMatch[1]),
+    Number(latMatch[2]),
+    Number(latMatch[3]),
+    latMatch[4]
+  );
+  const lng = toDecimal(
+    Number(lngMatch[1]),
+    Number(lngMatch[2]),
+    Number(lngMatch[3]),
+    lngMatch[4]
+  );
+
+  if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return null;
+  return { lat, lng };
+}
+
 /** Parsed address components from Google Geocoding API response */
 export type ParsedAddressComponents = {
   city?: string;

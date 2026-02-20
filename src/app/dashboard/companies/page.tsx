@@ -26,9 +26,9 @@ export default async function Page(props: pageProps) {
   const perPage = searchParamsCache.get('perPage') ?? 10;
   const nameFilter = searchParamsCache.get('name');
   const companyFilter = searchParamsCache.get('company');
-  const stateFilterRaw = searchParamsCache.get('state');
+  const addressFilterRaw = searchParamsCache.get('address');
   const statusFilterRaw = searchParamsCache.get('status');
-  const stateFilter = Array.isArray(stateFilterRaw) ? stateFilterRaw[0] : stateFilterRaw;
+  const addressFilter = Array.isArray(addressFilterRaw) ? addressFilterRaw[0] : addressFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const sort = searchParamsCache.get('sort');
 
@@ -43,14 +43,11 @@ export default async function Page(props: pageProps) {
     where.name = { contains: filterValue, mode: 'insensitive' as const };
   }
 
-  // State: companies that have at least one location in this state
-  if (stateFilter) {
+  // Search address: companies that have at least one location whose address contains the search
+  if (addressFilter) {
     where.Location = {
       some: {
-        addressComponents: {
-          path: ['state'],
-          equals: stateFilter
-        }
+        addressRaw: { contains: addressFilter, mode: 'insensitive' as const }
       }
     };
   }
@@ -69,8 +66,7 @@ export default async function Page(props: pageProps) {
       name: 'name',
       website: 'website',
       status: 'status',
-      createdAt: 'createdAt',
-      locations: 'createdAt' // locations is computed, fallback to createdAt
+      createdAt: 'createdAt'
     };
     
     const field = fieldMap[firstSort.id] || 'createdAt';
@@ -79,7 +75,7 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  const [companies, total, locationStates] = await Promise.all([
+  const [companies, total] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
@@ -102,21 +98,8 @@ export default async function Page(props: pageProps) {
         }
       }
     }),
-    prisma.company.count({ where }),
-    prisma.location.findMany({
-      select: { addressComponents: true }
-    })
+    prisma.company.count({ where })
   ]);
-
-  const stateOptions = Array.from(
-    new Set(
-      locationStates
-        .map((loc) => (loc.addressComponents as { state?: string } | null)?.state)
-        .filter(Boolean) as string[]
-    )
-  )
-    .sort()
-    .map((value) => ({ label: value, value }));
 
   return (
     <PageContainer
@@ -134,13 +117,12 @@ export default async function Page(props: pageProps) {
     >
       <Suspense
         fallback={
-          <DataTableSkeleton columnCount={7} rowCount={8} filterCount={3} />
+          <DataTableSkeleton columnCount={6} rowCount={8} filterCount={3} />
         }
       >
         <CompaniesTable
           data={companies}
           totalItems={total}
-          stateOptions={stateOptions}
         />
       </Suspense>
     </PageContainer>

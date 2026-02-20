@@ -20,10 +20,10 @@ type Company = {
   }>;
 };
 
-export function getColumns(options: {
-  stateOptions: Option[];
+export function getColumns(options?: {
+  stateOptions?: Option[];
 }): ColumnDef<Company>[] {
-  const { stateOptions } = options;
+  const stateOptions = options?.stateOptions ?? [];
 
   return [
     {
@@ -80,7 +80,13 @@ export function getColumns(options: {
           <span className='text-muted-foreground'>—</span>
         );
       },
-      enableColumnFilter: false
+      meta: {
+        label: 'Address',
+        placeholder: 'Search address...',
+        variant: 'text',
+        icon: MapPin
+      },
+      enableColumnFilter: true
     },
     {
       id: 'state',
@@ -105,7 +111,7 @@ export function getColumns(options: {
         options: stateOptions,
         icon: MapPin
       },
-      enableColumnFilter: true
+      enableColumnFilter: false
     },
     {
       id: 'website',
@@ -153,24 +159,6 @@ export function getColumns(options: {
           <span className='text-muted-foreground'>—</span>
         );
       },
-      enableColumnFilter: false
-    },
-    {
-      id: 'locations',
-      accessorFn: (row) => row.Location?.length || 0,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Locations' />
-      ),
-      cell: ({ row }) => {
-        const company = row.original;
-        const locationCount = company.Location?.length || 0;
-        return locationCount > 0 ? (
-          <Badge variant='outline'>{locationCount} location{locationCount !== 1 ? 's' : ''}</Badge>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
-      },
-      enableSorting: true,
       enableColumnFilter: false
     },
     {

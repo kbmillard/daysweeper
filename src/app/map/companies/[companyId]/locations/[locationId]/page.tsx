@@ -1,5 +1,6 @@
 import PageContainer from '@/components/layout/page-container';
 import { prisma } from '@/lib/prisma';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import FormCardSkeleton from '@/components/form-card-skeleton';
@@ -9,6 +10,17 @@ export const metadata = {
   title: 'Dashboard: Location Details'
 };
 
+async function getBaseUrl(): Promise<string> {
+  try {
+    const h = await headers();
+    const host = h.get('x-forwarded-host') ?? h.get('host') ?? '';
+    const proto = h.get('x-forwarded-proto') === 'https' ? 'https' : 'http';
+    return host ? `${proto}://${host}` : '';
+  } catch {
+    return '';
+  }
+}
+
 type PageProps = {
   params: Promise<{ companyId: string; locationId: string }>;
 };
@@ -16,6 +28,7 @@ type PageProps = {
 export default async function Page(props: PageProps) {
   const params = await props.params;
   const { companyId, locationId } = params;
+  const baseUrl = await getBaseUrl();
 
   const location = await prisma.location.findUnique({
     where: { id: locationId },
@@ -62,7 +75,7 @@ export default async function Page(props: PageProps) {
       pageDescription={`Location for ${location.Company.name}`}
     >
       <Suspense fallback={<FormCardSkeleton />}>
-        <LocationDetailView location={location} />
+        <LocationDetailView location={location} baseUrl={baseUrl} />
       </Suspense>
     </PageContainer>
   );

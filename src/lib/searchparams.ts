@@ -21,6 +21,7 @@ export const searchParams = {
   website: parseAsString,
   status: parseAsString,
   state: parseAsString,
+  address: parseAsString,
   subCategory: parseAsString,
   subCategoryGroup: parseAsString,
   locations: parseAsString,
