@@ -29,7 +29,6 @@ type CompanyData = {
   phone: string | null;
   email: string | null;
   status: string | null;
-  companyKey: string | null;
   metadata: unknown;
   Location: Array<{
     id?: string;
@@ -202,8 +201,7 @@ export default function CompanyDetailView({ company }: Props) {
           website: company.website,
           phone: company.phone,
           email: company.email ?? null,
-          status: company.status ?? null,
-          companyKey: company.companyKey ?? null
+          status: company.status ?? null
         }}
       />
 

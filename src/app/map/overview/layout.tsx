@@ -19,7 +19,8 @@ async function getCompanyStats() {
     totalLocations,
     companiesThisMonth,
     companiesLastMonth,
-    companiesWithParent,
+    companiesContactedMeetingSet,
+    companiesContactedNotInterested,
     companiesWithChildren
   ] = await Promise.all([
     prisma.company.count(),
@@ -41,9 +42,12 @@ async function getCompanyStats() {
     }),
     prisma.company.count({
       where: {
-        parentCompanyDbId: {
-          not: null
-        }
+        status: 'Contacted - meeting set'
+      }
+    }),
+    prisma.company.count({
+      where: {
+        status: 'Contacted - not interested'
       }
     }),
     prisma.company.count({
@@ -54,6 +58,17 @@ async function getCompanyStats() {
       }
     })
   ]);
+
+  const contactedTotal =
+    companiesContactedMeetingSet + companiesContactedNotInterested;
+  const pctInterested =
+    contactedTotal > 0
+      ? (companiesContactedMeetingSet / contactedTotal) * 100
+      : 0;
+  const pctNotInterested =
+    contactedTotal > 0
+      ? (companiesContactedNotInterested / contactedTotal) * 100
+      : 0;
 
   const monthOverMonthChange =
     companiesLastMonth > 0
@@ -66,7 +81,11 @@ async function getCompanyStats() {
     companiesThisMonth,
     companiesLastMonth,
     monthOverMonthChange,
-    companiesWithParent,
+    companiesContactedMeetingSet,
+    companiesContactedNotInterested,
+    contactedTotal,
+    pctInterested,
+    pctNotInterested,
     companiesWithChildren
   };
 }
@@ -152,16 +171,17 @@ export default async function OverViewLayout({
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Leads with Parent</CardDescription>
+              <CardDescription>Contacted - Meeting Set</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                {stats.companiesWithParent.toLocaleString()}
+                {stats.companiesContactedMeetingSet.toLocaleString()}
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingUp />
                   {stats.totalCompanies > 0
                     ? (
-                        (stats.companiesWithParent / stats.totalCompanies) *
+                        (stats.companiesContactedMeetingSet /
+                          stats.totalCompanies) *
                         100
                       ).toFixed(1)
                     : 0}
@@ -173,48 +193,39 @@ export default async function OverViewLayout({
               <div className='line-clamp-1 flex gap-2 font-medium'>
                 {stats.totalCompanies > 0
                   ? (
-                      (stats.companiesWithParent / stats.totalCompanies) *
+                      (stats.companiesContactedMeetingSet /
+                        stats.totalCompanies) *
                       100
                     ).toFixed(1)
                   : 0}
-                % have parent leads <IconTrendingUp className='size-4' />
+                % have contacted-meeting set <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Hierarchical lead structure
+                Meeting scheduled
               </div>
             </CardFooter>
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Month-over-Month Growth</CardDescription>
+              <CardDescription>
+                Contacted - meeting set vs Contacted - not interested
+              </CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                {stats.monthOverMonthChange >= 0 ? '+' : ''}
-                {stats.monthOverMonthChange.toFixed(1)}%
+                {stats.pctInterested.toFixed(1)}% meeting set
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
-                  {stats.monthOverMonthChange >= 0 ? (
-                    <IconTrendingUp />
-                  ) : (
-                    <IconTrendingDown />
-                  )}
-                  {stats.monthOverMonthChange >= 0 ? '+' : ''}
-                  {stats.monthOverMonthChange.toFixed(1)}%
+                  {stats.pctNotInterested.toFixed(1)}% not interested
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                {stats.monthOverMonthChange >= 0 ? 'Growing' : 'Declining'} this
-                period{' '}
-                {stats.monthOverMonthChange >= 0 ? (
-                  <IconTrendingUp className='size-4' />
-                ) : (
-                  <IconTrendingDown className='size-4' />
-                )}
+                {stats.pctInterested.toFixed(1)}% Contacted - meeting set{' '}
+                <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Compared to last month
+                {stats.pctNotInterested.toFixed(1)}% Contacted - not interested
               </div>
             </CardFooter>
           </Card>

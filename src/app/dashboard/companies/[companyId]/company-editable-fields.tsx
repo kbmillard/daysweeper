@@ -23,7 +23,6 @@ export type CompanyEditableData = {
   phone: string | null;
   email: string | null;
   status: string | null;
-  companyKey: string | null;
 };
 
 type Props = {
@@ -38,8 +37,7 @@ export default function CompanyEditableFields({ company }: Props) {
     website: company.website ?? '',
     phone: company.phone ?? '',
     email: company.email ?? '',
-    status: company.status ?? '',
-    companyKey: company.companyKey ?? ''
+    status: company.status ?? ''
   });
 
   const handleChange = (field: keyof typeof form, value: string) => {
@@ -61,8 +59,7 @@ export default function CompanyEditableFields({ company }: Props) {
           website: form.website.trim() || null,
           phone: form.phone.trim() || null,
           email: form.email.trim() || null,
-          status: form.status.trim() || null,
-          companyKey: form.companyKey.trim() || null
+          status: form.status.trim() || null
         })
       });
       const data = await res.json();
@@ -147,16 +144,6 @@ export default function CompanyEditableFields({ company }: Props) {
               value={form.email}
               onChange={(e) => handleChange('email', e.target.value)}
               placeholder='Email'
-              className='mt-1'
-            />
-          </div>
-          <div>
-            <Label htmlFor='companyKey'>Company key</Label>
-            <Input
-              id='companyKey'
-              value={form.companyKey}
-              onChange={(e) => handleChange('companyKey', e.target.value)}
-              placeholder='Company key'
               className='mt-1'
             />
           </div>

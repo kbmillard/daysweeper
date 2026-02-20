@@ -20,16 +20,16 @@ export function RecentCompanies({ companies }: { companies: Company[] }) {
   return (
     <Card className='h-full'>
       <CardHeader>
-        <CardTitle>Recent Leads</CardTitle>
+        <CardTitle>Contacted - Meeting Set</CardTitle>
         <CardDescription>
-          {companies.length} most recently added leads
+          {companies.length} accounts with meeting set
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className='space-y-4'>
           {companies.length === 0 ? (
             <div className='text-center text-muted-foreground py-8'>
-              No companies yet
+              No accounts with meeting set
             </div>
           ) : (
             companies.map((company) => (

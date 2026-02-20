@@ -25,7 +25,6 @@ export default async function Page(props: PageProps) {
       phone: true,
       email: true,
       status: true,
-      companyKey: true,
       metadata: true,
       Location: {
         orderBy: { createdAt: 'desc' },
@@ -46,7 +45,6 @@ export default async function Page(props: PageProps) {
           email: true,
           segment: true,
           status: true,
-          companyKey: true,
           metadata: true,
           Location: {
             take: 1,
@@ -69,7 +67,6 @@ export default async function Page(props: PageProps) {
           email: true,
           segment: true,
           status: true,
-          companyKey: true,
           metadata: true,
           Location: {
             take: 1,

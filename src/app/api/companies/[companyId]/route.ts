@@ -10,7 +10,7 @@ export async function GET(
     const { companyId } = await params;
     const company = await prisma.company.findUnique({
       where: { id: companyId },
-      select: { id: true, name: true, website: true, phone: true }
+      select: { id: true, name: true, website: true, phone: true, email: true }
     });
     if (!company) {
       return NextResponse.json({ error: 'Company not found' }, { status: 404 });
@@ -51,7 +51,25 @@ export async function PATCH(
     const { companyId } = await params;
     const body = await req.json();
 
-    const { status, parentCompanyId } = body;
+    const { status, parentCompanyId, name, website, phone, email } = body;
+
+    if (name !== undefined) {
+      if (typeof name !== 'string' || !name.trim()) {
+        return NextResponse.json(
+          { error: 'name must be a non-empty string' },
+          { status: 400 }
+        );
+      }
+    }
+    if (website !== undefined && website !== null && typeof website !== 'string') {
+      return NextResponse.json({ error: 'website must be a string or null' }, { status: 400 });
+    }
+    if (phone !== undefined && phone !== null && typeof phone !== 'string') {
+      return NextResponse.json({ error: 'phone must be a string or null' }, { status: 400 });
+    }
+    if (email !== undefined && email !== null && typeof email !== 'string') {
+      return NextResponse.json({ error: 'email must be a string or null' }, { status: 400 });
+    }
 
     if (status !== undefined && status !== null) {
       if (typeof status !== 'string' || (status !== '' && !(COMPANY_STATUSES as readonly string[]).includes(status))) {
@@ -91,6 +109,10 @@ export async function PATCH(
     const company = await prisma.company.update({
       where: { id: companyId },
       data: {
+        ...(name !== undefined && { name: name.trim() }),
+        ...(website !== undefined && { website: website === '' ? null : website?.trim() ?? null }),
+        ...(phone !== undefined && { phone: phone === '' ? null : phone?.trim() ?? null }),
+        ...(email !== undefined && { email: email === '' ? null : email?.trim() ?? null }),
         ...(status !== undefined && { status: status === '' ? null : status }),
         ...(parentCompanyId !== undefined && {
           parentCompanyDbId: parentCompanyId === '' || parentCompanyId === null ? null : parentCompanyId
