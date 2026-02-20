@@ -29,11 +29,6 @@ type CompanyData = {
   website: string | null;
   phone: string | null;
   email: string | null;
-  tier: string | null;
-  segment: string | null;
-  category: string | null;
-  subtype: string | null;
-  subtypeGroup: string | null;
   status: string | null;
   companyKey: string | null;
   metadata: unknown;
@@ -65,12 +60,6 @@ function CompanyCard({
   const phone =
     company.phone ||
     (company.metadata as CompanyMetadata | null)?.contactInfo?.phone ||
-    null;
-
-  // Get supply chain fields from metadata if not in direct fields
-  const supplyChainCategory =
-    company.category ||
-    (company.metadata as CompanyMetadata | null)?.supplyChainCategory ||
     null;
 
   return (
@@ -180,16 +169,6 @@ function CompanyCard({
             )}
           </div>
 
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Supply Chain Category
-            </label>
-            {supplyChainCategory ? (
-              <p className='mt-1 text-base'>{supplyChainCategory}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
         </div>
       </CardContent>
     </Card>
@@ -225,11 +204,6 @@ export default function CompanyDetailView({ company }: Props) {
           website: company.website,
           phone: company.phone,
           email: company.email ?? null,
-          tier: company.tier ?? null,
-          segment: company.segment ?? null,
-          category: company.category ?? null,
-          subtype: company.subtype ?? null,
-          subtypeGroup: company.subtypeGroup ?? null,
           status: company.status ?? null,
           companyKey: company.companyKey ?? null
         }}

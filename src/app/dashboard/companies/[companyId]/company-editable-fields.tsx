@@ -22,11 +22,6 @@ export type CompanyEditableData = {
   website: string | null;
   phone: string | null;
   email: string | null;
-  tier: string | null;
-  segment: string | null;
-  category: string | null;
-  subtype: string | null;
-  subtypeGroup: string | null;
   status: string | null;
   companyKey: string | null;
 };
@@ -43,11 +38,6 @@ export default function CompanyEditableFields({ company }: Props) {
     website: company.website ?? '',
     phone: company.phone ?? '',
     email: company.email ?? '',
-    tier: company.tier ?? '',
-    segment: company.segment ?? '',
-    category: company.category ?? '',
-    subtype: company.subtype ?? '',
-    subtypeGroup: company.subtypeGroup ?? '',
     status: company.status ?? '',
     companyKey: company.companyKey ?? ''
   });
@@ -71,11 +61,6 @@ export default function CompanyEditableFields({ company }: Props) {
           website: form.website.trim() || null,
           phone: form.phone.trim() || null,
           email: form.email.trim() || null,
-          tier: form.tier.trim() || null,
-          segment: form.segment.trim() || null,
-          category: form.category.trim() || null,
-          subtype: form.subtype.trim() || null,
-          subtypeGroup: form.subtypeGroup.trim() || null,
           status: form.status.trim() || null,
           companyKey: form.companyKey.trim() || null
         })
@@ -162,56 +147,6 @@ export default function CompanyEditableFields({ company }: Props) {
               value={form.email}
               onChange={(e) => handleChange('email', e.target.value)}
               placeholder='Email'
-              className='mt-1'
-            />
-          </div>
-          <div>
-            <Label htmlFor='tier'>Tier</Label>
-            <Input
-              id='tier'
-              value={form.tier}
-              onChange={(e) => handleChange('tier', e.target.value)}
-              placeholder='Tier'
-              className='mt-1'
-            />
-          </div>
-          <div>
-            <Label htmlFor='segment'>Segment</Label>
-            <Input
-              id='segment'
-              value={form.segment}
-              onChange={(e) => handleChange('segment', e.target.value)}
-              placeholder='Segment'
-              className='mt-1'
-            />
-          </div>
-          <div>
-            <Label htmlFor='category'>Category</Label>
-            <Input
-              id='category'
-              value={form.category}
-              onChange={(e) => handleChange('category', e.target.value)}
-              placeholder='Category'
-              className='mt-1'
-            />
-          </div>
-          <div>
-            <Label htmlFor='subtype'>Subtype</Label>
-            <Input
-              id='subtype'
-              value={form.subtype}
-              onChange={(e) => handleChange('subtype', e.target.value)}
-              placeholder='Subtype'
-              className='mt-1'
-            />
-          </div>
-          <div>
-            <Label htmlFor='subtypeGroup'>Subtype group</Label>
-            <Input
-              id='subtypeGroup'
-              value={form.subtypeGroup}
-              onChange={(e) => handleChange('subtypeGroup', e.target.value)}
-              placeholder='Subtype group'
               className='mt-1'
             />
           </div>

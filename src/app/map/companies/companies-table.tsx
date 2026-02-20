@@ -15,10 +15,6 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
-  tier: string | null;
-  category: string | null;
-  subtype: string | null;
-  subtypeGroup: string | null;
   createdAt: Date;
   updatedAt: Date;
   Location: Array<{
@@ -31,18 +27,12 @@ interface CompaniesTableParams {
   data: Company[];
   totalItems: number;
   stateOptions?: { label: string; value: string }[];
-  tierOptions?: { label: string; value: string }[];
-  categoryOptions?: { label: string; value: string }[];
-  subCategoryGroupOptions?: { label: string; value: string }[];
 }
 
 export default function CompaniesTable({
   data,
   totalItems,
-  stateOptions = [],
-  tierOptions = [],
-  categoryOptions = [],
-  subCategoryGroupOptions = []
+  stateOptions = []
 }: CompaniesTableParams) {
   const [pageSize] = useQueryState('perPage', parseAsInteger.withDefault(10));
 
@@ -50,13 +40,8 @@ export default function CompaniesTable({
 
   const columns = useMemo(
     () =>
-      getColumns({
-        stateOptions,
-        tierOptions,
-        categoryOptions,
-        subCategoryGroupOptions
-      }) as ColumnDef<Company>[],
-    [stateOptions, tierOptions, categoryOptions, subCategoryGroupOptions]
+      getColumns({ stateOptions }) as ColumnDef<Company>[],
+    [stateOptions]
   );
 
   const { table } = useDataTable({
@@ -66,7 +51,7 @@ export default function CompaniesTable({
     shallow: false,
     debounceMs: 500,
     initialState: {
-      columnVisibility: { state: false, tier: false, category: false, subCategoryGroup: false, actions: true }
+      columnVisibility: { state: false, actions: true }
     }
   });
 

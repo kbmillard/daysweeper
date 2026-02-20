@@ -27,14 +27,8 @@ export default async function Page(props: pageProps) {
   const nameFilter = searchParamsCache.get('name');
   const companyFilter = searchParamsCache.get('company');
   const stateFilterRaw = searchParamsCache.get('state');
-  const tierFilterRaw = searchParamsCache.get('tier');
-  const categoryFilterRaw = searchParamsCache.get('category');
-  const subCategoryGroupFilterRaw = searchParamsCache.get('subCategoryGroup');
   const statusFilterRaw = searchParamsCache.get('status');
   const stateFilter = Array.isArray(stateFilterRaw) ? stateFilterRaw[0] : stateFilterRaw;
-  const tierFilter = Array.isArray(tierFilterRaw) ? tierFilterRaw[0] : tierFilterRaw;
-  const categoryFilter = Array.isArray(categoryFilterRaw) ? categoryFilterRaw[0] : categoryFilterRaw;
-  const subCategoryGroupFilter = Array.isArray(subCategoryGroupFilterRaw) ? subCategoryGroupFilterRaw[0] : subCategoryGroupFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const sort = searchParamsCache.get('sort');
 
@@ -61,21 +55,6 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  // Tier (Company.tier)
-  if (tierFilter) {
-    where.tier = { equals: tierFilter, mode: 'insensitive' as const };
-  }
-
-  // Category (Company.category)
-  if (categoryFilter) {
-    where.category = { equals: categoryFilter, mode: 'insensitive' as const };
-  }
-
-  // Sub category group (Company.subtypeGroup)
-  if (subCategoryGroupFilter) {
-    where.subtypeGroup = { equals: subCategoryGroupFilter, mode: 'insensitive' as const };
-  }
-
   // Status (APR Account, Contacted - meeting set, etc.)
   if (statusFilter) {
     where.status = { equals: statusFilter, mode: 'insensitive' as const };
@@ -90,9 +69,6 @@ export default async function Page(props: pageProps) {
       name: 'name',
       website: 'website',
       status: 'status',
-      tier: 'tier',
-      category: 'category',
-      subCategoryGroup: 'subtypeGroup',
       createdAt: 'createdAt',
       locations: 'createdAt' // locations is computed, fallback to createdAt
     };
@@ -103,7 +79,7 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  const [companies, total, locationStates, tiers, categories, subtypeGroups] = await Promise.all([
+  const [companies, total, locationStates] = await Promise.all([
     prisma.company.findMany({
       where,
       skip,
@@ -116,10 +92,6 @@ export default async function Page(props: pageProps) {
         status: true,
         createdAt: true,
         updatedAt: true,
-        subtype: true,
-        subtypeGroup: true,
-        tier: true,
-        category: true,
         Location: {
           take: 1,
           orderBy: { createdAt: 'desc' },
@@ -133,24 +105,6 @@ export default async function Page(props: pageProps) {
     prisma.company.count({ where }),
     prisma.location.findMany({
       select: { addressComponents: true }
-    }),
-    prisma.company.findMany({
-      where: { tier: { not: null } },
-      select: { tier: true },
-      distinct: ['tier'],
-      orderBy: { tier: 'asc' }
-    }),
-    prisma.company.findMany({
-      where: { category: { not: null } },
-      select: { category: true },
-      distinct: ['category'],
-      orderBy: { category: 'asc' }
-    }),
-    prisma.company.findMany({
-      where: { subtypeGroup: { not: null } },
-      select: { subtypeGroup: true },
-      distinct: ['subtypeGroup'],
-      orderBy: { subtypeGroup: 'asc' }
     })
   ]);
 
@@ -163,19 +117,6 @@ export default async function Page(props: pageProps) {
   )
     .sort()
     .map((value) => ({ label: value, value }));
-
-  const subCategoryGroupOptions = (subtypeGroups.map((c) => c.subtypeGroup).filter(Boolean) as string[]).map(
-    (value) => ({ label: value, value })
-  );
-
-  const tierOptions = (tiers.map((c) => c.tier).filter(Boolean) as string[]).map(
-    (value) => ({ label: value, value })
-  );
-
-  const categoryOptions = (categories
-    .map((c) => c.category)
-    .filter((v): v is string => v != null && v !== '' && v.toLowerCase() !== 'yes')
-  ).map((value) => ({ label: value, value }));
 
   return (
     <PageContainer
@@ -200,9 +141,6 @@ export default async function Page(props: pageProps) {
           data={companies}
           totalItems={total}
           stateOptions={stateOptions}
-          tierOptions={tierOptions}
-          categoryOptions={categoryOptions}
-          subCategoryGroupOptions={subCategoryGroupOptions}
         />
       </Suspense>
     </PageContainer>
