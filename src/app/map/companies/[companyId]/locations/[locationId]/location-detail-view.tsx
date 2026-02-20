@@ -4,6 +4,7 @@ import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
 import LocationEditableFields from '@/features/locations/location-editable-fields';
 import LocationMapCard from '@/features/locations/location-map-card';
+import { AddToLastLegButton } from '@/features/locations/add-to-lastleg-button';
 
 type LocationWithCompany = {
   id: string;
@@ -50,12 +51,19 @@ export default function LocationDetailView({ location }: Props) {
     <div className='space-y-6'>
       {/* Header Actions */}
       <div className='flex items-center justify-between'>
-        <Link href={`${BASE}/companies/${company.id}`}>
-          <Button variant='outline' size='sm'>
-            <IconArrowLeft className='mr-2 h-4 w-4' />
-            Back to Company
-          </Button>
-        </Link>
+        <div className='flex gap-2'>
+          <Link href={`${BASE}/companies/${company.id}`}>
+            <Button variant='outline' size='sm'>
+              <IconArrowLeft className='mr-2 h-4 w-4' />
+              Back to Company
+            </Button>
+          </Link>
+          <AddToLastLegButton
+            locationId={location.id}
+            addressRaw={location.addressRaw}
+            companyId={company.id}
+          />
+        </div>
         <Link href={`${BASE}/companies`}>
           <Button variant='ghost' size='sm'>
             All Companies

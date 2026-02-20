@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 /**
- * PATCH - Update location fields (addressRaw, externalId, addressConfidence,
- * addressComponents, latitude, longitude, addressNormalized)
+ * PATCH - Update location fields. Use the Apple (CLGeocoder) script or LastLeg
+ * to geocode addresses; run geocode:apple to populate coordinates.
  */
 export async function PATCH(
   req: Request,
@@ -45,10 +45,9 @@ export async function PATCH(
     }
 
     if (addressNormalized !== undefined) {
-      data.addressNormalized =
-        typeof addressNormalized === 'string' && addressNormalized.trim()
-          ? addressNormalized.trim()
-          : null;
+      const v = typeof addressNormalized === 'string' ? addressNormalized.trim() : '';
+      if (v) data.addressNormalized = v;
+      else if (addressNormalized === null) data.addressNormalized = null;
     }
 
     if (externalId !== undefined) {
@@ -76,7 +75,15 @@ export async function PATCH(
           { status: 400 }
         );
       }
-      data.addressComponents = addressComponents;
+      // Only overwrite geocoded components if body has meaningful data
+      const ac = addressComponents as Record<string, string> | null;
+      const hasValues =
+        ac &&
+        typeof ac === 'object' &&
+        [ac.city, ac.state, ac.postal_code, ac.country].some((v) => v && String(v).trim());
+      if (hasValues || addressComponents === null) {
+        data.addressComponents = addressComponents;
+      }
     }
 
     if (latitude !== undefined) {

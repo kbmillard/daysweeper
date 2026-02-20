@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useCallback, useEffect, useState } from 'react';
 import { IconMapPin, IconRefresh } from '@tabler/icons-react';
 import { Button } from '@/components/ui/button';
+import { buildLastLegOpenUrl } from '@/lib/lastleg-url';
 
 type Stats = { total: number; withGeocode: number; missing: number } | null;
 
@@ -61,6 +62,25 @@ export function GeocodingView() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Open LastLeg (iOS)</CardTitle>
+          <CardDescription>
+            Open the LastLeg app on your iPhone to geocode locations with Apple CLGeocoder.
+            LastLeg fetches locations needing geocode and saves results back to this app.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Button
+            variant="default"
+            size="lg"
+            onClick={() => { window.location.href = buildLastLegOpenUrl(); }}
+          >
+            Open LastLeg
+          </Button>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>

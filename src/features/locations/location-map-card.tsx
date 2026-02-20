@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { IconMapPin } from '@tabler/icons-react';
 import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 
-const MAPBOX_STYLE = 'mapbox://styles/mapbox/light-v11';
+const MAPBOX_STYLE = 'mapbox://styles/mapbox/satellite-streets-v12';
 const DEFAULT_ZOOM = 14;
 
 type Props = {

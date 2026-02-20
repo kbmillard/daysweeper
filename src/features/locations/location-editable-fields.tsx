@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -59,6 +59,19 @@ export default function LocationEditableFields({ location, company }: Props) {
     latitude: location.latitude != null ? String(location.latitude) : '',
     longitude: location.longitude != null ? String(location.longitude) : ''
   });
+
+  useEffect(() => {
+    setLocForm({
+      addressRaw: location.addressRaw ?? '',
+      addressNormalized: location.addressNormalized ?? '',
+      city: (location.addressComponents as AddressComponents)?.city ?? '',
+      state: (location.addressComponents as AddressComponents)?.state ?? '',
+      postal_code: (location.addressComponents as AddressComponents)?.postal_code ?? '',
+      country: (location.addressComponents as AddressComponents)?.country ?? '',
+      latitude: location.latitude != null ? String(location.latitude) : '',
+      longitude: location.longitude != null ? String(location.longitude) : ''
+    });
+  }, [location.addressRaw, location.addressNormalized, location.addressComponents, location.latitude, location.longitude]);
 
   const [compForm, setCompForm] = useState({
     name: company.name ?? '',
