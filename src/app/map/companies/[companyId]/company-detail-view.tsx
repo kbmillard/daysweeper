@@ -517,12 +517,6 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                             )}
                           </div>
                         )}
-                        {loc.addressConfidence != null && (
-                          <div>
-                            <span className='text-muted-foreground font-medium'>Address confidence</span>
-                            <p>{Math.round(Number(loc.addressConfidence) * 100)}%</p>
-                          </div>
-                        )}
                         {(loc.latitude != null || loc.longitude != null) && (
                           <div className='grid grid-cols-2 gap-x-4'>
                             {loc.latitude != null && (
@@ -535,28 +529,6 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                               <div>
                                 <span className='text-muted-foreground font-medium'>Longitude</span>
                                 <p>{String(loc.longitude)}</p>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                        {loc.externalId && (
-                          <div>
-                            <span className='text-muted-foreground font-medium'>External ID</span>
-                            <p className='font-mono text-xs'>{loc.externalId}</p>
-                          </div>
-                        )}
-                        {(loc.createdAt || loc.updatedAt) && (
-                          <div className='grid grid-cols-2 gap-x-4 text-muted-foreground'>
-                            {loc.createdAt && (
-                              <div>
-                                <span className='font-medium'>Created</span>
-                                <p className='text-xs'>{new Date(loc.createdAt).toLocaleString()}</p>
-                              </div>
-                            )}
-                            {loc.updatedAt && (
-                              <div>
-                                <span className='font-medium'>Updated</span>
-                                <p className='text-xs'>{new Date(loc.updatedAt).toLocaleString()}</p>
                               </div>
                             )}
                           </div>
