@@ -162,24 +162,6 @@ export function getColumns(options?: {
       enableColumnFilter: false
     },
     {
-      id: 'createdAt',
-      accessorKey: 'createdAt',
-      enableSorting: true,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Created' />
-      ),
-      cell: ({ cell }) => {
-        const date = cell.getValue<Date>();
-        return (
-          <span className='text-sm text-muted-foreground'>
-            {new Date(date).toLocaleDateString()}
-          </span>
-        );
-      },
-      enableColumnFilter: false
-    },
-    {
       id: 'actions',
       enableSorting: false,
       enableHiding: false,
