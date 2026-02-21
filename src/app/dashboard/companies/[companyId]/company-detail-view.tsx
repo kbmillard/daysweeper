@@ -8,7 +8,8 @@ import { AddChildCompanySearch } from './add-child-company-search';
 import { LinkExistingCompanyAsLocation } from '@/features/companies/link-existing-company-as-location';
 import { RemoveAsChildButton } from '@/features/companies/remove-as-child-button';
 import { DeleteLocationButton } from '@/features/locations/delete-location-button';
-import { AddToLastLegButton } from '@/features/locations/add-to-lastleg-button';
+import LocationEditableFields from '@/features/locations/location-editable-fields';
+import CompanyLocationsMap from '@/features/companies/company-locations-map';
 import { DeleteCompanyButton } from './delete-company-button';
 
 type CompanyMetadata = {
@@ -194,12 +195,6 @@ function CompanyCard({
 export default function CompanyDetailView({ company, baseUrl }: Props) {
   const meta = (company.metadata ?? null) as CompanyMetadata | null;
   const primaryLocation = company.Location?.[0];
-  const addressComponents = (primaryLocation?.addressComponents || {}) as {
-    city?: string;
-    state?: string;
-    postal_code?: string;
-    country?: string;
-  };
 
   return (
     <div className='space-y-6'>
@@ -223,6 +218,8 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
           status: company.status ?? null
         }}
       />
+
+      <CompanyLocationsMap locations={company.Location ?? []} companyName={company.name} />
 
       {/* Company profile (summary, key facts, business activities, role, local presence, markdown) */}
       {meta?.profile && (
@@ -304,77 +301,42 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         </Card>
       )}
 
-      {primaryLocation && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Primary address</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className='grid gap-4 md:grid-cols-2'>
-              <div>
-                <label className='text-muted-foreground text-sm font-medium'>
-                  Address
-                </label>
-                <p className='mt-1 text-base'>
-                  {primaryLocation.addressRaw || '—'}
-                </p>
-              </div>
-              <div>
-                <label className='text-muted-foreground text-sm font-medium'>
-                  City
-                </label>
-                <p className='mt-1 text-base'>
-                  {addressComponents.city ?? '—'}
-                </p>
-              </div>
-              <div>
-                <label className='text-muted-foreground text-sm font-medium'>
-                  State
-                </label>
-                <p className='mt-1 text-base'>
-                  {addressComponents.state ?? '—'}
-                </p>
-              </div>
-              <div>
-                <label className='text-muted-foreground text-sm font-medium'>
-                  Postal Code
-                </label>
-                <p className='mt-1 text-base'>
-                  {addressComponents.postal_code ?? '—'}
-                </p>
-              </div>
-              <div>
-                <label className='text-muted-foreground text-sm font-medium'>
-                  Country
-                </label>
-                <p className='mt-1 text-base'>
-                  {addressComponents.country ?? '—'}
-                </p>
-              </div>
-            </div>
-            <div className='mt-4 flex flex-wrap items-center gap-2'>
-              {primaryLocation.id && (
-                <Link
-                  href={`/dashboard/companies/${company.id}/locations/${primaryLocation.id}`}
-                >
-                  <Button variant='outline' size='sm'>
-                    Edit location
-                  </Button>
-                </Link>
-              )}
-              {primaryLocation?.id && primaryLocation.addressRaw?.trim() && (
-                <AddToLastLegButton
-                  locationId={primaryLocation.id}
-                  addressRaw={primaryLocation.addressRaw}
-                  companyId={company.id}
-                  baseUrl={baseUrl}
-                  latitude={primaryLocation.latitude != null ? Number(primaryLocation.latitude) : null}
-                  longitude={primaryLocation.longitude != null ? Number(primaryLocation.longitude) : null}
-                />
-              )}
-            </div>
-          </CardContent>
-        </Card>
+      {primaryLocation && primaryLocation.id && (
+        <div className='space-y-4'>
+          <div className='flex items-center justify-between gap-2'>
+            <h2 className='text-xl font-semibold'>Primary address</h2>
+            <DeleteLocationButton
+              locationId={primaryLocation.id}
+              companyId={company.id}
+              basePath='dashboard'
+              refreshOnly
+              variant='outline'
+              size='sm'
+              buttonText='Delete'
+            />
+          </div>
+          <LocationEditableFields
+            location={{
+              id: primaryLocation.id,
+              externalId: primaryLocation.externalId ?? null,
+              companyId: company.id,
+              addressRaw: primaryLocation.addressRaw,
+              addressNormalized: primaryLocation.addressNormalized ?? null,
+              addressComponents: (primaryLocation.addressComponents || null) as { city?: string; state?: string; postal_code?: string; country?: string } | null,
+              addressConfidence: primaryLocation.addressConfidence != null ? Number(primaryLocation.addressConfidence) : null,
+              latitude: primaryLocation.latitude != null ? Number(primaryLocation.latitude) : null,
+              longitude: primaryLocation.longitude != null ? Number(primaryLocation.longitude) : null
+            }}
+            company={{
+              id: company.id,
+              name: company.name,
+              website: company.website,
+              phone: company.phone,
+              email: company.email ?? null
+            }}
+            locationOnly
+          />
+        </div>
       )}
 
       {/* Parent Company – only show when there is a parent and it's different from this company */}
@@ -402,11 +364,11 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         </div>
       )}
 
-      {/* Locations – add other locations for this company */}
+      {/* Other locations – excludes primary, horizontal clickable rows */}
       <div className='space-y-4'>
         <div className='flex items-center justify-between flex-wrap gap-2'>
           <h2 className='text-xl font-semibold'>
-            Locations ({company.Location?.length ?? 0})
+            Other locations ({Math.max(0, (company.Location?.length ?? 0) - 1)})
           </h2>
           <Link href={`/dashboard/companies/${company.id}/locations/new`}>
             <Button size='sm'>
@@ -415,165 +377,47 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
             </Button>
           </Link>
         </div>
-        {company.Location && company.Location.length > 0 ? (
-          <ul className='space-y-4'>
-            {company.Location.map((loc, idx) => {
-              const phone =
-                company.phone ||
-                (company.metadata as CompanyMetadata | null)?.contactInfo?.phone ||
-                null;
-              const email =
-                company.email ||
-                (company.metadata as CompanyMetadata | null)?.contactInfo?.email ||
-                null;
-              const ac = (loc.addressComponents || {}) as {
-                city?: string;
-                state?: string;
-                postal_code?: string;
-                country?: string;
-              };
-              return (
-                <li key={loc.id ?? idx}>
-                  <Card>
-                    <CardContent className='pt-4 space-y-3'>
-                      <div className='grid gap-2 text-sm'>
-                        <div>
-                          <span className='text-muted-foreground font-medium'>Company name</span>
-                          <p className='font-semibold'>{company.name}</p>
-                        </div>
-                        {company.website && (
-                          <div>
-                            <span className='text-muted-foreground font-medium'>Website</span>
-                            <p>
-                              <a
-                                href={company.website}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-primary hover:underline'
-                              >
-                                {company.website.replace(/^https?:\/\//, '')}
-                              </a>
-                            </p>
-                          </div>
-                        )}
-                        {email && (
-                          <div>
-                            <span className='text-muted-foreground font-medium'>Email</span>
-                            <p>{email}</p>
-                          </div>
-                        )}
-                        {phone && (
-                          <div>
-                            <span className='text-muted-foreground font-medium'>Phone</span>
-                            <p>{phone}</p>
-                          </div>
-                        )}
-                        <div>
-                          <span className='text-muted-foreground font-medium'>Address</span>
-                          <p>
-                            {loc.id ? (
-                              <Link
-                                href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
-                                className='text-primary hover:underline'
-                              >
-                                {loc.addressRaw || 'Address not specified'}
-                              </Link>
-                            ) : (
-                              <span className='text-muted-foreground'>
-                                {loc.addressRaw || 'Address not specified'}
-                              </span>
-                            )}
-                          </p>
-                        </div>
-                        {loc.addressNormalized && loc.addressNormalized !== loc.addressRaw && (
-                          <div>
-                            <span className='text-muted-foreground font-medium'>Normalized address</span>
-                            <p className='text-muted-foreground'>{loc.addressNormalized}</p>
-                          </div>
-                        )}
-                        {(ac.city || ac.state || ac.postal_code || ac.country) && (
-                          <div className='grid grid-cols-2 gap-x-4 gap-y-1'>
-                            {ac.city && (
-                              <div>
-                                <span className='text-muted-foreground font-medium'>City</span>
-                                <p>{ac.city}</p>
-                              </div>
-                            )}
-                            {ac.state && (
-                              <div>
-                                <span className='text-muted-foreground font-medium'>State</span>
-                                <p>{ac.state}</p>
-                              </div>
-                            )}
-                            {ac.postal_code && (
-                              <div>
-                                <span className='text-muted-foreground font-medium'>Postal code</span>
-                                <p>{ac.postal_code}</p>
-                              </div>
-                            )}
-                            {ac.country && (
-                              <div>
-                                <span className='text-muted-foreground font-medium'>Country</span>
-                                <p>{ac.country}</p>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                        {(loc.latitude != null || loc.longitude != null) && (
-                          <div className='grid grid-cols-2 gap-x-4'>
-                            {loc.latitude != null && (
-                              <div>
-                                <span className='text-muted-foreground font-medium'>Latitude</span>
-                                <p>{String(loc.latitude)}</p>
-                              </div>
-                            )}
-                            {loc.longitude != null && (
-                              <div>
-                                <span className='text-muted-foreground font-medium'>Longitude</span>
-                                <p>{String(loc.longitude)}</p>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                      {loc.id && (
-                        <div className='flex items-center gap-2 flex-wrap pt-2 border-t'>
-                          <Link href={`/dashboard/companies/${company.id}/locations/${loc.id}`}>
-                            <Button variant='ghost' size='sm'>
-                              View
-                            </Button>
-                          </Link>
-                          {loc.addressRaw?.trim() && (
-                            <AddToLastLegButton
-                              locationId={loc.id}
-                              addressRaw={loc.addressRaw}
-                              companyId={company.id}
-                              baseUrl={baseUrl}
-                              latitude={loc.latitude != null ? Number(loc.latitude) : null}
-                              longitude={loc.longitude != null ? Number(loc.longitude) : null}
-                            />
-                          )}
-                          <DeleteLocationButton
-                            locationId={loc.id}
-                            companyId={company.id}
-                            basePath='dashboard'
-                            refreshOnly
-                            variant='outline'
-                            buttonText='Remove as location'
-                          />
-                        </div>
-                      )}
-                    </CardContent>
-                  </Card>
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <p className='text-muted-foreground text-sm'>
-            No locations yet. Add one to get started.
-          </p>
-        )}
+        {(() => {
+          const otherLocations = (company.Location ?? []).filter(loc => loc.id !== primaryLocation?.id);
+          return otherLocations.length > 0 ? (
+            <div className='rounded-md border'>
+              {otherLocations.map((loc, idx) => (
+                <div
+                  key={loc.id ?? idx}
+                  className={`flex items-center justify-between gap-2 px-4 py-3 text-sm transition-colors hover:bg-accent/50 ${idx > 0 ? 'border-t' : ''}`}
+                >
+                  {loc.id ? (
+                    <Link
+                      href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
+                      className='flex-1 truncate text-primary hover:underline'
+                    >
+                      {loc.addressRaw || 'Address not specified'}
+                    </Link>
+                  ) : (
+                    <span className='flex-1 truncate text-muted-foreground'>
+                      {loc.addressRaw || 'Address not specified'}
+                    </span>
+                  )}
+                  {loc.id && (
+                    <DeleteLocationButton
+                      locationId={loc.id}
+                      companyId={company.id}
+                      basePath='dashboard'
+                      refreshOnly
+                      variant='outline'
+                      size='sm'
+                      buttonText='Delete'
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className='text-muted-foreground text-sm'>
+              No other locations. Add one to get started.
+            </p>
+          );
+        })()}
         <div className='pt-2 border-t'>
           <p className='text-sm font-medium mb-2'>Link existing company as location</p>
           <LinkExistingCompanyAsLocation targetCompanyId={company.id} />
@@ -615,6 +459,7 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                   <RemoveAsChildButton
                     childCompanyId={child.id}
                     childCompanyName={child.name}
+                    buttonText='Remove'
                   />
                 </div>
               </li>

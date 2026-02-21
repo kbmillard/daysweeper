@@ -11,13 +11,15 @@ type Props = {
   childCompanyName: string;
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
   size?: 'default' | 'sm' | 'lg';
+  buttonText?: string;
 };
 
 export function RemoveAsChildButton({
   childCompanyId,
   childCompanyName,
   variant = 'outline',
-  size = 'sm'
+  size = 'sm',
+  buttonText = 'Remove as child'
 }: Props) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -57,7 +59,7 @@ export function RemoveAsChildButton({
         description={`This will unlink "${childCompanyName}" from this parent. The company will remain in the system but no longer appear as a child.`}
       />
       <Button variant={variant} size={size} onClick={() => setOpen(true)}>
-        Remove as child
+        {buttonText}
       </Button>
     </>
   );

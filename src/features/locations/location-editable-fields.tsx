@@ -43,9 +43,11 @@ type CompanyEditableData = {
 type Props = {
   location: LocationEditableData;
   company: CompanyEditableData;
+  /** When true, only show Location Details card (hide Company card). Use for primary address on company page. */
+  locationOnly?: boolean;
 };
 
-export default function LocationEditableFields({ location, company }: Props) {
+export default function LocationEditableFields({ location, company, locationOnly = false }: Props) {
   const router = useRouter();
   const [savingLocation, setSavingLocation] = useState(false);
   const [savingCompany, setSavingCompany] = useState(false);
@@ -174,7 +176,7 @@ export default function LocationEditableFields({ location, company }: Props) {
   };
 
   return (
-    <div className='grid gap-6 md:grid-cols-2'>
+    <div className={locationOnly ? '' : 'grid gap-6 md:grid-cols-2'}>
       {/* Location Details */}
       <Card>
         <CardHeader className='flex flex-row items-center justify-between space-y-0'>
@@ -324,7 +326,7 @@ export default function LocationEditableFields({ location, company }: Props) {
         </CardContent>
       </Card>
 
-      {/* Company */}
+      {!locationOnly && (
       <Card>
         <CardHeader className='flex flex-row items-center justify-between space-y-0'>
           <div>
@@ -382,6 +384,7 @@ export default function LocationEditableFields({ location, company }: Props) {
           </div>
         </CardContent>
       </Card>
+      )}
     </div>
   );
 }

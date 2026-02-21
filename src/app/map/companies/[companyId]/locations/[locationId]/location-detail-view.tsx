@@ -4,7 +4,6 @@ import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
 import LocationEditableFields from '@/features/locations/location-editable-fields';
 import LocationMapCard from '@/features/locations/location-map-card';
-import { AddToLastLegButton } from '@/features/locations/add-to-lastleg-button';
 import { DeleteLocationButton } from '@/features/locations/delete-location-button';
 
 type LocationWithCompany = {
@@ -60,14 +59,6 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
               Back to Company
             </Button>
           </Link>
-          <AddToLastLegButton
-            locationId={location.id}
-            addressRaw={location.addressRaw}
-            companyId={company.id}
-            baseUrl={baseUrl}
-            latitude={lat}
-            longitude={lng}
-          />
           <DeleteLocationButton
             locationId={location.id}
             companyId={company.id}
