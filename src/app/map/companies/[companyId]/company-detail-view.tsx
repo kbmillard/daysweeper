@@ -8,7 +8,6 @@ import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
 import { AddChildCompanySearch } from '@/app/dashboard/companies/[companyId]/add-child-company-search';
 import { RemoveAsChildButton } from '@/features/companies/remove-as-child-button';
-import LocationMapCard from '@/features/locations/location-map-card';
 import { PrimaryAddressSection } from '@/features/locations/primary-address-section';
 import CompanyLocationsMap from '@/features/companies/company-locations-map';
 import { filterLegacyKeyFacts } from '@/lib/filter-legacy-metadata';
@@ -302,14 +301,6 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
       )}
 
       <CompanyLocationsMap locations={company.Location ?? []} companyName={company.name} />
-
-      {primaryLocation && (
-        <LocationMapCard
-          latitude={primaryLocation.latitude != null ? Number(primaryLocation.latitude) : null}
-          longitude={primaryLocation.longitude != null ? Number(primaryLocation.longitude) : null}
-          address={primaryLocation.addressRaw}
-        />
-      )}
 
       {primaryLocation && primaryLocation.id && (
         <PrimaryAddressSection
