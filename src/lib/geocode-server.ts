@@ -84,7 +84,8 @@ async function geocodeWithMapbox(address: string): Promise<GeocodeResult | null>
   const token =
     process.env.MAPBOX_ACCESS_TOKEN ||
     process.env.MAPBOX_SECRET_TOKEN ||
-    process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+    process.env.NEXT_PUBLIC_MAPBOX_TOKEN ||
+    process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
   if (!token || !address.trim()) return null;
 
   const normalized = normalizeAddressForGeocode(address);
@@ -132,9 +133,60 @@ async function geocodeWithMapbox(address: string): Promise<GeocodeResult | null>
   };
 }
 
+/** Google address_components helper. */
+function parseGoogleAddressComponents(
+  components: Array<{ long_name: string; short_name: string; types: string[] }> | undefined
+): ParsedAddressComponents | undefined {
+  if (!Array.isArray(components) || components.length === 0) return undefined;
+  const get = (type: string) => components.find((c) => c.types?.includes(type))?.long_name;
+  const city = get('locality') ?? get('sublocality') ?? get('administrative_area_level_2');
+  const state = get('administrative_area_level_1');
+  const postal_code = get('postal_code');
+  const country = get('country');
+  if (!city && !state && !postal_code && !country) return undefined;
+  return {
+    ...(city && { city }),
+    ...(state && { state }),
+    ...(postal_code && { postal_code }),
+    ...(country && { country })
+  };
+}
+
+/** Google Geocoding API fallback (requires GOOGLE_MAPS_API_KEY). */
+async function geocodeWithGoogle(address: string): Promise<GeocodeResult | null> {
+  const key = process.env.GOOGLE_MAPS_API_KEY;
+  if (!key?.trim()) return null;
+
+  const url = new URL('https://maps.googleapis.com/maps/api/geocode/json');
+  url.searchParams.set('address', address);
+  url.searchParams.set('key', key);
+
+  const res = await fetch(url.toString());
+  if (!res.ok) return null;
+
+  const json = (await res.json()) as { status: string; results?: Array<{
+    geometry?: { location?: { lat: number; lng: number } };
+    formatted_address?: string;
+    address_components?: Array<{ long_name: string; short_name: string; types: string[] }>;
+  }> };
+  if (json.status !== 'OK' || !json.results?.length) return null;
+
+  const r = json.results[0];
+  const loc = r.geometry?.location;
+  if (!loc || typeof loc.lat !== 'number' || typeof loc.lng !== 'number') return null;
+
+  const addressComponents = parseGoogleAddressComponents(r.address_components);
+  return {
+    latitude: loc.lat,
+    longitude: loc.lng,
+    ...(r.formatted_address && { addressNormalized: r.formatted_address }),
+    ...(addressComponents && { addressComponents })
+  };
+}
+
 /**
- * Geocode an address on the server. Nominatim first, then Mapbox.
- * Returns null if geocoding fails for both.
+ * Geocode an address on the server. Nominatim first, then Mapbox, then Google.
+ * Returns null if geocoding fails for all.
  */
 export async function geocodeAddress(address: string): Promise<GeocodeResult | null> {
   const trimmed = address?.trim();
@@ -145,6 +197,9 @@ export async function geocodeAddress(address: string): Promise<GeocodeResult | n
 
   const mapbox = await geocodeWithMapbox(trimmed);
   if (mapbox) return mapbox;
+
+  const google = await geocodeWithGoogle(trimmed);
+  if (google) return google;
 
   return null;
 }
