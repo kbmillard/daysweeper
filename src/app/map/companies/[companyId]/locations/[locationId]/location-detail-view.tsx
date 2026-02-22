@@ -15,6 +15,7 @@ type LocationWithCompany = {
   addressComponents: any;
   latitude: any;
   longitude: any;
+  locationName?: string | null;
   phone?: string | null;
   email?: string | null;
   website?: string | null;
@@ -85,6 +86,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           addressComponents: location.addressComponents,
           latitude: lat,
           longitude: lng,
+          locationName: location.locationName,
           phone: location.phone,
           email: location.email,
           website: location.website

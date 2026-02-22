@@ -134,6 +134,7 @@ model Location {
   geom              Unsupported("geometry")?
   legacyJson        Json?
   metadata          Json?
+  locationName      String?
   phone             String?
   email             String?
   website           String?

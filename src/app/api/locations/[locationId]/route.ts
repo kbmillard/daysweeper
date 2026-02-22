@@ -20,6 +20,7 @@ export async function PATCH(
       addressComponents,
       latitude,
       longitude,
+      locationName,
       phone,
       email,
       website
@@ -99,6 +100,9 @@ export async function PATCH(
       data.longitude = n;
     }
 
+    if (locationName !== undefined) {
+      data.locationName = typeof locationName === 'string' && locationName.trim() ? locationName.trim() : null;
+    }
     if (phone !== undefined) {
       data.phone = typeof phone === 'string' && phone.trim() ? phone.trim() : null;
     }

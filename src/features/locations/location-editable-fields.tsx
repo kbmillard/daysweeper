@@ -29,6 +29,7 @@ type LocationEditableData = {
   addressComponents: AddressComponents;
   latitude: number | null;
   longitude: number | null;
+  locationName?: string | null;
   phone?: string | null;
   email?: string | null;
   website?: string | null;
@@ -89,6 +90,7 @@ export default function LocationEditableFields({ location, company, locationOnly
   });
 
   const [locContactForm, setLocContactForm] = useState({
+    locationName: location.locationName ?? '',
     phone: location.phone ?? '',
     email: location.email ?? '',
     website: location.website ?? ''
@@ -97,12 +99,13 @@ export default function LocationEditableFields({ location, company, locationOnly
   useEffect(() => {
     if (editableLocationContact) {
       setLocContactForm({
+        locationName: location.locationName ?? '',
         phone: location.phone ?? '',
         email: location.email ?? '',
         website: location.website ?? ''
       });
     }
-  }, [editableLocationContact, location.phone, location.email, location.website]);
+  }, [editableLocationContact, location.locationName, location.phone, location.email, location.website]);
 
   const handleLocChange = (field: keyof typeof locForm, value: string) => {
     setLocForm((prev) => ({ ...prev, [field]: value }));
@@ -123,6 +126,7 @@ export default function LocationEditableFields({ location, company, locationOnly
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          locationName: locContactForm.locationName.trim() || null,
           phone: locContactForm.phone.trim() || null,
           email: locContactForm.email.trim() || null,
           website: locContactForm.website.trim() || null
@@ -398,6 +402,16 @@ export default function LocationEditableFields({ location, company, locationOnly
         <CardContent className='space-y-4'>
           <div className='text-muted-foreground text-sm'>
             Company: {company.name}
+          </div>
+          <div>
+            <Label htmlFor='locName'>Location name</Label>
+            <Input
+              id='locName'
+              value={locContactForm.locationName}
+              onChange={(e) => handleLocContactChange('locationName', e.target.value)}
+              placeholder='Location name'
+              className='mt-1'
+            />
           </div>
           <div>
             <Label htmlFor='locPhone'>Phone</Label>
