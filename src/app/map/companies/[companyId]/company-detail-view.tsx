@@ -7,7 +7,9 @@ import Link from 'next/link';
 import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
 import { AddChildCompanySearch } from '@/app/dashboard/companies/[companyId]/add-child-company-search';
+import { LinkExistingCompanyAsLocation } from '@/features/companies/link-existing-company-as-location';
 import { RemoveAsChildButton } from '@/features/companies/remove-as-child-button';
+import { DeleteLocationButton } from '@/features/locations/delete-location-button';
 import { PrimaryAddressSection } from '@/features/locations/primary-address-section';
 import CompanyLocationsMap from '@/features/companies/company-locations-map';
 import { filterLegacyKeyFacts } from '@/lib/filter-legacy-metadata';
@@ -301,6 +303,63 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
       )}
 
       <CompanyLocationsMap locations={company.Location ?? []} companyName={company.name} />
+
+      {/* Locations list – all addresses for this company */}
+      <div className='space-y-4'>
+        <div className='flex items-center justify-between flex-wrap gap-2'>
+          <h2 className='text-xl font-semibold'>
+            Locations ({company.Location?.length ?? 0})
+          </h2>
+          <Link href={`/map/companies/${company.id}/locations/new`}>
+            <Button size='sm'>
+              <IconPlus className='mr-2 h-4 w-4' />
+              Add location
+            </Button>
+          </Link>
+        </div>
+        {company.Location && company.Location.length > 0 ? (
+          <div className='rounded-md border'>
+            {company.Location.map((loc, idx) => (
+              <div
+                key={loc.id ?? idx}
+                className={`flex items-center justify-between gap-2 px-4 py-3 text-sm transition-colors hover:bg-accent/50 ${idx > 0 ? 'border-t' : ''}`}
+              >
+                {loc.id ? (
+                  <Link
+                    href={`/map/companies/${company.id}/locations/${loc.id}`}
+                    className='flex-1 truncate text-primary hover:underline'
+                  >
+                    {loc.addressRaw || 'Address not specified'}
+                  </Link>
+                ) : (
+                  <span className='flex-1 truncate text-muted-foreground'>
+                    {loc.addressRaw || 'Address not specified'}
+                  </span>
+                )}
+                {loc.id && (
+                  <DeleteLocationButton
+                    locationId={loc.id}
+                    companyId={company.id}
+                    basePath='map'
+                    refreshOnly
+                    variant='outline'
+                    size='sm'
+                    buttonText='Delete'
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className='text-muted-foreground text-sm'>
+            No locations yet. Add one to get started.
+          </p>
+        )}
+        <div className='pt-2 border-t'>
+          <p className='text-sm font-medium mb-2'>Link existing company as location</p>
+          <LinkExistingCompanyAsLocation targetCompanyId={company.id} />
+        </div>
+      </div>
 
       {primaryLocation && primaryLocation.id && (
         <PrimaryAddressSection
