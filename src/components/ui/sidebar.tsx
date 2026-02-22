@@ -81,14 +81,8 @@ function SidebarProvider({
         _setOpen(openState);
       }
 
-      // Cookie for immediate persistence across navigations.
+      // This sets the cookie to keep the sidebar state.
       document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
-      // Persist to DB (fire-and-forget).
-      void fetch('/api/user/preferences', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ layout: { sidebarOpen: openState } })
-      });
     },
     [setOpenProp, open]
   );
