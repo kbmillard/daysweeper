@@ -69,7 +69,6 @@ export default async function Page(props: PageProps) {
 
   return (
     <PageContainer
-      scrollable={false}
       pageTitle={location.addressRaw}
       pageDescription={`Location for ${location.Company.name}`}
     >
