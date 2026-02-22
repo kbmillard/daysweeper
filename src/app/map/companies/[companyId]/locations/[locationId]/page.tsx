@@ -30,9 +30,7 @@ export default async function Page(props: PageProps) {
   const { companyId, locationId } = params;
   const baseUrl = await getBaseUrl();
 
-  let location;
-  try {
-    location = await prisma.location.findUnique({
+  const location = await prisma.location.findUnique({
     where: { id: locationId },
     select: {
       id: true,
@@ -43,9 +41,6 @@ export default async function Page(props: PageProps) {
       addressComponents: true,
       latitude: true,
       longitude: true,
-      phone: true,
-      email: true,
-      website: true,
       legacyJson: true,
       metadata: true,
       createdAt: true,
@@ -67,9 +62,6 @@ export default async function Page(props: PageProps) {
       }
     }
   });
-  } catch {
-    notFound();
-  }
 
   if (!location || location.companyId !== companyId) {
     notFound();
