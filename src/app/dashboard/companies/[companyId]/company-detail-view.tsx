@@ -45,6 +45,7 @@ type CompanyData = {
     externalId?: string | null;
     addressRaw: string;
     addressNormalized?: string | null;
+    locationName?: string | null;
     addressComponents?: unknown;
     latitude?: number | null | unknown;
     longitude?: number | null | unknown;
@@ -329,12 +330,20 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                 {loc.id ? (
                   <Link
                     href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
-                    className='flex-1 truncate text-primary hover:underline'
+                    className='flex-1 min-w-0 flex flex-col gap-0.5'
                   >
-                    {loc.addressRaw || 'Address not specified'}
+                    {loc.locationName && (
+                      <span className='font-medium text-primary hover:underline truncate'>
+                        {loc.locationName}
+                      </span>
+                    )}
+                    <span className={`truncate ${loc.locationName ? 'text-muted-foreground text-xs' : 'text-primary hover:underline'}`}>
+                      {loc.addressRaw || 'Address not specified'}
+                    </span>
                   </Link>
                 ) : (
                   <span className='flex-1 truncate text-muted-foreground'>
+                    {loc.locationName && `${loc.locationName} – `}
                     {loc.addressRaw || 'Address not specified'}
                   </span>
                 )}

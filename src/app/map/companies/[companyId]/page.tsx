@@ -46,6 +46,7 @@ export default async function Page(props: PageProps) {
           externalId: true,
           addressRaw: true,
           addressNormalized: true,
+          locationName: true,
           addressComponents: true,
           latitude: true,
           longitude: true,

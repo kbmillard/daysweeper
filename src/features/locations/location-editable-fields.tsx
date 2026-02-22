@@ -57,6 +57,7 @@ export default function LocationEditableFields({ location, company, locationOnly
   const [savingLocation, setSavingLocation] = useState(false);
   const [savingLocationContact, setSavingLocationContact] = useState(false);
   const [savingCompany, setSavingCompany] = useState(false);
+  const [autofilling, setAutofilling] = useState(false);
 
   const [locForm, setLocForm] = useState({
     addressRaw: location.addressRaw ?? '',
@@ -117,6 +118,43 @@ export default function LocationEditableFields({ location, company, locationOnly
 
   const handleLocContactChange = (field: keyof typeof locContactForm, value: string) => {
     setLocContactForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleAutofillAddress = async () => {
+    const addr = locForm.addressRaw.trim();
+    if (!addr) {
+      toast.error('Enter an address first');
+      return;
+    }
+    setAutofilling(true);
+    try {
+      const res = await fetch('/api/geocode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ address: addr })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? 'Could not geocode address');
+        return;
+      }
+      const ac = data.addressComponents ?? {};
+      setLocForm((prev) => ({
+        ...prev,
+        city: ac.city ?? prev.city,
+        state: ac.state ?? prev.state,
+        postal_code: ac.postal_code ?? prev.postal_code,
+        country: ac.country ?? prev.country,
+        ...(data.addressNormalized && { addressNormalized: data.addressNormalized }),
+        ...(data.latitude != null && { latitude: String(data.latitude) }),
+        ...(data.longitude != null && { longitude: String(data.longitude) })
+      }));
+      toast.success('City, state, ZIP, country filled from address');
+    } catch {
+      toast.error('Could not autofill address');
+    } finally {
+      setAutofilling(false);
+    }
   };
 
   const handleSaveLocationContact = async () => {
@@ -252,7 +290,18 @@ export default function LocationEditableFields({ location, company, locationOnly
         </CardHeader>
         <CardContent className='space-y-4'>
           <div>
-            <Label htmlFor='addressRaw'>Address</Label>
+            <div className='flex items-center justify-between gap-2'>
+              <Label htmlFor='addressRaw'>Address</Label>
+              <Button
+                type='button'
+                variant='ghost'
+                size='sm'
+                onClick={handleAutofillAddress}
+                disabled={autofilling || !locForm.addressRaw.trim()}
+              >
+                {autofilling ? 'Filling…' : 'Autofill city, state, ZIP'}
+              </Button>
+            </div>
             <Input
               id='addressRaw'
               value={locForm.addressRaw}
