@@ -12,12 +12,15 @@ import { IconTrendingUp } from '@tabler/icons-react';
 import React from 'react';
 import { prisma } from '@/lib/prisma';
 
+const hasLocation = { Location: { some: {} } };
+
 async function getCompanyStats() {
   const [totalCompanies, totalLocations, companiesThisMonth] = await Promise.all([
-    prisma.company.count(),
+    prisma.company.count({ where: hasLocation }),
     prisma.location.count(),
     prisma.company.count({
       where: {
+        ...hasLocation,
         createdAt: {
           gte: new Date(new Date().getFullYear(), new Date().getMonth(), 1)
         }

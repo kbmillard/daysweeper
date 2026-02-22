@@ -1,0 +1,736 @@
+[
+  {
+    "companyId": "cmp_ab3f4594b00b",
+    "locationId": "loc_f673737fbef9",
+    "company": "PRISM Plastics (Harlingen, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://prismplastics.com/",
+    "companyKey": "prismplastics.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2901 N Expressway 77, Harlingen, TX 78550, USA",
+    "addressComponents": {
+      "city": "Harlingen",
+      "state": "TX",
+      "postal_code": "78550",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PRISM Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2901 N Expressway 77, Harlingen, TX 78550, USA",
+        "supplier_address_normalized": {
+          "city": "Harlingen",
+          "state": "TX",
+          "postal_code": "78550",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "tooling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "company_contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_location_page_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_c6d3b5f75411",
+    "locationId": "loc_0d55cf947e8c",
+    "company": "Universal Metal Products (Pharr, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://universalmetalproducts.com/",
+    "companyKey": "universalmetalproducts.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "101 West Eldora Rd, Pharr, TX 78577, USA",
+    "addressComponents": {
+      "city": "Pharr",
+      "state": "TX",
+      "postal_code": "78577",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stampings",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Universal Metal Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "101 West Eldora Rd, Pharr, TX 78577, USA",
+        "supplier_address_normalized": {
+          "city": "Pharr",
+          "state": "TX",
+          "postal_code": "78577",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_location_page_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_361c63921288",
+    "locationId": "loc_b522fdffeeb3",
+    "company": "Larsen Manufacturing (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://larsenmfg.com/",
+    "companyKey": "larsenmfg.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12150 Rojas Drive, Suite E, El Paso, TX 79936, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79936",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Tool & Die",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stampings",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Larsen Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12150 Rojas Drive, Suite E, El Paso, TX 79936, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79936",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "metal stamping",
+          "tooling",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate",
+          "company_site_footer_address"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_9fd0aeaaba61",
+    "locationId": "loc_3bc55bff75bf",
+    "company": "Sierra Plastics (El Paso, TX)",
+    "parentCompany": "Gemini Group",
+    "parentCompanyId": "cmp_4f0702721fd1",
+    "website": "https://geminigroup.net/",
+    "companyKey": "name:sierra-plastics-inc-el-paso-tx|parent:gemini-group|us",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1101 Burgundy Dr, El Paso, TX 79907, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79907",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic extrusions",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastic extrusion",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Sierra Plastics",
+        "parent_company": "Gemini Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1101 Burgundy Dr, El Paso, TX 79907, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79907",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plastic forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_location_page_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_78d84967f663",
+    "locationId": "loc_2576453e99cb",
+    "company": "Champlain Cable Texas Corporation (El Paso, TX)",
+    "parentCompany": "Champlain Cable Corporation",
+    "parentCompanyId": "cmp_8cb452889349",
+    "website": "https://www.champcable.com/",
+    "companyKey": "name:champlain-cable-texas-corporation-el-paso-tx|parent:champlain-cable-corporation|us",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "9560 Plaza Circle, El Paso, TX 79927, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79927",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electrical wire and cable",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire and cable",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Champlain Cable Texas Corporation",
+        "parent_company": "Champlain Cable Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9560 Plaza Circle, El Paso, TX 79927, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79927",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electrical systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_78d84967f663",
+    "locationId": "loc_b5483e6e9418",
+    "company": "Champlain Cable Texas Corporation (El Paso, TX)",
+    "parentCompany": "Champlain Cable Corporation",
+    "parentCompanyId": "cmp_8cb452889349",
+    "website": "https://www.champcable.com/",
+    "companyKey": "name:champlain-cable-texas-corporation-el-paso-tx|parent:champlain-cable-corporation|us",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "9600 Pan American Drive, El Paso, TX 79927, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79927",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electrical wire and cable",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire and cable",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Champlain Cable Texas Corporation",
+        "parent_company": "Champlain Cable Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9600 Pan American Drive, El Paso, TX 79927, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79927",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electrical systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_787f11c61251",
+    "locationId": "loc_882ef57bc423",
+    "company": "Mantaline Corporation (San Antonio, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://mantaline.com/",
+    "companyKey": "mantaline.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "4267 Dividend Drive, San Antonio, TX 78219, USA",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78219",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Rubber & plastic seals",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Sealing",
+      "Rubber components",
+      "Rubber processing"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sealing",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mantaline Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4267 Dividend Drive, San Antonio, TX 78219, USA",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78219",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sealing components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_cb4f8be16c78",
+    "locationId": "loc_babf53176969",
+    "company": "ElringKlinger Texas, LLC (San Antonio, TX)",
+    "parentCompany": "ElringKlinger AG",
+    "parentCompanyId": "cmp_656cbbbc3fca",
+    "website": "https://www.elringklinger.de/en/",
+    "companyKey": "name:elringklinger-texas-llc-san-antonio-tx|parent:elringklinger-ag|us",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4210 IH-35, San Antonio, TX 78218, USA",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78218",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Powertrain components",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "lightweight components",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ElringKlinger Texas, LLC",
+        "parent_company": "ElringKlinger AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4210 IH-35, San Antonio, TX 78218, USA",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78218",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "tooling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_1a3bf71c4ce4",
+    "locationId": "loc_be2fc596b5d3",
+    "company": "Group Dekko (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://www.dekko.com/",
+    "companyKey": "dekko.com",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "145 Inglewood Drive, El Paso, TX 79927, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79927",
+      "country": "US"
+    },
+    "addressConfidence": 0.8,
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harnesses",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Group Dekko",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "145 Inglewood Drive, El Paso, TX 79927, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79927",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electrical systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_support_location"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_103a2b00b0f1",
+    "locationId": "loc_7cf3e57a75e4",
+    "company": "Lake City Plating (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://lakecityplating.com/",
+    "companyKey": "lakecityplating.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "44 Butterfield Circle, El Paso, TX 79906, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79906",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Heat Treatment & Coatings",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plating",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Lake City Plating",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "44 Butterfield Circle, El Paso, TX 79906, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79906",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plating/coating services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_iatf_certificate_sweep_round44"
+      }
+    }
+  }
+]

@@ -1,0 +1,1273 @@
+[
+  {
+    "companyId": "cmp_d16074cb6b60",
+    "companyKey": "nal.com",
+    "locationId": "loc_8eb10996b7d9",
+    "company": "North American Lighting (Paris, IL)",
+    "parentCompany": "Koito Manufacturing Co., Ltd.",
+    "parentCompanyId": "cmp_a8c1d4b5e824",
+    "segment": "USA | IL | Paris, IL",
+    "tier": "Tier 1",
+    "addressRaw": "2277 S Main St, Paris, IL 61944, USA",
+    "addressComponents": {
+      "city": "Paris",
+      "state": "IL",
+      "postal_code": "61944",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nal.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Lighting systems",
+    "capabilityTags": [
+      "Lighting assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting systems",
+      "tier 1",
+      "Koito Group"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American Lighting",
+        "parent_company": "Koito Manufacturing Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2277 S Main St, Paris, IL 61944, USA",
+        "supplier_address_normalized": {
+          "city": "Paris",
+          "state": "IL",
+          "postal_code": "61944",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "vehicle lighting systems"
+        ],
+        "primary_functions": [
+          "lighting assembly",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "nal.com plant page / contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d16074cb6b60",
+    "companyKey": "nal.com",
+    "locationId": "loc_8cf151865e67",
+    "company": "North American Lighting (Flora, IL)",
+    "parentCompany": "Koito Manufacturing Co., Ltd.",
+    "parentCompanyId": "cmp_a8c1d4b5e824",
+    "segment": "USA | IL | Flora, IL",
+    "tier": "Tier 1",
+    "addressRaw": "20 Industrial Park, Flora, IL 62839, USA",
+    "addressComponents": {
+      "city": "Flora",
+      "state": "IL",
+      "postal_code": "62839",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nal.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Lighting systems",
+    "capabilityTags": [
+      "Lighting assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting systems",
+      "tier 1",
+      "Koito Group"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American Lighting",
+        "parent_company": "Koito Manufacturing Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "20 Industrial Park, Flora, IL 62839, USA",
+        "supplier_address_normalized": {
+          "city": "Flora",
+          "state": "IL",
+          "postal_code": "62839",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "vehicle lighting systems"
+        ],
+        "primary_functions": [
+          "lighting assembly",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "nal.com plant page / contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d16074cb6b60",
+    "companyKey": "nal.com",
+    "locationId": "loc_b0457d36a1a5",
+    "company": "North American Lighting (Salem, IL)",
+    "parentCompany": "Koito Manufacturing Co., Ltd.",
+    "parentCompanyId": "cmp_a8c1d4b5e824",
+    "segment": "USA | IL | Salem, IL",
+    "tier": "Tier 1",
+    "addressRaw": "1875 W Main St, Salem, IL 62881, USA",
+    "addressComponents": {
+      "city": "Salem",
+      "state": "IL",
+      "postal_code": "62881",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nal.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Lighting systems",
+    "capabilityTags": [
+      "Lighting assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting systems",
+      "tier 1",
+      "Koito Group"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American Lighting",
+        "parent_company": "Koito Manufacturing Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1875 W Main St, Salem, IL 62881, USA",
+        "supplier_address_normalized": {
+          "city": "Salem",
+          "state": "IL",
+          "postal_code": "62881",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "vehicle lighting systems"
+        ],
+        "primary_functions": [
+          "lighting assembly",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "nal.com plant page / contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d16074cb6b60",
+    "companyKey": "nal.com",
+    "locationId": "loc_0d3ab91bb9a9",
+    "company": "North American Lighting (Mattoon, IL)",
+    "parentCompany": "Koito Manufacturing Co., Ltd.",
+    "parentCompanyId": "cmp_a8c1d4b5e824",
+    "segment": "USA | IL | Mattoon, IL",
+    "tier": "Tier 1",
+    "addressRaw": "3501 Justrite Dr, Mattoon, IL 61938, USA",
+    "addressComponents": {
+      "city": "Mattoon",
+      "state": "IL",
+      "postal_code": "61938",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nal.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Lighting systems",
+    "capabilityTags": [
+      "Lighting assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting systems",
+      "tier 1",
+      "Koito Group"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American Lighting",
+        "parent_company": "Koito Manufacturing Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3501 Justrite Dr, Mattoon, IL 61938, USA",
+        "supplier_address_normalized": {
+          "city": "Mattoon",
+          "state": "IL",
+          "postal_code": "61938",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "vehicle lighting systems"
+        ],
+        "primary_functions": [
+          "lighting assembly",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "nal.com plant page / contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d16074cb6b60",
+    "companyKey": "nal.com",
+    "locationId": "loc_b30aec5cebd5",
+    "company": "North American Lighting (Flora, IL)",
+    "parentCompany": "Koito Manufacturing Co., Ltd.",
+    "parentCompanyId": "cmp_a8c1d4b5e824",
+    "segment": "USA | IL | Flora, IL",
+    "tier": "Tier 1",
+    "addressRaw": "27 Briscoe Dr, Flora, IL 62839, USA",
+    "addressComponents": {
+      "city": "Flora",
+      "state": "IL",
+      "postal_code": "62839",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nal.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Lighting systems",
+    "capabilityTags": [
+      "Lighting assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting systems",
+      "tier 1",
+      "Koito Group"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American Lighting",
+        "parent_company": "Koito Manufacturing Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "27 Briscoe Dr, Flora, IL 62839, USA",
+        "supplier_address_normalized": {
+          "city": "Flora",
+          "state": "IL",
+          "postal_code": "62839",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "vehicle lighting systems"
+        ],
+        "primary_functions": [
+          "lighting assembly",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "nal.com plant page / contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_45b0ae68d9b0",
+    "companyKey": "aisinillinois.com",
+    "locationId": "loc_327c6390109d",
+    "company": "AISIN Illinois (Marion, IL)",
+    "parentCompany": "Aisin Corporation",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "segment": "USA | IL | Marion, IL",
+    "tier": "Tier 1",
+    "addressRaw": "11000 Redco Dr, Marion, IL 62959, USA",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IL",
+      "postal_code": "62959",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://aisinillinois.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly",
+      "Painting"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "Marion IL industrial park",
+      "AISIN"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Illinois",
+        "parent_company": "Aisin Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11000 Redco Dr, Marion, IL 62959, USA",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IL",
+          "postal_code": "62959",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive modules",
+          "molded components"
+        ],
+        "primary_functions": [
+          "injection molding",
+          "assembly",
+          "painting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "Aisin Manufacturing Illinois contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_45b0ae68d9b0",
+    "companyKey": "aisinillinois.com",
+    "locationId": "loc_8af1bab223dc",
+    "company": "AISIN Illinois (Marion, IL)",
+    "parentCompany": "Aisin Corporation",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "segment": "USA | IL | Marion, IL",
+    "tier": "Tier 1",
+    "addressRaw": "10900 Redco Dr, Marion, IL 62959, USA",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IL",
+      "postal_code": "62959",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://aisinillinois.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Exterior & Structural Components",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "Marion IL industrial park",
+      "AISIN"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Illinois",
+        "parent_company": "Aisin Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "10900 Redco Dr, Marion, IL 62959, USA",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IL",
+          "postal_code": "62959",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "aluminum components",
+          "structural components"
+        ],
+        "primary_functions": [
+          "die casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "Aisin Light Metals contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_45b0ae68d9b0",
+    "companyKey": "aisinillinois.com",
+    "locationId": "loc_3ba73cdff4d3",
+    "company": "AISIN Illinois (Marion, IL)",
+    "parentCompany": "Aisin Corporation",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "segment": "USA | IL | Marion, IL",
+    "tier": "Tier 1",
+    "addressRaw": "11200 Redco Dr, Marion, IL 62959, USA",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IL",
+      "postal_code": "62959",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://aisinillinois.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "Marion IL industrial park",
+      "AISIN"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Illinois",
+        "parent_company": "Aisin Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11200 Redco Dr, Marion, IL 62959, USA",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IL",
+          "postal_code": "62959",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive electronics",
+          "control units"
+        ],
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "Aisin Electronics Illinois contact page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_b13e880e376c",
+    "companyKey": "borgwarner.com",
+    "locationId": "loc_9a5f72dee4c1",
+    "company": "BorgWarner (Bellwood, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Bellwood, IL",
+    "tier": "Tier 1",
+    "addressRaw": "700 25th Avenue, Bellwood, IL 60104, USA",
+    "addressComponents": {
+      "city": "Bellwood",
+      "state": "IL",
+      "postal_code": "60104",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.borgwarner.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "capabilityTags": [
+      "Drivetrain"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BorgWarner",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "700 25th Avenue, Bellwood, IL 60104, USA",
+        "supplier_address_normalized": {
+          "city": "Bellwood",
+          "state": "IL",
+          "postal_code": "60104",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain systems"
+        ],
+        "primary_functions": [
+          "powertrain manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "borgwarner.com locations page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_b13e880e376c",
+    "companyKey": "borgwarner.com",
+    "locationId": "loc_5b912c97c6bd",
+    "company": "BorgWarner (Dixon, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Dixon, IL",
+    "tier": "Tier 1",
+    "addressRaw": "1350 Franklin Grove Road, Dixon, IL 61021, USA",
+    "addressComponents": {
+      "city": "Dixon",
+      "state": "IL",
+      "postal_code": "61021",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.borgwarner.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "capabilityTags": [
+      "Drivetrain"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BorgWarner",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1350 Franklin Grove Road, Dixon, IL 61021, USA",
+        "supplier_address_normalized": {
+          "city": "Dixon",
+          "state": "IL",
+          "postal_code": "61021",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain systems"
+        ],
+        "primary_functions": [
+          "powertrain manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "borgwarner.com locations page"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "companyKey": "zf.com",
+    "locationId": "loc_272eca8dfc5f",
+    "company": "ZF Active Safety and Electronics US LLC (Marshall, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Marshall, IL",
+    "tier": "Tier 1",
+    "addressRaw": "902 S 2nd St, Marshall, IL 62441, USA",
+    "addressComponents": {
+      "city": "Marshall",
+      "state": "IL",
+      "postal_code": "62441",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.zf.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF Active Safety and Electronics US LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "902 S 2nd St, Marshall, IL 62441, USA",
+        "supplier_address_normalized": {
+          "city": "Marshall",
+          "state": "IL",
+          "postal_code": "62441",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics",
+          "electronic safety systems"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "zf.com locations page / certificate"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_0850414cbc3a",
+    "companyKey": "cvgrp.com",
+    "locationId": "loc_cf945a2b1b6d",
+    "company": "Commercial Vehicle Group (CVG) (Michigan City, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Michigan City, IN",
+    "tier": "Tier 1",
+    "addressRaw": "527 W Highway 20, Michigan City, IN 46360, USA",
+    "addressComponents": {
+      "city": "Michigan City",
+      "state": "IN",
+      "postal_code": "46360",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://cvgrp.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "wiper systems",
+      "switches",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Commercial Vehicle Group (CVG)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "527 W Highway 20, Michigan City, IN 46360, USA",
+        "supplier_address_normalized": {
+          "city": "Michigan City",
+          "state": "IN",
+          "postal_code": "46360",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wiper systems",
+          "switch assemblies",
+          "electrical components"
+        ],
+        "primary_functions": [
+          "assembly",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "supplier_manual_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "CVG supplier quality manual plant listings"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_347a7bfd4557",
+    "companyKey": "ilpeaindustries.com",
+    "locationId": "loc_d230253dddbc",
+    "company": "ILPEA Industries (Galesburg, IL)",
+    "parentCompany": "ILPEA S.p.A.",
+    "parentCompanyId": "cmp_78d46de89905",
+    "segment": "USA | IL | Galesburg, IL",
+    "tier": "Tier 2",
+    "addressRaw": "611 S Linwood Rd, Galesburg, IL 61401, USA",
+    "addressComponents": {
+      "city": "Galesburg",
+      "state": "IL",
+      "postal_code": "61401",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ilpeaindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Engineered foam, rubber & plastic components",
+    "capabilityTags": [
+      "Engineered foam, rubber & plastic components",
+      "Plastic extrusions"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "foam",
+      "rubber",
+      "plastic components",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ILPEA Industries",
+        "parent_company": "ILPEA S.p.A.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "611 S Linwood Rd, Galesburg, IL 61401, USA",
+        "supplier_address_normalized": {
+          "city": "Galesburg",
+          "state": "IL",
+          "postal_code": "61401",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "foam components",
+          "rubber components",
+          "plastic components"
+        ],
+        "primary_functions": [
+          "converting",
+          "extrusion",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "ilpea.com north america locations listing"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fd711837373b",
+    "companyKey": "frantz-mfg.com",
+    "locationId": "loc_fbd42953114b",
+    "company": "FRANTZ Manufacturing Co. (Sterling, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Sterling, IL",
+    "tier": "Tier 2",
+    "addressRaw": "3201 W LeFevre Rd, Sterling, IL 61081, USA",
+    "addressComponents": {
+      "city": "Sterling",
+      "state": "IL",
+      "postal_code": "61081",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://frantz-mfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "steel balls",
+      "bearings",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FRANTZ Manufacturing Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3201 W LeFevre Rd, Sterling, IL 61081, USA",
+        "supplier_address_normalized": {
+          "city": "Sterling",
+          "state": "IL",
+          "postal_code": "61081",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "steel balls",
+          "bearing components"
+        ],
+        "primary_functions": [
+          "machining",
+          "metal forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "frantz-mfg.com contact/footer address"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_7c606d9f331d",
+    "companyKey": "emacna.com",
+    "locationId": "loc_d4ea81e57e4f",
+    "company": "EMAC (Effingham Machining & Assembly Components) (Effingham, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Effingham, IL",
+    "tier": "Tier 2",
+    "addressRaw": "1500 Heartland Blvd, Effingham, IL 62401, USA",
+    "addressComponents": {
+      "city": "Effingham",
+      "state": "IL",
+      "postal_code": "62401",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.emacna.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "assembly",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EMAC (Effingham Machining & Assembly Components)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1500 Heartland Blvd, Effingham, IL 62401, USA",
+        "supplier_address_normalized": {
+          "city": "Effingham",
+          "state": "IL",
+          "postal_code": "62401",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "machined components",
+          "assemblies"
+        ],
+        "primary_functions": [
+          "machining",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "emacna.com contact page (Effingham)"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_9e39586470e0",
+    "companyKey": "littelfuse.com",
+    "locationId": "loc_b349a0e66833",
+    "company": "Littelfuse (Rosemont, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Rosemont, IL",
+    "tier": "Tier 2",
+    "addressRaw": "6133 N River Rd, Suite 500, Rosemont, IL 60018, USA",
+    "addressComponents": {
+      "city": "Rosemont",
+      "state": "IL",
+      "postal_code": "60018",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.littelfuse.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "capabilityTags": [
+      "Electronic components"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "electronic components",
+      "circuit protection",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Littelfuse",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6133 N River Rd, Suite 500, Rosemont, IL 60018, USA",
+        "supplier_address_normalized": {
+          "city": "Rosemont",
+          "state": "IL",
+          "postal_code": "60018",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fuses",
+          "circuit protection components"
+        ],
+        "primary_functions": [
+          "electronic component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "address_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_in_workdown_supplier_sweep_round52",
+        "page_hint": "littelfuse.com address"
+      }
+    }
+  }
+]

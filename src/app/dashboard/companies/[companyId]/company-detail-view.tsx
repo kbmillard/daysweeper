@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { IconArrowLeft, IconPlus } from '@tabler/icons-react';
@@ -5,16 +7,17 @@ import Link from 'next/link';
 import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
 import { AddChildCompanySearch } from './add-child-company-search';
-import { LinkExistingCompanyAsLocation } from '@/features/companies/link-existing-company-as-location';
 import { RemoveAsChildButton } from '@/features/companies/remove-as-child-button';
-import { DeleteLocationButton } from '@/features/locations/delete-location-button';
-import LocationEditableFields from '@/features/locations/location-editable-fields';
+import LocationMapCard from '@/features/locations/location-map-card';
+import { PrimaryAddressSection } from '@/features/locations/primary-address-section';
 import CompanyLocationsMap from '@/features/companies/company-locations-map';
+import { filterLegacyKeyFacts } from '@/lib/filter-legacy-metadata';
 import { DeleteCompanyButton } from './delete-company-button';
 
 type CompanyMetadata = {
   keyProducts?: string[] | null;
   industryKeywords?: string[] | null;
+  keyFacts?: Record<string, unknown> | null;
   profile?: {
     summary?: string | null;
     keyFacts?: Record<string, unknown> | null;
@@ -42,7 +45,6 @@ type CompanyData = {
     addressRaw: string;
     addressNormalized?: string | null;
     addressComponents?: unknown;
-    addressConfidence?: number | null;
     latitude?: number | null | unknown;
     longitude?: number | null | unknown;
     createdAt?: Date;
@@ -219,8 +221,6 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         }}
       />
 
-      <CompanyLocationsMap locations={company.Location ?? []} companyName={company.name} />
-
       {/* Company profile (summary, key facts, business activities, role, local presence, markdown) */}
       {meta?.profile && (
         <Card>
@@ -236,31 +236,33 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                 <p className='mt-1 text-base'>{meta.profile.summary}</p>
               </div>
             )}
-            {meta.profile.keyFacts &&
-              typeof meta.profile.keyFacts === 'object' &&
-              Object.keys(meta.profile.keyFacts).length > 0 && (
+            {(() => {
+              const profileFacts = (meta.profile?.keyFacts ?? meta.keyFacts) as Record<string, unknown> | null | undefined;
+              const filtered = filterLegacyKeyFacts(profileFacts);
+              return profileFacts && typeof profileFacts === 'object' && Object.keys(filtered).length > 0 && (
                 <div>
                   <label className='text-muted-foreground text-sm font-medium'>
                     Key facts
                   </label>
                   <ul className='mt-1 list-inside list-disc space-y-0.5 text-sm'>
-                    {Object.entries(meta.profile.keyFacts).map(([k, v]) => {
-                      if (v == null) return null;
-                      const disp = Array.isArray(v)
-                        ? (v as string[]).join(', ')
-                        : String(v);
-                      return (
-                        <li key={k}>
-                          <span className='font-medium capitalize'>
-                            {k.replace(/([A-Z])/g, ' $1').trim()}:
-                          </span>{' '}
-                          {disp}
-                        </li>
-                      );
-                    })}
+                    {Object.entries(filtered).map(([k, v]) => {
+                        if (v == null) return null;
+                        const disp = Array.isArray(v)
+                          ? (v as string[]).join(', ')
+                          : String(v);
+                        return (
+                          <li key={k}>
+                            <span className='font-medium capitalize'>
+                              {k.replace(/([A-Z])/g, ' $1').trim()}:
+                            </span>{' '}
+                            {disp}
+                          </li>
+                        );
+                      })}
                   </ul>
                 </div>
-              )}
+              );
+            })()}
             {meta.profile.businessActivities && (
               <div>
                 <label className='text-muted-foreground text-sm font-medium'>
@@ -301,42 +303,28 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         </Card>
       )}
 
+      <CompanyLocationsMap locations={company.Location ?? []} companyName={company.name} />
+
+      {primaryLocation && (
+        <LocationMapCard
+          latitude={primaryLocation.latitude != null ? Number(primaryLocation.latitude) : null}
+          longitude={primaryLocation.longitude != null ? Number(primaryLocation.longitude) : null}
+          address={primaryLocation.addressRaw}
+        />
+      )}
+
       {primaryLocation && primaryLocation.id && (
-        <div className='space-y-4'>
-          <div className='flex items-center justify-between gap-2'>
-            <h2 className='text-xl font-semibold'>Primary address</h2>
-            <DeleteLocationButton
-              locationId={primaryLocation.id}
-              companyId={company.id}
-              basePath='dashboard'
-              refreshOnly
-              variant='outline'
-              size='sm'
-              buttonText='Delete'
-            />
-          </div>
-          <LocationEditableFields
-            location={{
-              id: primaryLocation.id,
-              externalId: primaryLocation.externalId ?? null,
-              companyId: company.id,
-              addressRaw: primaryLocation.addressRaw,
-              addressNormalized: primaryLocation.addressNormalized ?? null,
-              addressComponents: (primaryLocation.addressComponents || null) as { city?: string; state?: string; postal_code?: string; country?: string } | null,
-              addressConfidence: primaryLocation.addressConfidence != null ? Number(primaryLocation.addressConfidence) : null,
-              latitude: primaryLocation.latitude != null ? Number(primaryLocation.latitude) : null,
-              longitude: primaryLocation.longitude != null ? Number(primaryLocation.longitude) : null
-            }}
-            company={{
-              id: company.id,
-              name: company.name,
-              website: company.website,
-              phone: company.phone,
-              email: company.email ?? null
-            }}
-            locationOnly
-          />
-        </div>
+        <PrimaryAddressSection
+          primaryLocation={{ ...primaryLocation, id: primaryLocation.id }}
+          company={{
+            id: company.id,
+            name: company.name,
+            website: company.website,
+            phone: company.phone,
+            email: company.email ?? null
+          }}
+          basePath='dashboard'
+        />
       )}
 
       {/* Parent Company – only show when there is a parent and it's different from this company */}
@@ -363,66 +351,6 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
           </Link>
         </div>
       )}
-
-      {/* Other locations – excludes primary, horizontal clickable rows */}
-      <div className='space-y-4'>
-        <div className='flex items-center justify-between flex-wrap gap-2'>
-          <h2 className='text-xl font-semibold'>
-            Other locations ({Math.max(0, (company.Location?.length ?? 0) - 1)})
-          </h2>
-          <Link href={`/dashboard/companies/${company.id}/locations/new`}>
-            <Button size='sm'>
-              <IconPlus className='mr-2 h-4 w-4' />
-              Add location
-            </Button>
-          </Link>
-        </div>
-        {(() => {
-          const otherLocations = (company.Location ?? []).filter(loc => loc.id !== primaryLocation?.id);
-          return otherLocations.length > 0 ? (
-            <div className='rounded-md border'>
-              {otherLocations.map((loc, idx) => (
-                <div
-                  key={loc.id ?? idx}
-                  className={`flex items-center justify-between gap-2 px-4 py-3 text-sm transition-colors hover:bg-accent/50 ${idx > 0 ? 'border-t' : ''}`}
-                >
-                  {loc.id ? (
-                    <Link
-                      href={`/dashboard/companies/${company.id}/locations/${loc.id}`}
-                      className='flex-1 truncate text-primary hover:underline'
-                    >
-                      {loc.addressRaw || 'Address not specified'}
-                    </Link>
-                  ) : (
-                    <span className='flex-1 truncate text-muted-foreground'>
-                      {loc.addressRaw || 'Address not specified'}
-                    </span>
-                  )}
-                  {loc.id && (
-                    <DeleteLocationButton
-                      locationId={loc.id}
-                      companyId={company.id}
-                      basePath='dashboard'
-                      refreshOnly
-                      variant='outline'
-                      size='sm'
-                      buttonText='Delete'
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className='text-muted-foreground text-sm'>
-              No other locations. Add one to get started.
-            </p>
-          );
-        })()}
-        <div className='pt-2 border-t'>
-          <p className='text-sm font-medium mb-2'>Link existing company as location</p>
-          <LinkExistingCompanyAsLocation targetCompanyId={company.id} />
-        </div>
-      </div>
 
       {/* Child companies – list with option to create new or link existing */}
       <div className='space-y-4'>

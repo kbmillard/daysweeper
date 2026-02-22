@@ -1,0 +1,3524 @@
+[
+  {
+    "company": "DENSO Air Systems Michigan, Inc. - Kentucky Branch (Hopkinsville, KY)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1405 Frank Yost Ln, Hopkinsville, KY 42240, US",
+    "addressComponents": {
+      "city": "Hopkinsville",
+      "state": "KY",
+      "postal_code": "42240",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Air Systems Michigan, Inc. - Kentucky Branch",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1405 Frank Yost Ln, Hopkinsville, KY 42240, US",
+        "supplier_address_normalized": {
+          "city": "Hopkinsville",
+          "state": "KY",
+          "postal_code": "42240",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.denso.com/us-ca/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_f1489a2c8540",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "hvac",
+      "air systems"
+    ]
+  },
+  {
+    "company": "DENSO Manufacturing Athens Tennessee, Inc. (Athens, TN)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2400 Denso Dr, Athens, TN 37303, US",
+    "addressComponents": {
+      "city": "Athens",
+      "state": "TN",
+      "postal_code": "37303",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Athens Tennessee, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2400 Denso Dr, Athens, TN 37303, US",
+        "supplier_address_normalized": {
+          "city": "Athens",
+          "state": "TN",
+          "postal_code": "37303",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.denso.com/us-ca/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_9eff4e6c531d",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics"
+    ]
+  },
+  {
+    "company": "DENSO Manufacturing Michigan, Inc. (Battle Creek, MI)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "One Denso Rd, Battle Creek, MI 49037-7356, US",
+    "addressComponents": {
+      "city": "Battle Creek",
+      "state": "MI",
+      "postal_code": "49037-7356",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Michigan, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "One Denso Rd, Battle Creek, MI 49037-7356, US",
+        "supplier_address_normalized": {
+          "city": "Battle Creek",
+          "state": "MI",
+          "postal_code": "49037-7356",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.denso.com/us-ca/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_c8fd5f0d0b97",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics"
+    ]
+  },
+  {
+    "company": "DENSO Manufacturing Tennessee, Inc. (Maryville, TN)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1720 Robert C Jackson Dr, Maryville, TN 37801, US",
+    "addressComponents": {
+      "city": "Maryville",
+      "state": "TN",
+      "postal_code": "37801",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Tennessee, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1720 Robert C Jackson Dr, Maryville, TN 37801, US",
+        "supplier_address_normalized": {
+          "city": "Maryville",
+          "state": "TN",
+          "postal_code": "37801",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.denso.com/us-ca/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_24a935fd1484",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics"
+    ]
+  },
+  {
+    "company": "DENSO TEN America Limited (Novi, MI)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "30155 Hudson Dr, Novi, MI 48377, US",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO TEN America Limited",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "30155 Hudson Dr, Novi, MI 48377, US",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ECUs",
+    "website": "https://www.denso.com/us-ca/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_4419083018bc",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics",
+      "infotainment"
+    ]
+  },
+  {
+    "company": "SYSTEX Products Corporation (Battle Creek, MI)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "300 Buckner Dr, Battle Creek, MI 49015, US",
+    "addressComponents": {
+      "city": "Battle Creek",
+      "state": "MI",
+      "postal_code": "49015",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SYSTEX Products Corporation",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "300 Buckner Dr, Battle Creek, MI 49015, US",
+        "supplier_address_normalized": {
+          "city": "Battle Creek",
+          "state": "MI",
+          "postal_code": "49015",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://www.denso.com/us-ca/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_1299207c3a88",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastics"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku America, Inc. (Erlanger, KY)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1360 Dolwick Dr, Suite 125, Erlanger, KY 41018, US",
+    "addressComponents": {
+      "city": "Erlanger",
+      "state": "KY",
+      "postal_code": "41018",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku America, Inc.",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1360 Dolwick Dr, Suite 125, Erlanger, KY 41018, US",
+        "supplier_address_normalized": {
+          "city": "Erlanger",
+          "state": "KY",
+          "postal_code": "41018",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Seating systems",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "toyota-boshoku.com",
+    "companyId": "cmp_1a8bfa87dc6b",
+    "locationId": "loc_075008423c8a",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "seating",
+      "interiors"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku America, Inc. Technical Center (Novi, MI)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "28000 West Park Dr, Novi, MI 48377, US",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku America, Inc. Technical Center",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "28000 West Park Dr, Novi, MI 48377, US",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Design validation",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "toyota-boshoku.com",
+    "companyId": "cmp_1a8bfa87dc6b",
+    "locationId": "loc_61e00d6bf097",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "interiors"
+    ]
+  },
+  {
+    "company": "AUNDE Boshoku USA, Inc. (Novi, MI)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "28000 West Park Dr, Novi, MI 48377, US",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUNDE Boshoku USA, Inc.",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "28000 West Park Dr, Novi, MI 48377, US",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:aunde-boshoku-usa-inc-novi-mi|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_cb5e350dafe8",
+    "locationId": "loc_f77805f2b5ab",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Systems Automotive Interiors, LLC (Mantachie, MS)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 TB Way, Mantachie, MS 38855, US",
+    "addressComponents": {
+      "city": "Mantachie",
+      "state": "MS",
+      "postal_code": "38855",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Systems Automotive Interiors, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 TB Way, Mantachie, MS 38855, US",
+        "supplier_address_normalized": {
+          "city": "Mantachie",
+          "state": "MS",
+          "postal_code": "38855",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:systems-automotive-interiors-llc-mantachie-ms|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_70a19b3ba1fd",
+    "locationId": "loc_0ede6e73074a",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Mississippi, LLC (Mantachie, MS)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 TB Way, Mantachie, MS 38855, US",
+    "addressComponents": {
+      "city": "Mantachie",
+      "state": "MS",
+      "postal_code": "38855",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Mississippi, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 TB Way, Mantachie, MS 38855, US",
+        "supplier_address_normalized": {
+          "city": "Mantachie",
+          "state": "MS",
+          "postal_code": "38855",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-mississippi-llc-mantachie-ms|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_3a85797c1dd8",
+    "locationId": "loc_a82e580577cf",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Jackson Tennessee, LLC (Jackson, TN)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1410 U.S. Highway 70 Bypass, Jackson, TN 38301, US",
+    "addressComponents": {
+      "city": "Jackson",
+      "state": "TN",
+      "postal_code": "38301",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Jackson Tennessee, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1410 U.S. Highway 70 Bypass, Jackson, TN 38301, US",
+        "supplier_address_normalized": {
+          "city": "Jackson",
+          "state": "TN",
+          "postal_code": "38301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-jackson-tennessee-llc-jackson-tn|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_192e97fb0c7a",
+    "locationId": "loc_0c608d7c13c7",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Tennessee, LLC (Jackson, TN)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3300 Ridgecrest Rd Extended, Jackson, TN 38305, US",
+    "addressComponents": {
+      "city": "Jackson",
+      "state": "TN",
+      "postal_code": "38305",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Tennessee, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3300 Ridgecrest Rd Extended, Jackson, TN 38305, US",
+        "supplier_address_normalized": {
+          "city": "Jackson",
+          "state": "TN",
+          "postal_code": "38305",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-tennessee-llc-jackson-tn|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_4c407f054b8e",
+    "locationId": "loc_99aaf5f6b894",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Illinois, LLC (Lawrenceville, IL)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "100 Trim Masters Dr, Lawrenceville, IL 62439, US",
+    "addressComponents": {
+      "city": "Lawrenceville",
+      "state": "IL",
+      "postal_code": "62439",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Illinois, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Trim Masters Dr, Lawrenceville, IL 62439, US",
+        "supplier_address_normalized": {
+          "city": "Lawrenceville",
+          "state": "IL",
+          "postal_code": "62439",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-illinois-llc-lawrenceville-il|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_2843ce274cb6",
+    "locationId": "loc_c95278658bcd",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Indiana, LLC (Princeton, IN)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1698 S 100 W, Princeton, IN 47670, US",
+    "addressComponents": {
+      "city": "Princeton",
+      "state": "IN",
+      "postal_code": "47670",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Indiana, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1698 S 100 W, Princeton, IN 47670, US",
+        "supplier_address_normalized": {
+          "city": "Princeton",
+          "state": "IN",
+          "postal_code": "47670",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-indiana-llc-princeton-in|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_94350c602e12",
+    "locationId": "loc_ab5aa898c385",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Kentucky, LLC (Bardstown, KY)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1051 Withrow Ct, Bardstown, KY 40004, US",
+    "addressComponents": {
+      "city": "Bardstown",
+      "state": "KY",
+      "postal_code": "40004",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Kentucky, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1051 Withrow Ct, Bardstown, KY 40004, US",
+        "supplier_address_normalized": {
+          "city": "Bardstown",
+          "state": "KY",
+          "postal_code": "40004",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-kentucky-llc-bardstown-ky|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_7e3944ff2c43",
+    "locationId": "loc_1e20b41e802f",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Kentucky - Lebanon Plant (Lebanon, KY)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "200 Francis Marion Dr, Lebanon, KY 40033, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "KY",
+      "postal_code": "40033",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Kentucky - Lebanon Plant",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Francis Marion Dr, Lebanon, KY 40033, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "KY",
+          "postal_code": "40033",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-kentucky-lebanon-plant-lebanon-ky|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_87f54b4a96e5",
+    "locationId": "loc_5601a7631912",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Kentucky - Harrodsburg Plant (Harrodsburg, KY)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1120 Industry Rd, Harrodsburg, KY 40330, US",
+    "addressComponents": {
+      "city": "Harrodsburg",
+      "state": "KY",
+      "postal_code": "40330",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Kentucky - Harrodsburg Plant",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1120 Industry Rd, Harrodsburg, KY 40330, US",
+        "supplier_address_normalized": {
+          "city": "Harrodsburg",
+          "state": "KY",
+          "postal_code": "40330",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-kentucky-harrodsburg-plant-harrodsburg-ky|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_1f07ca66d22e",
+    "locationId": "loc_c1b35b6062e5",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku AKI USA, LLC (Athens, AL)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "301 Sanderfer Rd W, Athens, AL 35611, US",
+    "addressComponents": {
+      "city": "Athens",
+      "state": "AL",
+      "postal_code": "35611",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku AKI USA, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "301 Sanderfer Rd W, Athens, AL 35611, US",
+        "supplier_address_normalized": {
+          "city": "Athens",
+          "state": "AL",
+          "postal_code": "35611",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-aki-usa-llc-athens-al|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_3fcda2bcacaa",
+    "locationId": "loc_e555716911fa",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Systems Automotive Interiors Alabama, LLC (Athens, AL)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "301 Sanderfer Rd W, Athens, AL 35611, US",
+    "addressComponents": {
+      "city": "Athens",
+      "state": "AL",
+      "postal_code": "35611",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Systems Automotive Interiors Alabama, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "301 Sanderfer Rd W, Athens, AL 35611, US",
+        "supplier_address_normalized": {
+          "city": "Athens",
+          "state": "AL",
+          "postal_code": "35611",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:systems-automotive-interiors-alabama-llc-athens-al|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_684b1b00d9a3",
+    "locationId": "loc_9a6eebbc56be",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "Toyota Boshoku Western Kentucky, LLC (Hopkinsville, KY)",
+    "parentCompany": "Toyota Boshoku Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "370 Crenshaw Blvd, Hopkinsville, KY 42240, US",
+    "addressComponents": {
+      "city": "Hopkinsville",
+      "state": "KY",
+      "postal_code": "42240",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Boshoku Western Kentucky, LLC",
+        "parent_company": "Toyota Boshoku Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "370 Crenshaw Blvd, Hopkinsville, KY 42240, US",
+        "supplier_address_normalized": {
+          "city": "Hopkinsville",
+          "state": "KY",
+          "postal_code": "42240",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyota-boshoku.com/us/",
+    "companyKey": "name:toyota-boshoku-western-kentucky-llc-hopkinsville-ky|parent:toyota-boshoku-corporation|us",
+    "companyId": "cmp_701e7fa9419b",
+    "locationId": "loc_34920bae9b32",
+    "parentCompanyId": "cmp_e68be4180454",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "seating"
+    ]
+  },
+  {
+    "company": "AISIN Automotive Casting, LLC (London, KY)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "4870 E Highway 552, London, KY 40744, US",
+    "addressComponents": {
+      "city": "London",
+      "state": "KY",
+      "postal_code": "40744",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Automotive Casting, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4870 E Highway 552, London, KY 40744, US",
+        "supplier_address_normalized": {
+          "city": "London",
+          "state": "KY",
+          "postal_code": "40744",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings and forgings",
+    "website": "https://aisinauto.com/",
+    "companyKey": "aisinauto.com",
+    "companyId": "cmp_b0ad1d7828d7",
+    "locationId": "loc_a93dd475ea02",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "casting",
+      "powertrain"
+    ]
+  },
+  {
+    "company": "AISIN Automotive Casting Tennessee, Inc. (Clinton, TN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "221 Frank L Diggs Dr, Clinton, TN 37716, US",
+    "addressComponents": {
+      "city": "Clinton",
+      "state": "TN",
+      "postal_code": "37716",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Automotive Casting Tennessee, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "221 Frank L Diggs Dr, Clinton, TN 37716, US",
+        "supplier_address_normalized": {
+          "city": "Clinton",
+          "state": "TN",
+          "postal_code": "37716",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings and forgings",
+    "website": "https://aisintn.com/",
+    "companyKey": "aisintn.com",
+    "companyId": "cmp_5bde50aeeabd",
+    "locationId": "loc_9011024259d0",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "casting",
+      "powertrain"
+    ]
+  },
+  {
+    "company": "AISIN U.S.A. MFG., Inc. (Seymour, IN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1700 E 4th St, Seymour, IN 47274, US",
+    "addressComponents": {
+      "city": "Seymour",
+      "state": "IN",
+      "postal_code": "47274",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN U.S.A. MFG., Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1700 E 4th St, Seymour, IN 47274, US",
+        "supplier_address_normalized": {
+          "city": "Seymour",
+          "state": "IN",
+          "postal_code": "47274",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://aisinusa.com/",
+    "companyKey": "aisinusa.com",
+    "companyId": "cmp_60a9895baae4",
+    "locationId": "loc_37c669074d3d",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "manufacturing"
+    ]
+  },
+  {
+    "company": "AISIN World Corp. of America (Northville, MI)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "15300 Centennial Dr, Northville, MI 48168, US",
+    "addressComponents": {
+      "city": "Northville",
+      "state": "MI",
+      "postal_code": "48168",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN World Corp. of America",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15300 Centennial Dr, Northville, MI 48168, US",
+        "supplier_address_normalized": {
+          "city": "Northville",
+          "state": "MI",
+          "postal_code": "48168",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "website": "https://www.aisinworld.com/",
+    "companyKey": "aisinworld.com",
+    "companyId": "cmp_6abb93801465",
+    "locationId": "loc_49b2357df8e4",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "program management",
+      "engineering"
+    ]
+  },
+  {
+    "company": "INTAT Precision, Inc. (Rushville, IN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2148 N State Road 3, Rushville, IN 46173, US",
+    "addressComponents": {
+      "city": "Rushville",
+      "state": "IN",
+      "postal_code": "46173",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "INTAT Precision, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2148 N State Road 3, Rushville, IN 46173, US",
+        "supplier_address_normalized": {
+          "city": "Rushville",
+          "state": "IN",
+          "postal_code": "46173",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings and forgings",
+    "website": "https://intat.com/",
+    "companyKey": "intat.com",
+    "companyId": "cmp_9b2fb90fac25",
+    "locationId": "loc_395908d4985e",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "casting",
+      "machining"
+    ]
+  },
+  {
+    "company": "AISIN Chemical Indiana, LLC (Crothersville, IN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "1004 Industrial Way, Crothersville, IN 47229, US",
+    "addressComponents": {
+      "city": "Crothersville",
+      "state": "IN",
+      "postal_code": "47229",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Chemical Indiana, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1004 Industrial Way, Crothersville, IN 47229, US",
+        "supplier_address_normalized": {
+          "city": "Crothersville",
+          "state": "IN",
+          "postal_code": "47229",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Chemicals and coatings",
+    "website": "https://www.aisinchemin.com/",
+    "companyKey": "aisinchemin.com",
+    "companyId": "cmp_4859e668988e",
+    "locationId": "loc_7af15ce9eda8",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Chemicals and coatings"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "chemicals"
+    ]
+  },
+  {
+    "company": "ADVICS Manufacturing Georgia, L.L.C. (LaGrange, GA)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1621 Lukken Industrial Dr W, LaGrange, GA 30240, US",
+    "addressComponents": {
+      "city": "LaGrange",
+      "state": "GA",
+      "postal_code": "30240",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ADVICS Manufacturing Georgia, L.L.C.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1621 Lukken Industrial Dr W, LaGrange, GA 30240, US",
+        "supplier_address_normalized": {
+          "city": "LaGrange",
+          "state": "GA",
+          "postal_code": "30240",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.advics-na.com/",
+    "companyKey": "name:advics-manufacturing-georgia-llc|parent:advics-north-america-inc|us",
+    "companyId": "cmp_e9b499092560",
+    "locationId": "loc_6263989b97df",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "brake systems"
+    ]
+  },
+  {
+    "company": "ADVICS Manufacturing Ohio, Inc. (Lebanon, OH)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1650 Kingsview Dr, Lebanon, OH 45036, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "OH",
+      "postal_code": "45036",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ADVICS Manufacturing Ohio, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1650 Kingsview Dr, Lebanon, OH 45036, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "OH",
+          "postal_code": "45036",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://advics-ohio.com/",
+    "companyKey": "advics-ohio.com",
+    "companyId": "cmp_3ca41756e405",
+    "locationId": "loc_c0a8cdf194d3",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "brakes",
+      "chassis"
+    ]
+  },
+  {
+    "company": "ADVICS North America, Inc. (Lebanon, OH)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1650 Kingsview Dr, Lebanon, OH 45036, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "OH",
+      "postal_code": "45036",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ADVICS North America, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1650 Kingsview Dr, Lebanon, OH 45036, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "OH",
+          "postal_code": "45036",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Systems integration",
+    "website": "https://www.advics-na.com/",
+    "companyKey": "advics-na.com",
+    "companyId": "cmp_384feb45c309",
+    "locationId": "loc_e371356fef2c",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "brakes"
+    ]
+  },
+  {
+    "company": "SHIROKI North America, Inc. (Smithville, TN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1111 W Broad St, Smithville, TN 37166, US",
+    "addressComponents": {
+      "city": "Smithville",
+      "state": "TN",
+      "postal_code": "37166",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SHIROKI North America, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1111 W Broad St, Smithville, TN 37166, US",
+        "supplier_address_normalized": {
+          "city": "Smithville",
+          "state": "TN",
+          "postal_code": "37166",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.shiroki.co.jp/english/",
+    "companyKey": "shiroki.co.jp",
+    "companyId": "cmp_67333aeeef39",
+    "locationId": "loc_e7d644d05d11",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping"
+    ]
+  },
+  {
+    "company": "SHIROKI-GA, LLC (Dalton, GA)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1300 Veterans Dr, Dalton, GA 30721, US",
+    "addressComponents": {
+      "city": "Dalton",
+      "state": "GA",
+      "postal_code": "30721",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SHIROKI-GA, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1300 Veterans Dr, Dalton, GA 30721, US",
+        "supplier_address_normalized": {
+          "city": "Dalton",
+          "state": "GA",
+          "postal_code": "30721",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.shiroki.co.jp/english/",
+    "companyKey": "shiroki.co.jp",
+    "companyId": "cmp_67333aeeef39",
+    "locationId": "loc_f39377a7aa54",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping"
+    ]
+  },
+  {
+    "company": "SHIROKI-GT, LLC (Gordonsville, TN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "165 Spicer Dr, Gordonsville, TN 38563, US",
+    "addressComponents": {
+      "city": "Gordonsville",
+      "state": "TN",
+      "postal_code": "38563",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SHIROKI-GT, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "165 Spicer Dr, Gordonsville, TN 38563, US",
+        "supplier_address_normalized": {
+          "city": "Gordonsville",
+          "state": "TN",
+          "postal_code": "38563",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.shiroki.co.jp/english/",
+    "companyKey": "shiroki.co.jp",
+    "companyId": "cmp_67333aeeef39",
+    "locationId": "loc_5c03900a5837",
+    "parentCompanyId": "cmp_de6dd23f9563",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping"
+    ]
+  },
+  {
+    "company": "JTEKT North America Corporation (Greenville, SC)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "7 Research Dr, Greenville, SC 29607, US",
+    "addressComponents": {
+      "city": "Greenville",
+      "state": "SC",
+      "postal_code": "29607",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT North America Corporation",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7 Research Dr, Greenville, SC 29607, US",
+        "supplier_address_normalized": {
+          "city": "Greenville",
+          "state": "SC",
+          "postal_code": "29607",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_a0bc7c36c697",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT North American Technical Center (Plymouth, MI)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "47771 Halyard Dr, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT North American Technical Center",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "47771 Halyard Dr, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_61cebca03cea",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Piedmont Plant (Piedmont, SC)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1866 Old Grove Rd, Piedmont, SC 29673, US",
+    "addressComponents": {
+      "city": "Piedmont",
+      "state": "SC",
+      "postal_code": "29673",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Piedmont Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1866 Old Grove Rd, Piedmont, SC 29673, US",
+        "supplier_address_normalized": {
+          "city": "Piedmont",
+          "state": "SC",
+          "postal_code": "29673",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_80a3fe7713c1",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Morristown Plant (Morristown, TN)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "5932 Commerce Blvd, Morristown, TN 37814, US",
+    "addressComponents": {
+      "city": "Morristown",
+      "state": "TN",
+      "postal_code": "37814",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Morristown Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5932 Commerce Blvd, Morristown, TN 37814, US",
+        "supplier_address_normalized": {
+          "city": "Morristown",
+          "state": "TN",
+          "postal_code": "37814",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_36c6d1003681",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Vonore Plant 1 (Vonore, TN)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "55 Excellence Way, Vonore, TN 37885, US",
+    "addressComponents": {
+      "city": "Vonore",
+      "state": "TN",
+      "postal_code": "37885",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Vonore Plant 1",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "55 Excellence Way, Vonore, TN 37885, US",
+        "supplier_address_normalized": {
+          "city": "Vonore",
+          "state": "TN",
+          "postal_code": "37885",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_b7bb0d1a973d",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Vonore Plant 2 (Vonore, TN)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "56 Excellence Way, Vonore, TN 37885, US",
+    "addressComponents": {
+      "city": "Vonore",
+      "state": "TN",
+      "postal_code": "37885",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Vonore Plant 2",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "56 Excellence Way, Vonore, TN 37885, US",
+        "supplier_address_normalized": {
+          "city": "Vonore",
+          "state": "TN",
+          "postal_code": "37885",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_ba06b2220d37",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Cairo Plant (Cairo, GA)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2525 Torrington Dr, Cairo, GA 39828, US",
+    "addressComponents": {
+      "city": "Cairo",
+      "state": "GA",
+      "postal_code": "39828",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Cairo Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2525 Torrington Dr, Cairo, GA 39828, US",
+        "supplier_address_normalized": {
+          "city": "Cairo",
+          "state": "GA",
+          "postal_code": "39828",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_74d5b31b6ddc",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Dahlonega Plant (Dahlonega, GA)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "615 Torrington Dr, Dahlonega, GA 30533, US",
+    "addressComponents": {
+      "city": "Dahlonega",
+      "state": "GA",
+      "postal_code": "30533",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Dahlonega Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "615 Torrington Dr, Dahlonega, GA 30533, US",
+        "supplier_address_normalized": {
+          "city": "Dahlonega",
+          "state": "GA",
+          "postal_code": "30533",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_e77e8f5d45c9",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Blythewood Plant (Blythewood, SC)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1006 Northpoint Blvd, Blythewood, SC 29016, US",
+    "addressComponents": {
+      "city": "Blythewood",
+      "state": "SC",
+      "postal_code": "29016",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Blythewood Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1006 Northpoint Blvd, Blythewood, SC 29016, US",
+        "supplier_address_normalized": {
+          "city": "Blythewood",
+          "state": "SC",
+          "postal_code": "29016",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_56aa1ae4b2da",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Sylvania Plant (Sylvania, GA)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "400 Friendship Rd, Sylvania, GA 30467, US",
+    "addressComponents": {
+      "city": "Sylvania",
+      "state": "GA",
+      "postal_code": "30467",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Sylvania Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "400 Friendship Rd, Sylvania, GA 30467, US",
+        "supplier_address_normalized": {
+          "city": "Sylvania",
+          "state": "GA",
+          "postal_code": "30467",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_1a9f8af6f7f8",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Walhalla Plant (Walhalla, SC)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "430 Torrington Rd, Walhalla, SC 29691, US",
+    "addressComponents": {
+      "city": "Walhalla",
+      "state": "SC",
+      "postal_code": "29691",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Walhalla Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "430 Torrington Rd, Walhalla, SC 29691, US",
+        "supplier_address_normalized": {
+          "city": "Walhalla",
+          "state": "SC",
+          "postal_code": "29691",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_bd312bcb7c81",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "JTEKT - Washington Plant (Telford, TN)",
+    "parentCompany": "JTEKT Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "146 Cutting Edge Ct, Telford, TN 37690, US",
+    "addressComponents": {
+      "city": "Telford",
+      "state": "TN",
+      "postal_code": "37690",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT - Washington Plant",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "146 Cutting Edge Ct, Telford, TN 37690, US",
+        "supplier_address_normalized": {
+          "city": "Telford",
+          "state": "TN",
+          "postal_code": "37690",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_481e44939f6e",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "bearings",
+      "chassis"
+    ]
+  },
+  {
+    "company": "Gestamp Lapeer (Lapeer, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "100 Fair St, P.O. Box 717, Lapeer, MI 48446, US",
+    "addressComponents": {
+      "city": "Lapeer",
+      "state": "MI",
+      "postal_code": "48446",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp Lapeer",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Fair St, P.O. Box 717, Lapeer, MI 48446, US",
+        "supplier_address_normalized": {
+          "city": "Lapeer",
+          "state": "MI",
+          "postal_code": "48446",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.gestamp.com/",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_c101f33ae3b2",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "body structures"
+    ]
+  },
+  {
+    "company": "Gestamp South Carolina (Union, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 LSP Rd, Union, SC 29379, US",
+    "addressComponents": {
+      "city": "Union",
+      "state": "SC",
+      "postal_code": "29379",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp South Carolina",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 LSP Rd, Union, SC 29379, US",
+        "supplier_address_normalized": {
+          "city": "Union",
+          "state": "SC",
+          "postal_code": "29379",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.gestamp.com/",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_202c81b5573a",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "body structures"
+    ]
+  },
+  {
+    "company": "AUTOKINITON - Axis Engineering (Britton, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tooling_and_Capital_Equipment",
+    "addressRaw": "455 E Chicago Blvd, Britton, MI 49229, US",
+    "addressComponents": {
+      "city": "Britton",
+      "state": "MI",
+      "postal_code": "49229",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON - Axis Engineering",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tooling_and_Capital_Equipment",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "455 E Chicago Blvd, Britton, MI 49229, US",
+        "supplier_address_normalized": {
+          "city": "Britton",
+          "state": "MI",
+          "postal_code": "49229",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tooling_and_Capital_Equipment",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Industrial automation / controls",
+    "website": "https://www.autokiniton.com/",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_48252647842b",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Tooling",
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tooling",
+      "automation"
+    ]
+  },
+  {
+    "company": "AUTOKINITON - Axis Engineering (Dundee, MI - Location 1)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tooling_and_Capital_Equipment",
+    "addressRaw": "5461 Circle Seven Dr, Dundee, MI 48131, US",
+    "addressComponents": {
+      "city": "Dundee",
+      "state": "MI",
+      "postal_code": "48131",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON - Axis Engineering",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tooling_and_Capital_Equipment",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5461 Circle Seven Dr, Dundee, MI 48131, US",
+        "supplier_address_normalized": {
+          "city": "Dundee",
+          "state": "MI",
+          "postal_code": "48131",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tooling_and_Capital_Equipment",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Industrial automation / controls",
+    "website": "https://www.autokiniton.com/",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_904edaf5f899",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Tooling",
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tooling",
+      "automation"
+    ]
+  },
+  {
+    "company": "AUTOKINITON - Axis Engineering (Dundee, MI - Location 2)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tooling_and_Capital_Equipment",
+    "addressRaw": "105 Research Pkwy, Dundee, MI 48131, US",
+    "addressComponents": {
+      "city": "Dundee",
+      "state": "MI",
+      "postal_code": "48131",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON - Axis Engineering",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tooling_and_Capital_Equipment",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "105 Research Pkwy, Dundee, MI 48131, US",
+        "supplier_address_normalized": {
+          "city": "Dundee",
+          "state": "MI",
+          "postal_code": "48131",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tooling_and_Capital_Equipment",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Industrial automation / controls",
+    "website": "https://www.autokiniton.com/",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_e5256d91667b",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Tooling",
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tooling",
+      "automation"
+    ]
+  },
+  {
+    "company": "AUTOKINITON - Axis Engineering (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tooling_and_Capital_Equipment",
+    "addressRaw": "14496 Sheldon Rd, Suite 240, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON - Axis Engineering",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tooling_and_Capital_Equipment",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "14496 Sheldon Rd, Suite 240, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round60"
+      }
+    },
+    "supplyChainCategory": "Tooling_and_Capital_Equipment",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Industrial automation / controls",
+    "website": "https://www.autokiniton.com/",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_b151eace6a0c",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Tooling",
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tooling",
+      "automation"
+    ]
+  }
+]

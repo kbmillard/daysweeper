@@ -1,0 +1,4087 @@
+[
+  {
+    "company": "Hendrickson (Truck CVS, Dayton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3600 Maywood Avenue Dayton, OH 45417, US",
+    "addressComponents": {
+      "city": "Dayton",
+      "state": "OH",
+      "postal_code": "45417",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3600 Maywood Avenue Dayton, OH 45417, US",
+        "supplier_address_normalized": {
+          "city": "Dayton",
+          "state": "OH",
+          "postal_code": "45417",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_8a874e27750b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "937-278-8112"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Truck CVS, Kendallville, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "470 West Lincoln Street Kendallville, IN 46755, US",
+    "addressComponents": {
+      "city": "Kendallville",
+      "state": "IN",
+      "postal_code": "46755",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "470 West Lincoln Street Kendallville, IN 46755, US",
+        "supplier_address_normalized": {
+          "city": "Kendallville",
+          "state": "IN",
+          "postal_code": "46755",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_e082678bbbbc",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "260-347-0561"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Truck CVS, Lebanon, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "655 Hendrickson Drive Lebanon, KY 40033, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "KY",
+      "postal_code": "40033",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "655 Hendrickson Drive Lebanon, KY 40033, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "KY",
+          "postal_code": "40033",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_0948782004dd",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "270-692-3600"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer, Canton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2070 Industrial Place SE Canton, OH 44707, US",
+    "addressComponents": {
+      "city": "Canton",
+      "state": "OH",
+      "postal_code": "44707",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2070 Industrial Place SE Canton, OH 44707, US",
+        "supplier_address_normalized": {
+          "city": "Canton",
+          "state": "OH",
+          "postal_code": "44707",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_8eb3db0a9bce",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "330-454-7800"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer, Clarksville, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "151 International Boulevard Clarksville, TN 37040, US",
+    "addressComponents": {
+      "city": "Clarksville",
+      "state": "TN",
+      "postal_code": "37040",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "151 International Boulevard Clarksville, TN 37040, US",
+        "supplier_address_normalized": {
+          "city": "Clarksville",
+          "state": "TN",
+          "postal_code": "37040",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_eeb089ec8f7c",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "931-645-4215"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer, Elizabethtown, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "940 North Black Branch Road Elizabethtown, KY 42701, US",
+    "addressComponents": {
+      "city": "Elizabethtown",
+      "state": "KY",
+      "postal_code": "42701",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "940 North Black Branch Road Elizabethtown, KY 42701, US",
+        "supplier_address_normalized": {
+          "city": "Elizabethtown",
+          "state": "KY",
+          "postal_code": "42701",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_fe45075b8db3",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "270-765-9221"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer, Lebanon, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "180 Mount Zion Road Lebanon, IN 46052, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "IN",
+      "postal_code": "46052",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "180 Mount Zion Road Lebanon, IN 46052, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "IN",
+          "postal_code": "46052",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_f8e7279fe351",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "765-482-8100"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer, Navarre, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4500 Sterilite Street NE Navarre, OH 44662, US",
+    "addressComponents": {
+      "city": "Navarre",
+      "state": "OH",
+      "postal_code": "44662",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4500 Sterilite Street NE Navarre, OH 44662, US",
+        "supplier_address_normalized": {
+          "city": "Navarre",
+          "state": "OH",
+          "postal_code": "44662",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_91f4bef80a76",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "330-767-3920"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer, Somerset, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "565 Pin Oak Drive Somerset, KY 42503, US",
+    "addressComponents": {
+      "city": "Somerset",
+      "state": "KY",
+      "postal_code": "42503",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "565 Pin Oak Drive Somerset, KY 42503, US",
+        "supplier_address_normalized": {
+          "city": "Somerset",
+          "state": "KY",
+          "postal_code": "42503",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_6721fd95ed97",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "606-678-4125"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Auxiliary Axle Systems, Hebron, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "277 North High Street Hebron, OH 43025, US",
+    "addressComponents": {
+      "city": "Hebron",
+      "state": "OH",
+      "postal_code": "43025",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "277 North High Street Hebron, OH 43025, US",
+        "supplier_address_normalized": {
+          "city": "Hebron",
+          "state": "OH",
+          "postal_code": "43025",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_ce13400b5096",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "740-345-9546"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Bumper, Lockport, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "501 Caton Farm Road Lockport, IL 60441, US",
+    "addressComponents": {
+      "city": "Lockport",
+      "state": "IL",
+      "postal_code": "60441",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "501 Caton Farm Road Lockport, IL 60441, US",
+        "supplier_address_normalized": {
+          "city": "Lockport",
+          "state": "IL",
+          "postal_code": "60441",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_90c33c2d1ff7",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "815-838-4311"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Reyco Granning, Mount Vernon, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1205 Industrial Park Drive Mount Vernon, MO 65712, US",
+    "addressComponents": {
+      "city": "Mount Vernon",
+      "state": "MO",
+      "postal_code": "65712",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1205 Industrial Park Drive Mount Vernon, MO 65712, US",
+        "supplier_address_normalized": {
+          "city": "Mount Vernon",
+          "state": "MO",
+          "postal_code": "65712",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_d9d4d06b3410",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "417-466-9517"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (W&C, McKinney, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "725 E University Drive McKinney, TX 75069, US",
+    "addressComponents": {
+      "city": "McKinney",
+      "state": "TX",
+      "postal_code": "75069",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "725 E University Drive McKinney, TX 75069, US",
+        "supplier_address_normalized": {
+          "city": "McKinney",
+          "state": "TX",
+          "postal_code": "75069",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_48b37c843db2",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "972-548-2255"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Brake & Wheel-End, Chattanooga, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2660 Sidney Street Chattanooga, TN 37408, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37408",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2660 Sidney Street Chattanooga, TN 37408, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37408",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_753a5a7e7a1a",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "423-643-8751"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Brake & Wheel-End, Berea, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "159 Glades Road Berea, KY 40403, US",
+    "addressComponents": {
+      "city": "Berea",
+      "state": "KY",
+      "postal_code": "40403",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "159 Glades Road Berea, KY 40403, US",
+        "supplier_address_normalized": {
+          "city": "Berea",
+          "state": "KY",
+          "postal_code": "40403",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_1606c37fd98b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Brake & Wheel-End, Franklin, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "115 Ogles Street Franklin, KY 42134, US",
+    "addressComponents": {
+      "city": "Franklin",
+      "state": "KY",
+      "postal_code": "42134",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "115 Ogles Street Franklin, KY 42134, US",
+        "supplier_address_normalized": {
+          "city": "Franklin",
+          "state": "KY",
+          "postal_code": "42134",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_87c6b6dbf6b1",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Vehicle Technology Group, North Canton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "9260 Pleasantwood Avenue NW North Canton, OH 44720, US",
+    "addressComponents": {
+      "city": "North Canton",
+      "state": "OH",
+      "postal_code": "44720",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9260 Pleasantwood Avenue NW North Canton, OH 44720, US",
+        "supplier_address_normalized": {
+          "city": "North Canton",
+          "state": "OH",
+          "postal_code": "44720",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_448303ed611c",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components",
+      "brake systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension",
+      "axle",
+      "brake"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "330-497-0299"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Goshen, Goshen, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3803 County Road 17 Goshen, IN 46528, US",
+    "addressComponents": {
+      "city": "Goshen",
+      "state": "IN",
+      "postal_code": "46528",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3803 County Road 17 Goshen, IN 46528, US",
+        "supplier_address_normalized": {
+          "city": "Goshen",
+          "state": "IN",
+          "postal_code": "46528",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_60417d667020",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "574-534-0396"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Kalamazoo / Galesburg, Galesburg, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "225 W Battle Creek Street Galesburg, MI 49053, US",
+    "addressComponents": {
+      "city": "Galesburg",
+      "state": "MI",
+      "postal_code": "49053",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "225 W Battle Creek Street Galesburg, MI 49053, US",
+        "supplier_address_normalized": {
+          "city": "Galesburg",
+          "state": "MI",
+          "postal_code": "49053",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_1191ec9f1f90",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "269-665-5655"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Fremont, Fremont, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "401 E Wisner Avenue Fremont, MI 49412, US",
+    "addressComponents": {
+      "city": "Fremont",
+      "state": "MI",
+      "postal_code": "49412",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 E Wisner Avenue Fremont, MI 49412, US",
+        "supplier_address_normalized": {
+          "city": "Fremont",
+          "state": "MI",
+          "postal_code": "49412",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_08c6375a9678",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "231-924-8768"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Valley City, Valley City, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "5630 Interstate Court Valley City, OH 44280, US",
+    "addressComponents": {
+      "city": "Valley City",
+      "state": "OH",
+      "postal_code": "44280",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5630 Interstate Court Valley City, OH 44280, US",
+        "supplier_address_normalized": {
+          "city": "Valley City",
+          "state": "OH",
+          "postal_code": "44280",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_a3662cd70247",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "330-220-9762"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Wellington, Wellington, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2401 US Hwy 20 Wellington, OH 44090, US",
+    "addressComponents": {
+      "city": "Wellington",
+      "state": "OH",
+      "postal_code": "44090",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2401 US Hwy 20 Wellington, OH 44090, US",
+        "supplier_address_normalized": {
+          "city": "Wellington",
+          "state": "OH",
+          "postal_code": "44090",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_8d39a2b0c623",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "440-647-2244"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Lawrenceburg, Lawrenceburg, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Dura Drive Lawrenceburg, TN 38464, US",
+    "addressComponents": {
+      "city": "Lawrenceburg",
+      "state": "TN",
+      "postal_code": "38464",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Dura Drive Lawrenceburg, TN 38464, US",
+        "supplier_address_normalized": {
+          "city": "Lawrenceburg",
+          "state": "TN",
+          "postal_code": "38464",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_67726f9e4e12",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "931-762-0614"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Milan, Milan, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "157 Industrial Drive Milan, TN 38358, US",
+    "addressComponents": {
+      "city": "Milan",
+      "state": "TN",
+      "postal_code": "38358",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "157 Industrial Drive Milan, TN 38358, US",
+        "supplier_address_normalized": {
+          "city": "Milan",
+          "state": "TN",
+          "postal_code": "38358",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_f48dcf998726",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "731-686-1340"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Muscle Shoals, Muscle Shoals, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "100 Ashland Drive Muscle Shoals, AL 35661, US",
+    "addressComponents": {
+      "city": "Muscle Shoals",
+      "state": "AL",
+      "postal_code": "35661",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Ashland Drive Muscle Shoals, AL 35661, US",
+        "supplier_address_normalized": {
+          "city": "Muscle Shoals",
+          "state": "AL",
+          "postal_code": "35661",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_bab9a784af34",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "256-389-1150"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Celaya Operations, Celaya, GTO)",
+    "parentCompany": null,
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Avenida Mexico-Japon 210, Ciudad Industrial Celaya, GTO 38010, MX",
+    "addressComponents": {
+      "city": "Celaya",
+      "state": "GTO",
+      "postal_code": "38010",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Avenida Mexico-Japon 210, Ciudad Industrial Celaya, GTO 38010, MX",
+        "supplier_address_normalized": {
+          "city": "Celaya",
+          "state": "GTO",
+          "postal_code": "38010",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_f498c7c0eb6f",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+52-461-159-0093"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Saltillo Operations, Saltillo, COA)",
+    "parentCompany": null,
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Blvd Vito Alessio Robles 1400, Parque Industrial Las Torres Saltillo, COA 25080, MX",
+    "addressComponents": {
+      "city": "Saltillo",
+      "state": "COA",
+      "postal_code": "25080",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Blvd Vito Alessio Robles 1400, Parque Industrial Las Torres Saltillo, COA 25080, MX",
+        "supplier_address_normalized": {
+          "city": "Saltillo",
+          "state": "COA",
+          "postal_code": "25080",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_3bfd9777b18b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+52-844-413-1647"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "DURA | Shiloh (Matamoros Plant 3, Matamoros, TAM)",
+    "parentCompany": null,
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Carretera Matamoros-Reynosa KM 17.5, Parque Industrial Las Ventanas Matamoros, TAM 87370, MX",
+    "addressComponents": {
+      "city": "Matamoros",
+      "state": "TAM",
+      "postal_code": "87370",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Carretera Matamoros-Reynosa KM 17.5, Parque Industrial Las Ventanas Matamoros, TAM 87370, MX",
+        "supplier_address_normalized": {
+          "city": "Matamoros",
+          "state": "TAM",
+          "postal_code": "87370",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_c2880950001d",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "precision-formed products",
+      "stamped assemblies",
+      "welded assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "metal forming",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+52-868-814-0044"
+    },
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Headquarters, Murfreesboro, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1225 Garrison Drive Murfreesboro, TN 37129, US",
+    "addressComponents": {
+      "city": "Murfreesboro",
+      "state": "TN",
+      "postal_code": "37129",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1225 Garrison Drive Murfreesboro, TN 37129, US",
+        "supplier_address_normalized": {
+          "city": "Murfreesboro",
+          "state": "TN",
+          "postal_code": "37129",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_9622190eae65",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-615-546-6040"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Manchester Plant, Manchester, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1020 Volunteer Pkwy. Manchester, TN 37355, US",
+    "addressComponents": {
+      "city": "Manchester",
+      "state": "TN",
+      "postal_code": "37355",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1020 Volunteer Pkwy. Manchester, TN 37355, US",
+        "supplier_address_normalized": {
+          "city": "Manchester",
+          "state": "TN",
+          "postal_code": "37355",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_0bf58c583a29",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-931-728-4122"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Design & Advanced Technology Center, Troy, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1875 Research Drive, Suite 100 Troy, MI 48083, US",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48083",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1875 Research Drive, Suite 100 Troy, MI 48083, US",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48083",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_b4fa0295c61a",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-248-994-5450"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Upper Sandusky Plant, Upper Sandusky, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1111 North Warpole St. Upper Sandusky, OH 43351, US",
+    "addressComponents": {
+      "city": "Upper Sandusky",
+      "state": "OH",
+      "postal_code": "43351",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1111 North Warpole St. Upper Sandusky, OH 43351, US",
+        "supplier_address_normalized": {
+          "city": "Upper Sandusky",
+          "state": "OH",
+          "postal_code": "43351",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_72cd2d56746a",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-419-209-0470"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Prattville Plant, Prattville, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1098 Doster Rd. Prattville, AL 36067, US",
+    "addressComponents": {
+      "city": "Prattville",
+      "state": "AL",
+      "postal_code": "36067",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1098 Doster Rd. Prattville, AL 36067, US",
+        "supplier_address_normalized": {
+          "city": "Prattville",
+          "state": "AL",
+          "postal_code": "36067",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_8f97fbc7cfbd",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-334-361-1041"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Talladega Plant, Talladega, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "50 Homer Drive Talladega, AL 35160, US",
+    "addressComponents": {
+      "city": "Talladega",
+      "state": "AL",
+      "postal_code": "35160",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "50 Homer Drive Talladega, AL 35160, US",
+        "supplier_address_normalized": {
+          "city": "Talladega",
+          "state": "AL",
+          "postal_code": "35160",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_c832b6557f50",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-256-480-2800"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai North America (Madison Plant, Madison, MS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "435 Church Road Madison, MS 39110, US",
+    "addressComponents": {
+      "city": "Madison",
+      "state": "MS",
+      "postal_code": "39110",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "435 Church Road Madison, MS 39110, US",
+        "supplier_address_normalized": {
+          "city": "Madison",
+          "state": "MS",
+          "postal_code": "39110",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_cb7b5623763f",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+1-601-407-5000"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai Mexicana (Headquarters & Leon Plant, León, GTO)",
+    "parentCompany": null,
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Blvd. Miguel de Cervantes Saavedra Sur 7502, Fideicomiso Ciudad Industrial León, GTO 37564, MX",
+    "addressComponents": {
+      "city": "León",
+      "state": "GTO",
+      "postal_code": "37564",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai Mexicana S.A. de C.V.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Blvd. Miguel de Cervantes Saavedra Sur 7502, Fideicomiso Ciudad Industrial León, GTO 37564, MX",
+        "supplier_address_normalized": {
+          "city": "León",
+          "state": "GTO",
+          "postal_code": "37564",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_ae867e31b070",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+52-477-763-5550"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Kasai Mexicana (Silao Plant, Silao, GTO)",
+    "parentCompany": null,
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Avenida Purina No.1 Fracc. Mineral de Pozos Puerto Interior Silao, GTO 36275, MX",
+    "addressComponents": {
+      "city": "Silao",
+      "state": "GTO",
+      "postal_code": "36275",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai Mexicana S.A. de C.V.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Avenida Purina No.1 Fracc. Mineral de Pozos Puerto Interior Silao, GTO 36275, MX",
+        "supplier_address_normalized": {
+          "city": "Silao",
+          "state": "GTO",
+          "postal_code": "36275",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior trim manufacturing",
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.kasai-na.com",
+    "companyKey": "kasai-na.com",
+    "companyId": "cmp_495dbfc74152",
+    "locationId": "loc_882cd783d7e8",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive interior trim",
+      "headliners",
+      "door trim",
+      "injection-molded interior components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interior trim",
+      "interior modules",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "contactInfo": {
+      "phone": "+52-472-135-0100"
+    },
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "HI-LEX (HI-LEX America Inc., Battle Creek, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "5200 Wayne Road Battle Creek, MI 49037, US",
+    "addressComponents": {
+      "city": "Battle Creek",
+      "state": "MI",
+      "postal_code": "49037",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5200 Wayne Road Battle Creek, MI 49037, US",
+        "supplier_address_normalized": {
+          "city": "Battle Creek",
+          "state": "MI",
+          "postal_code": "49037",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_2f29d6895c6d",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "contactInfo": {
+      "phone": "+1-269-968-0781"
+    },
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (HI-LEX Automotive Center, Rochester Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2911 Research Drive Rochester Hills, MI 48309, US",
+    "addressComponents": {
+      "city": "Rochester Hills",
+      "state": "MI",
+      "postal_code": "48309",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2911 Research Drive Rochester Hills, MI 48309, US",
+        "supplier_address_normalized": {
+          "city": "Rochester Hills",
+          "state": "MI",
+          "postal_code": "48309",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_0adbd336321f",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (HI-LEX Controls Inc., Litchfield, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "152 Simpson Drive Litchfield, MI 49252, US",
+    "addressComponents": {
+      "city": "Litchfield",
+      "state": "MI",
+      "postal_code": "49252",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "152 Simpson Drive Litchfield, MI 49252, US",
+        "supplier_address_normalized": {
+          "city": "Litchfield",
+          "state": "MI",
+          "postal_code": "49252",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_05e7e3e0b8fa",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (HI-LEX Controls Inc. Hudson, Hudson, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "15780 Steger Drive Hudson, MI 49247, US",
+    "addressComponents": {
+      "city": "Hudson",
+      "state": "MI",
+      "postal_code": "49247",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15780 Steger Drive Hudson, MI 49247, US",
+        "supplier_address_normalized": {
+          "city": "Hudson",
+          "state": "MI",
+          "postal_code": "49247",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_ca00f0007805",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (HI-LEX Controls Inc. Warren Plant, Hazel Park, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1420 E. 10 Mile Rd, Suite 250 Hazel Park, MI 48030, US",
+    "addressComponents": {
+      "city": "Hazel Park",
+      "state": "MI",
+      "postal_code": "48030",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1420 E. 10 Mile Rd, Suite 250 Hazel Park, MI 48030, US",
+        "supplier_address_normalized": {
+          "city": "Hazel Park",
+          "state": "MI",
+          "postal_code": "48030",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_13867812458d",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (Daedong Hi-Lex of America, Inc., Cusseta, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1195 County Road 177 Cusseta, AL 36852, US",
+    "addressComponents": {
+      "city": "Cusseta",
+      "state": "AL",
+      "postal_code": "36852",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1195 County Road 177 Cusseta, AL 36852, US",
+        "supplier_address_normalized": {
+          "city": "Cusseta",
+          "state": "AL",
+          "postal_code": "36852",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_cad50fa9aca6",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (GECOM Corp., Greensburg, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1025 Barachel Lane Greensburg, IN 47240, US",
+    "addressComponents": {
+      "city": "Greensburg",
+      "state": "IN",
+      "postal_code": "47240",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1025 Barachel Lane Greensburg, IN 47240, US",
+        "supplier_address_normalized": {
+          "city": "Greensburg",
+          "state": "IN",
+          "postal_code": "47240",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_ee80570770d9",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "HI-LEX (HI-LEX Mexicana S.A. de C.V., Querétaro, QRO)",
+    "parentCompany": null,
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Av. Peñuelas No. 9, Fracc. Industrial San Pedrito Querétaro, QRO 76148, MX",
+    "addressComponents": {
+      "city": "Querétaro",
+      "state": "QRO",
+      "postal_code": "76148",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HI-LEX Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Av. Peñuelas No. 9, Fracc. Industrial San Pedrito Querétaro, QRO 76148, MX",
+        "supplier_address_normalized": {
+          "city": "Querétaro",
+          "state": "QRO",
+          "postal_code": "76148",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "mechatronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hi-lex.co.jp",
+    "companyKey": "hi-lex.co.jp",
+    "companyId": "cmp_d8050c939855",
+    "locationId": "loc_7b88682a4816",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "mechanical control cables",
+      "window regulators",
+      "door modules",
+      "actuators"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "door modules",
+      "window regulators",
+      "control cables"
+    ],
+    "supplyChainSubtype": "Vehicle access & security systems",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "capabilityTags": [
+      "Assembly",
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "ASK Industries (ASK USA – Detroit, Lake Orion, MI)",
+    "parentCompany": "JVCKENWOOD Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "180 Engelwood Drive, Suite H Lake Orion, MI 48359, US",
+    "addressComponents": {
+      "city": "Lake Orion",
+      "state": "MI",
+      "postal_code": "48359",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ASK Industries",
+        "parent_company": "JVCKENWOOD Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "180 Engelwood Drive, Suite H Lake Orion, MI 48359, US",
+        "supplier_address_normalized": {
+          "city": "Lake Orion",
+          "state": "MI",
+          "postal_code": "48359",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.askgroup.global",
+    "companyKey": "askgroup.global",
+    "companyId": "cmp_f8ac5d33ba00",
+    "locationId": "loc_d18aaabfed07",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "speakers",
+      "antennas",
+      "cables",
+      "audio systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "audio systems",
+      "antennas",
+      "cables"
+    ],
+    "supplyChainSubtype": "Electronics manufacturing",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "contactInfo": {
+      "phone": "+1-248-706-6588"
+    },
+    "capabilityTags": [
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "ASK Industries (ASK Mexico - Hermosillo, Hermosillo, SON)",
+    "parentCompany": "JVCKENWOOD Corporation",
+    "segment": "Mexico",
+    "tier": "Tier 1",
+    "addressRaw": "Blvd. Antonio Quiroga No. 107-A, Colonia Vista Bella Hermosillo, SON 83174, MX",
+    "addressComponents": {
+      "city": "Hermosillo",
+      "state": "SON",
+      "postal_code": "83174",
+      "country": "MX"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ASK Industries",
+        "parent_company": "JVCKENWOOD Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Blvd. Antonio Quiroga No. 107-A, Colonia Vista Bella Hermosillo, SON 83174, MX",
+        "supplier_address_normalized": {
+          "city": "Hermosillo",
+          "state": "SON",
+          "postal_code": "83174",
+          "country": "MX"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.askgroup.global",
+    "companyKey": "askgroup.global",
+    "companyId": "cmp_f8ac5d33ba00",
+    "locationId": "loc_e802e2415c8b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "speakers",
+      "antennas",
+      "cables",
+      "audio systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "audio systems",
+      "antennas",
+      "cables"
+    ],
+    "supplyChainSubtype": "Electronics manufacturing",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "contactInfo": {
+      "phone": "+52-662-689-7100"
+    },
+    "capabilityTags": [
+      "Electronics manufacturing"
+    ]
+  },
+  {
+    "company": "Casco Products (US Manufacturing Operations, Morgantown, KY)",
+    "parentCompany": "Amphenol Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1357 Veterans Way Morgantown, KY 42261, US",
+    "addressComponents": {
+      "city": "Morgantown",
+      "state": "KY",
+      "postal_code": "42261",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Casco Products Corporation",
+        "parent_company": "Amphenol Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1357 Veterans Way Morgantown, KY 42261, US",
+        "supplier_address_normalized": {
+          "city": "Morgantown",
+          "state": "KY",
+          "postal_code": "42261",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.cascoauto.com",
+    "companyKey": "cascoauto.com",
+    "companyId": "cmp_3f5b3fcaa93b",
+    "locationId": "loc_d52bd40eeefb",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "power outlets",
+      "cigarette lighters",
+      "switch bases",
+      "PCV valves",
+      "power electronics"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "Tier 1",
+      "power outlets",
+      "electronics"
+    ],
+    "supplyChainSubtype": "Electronics manufacturing",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "contactInfo": {
+      "phone": "270-526-5996",
+      "email": "info@cascoauto.com"
+    },
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Casco Products (Sales Office & R&D Center, Novi, MI)",
+    "parentCompany": "Amphenol Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "41180 Bridge Street Novi, MI 48375, US",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48375",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Casco Products Corporation",
+        "parent_company": "Amphenol Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "41180 Bridge Street Novi, MI 48375, US",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48375",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.cascoauto.com",
+    "companyKey": "cascoauto.com",
+    "companyId": "cmp_3f5b3fcaa93b",
+    "locationId": "loc_9f512debd32d",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "power outlets",
+      "cigarette lighters",
+      "switch bases",
+      "PCV valves",
+      "power electronics"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "Tier 1",
+      "power outlets",
+      "electronics"
+    ],
+    "supplyChainSubtype": "Electronics manufacturing",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "contactInfo": {
+      "phone": "248-957-0400",
+      "email": "info@cascoauto.com"
+    },
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly"
+    ]
+  },
+  {
+    "company": "Casco Automotive Group (Headquarters, Frankfurt am Main, DE)",
+    "parentCompany": "Amphenol Corporation",
+    "segment": "Germany",
+    "tier": "Tier 1",
+    "addressRaw": "Berner Straße 38 Frankfurt am Main, HE 60437, DE",
+    "addressComponents": {
+      "city": "Frankfurt am Main",
+      "state": "HE",
+      "postal_code": "60437",
+      "country": "DE"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Casco Automotive Group",
+        "parent_company": "Amphenol Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Berner Straße 38 Frankfurt am Main, HE 60437, DE",
+        "supplier_address_normalized": {
+          "city": "Frankfurt am Main",
+          "state": "HE",
+          "postal_code": "60437",
+          "country": "DE"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "corridor_official_site_locations_round58"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.cascoauto.com",
+    "companyKey": "cascoauto.com",
+    "companyId": "cmp_3f5b3fcaa93b",
+    "locationId": "loc_d87b30b5e640",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "power outlets",
+      "cigarette lighters",
+      "switch bases",
+      "PCV valves",
+      "power electronics"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "Tier 1",
+      "power outlets",
+      "electronics"
+    ],
+    "supplyChainSubtype": "Electronics manufacturing",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "contactInfo": {
+      "phone": "+49 69 50064 100"
+    },
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly"
+    ]
+  }
+]

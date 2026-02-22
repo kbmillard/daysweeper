@@ -27,7 +27,6 @@ type LocationEditableData = {
   addressRaw: string;
   addressNormalized: string | null;
   addressComponents: AddressComponents;
-  addressConfidence: number | null;
   latitude: number | null;
   longitude: number | null;
 };
@@ -202,16 +201,18 @@ export default function LocationEditableFields({ location, company, locationOnly
               className='mt-1'
             />
           </div>
-          <div>
-            <Label htmlFor='addressNormalized'>Normalized Address</Label>
-            <Input
-              id='addressNormalized'
-              value={locForm.addressNormalized}
-              onChange={(e) => handleLocChange('addressNormalized', e.target.value)}
-              placeholder='Normalized address'
-              className='mt-1'
-            />
-          </div>
+          {!locationOnly && (
+            <div>
+              <Label htmlFor='addressNormalized'>Normalized Address</Label>
+              <Input
+                id='addressNormalized'
+                value={locForm.addressNormalized}
+                onChange={(e) => handleLocChange('addressNormalized', e.target.value)}
+                placeholder='Normalized address'
+                className='mt-1'
+              />
+            </div>
+          )}
           <div className='grid grid-cols-2 gap-4'>
             <div>
               <Label htmlFor='city'>City</Label>

@@ -1,0 +1,3754 @@
+[
+  {
+    "company": "Viking Plastics (Jeffersonville, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2200 Centennial Blvd., Jeffersonville, IN 47130, US",
+    "addressComponents": {
+      "city": "Jeffersonville",
+      "state": "IN",
+      "postal_code": "47130",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Viking Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2200 Centennial Blvd., Jeffersonville, IN 47130, US",
+        "supplier_address_normalized": {
+          "city": "Jeffersonville",
+          "state": "IN",
+          "postal_code": "47130",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plastic injection molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "website": "https://www.vikingplastics.com",
+    "companyKey": "vikingplastics.com",
+    "companyId": "cmp_c539a551a7bd",
+    "locationId": "loc_766f239d271c",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "injection molded components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Injection-molded plastics",
+    "supplyChainSubtypeGroup": null,
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "Georgetown Metal Processing (Georgetown, KY)",
+    "parentCompany": "Toyota Tsusho American",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "650 Triport Road, Georgetown, KY 40324, US",
+    "addressComponents": {
+      "city": "Georgetown",
+      "state": "KY",
+      "postal_code": "40324",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://georgetownmetalprocessing.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Georgetown Metal Processing, LLC",
+        "parent_company": "Toyota Tsusho American",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "650 Triport Road, Georgetown, KY 40324, US",
+        "supplier_address_normalized": {
+          "city": "Georgetown",
+          "state": "KY",
+          "postal_code": "40324",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Steel blanks"
+        ],
+        "primary_functions": [
+          "steel blanking",
+          "warehousing"
+        ],
+        "production_characteristics": {
+          "high_volume": true
+        }
+      },
+      "oem_association": {
+        "oem_name": "Toyota",
+        "oem_plant_name": null,
+        "oem_plant_type": null,
+        "oem_plant_address": null
+      },
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": true,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round9"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "companyKey": "georgetownmetalprocessing.com",
+    "companyId": "cmp_176099945185",
+    "locationId": "loc_d708526f1fe2",
+    "parentCompanyId": "cmp_bcacaa6ee61e",
+    "contactInfo": {
+      "phone": "502-570-3400"
+    },
+    "capabilityTags": [
+      "Metal processing",
+      "Stamping"
+    ]
+  },
+  {
+    "company": "Green Tokai (Maysville, KY)",
+    "parentCompany": "Tokai Kogyo Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1725 Downing Dr., Maysville, KY 41056",
+    "addressComponents": {
+      "city": "Maysville",
+      "state": "KY",
+      "postal_code": "41056",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Green Tokai",
+        "parent_company": "Tokai Kogyo Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1725 Downing Dr., Maysville, KY 41056",
+        "supplier_address_normalized": {
+          "city": "Maysville",
+          "state": "KY",
+          "postal_code": "41056",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_sweep_round10"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.greentokai.com",
+    "companyKey": "name:green-tokai|parent:tokai-kogyo-co-ltd|us",
+    "companyId": "cmp_d46bd73506b2",
+    "locationId": "loc_670d757c8386",
+    "parentCompanyId": "cmp_0b4f2f1a5df6",
+    "contactInfo": {
+      "phone": "606-759-4445",
+      "email": "it@greentokai.com"
+    },
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Interior systems",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery"
+    ]
+  },
+  {
+    "company": "Par 4 Plastics, Inc. (Marion, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "351 Industrial Drive, Marion, KY 42064, US",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "KY",
+      "postal_code": "42064",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Par 4 Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "351 Industrial Drive, Marion, KY 42064, US",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "KY",
+          "postal_code": "42064",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plastic injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "website": "https://par4plastics.com",
+    "companyKey": "par4plastics.com",
+    "companyId": "cmp_0d807581703f",
+    "locationId": "loc_03435f6c7999",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "injection molded plastic parts",
+      "assemblies"
+    ],
+    "packagingSignals": [
+      "Just-in-time (JIT) production"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "IATF 16949",
+      "injection molding"
+    ],
+    "supplyChainSubtype": "Injection-molded plastics",
+    "contactInfo": {
+      "phone": "270-965-9141",
+      "email": "sales@par4plastics.com"
+    },
+    "supplyChainSubtypeGroup": null,
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "Sumitomo Electric Wiring Systems, Inc. (Bowling Green, KY)",
+    "parentCompany": "Sumitomo Electric Industries",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1018 Ashley Street, Bowling Green, KY 42101, US",
+    "addressComponents": {
+      "city": "Bowling Green",
+      "state": "KY",
+      "postal_code": "42101",
+      "country": "US"
+    },
+    "addressConfidence": 0.8,
+    "website": "https://sewsus.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Sumitomo Electric Wiring Systems, Inc.",
+        "parent_company": "Sumitomo Electric Industries",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1018 Ashley Street, Bowling Green, KY 42101, US",
+        "supplier_address_normalized": {
+          "city": "Bowling Green",
+          "state": "KY",
+          "postal_code": "42101",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Wiring harnesses",
+          "Electronics"
+        ],
+        "primary_functions": [
+          "wiring harness manufacturing",
+          "automotive electronics"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round8"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "companyKey": "sewsus.com",
+    "companyId": "cmp_e4ab651bc604",
+    "locationId": "loc_bb69a8510a97",
+    "parentCompanyId": "cmp_3c168f44445a",
+    "parentCompanyWebsite": "https://sumitomoelectric.com/",
+    "keyProducts": [
+      "Wiring harnesses",
+      "Electric wire",
+      "Connectors",
+      "Terminals",
+      "Junction blocks",
+      "Electronic control units"
+    ],
+    "industryKeywords": [
+      "wiring harness",
+      "automotive electronics",
+      "tier 1"
+    ],
+    "contactInfo": {
+      "phone": "(270) 782-7397",
+      "email": "info@sewsus.com"
+    },
+    "supplierPortalUrl": "https://sewsus.com/supplier-portal/",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Electrical systems",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery"
+    ]
+  },
+  {
+    "company": "TG Kentucky, LLC (Toyoda Gosei) (Lebanon, KY)",
+    "parentCompany": "Toyoda Gosei",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "633 E Main St, Lebanon, KY 40033, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "KY",
+      "postal_code": "40033",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.toyodagosei.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TG Kentucky, LLC",
+        "parent_company": "Toyoda Gosei",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "633 E Main St, Lebanon, KY 40033, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "KY",
+          "postal_code": "40033",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Interior components",
+          "Exterior components",
+          "Safety systems"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round8"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "companyKey": "toyodagosei.com",
+    "companyId": "cmp_b449e318fbe0",
+    "locationId": "loc_0f7bee3eb9e7",
+    "parentCompanyId": "cmp_ceb1ecd3e4d3",
+    "parentCompanyWebsite": "https://www.toyoda-gosei.com/",
+    "keyProducts": [
+      "Interior & exterior components",
+      "Functional components",
+      "Safety systems",
+      "Weatherstrips"
+    ],
+    "industryKeywords": [
+      "tier 1",
+      "automotive components",
+      "rubber and plastic"
+    ],
+    "contactInfo": {
+      "phone": "270-699-3300"
+    },
+    "supplierPortalUrl": "https://supplier.tgnaportal.com/",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Interior systems",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "Ficosa North America Corporation (Cookeville, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2991 Highlands Park Blvd, Cookeville, TN 38506, US",
+    "addressComponents": {
+      "city": "Cookeville",
+      "state": "TN",
+      "postal_code": "38506",
+      "country": "US"
+    },
+    "addressConfidence": 0.8,
+    "website": "https://www.ficosa.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ficosa North America Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2991 Highlands Park Blvd, Cookeville, TN 38506, US",
+        "supplier_address_normalized": {
+          "city": "Cookeville",
+          "state": "TN",
+          "postal_code": "38506",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Automotive electronics",
+          "Mirrors"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round8"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "companyKey": "ficosa.com",
+    "companyId": "cmp_673c89d76302",
+    "locationId": "loc_b3d9b095e443",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "Electronic technology for automotive",
+      "Mirror systems",
+      "Driver assistance systems"
+    ],
+    "industryKeywords": [
+      "automotive electronics",
+      "mirrors",
+      "ADAS"
+    ],
+    "contactInfo": {
+      "phone": "(931) 432-9000"
+    },
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Electrical systems",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery",
+      "Mirrors"
+    ]
+  },
+  {
+    "company": "Gestamp Chattanooga I (Chattanooga, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3063 Hickory Valley Road, Chattanooga, TN 37421, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37421",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.gestamp.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp Chattanooga I",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3063 Hickory Valley Road, Chattanooga, TN 37421, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37421",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Stamped metal parts"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round8"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_acefa025cd67",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "Stamped metal components",
+      "Body-in-white components",
+      "Chassis components"
+    ],
+    "industryKeywords": [
+      "stamping",
+      "metal forming",
+      "automotive"
+    ],
+    "contactInfo": {
+      "phone": "+1 423 305 6300"
+    },
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery",
+      "Metal processing",
+      "Stamping"
+    ]
+  },
+  {
+    "company": "Gestamp Chattanooga II (Chattanooga, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "7529 Ferdinand Piech Way, Chattanooga, TN 37416, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37416",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.gestamp.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp Chattanooga II",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7529 Ferdinand Piech Way, Chattanooga, TN 37416, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37416",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Stamped metal parts"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round8"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_de92a4f9bb0a",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "Stamped metal components",
+      "Body and chassis components"
+    ],
+    "industryKeywords": [
+      "stamping",
+      "metal forming",
+      "automotive"
+    ],
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery",
+      "Metal processing",
+      "Stamping"
+    ]
+  },
+  {
+    "company": "Grupo Antolin (Chattanooga, TN)",
+    "parentCompany": "Antolin",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8007 Volkswagen Drive, Chattanooga, TN 37421, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37421",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.antolin.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Grupo Antolin Tennessee LLC",
+        "parent_company": "Antolin",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8007 Volkswagen Drive, Chattanooga, TN 37421, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37421",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Interior trim"
+        ],
+        "primary_functions": [
+          "interior components manufacturing"
+        ],
+        "production_characteristics": {
+          "high_volume": true
+        }
+      },
+      "oem_association": {
+        "oem_name": "Volkswagen",
+        "oem_plant_name": null,
+        "oem_plant_type": null,
+        "oem_plant_address": null
+      },
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": true,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "tn_warn_notice",
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round9"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "companyKey": "antolin.com",
+    "companyId": "cmp_49dd13da29f1",
+    "locationId": "loc_a5e1e31d3bb9",
+    "parentCompanyId": "cmp_2c15ab79aa0e",
+    "capabilityTags": [
+      "Assembly",
+      "Interior systems"
+    ]
+  },
+  {
+    "company": "Marelli North America (Smyrna, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "617 Potomac Pl Ste 403, Smyrna, TN 37167",
+    "addressComponents": {
+      "city": "Smyrna",
+      "state": "TN",
+      "postal_code": "37167",
+      "country": "US"
+    },
+    "addressConfidence": 0.65,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Marelli North America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "low"
+      },
+      "location": {
+        "supplier_address_raw": "617 Potomac Pl Ste 403, Smyrna, TN 37167",
+        "supplier_address_normalized": {
+          "city": "Smyrna",
+          "state": "TN",
+          "postal_code": "37167",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing",
+          "engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "third_party_directory"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_sweep_round10"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.marelli.com",
+    "companyKey": "marelli.com",
+    "companyId": "cmp_eeff704c1aa4",
+    "locationId": "loc_dfa33d330f13",
+    "parentCompanyId": null,
+    "contactInfo": {
+      "phone": "615-459-5525"
+    },
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "thermal"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Electrical systems",
+      "Interior systems"
+    ]
+  },
+  {
+    "company": "MetriCan Stamping (Dickson, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "101 Warren G. Medley Drive, Dickson, TN 37055, US",
+    "addressComponents": {
+      "city": "Dickson",
+      "state": "TN",
+      "postal_code": "37055",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "MetriCan Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "101 Warren G. Medley Drive, Dickson, TN 37055, US",
+        "supplier_address_normalized": {
+          "city": "Dickson",
+          "state": "TN",
+          "postal_code": "37055",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "tool and die",
+          "value-added assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "website": "https://www.metrican.com",
+    "companyKey": "metrican.com",
+    "companyId": "cmp_b4953cdf02b8",
+    "locationId": "loc_fb83a67e0dfe",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "metal stampings",
+      "tool and die",
+      "value-added assemblies"
+    ],
+    "supplierPortalUrl": "https://supplier.metrican.com",
+    "industryKeywords": [
+      "automotive",
+      "IATF 16949",
+      "metal stamping"
+    ],
+    "supplyChainSubtype": "Stamped metal parts",
+    "contactInfo": {
+      "phone": "615-446-1018",
+      "email": "sales@metrican.com"
+    },
+    "supplyChainSubtypeGroup": null,
+    "capabilityTags": [
+      "Assembly",
+      "Metal processing",
+      "Stamping",
+      "Tool & Die",
+      "Tooling"
+    ]
+  },
+  {
+    "company": "Tottser-Iroquois Industries, LLC (La Vergne, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1000 Dick Buchanan Street, La Vergne, TN 37086, US",
+    "addressComponents": {
+      "city": "La Vergne",
+      "state": "TN",
+      "postal_code": "37086",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tottser-Iroquois Industries, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1000 Dick Buchanan Street, La Vergne, TN 37086, US",
+        "supplier_address_normalized": {
+          "city": "La Vergne",
+          "state": "TN",
+          "postal_code": "37086",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "website": "https://www.tottser-iroquois.com",
+    "companyKey": "tottser-iroquois.com",
+    "companyId": "cmp_3b9383d9fcb5",
+    "locationId": "loc_9ebf86c79e08",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "metal stampings",
+      "assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping"
+    ],
+    "supplyChainSubtype": "Stamped metal parts",
+    "contactInfo": {
+      "phone": "615-213-1334",
+      "email": "info@tottser-iroquois.com"
+    },
+    "supplyChainSubtypeGroup": null,
+    "capabilityTags": [
+      "Assembly",
+      "Metal processing",
+      "Stamping"
+    ]
+  },
+  {
+    "company": "Truform Manufacturing LLC (Dickson, TN)",
+    "parentCompany": "Sisler Manufacturing Group",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "100 Truform Way, Dickson, TN 37055, US",
+    "addressComponents": {
+      "city": "Dickson",
+      "state": "TN",
+      "postal_code": "37055",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Truform Manufacturing LLC",
+        "parent_company": "Sisler Manufacturing Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Truform Way, Dickson, TN 37055, US",
+        "supplier_address_normalized": {
+          "city": "Dickson",
+          "state": "TN",
+          "postal_code": "37055",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "modular assemblies"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "website": "https://truformmanufacturing.com",
+    "companyKey": "truformmanufacturing.com",
+    "companyId": "cmp_7e06469f51aa",
+    "locationId": "loc_e249c831f009",
+    "parentCompanyId": "cmp_65c473e95432",
+    "parentCompanyWebsite": "https://smgmfg.com",
+    "keyProducts": [
+      "modular assemblies",
+      "metal stampings",
+      "weldments"
+    ],
+    "packagingSignals": [
+      "Just-in-time (JIT) shipments"
+    ],
+    "supplierPortalUrl": "https://ftp.truform.biz",
+    "industryKeywords": [
+      "automotive",
+      "TS16949",
+      "modular assemblies"
+    ],
+    "supplyChainSubtype": "Sub-assemblies",
+    "contactInfo": {
+      "phone": "615-740-7200"
+    },
+    "supplyChainSubtypeGroup": null,
+    "capabilityTags": [
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery",
+      "Metal processing",
+      "Stamping",
+      "Welding"
+    ]
+  },
+  {
+    "company": "American Trim (Lima, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "Lima, OH 45801, US",
+    "addressComponents": {
+      "city": "Lima",
+      "state": "OH",
+      "postal_code": "45801",
+      "country": "US"
+    },
+    "addressConfidence": 0.5,
+    "website": "https://www.americantrim.com",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American Trim",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "low"
+      },
+      "location": {
+        "supplier_address_raw": "Lima, OH 45801, US",
+        "supplier_address_normalized": {
+          "city": "Lima",
+          "state": "OH",
+          "postal_code": "45801",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "interior trim manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round21_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Interior components",
+    "companyKey": "americantrim.com",
+    "companyId": "cmp_604724aafcb9",
+    "locationId": "loc_6d1c1117cde2",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "Interior trim",
+      "Molded components",
+      "Assembly"
+    ],
+    "packagingSignals": [
+      "Automotive interiors",
+      "Module assembly"
+    ],
+    "industryKeywords": [
+      "interiors",
+      "trim",
+      "automotive"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Interior systems",
+      "Tooling"
+    ]
+  },
+  {
+    "company": "Bendix Commercial Vehicle Systems (Avon, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "35500 Chester Rd, Avon, OH 44011, US",
+    "addressComponents": {
+      "city": "Avon",
+      "state": "OH",
+      "postal_code": "44011",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.bendix.com/en/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems (Avon, OH)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "35500 Chester Rd, Avon, OH 44011, US",
+        "supplier_address_normalized": {
+          "city": "Avon",
+          "state": "OH",
+          "postal_code": "44011",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "braking systems manufacturing",
+          "R&D"
+        ],
+        "production_characteristics": {
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "bendix_locations_page"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round18_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "companyKey": "bendix.com",
+    "companyId": "cmp_7471a4ed600c",
+    "locationId": "loc_e28186e50ee2",
+    "parentCompanyId": null,
+    "oemCustomerLocationIds": [
+      "loc_5519f646df30"
+    ],
+    "oemAssociations": [
+      "Ford"
+    ],
+    "capabilityTags": [
+      "Brake systems"
+    ]
+  },
+  {
+    "company": "Continental (Fairlawn, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "703 South Cleveland-Massillon Road, Fairlawn, OH 44333",
+    "addressComponents": {
+      "city": "Fairlawn",
+      "state": "OH",
+      "postal_code": "44333",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Continental",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "703 South Cleveland-Massillon Road, Fairlawn, OH 44333",
+        "supplier_address_normalized": {
+          "city": "Fairlawn",
+          "state": "OH",
+          "postal_code": "44333",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "headquarters operations",
+          "engineering",
+          "sales & marketing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_sweep_round10"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://www.continental.com",
+    "companyKey": "continental.com",
+    "companyId": "cmp_25c64141e2aa",
+    "locationId": "loc_7533c8a8221c",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "rubber and plastics (ContiTech)"
+    ],
+    "supplierPortalUrl": "https://extra-na.continental-corporation.com",
+    "industryKeywords": [
+      "rubber",
+      "plastics",
+      "hoses",
+      "belts"
+    ],
+    "capabilityTags": [
+      "Electrical systems",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "Dana Incorporated (Toledo, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3044 Jeep Parkway, Toledo, OH 43610, US",
+    "addressComponents": {
+      "city": "Toledo",
+      "state": "OH",
+      "postal_code": "43610",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.dana.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated (Toledo, OH)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3044 Jeep Parkway, Toledo, OH 43610, US",
+        "supplier_address_normalized": {
+          "city": "Toledo",
+          "state": "OH",
+          "postal_code": "43610",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "driveline/axle manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana_locations_page"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round18_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_8422d7b807dd",
+    "parentCompanyId": null,
+    "oemCustomerLocationIds": [
+      "loc_b4ff00f71372",
+      "loc_fae531a9ef73"
+    ],
+    "oemAssociations": [
+      "General Motors",
+      "Stellantis"
+    ],
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Drivetrain",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery"
+    ]
+  },
+  {
+    "company": "Dana Incorporated (World Headquarters, Maumee, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3939 Technology Dr, Maumee, OH 43537, US",
+    "addressComponents": {
+      "city": "Maumee",
+      "state": "OH",
+      "postal_code": "43537",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.dana.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated (World Headquarters, Maumee, OH)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3939 Technology Dr, Maumee, OH 43537, US",
+        "supplier_address_normalized": {
+          "city": "Maumee",
+          "state": "OH",
+          "postal_code": "43537",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "corporate headquarters",
+          "engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana_locations_page"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round18_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_7b3785533ae2",
+    "parentCompanyId": null,
+    "oemCustomerLocationIds": [
+      "loc_b4ff00f71372",
+      "loc_fae531a9ef73"
+    ],
+    "oemAssociations": [
+      "General Motors",
+      "Stellantis"
+    ],
+    "capabilityTags": [
+      "Drivetrain"
+    ]
+  },
+  {
+    "company": "EPC Manufacturing (Circleville, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "30627 Orr Rd., Circleville, OH 43113, US",
+    "addressComponents": {
+      "city": "Circleville",
+      "state": "OH",
+      "postal_code": "43113",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EPC Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "30627 Orr Rd., Circleville, OH 43113, US",
+        "supplier_address_normalized": {
+          "city": "Circleville",
+          "state": "OH",
+          "postal_code": "43113",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plastic injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://epcmfg.com",
+    "companyKey": "epcmfg.com",
+    "companyId": "cmp_3477db972f09",
+    "locationId": "loc_ac20c7798a2d",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "injection molded components",
+      "interior/exterior components",
+      "assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "injection molding"
+    ],
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding",
+      "Interior systems",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "Green Tokai (Brookville, OH)",
+    "parentCompany": "Tokai Kogyo Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "55 Robert Wright Dr., Brookville, OH 45309",
+    "addressComponents": {
+      "city": "Brookville",
+      "state": "OH",
+      "postal_code": "45309",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Green Tokai",
+        "parent_company": "Tokai Kogyo Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "55 Robert Wright Dr., Brookville, OH 45309",
+        "supplier_address_normalized": {
+          "city": "Brookville",
+          "state": "OH",
+          "postal_code": "45309",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing",
+          "assembly",
+          "just-in-time delivery"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_sweep_round10"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.greentokai.com",
+    "companyKey": "name:green-tokai|parent:tokai-kogyo-co-ltd|us",
+    "companyId": "cmp_d46bd73506b2",
+    "locationId": "loc_894d91ee0cc1",
+    "parentCompanyId": "cmp_0b4f2f1a5df6",
+    "contactInfo": {
+      "phone": "937-833-5444",
+      "email": "it@greentokai.com"
+    },
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Interior systems",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery"
+    ]
+  },
+  {
+    "company": "KUKA Toledo Production Operations (Toledo, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3770 Stickney Ave, Toledo, OH 43608, US",
+    "addressComponents": {
+      "city": "Toledo",
+      "state": "OH",
+      "postal_code": "43608",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.kuka.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KUKA Toledo Production Operations (Toledo, OH)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3770 Stickney Ave, Toledo, OH 43608, US",
+        "supplier_address_normalized": {
+          "city": "Toledo",
+          "state": "OH",
+          "postal_code": "43608",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "body-in-white manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "kuka_iatf_certificate"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round18_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "companyKey": "kuka.com",
+    "companyId": "cmp_2306a20fb18b",
+    "locationId": "loc_8b19eca44e03",
+    "parentCompanyId": null,
+    "oemAssociations": [
+      "General Motors",
+      "Jeep",
+      "Stellantis"
+    ],
+    "oemCustomerLocationIds": [
+      "loc_b4ff00f71372",
+      "loc_fae531a9ef73"
+    ],
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery"
+    ]
+  },
+  {
+    "company": "Millat Industries Corp. (Dayton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "Dayton, OH 45440, US",
+    "addressComponents": {
+      "city": "Dayton",
+      "state": "OH",
+      "postal_code": "45440",
+      "country": "US"
+    },
+    "addressConfidence": 0.6,
+    "website": "https://www.millat.com",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Millat Industries Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "low"
+      },
+      "location": {
+        "supplier_address_raw": "Dayton, OH 45440, US",
+        "supplier_address_normalized": {
+          "city": "Dayton",
+          "state": "OH",
+          "postal_code": "45440",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "machining",
+          "sub-assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": true,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round21_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "companyKey": "millat.com",
+    "companyId": "cmp_c40430daf30f",
+    "locationId": "loc_98714db1c635",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "Machined metal components",
+      "CNC machining",
+      "Assemblies"
+    ],
+    "packagingSignals": [
+      "High-mix machining",
+      "Automotive customer support"
+    ],
+    "oemAssociations": [
+      "Honda",
+      "Ford",
+      "General Motors",
+      "Stellantis"
+    ],
+    "oemCustomerLocationIds": [
+      "loc_98a4d6ae4c76",
+      "loc_51117fb69c3c",
+      "loc_1be9eea512a7",
+      "loc_493fe6e11f58",
+      "loc_fae531a9ef73",
+      "loc_b4ff00f71372"
+    ],
+    "industryKeywords": [
+      "machining",
+      "CNC",
+      "automotive"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Machining",
+      "Metal processing"
+    ]
+  },
+  {
+    "company": "Nifco America Corp. Ohio Mfg. Plant (Canal Winchester, OH)",
+    "parentCompany": "Nifco Inc.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "8015 Dove Parkway, Canal Winchester, OH 43110, US",
+    "addressComponents": {
+      "city": "Canal Winchester",
+      "state": "OH",
+      "postal_code": "43110",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.nifcousa.com/",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nifco America Corp. Ohio Mfg. Plant",
+        "parent_company": "Nifco Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8015 Dove Parkway, Canal Winchester, OH 43110, US",
+        "supplier_address_normalized": {
+          "city": "Canal Winchester",
+          "state": "OH",
+          "postal_code": "43110",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "Injection molded plastics",
+          "Fasteners"
+        ],
+        "primary_functions": [
+          "injection molding"
+        ],
+        "production_characteristics": {
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion_round8"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "companyKey": "nifcousa.com",
+    "companyId": "cmp_0ee7cf5e74a4",
+    "locationId": "loc_6bd25f638b9f",
+    "parentCompanyId": "cmp_39f02ee4a2ca",
+    "parentCompanyWebsite": "https://www.nifco.com/",
+    "keyProducts": [
+      "Injection-molded components",
+      "Fasteners"
+    ],
+    "industryKeywords": [
+      "injection molding",
+      "automotive"
+    ],
+    "oemCustomerLocationIds": [
+      "loc_98a4d6ae4c76"
+    ],
+    "oemAssociations": [
+      "Honda"
+    ],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "THK Manufacturing of America, Inc. (Hebron, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "471 North High Street, Hebron, OH 43025",
+    "addressComponents": {
+      "city": "Hebron",
+      "state": "OH",
+      "postal_code": "43025",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "THK Manufacturing of America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "471 North High Street, Hebron, OH 43025",
+        "supplier_address_normalized": {
+          "city": "Hebron",
+          "state": "OH",
+          "postal_code": "43025",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_sweep_round10"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.thk.com",
+    "companyKey": "thk.com",
+    "companyId": "cmp_945fd1583d77",
+    "locationId": "loc_b6c6ce519555",
+    "parentCompanyId": null,
+    "contactInfo": {
+      "phone": "740-928-1415"
+    },
+    "industryKeywords": [
+      "linear motion",
+      "manufacturing",
+      "components"
+    ],
+    "capabilityTags": null
+  },
+  {
+    "company": "Tenneco Automotive",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "11800 Ohio 424, Napoleon, OH 43545, US",
+    "addressComponents": {
+      "city": "Napoleon",
+      "state": "OH",
+      "postal_code": "43545",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "parentCompany": "Tenneco",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tenneco Automotive",
+        "parent_company": "Tenneco",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11800 Ohio 424, Napoleon, OH 43545, US",
+        "supplier_address_normalized": {
+          "city": "Napoleon",
+          "state": "OH",
+          "postal_code": "43545",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.tenneco.com/",
+    "companyKey": "tenneco.com",
+    "companyId": "cmp_8bd2f239abb6",
+    "locationId": "loc_e328e17db793",
+    "parentCompanyId": "cmp_64c60e9c37d4",
+    "supplyChainSubtype": "Chassis systems",
+    "capabilityTags": [
+      "Exhaust systems"
+    ]
+  },
+  {
+    "company": "Yamada North America, Inc. (South Charleston, OH)",
+    "parentCompany": "Yamada Manufacturing Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "South Charleston, OH 45368, US",
+    "addressComponents": {
+      "city": "South Charleston",
+      "state": "OH",
+      "postal_code": "45368",
+      "country": "US"
+    },
+    "addressConfidence": 0.65,
+    "website": "https://www.yamada-mfg.co.jp/en",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Yamada North America, Inc.",
+        "parent_company": "Yamada Manufacturing Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "South Charleston, OH 45368, US",
+        "supplier_address_normalized": {
+          "city": "South Charleston",
+          "state": "OH",
+          "postal_code": "45368",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": true,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_expansion_round21_OH"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Powertrain components",
+    "companyKey": "yamada-mfg.co.jp",
+    "companyId": "cmp_490fc0d8e3b2",
+    "locationId": "loc_ec7f7fb34981",
+    "parentCompanyId": "cmp_490fc0d8e3b2",
+    "parentCompanyWebsite": "https://www.yamada-mfg.co.jp/en",
+    "keyProducts": [
+      "Automotive water pumps",
+      "Oil pumps",
+      "Powertrain components"
+    ],
+    "packagingSignals": [
+      "Just-in-time capable",
+      "Automotive production"
+    ],
+    "oemAssociations": [
+      "Honda",
+      "Subaru"
+    ],
+    "oemCustomerLocationIds": [
+      "loc_98a4d6ae4c76",
+      "loc_51117fb69c3c",
+      "loc_7444416bb906"
+    ],
+    "industryKeywords": [
+      "powertrain",
+      "pumps",
+      "automotive"
+    ],
+    "capabilityTags": [
+      "Drivetrain",
+      "Just-in-Time (JIT) delivery",
+      "Line-side delivery"
+    ]
+  },
+  {
+    "company": "ABC Technologies (Undercar Products Group)",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4247 Eastern Ave SE, Wyoming, MI 49508, US",
+    "addressComponents": {
+      "city": "Wyoming",
+      "state": "MI",
+      "postal_code": "49508",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "parentCompany": "ABC Technologies",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ABC Technologies",
+        "parent_company": "ABC Technologies",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4247 Eastern Ave SE, Wyoming, MI 49508, US",
+        "supplier_address_normalized": {
+          "city": "Wyoming",
+          "state": "MI",
+          "postal_code": "49508",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.abctechnologies.com/",
+    "companyKey": "abctechnologies.com",
+    "companyId": "cmp_fc31ecd90bb5",
+    "locationId": "loc_65c5be5cc486",
+    "parentCompanyId": "cmp_10b6225b7c29",
+    "supplyChainSubtype": "Chassis systems",
+    "capabilityTags": null
+  },
+  {
+    "company": "AGC Automotive Americas Co. (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "34505 W 12 Mile Rd Suite 300, Farmington Hills, MI 48331, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.agc-automotive.com",
+    "companyKey": "agc-automotive.com",
+    "companyId": "cmp_d5409f81de9e",
+    "locationId": "loc_eef5b5cf890e",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AGC Automotive Americas Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "34505 W 12 Mile Rd Suite 300, Farmington Hills, MI 48331, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive glass",
+          "glazing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive Glass",
+    "industryKeywords": [
+      "automotive glass",
+      "glazing"
+    ],
+    "contactInfo": {
+      "phone": "+1-248-522-9300"
+    },
+    "capabilityTags": [
+      "Auto glass"
+    ]
+  },
+  {
+    "company": "AUTOKINITON (Corporate Headquarters, New Boston, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "17757 Woodland Dr, New Boston, MI 48164, US",
+    "addressComponents": {
+      "city": "New Boston",
+      "state": "MI",
+      "postal_code": "48164",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_379385db915c",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "17757 Woodland Dr, New Boston, MI 48164, US",
+        "supplier_address_normalized": {
+          "city": "New Boston",
+          "state": "MI",
+          "postal_code": "48164",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "metal assemblies"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "sequenced_delivery": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "industryKeywords": [
+      "stamping",
+      "welding",
+      "metal assemblies"
+    ],
+    "capabilityTags": [
+      "Stamping",
+      "Welding"
+    ]
+  },
+  {
+    "company": "Adient (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "49200 Halyard Dr, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.adient.com",
+    "companyKey": "adient.com",
+    "companyId": "cmp_93ef878224d6",
+    "locationId": "loc_f196b0828e7f",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Adient",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "49200 Halyard Dr, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "seating systems"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "sequenced_delivery": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Seating systems",
+    "industryKeywords": [
+      "seating",
+      "automotive interiors"
+    ],
+    "capabilityTags": [
+      "Interior systems",
+      "Seating systems"
+    ]
+  },
+  {
+    "company": "Adient US LLC",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "205 Douglas Ave, Holland, MI 49424, US",
+    "addressComponents": {
+      "city": "Holland",
+      "state": "MI",
+      "postal_code": "49424",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "parentCompany": "Adient plc",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Seating systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Adient US LLC",
+        "parent_company": "Adient plc",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "205 Douglas Ave, Holland, MI 49424, US",
+        "supplier_address_normalized": {
+          "city": "Holland",
+          "state": "MI",
+          "postal_code": "49424",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.adient.com/",
+    "companyKey": "adient.com",
+    "companyId": "cmp_93ef878224d6",
+    "locationId": "loc_a013ae62484c",
+    "parentCompanyId": "cmp_034c4689c28e",
+    "capabilityTags": [
+      "Interior systems",
+      "Seating systems"
+    ]
+  },
+  {
+    "company": "Akebono Brake Corporation (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "34385 W Twelve Mile Rd, Farmington Hills, MI 48331, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://akebonobrakes.com",
+    "companyKey": "akebonobrakes.com",
+    "companyId": "cmp_49cab693c082",
+    "locationId": "loc_358012e56ca1",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Akebono Brake Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "34385 W Twelve Mile Rd, Farmington Hills, MI 48331, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "industryKeywords": [
+      "brake systems",
+      "automotive"
+    ],
+    "capabilityTags": [
+      "Brake systems"
+    ]
+  },
+  {
+    "company": "Aludyne Montague Inc",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5353 Wilcox St, Montague, MI 49437, US",
+    "addressComponents": {
+      "city": "Montague",
+      "state": "MI",
+      "postal_code": "49437",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "parentCompany": "Aludyne",
+    "supplyChainCategory": "Tier_2",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Aludyne Montague Inc",
+        "parent_company": "Aludyne",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5353 Wilcox St, Montague, MI 49437, US",
+        "supplier_address_normalized": {
+          "city": "Montague",
+          "state": "MI",
+          "postal_code": "49437",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.aludyne.com/",
+    "companyKey": "aludyne.com",
+    "companyId": "cmp_c3b1b5926c48",
+    "locationId": "loc_4c5f6357f693",
+    "parentCompanyId": "cmp_6560553316ab",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "capabilityTags": null
+  },
+  {
+    "company": "American Axle & Manufacturing - Detroit Forge",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8435 Saint Aubin St, Detroit, MI 48212, US",
+    "addressComponents": {
+      "city": "Detroit",
+      "state": "MI",
+      "postal_code": "48212",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "parentCompany": "American Axle & Manufacturing",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American Axle & Manufacturing - Detroit Forge",
+        "parent_company": "American Axle & Manufacturing",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8435 Saint Aubin St, Detroit, MI 48212, US",
+        "supplier_address_normalized": {
+          "city": "Detroit",
+          "state": "MI",
+          "postal_code": "48212",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.aam.com/",
+    "companyKey": "aam.com",
+    "companyId": "cmp_b7e084eff44a",
+    "locationId": "loc_5896da714735",
+    "parentCompanyId": "cmp_81e902da522a",
+    "capabilityTags": [
+      "Drivetrain",
+      "Forging"
+    ]
+  },
+  {
+    "company": "American Axle & Manufacturing - Three Rivers",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Manufacturing Dr, Three Rivers, MI 49093, US",
+    "addressComponents": {
+      "city": "Three Rivers",
+      "state": "MI",
+      "postal_code": "49093",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "parentCompany": "American Axle & Manufacturing",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American Axle & Manufacturing - Three Rivers",
+        "parent_company": "American Axle & Manufacturing",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1 Manufacturing Dr, Three Rivers, MI 49093, US",
+        "supplier_address_normalized": {
+          "city": "Three Rivers",
+          "state": "MI",
+          "postal_code": "49093",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.aam.com/",
+    "companyKey": "aam.com",
+    "companyId": "cmp_b7e084eff44a",
+    "locationId": "loc_df1cdba9aa88",
+    "parentCompanyId": "cmp_81e902da522a",
+    "capabilityTags": [
+      "Drivetrain"
+    ]
+  },
+  {
+    "company": "Astemo Americas, Inc. (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "34500 Grand River Ave, Farmington Hills, MI 48335, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48335",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Astemo Americas, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "34500 Grand River Ave, Farmington Hills, MI 48335, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48335",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "brake systems",
+          "steering systems",
+          "drivetrain"
+        ],
+        "primary_functions": [
+          "chassis, powertrain, and advanced mobility systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-01-27",
+        "discovery_method": "MI_component_focus_round31"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.am.astemo.com",
+    "companyKey": "am.astemo.com",
+    "companyId": "cmp_e067dd4db369",
+    "locationId": "loc_9ed5085da3e6",
+    "capabilityTags": [
+      "Brake systems",
+      "Drivetrain",
+      "Electrical systems",
+      "Steering systems"
+    ]
+  },
+  {
+    "company": "Autoneum North America, Inc.",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "29293 Haggerty Rd, Novi, MI 48377, US",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "parentCompany": "Autoneum",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Autoneum North America, Inc.",
+        "parent_company": "Autoneum",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "29293 Haggerty Rd, Novi, MI 48377, US",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.autoneum.com/",
+    "companyKey": "autoneum.com",
+    "companyId": "cmp_3870871fa436",
+    "locationId": "loc_557275b638e9",
+    "parentCompanyId": "cmp_1d4391337b46",
+    "supplyChainSubtype": "Chassis systems",
+    "capabilityTags": null
+  },
+  {
+    "company": "BorgWarner",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "32059 Schoolcraft Rd, Livonia, MI 48150, US",
+    "addressComponents": {
+      "city": "Livonia",
+      "state": "MI",
+      "postal_code": "48150",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "parentCompany": "BorgWarner Inc.",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BorgWarner",
+        "parent_company": "BorgWarner Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "32059 Schoolcraft Rd, Livonia, MI 48150, US",
+        "supplier_address_normalized": {
+          "city": "Livonia",
+          "state": "MI",
+          "postal_code": "48150",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.borgwarner.com/",
+    "companyKey": "borgwarner.com",
+    "companyId": "cmp_b13e880e376c",
+    "locationId": "loc_8a1a173537ff",
+    "parentCompanyId": "cmp_876e28b0fa7d",
+    "capabilityTags": [
+      "Drivetrain"
+    ]
+  },
+  {
+    "company": "Bosch Engineering (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "38000 Hills Tech Dr, Farmington Hills, MI 48331, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.bosch-engineering.com",
+    "companyKey": "bosch-engineering.com",
+    "companyId": "cmp_28940255f0e2",
+    "locationId": "loc_501e4f34ff29",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bosch Engineering",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "38000 Hills Tech Dr, Farmington Hills, MI 48331, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "engineering",
+          "systems integration"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Systems integration",
+    "industryKeywords": [
+      "engineering",
+      "automotive electronics"
+    ],
+    "capabilityTags": [
+      "Drivetrain",
+      "Electrical systems"
+    ]
+  },
+  {
+    "company": "Brembo North America (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "47765 Halyard Dr, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.brembo.com",
+    "companyKey": "brembo.com",
+    "companyId": "cmp_53527aeb4584",
+    "locationId": "loc_44e16e841f6d",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Brembo North America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "47765 Halyard Dr, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "industryKeywords": [
+      "brake systems",
+      "automotive"
+    ],
+    "capabilityTags": [
+      "Brake systems"
+    ]
+  },
+  {
+    "company": "Brose New Boston Inc. (New Boston, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "23400 Bell Rd, New Boston, MI 48164, US",
+    "addressComponents": {
+      "city": "New Boston",
+      "state": "MI",
+      "postal_code": "48164",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Brose New Boston Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "23400 Bell Rd, New Boston, MI 48164, US",
+        "supplier_address_normalized": {
+          "city": "New Boston",
+          "state": "MI",
+          "postal_code": "48164",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "door systems",
+          "seat systems"
+        ],
+        "primary_functions": [
+          "mechatronic systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-01-27",
+        "discovery_method": "MI_component_focus_round31"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.brose.com",
+    "companyKey": "brose.com",
+    "companyId": "cmp_2865209ebec9",
+    "locationId": "loc_a001e98747b2",
+    "capabilityTags": [
+      "Electrical systems",
+      "Interior systems",
+      "Seating systems"
+    ]
+  },
+  {
+    "company": "Brose North America Inc. (Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3933 Automation Avenue, Auburn Hills, MI 48326, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Brose North America Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3933 Automation Avenue, Auburn Hills, MI 48326, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "door systems",
+          "liftgate systems",
+          "seat systems"
+        ],
+        "primary_functions": [
+          "mechatronic systems for vehicle doors, liftgates and seats"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-01-27",
+        "discovery_method": "MI_component_focus_round31"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.brose.com",
+    "companyKey": "brose.com",
+    "companyId": "cmp_2865209ebec9",
+    "locationId": "loc_b704886fce8f",
+    "capabilityTags": [
+      "Electrical systems",
+      "Interior systems",
+      "Seating systems"
+    ]
+  },
+  {
+    "company": "Cooper Standard Automotive (Oscoda)",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4700 Industrial Row, Oscoda, MI 48750, US",
+    "addressComponents": {
+      "city": "Oscoda",
+      "state": "MI",
+      "postal_code": "48750",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "parentCompany": "Cooper Standard",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cooper Standard Automotive",
+        "parent_company": "Cooper Standard",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "4700 Industrial Row, Oscoda, MI 48750, US",
+        "supplier_address_normalized": {
+          "city": "Oscoda",
+          "state": "MI",
+          "postal_code": "48750",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.cooperstandard.com/",
+    "companyKey": "cooperstandard.com",
+    "companyId": "cmp_10705693a1a1",
+    "locationId": "loc_feadfa7b8fb5",
+    "parentCompanyId": "cmp_60a0c56bd31e",
+    "supplyChainSubtype": "Chassis systems",
+    "capabilityTags": null
+  },
+  {
+    "company": "DENSO International America (Southfield, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "24777 Denso Drive, Southfield, MI 48033, US",
+    "addressComponents": {
+      "city": "Southfield",
+      "state": "MI",
+      "postal_code": "48033",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.denso.com",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_c450a3c3a9ee",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO International America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "24777 Denso Drive, Southfield, MI 48033, US",
+        "supplier_address_normalized": {
+          "city": "Southfield",
+          "state": "MI",
+          "postal_code": "48033",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive electronics"
+        ],
+        "production_characteristics": {
+          "just_in_time": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ECUs",
+    "industryKeywords": [
+      "automotive electronics",
+      "ECUs",
+      "sensors"
+    ],
+    "capabilityTags": [
+      "Electrical systems"
+    ]
+  },
+  {
+    "company": "Dakkota Integrated Systems (Sterling Heights)",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "6671 Sterling Dr S, Sterling Heights, MI 48312, US",
+    "addressComponents": {
+      "city": "Sterling Heights",
+      "state": "MI",
+      "postal_code": "48312",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "parentCompany": "Dakkota Integrated Systems",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dakkota Integrated Systems",
+        "parent_company": "Dakkota Integrated Systems",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "6671 Sterling Dr S, Sterling Heights, MI 48312, US",
+        "supplier_address_normalized": {
+          "city": "Sterling Heights",
+          "state": "MI",
+          "postal_code": "48312",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.dakkota.com/",
+    "companyKey": "dakkota.com",
+    "companyId": "cmp_1151dc99e92b",
+    "locationId": "loc_823000d511d3",
+    "parentCompanyId": "cmp_b10637fdbdaf",
+    "capabilityTags": [
+      "Assembly",
+      "Interior systems"
+    ]
+  },
+  {
+    "company": "EPC Manufacturing (St. Clair, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2000 Christian B. Haas Dr., St. Clair, MI 48079, US",
+    "addressComponents": {
+      "city": "St. Clair",
+      "state": "MI",
+      "postal_code": "48079",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EPC Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2000 Christian B. Haas Dr., St. Clair, MI 48079, US",
+        "supplier_address_normalized": {
+          "city": "St. Clair",
+          "state": "MI",
+          "postal_code": "48079",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plastic injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-25",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://epcmfg.com",
+    "companyKey": "epcmfg.com",
+    "companyId": "cmp_3477db972f09",
+    "locationId": "loc_3597c8c9b363",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "injection molded components",
+      "interior/exterior components",
+      "assemblies"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "injection molding"
+    ],
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding",
+      "Interior systems",
+      "Plastic forming"
+    ]
+  },
+  {
+    "company": "Eberspächer Climate Control Systems USA (Novi, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "29101 Haggerty Road, Novi, MI 48375, US",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48375",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.eberspaecher-climate.com",
+    "companyKey": "eberspaecher-climate.com",
+    "companyId": "cmp_6ff223b5c0ca",
+    "locationId": "loc_dfbe6cb0beb8",
+    "parentCompanyId": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Eberspächer Climate Control Systems USA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "29101 Haggerty Road, Novi, MI 48375, US",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48375",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "thermal management",
+          "climate control"
+        ],
+        "production_characteristics": {
+          "just_in_time": true,
+          "high_volume": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-26",
+        "discovery_method": "web_research_MI_round26"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "industryKeywords": [
+      "thermal management",
+      "climate control"
+    ],
+    "capabilityTags": [
+      "Drivetrain",
+      "Exhaust systems"
+    ]
+  },
+  {
+    "company": "Fisher Dynamics (St. Clair Shores, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "33300 Fisher Dr, St. Clair Shores, MI 48082, US",
+    "addressComponents": {
+      "city": "St. Clair Shores",
+      "state": "MI",
+      "postal_code": "48082",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Fisher Dynamics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "33300 Fisher Dr, St. Clair Shores, MI 48082, US",
+        "supplier_address_normalized": {
+          "city": "St. Clair Shores",
+          "state": "MI",
+          "postal_code": "48082",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "seat structures",
+          "seat mechanisms",
+          "stampings"
+        ],
+        "primary_functions": [
+          "seat structures and mechanisms manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-01-27",
+        "discovery_method": "MI_component_focus_round31"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.fisherco.com",
+    "companyKey": "fisherco.com",
+    "companyId": "cmp_71bc4d03bb5e",
+    "locationId": "loc_2592253c5947",
+    "capabilityTags": [
+      "Seating systems",
+      "Stamping"
+    ]
+  },
+  {
+    "company": "Flex-N-Gate (Ventra GR29 LLC)",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2890 29th St SE, Grand Rapids, MI 49512, US",
+    "addressComponents": {
+      "city": "Grand Rapids",
+      "state": "MI",
+      "postal_code": "49512",
+      "country": "US"
+    },
+    "addressConfidence": 0.8,
+    "parentCompany": "Flex-N-Gate Corporation",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Flex-N-Gate",
+        "parent_company": "Flex-N-Gate Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2890 29th St SE, Grand Rapids, MI 49512, US",
+        "supplier_address_normalized": {
+          "city": "Grand Rapids",
+          "state": "MI",
+          "postal_code": "49512",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-01-23",
+        "discovery_method": "dataset_standardization_round6"
+      }
+    },
+    "website": "https://www.flex-n-gate.com/",
+    "companyKey": "flex-n-gate.com",
+    "companyId": "cmp_2dff67985120",
+    "locationId": "loc_502e5dde2654",
+    "parentCompanyId": "cmp_631c0e3082d1",
+    "supplyChainSubtype": "Chassis systems",
+    "capabilityTags": null
+  }
+]

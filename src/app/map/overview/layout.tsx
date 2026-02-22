@@ -13,6 +13,8 @@ import React from 'react';
 import { prisma } from '@/lib/prisma';
 import DashboardMapClient from './dashboard-map-client';
 
+const hasLocation = { Location: { some: {} } };
+
 async function getCompanyStats() {
   const [
     totalCompanies,
@@ -23,10 +25,11 @@ async function getCompanyStats() {
     companiesContactedNotInterested,
     companiesWithChildren
   ] = await Promise.all([
-    prisma.company.count(),
+    prisma.company.count({ where: hasLocation }),
     prisma.location.count(),
     prisma.company.count({
       where: {
+        ...hasLocation,
         createdAt: {
           gte: new Date(new Date().getFullYear(), new Date().getMonth(), 1)
         }
@@ -34,6 +37,7 @@ async function getCompanyStats() {
     }),
     prisma.company.count({
       where: {
+        ...hasLocation,
         createdAt: {
           gte: new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1),
           lt: new Date(new Date().getFullYear(), new Date().getMonth(), 1)
@@ -41,20 +45,15 @@ async function getCompanyStats() {
       }
     }),
     prisma.company.count({
-      where: {
-        status: 'Contacted - meeting set'
-      }
+      where: { ...hasLocation, status: 'Contacted - meeting set' }
+    }),
+    prisma.company.count({
+      where: { ...hasLocation, status: 'Contacted - not interested' }
     }),
     prisma.company.count({
       where: {
-        status: 'Contacted - not interested'
-      }
-    }),
-    prisma.company.count({
-      where: {
-        other_Company: {
-          some: {}
-        }
+        ...hasLocation,
+        other_Company: { some: {} }
       }
     })
   ]);

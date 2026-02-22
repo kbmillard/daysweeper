@@ -1,0 +1,3543 @@
+[
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_3447f584fc3e",
+    "company": "Hendrickson (Dayton, OH)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | OH | Dayton, OH",
+    "tier": "Tier 1",
+    "addressRaw": "3600 Maywood Ave., Dayton, OH 45417, USA",
+    "addressComponents": {
+      "city": "Dayton",
+      "state": "OH",
+      "postal_code": "45417",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension",
+      "Tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3600 Maywood Ave., Dayton, OH 45417, USA",
+        "supplier_address_normalized": {
+          "city": "Dayton",
+          "state": "OH",
+          "postal_code": "45417",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "suspension systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_79806f17514e",
+    "company": "Hendrickson (Canton, OH)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | OH | Canton, OH",
+    "tier": "Tier 1",
+    "addressRaw": "2070 Industrial Place SE, Canton, OH 44707-2641, USA",
+    "addressComponents": {
+      "city": "Canton",
+      "state": "OH",
+      "postal_code": "44707",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2070 Industrial Place SE, Canton, OH 44707-2641, USA",
+        "supplier_address_normalized": {
+          "city": "Canton",
+          "state": "OH",
+          "postal_code": "44707",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "suspension systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_41ce0fa0bd4e",
+    "company": "Hendrickson (Navarre, OH)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | OH | Navarre, OH",
+    "tier": "Tier 1",
+    "addressRaw": "4500 Sterilite St. NE, Navarre, OH 44662, USA",
+    "addressComponents": {
+      "city": "Navarre",
+      "state": "OH",
+      "postal_code": "44662",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4500 Sterilite St. NE, Navarre, OH 44662, USA",
+        "supplier_address_normalized": {
+          "city": "Navarre",
+          "state": "OH",
+          "postal_code": "44662",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_9763d7998ec0",
+    "company": "Hendrickson (Hebron, OH)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | OH | Hebron, OH",
+    "tier": "Tier 1",
+    "addressRaw": "277 North High Street, Hebron, OH 43025-8008, USA",
+    "addressComponents": {
+      "city": "Hebron",
+      "state": "OH",
+      "postal_code": "43025",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "277 North High Street, Hebron, OH 43025-8008, USA",
+        "supplier_address_normalized": {
+          "city": "Hebron",
+          "state": "OH",
+          "postal_code": "43025",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_4378de544ab0",
+    "company": "Hendrickson (North Canton, OH)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | OH | North Canton, OH",
+    "tier": "Tier 1",
+    "addressRaw": "9260 Pleasantwood Ave NW, North Canton, OH 44720-9006, USA",
+    "addressComponents": {
+      "city": "North Canton",
+      "state": "OH",
+      "postal_code": "44720",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9260 Pleasantwood Ave NW, North Canton, OH 44720-9006, USA",
+        "supplier_address_normalized": {
+          "city": "North Canton",
+          "state": "OH",
+          "postal_code": "44720",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_352cd427bc7e",
+    "company": "Hendrickson (Kendallville, IN)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | IN | Kendallville, IN",
+    "tier": "Tier 1",
+    "addressRaw": "101 South Progress Drive West, Kendallville, IN 46755-3262, USA",
+    "addressComponents": {
+      "city": "Kendallville",
+      "state": "IN",
+      "postal_code": "46755",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "101 South Progress Drive West, Kendallville, IN 46755-3262, USA",
+        "supplier_address_normalized": {
+          "city": "Kendallville",
+          "state": "IN",
+          "postal_code": "46755",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "suspension systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_e2da98af6e3d",
+    "company": "Hendrickson (Lebanon, IN)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | IN | Lebanon, IN",
+    "tier": "Tier 1",
+    "addressRaw": "180 Mount Zion Road, Lebanon, IN 46052-8186, USA",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "IN",
+      "postal_code": "46052",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "180 Mount Zion Road, Lebanon, IN 46052-8186, USA",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "IN",
+          "postal_code": "46052",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d87f93f8ae81",
+    "companyKey": "hendrickson-intl.com",
+    "locationId": "loc_dd8156f25f9d",
+    "company": "Hendrickson (Medina, NY)",
+    "parentCompany": "Hendrickson USA, L.L.C.",
+    "parentCompanyId": "cmp_fe3d564082b5",
+    "segment": "USA | NY | Medina, NY",
+    "tier": "Tier 1",
+    "addressRaw": "3959 Bates Road, Medina, NY 14103, USA",
+    "addressComponents": {
+      "city": "Medina",
+      "state": "NY",
+      "postal_code": "14103",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hendrickson-intl.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Suspension systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "commercial vehicle",
+      "suspension"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": "Hendrickson USA, L.L.C.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3959 Bates Road, Medina, NY 14103, USA",
+        "supplier_address_normalized": {
+          "city": "Medina",
+          "state": "NY",
+          "postal_code": "14103",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fccf4c9ee760",
+    "companyKey": "oerlikon.com",
+    "locationId": "loc_86cf498c80e2",
+    "company": "Oerlikon Friction Systems (Dayton, OH)",
+    "parentCompany": "OC Oerlikon Corporation AG",
+    "parentCompanyId": "cmp_a4b343255aff",
+    "segment": "USA | OH | Dayton, OH",
+    "tier": "Tier 1",
+    "addressRaw": "240 Detrick Street, Dayton, OH 45404, USA",
+    "addressComponents": {
+      "city": "Dayton",
+      "state": "OH",
+      "postal_code": "45404",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.oerlikon.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Friction systems",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "friction systems",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Oerlikon Friction Systems",
+        "parent_company": "OC Oerlikon Corporation AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "240 Detrick Street, Dayton, OH 45404, USA",
+        "supplier_address_normalized": {
+          "city": "Dayton",
+          "state": "OH",
+          "postal_code": "45404",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive friction systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fccf4c9ee760",
+    "companyKey": "oerlikon.com",
+    "locationId": "loc_166106c9399e",
+    "company": "Oerlikon Balzers Coating USA Inc. (Brunswick, OH)",
+    "parentCompany": "OC Oerlikon Corporation AG",
+    "parentCompanyId": "cmp_a4b343255aff",
+    "segment": "USA | OH | Brunswick, OH",
+    "tier": "Tier 2",
+    "addressRaw": "1130 Industrial Parkway, Brunswick, OH 44212, USA",
+    "addressComponents": {
+      "city": "Brunswick",
+      "state": "OH",
+      "postal_code": "44212",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.oerlikon.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plating/Coating",
+    "capabilityTags": [
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "coating services",
+      "PVD coating",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Oerlikon Balzers Coating USA Inc.",
+        "parent_company": "OC Oerlikon Corporation AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1130 Industrial Parkway, Brunswick, OH 44212, USA",
+        "supplier_address_normalized": {
+          "city": "Brunswick",
+          "state": "OH",
+          "postal_code": "44212",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "coating services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fccf4c9ee760",
+    "companyKey": "oerlikon.com",
+    "locationId": "loc_197f682dee4d",
+    "company": "Oerlikon Balzers Coating USA Inc. (Amherst, NY - Suite 3)",
+    "parentCompany": "OC Oerlikon Corporation AG",
+    "parentCompanyId": "cmp_a4b343255aff",
+    "segment": "USA | NY | Amherst, NY",
+    "tier": "Tier 2",
+    "addressRaw": "6000 North Bailey Avenue, Suite 3, Amherst, NY 14226, USA",
+    "addressComponents": {
+      "city": "Amherst",
+      "state": "NY",
+      "postal_code": "14226",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.oerlikon.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plating/Coating",
+    "capabilityTags": [
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "coating services",
+      "PVD coating",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Oerlikon Balzers Coating USA Inc.",
+        "parent_company": "OC Oerlikon Corporation AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6000 North Bailey Avenue, Suite 3, Amherst, NY 14226, USA",
+        "supplier_address_normalized": {
+          "city": "Amherst",
+          "state": "NY",
+          "postal_code": "14226",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "coating services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fccf4c9ee760",
+    "companyKey": "oerlikon.com",
+    "locationId": "loc_ecb41db9f68c",
+    "company": "Oerlikon Balzers Coating USA Inc. (Amherst, NY - Suite 9)",
+    "parentCompany": "OC Oerlikon Corporation AG",
+    "parentCompanyId": "cmp_a4b343255aff",
+    "segment": "USA | NY | Amherst, NY",
+    "tier": "Tier 2",
+    "addressRaw": "6000 North Bailey Avenue, Suite 9, Amherst, NY 14226, USA",
+    "addressComponents": {
+      "city": "Amherst",
+      "state": "NY",
+      "postal_code": "14226",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.oerlikon.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plating/Coating",
+    "capabilityTags": [
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "coating services",
+      "PVD coating",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Oerlikon Balzers Coating USA Inc.",
+        "parent_company": "OC Oerlikon Corporation AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6000 North Bailey Avenue, Suite 9, Amherst, NY 14226, USA",
+        "supplier_address_normalized": {
+          "city": "Amherst",
+          "state": "NY",
+          "postal_code": "14226",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "coating services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fccf4c9ee760",
+    "companyKey": "oerlikon.com",
+    "locationId": "loc_bb1ab9ef58a5",
+    "company": "Oerlikon Balzers Coating USA Inc. (Agawam, MA)",
+    "parentCompany": "OC Oerlikon Corporation AG",
+    "parentCompanyId": "cmp_a4b343255aff",
+    "segment": "USA | MA | Agawam, MA",
+    "tier": "Tier 2",
+    "addressRaw": "30 General Abrams Drive, Agawam, MA 01001, USA",
+    "addressComponents": {
+      "city": "Agawam",
+      "state": "MA",
+      "postal_code": "01001",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.oerlikon.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plating/Coating",
+    "capabilityTags": [
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "coating services",
+      "PVD coating",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Oerlikon Balzers Coating USA Inc.",
+        "parent_company": "OC Oerlikon Corporation AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "30 General Abrams Drive, Agawam, MA 01001, USA",
+        "supplier_address_normalized": {
+          "city": "Agawam",
+          "state": "MA",
+          "postal_code": "01001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "coating services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fccf4c9ee760",
+    "companyKey": "oerlikon.com",
+    "locationId": "loc_4d072a35ec64",
+    "company": "Oerlikon Metco (US) Inc. (Westbury, NY)",
+    "parentCompany": "OC Oerlikon Corporation AG",
+    "parentCompanyId": "cmp_a4b343255aff",
+    "segment": "USA | NY | Westbury, NY",
+    "tier": "Tier 2",
+    "addressRaw": "1101 Prospect Avenue, Westbury, NY 11590, USA",
+    "addressComponents": {
+      "city": "Westbury",
+      "state": "NY",
+      "postal_code": "11590",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.oerlikon.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Surface technology materials & equipment",
+    "capabilityTags": [
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "surface technology",
+      "thermal spray",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Oerlikon Metco",
+        "parent_company": "OC Oerlikon Corporation AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1101 Prospect Avenue, Westbury, NY 11590, USA",
+        "supplier_address_normalized": {
+          "city": "Westbury",
+          "state": "NY",
+          "postal_code": "11590",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "materials and equipment production"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_e087b99d9921",
+    "companyKey": "kasai-na.com",
+    "locationId": "loc_7c323fe6f5e8",
+    "company": "Kasai North America, Inc. (Upper Sandusky, OH)",
+    "parentCompany": "Kasai Kogyo Co., Ltd.",
+    "parentCompanyId": "cmp_7c405c614a7c",
+    "segment": "USA | OH | Upper Sandusky, OH",
+    "tier": "Tier 1",
+    "addressRaw": "1111 North Warpole Street, Upper Sandusky, OH 43351, USA",
+    "addressComponents": {
+      "city": "Upper Sandusky",
+      "state": "OH",
+      "postal_code": "43351",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.kasai-na.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior & exterior trim systems",
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "Tier 1",
+      "interior",
+      "exterior"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": "Kasai Kogyo Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1111 North Warpole Street, Upper Sandusky, OH 43351, USA",
+        "supplier_address_normalized": {
+          "city": "Upper Sandusky",
+          "state": "OH",
+          "postal_code": "43351",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive interior/exterior systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_e087b99d9921",
+    "companyKey": "kasai-na.com",
+    "locationId": "loc_85c74aefcb74",
+    "company": "Kasai North America, Inc. (Carey, OH)",
+    "parentCompany": "Kasai Kogyo Co., Ltd.",
+    "parentCompanyId": "cmp_7c405c614a7c",
+    "segment": "USA | OH | Carey, OH",
+    "tier": "Tier 1",
+    "addressRaw": "310 Ogg Street, Carey, OH 43316, USA",
+    "addressComponents": {
+      "city": "Carey",
+      "state": "OH",
+      "postal_code": "43316",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.kasai-na.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior & exterior trim systems",
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "Tier 1",
+      "trim"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": "Kasai Kogyo Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "310 Ogg Street, Carey, OH 43316, USA",
+        "supplier_address_normalized": {
+          "city": "Carey",
+          "state": "OH",
+          "postal_code": "43316",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_e087b99d9921",
+    "companyKey": "kasai-na.com",
+    "locationId": "loc_f55089dcc15d",
+    "company": "Kasai North America, Inc. (Dublin, OH)",
+    "parentCompany": "Kasai Kogyo Co., Ltd.",
+    "parentCompanyId": "cmp_7c405c614a7c",
+    "segment": "USA | OH | Dublin, OH",
+    "tier": "Tier 1",
+    "addressRaw": "655 Metro Place, Suite 560, Dublin, OH 43017, USA",
+    "addressComponents": {
+      "city": "Dublin",
+      "state": "OH",
+      "postal_code": "43017",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.kasai-na.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & program support",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "design"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kasai North America, Inc.",
+        "parent_company": "Kasai Kogyo Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "655 Metro Place, Suite 560, Dublin, OH 43017, USA",
+        "supplier_address_normalized": {
+          "city": "Dublin",
+          "state": "OH",
+          "postal_code": "43017",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "engineering support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_af681688cf48",
+    "companyKey": "nitto.com",
+    "locationId": "loc_e85ce58e03e4",
+    "company": "Nitto Inc. (Piqua, OH)",
+    "parentCompany": "Nitto Denko Corporation",
+    "parentCompanyId": "cmp_5b23bb78fb6c",
+    "segment": "USA | OH | Piqua, OH",
+    "tier": "Tier 2",
+    "addressRaw": "1620 S. Main St., Piqua, OH 45356, USA",
+    "addressComponents": {
+      "city": "Piqua",
+      "state": "OH",
+      "postal_code": "45356",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nitto.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Tapes, foams & NVH materials",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "NVH",
+      "tapes",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nitto Inc.",
+        "parent_company": "Nitto Denko Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1620 S. Main St., Piqua, OH 45356, USA",
+        "supplier_address_normalized": {
+          "city": "Piqua",
+          "state": "OH",
+          "postal_code": "45356",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "materials manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_af681688cf48",
+    "companyKey": "nitto.com",
+    "locationId": "loc_a5a9ffeebadd",
+    "company": "Nitto, Inc. (Lakewood, NJ)",
+    "parentCompany": "Nitto Denko Corporation",
+    "parentCompanyId": "cmp_5b23bb78fb6c",
+    "segment": "USA | NJ | Lakewood, NJ",
+    "tier": "Tier 2",
+    "addressRaw": "1990 Rutgers University Boulevard, Lakewood, NJ 08701, USA",
+    "addressComponents": {
+      "city": "Lakewood",
+      "state": "NJ",
+      "postal_code": "08701",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nitto.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Tapes, foams & structural reinforcing patches",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "tapes",
+      "foams",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nitto, Inc.",
+        "parent_company": "Nitto Denko Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1990 Rutgers University Boulevard, Lakewood, NJ 08701, USA",
+        "supplier_address_normalized": {
+          "city": "Lakewood",
+          "state": "NJ",
+          "postal_code": "08701",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "tape and foam conversion"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_af681688cf48",
+    "companyKey": "nitto.com",
+    "locationId": "loc_29aa256ffe76",
+    "company": "Nitto, Inc. (Lakewood, NJ - Swarthmore Ave)",
+    "parentCompany": "Nitto Denko Corporation",
+    "parentCompanyId": "cmp_5b23bb78fb6c",
+    "segment": "USA | NJ | Lakewood, NJ",
+    "tier": "Tier 2",
+    "addressRaw": "1975 Swarthmore Avenue, Lakewood, NJ 08701, USA",
+    "addressComponents": {
+      "city": "Lakewood",
+      "state": "NJ",
+      "postal_code": "08701",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.nitto.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Converted tape products",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "die cutting",
+      "conversion"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nitto, Inc.",
+        "parent_company": "Nitto Denko Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1975 Swarthmore Avenue, Lakewood, NJ 08701, USA",
+        "supplier_address_normalized": {
+          "city": "Lakewood",
+          "state": "NJ",
+          "postal_code": "08701",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "die cutting / conversion"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_69ce9b6af988",
+    "companyKey": "onsemi.com",
+    "locationId": "loc_93143d0e87e0",
+    "company": "onsemi Mountain Top (Mountain Top, PA)",
+    "parentCompany": "onsemi",
+    "parentCompanyId": "cmp_04d6d002c53d",
+    "segment": "USA | PA | Mountain Top, PA",
+    "tier": "Tier 2",
+    "addressRaw": "125 Crestwood Drive, Mountain Top, PA 18706-2107, USA",
+    "addressComponents": {
+      "city": "Mountain Top",
+      "state": "PA",
+      "postal_code": "18706",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.onsemi.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Semiconductors",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "semiconductors",
+      "automotive electronics",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "onsemi Mountain Top",
+        "parent_company": "onsemi",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "125 Crestwood Drive, Mountain Top, PA 18706-2107, USA",
+        "supplier_address_normalized": {
+          "city": "Mountain Top",
+          "state": "PA",
+          "postal_code": "18706",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "semiconductor design and manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_46335bedf114",
+    "companyKey": "gknpm.com",
+    "locationId": "loc_30823f6f6614",
+    "company": "Hoeganaes Corporation (Ridgway, PA)",
+    "parentCompany": "GKN Powder Metallurgy",
+    "parentCompanyId": "cmp_354cf6eb5c48",
+    "segment": "USA | PA | Ridgway, PA",
+    "tier": "Tier 3",
+    "addressRaw": "224 River Road, Ridgway, PA 15853, USA",
+    "addressComponents": {
+      "city": "Ridgway",
+      "state": "PA",
+      "postal_code": "15853",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.gknpm.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal powders",
+    "capabilityTags": [
+      "Powder metallurgy"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "powder metallurgy",
+      "metal powders",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hoeganaes Corporation",
+        "parent_company": "GKN Powder Metallurgy",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "224 River Road, Ridgway, PA 15853, USA",
+        "supplier_address_normalized": {
+          "city": "Ridgway",
+          "state": "PA",
+          "postal_code": "15853",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal powder production"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_4c7a4a7244ec",
+    "companyKey": "parker.com",
+    "locationId": "loc_391e61fd1318",
+    "company": "LORD Corporation (Saegertown, PA)",
+    "parentCompany": "Parker Hannifin Corporation",
+    "parentCompanyId": "cmp_6b7e03ef945e",
+    "segment": "USA | PA | Saegertown, PA",
+    "tier": "Tier 3",
+    "addressRaw": "601 South Street, Saegertown, PA 16433, USA",
+    "addressComponents": {
+      "city": "Saegertown",
+      "state": "PA",
+      "postal_code": "16433",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.parker.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Adhesives & specialty materials",
+    "capabilityTags": [
+      "Adhesives"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "adhesives",
+      "automotive",
+      "materials"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "LORD Corporation",
+        "parent_company": "Parker Hannifin Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "601 South Street, Saegertown, PA 16433, USA",
+        "supplier_address_normalized": {
+          "city": "Saegertown",
+          "state": "PA",
+          "postal_code": "16433",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "adhesives/materials manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_b3d5b300ecff",
+    "companyKey": "henkel.com",
+    "locationId": "loc_3fe693e4fd73",
+    "company": "Henkel (Cleveland, OH)",
+    "parentCompany": "Henkel AG & Co. KGaA",
+    "parentCompanyId": "cmp_7b1f3be244e5",
+    "segment": "USA | OH | Cleveland, OH",
+    "tier": "Tier 3",
+    "addressRaw": "18731 Cranwood Parkway, Cleveland, OH 44128, USA",
+    "addressComponents": {
+      "city": "Cleveland",
+      "state": "OH",
+      "postal_code": "44128",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.henkel.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Adhesives & sealants",
+    "capabilityTags": [
+      "Adhesives"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "adhesives",
+      "automotive",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Henkel",
+        "parent_company": "Henkel AG & Co. KGaA",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "18731 Cranwood Parkway, Cleveland, OH 44128, USA",
+        "supplier_address_normalized": {
+          "city": "Cleveland",
+          "state": "OH",
+          "postal_code": "44128",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "adhesives manufacturing and distribution"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_c764e9620653",
+    "companyKey": "washingtonpenn.com",
+    "locationId": "loc_276deb46bf09",
+    "company": "Washington Penn (Washington, PA)",
+    "parentCompany": "Washington Penn",
+    "parentCompanyId": "cmp_442c9f1f680c",
+    "segment": "USA | PA | Washington, PA",
+    "tier": "Tier 3",
+    "addressRaw": "2080 North Main Street, Washington, PA 15301, USA",
+    "addressComponents": {
+      "city": "Washington",
+      "state": "PA",
+      "postal_code": "15301",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.washingtonpenn.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Rubber compounds",
+    "capabilityTags": [
+      "Compounding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "rubber compounds",
+      "automotive",
+      "materials"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Washington Penn",
+        "parent_company": "Washington Penn",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2080 North Main Street, Washington, PA 15301, USA",
+        "supplier_address_normalized": {
+          "city": "Washington",
+          "state": "PA",
+          "postal_code": "15301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber compounding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_89fae3b58651",
+    "companyKey": "amesadvancedmaterials.com",
+    "locationId": "loc_1a92c09309fa",
+    "company": "Ames Advanced Materials Corporation (South Plainfield, NJ)",
+    "parentCompany": "Ames Advanced Materials",
+    "parentCompanyId": "cmp_246f1c8842b5",
+    "segment": "USA | NJ | South Plainfield, NJ",
+    "tier": "Tier 2",
+    "addressRaw": "3900 South Clinton Avenue, South Plainfield, NJ 07080, USA",
+    "addressComponents": {
+      "city": "South Plainfield",
+      "state": "NJ",
+      "postal_code": "07080",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.amesadvancedmaterials.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Powder metallurgy components",
+    "capabilityTags": [
+      "Powder metallurgy",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "powder metallurgy",
+      "automotive",
+      "components"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ames Advanced Materials Corporation",
+        "parent_company": "Ames Advanced Materials",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3900 South Clinton Avenue, South Plainfield, NJ 07080, USA",
+        "supplier_address_normalized": {
+          "city": "South Plainfield",
+          "state": "NJ",
+          "postal_code": "07080",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "powder metal component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_e68086191544",
+    "companyKey": "bulkmoldingcompounds.com",
+    "locationId": "loc_8c35adbac70a",
+    "company": "Bulk Molding Compounds, Inc. (Perrysburg, OH)",
+    "parentCompany": "LyondellBasell / A. Schulman (legacy)",
+    "parentCompanyId": "cmp_1c9420e7bafb",
+    "segment": "USA | OH | Perrysburg, OH",
+    "tier": "Tier 3",
+    "addressRaw": "12600 Eckel Road, Perrysburg, OH 43551, USA",
+    "addressComponents": {
+      "city": "Perrysburg",
+      "state": "OH",
+      "postal_code": "43551",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.bulkmoldingcompounds.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Thermoset molding compounds",
+    "capabilityTags": [
+      "Compounding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "molding compounds",
+      "thermoset",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bulk Molding Compounds, Inc.",
+        "parent_company": "LyondellBasell / A. Schulman (legacy)",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12600 Eckel Road, Perrysburg, OH 43551, USA",
+        "supplier_address_normalized": {
+          "city": "Perrysburg",
+          "state": "OH",
+          "postal_code": "43551",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "polymer compounding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_13f2dd7a4c05",
+    "companyKey": "timken.com",
+    "locationId": "loc_ebc5add2a9c4",
+    "company": "The Timken Company (Bucyrus, OH)",
+    "parentCompany": "The Timken Company",
+    "parentCompanyId": "cmp_4998f2adc3c9",
+    "segment": "USA | OH | Bucyrus, OH",
+    "tier": "Tier 2",
+    "addressRaw": "2325 East Mansfield Street, Bucyrus, OH 44820, USA",
+    "addressComponents": {
+      "city": "Bucyrus",
+      "state": "OH",
+      "postal_code": "44820",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.timken.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Bearings & power transmission components",
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "bearings",
+      "automotive",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "The Timken Company",
+        "parent_company": "The Timken Company",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2325 East Mansfield Street, Bucyrus, OH 44820, USA",
+        "supplier_address_normalized": {
+          "city": "Bucyrus",
+          "state": "OH",
+          "postal_code": "44820",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "bearing manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_00d10b528212",
+    "companyKey": "hoganas.com",
+    "locationId": "loc_3babe1e1d924",
+    "company": "North American H\u00f6gan\u00e4s Co. (St. Marys, PA)",
+    "parentCompany": "H\u00f6gan\u00e4s AB",
+    "parentCompanyId": "cmp_738705b2f182",
+    "segment": "USA | PA | St. Marys, PA",
+    "tier": "Tier 3",
+    "addressRaw": "210 Ceramic St, St. Marys, PA 15857, USA",
+    "addressComponents": {
+      "city": "St. Marys",
+      "state": "PA",
+      "postal_code": "15857",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hoganas.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal powders",
+    "capabilityTags": [
+      "Powder metallurgy"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "metal powders",
+      "powder metallurgy",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American H\u00f6gan\u00e4s Co.",
+        "parent_company": "H\u00f6gan\u00e4s AB",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "210 Ceramic St, St. Marys, PA 15857, USA",
+        "supplier_address_normalized": {
+          "city": "St. Marys",
+          "state": "PA",
+          "postal_code": "15857",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal powder production"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_00d10b528212",
+    "companyKey": "hoganas.com",
+    "locationId": "loc_73b6a710a2e2",
+    "company": "North American H\u00f6gan\u00e4s Co. (Hollsopple, PA)",
+    "parentCompany": "H\u00f6gan\u00e4s AB",
+    "parentCompanyId": "cmp_738705b2f182",
+    "segment": "USA | PA | Hollsopple, PA",
+    "tier": "Tier 3",
+    "addressRaw": "111 Hoganas Way, Hollsopple, PA 15935-6416, USA",
+    "addressComponents": {
+      "city": "Hollsopple",
+      "state": "PA",
+      "postal_code": "15935",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hoganas.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal powders",
+    "capabilityTags": [
+      "Powder metallurgy"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "metal powders",
+      "powder metallurgy",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North American H\u00f6gan\u00e4s Co.",
+        "parent_company": "H\u00f6gan\u00e4s AB",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "111 Hoganas Way, Hollsopple, PA 15935-6416, USA",
+        "supplier_address_normalized": {
+          "city": "Hollsopple",
+          "state": "PA",
+          "postal_code": "15935",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal powder production"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_ea9f209858a3",
+    "companyKey": "enterprisewelding.com",
+    "locationId": "loc_7b6a5af615c2",
+    "company": "Enterprise Welding & Fabricating (Mentor, OH)",
+    "parentCompany": "Enterprise Welding & Fabricating",
+    "parentCompanyId": "cmp_872a0e00c066",
+    "segment": "USA | OH | Mentor, OH",
+    "tier": "Tier 2",
+    "addressRaw": "6257 Heisley Road, Mentor, OH 44060, USA",
+    "addressComponents": {
+      "city": "Mentor",
+      "state": "OH",
+      "postal_code": "44060",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://enterprisewelding.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Welded assemblies & fabrication",
+    "capabilityTags": [
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "welding",
+      "fabrication",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Enterprise Welding & Fabricating",
+        "parent_company": "Enterprise Welding & Fabricating",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6257 Heisley Road, Mentor, OH 44060, USA",
+        "supplier_address_normalized": {
+          "city": "Mentor",
+          "state": "OH",
+          "postal_code": "44060",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal fabrication",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_ea9f209858a3",
+    "companyKey": "enterprisewelding.com",
+    "locationId": "loc_dc49e5f33b6f",
+    "company": "Enterprise Welding & Fabricating (Mentor, OH - Support)",
+    "parentCompany": "Enterprise Welding & Fabricating",
+    "parentCompanyId": "cmp_872a0e00c066",
+    "segment": "USA | OH | Mentor, OH",
+    "tier": "Tier 2",
+    "addressRaw": "9281 Pine Needle Drive, Mentor, OH 44060, USA",
+    "addressComponents": {
+      "city": "Mentor",
+      "state": "OH",
+      "postal_code": "44060",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://enterprisewelding.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Engineering & support functions",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "support functions"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Enterprise Welding & Fabricating",
+        "parent_company": "Enterprise Welding & Fabricating",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9281 Pine Needle Drive, Mentor, OH 44060, USA",
+        "supplier_address_normalized": {
+          "city": "Mentor",
+          "state": "OH",
+          "postal_code": "44060",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_6ce2506c880e",
+    "companyKey": "metalisusa.com",
+    "locationId": "loc_88249b7bb786",
+    "company": "Metalis USA Inc. (Denville, NJ)",
+    "parentCompany": "Metalis Group",
+    "parentCompanyId": "cmp_88cbe387c3c9",
+    "segment": "USA | NJ | Denville, NJ",
+    "tier": "Tier 2",
+    "addressRaw": "88 Ford Road, Denville, NJ 07834, USA",
+    "addressComponents": {
+      "city": "Denville",
+      "state": "NJ",
+      "postal_code": "07834",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.metalisusa.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Precision metal components",
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "machining",
+      "automotive",
+      "components"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Metalis USA Inc.",
+        "parent_company": "Metalis Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "88 Ford Road, Denville, NJ 07834, USA",
+        "supplier_address_normalized": {
+          "city": "Denville",
+          "state": "NJ",
+          "postal_code": "07834",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_5fb9c981bad6",
+    "companyKey": "tolerancerings.com",
+    "locationId": "loc_f160c23e3a49",
+    "company": "USA Tolerance Rings (Pennington, NJ)",
+    "parentCompany": "Smalley Steel Ring Company",
+    "parentCompanyId": "cmp_face113da625",
+    "segment": "USA | NJ | Pennington, NJ",
+    "tier": "Tier 2",
+    "addressRaw": "85 Route 31 North, Pennington, NJ 08534, USA",
+    "addressComponents": {
+      "city": "Pennington",
+      "state": "NJ",
+      "postal_code": "08534",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.tolerancerings.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal spring components",
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "metal components",
+      "automotive",
+      "fasteners"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "USA Tolerance Rings",
+        "parent_company": "Smalley Steel Ring Company",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "85 Route 31 North, Pennington, NJ 08534, USA",
+        "supplier_address_normalized": {
+          "city": "Pennington",
+          "state": "NJ",
+          "postal_code": "08534",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_636629b122c6",
+    "companyKey": "ennovi.com",
+    "locationId": "loc_f60a0049260e",
+    "company": "ENNOVI (Northvale, NJ)",
+    "parentCompany": "ENNOVI",
+    "parentCompanyId": "cmp_c8275b2d0248",
+    "segment": "USA | NJ | Northvale, NJ",
+    "tier": "Tier 2",
+    "addressRaw": "232 Pegasus Avenue, Northvale, NJ 07647, USA",
+    "addressComponents": {
+      "city": "Northvale",
+      "state": "NJ",
+      "postal_code": "07647",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ennovi.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electrical connectors & interconnects",
+    "capabilityTags": [
+      "Stamping",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "electrical",
+      "interconnects",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ENNOVI",
+        "parent_company": "ENNOVI",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "232 Pegasus Avenue, Northvale, NJ 07647, USA",
+        "supplier_address_normalized": {
+          "city": "Northvale",
+          "state": "NJ",
+          "postal_code": "07647",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electrical component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_17a8b80d866b",
+    "companyKey": "wolfspeed.com",
+    "locationId": "loc_ce5c6eb8f073",
+    "company": "Wolfspeed (Marcy, NY)",
+    "parentCompany": "Wolfspeed, Inc.",
+    "parentCompanyId": "cmp_b649cf4e5f7a",
+    "segment": "USA | NY | Marcy, NY",
+    "tier": "Tier 2",
+    "addressRaw": "5757 Marcy - SUNY IT Parkway, Marcy, NY 13403, USA",
+    "addressComponents": {
+      "city": "Marcy",
+      "state": "NY",
+      "postal_code": "13403",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.wolfspeed.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Power semiconductors (SiC)",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "semiconductors",
+      "power electronics",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wolfspeed",
+        "parent_company": "Wolfspeed, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5757 Marcy - SUNY IT Parkway, Marcy, NY 13403, USA",
+        "supplier_address_normalized": {
+          "city": "Marcy",
+          "state": "NY",
+          "postal_code": "13403",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "semiconductor manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_4c7a4a7244ec",
+    "companyKey": "parker.com",
+    "locationId": "loc_fd577243ef86",
+    "company": "Parker Chomerics (Fairport, NY)",
+    "parentCompany": "Parker Hannifin Corporation",
+    "parentCompanyId": "cmp_6b7e03ef945e",
+    "segment": "USA | NY | Fairport, NY",
+    "tier": "Tier 2",
+    "addressRaw": "83 Estates Drive West, Fairport, NY 14450, USA",
+    "addressComponents": {
+      "city": "Fairport",
+      "state": "NY",
+      "postal_code": "14450",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.parker.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "EMI shielding & thermal interface materials",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "electronics",
+      "EMI shielding",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Parker Chomerics",
+        "parent_company": "Parker Hannifin Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "83 Estates Drive West, Fairport, NY 14450, USA",
+        "supplier_address_normalized": {
+          "city": "Fairport",
+          "state": "NY",
+          "postal_code": "14450",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "materials manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_63589f92f4c7",
+    "companyKey": "novelis.com",
+    "locationId": "loc_33de2018371e",
+    "company": "Novelis Oswego Works (Oswego, NY)",
+    "parentCompany": "Novelis Inc.",
+    "parentCompanyId": "cmp_e2561c2162a6",
+    "segment": "USA | NY | Oswego, NY",
+    "tier": "Tier 3",
+    "addressRaw": "448 County Route 1A, Oswego, NY 13126, USA",
+    "addressComponents": {
+      "city": "Oswego",
+      "state": "NY",
+      "postal_code": "13126",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.novelis.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum rolled products",
+    "capabilityTags": [
+      "Rolling"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "aluminum",
+      "rolled products",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Novelis Oswego Works",
+        "parent_company": "Novelis Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "448 County Route 1A, Oswego, NY 13126, USA",
+        "supplier_address_normalized": {
+          "city": "Oswego",
+          "state": "NY",
+          "postal_code": "13126",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum rolling and finishing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_8cf8ca069e83",
+    "companyKey": "webco.com",
+    "locationId": "loc_4d830301918a",
+    "company": "Webco Industries, Inc. (Reno, PA)",
+    "parentCompany": "Webco Industries, Inc.",
+    "parentCompanyId": "cmp_9c04bea03933",
+    "segment": "USA | PA | Reno, PA",
+    "tier": "Tier 3",
+    "addressRaw": "32 Progress Drive, Reno, PA 16343, USA",
+    "addressComponents": {
+      "city": "Reno",
+      "state": "PA",
+      "postal_code": "16343",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.webco.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Steel tubing",
+    "capabilityTags": [
+      "Tubing"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "steel tubing",
+      "automotive",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Webco Industries, Inc.",
+        "parent_company": "Webco Industries, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "32 Progress Drive, Reno, PA 16343, USA",
+        "supplier_address_normalized": {
+          "city": "Reno",
+          "state": "PA",
+          "postal_code": "16343",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel tube manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_af7de7f9122f",
+    "companyKey": "pgsteel.com",
+    "locationId": "loc_366422f875d2",
+    "company": "P&G Steel Products Company (Buffalo, NY)",
+    "parentCompany": "P&G Steel Products Company",
+    "parentCompanyId": "cmp_83d0a79d3d99",
+    "segment": "USA | NY | Buffalo, NY",
+    "tier": "Tier 2",
+    "addressRaw": "1590 Elmwood Avenue, Buffalo, NY 14207, USA",
+    "addressComponents": {
+      "city": "Buffalo",
+      "state": "NY",
+      "postal_code": "14207",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pgsteel.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "metal stamping",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "P&G Steel Products Company",
+        "parent_company": "P&G Steel Products Company",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1590 Elmwood Avenue, Buffalo, NY 14207, USA",
+        "supplier_address_normalized": {
+          "city": "Buffalo",
+          "state": "NY",
+          "postal_code": "14207",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f6ca4ba52874",
+    "companyKey": "eamagnetics.com",
+    "locationId": "loc_7fb14819e76b",
+    "company": "EA Magnetics, Inc. (Medford, NY)",
+    "parentCompany": "EA Magnetics, Inc.",
+    "parentCompanyId": "cmp_4a6f6d0645e8",
+    "segment": "USA | NY | Medford, NY",
+    "tier": "Tier 2",
+    "addressRaw": "1135 Station Road, Medford, NY 11763-0305, USA",
+    "addressComponents": {
+      "city": "Medford",
+      "state": "NY",
+      "postal_code": "11763",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.eamagnetics.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Magnets & magnetic assemblies",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "magnets",
+      "automotive",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EA Magnetics, Inc.",
+        "parent_company": "EA Magnetics, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1135 Station Road, Medford, NY 11763-0305, USA",
+        "supplier_address_normalized": {
+          "city": "Medford",
+          "state": "NY",
+          "postal_code": "11763",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "magnetic component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f6ca4ba52874",
+    "companyKey": "eamagnetics.com",
+    "locationId": "loc_c7f0042c7247",
+    "company": "EA Magnetics, Inc. (Warminster, PA)",
+    "parentCompany": "EA Magnetics, Inc.",
+    "parentCompanyId": "cmp_4a6f6d0645e8",
+    "segment": "USA | PA | Warminster, PA",
+    "tier": "Tier 2",
+    "addressRaw": "250 Jacksonville Road, Warminster, PA 18974-4034, USA",
+    "addressComponents": {
+      "city": "Warminster",
+      "state": "PA",
+      "postal_code": "18974",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.eamagnetics.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Magnets & magnetic assemblies",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "magnets",
+      "automotive",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EA Magnetics, Inc.",
+        "parent_company": "EA Magnetics, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "250 Jacksonville Road, Warminster, PA 18974-4034, USA",
+        "supplier_address_normalized": {
+          "city": "Warminster",
+          "state": "PA",
+          "postal_code": "18974",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "magnetic component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f63d2cf4bfca",
+    "companyKey": "phbcorp.com",
+    "locationId": "loc_5b6e8a9aed69",
+    "company": "PHB Machining & Molding (Fairview, PA)",
+    "parentCompany": "PHB Corporation",
+    "parentCompanyId": "cmp_ed18a699a0c0",
+    "segment": "USA | PA | Fairview, PA",
+    "tier": "Tier 2",
+    "addressRaw": "7450 Railroad Street, Fairview, PA 16415, USA",
+    "addressComponents": {
+      "city": "Fairview",
+      "state": "PA",
+      "postal_code": "16415",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.phbcorp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & injection molding",
+    "capabilityTags": [
+      "Machining",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "machining",
+      "injection molding",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PHB Machining & Molding",
+        "parent_company": "PHB Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7450 Railroad Street, Fairview, PA 16415, USA",
+        "supplier_address_normalized": {
+          "city": "Fairview",
+          "state": "PA",
+          "postal_code": "16415",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "injection molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f63d2cf4bfca",
+    "companyKey": "phbcorp.com",
+    "locationId": "loc_51e6495bf600",
+    "company": "REDDOG Industries (Erie, PA)",
+    "parentCompany": "PHB Corporation",
+    "parentCompanyId": "cmp_ed18a699a0c0",
+    "segment": "USA | PA | Erie, PA",
+    "tier": "Tier 2",
+    "addressRaw": "4200 Lyell Road, Erie, PA 16506, USA",
+    "addressComponents": {
+      "city": "Erie",
+      "state": "PA",
+      "postal_code": "16506",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.phbcorp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Manufacturing (machining / assemblies)",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "manufacturing",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "REDDOG Industries",
+        "parent_company": "PHB Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4200 Lyell Road, Erie, PA 16506, USA",
+        "supplier_address_normalized": {
+          "city": "Erie",
+          "state": "PA",
+          "postal_code": "16506",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d7ba59736b8a",
+    "companyKey": "pennmetalstamping.com",
+    "locationId": "loc_70d604d662cc",
+    "company": "Penn Metal Stamping (Kersey, PA)",
+    "parentCompany": "Penn Metal Stamping",
+    "parentCompanyId": "cmp_e8bf5f85aed4",
+    "segment": "USA | PA | Kersey, PA",
+    "tier": "Tier 2",
+    "addressRaw": "9404 Route 219 Highway, Kersey, PA 15846, USA",
+    "addressComponents": {
+      "city": "Kersey",
+      "state": "PA",
+      "postal_code": "15846",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pennmetalstamping.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "metal stamping",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Penn Metal Stamping",
+        "parent_company": "Penn Metal Stamping",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9404 Route 219 Highway, Kersey, PA 15846, USA",
+        "supplier_address_normalized": {
+          "city": "Kersey",
+          "state": "PA",
+          "postal_code": "15846",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_dde6435b2618",
+    "companyKey": "weiss-aug.com",
+    "locationId": "loc_95432ba6c7e8",
+    "company": "Weiss-Aug Precision Technologies (New Kensington, PA)",
+    "parentCompany": "Weiss-Aug Group",
+    "parentCompanyId": "cmp_ff5f24e21881",
+    "segment": "USA | PA | New Kensington, PA",
+    "tier": "Tier 2",
+    "addressRaw": "550 Hunt Valley Road, New Kensington, PA 15068, USA",
+    "addressComponents": {
+      "city": "New Kensington",
+      "state": "PA",
+      "postal_code": "15068",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.weiss-aug.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal & molded components",
+    "capabilityTags": [
+      "Stamping",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "precision stamping",
+      "injection molding",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Weiss-Aug Precision Technologies",
+        "parent_company": "Weiss-Aug Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "550 Hunt Valley Road, New Kensington, PA 15068, USA",
+        "supplier_address_normalized": {
+          "city": "New Kensington",
+          "state": "PA",
+          "postal_code": "15068",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fa5eb1626542",
+    "companyKey": "die-matic.com",
+    "locationId": "loc_11dd72577295",
+    "company": "Die-Matic Corporation (Brooklyn Heights, OH)",
+    "parentCompany": "Die-Matic Corporation",
+    "parentCompanyId": "cmp_e490898bdd4c",
+    "segment": "USA | OH | Brooklyn Heights, OH",
+    "tier": "Tier 2",
+    "addressRaw": "201 Eastview Drive, Brooklyn Heights, OH 44131, USA",
+    "addressComponents": {
+      "city": "Brooklyn Heights",
+      "state": "OH",
+      "postal_code": "44131",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.die-matic.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "metal stamping",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Die-Matic Corporation",
+        "parent_company": "Die-Matic Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201 Eastview Drive, Brooklyn Heights, OH 44131, USA",
+        "supplier_address_normalized": {
+          "city": "Brooklyn Heights",
+          "state": "OH",
+          "postal_code": "44131",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_009ca7c6c487",
+    "companyKey": "hydro.com",
+    "locationId": "loc_1e41b6bfa078",
+    "company": "Hydro Extrusions (Cressona, PA)",
+    "parentCompany": "Norsk Hydro ASA",
+    "parentCompanyId": "cmp_6d8c728ba0d2",
+    "segment": "USA | PA | Cressona, PA",
+    "tier": "Tier 3",
+    "addressRaw": "53 Pottsville Street, Cressona, PA 17929, USA",
+    "addressComponents": {
+      "city": "Cressona",
+      "state": "PA",
+      "postal_code": "17929",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hydro.com",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum extrusions",
+    "capabilityTags": [
+      "Extrusion"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "aluminum",
+      "extrusion",
+      "automotive"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hydro Extrusions",
+        "parent_company": "Norsk Hydro ASA",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "53 Pottsville Street, Cressona, PA 17929, USA",
+        "supplier_address_normalized": {
+          "city": "Cressona",
+          "state": "PA",
+          "postal_code": "17929",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum extrusion manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_39cfbed30098",
+    "companyKey": "te.com",
+    "locationId": "loc_edfe07a0a95f",
+    "company": "TE Connectivity (Berwyn, PA)",
+    "parentCompany": "TE Connectivity Ltd.",
+    "parentCompanyId": "cmp_b96ebeb82547",
+    "segment": "USA | PA | Berwyn, PA",
+    "tier": "Tier 2",
+    "addressRaw": "1050 Westlakes Drive, Berwyn, PA 19312, USA",
+    "addressComponents": {
+      "city": "Berwyn",
+      "state": "PA",
+      "postal_code": "19312",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.te.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Connectors & electrical components",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "connectors",
+      "electrical"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TE Connectivity",
+        "parent_company": "TE Connectivity Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1050 Westlakes Drive, Berwyn, PA 19312, USA",
+        "supplier_address_normalized": {
+          "city": "Berwyn",
+          "state": "PA",
+          "postal_code": "19312",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electrical component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_af8144f045f7",
+    "companyKey": "bendix.com",
+    "locationId": "loc_38d90ee78932",
+    "company": "Bendix Commercial Vehicle Systems Headquarters (Avon, OH)",
+    "parentCompany": "Knorr-Bremse",
+    "parentCompanyId": "cmp_f321cc62eca2",
+    "segment": "USA | OH | Avon, OH",
+    "tier": "Tier 1",
+    "addressRaw": "35500 Chester Road, Avon, OH 44011, USA",
+    "addressComponents": {
+      "city": "Avon",
+      "state": "OH",
+      "postal_code": "44011",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.bendix.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Brake systems",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "brake systems",
+      "commercial vehicle",
+      "Tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems Headquarters",
+        "parent_company": "Knorr-Bremse",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "35500 Chester Road, Avon, OH 44011, USA",
+        "supplier_address_normalized": {
+          "city": "Avon",
+          "state": "OH",
+          "postal_code": "44011",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "engineering and corporate support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tier_sweep_east_round54"
+      }
+    }
+  }
+]

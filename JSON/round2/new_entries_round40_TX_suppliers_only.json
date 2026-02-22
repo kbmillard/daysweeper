@@ -1,0 +1,1837 @@
+[
+  {
+    "company": "Toyotetsu Texas, Inc. (San Antonio, TX)",
+    "parentCompany": "Toyoda Iron Works Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 38, San Antonio, TX 78264-3643, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyotetsu Texas, Inc.",
+        "parent_company": "Toyoda Iron Works Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 38, San Antonio, TX 78264-3643, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamped and welded automotive components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.tiw.co.jp/en/",
+    "companyKey": "name:toyotetsu-texas-inc-san-antonio-tx|parent:toyoda-iron-works-co-ltd|us",
+    "companyId": "cmp_314a27d55b81",
+    "locationId": "loc_38d0d7fb0be4",
+    "parentCompanyId": "cmp_0d9198609be8",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Futaba Industrial Texas Corporation (San Antonio, TX)",
+    "parentCompany": "Futaba Industrial Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1 Lone Star Pass, Bldg 34, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Futaba Industrial Texas Corporation",
+        "parent_company": "Futaba Industrial Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 34, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.futabanorthamerica.com/texas/",
+    "companyKey": "name:futaba-industrial-texas-corporation-san-antonio-tx|parent:futaba-industrial-co-ltd|us",
+    "companyId": "cmp_51452b4fd4a8",
+    "locationId": "loc_70afa990b320",
+    "parentCompanyId": "cmp_900305cc9b95",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "tier 2"
+    ]
+  },
+  {
+    "company": "Reyes Hayashi Automotive, LLC (San Antonio, TX)",
+    "parentCompany": "Hayashi Telempu Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 30, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Reyes Hayashi Automotive, LLC",
+        "parent_company": "Hayashi Telempu Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 30, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior component manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.hayashitelempu.com/en/",
+    "companyKey": "name:reyes-hayashi-automotive-llc-san-antonio-tx|parent:hayashi-telempu-co-ltd|us",
+    "companyId": "cmp_9e7be706ff9c",
+    "locationId": "loc_4808ad259c16",
+    "parentCompanyId": "cmp_555471793570",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "tier 1",
+      "jit"
+    ]
+  },
+  {
+    "company": "NC Works, Inc. (San Antonio, TX)",
+    "parentCompany": "Hayashi Telempu Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "16711 Applewhite Rd, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NC Works, Inc.",
+        "parent_company": "Hayashi Telempu Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "16711 Applewhite Rd, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "web_search"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": null,
+    "companyKey": "name:nc-works-inc-san-antonio-tx|parent:hayashi-telempu-co-ltd|us",
+    "companyId": "cmp_e77b0c8e34ab",
+    "locationId": "loc_bd67fcbef771",
+    "parentCompanyId": "cmp_555471793570",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "tier 2"
+    ]
+  },
+  {
+    "company": "Takumi Stamping, Inc. (San Antonio, TX)",
+    "parentCompany": "Takagi Mfg. Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1 Lone Star Pass, Bldg 40, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Takumi Stamping, Inc.",
+        "parent_company": "Takagi Mfg. Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 40, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.takumitx.com/",
+    "companyKey": "takumitx.com",
+    "companyId": "cmp_a1738e476340",
+    "locationId": "loc_b1daeb6f1854",
+    "parentCompanyId": "cmp_51660d596d6e",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "tier 2"
+    ]
+  },
+  {
+    "company": "Curtis-Maruyasu America, Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1 Lone Star Pass, Bldg 5, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Curtis-Maruyasu America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 5, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive tubing and components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://curtismaruyasu.com/",
+    "companyKey": "curtismaruyasu.com",
+    "companyId": "cmp_d7e98b6cb457",
+    "locationId": "loc_b2fb0ed6033c",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Metal forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tubing",
+      "tier 2"
+    ]
+  },
+  {
+    "company": "Kautex Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 3, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kautex Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 3, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fuel system components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.kautex.com/",
+    "companyKey": "kautex.com",
+    "companyId": "cmp_3ce2debae7a4",
+    "locationId": "loc_8dbf45db07a8",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "fuel systems",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Avanzar Interior Technologies (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 41, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Avanzar Interior Technologies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 41, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior modules manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://avanzarnt.com/",
+    "companyKey": "avanzarnt.com",
+    "companyId": "cmp_b4ab6cc28208",
+    "locationId": "loc_36040e4fa909",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Assembly",
+      "Kitting"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Toyoda Gosei Texas, Inc. (San Antonio, TX)",
+    "parentCompany": "Toyoda Gosei Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 31, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyoda Gosei Texas, Inc.",
+        "parent_company": "Toyoda Gosei Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 31, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior and exterior parts manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.toyodagosei.com/",
+    "companyKey": "name:toyoda-gosei-texas-inc-san-antonio-tx|parent:toyoda-gosei-co-ltd|us",
+    "companyId": "cmp_480d6e8a61f5",
+    "locationId": "loc_137899529038",
+    "parentCompanyId": "cmp_b449e318fbe0",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "plastics",
+      "rubber"
+    ]
+  },
+  {
+    "company": "Metalsa (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 4, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Metalsa",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 4, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "chassis structures manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://metalsa.com/",
+    "companyKey": "metalsa.com",
+    "companyId": "cmp_d1a9279dd5b0",
+    "locationId": "loc_a0b74134b3fb",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "chassis",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Green Metals, Inc. (San Antonio, TX) - Bldg 13",
+    "parentCompany": "Toyota Tsusho America, Inc.",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1 Lone Star Pass, Bldg 13, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Green Metals, Inc. - Bldg 13",
+        "parent_company": "Toyota Tsusho America, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 13, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "scrap metal recycling",
+          "material recovery"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Recycling and scrap processing",
+    "website": "https://gmiky.com/",
+    "companyKey": "gmiky.com",
+    "companyId": "cmp_cc306074432d",
+    "locationId": "loc_021da88c5542",
+    "parentCompanyId": "cmp_b3868c7936e3",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Recycling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "scrap",
+      "recycling",
+      "toyota"
+    ]
+  },
+  {
+    "company": "Green Metals, Inc. (San Antonio, TX) - Bldg 15",
+    "parentCompany": "Toyota Tsusho America, Inc.",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1 Lone Star Pass, Bldg 15, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Green Metals, Inc. - Bldg 15",
+        "parent_company": "Toyota Tsusho America, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 15, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "scrap metal recycling",
+          "material recovery"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Recycling and scrap processing",
+    "website": "https://gmiky.com/",
+    "companyKey": "gmiky.com",
+    "companyId": "cmp_cc306074432d",
+    "locationId": "loc_80227a4fb136",
+    "parentCompanyId": "cmp_b3868c7936e3",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Recycling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "scrap",
+      "recycling",
+      "toyota"
+    ]
+  },
+  {
+    "company": "Millennium Steel of Texas, Inc. (San Antonio, TX)",
+    "parentCompany": "Toyota Tsusho America, Inc.",
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "1 Lone Star Pass, Bldg 12, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Millennium Steel of Texas, Inc.",
+        "parent_company": "Toyota Tsusho America, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 12, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel processing",
+          "warehouse and distribution"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Steel coils",
+    "website": "https://www.millenniumsteel.com/",
+    "companyKey": "millenniumsteel.com",
+    "companyId": "cmp_545ab037357d",
+    "locationId": "loc_2a34135f83d9",
+    "parentCompanyId": "cmp_b3868c7936e3",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Steel processing"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steel",
+      "tier 3"
+    ]
+  },
+  {
+    "company": "HERO Assemblers, LP (San Antonio, TX)",
+    "parentCompany": "Toyota Tsusho America, Inc.",
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1 Lone Star Pass, Bldg 1, Ste 1101, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HERO Assemblers, LP",
+        "parent_company": "Toyota Tsusho America, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 1, Ste 1101, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "tire and wheel assembly",
+          "kitting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "web_search"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": null,
+    "companyKey": "name:hero-assemblers-lp-san-antonio-tx|parent:toyota-tsusho-america-inc|us",
+    "companyId": "cmp_855235a14f6d",
+    "locationId": "loc_feac3e394cdc",
+    "parentCompanyId": "cmp_b3868c7936e3",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Kitting",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "kitting",
+      "line-side"
+    ]
+  },
+  {
+    "company": "HERO Logistics, LLC (San Antonio, TX)",
+    "parentCompany": "Toyota Tsusho America, Inc.",
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1 Lone Star Pass, Bldg 1, Ste 1103, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HERO Logistics, LLC",
+        "parent_company": "Toyota Tsusho America, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 1, Ste 1103, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "yard management",
+          "shuttle operations"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "web_search"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Line-side logistics",
+    "website": null,
+    "companyKey": "name:hero-logistics-llc-san-antonio-tx|parent:toyota-tsusho-america-inc|us",
+    "companyId": "cmp_d92a763e1d2d",
+    "locationId": "loc_86ec212b0396",
+    "parentCompanyId": "cmp_b3868c7936e3",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Shuttle / milk run",
+      "Line-side delivery"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "3pl",
+      "jit"
+    ]
+  },
+  {
+    "company": "Toyota Tsusho America, Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "202 N Tayman St, Ste 300B, San Antonio, TX 78226, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78226",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Tsusho America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "202 N Tayman St, Ste 300B, San Antonio, TX 78226, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78226",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "logistics services",
+          "supply chain services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "3PL providers",
+    "website": "https://www.taiamerica.com/",
+    "companyKey": "taiamerica.com",
+    "companyId": "cmp_b3868c7936e3",
+    "locationId": "loc_ad7f649d53d9",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Cross-dock",
+      "Shuttle / milk run"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "logistics",
+      "3pl"
+    ]
+  },
+  {
+    "company": "Toyota Tsusho America, Inc. (Houston, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "5847 San Felipe St, Ste 2300, Houston, TX 77057, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77057",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota Tsusho America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5847 San Felipe St, Ste 2300, Houston, TX 77057, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77057",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "trading",
+          "supply chain services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "3PL providers",
+    "website": "https://www.taiamerica.com/",
+    "companyKey": "taiamerica.com",
+    "companyId": "cmp_b3868c7936e3",
+    "locationId": "loc_19add4dd00ca",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "trading",
+      "logistics"
+    ]
+  },
+  {
+    "company": "Vutex, Inc. (San Antonio, TX)",
+    "parentCompany": "Vuteq Corporation",
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1 Lone Star Pass, Bldg 1, Ste 1102, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Vutex, Inc.",
+        "parent_company": "Vuteq Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 1, Ste 1102, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "sub-assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sequencing centers",
+    "website": "https://www.vuteq.co.jp/en/",
+    "companyKey": "name:vutex-inc-san-antonio-tx|parent:vuteq-corporation|us",
+    "companyId": "cmp_2cf281de8047",
+    "locationId": "loc_e2fed35f0e73",
+    "parentCompanyId": "cmp_d0ca6d42b781",
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "jit",
+      "spd"
+    ]
+  },
+  {
+    "company": "ZF Electronic Systems (El Paso, TX)",
+    "parentCompany": "ZF Group",
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "12420 Mercantile Ave, El Paso, TX 79928, US",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79928",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF Electronic Systems",
+        "parent_company": "ZF Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12420 Mercantile Ave, El Paso, TX 79928, US",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79928",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics distribution",
+          "warehouse"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "website": "https://www.zf.com/",
+    "companyKey": "name:zf-electronic-systems-el-paso-tx|parent:zf-group|us",
+    "companyId": "cmp_ad15400c6b39",
+    "locationId": "loc_adfffe001b60",
+    "parentCompanyId": "cmp_8b8ec5a6e6a4",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Cross-dock"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics",
+      "distribution"
+    ]
+  },
+  {
+    "company": "Flex-N-Gate Texas LLC (Grand Prairie, TX)",
+    "parentCompany": "Flex-N-Gate Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2150 W Bardin Rd, Grand Prairie, TX 75052, US",
+    "addressComponents": {
+      "city": "Grand Prairie",
+      "state": "TX",
+      "postal_code": "75052",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Flex-N-Gate Texas LLC",
+        "parent_company": "Flex-N-Gate Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2150 W Bardin Rd, Grand Prairie, TX 75052, US",
+        "supplier_address_normalized": {
+          "city": "Grand Prairie",
+          "state": "TX",
+          "postal_code": "75052",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.flex-n-gate.com/",
+    "companyKey": "name:flex-n-gate-texas-llc-grand-prairie-tx|parent:flex-n-gate-corporation|us",
+    "companyId": "cmp_0af6205651bb",
+    "locationId": "loc_72749f412283",
+    "parentCompanyId": "cmp_2dff67985120",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Flex-N-Gate Mexico Plastics (Laredo, TX)",
+    "parentCompany": "Flex-N-Gate Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8514 El Gato Rd, Laredo, TX 78045, US",
+    "addressComponents": {
+      "city": "Laredo",
+      "state": "TX",
+      "postal_code": "78045",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Flex-N-Gate Mexico Plastics",
+        "parent_company": "Flex-N-Gate Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8514 El Gato Rd, Laredo, TX 78045, US",
+        "supplier_address_normalized": {
+          "city": "Laredo",
+          "state": "TX",
+          "postal_code": "78045",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "plastic components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.flex-n-gate.com/",
+    "companyKey": "name:flex-n-gate-mexico-plastics-laredo-tx|parent:flex-n-gate-corporation|us",
+    "companyId": "cmp_d437647c9ca3",
+    "locationId": "loc_ff068c0180ca",
+    "parentCompanyId": "cmp_2dff67985120",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Sanden International (USA), Inc. (Wylie, TX)",
+    "parentCompany": "Sanden Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "601 S Sanden Blvd, Wylie, TX 75098, US",
+    "addressComponents": {
+      "city": "Wylie",
+      "state": "TX",
+      "postal_code": "75098",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Sanden International (USA), Inc.",
+        "parent_company": "Sanden Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "601 S Sanden Blvd, Wylie, TX 75098, US",
+        "supplier_address_normalized": {
+          "city": "Wylie",
+          "state": "TX",
+          "postal_code": "75098",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive air conditioning components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.sanden.com/",
+    "companyKey": "name:sanden-international-usa-inc-wylie-tx|parent:sanden-corporation|us",
+    "companyId": "cmp_10c57c61500e",
+    "locationId": "loc_b853dbb18dee",
+    "parentCompanyId": "cmp_a8a9d587fbd3",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "hvac",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Kongsberg Automotive (Willis, TX)",
+    "parentCompany": "Kongsberg Automotive",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "300 S Cochran St, Willis, TX 77378, US",
+    "addressComponents": {
+      "city": "Willis",
+      "state": "TX",
+      "postal_code": "77378",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kongsberg Automotive",
+        "parent_company": "Kongsberg Automotive",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "300 S Cochran St, Willis, TX 77378, US",
+        "supplier_address_normalized": {
+          "city": "Willis",
+          "state": "TX",
+          "postal_code": "77378",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "drive control systems manufacturing",
+          "engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.kongsbergautomotive.com/",
+    "companyKey": "name:kongsberg-automotive-willis-tx|parent:kongsberg-automotive|us",
+    "companyId": "cmp_e77152e7eb83",
+    "locationId": "loc_d20f9fd340b9",
+    "parentCompanyId": "cmp_ad25c05f0377",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "controls",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "NICHIRIN-FLEX U.S.A., INC. (El Paso, TX)",
+    "parentCompany": "Nichirin Co., Ltd.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "9600 Plaza Circle, El Paso, TX 79927, US",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79927",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NICHIRIN-FLEX U.S.A., INC.",
+        "parent_company": "Nichirin Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9600 Plaza Circle, El Paso, TX 79927, US",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79927",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive hose manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.nichirin.co.jp/",
+    "companyKey": "name:nichirin-flex-u-s-a-inc-el-paso-tx|parent:nichirin-co-ltd|us",
+    "companyId": "cmp_0e2adf8ad01d",
+    "locationId": "loc_ee543a3db790",
+    "parentCompanyId": "cmp_76774913f739",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Rubber processing",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "hoses",
+      "tier 2"
+    ]
+  },
+  {
+    "company": "JTEKT Automotive Texas, L.P. (Ennis, TX)",
+    "parentCompany": "JTEKT North America Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4400 Sterilite Dr, Ennis, TX 75119, US",
+    "addressComponents": {
+      "city": "Ennis",
+      "state": "TX",
+      "postal_code": "75119",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT Automotive Texas, L.P.",
+        "parent_company": "JTEKT North America Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4400 Sterilite Dr, Ennis, TX 75119, US",
+        "supplier_address_normalized": {
+          "city": "Ennis",
+          "state": "TX",
+          "postal_code": "75119",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steering components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40_TX"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://jtekt-na.com/",
+    "companyKey": "name:jtekt-automotive-texas-l-p-ennis-tx|parent:jtekt-north-america-corporation|us",
+    "companyId": "cmp_ffc1f779dbeb",
+    "locationId": "loc_8fc9f8b184ea",
+    "parentCompanyId": "cmp_c9f42f41a73f",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steering",
+      "tier 1"
+    ]
+  }
+]

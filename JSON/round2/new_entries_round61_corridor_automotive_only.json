@@ -1,0 +1,3605 @@
+[
+  {
+    "company": "FORVIA (AUBURN HILLS FIS PPV, Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2325 Featherstone Road, Auburn Hills, MI 48341, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48341",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2325 Featherstone Road, Auburn Hills, MI 48341, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48341",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "interior systems"
+        ],
+        "primary_functions": [
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_1b9693b78545",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (AUBURN HILLS HQ R&D, Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2800 High Meadow Circle, Oakland Technological Park, Auburn Hills, MI 48326, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2800 High Meadow Circle, Oakland Technological Park, Auburn Hills, MI 48326, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "engineering services"
+        ],
+        "primary_functions": [
+          "product development",
+          "design validation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Design validation",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_f504f984f557",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "R&D"
+    ]
+  },
+  {
+    "company": "FORVIA (CHATTANOOGA FCM, Chattanooga, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8007 Volkswagen Drive, VW plant, building 2, Chattanooga, TN 37421, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37421",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8007 Volkswagen Drive, VW plant, building 2, Chattanooga, TN 37421, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37421",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "exhaust systems",
+          "emissions control"
+        ],
+        "primary_functions": [
+          "exhaust and emissions systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_40822777fbd9",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "exhaust",
+      "emissions",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (CHATTANOOGA SAS, Chattanooga, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8007 Volkswagen Dr, Chattanooga, TN 37421, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37421",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8007 Volkswagen Dr, Chattanooga, TN 37421, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37421",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "seating systems"
+        ],
+        "primary_functions": [
+          "seating systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Seating systems",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_27b5ec84af44",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "seating",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (CHATTANOOGA TNM, Chattanooga, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8005 Volkswagon Drive, Suite 125, Chattanooga, TN 37416, US",
+    "addressComponents": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "postal_code": "37416",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8005 Volkswagon Drive, Suite 125, Chattanooga, TN 37416, US",
+        "supplier_address_normalized": {
+          "city": "Chattanooga",
+          "state": "TN",
+          "postal_code": "37416",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_55a3261112a0",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (DETROIT DMS, Dearborn, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "12701 Southfield Road, Dearborn, MI 48223, US",
+    "addressComponents": {
+      "city": "Dearborn",
+      "state": "MI",
+      "postal_code": "48223",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12701 Southfield Road, Dearborn, MI 48223, US",
+        "supplier_address_normalized": {
+          "city": "Dearborn",
+          "state": "MI",
+          "postal_code": "48223",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_0c1850393966",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (DEXTER Arvin Road, Dexter, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1207 Arvin Road, Dexter, MO 63841, US",
+    "addressComponents": {
+      "city": "Dexter",
+      "state": "MO",
+      "postal_code": "63841",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1207 Arvin Road, Dexter, MO 63841, US",
+        "supplier_address_normalized": {
+          "city": "Dexter",
+          "state": "MO",
+          "postal_code": "63841",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_076b8847eb11",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (DEXTER North Harris, Dexter, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "201 North Harris, Dexter, MO 63841, US",
+    "addressComponents": {
+      "city": "Dexter",
+      "state": "MO",
+      "postal_code": "63841",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201 North Harris, Dexter, MO 63841, US",
+        "supplier_address_normalized": {
+          "city": "Dexter",
+          "state": "MO",
+          "postal_code": "63841",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_26625e0e4cc0",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (FARMINGTON HILLS R&D, Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "31440 Northwestern Hwy, Farmington Hills, MI 48334, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48334",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "31440 Northwestern Hwy, Farmington Hills, MI 48334, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48334",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "engineering services"
+        ],
+        "primary_functions": [
+          "product development",
+          "design validation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Design validation",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_7e28acd8a8c4",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "R&D"
+    ]
+  },
+  {
+    "company": "FORVIA (FLORA, Flora, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1101 Vincennes Avenue, Flora, IL 62839, US",
+    "addressComponents": {
+      "city": "Flora",
+      "state": "IL",
+      "postal_code": "62839",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1101 Vincennes Avenue, Flora, IL 62839, US",
+        "supplier_address_normalized": {
+          "city": "Flora",
+          "state": "IL",
+          "postal_code": "62839",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_d2a750c1d935",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (FORT WAYNE, Fort Wayne, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4510 Airport Expressway, Fort Wayne, IN 46809, US",
+    "addressComponents": {
+      "city": "Fort Wayne",
+      "state": "IN",
+      "postal_code": "46809",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4510 Airport Expressway, Fort Wayne, IN 46809, US",
+        "supplier_address_normalized": {
+          "city": "Fort Wayne",
+          "state": "IN",
+          "postal_code": "46809",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_f4d62e23d401",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (FRANKLIN, Franklin, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2301 Commerce Center Dr., Franklin, OH 45005, US",
+    "addressComponents": {
+      "city": "Franklin",
+      "state": "OH",
+      "postal_code": "45005",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2301 Commerce Center Dr., Franklin, OH 45005, US",
+        "supplier_address_normalized": {
+          "city": "Franklin",
+          "state": "OH",
+          "postal_code": "45005",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_3f0205c7e38e",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (FRASER, Fraser, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "17801 East 14 Mile Road, Fraser, MI 48026, US",
+    "addressComponents": {
+      "city": "Fraser",
+      "state": "MI",
+      "postal_code": "48026",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "17801 East 14 Mile Road, Fraser, MI 48026, US",
+        "supplier_address_normalized": {
+          "city": "Fraser",
+          "state": "MI",
+          "postal_code": "48026",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_f4aedc972759",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (GREENVILLE R&D, Greenville, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "84 Villa Road, Suite 300, Greenville, SC 29615, US",
+    "addressComponents": {
+      "city": "Greenville",
+      "state": "SC",
+      "postal_code": "29615",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "84 Villa Road, Suite 300, Greenville, SC 29615, US",
+        "supplier_address_normalized": {
+          "city": "Greenville",
+          "state": "SC",
+          "postal_code": "29615",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "engineering services"
+        ],
+        "primary_functions": [
+          "product development",
+          "design validation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Design validation",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_5294fc0bdbf5",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "R&D"
+    ]
+  },
+  {
+    "company": "FORVIA (HIGHLAND PARK, Highland Park, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "13000 Oakland Park Blvd, Highland Park, MI 48203, US",
+    "addressComponents": {
+      "city": "Highland Park",
+      "state": "MI",
+      "postal_code": "48203",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13000 Oakland Park Blvd, Highland Park, MI 48203, US",
+        "supplier_address_normalized": {
+          "city": "Highland Park",
+          "state": "MI",
+          "postal_code": "48203",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_64d406f32f43",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (MADISON, Canton, MS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "272 Old Jackson Road, Canton, MS 39046, US",
+    "addressComponents": {
+      "city": "Canton",
+      "state": "MS",
+      "postal_code": "39046",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "272 Old Jackson Road, Canton, MS 39046, US",
+        "supplier_address_normalized": {
+          "city": "Canton",
+          "state": "MS",
+          "postal_code": "39046",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_6cbd7c050b8b",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (NORTHVILLE TOWNSHIP, Northville Township, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "15951 Technology Drive, Unit 5, Northville Township, MI 48168, US",
+    "addressComponents": {
+      "city": "Northville Township",
+      "state": "MI",
+      "postal_code": "48168",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15951 Technology Drive, Unit 5, Northville Township, MI 48168, US",
+        "supplier_address_normalized": {
+          "city": "Northville Township",
+          "state": "MI",
+          "postal_code": "48168",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_9a7e790063f3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (PEACHTREE CITY DC, Peachtree City, GA)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "201 Kelly Drive, Peachtree City, GA 30269, US",
+    "addressComponents": {
+      "city": "Peachtree City",
+      "state": "GA",
+      "postal_code": "30269",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201 Kelly Drive, Peachtree City, GA 30269, US",
+        "supplier_address_normalized": {
+          "city": "Peachtree City",
+          "state": "GA",
+          "postal_code": "30269",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "distribution"
+        ],
+        "primary_functions": [
+          "logistics",
+          "distribution",
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_883c4c937f23",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "logistics",
+      "distribution"
+    ]
+  },
+  {
+    "company": "FORVIA (SALINE, Saline, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "7700 East Michigan Avenue, Saline, MI 48176, US",
+    "addressComponents": {
+      "city": "Saline",
+      "state": "MI",
+      "postal_code": "48176",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7700 East Michigan Avenue, Saline, MI 48176, US",
+        "supplier_address_normalized": {
+          "city": "Saline",
+          "state": "MI",
+          "postal_code": "48176",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_6a707fd86ba0",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (SIMPSONVILLE, Simpsonville, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "65 Kingbrook Parkway, Simpsonville, KY 40067, US",
+    "addressComponents": {
+      "city": "Simpsonville",
+      "state": "KY",
+      "postal_code": "40067",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "65 Kingbrook Parkway, Simpsonville, KY 40067, US",
+        "supplier_address_normalized": {
+          "city": "Simpsonville",
+          "state": "KY",
+          "postal_code": "40067",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_7032f096732a",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (STERLING HEIGHTS SAS, Sterling Heights, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "42555 Merrill Road, Sterling Heights, MI 48314, US",
+    "addressComponents": {
+      "city": "Sterling Heights",
+      "state": "MI",
+      "postal_code": "48314",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "42555 Merrill Road, Sterling Heights, MI 48314, US",
+        "supplier_address_normalized": {
+          "city": "Sterling Heights",
+          "state": "MI",
+          "postal_code": "48314",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "seating systems"
+        ],
+        "primary_functions": [
+          "seating systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Seating systems",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_349599db586c",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "seating",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "FORVIA (VANCE SAS, Vance, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Mercedes Drive, Vance, AL 35490, US",
+    "addressComponents": {
+      "city": "Vance",
+      "state": "AL",
+      "postal_code": "35490",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Mercedes Drive, Vance, AL 35490, US",
+        "supplier_address_normalized": {
+          "city": "Vance",
+          "state": "AL",
+          "postal_code": "35490",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "seating systems"
+        ],
+        "primary_functions": [
+          "seating systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_forvia_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Seating systems",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_0cdf9b956043",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "seating",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF North America, Inc. (Headquarters), Northville, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "15811 Centennial Drive, Northville, MI 48168, US",
+    "addressComponents": {
+      "city": "Northville",
+      "state": "MI",
+      "postal_code": "48168",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15811 Centennial Drive, Northville, MI 48168, US",
+        "supplier_address_normalized": {
+          "city": "Northville",
+          "state": "MI",
+          "postal_code": "48168",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_8a48d7f5bdaf",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (WABCO CVS Auburn Hills NA HQ, Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1220 Pacific Drive, Auburn Hills, MI 48326, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1220 Pacific Drive, Auburn Hills, MI 48326, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_db0591e842d9",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Chassis Systems Duncan Plant, Duncan, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "191 Parkway West, Duncan, SC 29334, US",
+    "addressComponents": {
+      "city": "Duncan",
+      "state": "SC",
+      "postal_code": "29334",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "191 Parkway West, Duncan, SC 29334, US",
+        "supplier_address_normalized": {
+          "city": "Duncan",
+          "state": "SC",
+          "postal_code": "29334",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "chassis systems"
+        ],
+        "primary_functions": [
+          "chassis systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_6d5907a90c4c",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "chassis",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF CV Systems Test & Development Hub, East Liberty, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "10820 State Route 347, Building B, East Liberty, OH 43319, US",
+    "addressComponents": {
+      "city": "East Liberty",
+      "state": "OH",
+      "postal_code": "43319",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "10820 State Route 347, Building B, East Liberty, OH 43319, US",
+        "supplier_address_normalized": {
+          "city": "East Liberty",
+          "state": "OH",
+          "postal_code": "43319",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_e62c90967a6c",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety & Electronics Farmington Hills HQ, Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "24175 Research Drive, Farmington Hills, MI 48335-2642, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48335-2642",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "24175 Research Drive, Farmington Hills, MI 48335-2642, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48335-2642",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_33892fc266dc",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety & Electronics Farmington Hills Plant, Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "34605 West 12 Mile Road, Farmington Hills, MI 48331, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "34605 West 12 Mile Road, Farmington Hills, MI 48331, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_12d796f395c3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety Fenton Plant, Fenton, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "9475 Center Road, Fenton, MI 48430, US",
+    "addressComponents": {
+      "city": "Fenton",
+      "state": "MI",
+      "postal_code": "48430",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9475 Center Road, Fenton, MI 48430, US",
+        "supplier_address_normalized": {
+          "city": "Fenton",
+          "state": "MI",
+          "postal_code": "48430",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_dc2b20177206",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Transmissions Gray Court Warehouse Foxhill, Fountain Inn, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "200 Francis Marion Way, Fountain Inn, SC 29644, US",
+    "addressComponents": {
+      "city": "Fountain Inn",
+      "state": "SC",
+      "postal_code": "29644",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Francis Marion Way, Fountain Inn, SC 29644, US",
+        "supplier_address_normalized": {
+          "city": "Fountain Inn",
+          "state": "SC",
+          "postal_code": "29644",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain components"
+        ],
+        "primary_functions": [
+          "powertrain components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_a58f674ed15a",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "drivetrain",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety Fowlerville Plant, Fowlerville, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "500 East Van Riper Road, Fowlerville, MI 48836, US",
+    "addressComponents": {
+      "city": "Fowlerville",
+      "state": "MI",
+      "postal_code": "48836",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "500 East Van Riper Road, Fowlerville, MI 48836, US",
+        "supplier_address_normalized": {
+          "city": "Fowlerville",
+          "state": "MI",
+          "postal_code": "48836",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_8554d8de6cde",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Gainesville Plant 2, Gainesville, GA)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1925 New Harvest Road SW, Gainesville, GA 30507, US",
+    "addressComponents": {
+      "city": "Gainesville",
+      "state": "GA",
+      "postal_code": "30507",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1925 New Harvest Road SW, Gainesville, GA 30507, US",
+        "supplier_address_normalized": {
+          "city": "Gainesville",
+          "state": "GA",
+          "postal_code": "30507",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_8c6d1799727a",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Gainesville Plant 1, Gainesville, GA)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1261 Palmour Drive SW, Gainesville, GA 30501, US",
+    "addressComponents": {
+      "city": "Gainesville",
+      "state": "GA",
+      "postal_code": "30501",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1261 Palmour Drive SW, Gainesville, GA 30501, US",
+        "supplier_address_normalized": {
+          "city": "Gainesville",
+          "state": "GA",
+          "postal_code": "30501",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_9c48a1bc6348",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety Garrett Plant, Garrett, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "817 North Taylor Road, Garrett, IN 46738, US",
+    "addressComponents": {
+      "city": "Garrett",
+      "state": "IN",
+      "postal_code": "46738",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "817 North Taylor Road, Garrett, IN 46738, US",
+        "supplier_address_normalized": {
+          "city": "Garrett",
+          "state": "IN",
+          "postal_code": "46738",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_18e25c6d6ccd",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Transmissions Gray Court Plant, Gray Court, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2846 North Old Laurens Road, Gray Court, SC 29645, US",
+    "addressComponents": {
+      "city": "Gray Court",
+      "state": "SC",
+      "postal_code": "29645",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2846 North Old Laurens Road, Gray Court, SC 29645, US",
+        "supplier_address_normalized": {
+          "city": "Gray Court",
+          "state": "SC",
+          "postal_code": "29645",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain components"
+        ],
+        "primary_functions": [
+          "powertrain components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_4acca81eee30",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "drivetrain",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Transmissions Gray Court Distribution Center, Gray Court, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "452 Owings Park Blvd, Gray Court, SC 29645, US",
+    "addressComponents": {
+      "city": "Gray Court",
+      "state": "SC",
+      "postal_code": "29645",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "452 Owings Park Blvd, Gray Court, SC 29645, US",
+        "supplier_address_normalized": {
+          "city": "Gray Court",
+          "state": "SC",
+          "postal_code": "29645",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain components"
+        ],
+        "primary_functions": [
+          "powertrain components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_ace03d260dc2",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "drivetrain",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (WABCO CVS Hebron Distribution Center, Hebron, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "845 Lindbergh Ct, Hebron, KY 41048, US",
+    "addressComponents": {
+      "city": "Hebron",
+      "state": "KY",
+      "postal_code": "41048",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "845 Lindbergh Ct, Hebron, KY 41048, US",
+        "supplier_address_normalized": {
+          "city": "Hebron",
+          "state": "KY",
+          "postal_code": "41048",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "distribution"
+        ],
+        "primary_functions": [
+          "logistics",
+          "distribution",
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_43d03dc92897",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "logistics",
+      "distribution"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety & Electronics Lafayette Plant 1, Lafayette, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "800 Heath Street, Lafayette, IN 47904-1863, US",
+    "addressComponents": {
+      "city": "Lafayette",
+      "state": "IN",
+      "postal_code": "47904-1863",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "800 Heath Street, Lafayette, IN 47904-1863, US",
+        "supplier_address_normalized": {
+          "city": "Lafayette",
+          "state": "IN",
+          "postal_code": "47904-1863",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_6f7e3b2dee07",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Chassis Components Lapeer Plant, Lapeer, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3300 John Conley Drive, Lapeer, MI 48446, US",
+    "addressComponents": {
+      "city": "Lapeer",
+      "state": "MI",
+      "postal_code": "48446",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3300 John Conley Drive, Lapeer, MI 48446, US",
+        "supplier_address_normalized": {
+          "city": "Lapeer",
+          "state": "MI",
+          "postal_code": "48446",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "chassis systems"
+        ],
+        "primary_functions": [
+          "chassis systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_aa5c3fda479e",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "chassis",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Active Safety & Electronics Marshall Plant, Marshall, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "902 South Second Street, Marshall, IL 62441, US",
+    "addressComponents": {
+      "city": "Marshall",
+      "state": "IL",
+      "postal_code": "62441",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "902 South Second Street, Marshall, IL 62441, US",
+        "supplier_address_normalized": {
+          "city": "Marshall",
+          "state": "IL",
+          "postal_code": "62441",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "active safety electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_d5aeb13fe7b4",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "active safety",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Axle Drives Marysville Plant, Marysville, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2900 Busha Highway, Marysville, MI 48040, US",
+    "addressComponents": {
+      "city": "Marysville",
+      "state": "MI",
+      "postal_code": "48040",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2900 Busha Highway, Marysville, MI 48040, US",
+        "supplier_address_normalized": {
+          "city": "Marysville",
+          "state": "MI",
+          "postal_code": "48040",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain components"
+        ],
+        "primary_functions": [
+          "powertrain components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_27b79b15ddae",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "drivetrain",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Electronic Systems Pleasant Prairie Office, Pleasant Prairie, WI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "8401 W. 102nd Street, Suite 400, Pleasant Prairie, WI 53158, US",
+    "addressComponents": {
+      "city": "Pleasant Prairie",
+      "state": "WI",
+      "postal_code": "53158",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8401 W. 102nd Street, Suite 400, Pleasant Prairie, WI 53158, US",
+        "supplier_address_normalized": {
+          "city": "Pleasant Prairie",
+          "state": "WI",
+          "postal_code": "53158",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ECUs",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_20249d5a4360",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Passive Safety Romeo Engineering Center, Romeo, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "14761 East 32 Mile Road, Romeo, MI 48065, US",
+    "addressComponents": {
+      "city": "Romeo",
+      "state": "MI",
+      "postal_code": "48065",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "14761 East 32 Mile Road, Romeo, MI 48065, US",
+        "supplier_address_normalized": {
+          "city": "Romeo",
+          "state": "MI",
+          "postal_code": "48065",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "safety systems"
+        ],
+        "primary_functions": [
+          "safety systems engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_666782f9ee47",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "passive safety",
+      "safety systems",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Chassis Systems Tuscaloosa Plant, Tuscaloosa, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1200 Commerce Drive, Tuscaloosa, AL 35401, US",
+    "addressComponents": {
+      "city": "Tuscaloosa",
+      "state": "AL",
+      "postal_code": "35401",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1200 Commerce Drive, Tuscaloosa, AL 35401, US",
+        "supplier_address_normalized": {
+          "city": "Tuscaloosa",
+          "state": "AL",
+          "postal_code": "35401",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "chassis systems"
+        ],
+        "primary_functions": [
+          "chassis systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_836817fe04dd",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "chassis",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "ZF (ZF Services North America HQ, Vernon Hills, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "777 Hickory Hill Drive, Vernon Hills, IL 60061, US",
+    "addressComponents": {
+      "city": "Vernon Hills",
+      "state": "IL",
+      "postal_code": "60061",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "777 Hickory Hill Drive, Vernon Hills, IL 60061, US",
+        "supplier_address_normalized": {
+          "city": "Vernon Hills",
+          "state": "IL",
+          "postal_code": "60061",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "service parts"
+        ],
+        "primary_functions": [
+          "aftermarket services",
+          "service parts distribution"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Service parts suppliers",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_14d3e631c4b3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "aftermarket",
+      "service parts"
+    ]
+  },
+  {
+    "company": "ZF (ZF Passive Safety Washington Engineering Center, Washington, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4505 West 26 Mile Road, West Building, Washington, MI 48094, US",
+    "addressComponents": {
+      "city": "Washington",
+      "state": "MI",
+      "postal_code": "48094",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ZF",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4505 West 26 Mile Road, West Building, Washington, MI 48094, US",
+        "supplier_address_normalized": {
+          "city": "Washington",
+          "state": "MI",
+          "postal_code": "48094",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "safety systems"
+        ],
+        "primary_functions": [
+          "safety systems engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_zf_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ADAS systems",
+    "website": "https://www.zf.com",
+    "companyKey": "zf.com",
+    "companyId": "cmp_8b8ec5a6e6a4",
+    "locationId": "loc_9e87e7c91f24",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "passive safety",
+      "safety systems",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Gestamp (Gestamp Alabama, McCalla, AL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "7000 Jefferson Metropolitan Pkwy, McCalla, AL 35111, US",
+    "addressComponents": {
+      "city": "McCalla",
+      "state": "AL",
+      "postal_code": "35111",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7000 Jefferson Metropolitan Pkwy, McCalla, AL 35111, US",
+        "supplier_address_normalized": {
+          "city": "McCalla",
+          "state": "AL",
+          "postal_code": "35111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "body-in-white components"
+        ],
+        "primary_functions": [
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_gestamp_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_9d238084a9b2",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Gestamp (Gestamp South Carolina, Union, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 LSP Road, Union, SC 29379, US",
+    "addressComponents": {
+      "city": "Union",
+      "state": "SC",
+      "postal_code": "29379",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 LSP Road, Union, SC 29379, US",
+        "supplier_address_normalized": {
+          "city": "Union",
+          "state": "SC",
+          "postal_code": "29379",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "body-in-white components"
+        ],
+        "primary_functions": [
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_gestamp_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_11241385cb2b",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Gestamp (Edscha Michigan (Gestamp), Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2800 Superior Court, Auburn Hills, MI 48326, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2800 Superior Court, Auburn Hills, MI 48326, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "body-in-white components"
+        ],
+        "primary_functions": [
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_gestamp_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_8c661c7f13ff",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "tier 1"
+    ]
+  },
+  {
+    "company": "Gestamp (Gestamp West Virginia, South Charleston, WV)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3100 MacCorkle Ave, Building 307, South Charleston, WV 25303, US",
+    "addressComponents": {
+      "city": "South Charleston",
+      "state": "WV",
+      "postal_code": "25303",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3100 MacCorkle Ave, Building 307, South Charleston, WV 25303, US",
+        "supplier_address_normalized": {
+          "city": "South Charleston",
+          "state": "WV",
+          "postal_code": "25303",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "body-in-white components"
+        ],
+        "primary_functions": [
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round61_gestamp_locations"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_1340bcb3d01d",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "tier 1"
+    ]
+  }
+]

@@ -17,7 +17,6 @@ export async function PATCH(
       addressRaw,
       addressNormalized,
       externalId,
-      addressConfidence,
       addressComponents,
       latitude,
       longitude
@@ -55,17 +54,6 @@ export async function PATCH(
         typeof externalId === 'string' && externalId.trim()
           ? externalId.trim()
           : null;
-    }
-
-    if (addressConfidence !== undefined) {
-      const n = Number(addressConfidence);
-      if (Number.isNaN(n) || n < 0 || n > 1) {
-        return NextResponse.json(
-          { error: 'addressConfidence must be a number between 0 and 1' },
-          { status: 400 }
-        );
-      }
-      data.addressConfidence = n;
     }
 
     if (addressComponents !== undefined) {

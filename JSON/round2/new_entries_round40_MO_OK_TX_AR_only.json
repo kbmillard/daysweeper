@@ -1,0 +1,1252 @@
+[
+  {
+    "company": "FORVIA (Blue Springs, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2005 NE Jefferson Street, Blue Springs, MO 64029, US",
+    "addressComponents": {
+      "city": "Blue Springs",
+      "state": "MO",
+      "postal_code": "64029",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2005 NE Jefferson Street, Blue Springs, MO 64029, US",
+        "supplier_address_normalized": {
+          "city": "Blue Springs",
+          "state": "MO",
+          "postal_code": "64029",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_4d1c6f6ec066",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "assembly"
+    ]
+  },
+  {
+    "company": "FORVIA (Wentzville, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "555 Edinger Rd, Wentzville, MO 63385, US",
+    "addressComponents": {
+      "city": "Wentzville",
+      "state": "MO",
+      "postal_code": "63385",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "555 Edinger Rd, Wentzville, MO 63385, US",
+        "supplier_address_normalized": {
+          "city": "Wentzville",
+          "state": "MO",
+          "postal_code": "63385",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_84635a1c21c2",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "assembly"
+    ]
+  },
+  {
+    "company": "FORVIA (Dexter, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1300 S. Highway 51, Dexter, MO 63841, US",
+    "addressComponents": {
+      "city": "Dexter",
+      "state": "MO",
+      "postal_code": "63841",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1300 S. Highway 51, Dexter, MO 63841, US",
+        "supplier_address_normalized": {
+          "city": "Dexter",
+          "state": "MO",
+          "postal_code": "63841",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_5f7e58b88c13",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "assembly"
+    ]
+  },
+  {
+    "company": "FORVIA (Arlington, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2100 Design Road, Arlington, TX 76011, US",
+    "addressComponents": {
+      "city": "Arlington",
+      "state": "TX",
+      "postal_code": "76011",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2100 Design Road, Arlington, TX 76011, US",
+        "supplier_address_normalized": {
+          "city": "Arlington",
+          "state": "TX",
+          "postal_code": "76011",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_0a90eb62c4a9",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "assembly"
+    ]
+  },
+  {
+    "company": "GFX (Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "8250 NE Underground Drive Pillar 163, Kansas City, MO 64161, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64161",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "GFX",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8250 NE Underground Drive Pillar 163, Kansas City, MO 64161, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64161",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive component manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.gfxltd.com/",
+    "companyKey": "gfxltd.com",
+    "companyId": "cmp_40cc01298176",
+    "locationId": "loc_e36c3fd4c7ca",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "GFX (Wentzville, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "320 Shockdrake Ct, Wentzville, MO 63385, US",
+    "addressComponents": {
+      "city": "Wentzville",
+      "state": "MO",
+      "postal_code": "63385",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "GFX",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "320 Shockdrake Ct, Wentzville, MO 63385, US",
+        "supplier_address_normalized": {
+          "city": "Wentzville",
+          "state": "MO",
+          "postal_code": "63385",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive component manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.gfxltd.com/",
+    "companyKey": "gfxltd.com",
+    "companyId": "cmp_40cc01298176",
+    "locationId": "loc_cee7d6a4bb41",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "AISIN Texas Corporation (Cibolo, TX)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4000 Aisin Way, Cibolo, TX 78108, US",
+    "addressComponents": {
+      "city": "Cibolo",
+      "state": "TX",
+      "postal_code": "78108",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Texas Corporation",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4000 Aisin Way, Cibolo, TX 78108, US",
+        "supplier_address_normalized": {
+          "city": "Cibolo",
+          "state": "TX",
+          "postal_code": "78108",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "powertrain component manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.aw-texas.com/",
+    "companyKey": "aw-texas.com",
+    "companyId": "cmp_e3db44f15f4b",
+    "locationId": "loc_7ac4c8348c21",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Drive train",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "powertrain"
+    ]
+  },
+  {
+    "company": "DENSO Manufacturing North Central America, Inc. (Ennis, TX)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4601 Sterilite Drive, Ennis, TX 75119, US",
+    "addressComponents": {
+      "city": "Ennis",
+      "state": "TX",
+      "postal_code": "75119",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing North Central America, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4601 Sterilite Drive, Ennis, TX 75119, US",
+        "supplier_address_normalized": {
+          "city": "Ennis",
+          "state": "TX",
+          "postal_code": "75119",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.denso.com/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_a43a6f9e1ebf",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "electronics"
+    ]
+  },
+  {
+    "company": "DENSO Products and Services Americas, Inc. (Plano, TX)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3900 Ghia Street, Suite 100, Plano, TX 75093, US",
+    "addressComponents": {
+      "city": "Suite 100, Plano",
+      "state": "TX",
+      "postal_code": "75093",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Products and Services Americas, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3900 Ghia Street, Suite 100, Plano, TX 75093, US",
+        "supplier_address_normalized": {
+          "city": "Suite 100, Plano",
+          "state": "TX",
+          "postal_code": "75093",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "engineering",
+          "sales"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "website": "https://www.denso.com/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_a997bd2e3565",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Engineering"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "engineering"
+    ]
+  },
+  {
+    "company": "DENSO Manufacturing Arkansas, Inc. (Osceola, AR)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "100 Denso Road, Osceola, AR 72370, US",
+    "addressComponents": {
+      "city": "Osceola",
+      "state": "AR",
+      "postal_code": "72370",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Arkansas, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Denso Road, Osceola, AR 72370, US",
+        "supplier_address_normalized": {
+          "city": "Osceola",
+          "state": "AR",
+          "postal_code": "72370",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_pdf",
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.denso.com/",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_cd917494432d",
+    "parentCompanyId": "cmp_d2b6a6456196",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "manufacturing"
+    ]
+  },
+  {
+    "company": "Optronics International (Tulsa, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "6101 E Apache St, Tulsa, OK 74115, US",
+    "addressComponents": {
+      "city": "Tulsa",
+      "state": "OK",
+      "postal_code": "74115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Optronics International",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6101 E Apache St, Tulsa, OK 74115, US",
+        "supplier_address_normalized": {
+          "city": "Tulsa",
+          "state": "OK",
+          "postal_code": "74115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicular lighting manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.optronicsinc.com/",
+    "companyKey": "optronicsinc.com",
+    "companyId": "cmp_0b0fa6c7742d",
+    "locationId": "loc_0675ede4f1ff",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Lighting assembly",
+      "Assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting",
+      "assembly"
+    ]
+  },
+  {
+    "company": "USA Harness, Inc. (Winnsboro, TX)",
+    "parentCompany": "Optronics International, Inc.",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "100 Park St, Winnsboro, TX 75494, US",
+    "addressComponents": {
+      "city": "Winnsboro",
+      "state": "TX",
+      "postal_code": "75494",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "USA Harness, Inc.",
+        "parent_company": "Optronics International, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Park St, Winnsboro, TX 75494, US",
+        "supplier_address_normalized": {
+          "city": "Winnsboro",
+          "state": "TX",
+          "postal_code": "75494",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wiring harness assembly",
+          "electrical systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "website": "https://www.usaharness.com/",
+    "companyKey": "usaharness.com",
+    "companyId": "cmp_49ec617a317a",
+    "locationId": "loc_9a044972621b",
+    "parentCompanyId": "cmp_0b0fa6c7742d",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wiring harness",
+      "assembly"
+    ]
+  },
+  {
+    "company": "Eigen Engineering (McAllen, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "4501 N. 10th Street, Suite B-2, McAllen, TX 78503, US",
+    "addressComponents": {
+      "city": "Suite B-2, McAllen",
+      "state": "TX",
+      "postal_code": "78503",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Eigen Engineering",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4501 N. 10th Street, Suite B-2, McAllen, TX 78503, US",
+        "supplier_address_normalized": {
+          "city": "Suite B-2, McAllen",
+          "state": "TX",
+          "postal_code": "78503",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "tooling",
+          "die design"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.eigenengineering.com/",
+    "companyKey": "eigenengineering.com",
+    "companyId": "cmp_f6065905026b",
+    "locationId": "loc_e2248dc9f618",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tooling",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Michelin North America (Ardmore, OK)",
+    "parentCompany": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1101 Michelin Rd, Ardmore, OK 73401, US",
+    "addressComponents": {
+      "city": "Ardmore",
+      "state": "OK",
+      "postal_code": "73401",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michelin North America",
+        "parent_company": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1101 Michelin Rd, Ardmore, OK 73401, US",
+        "supplier_address_normalized": {
+          "city": "Ardmore",
+          "state": "OK",
+          "postal_code": "73401",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "tire manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_pdf",
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Tires & Wheels",
+    "website": "https://www.michelin.com/",
+    "companyKey": "michelin.com",
+    "companyId": "cmp_41c1c0581ea4",
+    "locationId": "loc_fac6e964a5ae",
+    "parentCompanyId": "cmp_994c08c0b903",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Rubber components"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tires"
+    ]
+  },
+  {
+    "company": "Bodycote Hot Springs (Hot Springs, AR)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "111 K-Tech Lane, Hot Springs, AR 71913, US",
+    "addressComponents": {
+      "city": "Hot Springs",
+      "state": "AR",
+      "postal_code": "71913",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bodycote Hot Springs",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "111 K-Tech Lane, Hot Springs, AR 71913, US",
+        "supplier_address_normalized": {
+          "city": "Hot Springs",
+          "state": "AR",
+          "postal_code": "71913",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "surface technology coatings",
+          "heat treatment"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Heat Treatment & Coatings",
+    "website": "https://www.bodycote.com/",
+    "companyKey": "bodycote.com",
+    "companyId": "cmp_a4b8f952c70b",
+    "locationId": "loc_6704abb03f07",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Coating",
+      "Heat treatment"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "coatings",
+      "surface technology",
+      "IATF 16949"
+    ],
+    "contactInfo": {
+      "phone": "+1 501 760 1696"
+    }
+  },
+  {
+    "company": "Henniges Automotive (New Haven, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "101 Danny Scott Drive, New Haven, MO 63068, US",
+    "addressComponents": {
+      "city": "New Haven",
+      "state": "MO",
+      "postal_code": "63068",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Henniges Automotive",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "101 Danny Scott Drive, New Haven, MO 63068, US",
+        "supplier_address_normalized": {
+          "city": "New Haven",
+          "state": "MO",
+          "postal_code": "63068",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber seals manufacturing",
+          "plastic seals manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Rubber & plastic seals",
+    "website": "https://www.hennigesautomotive.com/",
+    "companyKey": "hennigesautomotive.com",
+    "companyId": "cmp_219ebde8dd86",
+    "locationId": "loc_e2fe2b0cb2c8",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "seals"
+    ],
+    "contactInfo": {
+      "phone": "+1 573 237 1300"
+    }
+  },
+  {
+    "company": "Henniges Automotive (Frederick, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1801 Flying Fortress, Frederick, OK 73542, US",
+    "addressComponents": {
+      "city": "Frederick",
+      "state": "OK",
+      "postal_code": "73542",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Henniges Automotive",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1801 Flying Fortress, Frederick, OK 73542, US",
+        "supplier_address_normalized": {
+          "city": "Frederick",
+          "state": "OK",
+          "postal_code": "73542",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber seals manufacturing",
+          "plastic seals manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round40"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Rubber & plastic seals",
+    "website": "https://www.hennigesautomotive.com/",
+    "companyKey": "hennigesautomotive.com",
+    "companyId": "cmp_219ebde8dd86",
+    "locationId": "loc_8fcaaab9cf58",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "seals"
+    ],
+    "contactInfo": {
+      "phone": "+1 580 335 5503"
+    }
+  }
+]

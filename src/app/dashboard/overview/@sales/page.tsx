@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 
 export default async function Sales() {
   const recentCompanies = await prisma.company.findMany({
-    where: { status: 'Contacted - meeting set' },
+    where: { Location: { some: {} }, status: 'Contacted - meeting set' },
     take: 5,
     orderBy: { createdAt: 'desc' },
     select: {

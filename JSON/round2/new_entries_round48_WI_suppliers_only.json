@@ -1,0 +1,1700 @@
+[
+  {
+    "company": "CableMaster (New Berlin, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "cablemaster.com",
+    "companyId": "cmp_304fc1f538b3",
+    "locationId": "loc_ac9d23f37864",
+    "segment": "USA | WI | New Berlin, WI",
+    "tier": "Tier 2",
+    "addressRaw": "5349 S Emmer Dr, New Berlin, WI 53151, USA",
+    "addressComponents": {
+      "city": "New Berlin",
+      "state": "WI",
+      "postal_code": "53151",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://cablemaster.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire harness & cable assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "cable assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "CableMaster",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5349 S Emmer Dr, New Berlin, WI 53151, USA",
+        "supplier_address_normalized": {
+          "city": "New Berlin",
+          "state": "WI",
+          "postal_code": "53151",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Precision Cable Assemblies (Brookfield, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "pca-llc.com",
+    "companyId": "cmp_98ab1b130d54",
+    "locationId": "loc_757d9c63aa79",
+    "segment": "USA | WI | Brookfield, WI",
+    "tier": "Tier 2",
+    "addressRaw": "16830 Pheasant Dr, Brookfield, WI 53005, USA",
+    "addressComponents": {
+      "city": "Brookfield",
+      "state": "WI",
+      "postal_code": "53005",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.pca-llc.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire harness & cable assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "cable assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Precision Cable Assemblies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "16830 Pheasant Dr, Brookfield, WI 53005, USA",
+        "supplier_address_normalized": {
+          "city": "Brookfield",
+          "state": "WI",
+          "postal_code": "53005",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Precision Cable Assemblies (Waukesha, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "pca-llc.com",
+    "companyId": "cmp_98ab1b130d54",
+    "locationId": "loc_2782c4ff1506",
+    "segment": "USA | WI | Waukesha, WI",
+    "tier": "Tier 2",
+    "addressRaw": "N7 W23700 Bluemound Rd, Waukesha, WI 53186, USA",
+    "addressComponents": {
+      "city": "Waukesha",
+      "state": "WI",
+      "postal_code": "53186",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.pca-llc.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire harness & cable assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "cable assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Precision Cable Assemblies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "N7 W23700 Bluemound Rd, Waukesha, WI 53186, USA",
+        "supplier_address_normalized": {
+          "city": "Waukesha",
+          "state": "WI",
+          "postal_code": "53186",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Custom Service Plastics (Lake Geneva, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "customserviceplastics.com",
+    "companyId": "cmp_ef1715e0cde4",
+    "locationId": "loc_70a7b8c519dc",
+    "segment": "USA | WI | Lake Geneva, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1765 Wisconsin St, Lake Geneva, WI 53147, USA",
+    "addressComponents": {
+      "city": "Lake Geneva",
+      "state": "WI",
+      "postal_code": "53147",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.customserviceplastics.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "plastic forming",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Custom Service Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1765 Wisconsin St, Lake Geneva, WI 53147, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Geneva",
+          "state": "WI",
+          "postal_code": "53147",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Pace Industries (Grafton, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "paceind.com",
+    "companyId": "cmp_d99c35df8bca",
+    "locationId": "loc_741a1beaf399",
+    "segment": "USA | WI | Grafton, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1600 7th Ave, Grafton, WI 53024, USA",
+    "addressComponents": {
+      "city": "Grafton",
+      "state": "WI",
+      "postal_code": "53024",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://paceind.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Die casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "IATF 16949",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pace Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1600 7th Ave, Grafton, WI 53024, USA",
+        "supplier_address_normalized": {
+          "city": "Grafton",
+          "state": "WI",
+          "postal_code": "53024",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Bruschi USA (Milwaukee, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "bruschitech.com",
+    "companyId": "cmp_ec8f1ee73183",
+    "locationId": "loc_6a98cf36f909",
+    "segment": "USA | WI | Milwaukee, WI",
+    "tier": "Tier 2",
+    "addressRaw": "020 W Dean Rd, Milwaukee, WI 53224, USA",
+    "addressComponents": {
+      "city": "Milwaukee",
+      "state": "WI",
+      "postal_code": "53224",
+      "country": "US"
+    },
+    "addressConfidence": 0.8,
+    "website": "https://www.bruschitech.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Die casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bruschi USA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "020 W Dean Rd, Milwaukee, WI 53224, USA",
+        "supplier_address_normalized": {
+          "city": "Milwaukee",
+          "state": "WI",
+          "postal_code": "53224",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Madison-Kipp Corporation (Madison, WI - South)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "madison-kipp.com",
+    "companyId": "cmp_3d2d16498aec",
+    "locationId": "loc_37a5a81e2d81",
+    "segment": "USA | WI | Madison, WI",
+    "tier": "Tier 2",
+    "addressRaw": "201 Waubesa St, Madison, WI 53704, USA",
+    "addressComponents": {
+      "city": "Madison",
+      "state": "WI",
+      "postal_code": "53704",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://madison-kipp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum die casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "foundry",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Madison-Kipp Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201 Waubesa St, Madison, WI 53704, USA",
+        "supplier_address_normalized": {
+          "city": "Madison",
+          "state": "WI",
+          "postal_code": "53704",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Madison-Kipp Corporation (Madison, WI - North)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "madison-kipp.com",
+    "companyId": "cmp_3d2d16498aec",
+    "locationId": "loc_b203c9da7289",
+    "segment": "USA | WI | Madison, WI",
+    "tier": "Tier 2",
+    "addressRaw": "3701 Kinsman Blvd, Madison, WI 53704, USA",
+    "addressComponents": {
+      "city": "Madison",
+      "state": "WI",
+      "postal_code": "53704",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://madison-kipp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum die casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "foundry",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Madison-Kipp Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3701 Kinsman Blvd, Madison, WI 53704, USA",
+        "supplier_address_normalized": {
+          "city": "Madison",
+          "state": "WI",
+          "postal_code": "53704",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Madison-Kipp Corporation (Sun Prairie, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "madison-kipp.com",
+    "companyId": "cmp_3d2d16498aec",
+    "locationId": "loc_1bbe9b8c1b2c",
+    "segment": "USA | WI | Sun Prairie, WI",
+    "tier": "Tier 2",
+    "addressRaw": "4004 Nakoosa Trl, Sun Prairie, WI 53590, USA",
+    "addressComponents": {
+      "city": "Sun Prairie",
+      "state": "WI",
+      "postal_code": "53590",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://madison-kipp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum die casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "foundry",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Madison-Kipp Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4004 Nakoosa Trl, Sun Prairie, WI 53590, USA",
+        "supplier_address_normalized": {
+          "city": "Sun Prairie",
+          "state": "WI",
+          "postal_code": "53590",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Wisconsin Stamping & Manufacturing (Germantown, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "wisstamp.com",
+    "companyId": "cmp_2a06a661c333",
+    "locationId": "loc_1ed48e0bb6c0",
+    "segment": "USA | WI | Germantown, WI",
+    "tier": "Tier 2",
+    "addressRaw": "N110 W13455 North Patton Ct, Germantown, WI 53022, USA",
+    "addressComponents": {
+      "city": "Germantown",
+      "state": "WI",
+      "postal_code": "53022",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://wisstamp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "welding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wisconsin Stamping & Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "N110 W13455 North Patton Ct, Germantown, WI 53022, USA",
+        "supplier_address_normalized": {
+          "city": "Germantown",
+          "state": "WI",
+          "postal_code": "53022",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Kapco Metal Stamping (Grafton, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "kapcoinc.com",
+    "companyId": "cmp_062213e6f23c",
+    "locationId": "loc_e4c534cf2282",
+    "segment": "USA | WI | Grafton, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1000 Badger Cir, Grafton, WI 53024, USA",
+    "addressComponents": {
+      "city": "Grafton",
+      "state": "WI",
+      "postal_code": "53024",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.kapcoinc.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "fabrication",
+      "tool and die",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kapco Metal Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1000 Badger Cir, Grafton, WI 53024, USA",
+        "supplier_address_normalized": {
+          "city": "Grafton",
+          "state": "WI",
+          "postal_code": "53024",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "D&H Industries (Oconomowoc, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "dh-ind.com",
+    "companyId": "cmp_a121fdb33e48",
+    "locationId": "loc_4e4d09ae42cf",
+    "segment": "USA | WI | Oconomowoc, WI",
+    "tier": "Tier 2",
+    "addressRaw": "510 S Worthington St, Oconomowoc, WI 53066, USA",
+    "addressComponents": {
+      "city": "Oconomowoc",
+      "state": "WI",
+      "postal_code": "53066",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.dh-ind.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping & assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "assemblies",
+      "welding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "D&H Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "510 S Worthington St, Oconomowoc, WI 53066, USA",
+        "supplier_address_normalized": {
+          "city": "Oconomowoc",
+          "state": "WI",
+          "postal_code": "53066",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Capitol Stampings (Milwaukee, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "capitolstampings.com",
+    "companyId": "cmp_01e9ce815524",
+    "locationId": "loc_c7cd1b57ae54",
+    "segment": "USA | WI | Milwaukee, WI",
+    "tier": "Tier 2",
+    "addressRaw": "2700 W North Ave, Milwaukee, WI 53208, USA",
+    "addressComponents": {
+      "city": "Milwaukee",
+      "state": "WI",
+      "postal_code": "53208",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://capitolstampings.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Capitol Stampings",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2700 W North Ave, Milwaukee, WI 53208, USA",
+        "supplier_address_normalized": {
+          "city": "Milwaukee",
+          "state": "WI",
+          "postal_code": "53208",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Miro Manufacturing (Waukesha, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "miromfg.com",
+    "companyId": "cmp_7c3f56680faa",
+    "locationId": "loc_199009ec3644",
+    "segment": "USA | WI | Waukesha, WI",
+    "tier": "Tier 2",
+    "addressRaw": "201 Sentry Dr, Waukesha, WI 53186, USA",
+    "addressComponents": {
+      "city": "Waukesha",
+      "state": "WI",
+      "postal_code": "53186",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.miromfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping & fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "fabrication",
+      "welding",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Miro Manufacturing, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "201 Sentry Dr, Waukesha, WI 53186, USA",
+        "supplier_address_normalized": {
+          "city": "Waukesha",
+          "state": "WI",
+          "postal_code": "53186",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Signicast (Hartford, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "signicast.com",
+    "companyId": "cmp_d223fa1bacf7",
+    "locationId": "loc_ebf5a1d0abfa",
+    "segment": "USA | WI | Hartford, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1800 Innovation Way, Hartford, WI 53027, USA",
+    "addressComponents": {
+      "city": "Hartford",
+      "state": "WI",
+      "postal_code": "53027",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.signicast.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Investment casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Tooling",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "investment casting",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Signicast",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1800 Innovation Way, Hartford, WI 53027, USA",
+        "supplier_address_normalized": {
+          "city": "Hartford",
+          "state": "WI",
+          "postal_code": "53027",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Signicast (Milwaukee, WI - Finishing Complex)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "signicast.com",
+    "companyId": "cmp_d223fa1bacf7",
+    "locationId": "loc_2d20ac51b74a",
+    "segment": "USA | WI | Milwaukee, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1241 W Canal St, Milwaukee, WI 53233, USA",
+    "addressComponents": {
+      "city": "Milwaukee",
+      "state": "WI",
+      "postal_code": "53233",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.signicast.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Secondary operations & finishing",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "investment casting",
+      "secondary operations",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Signicast",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1241 W Canal St, Milwaukee, WI 53233, USA",
+        "supplier_address_normalized": {
+          "city": "Milwaukee",
+          "state": "WI",
+          "postal_code": "53233",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Serigraph Decorative Plastic Products (West Bend, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "serigraph.com",
+    "companyId": "cmp_8a3deeb90f9c",
+    "locationId": "loc_b48be5888b85",
+    "segment": "USA | WI | West Bend, WI",
+    "tier": "Tier 2",
+    "addressRaw": "3801 E Decorah Rd, West Bend, WI 53095, USA",
+    "addressComponents": {
+      "city": "West Bend",
+      "state": "WI",
+      "postal_code": "53095",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.serigraph.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Decorative plastics & functional graphics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming",
+      "Assembly",
+      "Interior"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "decorative molding",
+      "functional graphics",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Serigraph",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3801 E Decorah Rd, West Bend, WI 53095, USA",
+        "supplier_address_normalized": {
+          "city": "West Bend",
+          "state": "WI",
+          "postal_code": "53095",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Bremer Manufacturing (Elkhart Lake, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "bremermfg.com",
+    "companyId": "cmp_5ee21fb3c064",
+    "locationId": "loc_f54058f55db4",
+    "segment": "USA | WI | Elkhart Lake, WI",
+    "tier": "Tier 2",
+    "addressRaw": "W2002 County Road Q, Elkhart Lake, WI 53020, USA",
+    "addressComponents": {
+      "city": "Elkhart Lake",
+      "state": "WI",
+      "postal_code": "53020",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "website": "https://www.bremermfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Precision manufacturing & assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly",
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "precision manufacturing",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bremer Manufacturing Company, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "W2002 County Road Q, Elkhart Lake, WI 53020, USA",
+        "supplier_address_normalized": {
+          "city": "Elkhart Lake",
+          "state": "WI",
+          "postal_code": "53020",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "KMC (Port Washington, WI) - Corporate HQ",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "kmc-mfg.com",
+    "companyId": "cmp_568cb65fe53f",
+    "locationId": "loc_19a8de5d504a",
+    "segment": "USA | WI | Port Washington, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1221 S Park St, Port Washington, WI 53074, USA",
+    "addressComponents": {
+      "city": "Port Washington",
+      "state": "WI",
+      "postal_code": "53074",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.kmc-mfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kickhaefer Manufacturing Company (KMC)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1221 S Park St, Port Washington, WI 53074, USA",
+        "supplier_address_normalized": {
+          "city": "Port Washington",
+          "state": "WI",
+          "postal_code": "53074",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "KMC (Milwaukee, WI) - Walker's Point",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "kmc-mfg.com",
+    "companyId": "cmp_568cb65fe53f",
+    "locationId": "loc_0c27a4751dbd",
+    "segment": "USA | WI | Milwaukee, WI",
+    "tier": "Tier 2",
+    "addressRaw": "620 S 1st St, Milwaukee, WI 53204, USA",
+    "addressComponents": {
+      "city": "Milwaukee",
+      "state": "WI",
+      "postal_code": "53204",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.kmc-mfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kickhaefer Manufacturing Company (KMC)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "620 S 1st St, Milwaukee, WI 53204, USA",
+        "supplier_address_normalized": {
+          "city": "Milwaukee",
+          "state": "WI",
+          "postal_code": "53204",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "KMC (Port Washington, WI) - Mineral Springs",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "kmc-mfg.com",
+    "companyId": "cmp_568cb65fe53f",
+    "locationId": "loc_549c83540f05",
+    "segment": "USA | WI | Port Washington, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1151 Mineral Springs Dr, Port Washington, WI 53074, USA",
+    "addressComponents": {
+      "city": "Port Washington",
+      "state": "WI",
+      "postal_code": "53074",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.kmc-mfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kickhaefer Manufacturing Company (KMC)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1151 Mineral Springs Dr, Port Washington, WI 53074, USA",
+        "supplier_address_normalized": {
+          "city": "Port Washington",
+          "state": "WI",
+          "postal_code": "53074",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "KMC (Fredonia, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "kmc-mfg.com",
+    "companyId": "cmp_568cb65fe53f",
+    "locationId": "loc_a8a9bee4d882",
+    "segment": "USA | WI | Fredonia, WI",
+    "tier": "Tier 2",
+    "addressRaw": "624 Tower Dr, Fredonia, WI 53021, USA",
+    "addressComponents": {
+      "city": "Fredonia",
+      "state": "WI",
+      "postal_code": "53021",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.kmc-mfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kickhaefer Manufacturing Company (KMC)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "624 Tower Dr, Fredonia, WI 53021, USA",
+        "supplier_address_normalized": {
+          "city": "Fredonia",
+          "state": "WI",
+          "postal_code": "53021",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  },
+  {
+    "company": "Waupaca Foundry (Waupaca, WI) - Machining Center",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "waupacafoundry.com",
+    "companyId": "cmp_63823956ee72",
+    "locationId": "loc_4e4e5e8e2f76",
+    "segment": "USA | WI | Waupaca, WI",
+    "tier": "Tier 2",
+    "addressRaw": "600 Industrial Dr, Waupaca, WI 54981, USA",
+    "addressComponents": {
+      "city": "Waupaca",
+      "state": "WI",
+      "postal_code": "54981",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.waupacafoundry.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Iron castings & machining",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "foundry",
+      "castings",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Waupaca Foundry",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "600 Industrial Dr, Waupaca, WI 54981, USA",
+        "supplier_address_normalized": {
+          "city": "Waupaca",
+          "state": "WI",
+          "postal_code": "54981",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round48_hard"
+      }
+    }
+  }
+]

@@ -1,0 +1,5612 @@
+[
+  {
+    "company": "Martinrea Riverside, LLC (Riverside, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5233 NW 41st Street, Riverside, MO 64150, US",
+    "addressComponents": {
+      "city": "Riverside",
+      "state": "MO",
+      "postal_code": "64150",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Martinrea Riverside, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5233 NW 41st Street, Riverside, MO 64150, US",
+        "supplier_address_normalized": {
+          "city": "Riverside",
+          "state": "MO",
+          "postal_code": "64150",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "osha",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.martinrea.com/",
+    "companyKey": "martinrea.com",
+    "companyId": "cmp_697f69d6e992",
+    "locationId": "loc_9cc0dd8a2217",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "assemblies"
+    ]
+  },
+  {
+    "company": "FORVIA (Faurecia Interior Systems, Blue Springs, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "650 NW Blue Pkwy, Blue Springs, MO 64015, US",
+    "addressComponents": {
+      "city": "Blue Springs",
+      "state": "MO",
+      "postal_code": "64015",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "650 NW Blue Pkwy, Blue Springs, MO 64015, US",
+        "supplier_address_normalized": {
+          "city": "Blue Springs",
+          "state": "MO",
+          "postal_code": "64015",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "epa_tri",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_bfd5627fd180",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "interior",
+      "assembly"
+    ]
+  },
+  {
+    "company": "M+M Quality Solutions (Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "10960 N Congress Ave, Kansas City, MO 64153, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64153",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "M+M Quality Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "10960 N Congress Ave, Kansas City, MO 64153, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64153",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "kitting",
+          "quality inspection",
+          "rework"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": "https://mmqualitysolutions.com/",
+    "companyKey": "mmqualitysolutions.com",
+    "companyId": "cmp_837a8cda2d81",
+    "locationId": "loc_6ededf25f2a9",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Quality inspection",
+      "Rework"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "kitting",
+      "quality"
+    ]
+  },
+  {
+    "company": "KAW Services (Pleasant Valley, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "9100 W Liberty Dr, Pleasant Valley, MO 64068, US",
+    "addressComponents": {
+      "city": "Pleasant Valley",
+      "state": "MO",
+      "postal_code": "64068",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KAW Services",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9100 W Liberty Dr, Pleasant Valley, MO 64068, US",
+        "supplier_address_normalized": {
+          "city": "Pleasant Valley",
+          "state": "MO",
+          "postal_code": "64068",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "trailer repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kawservices.com/",
+    "companyKey": "kawservices.com",
+    "companyId": "cmp_e87f00bc046e",
+    "locationId": "loc_df283aecbe22",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "trailer repair",
+      "logistics"
+    ],
+    "contactInfo": {
+      "phone": "+1 (816) 781-6300"
+    }
+  },
+  {
+    "company": "M+M Quality Solutions (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1601 Fairfax Trafficway, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "M+M Quality Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1601 Fairfax Trafficway, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "kitting",
+          "quality inspection",
+          "rework"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": "https://mmqualitysolutions.com/",
+    "companyKey": "mmqualitysolutions.com",
+    "companyId": "cmp_837a8cda2d81",
+    "locationId": "loc_b2e39e113800",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Quality inspection",
+      "Rework"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "kitting",
+      "quality"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "301 Donovan Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "301 Donovan Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_94956d9cfd9e",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Best Way Distribution (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1705 Kansas Ave, Kansas City, KS 66105, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66105",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Best Way Distribution",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1705 Kansas Ave, Kansas City, KS 66105, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66105",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing",
+          "cross-dock",
+          "transportation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "website": "https://www.bwdst.com/",
+    "companyKey": "bwdst.com",
+    "companyId": "cmp_af61960807cf",
+    "locationId": "loc_9fe76d1369d4",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Cross-dock",
+      "Warehousing",
+      "Transportation"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "3pl",
+      "warehousing",
+      "cross-dock",
+      "transportation"
+    ],
+    "contactInfo": {
+      "email": "info@bwdst.com"
+    }
+  },
+  {
+    "company": "Comprehensive Logistics (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "230 Kindleberger Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Comprehensive Logistics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "230 Kindleberger Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "line-side logistics",
+          "kitting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "supplier_directory",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sequencing centers",
+    "website": "https://complog.com/",
+    "companyKey": "complog.com",
+    "companyId": "cmp_2f93b92c4996",
+    "locationId": "loc_2eff47ac7c5d",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Line-side delivery"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "line-side",
+      "jit"
+    ]
+  },
+  {
+    "company": "Quala (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "320 Kindleberger Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "320 Kindleberger Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_40c30629a3fe",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ],
+    "contactInfo": {
+      "phone": "+1 (913) 374-0601"
+    }
+  },
+  {
+    "company": "Sun Manufacturing (Coweta, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12232 S State Hwy 51, Coweta, OK 74429, US",
+    "addressComponents": {
+      "city": "Coweta",
+      "state": "OK",
+      "postal_code": "74429",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Sun Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12232 S State Hwy 51, Coweta, OK 74429, US",
+        "supplier_address_normalized": {
+          "city": "Coweta",
+          "state": "OK",
+          "postal_code": "74429",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "tool and die",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.sunmfg.net/",
+    "companyKey": "sunmfg.net",
+    "companyId": "cmp_574254492c09",
+    "locationId": "loc_56ad992aa34d",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "welding"
+    ]
+  },
+  {
+    "company": "HyPro (Vinita, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1100 Industrial Dr, Vinita, OK 74301, US",
+    "addressComponents": {
+      "city": "Vinita",
+      "state": "OK",
+      "postal_code": "74301",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HyPro",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1100 Industrial Dr, Vinita, OK 74301, US",
+        "supplier_address_normalized": {
+          "city": "Vinita",
+          "state": "OK",
+          "postal_code": "74301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cnc machining",
+          "contract manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "website": "https://www.hypro.com/",
+    "companyKey": "hypro.com",
+    "companyId": "cmp_3cb6af2149b7",
+    "locationId": "loc_3eba52c90168",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "machining",
+      "cnc",
+      "contract manufacturing",
+      "oem"
+    ]
+  },
+  {
+    "company": "Lippert (Transportation Windows, Tulsa, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1575 N 93rd East Ave, Tulsa, OK 74115, US",
+    "addressComponents": {
+      "city": "Tulsa",
+      "state": "OK",
+      "postal_code": "74115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Lippert",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1575 N 93rd East Ave, Tulsa, OK 74115, US",
+        "supplier_address_normalized": {
+          "city": "Tulsa",
+          "state": "OK",
+          "postal_code": "74115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "window manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.lippert.com/",
+    "companyKey": "lippert.com",
+    "companyId": "cmp_52536e5f175c",
+    "locationId": "loc_0e5cda6024d3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "transportation",
+      "windows",
+      "assembly"
+    ],
+    "contactInfo": {
+      "phone": "+1 (432) 547-7378"
+    }
+  },
+  {
+    "company": "Optronics International (Muskogee, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "401 S 41st Street East, Muskogee, OK 74403, US",
+    "addressComponents": {
+      "city": "Muskogee",
+      "state": "OK",
+      "postal_code": "74403",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Optronics International",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 S 41st Street East, Muskogee, OK 74403, US",
+        "supplier_address_normalized": {
+          "city": "Muskogee",
+          "state": "OK",
+          "postal_code": "74403",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicular lighting manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.optronicsinc.com/",
+    "companyKey": "optronicsinc.com",
+    "companyId": "cmp_0b0fa6c7742d",
+    "locationId": "loc_e876c274f785",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Lighting assembly",
+      "Assembly",
+      "Electronics manufacturing"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "lighting",
+      "vehicular safety",
+      "assembly"
+    ],
+    "contactInfo": {
+      "phone": "+1 (918) 683-9514",
+      "email": "info@optronicsinc.com"
+    }
+  },
+  {
+    "company": "48forty Solutions (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2211 South May Avenue, Oklahoma City, OK 73108, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73108",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2211 South May Avenue, Oklahoma City, OK 73108, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73108",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_bbd8099a9d35",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "recycling",
+      "packaging"
+    ],
+    "contactInfo": {
+      "phone": "+1 (405) 681-4259"
+    }
+  },
+  {
+    "company": "Cimarron Pallet MFG LLC (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1430 W Sheridan Ave, Oklahoma City, OK 73106, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73106",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cimarron Pallet MFG LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1430 W Sheridan Ave, Oklahoma City, OK 73106, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73106",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet manufacturing",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.cimarronpallet.com/",
+    "companyKey": "cimarronpallet.com",
+    "companyId": "cmp_53ffb69a157a",
+    "locationId": "loc_447c256376ff",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Pallet Logistics of America (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1901 S Skyline Dr, Oklahoma City, OK 73129, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73129",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pallet Logistics of America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1901 S Skyline Dr, Oklahoma City, OK 73129, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73129",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet repair",
+          "logistics management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.plasolutions.com/",
+    "companyKey": "plasolutions.com",
+    "companyId": "cmp_aab81118a62d",
+    "locationId": "loc_96d459e1ab2b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "logistics",
+      "recycling"
+    ],
+    "contactInfo": {
+      "phone": "+1 (405) 670-1414",
+      "email": "site02@plasolutions.com"
+    }
+  },
+  {
+    "company": "Arvin Sango, Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 6, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Arvin Sango, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 6, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "exhaust systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.arvinsango.com/",
+    "companyKey": "arvinsango.com",
+    "companyId": "cmp_ff18bf32d3bb",
+    "locationId": "loc_e1dd1ec65a0f",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Exhaust systems",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "exhaust",
+      "tier 1",
+      "jit"
+    ]
+  },
+  {
+    "company": "Nolato (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "901 Paulsun Street, San Antonio, TX 78219, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78219",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nolato",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "901 Paulsun Street, San Antonio, TX 78219, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78219",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://www.nolato.com/",
+    "companyKey": "nolato.com",
+    "companyId": "cmp_3244f73d2126",
+    "locationId": "loc_d337425910f3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "plastics",
+      "assembly"
+    ]
+  },
+  {
+    "company": "Dayton Rogers (Arlington, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1107 Commercial Blvd N, Arlington, TX 76001, US",
+    "addressComponents": {
+      "city": "Arlington",
+      "state": "TX",
+      "postal_code": "76001",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dayton Rogers",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1107 Commercial Blvd N, Arlington, TX 76001, US",
+        "supplier_address_normalized": {
+          "city": "Arlington",
+          "state": "TX",
+          "postal_code": "76001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://daytonrogers.com/",
+    "companyKey": "daytonrogers.com",
+    "companyId": "cmp_26308dd8c30e",
+    "locationId": "loc_8a2103ce1905",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "metal stamping",
+      "welding",
+      "machining",
+      "assemblies"
+    ]
+  },
+  {
+    "company": "All-Plastics, Inc. (Kerrville, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "200 Holdsworth Dr, Kerrville, TX 78028, US",
+    "addressComponents": {
+      "city": "Kerrville",
+      "state": "TX",
+      "postal_code": "78028",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "All-Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Holdsworth Dr, Kerrville, TX 78028, US",
+        "supplier_address_normalized": {
+          "city": "Kerrville",
+          "state": "TX",
+          "postal_code": "78028",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://all-plastics.com/",
+    "companyKey": "all-plastics.com",
+    "companyId": "cmp_083bfff294ff",
+    "locationId": "loc_bce67dacbba8",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "plastics",
+      "injection molding",
+      "manufacturing"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5889 FM 1346, San Antonio, TX 78220, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78220",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5889 FM 1346, San Antonio, TX 78220, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78220",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_6aecdcad7ad2",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "UFP Packaging (Grandview, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "200 E Criner St, Grandview, TX 76050, US",
+    "addressComponents": {
+      "city": "Grandview",
+      "state": "TX",
+      "postal_code": "76050",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "UFP Packaging",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 E Criner St, Grandview, TX 76050, US",
+        "supplier_address_normalized": {
+          "city": "Grandview",
+          "state": "TX",
+          "postal_code": "76050",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "custom crates",
+          "shipping boxes",
+          "dunnage",
+          "pallets"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.palletone.com/",
+    "companyKey": "palletone.com",
+    "companyId": "cmp_09ea5585e454",
+    "locationId": "loc_924bf8320b42",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Pallets",
+      "Crates"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "dunnage",
+      "crates",
+      "pallets"
+    ],
+    "contactInfo": {
+      "phone": "+1 (817) 210-6537"
+    }
+  },
+  {
+    "company": "PLA Solutions (Corporate Office, Addison, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3939 Beltline Road, Addison, TX 75001, US",
+    "addressComponents": {
+      "city": "Addison",
+      "state": "TX",
+      "postal_code": "75001",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PLA Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "3939 Beltline Road, Addison, TX 75001, US",
+        "supplier_address_normalized": {
+          "city": "Addison",
+          "state": "TX",
+          "postal_code": "75001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet management",
+          "logistics services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.plasolutions.com/",
+    "companyKey": "plasolutions.com",
+    "companyId": "cmp_aab81118a62d",
+    "locationId": "loc_3cf3ec65c021",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Pallet management",
+      "Logistics management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "logistics",
+      "supply chain"
+    ],
+    "contactInfo": {
+      "email": "info@plasolutions.com"
+    }
+  },
+  {
+    "company": "Pal-Serv (Balch Springs, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2150 S Peachtree Rd, Balch Springs, TX 75180, US",
+    "addressComponents": {
+      "city": "Balch Springs",
+      "state": "TX",
+      "postal_code": "75180",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pal-Serv",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2150 S Peachtree Rd, Balch Springs, TX 75180, US",
+        "supplier_address_normalized": {
+          "city": "Balch Springs",
+          "state": "TX",
+          "postal_code": "75180",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet repair",
+          "pallet recycling",
+          "pallet return programs"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.plasolutions.com/",
+    "companyKey": "plasolutions.com",
+    "companyId": "cmp_aab81118a62d",
+    "locationId": "loc_414a6a1faa01",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet repair",
+      "Pallet recycling",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallet repair",
+      "recycling",
+      "packaging"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "14300 NE 41st St, Suite 300, Kansas City, MO 64161, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64161",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "14300 NE 41st St, Suite 300, Kansas City, MO 64161, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64161",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_22f192510610",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Springfield, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1012 North Farm Rd 123, Springfield, MO 65802, US",
+    "addressComponents": {
+      "city": "Springfield",
+      "state": "MO",
+      "postal_code": "65802",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1012 North Farm Rd 123, Springfield, MO 65802, US",
+        "supplier_address_normalized": {
+          "city": "Springfield",
+          "state": "MO",
+          "postal_code": "65802",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_362542b12b4b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (St. Louis, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "4232 Planned Industrial Drive, St. Louis, MO 63120, US",
+    "addressComponents": {
+      "city": "St. Louis",
+      "state": "MO",
+      "postal_code": "63120",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4232 Planned Industrial Drive, St. Louis, MO 63120, US",
+        "supplier_address_normalized": {
+          "city": "St. Louis",
+          "state": "MO",
+          "postal_code": "63120",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_12e63a649aff",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Amarillo, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "13001 NE 29th, Amarillo, TX 79111, US",
+    "addressComponents": {
+      "city": "Amarillo",
+      "state": "TX",
+      "postal_code": "79111",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13001 NE 29th, Amarillo, TX 79111, US",
+        "supplier_address_normalized": {
+          "city": "Amarillo",
+          "state": "TX",
+          "postal_code": "79111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_57780bfaea4a",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Dallas, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2805 Mican Drive, Dallas, TX 75212, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75212",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2805 Mican Drive, Dallas, TX 75212, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75212",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_61177afcaceb",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Houston, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "4847 Blaffer Street, Houston, TX 77026, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77026",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4847 Blaffer Street, Houston, TX 77026, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77026",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_53beaadb7619",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Irving, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2330 E. Union Bower Road, Irving, TX 75061, US",
+    "addressComponents": {
+      "city": "Irving",
+      "state": "TX",
+      "postal_code": "75061",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2330 E. Union Bower Road, Irving, TX 75061, US",
+        "supplier_address_normalized": {
+          "city": "Irving",
+          "state": "TX",
+          "postal_code": "75061",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_a3155ee92b60",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Lubbock, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "7507 Spur 331, Lubbock, TX 79404, US",
+    "addressComponents": {
+      "city": "Lubbock",
+      "state": "TX",
+      "postal_code": "79404",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7507 Spur 331, Lubbock, TX 79404, US",
+        "supplier_address_normalized": {
+          "city": "Lubbock",
+          "state": "TX",
+          "postal_code": "79404",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_f1c1885ef45b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5250 Tacco Drive, San Antonio, TX 78244, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78244",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5250 Tacco Drive, San Antonio, TX 78244, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78244",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_889c3dd92c7c",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "514 Merida Street, San Antonio, TX 78207, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78207",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "514 Merida Street, San Antonio, TX 78207, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78207",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_2cc9db712c1b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Dallas, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3636 Dan Morton Drive, Dallas, TX 75236, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75236",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3636 Dan Morton Drive, Dallas, TX 75236, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75236",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_3602d9dee1cd",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Dallas - Ledbetter, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5623 W Ledbetter Dr, Dallas, TX 75236, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75236",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5623 W Ledbetter Dr, Dallas, TX 75236, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75236",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_45d446373efd",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Alvarado, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3532 S Burleson Blvd, Alvarado, TX 76009, US",
+    "addressComponents": {
+      "city": "Alvarado",
+      "state": "TX",
+      "postal_code": "76009",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3532 S Burleson Blvd, Alvarado, TX 76009, US",
+        "supplier_address_normalized": {
+          "city": "Alvarado",
+          "state": "TX",
+          "postal_code": "76009",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_20e2c6aa8e3b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Quala (Wichita, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5951 N. Prospect Road, Wichita, KS 67204, US",
+    "addressComponents": {
+      "city": "Wichita",
+      "state": "KS",
+      "postal_code": "67204",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5951 N. Prospect Road, Wichita, KS 67204, US",
+        "supplier_address_normalized": {
+          "city": "Wichita",
+          "state": "KS",
+          "postal_code": "67204",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_384ad141adbf",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Joplin, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3320 E. 29th Street, Joplin, MO 64804, US",
+    "addressComponents": {
+      "city": "Joplin",
+      "state": "MO",
+      "postal_code": "64804",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3320 E. 29th Street, Joplin, MO 64804, US",
+        "supplier_address_normalized": {
+          "city": "Joplin",
+          "state": "MO",
+          "postal_code": "64804",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_30c9962d6f60",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2650 Shull Avenue, Oklahoma City, OK 73111, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73111",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2650 Shull Avenue, Oklahoma City, OK 73111, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_afd2bbd27e9c",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Wilmer, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2012 North Goode Rd, Wilmer, TX 75172, US",
+    "addressComponents": {
+      "city": "Wilmer",
+      "state": "TX",
+      "postal_code": "75172",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2012 North Goode Rd, Wilmer, TX 75172, US",
+        "supplier_address_normalized": {
+          "city": "Wilmer",
+          "state": "TX",
+          "postal_code": "75172",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_927bcccb2170",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Saginaw, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "700 E. Minton Road, Saginaw, TX 76179, US",
+    "addressComponents": {
+      "city": "Saginaw",
+      "state": "TX",
+      "postal_code": "76179",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "700 E. Minton Road, Saginaw, TX 76179, US",
+        "supplier_address_normalized": {
+          "city": "Saginaw",
+          "state": "TX",
+          "postal_code": "76179",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_667da69e03bf",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Baytown, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "11603 I-10, Baytown, TX 77523, US",
+    "addressComponents": {
+      "city": "Baytown",
+      "state": "TX",
+      "postal_code": "77523",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11603 I-10, Baytown, TX 77523, US",
+        "supplier_address_normalized": {
+          "city": "Baytown",
+          "state": "TX",
+          "postal_code": "77523",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_9b60bd5f093f",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Baytown, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3018 N. Alexander Drive, Baytown, TX 77520, US",
+    "addressComponents": {
+      "city": "Baytown",
+      "state": "TX",
+      "postal_code": "77520",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3018 N. Alexander Drive, Baytown, TX 77520, US",
+        "supplier_address_normalized": {
+          "city": "Baytown",
+          "state": "TX",
+          "postal_code": "77520",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_b639a2a16036",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Conner Industries (Fort Worth, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3800 Sandshell Drive Suite 235, Fort Worth, TX 76137, US",
+    "addressComponents": {
+      "city": "Fort Worth",
+      "state": "TX",
+      "postal_code": "76137",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3800 Sandshell Drive Suite 235, Fort Worth, TX 76137, US",
+        "supplier_address_normalized": {
+          "city": "Fort Worth",
+          "state": "TX",
+          "postal_code": "76137",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_95c1414763eb",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Conner Industries (Conroe, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "104 FM 3083, Conroe, TX 77301, US",
+    "addressComponents": {
+      "city": "Conroe",
+      "state": "TX",
+      "postal_code": "77301",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "104 FM 3083, Conroe, TX 77301, US",
+        "supplier_address_normalized": {
+          "city": "Conroe",
+          "state": "TX",
+          "postal_code": "77301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_e4bb0f5cadd0",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Conner Industries (Guardian Packaging, Garland, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3615 Security Street, Garland, TX 75042, US",
+    "addressComponents": {
+      "city": "Garland",
+      "state": "TX",
+      "postal_code": "75042",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3615 Security Street, Garland, TX 75042, US",
+        "supplier_address_normalized": {
+          "city": "Garland",
+          "state": "TX",
+          "postal_code": "75042",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_dedadd68d1c6",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Conner Industries (Haslet, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1951 Keller Hicks Road, Fort Worth, TX 76177, US",
+    "addressComponents": {
+      "city": "Fort Worth",
+      "state": "TX",
+      "postal_code": "76177",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1951 Keller Hicks Road, Fort Worth, TX 76177, US",
+        "supplier_address_normalized": {
+          "city": "Fort Worth",
+          "state": "TX",
+          "postal_code": "76177",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_e02c23328d2a",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Conner Industries (Valley Center, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "202 S. Cedar, Valley Center, KS 67147, US",
+    "addressComponents": {
+      "city": "Valley Center",
+      "state": "KS",
+      "postal_code": "67147",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "202 S. Cedar, Valley Center, KS 67147, US",
+        "supplier_address_normalized": {
+          "city": "Valley Center",
+          "state": "KS",
+          "postal_code": "67147",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_99d1afc7feef",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Conner Industries (Stilwell, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "RT3, Box 1920, HWY 59, Stilwell, OK 74960, US",
+    "addressComponents": {
+      "city": "Stilwell",
+      "state": "OK",
+      "postal_code": "74960",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "RT3, Box 1920, HWY 59, Stilwell, OK 74960, US",
+        "supplier_address_normalized": {
+          "city": "Stilwell",
+          "state": "OK",
+          "postal_code": "74960",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_5e62778b6843",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Conner Industries (Tulsa, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "420 S 145th East Ave., Tulsa, OK 74108, US",
+    "addressComponents": {
+      "city": "Tulsa",
+      "state": "OK",
+      "postal_code": "74108",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Conner Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "420 S 145th East Ave., Tulsa, OK 74108, US",
+        "supplier_address_normalized": {
+          "city": "Tulsa",
+          "state": "OK",
+          "postal_code": "74108",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.connerindustries.com/",
+    "companyKey": "connerindustries.com",
+    "companyId": "cmp_af4e0238f40c",
+    "locationId": "loc_089ae1198e83",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "pallets",
+      "crates",
+      "dunnage"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (St. Louis, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5066R Manchester Avenue, Bldgs 1-4, St. Louis, MO 63110, US",
+    "addressComponents": {
+      "city": "St. Louis",
+      "state": "MO",
+      "postal_code": "63110",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5066R Manchester Avenue, Bldgs 1-4, St. Louis, MO 63110, US",
+        "supplier_address_normalized": {
+          "city": "St. Louis",
+          "state": "MO",
+          "postal_code": "63110",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_2b6fed1e233b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Chillicothe, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "591 E. Business 36 Highway, Chillicothe, MO 64601, US",
+    "addressComponents": {
+      "city": "Chillicothe",
+      "state": "MO",
+      "postal_code": "64601",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "591 E. Business 36 Highway, Chillicothe, MO 64601, US",
+        "supplier_address_normalized": {
+          "city": "Chillicothe",
+          "state": "MO",
+          "postal_code": "64601",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_125e0dd03b35",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Bryan, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1591 N. Harvey Mitchell Parkway, Bryan, TX 77803, US",
+    "addressComponents": {
+      "city": "Bryan",
+      "state": "TX",
+      "postal_code": "77803",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1591 N. Harvey Mitchell Parkway, Bryan, TX 77803, US",
+        "supplier_address_normalized": {
+          "city": "Bryan",
+          "state": "TX",
+          "postal_code": "77803",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_a0bb5d6c7db1",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Galena Park, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1402 Clinton Drive, Bldgs 1-4, Galena Park, TX 77547, US",
+    "addressComponents": {
+      "city": "Galena Park",
+      "state": "TX",
+      "postal_code": "77547",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1402 Clinton Drive, Bldgs 1-4, Galena Park, TX 77547, US",
+        "supplier_address_normalized": {
+          "city": "Galena Park",
+          "state": "TX",
+          "postal_code": "77547",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_ef1c7d37593e",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Garland, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3737 Miller Park Drive, Garland, TX 75042, US",
+    "addressComponents": {
+      "city": "Garland",
+      "state": "TX",
+      "postal_code": "75042",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3737 Miller Park Drive, Garland, TX 75042, US",
+        "supplier_address_normalized": {
+          "city": "Garland",
+          "state": "TX",
+          "postal_code": "75042",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_688a1ca03890",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Houston, TX - Darien St.)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "4732 Darien Street, Houston, TX 77028, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77028",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4732 Darien Street, Houston, TX 77028, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77028",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_660e5c82d2e7",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Houston, TX - Homestead Rd.)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "4004 Homestead Road, Bldgs. A and B, Houston, TX 77028, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77028",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4004 Homestead Road, Bldgs. A and B, Houston, TX 77028, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77028",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_956acf0d1b1b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Hutchins, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1704 S. I-45 Service Road, Hutchins, TX 75141, US",
+    "addressComponents": {
+      "city": "Hutchins",
+      "state": "TX",
+      "postal_code": "75141",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1704 S. I-45 Service Road, Hutchins, TX 75141, US",
+        "supplier_address_normalized": {
+          "city": "Hutchins",
+          "state": "TX",
+          "postal_code": "75141",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_585fdfc9a9b0",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Mansfield, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1501 E. Dallas Street, Mansfield, TX 76063, US",
+    "addressComponents": {
+      "city": "Mansfield",
+      "state": "TX",
+      "postal_code": "76063",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1501 E. Dallas Street, Mansfield, TX 76063, US",
+        "supplier_address_normalized": {
+          "city": "Mansfield",
+          "state": "TX",
+          "postal_code": "76063",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_a3fa087db98a",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (Midland, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "8 E. Industrial Loop, Midland, TX 79701, US",
+    "addressComponents": {
+      "city": "Midland",
+      "state": "TX",
+      "postal_code": "79701",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8 E. Industrial Loop, Midland, TX 79701, US",
+        "supplier_address_normalized": {
+          "city": "Midland",
+          "state": "TX",
+          "postal_code": "79701",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_e8c2c02f0f1a",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Mauser Packaging Solutions (The Woodlands / Conroe, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "410 S. Trade Center Parkway, Conroe, TX 77385, US",
+    "addressComponents": {
+      "city": "Conroe",
+      "state": "TX",
+      "postal_code": "77385",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mauser Packaging Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "410 S. Trade Center Parkway, Conroe, TX 77385, US",
+        "supplier_address_normalized": {
+          "city": "Conroe",
+          "state": "TX",
+          "postal_code": "77385",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://mauserpackaging.com/",
+    "companyKey": "mauserpackaging.com",
+    "companyId": "cmp_2544e889d116",
+    "locationId": "loc_d14c00f413d3",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "industrial packaging",
+      "containers",
+      "drums",
+      "IBC"
+    ]
+  },
+  {
+    "company": "Questar Solutions (Dallas, TX)",
+    "parentCompany": "Mauser Packaging Solutions",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "732 Avenue R, Suite 100, Dallas, TX 75050, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75050",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Questar Solutions",
+        "parent_company": "Mauser Packaging Solutions",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "732 Avenue R, Suite 100, Dallas, TX 75050, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75050",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "parent_company_locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.questarsolutions.com/",
+    "companyKey": "questarsolutions.com",
+    "companyId": "cmp_7f91f8262db7",
+    "locationId": "loc_0bb478967df9",
+    "parentCompanyId": "cmp_2544e889d116",
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "UN certified packaging",
+      "industrial containment",
+      "packaging"
+    ]
+  },
+  {
+    "company": "Questar Solutions (Houston, TX)",
+    "parentCompany": "Mauser Packaging Solutions",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3900 Distribution Blvd., Houston, TX 77018, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77018",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Questar Solutions",
+        "parent_company": "Mauser Packaging Solutions",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3900 Distribution Blvd., Houston, TX 77018, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77018",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "parent_company_locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.questarsolutions.com/",
+    "companyKey": "questarsolutions.com",
+    "companyId": "cmp_7f91f8262db7",
+    "locationId": "loc_62704c128acc",
+    "parentCompanyId": "cmp_2544e889d116",
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "UN certified packaging",
+      "industrial containment",
+      "packaging"
+    ]
+  },
+  {
+    "company": "ORBIS Corporation (Greenville, TX)",
+    "parentCompany": "Menasha Corporation",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "7121 Shelby Ave, Greenville, TX 75402, US",
+    "addressComponents": {
+      "city": "Greenville",
+      "state": "TX",
+      "postal_code": "75402",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ORBIS Corporation",
+        "parent_company": "Menasha Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7121 Shelby Ave, Greenville, TX 75402, US",
+        "supplier_address_normalized": {
+          "city": "Greenville",
+          "state": "TX",
+          "postal_code": "75402",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "container management",
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.orbiscorporation.com/",
+    "companyKey": "orbiscorporation.com",
+    "companyId": "cmp_a42b4dfda6a9",
+    "locationId": "loc_378c27feba8b",
+    "parentCompanyId": "cmp_aa9676593293",
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTags": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "reusable packaging",
+      "returnable containers",
+      "dunnage",
+      "packaging management",
+      "automotive"
+    ]
+  },
+  {
+    "company": "ORBIS Corporation (Denton, TX)",
+    "parentCompany": "Menasha Corporation",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5010 Dakota Lane, Denton, TX 76207, US",
+    "addressComponents": {
+      "city": "Denton",
+      "state": "TX",
+      "postal_code": "76207",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ORBIS Corporation",
+        "parent_company": "Menasha Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5010 Dakota Lane, Denton, TX 76207, US",
+        "supplier_address_normalized": {
+          "city": "Denton",
+          "state": "TX",
+          "postal_code": "76207",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "container management",
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.orbiscorporation.com/",
+    "companyKey": "orbiscorporation.com",
+    "companyId": "cmp_a42b4dfda6a9",
+    "locationId": "loc_74ad6c522058",
+    "parentCompanyId": "cmp_aa9676593293",
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTags": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "reusable packaging",
+      "returnable containers",
+      "dunnage",
+      "packaging management",
+      "automotive"
+    ]
+  },
+  {
+    "company": "ORBIS Corporation (Houston, TX)",
+    "parentCompany": "Menasha Corporation",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "16601 Central Green Blvd., Suite 400, Houston, TX 77032, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77032",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ORBIS Corporation",
+        "parent_company": "Menasha Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "16601 Central Green Blvd., Suite 400, Houston, TX 77032, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77032",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "container management",
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.orbiscorporation.com/",
+    "companyKey": "orbiscorporation.com",
+    "companyId": "cmp_a42b4dfda6a9",
+    "locationId": "loc_9e63a7ac554e",
+    "parentCompanyId": "cmp_aa9676593293",
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTags": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "reusable packaging",
+      "returnable containers",
+      "dunnage",
+      "packaging management",
+      "automotive"
+    ]
+  },
+  {
+    "company": "ORBIS Corporation (Robinson, TX)",
+    "parentCompany": "Menasha Corporation",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "7219 IH 35 South, Robinson, TX 76706, US",
+    "addressComponents": {
+      "city": "Robinson",
+      "state": "TX",
+      "postal_code": "76706",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ORBIS Corporation",
+        "parent_company": "Menasha Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7219 IH 35 South, Robinson, TX 76706, US",
+        "supplier_address_normalized": {
+          "city": "Robinson",
+          "state": "TX",
+          "postal_code": "76706",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "container management",
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.orbiscorporation.com/",
+    "companyKey": "orbiscorporation.com",
+    "companyId": "cmp_a42b4dfda6a9",
+    "locationId": "loc_35a3fe3a5cc9",
+    "parentCompanyId": "cmp_aa9676593293",
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTags": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "reusable packaging",
+      "returnable containers",
+      "dunnage",
+      "packaging management",
+      "automotive"
+    ]
+  },
+  {
+    "company": "ORBIS Corporation (Seguin, TX)",
+    "parentCompany": "Menasha Corporation",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2348 FM 464, Seguin, TX 78153, US",
+    "addressComponents": {
+      "city": "Seguin",
+      "state": "TX",
+      "postal_code": "78153",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ORBIS Corporation",
+        "parent_company": "Menasha Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2348 FM 464, Seguin, TX 78153, US",
+        "supplier_address_normalized": {
+          "city": "Seguin",
+          "state": "TX",
+          "postal_code": "78153",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "container management",
+          "dunnage",
+          "returnable packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.orbiscorporation.com/",
+    "companyKey": "orbiscorporation.com",
+    "companyId": "cmp_a42b4dfda6a9",
+    "locationId": "loc_eafb281dcd0a",
+    "parentCompanyId": "cmp_aa9676593293",
+    "packagingSignals": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTags": [
+      "Returnable packaging",
+      "Dunnage",
+      "Container management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "reusable packaging",
+      "returnable containers",
+      "dunnage",
+      "packaging management",
+      "automotive"
+    ]
+  },
+  {
+    "company": "SCHÜTZ Container Systems (Pasadena, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5000 Underwood Rd, Pasadena, TX 77507, US",
+    "addressComponents": {
+      "city": "Pasadena",
+      "state": "TX",
+      "postal_code": "77507",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SCHÜTZ Container Systems",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5000 Underwood Rd, Pasadena, TX 77507, US",
+        "supplier_address_normalized": {
+          "city": "Pasadena",
+          "state": "TX",
+          "postal_code": "77507",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "directions_pdf"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.schuetz.net/usa/",
+    "companyKey": "schuetz.net",
+    "companyId": "cmp_3878196a58f5",
+    "locationId": "loc_0a773d63a0d7",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "IBC",
+      "industrial packaging",
+      "container systems"
+    ]
+  },
+  {
+    "company": "SCHÜTZ Container Systems (St. Joseph, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5500 Providence Hill Drive, St. Joseph, MO 64503, US",
+    "addressComponents": {
+      "city": "St. Joseph",
+      "state": "MO",
+      "postal_code": "64503",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SCHÜTZ Container Systems",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5500 Providence Hill Drive, St. Joseph, MO 64503, US",
+        "supplier_address_normalized": {
+          "city": "St. Joseph",
+          "state": "MO",
+          "postal_code": "64503",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "packaging"
+        ],
+        "primary_functions": [
+          "industrial packaging"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "directions_pdf"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "official_location_page_sweep"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.schuetz.net/usa/",
+    "companyKey": "schuetz.net",
+    "companyId": "cmp_3878196a58f5",
+    "locationId": "loc_45ba974ba1fe",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Industrial packaging"
+    ],
+    "capabilityTags": [
+      "Industrial packaging"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "IBC",
+      "industrial packaging",
+      "container systems"
+    ]
+  }
+]

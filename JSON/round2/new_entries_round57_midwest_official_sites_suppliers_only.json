@@ -1,0 +1,4030 @@
+[
+  {
+    "company": "AUTOKINITON (Auburn, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "801 West 15th Street Auburn, IN 46706, US",
+    "addressComponents": {
+      "city": "Auburn",
+      "state": "IN",
+      "postal_code": "46706",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "801 West 15th Street Auburn, IN 46706, US",
+        "supplier_address_normalized": {
+          "city": "Auburn",
+          "state": "IN",
+          "postal_code": "46706",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_5502b07ac093",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "260-920-1500"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Avon, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1190 Jaycox Road Avon, OH 44011, US",
+    "addressComponents": {
+      "city": "Avon",
+      "state": "OH",
+      "postal_code": "44011",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1190 Jaycox Road Avon, OH 44011, US",
+        "supplier_address_normalized": {
+          "city": "Avon",
+          "state": "OH",
+          "postal_code": "44011",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_4a83af525a95",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "440-882-5555"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Bardstown, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "850 Withrow Court Bardstown, KY 40004, US",
+    "addressComponents": {
+      "city": "Bardstown",
+      "state": "KY",
+      "postal_code": "40004",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "850 Withrow Court Bardstown, KY 40004, US",
+        "supplier_address_normalized": {
+          "city": "Bardstown",
+          "state": "KY",
+          "postal_code": "40004",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_f86bba8bfc91",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "502-331-4100"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Belleville 1, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "6771 Haggerty Road Belleville, MI 48111, US",
+    "addressComponents": {
+      "city": "Belleville",
+      "state": "MI",
+      "postal_code": "48111",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6771 Haggerty Road Belleville, MI 48111, US",
+        "supplier_address_normalized": {
+          "city": "Belleville",
+          "state": "MI",
+          "postal_code": "48111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_efdb9655ccf9",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "734-397-8085"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Belleville 2, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "6201 Haggerty Road Belleville, MI 48111, US",
+    "addressComponents": {
+      "city": "Belleville",
+      "state": "MI",
+      "postal_code": "48111",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6201 Haggerty Road Belleville, MI 48111, US",
+        "supplier_address_normalized": {
+          "city": "Belleville",
+          "state": "MI",
+          "postal_code": "48111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_5fdd99888de9",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "734-397-2212"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Bellevue, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "630 Southwest Street Bellevue, OH 44811, US",
+    "addressComponents": {
+      "city": "Bellevue",
+      "state": "OH",
+      "postal_code": "44811",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "630 Southwest Street Bellevue, OH 44811, US",
+        "supplier_address_normalized": {
+          "city": "Bellevue",
+          "state": "OH",
+          "postal_code": "44811",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_f13f8b28f4a2",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "567-998-7300"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Blissfield, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "11505 US 223 Blissfield, MI 49228, US",
+    "addressComponents": {
+      "city": "Blissfield",
+      "state": "MI",
+      "postal_code": "49228",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11505 US 223 Blissfield, MI 49228, US",
+        "supplier_address_normalized": {
+          "city": "Blissfield",
+          "state": "MI",
+          "postal_code": "49228",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_5a667beeb5d3",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "517-486-6321"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Bluffton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "18717 County Road 15 Bluffton, OH 45817, US",
+    "addressComponents": {
+      "city": "Bluffton",
+      "state": "OH",
+      "postal_code": "45817",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "18717 County Road 15 Bluffton, OH 45817, US",
+        "supplier_address_normalized": {
+          "city": "Bluffton",
+          "state": "OH",
+          "postal_code": "45817",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_6da6e7842e76",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "567-242-6500"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Chicago, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "12350 South Avenue O Chicago, IL 60633, US",
+    "addressComponents": {
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60633",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12350 South Avenue O Chicago, IL 60633, US",
+        "supplier_address_normalized": {
+          "city": "Chicago",
+          "state": "IL",
+          "postal_code": "60633",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_0c5e7dbc7cd7",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "773-646-6550"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Clinton Township, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "44850 Groesbeck Highway Clinton Township, MI 48036, US",
+    "addressComponents": {
+      "city": "Clinton Township",
+      "state": "MI",
+      "postal_code": "48036",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "44850 Groesbeck Highway Clinton Township, MI 48036, US",
+        "supplier_address_normalized": {
+          "city": "Clinton Township",
+          "state": "MI",
+          "postal_code": "48036",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_b926227b376b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "586-465-1600"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Elkton, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "81 Drettmann Drive Elkton, MI 48731, US",
+    "addressComponents": {
+      "city": "Elkton",
+      "state": "MI",
+      "postal_code": "48731",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "81 Drettmann Drive Elkton, MI 48731, US",
+        "supplier_address_normalized": {
+          "city": "Elkton",
+          "state": "MI",
+          "postal_code": "48731",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_dd244189c952",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "989-623-2201"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Euclid Manufacturing, Detroit, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1500 East Euclid Avenue Detroit, MI 48211, US",
+    "addressComponents": {
+      "city": "Detroit",
+      "state": "MI",
+      "postal_code": "48211",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1500 East Euclid Avenue Detroit, MI 48211, US",
+        "supplier_address_normalized": {
+          "city": "Detroit",
+          "state": "MI",
+          "postal_code": "48211",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_256a636f8f87",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "313-874-3664"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Grand Ledge, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "13112 Oneida Road Grand Ledge, MI 48837, US",
+    "addressComponents": {
+      "city": "Grand Ledge",
+      "state": "MI",
+      "postal_code": "48837",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13112 Oneida Road Grand Ledge, MI 48837, US",
+        "supplier_address_normalized": {
+          "city": "Grand Ledge",
+          "state": "MI",
+          "postal_code": "48837",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_c60d8276cb15",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "517-627-7333"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Greenville, SC)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "141 Southchase Blvd Fountain Inn, SC 29644, US",
+    "addressComponents": {
+      "city": "Fountain Inn",
+      "state": "SC",
+      "postal_code": "29644",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "141 Southchase Blvd Fountain Inn, SC 29644, US",
+        "supplier_address_normalized": {
+          "city": "Fountain Inn",
+          "state": "SC",
+          "postal_code": "29644",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_7da4adfcad1b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "864-757-7300"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Holland, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "808 E 32nd St Holland, MI 49423, US",
+    "addressComponents": {
+      "city": "Holland",
+      "state": "MI",
+      "postal_code": "49423",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "808 E 32nd St Holland, MI 49423, US",
+        "supplier_address_normalized": {
+          "city": "Holland",
+          "state": "MI",
+          "postal_code": "49423",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_1fd5dba4db3f",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "616-394-9665"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Milan, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "620 South Platt Road Milan, MI 48160, US",
+    "addressComponents": {
+      "city": "Milan",
+      "state": "MI",
+      "postal_code": "48160",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "620 South Platt Road Milan, MI 48160, US",
+        "supplier_address_normalized": {
+          "city": "Milan",
+          "state": "MI",
+          "postal_code": "48160",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_f2cf37e4fbb9",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "734-713-4500"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Lebanon, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "712 Briskin Lane Lebanon, TN 37087, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "TN",
+      "postal_code": "37087",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "712 Briskin Lane Lebanon, TN 37087, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "TN",
+          "postal_code": "37087",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_96041101d6f3",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "615-443-1004"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Madison, MS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "440 Church Road Madison, MS 39110, US",
+    "addressComponents": {
+      "city": "Madison",
+      "state": "MS",
+      "postal_code": "39110",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "440 Church Road Madison, MS 39110, US",
+        "supplier_address_normalized": {
+          "city": "Madison",
+          "state": "MS",
+          "postal_code": "39110",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_b1c5de84b794",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "601-499-3300"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Meridian, MS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "6305 St Louis St Meridian, MS 39307, US",
+    "addressComponents": {
+      "city": "Meridian",
+      "state": "MS",
+      "postal_code": "39307",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6305 St Louis St Meridian, MS 39307, US",
+        "supplier_address_normalized": {
+          "city": "Meridian",
+          "state": "MS",
+          "postal_code": "39307",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_986a50508a2d",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "601-678-4000"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Oakland Stamping, Detroit, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1200 Woodland Avenue Detroit, MI 48211, US",
+    "addressComponents": {
+      "city": "Detroit",
+      "state": "MI",
+      "postal_code": "48211",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1200 Woodland Avenue Detroit, MI 48211, US",
+        "supplier_address_normalized": {
+          "city": "Detroit",
+          "state": "MI",
+          "postal_code": "48211",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_bdca8c199c15",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "313-852-3700"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "43955 Plymouth Oaks Boulevard Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "43955 Plymouth Oaks Boulevard Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_99fcaea053d3",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "734-414-3100"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Shepherdsville, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "550 Cedar Grove Road Shepherdsville, KY 40165, US",
+    "addressComponents": {
+      "city": "Shepherdsville",
+      "state": "KY",
+      "postal_code": "40165",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "550 Cedar Grove Road Shepherdsville, KY 40165, US",
+        "supplier_address_normalized": {
+          "city": "Shepherdsville",
+          "state": "KY",
+          "postal_code": "40165",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_4330b5616606",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "502-912-6200"
+    }
+  },
+  {
+    "company": "AUTOKINITON (Technical Center, New Boston, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "17757 Woodland Drive New Boston, MI 48164, US",
+    "addressComponents": {
+      "city": "New Boston",
+      "state": "MI",
+      "postal_code": "48164",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "17757 Woodland Drive New Boston, MI 48164, US",
+        "supplier_address_normalized": {
+          "city": "New Boston",
+          "state": "MI",
+          "postal_code": "48164",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly",
+          "laser cutting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_a04edc82901a",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped and welded metal assemblies",
+      "body-in-white structures"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "body in white"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Hot stamping",
+      "Laser cutting"
+    ],
+    "contactInfo": {
+      "phone": "734-397-6300"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Worldwide HQ & Technical Center, Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1780 Pond Run Auburn Hills, MI 48326, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1780 Pond Run Auburn Hills, MI 48326, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_3f10060710ea",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "lightweight structures",
+      "HMI & actuators",
+      "precision-formed products",
+      "driver control systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "248-299-7500"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Dickson, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Shiloh Drive Dickson, TN 37055, US",
+    "addressComponents": {
+      "city": "Dickson",
+      "state": "TN",
+      "postal_code": "37055",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Shiloh Drive Dickson, TN 37055, US",
+        "supplier_address_normalized": {
+          "city": "Dickson",
+          "state": "TN",
+          "postal_code": "37055",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_c2df49e3c32a",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "stamped assemblies",
+      "cross-car beams",
+      "seating systems",
+      "battery tray brackets"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "615-446-7725"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Goshen, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "910 Eisenhower Dr S Goshen, IN 46526, US",
+    "addressComponents": {
+      "city": "Goshen",
+      "state": "IN",
+      "postal_code": "46526",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "910 Eisenhower Dr S Goshen, IN 46526, US",
+        "supplier_address_normalized": {
+          "city": "Goshen",
+          "state": "IN",
+          "postal_code": "46526",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_c4fbfb5a2693",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "hot stamped products",
+      "suspension systems"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "574-404-9465"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Galesburg, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "9000 E Michigan Ave Galesburg, MI 49053, US",
+    "addressComponents": {
+      "city": "Galesburg",
+      "state": "MI",
+      "postal_code": "49053",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9000 E Michigan Ave Galesburg, MI 49053, US",
+        "supplier_address_normalized": {
+          "city": "Galesburg",
+          "state": "MI",
+          "postal_code": "49053",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_ac2a0ca26864",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "fabricated metal components",
+      "weldments and assemblies",
+      "steering components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "269-692-5844"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Fremont, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "502 Connie Street Fremont, MI 49412-0467, US",
+    "addressComponents": {
+      "city": "Fremont",
+      "state": "MI",
+      "postal_code": "49412-0467",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "502 Connie Street Fremont, MI 49412-0467, US",
+        "supplier_address_normalized": {
+          "city": "Fremont",
+          "state": "MI",
+          "postal_code": "49412-0467",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_c4734302f36b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "shift systems",
+      "HMI & actuation systems",
+      "transfer case shifters"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "231-924-0930"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Valley City, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "880 Steel Drive Valley City, OH 44280, US",
+    "addressComponents": {
+      "city": "Valley City",
+      "state": "OH",
+      "postal_code": "44280",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "880 Steel Drive Valley City, OH 44280, US",
+        "supplier_address_normalized": {
+          "city": "Valley City",
+          "state": "OH",
+          "postal_code": "44280",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_445576f8c66f",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "precision-formed products",
+      "powertrain components",
+      "propulsion driveline"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "248-299-7500"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Wellington, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "350 Maple Street Wellington, OH 44090, US",
+    "addressComponents": {
+      "city": "Wellington",
+      "state": "OH",
+      "postal_code": "44090",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "350 Maple Street Wellington, OH 44090, US",
+        "supplier_address_normalized": {
+          "city": "Wellington",
+          "state": "OH",
+          "postal_code": "44090",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_45d66d2b910e",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "precision-formed products",
+      "body components",
+      "suspension systems",
+      "powertrain components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "248-299-7500"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Lawrenceburg, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2200 Helton Drive Lawrenceburg, TN 38464, US",
+    "addressComponents": {
+      "city": "Lawrenceburg",
+      "state": "TN",
+      "postal_code": "38464",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2200 Helton Drive Lawrenceburg, TN 38464, US",
+        "supplier_address_normalized": {
+          "city": "Lawrenceburg",
+          "state": "TN",
+          "postal_code": "38464",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_00bfd5e28d54",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive component manufacturing"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "931-762-2090"
+    }
+  },
+  {
+    "company": "DURA | Shiloh (Milan, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "5210 Industrial Drive Milan, TN 38358, US",
+    "addressComponents": {
+      "city": "Milan",
+      "state": "TN",
+      "postal_code": "38358",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DURA | Shiloh",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5210 Industrial Drive Milan, TN 38358, US",
+        "supplier_address_normalized": {
+          "city": "Milan",
+          "state": "TN",
+          "postal_code": "38358",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://durashiloh.com",
+    "companyKey": "durashiloh.com",
+    "companyId": "cmp_a631238c7ac2",
+    "locationId": "loc_56e23e1160f9",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive component manufacturing"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "formed products",
+      "assemblies"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "contactInfo": {
+      "phone": "731-686-8900"
+    }
+  },
+  {
+    "company": "Hendrickson (Corporate Office, Woodridge, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "840 South Frontage Road Woodridge, IL 60517-4900, US",
+    "addressComponents": {
+      "city": "Woodridge",
+      "state": "IL",
+      "postal_code": "60517-4900",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "840 South Frontage Road Woodridge, IL 60517-4900, US",
+        "supplier_address_normalized": {
+          "city": "Woodridge",
+          "state": "IL",
+          "postal_code": "60517-4900",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_a02a57be7094",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Truck CVS, Woodridge, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "800 South Frontage Road Woodridge, IL 60517-4904, US",
+    "addressComponents": {
+      "city": "Woodridge",
+      "state": "IL",
+      "postal_code": "60517-4904",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "800 South Frontage Road Woodridge, IL 60517-4904, US",
+        "supplier_address_normalized": {
+          "city": "Woodridge",
+          "state": "IL",
+          "postal_code": "60517-4904",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_3450a231f8d8",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Truck CVS, Dayton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3600 Maywood Ave. Dayton, OH 45417, US",
+    "addressComponents": {
+      "city": "Dayton",
+      "state": "OH",
+      "postal_code": "45417",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3600 Maywood Ave. Dayton, OH 45417, US",
+        "supplier_address_normalized": {
+          "city": "Dayton",
+          "state": "OH",
+          "postal_code": "45417",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_c254e47412a1",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Truck CVS, Kendallville, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "101 South Progress Drive West Kendallville, IN 46755-3262, US",
+    "addressComponents": {
+      "city": "Kendallville",
+      "state": "IN",
+      "postal_code": "46755-3262",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "101 South Progress Drive West Kendallville, IN 46755-3262, US",
+        "supplier_address_normalized": {
+          "city": "Kendallville",
+          "state": "IN",
+          "postal_code": "46755-3262",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_a51859799455",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Truck CVS, Lebanon, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "655 Hendrickson Drive Lebanon, KY 40033-9178, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "KY",
+      "postal_code": "40033-9178",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "655 Hendrickson Drive Lebanon, KY 40033-9178, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "KY",
+          "postal_code": "40033-9178",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_859baf4b6baf",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer CVS, Canton, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2070 Industrial Place SE Canton, OH 44707-2641, US",
+    "addressComponents": {
+      "city": "Canton",
+      "state": "OH",
+      "postal_code": "44707-2641",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2070 Industrial Place SE Canton, OH 44707-2641, US",
+        "supplier_address_normalized": {
+          "city": "Canton",
+          "state": "OH",
+          "postal_code": "44707-2641",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_a1feaf846a5f",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer CVS, Clarksville, TN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "151 International Boulevard Clarksville, TN 37040-5304, US",
+    "addressComponents": {
+      "city": "Clarksville",
+      "state": "TN",
+      "postal_code": "37040-5304",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "151 International Boulevard Clarksville, TN 37040-5304, US",
+        "supplier_address_normalized": {
+          "city": "Clarksville",
+          "state": "TN",
+          "postal_code": "37040-5304",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_8651fa6a3f15",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer CVS, Elizabethtown, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "940 North Black Branch Road Elizabethtown, KY 42701-9800, US",
+    "addressComponents": {
+      "city": "Elizabethtown",
+      "state": "KY",
+      "postal_code": "42701-9800",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "940 North Black Branch Road Elizabethtown, KY 42701-9800, US",
+        "supplier_address_normalized": {
+          "city": "Elizabethtown",
+          "state": "KY",
+          "postal_code": "42701-9800",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_1e42975604e1",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer CVS, Lebanon, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "180 Mount Zion Road Lebanon, IN 46052-8186, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "IN",
+      "postal_code": "46052-8186",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "180 Mount Zion Road Lebanon, IN 46052-8186, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "IN",
+          "postal_code": "46052-8186",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_9971dafd3552",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "Hendrickson (Trailer CVS, Navarre, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4500 Sterilite St. NE Navarre, OH 44662, US",
+    "addressComponents": {
+      "city": "Navarre",
+      "state": "OH",
+      "postal_code": "44662",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hendrickson",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4500 Sterilite St. NE Navarre, OH 44662, US",
+        "supplier_address_normalized": {
+          "city": "Navarre",
+          "state": "OH",
+          "postal_code": "44662",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "chassis component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.hendrickson-intl.com",
+    "companyKey": "hendrickson-intl.com",
+    "companyId": "cmp_1801910e2c13",
+    "locationId": "loc_71eb24e9162b",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "suspension systems",
+      "axles",
+      "commercial vehicle components"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "suspension"
+    ],
+    "supplyChainSubtype": "Chassis systems",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Chassis systems"
+    ]
+  },
+  {
+    "company": "FORVIA (Columbus North, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "601 South Gladstone Ave Columbus, IN 47201, US",
+    "addressComponents": {
+      "city": "Columbus",
+      "state": "IN",
+      "postal_code": "47201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "601 South Gladstone Ave Columbus, IN 47201, US",
+        "supplier_address_normalized": {
+          "city": "Columbus",
+          "state": "IN",
+          "postal_code": "47201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_115c3d98284e",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Columbus R&D, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "950 West 450 South, Tech Center Columbus, IN 47201, US",
+    "addressComponents": {
+      "city": "Columbus",
+      "state": "IN",
+      "postal_code": "47201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "950 West 450 South, Tech Center Columbus, IN 47201, US",
+        "supplier_address_normalized": {
+          "city": "Columbus",
+          "state": "IN",
+          "postal_code": "47201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_1d4063962a12",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Columbus South, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "830 W 450 S Columbus, IN 47203, US",
+    "addressComponents": {
+      "city": "Columbus",
+      "state": "IN",
+      "postal_code": "47203",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "830 W 450 S Columbus, IN 47203, US",
+        "supplier_address_normalized": {
+          "city": "Columbus",
+          "state": "IN",
+          "postal_code": "47203",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_5ba8a76092b1",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Louisville FCM, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "4415 E. Indian Trail Louisville, KY 40213, US",
+    "addressComponents": {
+      "city": "Louisville",
+      "state": "KY",
+      "postal_code": "40213",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4415 E. Indian Trail Louisville, KY 40213, US",
+        "supplier_address_normalized": {
+          "city": "Louisville",
+          "state": "KY",
+          "postal_code": "40213",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_5ee307afab28",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Louisville FIS, KY)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2000 Stanley Gault Parkway, Eastpoint Business Center Louisville, KY 40233, US",
+    "addressComponents": {
+      "city": "Louisville",
+      "state": "KY",
+      "postal_code": "40233",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2000 Stanley Gault Parkway, Eastpoint Business Center Louisville, KY 40233, US",
+        "supplier_address_normalized": {
+          "city": "Louisville",
+          "state": "KY",
+          "postal_code": "40233",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_5f3d3bc81320",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Toledo DMS, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3400 Jeep Parkway Toledo, OH 43657, US",
+    "addressComponents": {
+      "city": "Toledo",
+      "state": "OH",
+      "postal_code": "43657",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3400 Jeep Parkway Toledo, OH 43657, US",
+        "supplier_address_normalized": {
+          "city": "Toledo",
+          "state": "OH",
+          "postal_code": "43657",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_6adee54dde32",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Toledo Techno, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "5225 Telegraph Road Toledo, OH 43612, US",
+    "addressComponents": {
+      "city": "Toledo",
+      "state": "OH",
+      "postal_code": "43612",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5225 Telegraph Road Toledo, OH 43612, US",
+        "supplier_address_normalized": {
+          "city": "Toledo",
+          "state": "OH",
+          "postal_code": "43612",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_c05f339b4f59",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  },
+  {
+    "company": "FORVIA (Troy FCM, OH)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1255 Archer Drive Troy, OH 45373, US",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "OH",
+      "postal_code": "45373",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1255 Archer Drive Troy, OH 45373, US",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "OH",
+          "postal_code": "45373",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "interior module assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_research_expansion"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_ec4f7919ef92",
+    "parentCompanyId": null,
+    "keyProducts": [
+      "automotive systems and modules"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "electronics",
+      "seating"
+    ],
+    "supplyChainSubtype": "Interior modules",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "capabilityTags": [
+      "Assembly",
+      "Interior modules"
+    ]
+  }
+]

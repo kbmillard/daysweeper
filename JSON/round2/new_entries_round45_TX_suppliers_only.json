@@ -1,0 +1,859 @@
+[
+  {
+    "companyId": "cmp_73a5e548f208",
+    "locationId": "loc_3f269b80c793",
+    "company": "Yazaki North America (El Paso, TX)",
+    "parentCompany": "Yazaki Corporation",
+    "parentCompanyId": "cmp_9edb4d4fb68f",
+    "website": "https://www.yazaki-na.com/",
+    "companyKey": "yazaki-na.com",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "12 Leigh Fisher Blvd, El Paso, TX 79906, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79906",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "electrical systems",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Yazaki North America",
+        "parent_company": "Yazaki Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12 Leigh Fisher Blvd, El Paso, TX 79906, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79906",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wiring harnesses",
+          "connectors",
+          "vehicle power and data systems"
+        ],
+        "primary_functions": [
+          "wiring harness systems",
+          "automotive electrical systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "supplier_contacts_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_68cce1ec050b",
+    "locationId": "loc_0b8fabc2f639",
+    "company": "DELFINGEN US (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://delfingen.com/en/",
+    "companyKey": "delfingen.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12270 Rojas Dr Suite 300, El Paso, TX 79936, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79936",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic extrusions",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "cable protection",
+      "plastic profiles",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DELFINGEN US",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12270 Rojas Dr Suite 300, El Paso, TX 79936, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79936",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "cable protection",
+          "tubing",
+          "wire harness protection"
+        ],
+        "primary_functions": [
+          "plastic profile manufacturing",
+          "cable protection components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_68cce1ec050b",
+    "locationId": "loc_9b53bc44f241",
+    "company": "DELFINGEN US (Houston, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://delfingen.com/en/",
+    "companyKey": "delfingen.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2700 Post Oak Blvd Floor 21, Houston, TX 77056, USA",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77056",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic extrusions",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DELFINGEN US",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2700 Post Oak Blvd Floor 21, Houston, TX 77056, USA",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77056",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "cable protection",
+          "fluid transfer tubing"
+        ],
+        "primary_functions": [
+          "regional office",
+          "sales support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d88b24a5e8d9",
+    "locationId": "loc_479d17e09124",
+    "company": "Global Enterprises (El Paso, TX)",
+    "parentCompany": "OKE Group",
+    "parentCompanyId": "cmp_58ffa9d15bb8",
+    "website": "https://www.globalent.org/",
+    "companyKey": "globalent.org",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "6055 Luckett Court, El Paso, TX 79932, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79932",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic extrusions",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming",
+      "Injection molding",
+      "Stamping",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "seating",
+      "interior",
+      "thermoplastic extrusion",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Global Enterprises",
+        "parent_company": "OKE Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6055 Luckett Court, El Paso, TX 79932, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79932",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive seating components",
+          "extruded profiles",
+          "interior trim"
+        ],
+        "primary_functions": [
+          "thermoplastic extrusion",
+          "trim product manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d43c568793b8",
+    "locationId": "loc_0ff2a43da2e7",
+    "company": "CGT U.S. Limited (New Braunfels, TX)",
+    "parentCompany": "Canadian General-Tower Ltd.",
+    "parentCompanyId": null,
+    "website": "https://www.cgtower.com/",
+    "companyKey": "cgtower.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "695 Holcan Drive, New Braunfels, TX 78130, USA",
+    "addressComponents": {
+      "city": "New Braunfels",
+      "state": "TX",
+      "postal_code": "78130",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic extrusions",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Plastic forming"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "polymer films",
+      "coated fabrics",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "CGT U.S. Limited",
+        "parent_company": "Canadian General-Tower Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "695 Holcan Drive, New Braunfels, TX 78130, USA",
+        "supplier_address_normalized": {
+          "city": "New Braunfels",
+          "state": "TX",
+          "postal_code": "78130",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "vinyl coated fabrics",
+          "polymer sheeting",
+          "laminated vinyl"
+        ],
+        "primary_functions": [
+          "polymer film production",
+          "laminated vinyl products"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_3872c54ee6c3",
+    "locationId": "loc_78846a6f0237",
+    "company": "Tower Semiconductor San Antonio, Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://towersemi.com/",
+    "companyKey": "towersemi.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "9651 Westover Hills Blvd, San Antonio, TX 78251, USA",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78251",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "semiconductors",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tower Semiconductor San Antonio, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9651 Westover Hills Blvd, San Antonio, TX 78251, USA",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78251",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "semiconductor wafers",
+          "automotive-grade IC manufacturing"
+        ],
+        "primary_functions": [
+          "semiconductor manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_c01416f8bc14",
+    "locationId": "loc_684ea4a3a8c3",
+    "company": "Qorvo Texas, LLC (Richardson, TX)",
+    "parentCompany": "Qorvo, Inc.",
+    "parentCompanyId": null,
+    "website": "https://www.qorvo.com/",
+    "companyKey": "qorvo.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "500 West Renner Rd, Richardson, TX 75080, USA",
+    "addressComponents": {
+      "city": "Richardson",
+      "state": "TX",
+      "postal_code": "75080",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "semiconductors",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Qorvo Texas, LLC",
+        "parent_company": "Qorvo, Inc.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "500 West Renner Rd, Richardson, TX 75080, USA",
+        "supplier_address_normalized": {
+          "city": "Richardson",
+          "state": "TX",
+          "postal_code": "75080",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "integrated circuits",
+          "semiconductor components"
+        ],
+        "primary_functions": [
+          "semiconductor manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4137bdacc63",
+    "locationId": "loc_c351b19202e1",
+    "company": "Texas Instruments (Dallas, TX) - DFAB/DHC",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://www.ti.com/",
+    "companyKey": "ti.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "13536 N Central Expressway, Dallas, TX 75243, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75243",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "semiconductors",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Texas Instruments (Dallas, TX) - DFAB/DHC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13536 N Central Expressway, Dallas, TX 75243, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75243",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "integrated circuits"
+        ],
+        "primary_functions": [
+          "semiconductor manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4137bdacc63",
+    "locationId": "loc_a8f87a26b6fe",
+    "company": "Texas Instruments (Dallas, TX) - DBUMP/SCT",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://www.ti.com/",
+    "companyKey": "ti.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "13532 N Central Expressway, Dallas, TX 75243, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75243",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "semiconductors",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Texas Instruments (Dallas, TX) - DBUMP/SCT",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13532 N Central Expressway, Dallas, TX 75243, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75243",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "integrated circuits"
+        ],
+        "primary_functions": [
+          "testing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4137bdacc63",
+    "locationId": "loc_7a2219fe84d9",
+    "company": "Texas Instruments (Dallas, TX) - North Campus Support",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://www.ti.com/",
+    "companyKey": "ti.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "13121 TI Blvd, Dallas, TX 75243, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75243",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "semiconductors",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Texas Instruments (Dallas, TX) - North Campus Support",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13121 TI Blvd, Dallas, TX 75243, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75243",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "integrated circuits"
+        ],
+        "primary_functions": [
+          "process design",
+          "engineering",
+          "purchasing",
+          "logistics",
+          "supplier management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4137bdacc63",
+    "locationId": "loc_fd86deb15789",
+    "company": "Texas Instruments (Dallas, TX) - Semiconductor Group HQ South Campus",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "website": "https://www.ti.com/",
+    "companyKey": "ti.com",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12500 TI Blvd, Dallas, TX 75243, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75243",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electronic components",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "semiconductors",
+      "IATF 16949",
+      "tier 2"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Texas Instruments (Dallas, TX) - Semiconductor Group HQ South Campus",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12500 TI Blvd, Dallas, TX 75243, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75243",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "integrated circuits"
+        ],
+        "primary_functions": [
+          "policy making",
+          "strategic planning",
+          "product design",
+          "quality system management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "iatf_certificate_pdf"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "tx_tier12_supplier_sweep_round45"
+      }
+    }
+  }
+]

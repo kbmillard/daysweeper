@@ -1,0 +1,693 @@
+[
+  {
+    "company": "NICHIRIN-FLEX U.S.A., INC. (El Paso, TX)",
+    "parentCompany": "Nichirin Co., Ltd.",
+    "parentCompanyId": "cmp_76774913f739",
+    "companyKey": "name:nichirin-flex-u-s-a-inc|parent:nichirin-co-ltd",
+    "companyId": "cmp_3594845fdfdb",
+    "locationId": "loc_c2e1418c6113",
+    "segment": "USA | TX | El Paso",
+    "tier": "Tier 2",
+    "addressRaw": "9600 Plaza Circle, El Paso, TX 79927, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79927",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.nichirin.co.jp/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Hose assemblies & fittings",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive hoses",
+      "hose manufacturing",
+      "fluid transfer",
+      "Nichirin group",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NICHIRIN-FLEX U.S.A., INC.",
+        "parent_company": "Nichirin Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9600 Plaza Circle, El Paso, TX 79927, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79927",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive hoses",
+          "hose assemblies"
+        ],
+        "primary_functions": [
+          "automotive hose manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "Nichirin ATCO Texas, Inc. (Ferris, TX)",
+    "parentCompany": "Nichirin Co., Ltd.",
+    "parentCompanyId": "cmp_76774913f739",
+    "companyKey": "atcoproductsinc.com",
+    "companyId": "cmp_0c9b092e7e7b",
+    "locationId": "loc_5fd8c01cafd0",
+    "segment": "USA | TX | Ferris",
+    "tier": "Tier 2",
+    "addressRaw": "601 South Interstate Highway 45, Ferris, TX 75125, USA",
+    "addressComponents": {
+      "city": "Ferris",
+      "state": "TX",
+      "postal_code": "75125",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.atcoproductsinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Hose assemblies & fittings",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "A/C fittings",
+      "hose assemblies",
+      "power steering hoses",
+      "coolant tubes",
+      "IATF 16949",
+      "ISO 9001"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nichirin ATCO Texas, Inc.",
+        "parent_company": "Nichirin Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "601 South Interstate Highway 45, Ferris, TX 75125, USA",
+        "supplier_address_normalized": {
+          "city": "Ferris",
+          "state": "TX",
+          "postal_code": "75125",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "A/C fittings",
+          "hose assemblies",
+          "power steering hoses",
+          "coolant tubes"
+        ],
+        "primary_functions": [
+          "hose assembly",
+          "automotive fittings manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "JTEKT Automotive Texas, L.P. (Ennis, TX)",
+    "parentCompany": "JTEKT Corporation",
+    "parentCompanyId": "cmp_9182ddc72c9f",
+    "companyKey": "jtekt-na.com",
+    "companyId": "cmp_c9f42f41a73f",
+    "locationId": "loc_1f71608c17a9",
+    "segment": "USA | TX | Ennis",
+    "tier": "Tier 1",
+    "addressRaw": "4400 Sterilite Drive, Ennis, TX 75119, USA",
+    "addressComponents": {
+      "city": "Ennis",
+      "state": "TX",
+      "postal_code": "75119",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://jtekt-na.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "steering systems",
+      "driveline components",
+      "automotive systems",
+      "JTEKT North America"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "JTEKT Automotive Texas, L.P.",
+        "parent_company": "JTEKT Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4400 Sterilite Drive, Ennis, TX 75119, USA",
+        "supplier_address_normalized": {
+          "city": "Ennis",
+          "state": "TX",
+          "postal_code": "75119",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "steering systems",
+          "driveline components",
+          "wheel hub units"
+        ],
+        "primary_functions": [
+          "steering systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "Kongsberg Automotive (Willis, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "kongsbergautomotive.com",
+    "companyId": "cmp_ad25c05f0377",
+    "locationId": "loc_cb6d7f077462",
+    "segment": "USA | TX | Willis",
+    "tier": "Tier 1",
+    "addressRaw": "300 South Cochran St., Willis, TX 77378, USA",
+    "addressComponents": {
+      "city": "Willis",
+      "state": "TX",
+      "postal_code": "77378",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.kongsbergautomotive.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "drive control systems",
+      "pedals",
+      "hand controls",
+      "stalk shifters",
+      "tech center"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kongsberg Automotive",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "300 South Cochran St., Willis, TX 77378, USA",
+        "supplier_address_normalized": {
+          "city": "Willis",
+          "state": "TX",
+          "postal_code": "77378",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "drive control systems",
+          "pedals and hand controls"
+        ],
+        "primary_functions": [
+          "automotive control systems manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "STEMCO Products Inc. (Longview, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "stemco.com",
+    "companyId": "cmp_850576b61bc5",
+    "locationId": "loc_35d58c2b0fc6",
+    "segment": "USA | TX | Longview",
+    "tier": "Tier 2",
+    "addressRaw": "300 Industrial Drive, Longview, TX 75602, USA",
+    "addressComponents": {
+      "city": "Longview",
+      "state": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.stemco.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined parts",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "wheel end components",
+      "bearings",
+      "seals",
+      "heavy-duty truck",
+      "aftermarket"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "STEMCO Products Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "300 Industrial Drive, Longview, TX 75602, USA",
+        "supplier_address_normalized": {
+          "city": "Longview",
+          "state": "TX",
+          "postal_code": "75602",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wheel end components",
+          "seals",
+          "bearings"
+        ],
+        "primary_functions": [
+          "automotive components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "Stoneridge Distribution (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "stoneridge.com",
+    "companyId": "cmp_c95ffda14c19",
+    "locationId": "loc_573a38ed8cc3",
+    "segment": "USA | TX | El Paso",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "21 Butterfield Trail Blvd Suite A, El Paso, TX 79906, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79906",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "website": "https://www.stoneridge.com/",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "transportation electronics",
+      "distribution center",
+      "commercial vehicle systems"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Stoneridge, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "21 Butterfield Trail Blvd Suite A, El Paso, TX 79906, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79906",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "transportation electronics"
+        ],
+        "primary_functions": [
+          "distribution operations"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "KIRCHHOFF Automotive Dallas Inc. (Garland, TX)",
+    "parentCompany": "KIRCHHOFF Automotive SE",
+    "parentCompanyId": "cmp_707a6d3cec88",
+    "companyKey": "kirchhoff-automotive.com",
+    "companyId": "cmp_707a6d3cec88",
+    "locationId": "loc_1222422fe0c2",
+    "segment": "USA | TX | Garland",
+    "tier": "Tier 1",
+    "addressRaw": "3901 W. Miller Road STE 200, Garland, TX 75041, USA",
+    "addressComponents": {
+      "city": "Garland",
+      "state": "TX",
+      "postal_code": "75041",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.kirchhoff-automotive.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "body structures",
+      "machining",
+      "joining",
+      "IATF 16949",
+      "automotive supplier"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KIRCHHOFF Automotive Dallas Inc.",
+        "parent_company": "KIRCHHOFF Automotive SE",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3901 W. Miller Road STE 200, Garland, TX 75041, USA",
+        "supplier_address_normalized": {
+          "city": "Garland",
+          "state": "TX",
+          "postal_code": "75041",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "metal structural components"
+        ],
+        "primary_functions": [
+          "machining",
+          "joining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "Powerflow Inc. (Mesquite, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "powerflowinc.com",
+    "companyId": "cmp_5518b6b6abd1",
+    "locationId": "loc_44e7b1ab38e7",
+    "segment": "USA | TX | Mesquite",
+    "tier": "Tier 2",
+    "addressRaw": "2800 E. Scyene Road, Mesquite, TX 75181, USA",
+    "addressComponents": {
+      "city": "Mesquite",
+      "state": "TX",
+      "postal_code": "75181",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://powerflowinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "injection molded plastics",
+      "OEM accessory",
+      "Toyota",
+      "Lexus",
+      "Subaru",
+      "Nissan",
+      "GM"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Powerflow Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2800 E. Scyene Road, Mesquite, TX 75181, USA",
+        "supplier_address_normalized": {
+          "city": "Mesquite",
+          "state": "TX",
+          "postal_code": "75181",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "plastic exterior accessories"
+        ],
+        "primary_functions": [
+          "injection molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  },
+  {
+    "company": "UPG Company LLC (Houston, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "upgintl.com",
+    "companyId": "cmp_a6f1e635e409",
+    "locationId": "loc_3af6314b603c",
+    "segment": "USA | TX | Houston",
+    "tier": "Tier 2",
+    "addressRaw": "7865 Northcourt Road, Suite 100, Houston, TX 77040, USA",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77040",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.upgintl.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [
+      "JIT delivery"
+    ],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "precision injection molding",
+      "assemblies",
+      "contract manufacturing",
+      "automotive",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "UPG Company LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7865 Northcourt Road, Suite 100, Houston, TX 77040, USA",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77040",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "plastic parts and assemblies"
+        ],
+        "primary_functions": [
+          "precision injection molding",
+          "assembly",
+          "contract manufacturing"
+        ],
+        "production_characteristics": {
+          "just_in_time": true
+        }
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "web_sweep_round44_TX"
+      }
+    }
+  }
+]

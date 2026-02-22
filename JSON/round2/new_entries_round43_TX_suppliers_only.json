@@ -1,0 +1,770 @@
+[
+  {
+    "company": "Dayton Rogers Manufacturing Co. (Arlington, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "daytonrogers.com",
+    "companyId": "cmp_26308dd8c30e",
+    "locationId": "loc_31a12fa3b1ff",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1107 Commercial Blvd N, Arlington, TX 76001, USA",
+    "addressComponents": {
+      "city": "Arlington",
+      "state": "TX",
+      "postal_code": "76001",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://daytonrogers.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Plating/Coating",
+      "Kitting"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "fabrication",
+      "welding",
+      "machining",
+      "powder coating",
+      "kitting"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dayton Rogers Manufacturing Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1107 Commercial Blvd N, Arlington, TX 76001, USA",
+        "supplier_address_normalized": {
+          "city": "Arlington",
+          "state": "TX",
+          "postal_code": "76001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "fabrication",
+          "welding",
+          "machining",
+          "assembly",
+          "powder coating",
+          "kitting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "Chemplast, Inc. (Stafford, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "chemplastinc.com",
+    "companyId": "cmp_ba07886ce470",
+    "locationId": "loc_dc7e4835f224",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1002 Texas Pkwy, Stafford, TX 77477, USA",
+    "addressComponents": {
+      "city": "Stafford",
+      "state": "TX",
+      "postal_code": "77477",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://chemplastinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Tooling",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "plastic molding",
+      "tooling",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Chemplast, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1002 Texas Pkwy, Stafford, TX 77477, USA",
+        "supplier_address_normalized": {
+          "city": "Stafford",
+          "state": "TX",
+          "postal_code": "77477",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "tooling",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "Cox Manufacturing Company (San Antonio, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "coxmanufacturing.com",
+    "companyId": "cmp_b8cd99d60a14",
+    "locationId": "loc_c785e1e43521",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5500 N Loop 1604 E, San Antonio, TX 78247, USA",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78247",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.coxmanufacturing.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "precision machining",
+      "CNC machining",
+      "screw machining",
+      "turned parts"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cox Manufacturing Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5500 N Loop 1604 E, San Antonio, TX 78247, USA",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78247",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "Cesar-Scott, Inc. (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "cesar-scott.com",
+    "companyId": "cmp_72d7cc56d739",
+    "locationId": "loc_c6248f18c247",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "3300 Lee Trevino Dr Ste 320, El Paso, TX 79936, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79936",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.cesar-scott.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electromechanical assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "cable assembly",
+      "electrical systems",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cesar-Scott, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "3300 Lee Trevino Dr Ste 320, El Paso, TX 79936, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79936",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wire harness assembly",
+          "cable assembly",
+          "electrical assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "USA Harness (Winnsboro, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "name:usa-harness|parent:optronicsinc.com|us",
+    "companyId": "cmp_181f074746fb",
+    "locationId": "loc_e6088c59769a",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "100 Park St, Winnsboro, TX 75494, USA",
+    "addressComponents": {
+      "city": "Winnsboro",
+      "state": "TX",
+      "postal_code": "75494",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.optronicsinc.com/usa_harness/Home.aspx",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electromechanical assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "wiring harness",
+      "trailer harness",
+      "electrical systems"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "USA Harness",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Park St, Winnsboro, TX 75494, USA",
+        "supplier_address_normalized": {
+          "city": "Winnsboro",
+          "state": "TX",
+          "postal_code": "75494",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wiring harness assembly",
+          "electrical assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "ITD Precision (Houston, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "itdprecision.com",
+    "companyId": "cmp_868a0613bc5f",
+    "locationId": "loc_a22b7c3ac341",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "9719 Telge Rd, Houston, TX 77095, USA",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77095",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.itdprecision.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Plating/Coating",
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "e-coating",
+      "insert molding",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ITD Precision",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9719 Telge Rd, Houston, TX 77095, USA",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77095",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "tool & die",
+          "e-coating",
+          "insert molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "Cypress Industries (Dallas, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "cypressindustries.com",
+    "companyId": "cmp_7b5f6dc11569",
+    "locationId": "loc_91a3a2685bb5",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2750 Burbank St, Dallas, TX 75235, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75235",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.cypressindustries.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electromechanical assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "electronics manufacturing",
+      "assembly",
+      "sheet metal"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cypress Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2750 Burbank St, Dallas, TX 75235, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75235",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wire harness assembly",
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "ATROn Group (Dallas, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "atrongroup.com",
+    "companyId": "cmp_e41cc84d87ab",
+    "locationId": "loc_bd2539a10abf",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "9125 Viscount Row, Dallas, TX 75247, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75247",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://atrongroup.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electromechanical assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wiring harness",
+      "cable assembly",
+      "electrical systems",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ATROn Group",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "9125 Viscount Row, Dallas, TX 75247, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75247",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wire harness assembly",
+          "cable assembly",
+          "electrical assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "Keats Manufacturing Co. (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "keatsmfg.com",
+    "companyId": "cmp_9d85981623d6",
+    "locationId": "loc_2cbcbe8e55d9",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "11425 Rojas Dr, El Paso, TX 79936, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79936",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.keatsmfg.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "precision stamping",
+      "metal forming"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Keats Manufacturing Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11425 Rojas Dr, El Paso, TX 79936, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79936",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "metal forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  },
+  {
+    "company": "Agave Wire (Rockwall, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "agavewire.com",
+    "companyId": "cmp_8d0a58522687",
+    "locationId": "loc_88215c3cfd64",
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "2635 Observation Trail, Rockwall, TX 75032, USA",
+    "addressComponents": {
+      "city": "Rockwall",
+      "state": "TX",
+      "postal_code": "75032",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://agavewire.com/",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electrical wire and cable",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire",
+      "cable",
+      "electrical"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Agave Wire",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2635 Observation Trail, Rockwall, TX 75032, USA",
+        "supplier_address_normalized": {
+          "city": "Rockwall",
+          "state": "TX",
+          "postal_code": "75032",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wire and cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round43_tx"
+      }
+    }
+  }
+]

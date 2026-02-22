@@ -1,0 +1,1177 @@
+[
+  {
+    "company": "US Farathane (Austin, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "usfarathane.com",
+    "companyId": "cmp_eae0fa1b0420",
+    "locationId": "loc_4312f934d94b",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "820 W Howard Ln, Austin, TX 78753, USA",
+    "addressComponents": {
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78753",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.usfarathane.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "US Farathane",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "820 W Howard Ln, Austin, TX 78753, USA",
+        "supplier_address_normalized": {
+          "city": "Austin",
+          "state": "TX",
+          "postal_code": "78753",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "US Farathane (Georgetown, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "usfarathane.com",
+    "companyId": "cmp_eae0fa1b0420",
+    "locationId": "loc_138093985204",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "600 FM972, Georgetown, TX 78626, USA",
+    "addressComponents": {
+      "city": "Georgetown",
+      "state": "TX",
+      "postal_code": "78626",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.usfarathane.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "US Farathane",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "600 FM972, Georgetown, TX 78626, USA",
+        "supplier_address_normalized": {
+          "city": "Georgetown",
+          "state": "TX",
+          "postal_code": "78626",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Toyoda Gosei Brownsville Texas, LLC (Los Indios, TX)",
+    "parentCompany": "Toyoda Gosei Co., Ltd.",
+    "parentCompanyId": "cmp_b449e318fbe0",
+    "companyKey": "name:toyoda-gosei-brownsville-texas-llc-los-indios-tx|parent:toyoda-gosei-co-ltd|us",
+    "companyId": "cmp_6ef696b0b29c",
+    "locationId": "loc_d16792fb0427",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "107 Joaquin Cavazos Road, Los Indios, TX 78567, USA",
+    "addressComponents": {
+      "city": "Los Indios",
+      "state": "TX",
+      "postal_code": "78567",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.toyodagosei.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "interior modules",
+      "plastics",
+      "rubber"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyoda Gosei Brownsville Texas, LLC",
+        "parent_company": "Toyoda Gosei Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "107 Joaquin Cavazos Road, Los Indios, TX 78567, USA",
+        "supplier_address_normalized": {
+          "city": "Los Indios",
+          "state": "TX",
+          "postal_code": "78567",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Schaeffler Motion Technologies USA, LLC (Seguin, TX)",
+    "parentCompany": "Schaeffler AG",
+    "parentCompanyId": "cmp_656f9ba446cc",
+    "companyKey": "name:schaeffler-motion-technologies-usa-llc-seguin-tx|parent:schaeffler-ag|us",
+    "companyId": "cmp_1b668833fefc",
+    "locationId": "loc_af87c30950ca",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3740 North Austin Street, Seguin, TX 78155, USA",
+    "addressComponents": {
+      "city": "Seguin",
+      "state": "TX",
+      "postal_code": "78155",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.schaeffler.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Powertrain components"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "mobility"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Schaeffler Motion Technologies USA, LLC",
+        "parent_company": "Schaeffler AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3740 North Austin Street, Seguin, TX 78155, USA",
+        "supplier_address_normalized": {
+          "city": "Seguin",
+          "state": "TX",
+          "postal_code": "78155",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "powertrain components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "CEP Technologies (San Antonio, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "ceptech.net",
+    "companyId": "cmp_8bd28bc96621",
+    "locationId": "loc_4147b3b3af42",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5823 Rittiman Plaza, San Antonio, TX 78218, USA",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78218",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://ceptech.net/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "CEP Technologies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5823 Rittiman Plaza, San Antonio, TX 78218, USA",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78218",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "tool & die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Rave Gears and Machining (Seguin, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "ravegears.com",
+    "companyId": "cmp_0db4f9775082",
+    "locationId": "loc_c2f653591149",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2513 N. Austin Street, Seguin, TX 78155, USA",
+    "addressComponents": {
+      "city": "Seguin",
+      "state": "TX",
+      "postal_code": "78155",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://ravegears.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "gears",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Rave Gears and Machining",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2513 N. Austin Street, Seguin, TX 78155, USA",
+        "supplier_address_normalized": {
+          "city": "Seguin",
+          "state": "TX",
+          "postal_code": "78155",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Larsen Manufacturing (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "larsenmfg.com",
+    "companyId": "cmp_361c63921288",
+    "locationId": "loc_864d1279c864",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12150 Rojas Drive Suite E, El Paso, TX 79936, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79936",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://larsenmfg.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped and welded metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal fabrication",
+      "stamping",
+      "welding",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Larsen Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12150 Rojas Drive Suite E, El Paso, TX 79936, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79936",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Royal Technologies (Mission, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "royaltechnologies.com",
+    "companyId": "cmp_6167c98a91ac",
+    "locationId": "loc_d163dd6f027d",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1200 Trinity Dr, Mission, TX 78572, USA",
+    "addressComponents": {
+      "city": "Mission",
+      "state": "TX",
+      "postal_code": "78572",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.royaltechnologies.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Royal Technologies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1200 Trinity Dr, Mission, TX 78572, USA",
+        "supplier_address_normalized": {
+          "city": "Mission",
+          "state": "TX",
+          "postal_code": "78572",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "New Metals Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "newmetalsinc.com",
+    "companyId": "cmp_4530d68de5b7",
+    "locationId": "loc_dcee2e2a3edd",
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "2105 Lantana Dr, San Antonio, TX 78217, USA",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78217",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://newmetalsinc.com/",
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal service center",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Metal processing"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "steel",
+      "aluminum",
+      "service center"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "New Metals Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2105 Lantana Dr, San Antonio, TX 78217, USA",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78217",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal processing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Stewart EFI Texas, LLC (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "stewartefi.com",
+    "companyId": "cmp_5219496ef541",
+    "locationId": "loc_d1f0f226e986",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "27 Leigh Fisher Blvd, El Paso, TX 79906, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79906",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.stewartefi.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "engineered fastening solutions"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Stewart EFI Texas, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "27 Leigh Fisher Blvd, El Paso, TX 79906, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79906",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "tool & die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Capsonic (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "capsonic.com",
+    "companyId": "cmp_47e0d25fabf9",
+    "locationId": "loc_60d66bdb980c",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "7B Zane Grey St, El Paso, TX 79906, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79906",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.capsonic.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electromechanical assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly",
+      "Injection molding",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electromechanical",
+      "insert molding",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Capsonic",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7B Zane Grey St, El Paso, TX 79906, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79906",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "injection molding",
+          "electrical systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Seal Methods Inc. (San Marcos, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "seal-methods.com",
+    "companyId": "cmp_a7b459c6b2af",
+    "locationId": "loc_ef47918bfd8e",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "330 Industrial Blvd, San Marcos, TX 78666, USA",
+    "addressComponents": {
+      "city": "San Marcos",
+      "state": "TX",
+      "postal_code": "78666",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://seal-methods.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Seals and gaskets",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Sealing",
+      "Gaskets"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sealing",
+      "OEM"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Seal Methods Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "330 Industrial Blvd, San Marcos, TX 78666, USA",
+        "supplier_address_normalized": {
+          "city": "San Marcos",
+          "state": "TX",
+          "postal_code": "78666",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sealing",
+          "gaskets"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Standard Motor Products - Temperature Control (Lewisville, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "smpcorp.com",
+    "companyId": "cmp_257ebc8922d0",
+    "locationId": "loc_e1a5302cef72",
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1801 Waters Ridge Drive, Lewisville, TX 75057, USA",
+    "addressComponents": {
+      "city": "Lewisville",
+      "state": "TX",
+      "postal_code": "75057",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.smpcorp.com/",
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Service parts and distribution",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Aftermarket distribution"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "aftermarket",
+      "distribution"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Standard Motor Products - Temperature Control",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1801 Waters Ridge Drive, Lewisville, TX 75057, USA",
+        "supplier_address_normalized": {
+          "city": "Lewisville",
+          "state": "TX",
+          "postal_code": "75057",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aftermarket distribution"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Summit Plastic Molding (Horizon City, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "summitplasticmolding.com",
+    "companyId": "cmp_9646ddf67685",
+    "locationId": "loc_76ab37a21ef0",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "201A Darrington Rd, Horizon City, TX 79928, USA",
+    "addressComponents": {
+      "city": "Horizon City",
+      "state": "TX",
+      "postal_code": "79928",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://summitplasticmolding.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "plastics",
+      "injection molding",
+      "tool shop"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Summit Plastic Molding",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201A Darrington Rd, Horizon City, TX 79928, USA",
+        "supplier_address_normalized": {
+          "city": "Horizon City",
+          "state": "TX",
+          "postal_code": "79928",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "tooling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "ITD Precision (Harlingen, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "itdprecision.com",
+    "companyId": "cmp_868a0613bc5f",
+    "locationId": "loc_f39c58da7ce1",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "818 FM 509, Harlingen, TX 78550, USA",
+    "addressComponents": {
+      "city": "Harlingen",
+      "state": "TX",
+      "postal_code": "78550",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.itdprecision.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ITD Precision",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "818 FM 509, Harlingen, TX 78550, USA",
+        "supplier_address_normalized": {
+          "city": "Harlingen",
+          "state": "TX",
+          "postal_code": "78550",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "tool & die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  },
+  {
+    "company": "Luminator Technology Group (Plano, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "luminator.com",
+    "companyId": "cmp_6ddd866f91d8",
+    "locationId": "loc_b8808cd2e8ec",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "900 Klein Road, Plano, TX 75074, USA",
+    "addressComponents": {
+      "city": "Plano",
+      "state": "TX",
+      "postal_code": "75074",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://luminator.com/en-us/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Vehicle lighting & electronics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electronics manufacturing",
+      "Lighting assembly",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "lighting",
+      "electronics",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Luminator Technology Group",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "900 Klein Road, Plano, TX 75074, USA",
+        "supplier_address_normalized": {
+          "city": "Plano",
+          "state": "TX",
+          "postal_code": "75074",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "lighting assembly",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round41_tx"
+      }
+    }
+  }
+]

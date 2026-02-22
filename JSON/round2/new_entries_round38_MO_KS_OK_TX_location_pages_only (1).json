@@ -1,0 +1,1568 @@
+[
+  {
+    "company": "48forty Solutions (Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "14300 NE 41st St, Suite 300, Kansas City, MO 64161, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64161",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "14300 NE 41st St, Suite 300, Kansas City, MO 64161, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64161",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_22f192510610",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Springfield, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1012 North Farm Rd 123, Springfield, MO 65802, US",
+    "addressComponents": {
+      "city": "Springfield",
+      "state": "MO",
+      "postal_code": "65802",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1012 North Farm Rd 123, Springfield, MO 65802, US",
+        "supplier_address_normalized": {
+          "city": "Springfield",
+          "state": "MO",
+          "postal_code": "65802",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_362542b12b4b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (St. Louis, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "4232 Planned Industrial Drive, St. Louis, MO 63120, US",
+    "addressComponents": {
+      "city": "St. Louis",
+      "state": "MO",
+      "postal_code": "63120",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4232 Planned Industrial Drive, St. Louis, MO 63120, US",
+        "supplier_address_normalized": {
+          "city": "St. Louis",
+          "state": "MO",
+          "postal_code": "63120",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_12e63a649aff",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Amarillo, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "13001 NE 29th, Amarillo, TX 79111, US",
+    "addressComponents": {
+      "city": "Amarillo",
+      "state": "TX",
+      "postal_code": "79111",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13001 NE 29th, Amarillo, TX 79111, US",
+        "supplier_address_normalized": {
+          "city": "Amarillo",
+          "state": "TX",
+          "postal_code": "79111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_57780bfaea4a",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Dallas, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2805 Mican Drive, Dallas, TX 75212, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75212",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2805 Mican Drive, Dallas, TX 75212, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75212",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_61177afcaceb",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Houston, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "4847 Blaffer Street, Houston, TX 77026, US",
+    "addressComponents": {
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77026",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4847 Blaffer Street, Houston, TX 77026, US",
+        "supplier_address_normalized": {
+          "city": "Houston",
+          "state": "TX",
+          "postal_code": "77026",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_53beaadb7619",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Irving, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2330 E. Union Bower Road, Irving, TX 75061, US",
+    "addressComponents": {
+      "city": "Irving",
+      "state": "TX",
+      "postal_code": "75061",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2330 E. Union Bower Road, Irving, TX 75061, US",
+        "supplier_address_normalized": {
+          "city": "Irving",
+          "state": "TX",
+          "postal_code": "75061",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_a3155ee92b60",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (Lubbock, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "7507 Spur 331, Lubbock, TX 79404, US",
+    "addressComponents": {
+      "city": "Lubbock",
+      "state": "TX",
+      "postal_code": "79404",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7507 Spur 331, Lubbock, TX 79404, US",
+        "supplier_address_normalized": {
+          "city": "Lubbock",
+          "state": "TX",
+          "postal_code": "79404",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_f1c1885ef45b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5250 Tacco Drive, San Antonio, TX 78244, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78244",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5250 Tacco Drive, San Antonio, TX 78244, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78244",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_889c3dd92c7c",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "48forty Solutions (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "514 Merida Street, San Antonio, TX 78207, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78207",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "514 Merida Street, San Antonio, TX 78207, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78207",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_2cc9db712c1b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Dallas, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3636 Dan Morton Drive, Dallas, TX 75236, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75236",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3636 Dan Morton Drive, Dallas, TX 75236, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75236",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_3602d9dee1cd",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Dallas - Ledbetter, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5623 W Ledbetter Dr, Dallas, TX 75236, US",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75236",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5623 W Ledbetter Dr, Dallas, TX 75236, US",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75236",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_45d446373efd",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Alvarado, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3532 S Burleson Blvd, Alvarado, TX 76009, US",
+    "addressComponents": {
+      "city": "Alvarado",
+      "state": "TX",
+      "postal_code": "76009",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3532 S Burleson Blvd, Alvarado, TX 76009, US",
+        "supplier_address_normalized": {
+          "city": "Alvarado",
+          "state": "TX",
+          "postal_code": "76009",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_20e2c6aa8e3b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Quala (Wichita, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5951 N. Prospect Road, Wichita, KS 67204, US",
+    "addressComponents": {
+      "city": "Wichita",
+      "state": "KS",
+      "postal_code": "67204",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5951 N. Prospect Road, Wichita, KS 67204, US",
+        "supplier_address_normalized": {
+          "city": "Wichita",
+          "state": "KS",
+          "postal_code": "67204",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_384ad141adbf",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Joplin, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3320 E. 29th Street, Joplin, MO 64804, US",
+    "addressComponents": {
+      "city": "Joplin",
+      "state": "MO",
+      "postal_code": "64804",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3320 E. 29th Street, Joplin, MO 64804, US",
+        "supplier_address_normalized": {
+          "city": "Joplin",
+          "state": "MO",
+          "postal_code": "64804",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_30c9962d6f60",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2650 Shull Avenue, Oklahoma City, OK 73111, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73111",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2650 Shull Avenue, Oklahoma City, OK 73111, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_afd2bbd27e9c",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Wilmer, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2012 North Goode Rd, Wilmer, TX 75172, US",
+    "addressComponents": {
+      "city": "Wilmer",
+      "state": "TX",
+      "postal_code": "75172",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2012 North Goode Rd, Wilmer, TX 75172, US",
+        "supplier_address_normalized": {
+          "city": "Wilmer",
+          "state": "TX",
+          "postal_code": "75172",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_927bcccb2170",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Saginaw, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "700 E. Minton Road, Saginaw, TX 76179, US",
+    "addressComponents": {
+      "city": "Saginaw",
+      "state": "TX",
+      "postal_code": "76179",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "700 E. Minton Road, Saginaw, TX 76179, US",
+        "supplier_address_normalized": {
+          "city": "Saginaw",
+          "state": "TX",
+          "postal_code": "76179",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_667da69e03bf",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Baytown, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "11603 I-10, Baytown, TX 77523, US",
+    "addressComponents": {
+      "city": "Baytown",
+      "state": "TX",
+      "postal_code": "77523",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11603 I-10, Baytown, TX 77523, US",
+        "supplier_address_normalized": {
+          "city": "Baytown",
+          "state": "TX",
+          "postal_code": "77523",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_9b60bd5f093f",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  },
+  {
+    "company": "Quala (Baytown, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3018 N. Alexander Drive, Baytown, TX 77520, US",
+    "addressComponents": {
+      "city": "Baytown",
+      "state": "TX",
+      "postal_code": "77520",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3018 N. Alexander Drive, Baytown, TX 77520, US",
+        "supplier_address_normalized": {
+          "city": "Baytown",
+          "state": "TX",
+          "postal_code": "77520",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round38_location_pages"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_b639a2a16036",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ]
+  }
+]

@@ -1,0 +1,2268 @@
+[
+  {
+    "companyId": "cmp_bf91a5604504",
+    "companyKey": "trianglerubber.com",
+    "locationId": "loc_589a1e5adf03",
+    "company": "Triangle Rubber & Plastics (Goshen, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Goshen, IN",
+    "tier": "Tier 2",
+    "addressRaw": "1924 Elkhart Rd, Goshen, IN 46526, USA",
+    "addressComponents": {
+      "city": "Goshen",
+      "state": "IN",
+      "postal_code": "46526",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://trianglerubber.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "capabilityTags": [
+      "Rubber components",
+      "Injection molding",
+      "Plastic forming",
+      "Sealing"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "rubber",
+      "plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Triangle Rubber & Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1924 Elkhart Rd, Goshen, IN 46526, USA",
+        "supplier_address_normalized": {
+          "city": "Goshen",
+          "state": "IN",
+          "postal_code": "46526",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber & plastics manufacturing",
+          "injection molding",
+          "automotive components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_bf91a5604504",
+    "companyKey": "trianglerubber.com",
+    "locationId": "loc_ada17ba756f9",
+    "company": "Triangle Rubber & Plastics (Goshen, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Goshen, IN",
+    "tier": "Tier 2",
+    "addressRaw": "1801 Eisenhower Dr North, Goshen, IN 46526, USA",
+    "addressComponents": {
+      "city": "Goshen",
+      "state": "IN",
+      "postal_code": "46526",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://trianglerubber.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "capabilityTags": [
+      "Rubber components",
+      "Injection molding",
+      "Plastic forming",
+      "Sealing"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "rubber",
+      "plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Triangle Rubber & Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1801 Eisenhower Dr North, Goshen, IN 46526, USA",
+        "supplier_address_normalized": {
+          "city": "Goshen",
+          "state": "IN",
+          "postal_code": "46526",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber & plastics manufacturing",
+          "injection molding",
+          "automotive components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_bf91a5604504",
+    "companyKey": "trianglerubber.com",
+    "locationId": "loc_730fb4b374dd",
+    "company": "Triangle Rubber & Plastics (Elkhart, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Elkhart, IN",
+    "tier": "Tier 2",
+    "addressRaw": "5333 East Beck Dr, Elkhart, IN 46516, USA",
+    "addressComponents": {
+      "city": "Elkhart",
+      "state": "IN",
+      "postal_code": "46516",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://trianglerubber.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "capabilityTags": [
+      "Rubber components",
+      "Injection molding",
+      "Plastic forming",
+      "Sealing"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "rubber",
+      "plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Triangle Rubber & Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5333 East Beck Dr, Elkhart, IN 46516, USA",
+        "supplier_address_normalized": {
+          "city": "Elkhart",
+          "state": "IN",
+          "postal_code": "46516",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber & plastics manufacturing",
+          "injection molding",
+          "automotive components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_cd05b8d1c06a",
+    "companyKey": "trimlok.com",
+    "locationId": "loc_a7ad745b28c7",
+    "company": "Trim-Lok Midwest (Elkhart, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Elkhart, IN",
+    "tier": "Tier 2",
+    "addressRaw": "5540 Beck Drive, Elkhart, IN 46516, USA",
+    "addressComponents": {
+      "city": "Elkhart",
+      "state": "IN",
+      "postal_code": "46516",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.trimlok.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Rubber & plastic seals",
+    "capabilityTags": [
+      "Sealing",
+      "Plastic extrusions",
+      "Rubber components"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "seals",
+      "trim",
+      "extrusions",
+      "rubber",
+      "plastics"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Trim-Lok Midwest",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5540 Beck Drive, Elkhart, IN 46516, USA",
+        "supplier_address_normalized": {
+          "city": "Elkhart",
+          "state": "IN",
+          "postal_code": "46516",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber & plastic seals",
+          "extrusion",
+          "trim and sealing components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_a28748fcb45f",
+    "companyKey": "cts.com",
+    "locationId": "loc_e3a347dc2256",
+    "company": "CTS Corporation (Elkhart, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Elkhart, IN",
+    "tier": "Tier 2",
+    "addressRaw": "905 West Blvd, Elkhart, IN 46514, USA",
+    "addressComponents": {
+      "city": "Elkhart",
+      "state": "IN",
+      "postal_code": "46514",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.cts.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sensors (component-level)",
+    "capabilityTags": [
+      "Electrical systems",
+      "Electronic components"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "sensors",
+      "electronics",
+      "components"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "CTS Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "905 West Blvd, Elkhart, IN 46514, USA",
+        "supplier_address_normalized": {
+          "city": "Elkhart",
+          "state": "IN",
+          "postal_code": "46514",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electronics manufacturing",
+          "sensors (component-level)"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_4c93dbe7ebd3",
+    "companyKey": "die-matic.com",
+    "locationId": "loc_d6c521db496c",
+    "company": "Die-Matic (Brooklyn Heights, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Brooklyn Heights, OH",
+    "tier": "Tier 2",
+    "addressRaw": "201 Eastview Dr, Brooklyn Heights, OH 44131, USA",
+    "addressComponents": {
+      "city": "Brooklyn Heights",
+      "state": "OH",
+      "postal_code": "44131",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.die-matic.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Die-Matic",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201 Eastview Dr, Brooklyn Heights, OH 44131, USA",
+        "supplier_address_normalized": {
+          "city": "Brooklyn Heights",
+          "state": "OH",
+          "postal_code": "44131",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "tool & die",
+          "fabrication"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_31d0871648ca",
+    "companyKey": "freewaycorp.com",
+    "locationId": "loc_df9287141ee9",
+    "company": "Freeway Corporation (Cleveland, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Cleveland, OH",
+    "tier": "Tier 2",
+    "addressRaw": "9301 Allen Drive, Cleveland, OH 44125, USA",
+    "addressComponents": {
+      "city": "Cleveland",
+      "state": "OH",
+      "postal_code": "44125",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://freewaycorp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping & fabrication",
+    "capabilityTags": [
+      "Stamping",
+      "Metal forming",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "washers",
+      "stampings",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Freeway Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9301 Allen Drive, Cleveland, OH 44125, USA",
+        "supplier_address_normalized": {
+          "city": "Cleveland",
+          "state": "OH",
+          "postal_code": "44125",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "fabrication",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_a4b41f612355",
+    "companyKey": "trianglemachprod.com",
+    "locationId": "loc_a2c9b34f3e7c",
+    "company": "Triangle Machine Products (Valley View, OH)",
+    "parentCompany": "Freeway Corporation",
+    "parentCompanyId": "cmp_31d0871648ca",
+    "segment": "USA | OH | Valley View, OH",
+    "tier": "Tier 2",
+    "addressRaw": "6055 Hillcrest Drive, Valley View, OH 44125, USA",
+    "addressComponents": {
+      "city": "Valley View",
+      "state": "OH",
+      "postal_code": "44125",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://trianglemachprod.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined parts",
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "cnc turning",
+      "machining",
+      "precision turned components"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Triangle Machine Products",
+        "parent_company": "Freeway Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6055 Hillcrest Drive, Valley View, OH 44125, USA",
+        "supplier_address_normalized": {
+          "city": "Valley View",
+          "state": "OH",
+          "postal_code": "44125",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision machining",
+          "CNC turning",
+          "machined components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2ed73a24af97",
+    "companyKey": "iceindustries.com",
+    "locationId": "loc_9224dbee4b1c",
+    "company": "Ice Industries (Sylvania, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Sylvania, OH",
+    "tier": "Tier 2",
+    "addressRaw": "3810 Herr Road, Sylvania, OH 43560, USA",
+    "addressComponents": {
+      "city": "Sylvania",
+      "state": "OH",
+      "postal_code": "43560",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.iceindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Metal forming",
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal forming",
+      "deep draw",
+      "roll forming",
+      "stamping"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ice Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3810 Herr Road, Sylvania, OH 43560, USA",
+        "supplier_address_normalized": {
+          "city": "Sylvania",
+          "state": "OH",
+          "postal_code": "43560",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal forming",
+          "stamping",
+          "roll forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2ed73a24af97",
+    "companyKey": "iceindustries.com",
+    "locationId": "loc_ff920fb3ae86",
+    "company": "Ice Industries (Bowling Green, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Bowling Green, OH",
+    "tier": "Tier 2",
+    "addressRaw": "333 Van Camp Road, Bowling Green, OH 43402, USA",
+    "addressComponents": {
+      "city": "Bowling Green",
+      "state": "OH",
+      "postal_code": "43402",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.iceindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Metal forming",
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal forming",
+      "deep draw",
+      "roll forming",
+      "stamping"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ice Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "333 Van Camp Road, Bowling Green, OH 43402, USA",
+        "supplier_address_normalized": {
+          "city": "Bowling Green",
+          "state": "OH",
+          "postal_code": "43402",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal forming",
+          "stamping",
+          "roll forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2ed73a24af97",
+    "companyKey": "iceindustries.com",
+    "locationId": "loc_5ac742dc21e7",
+    "company": "Ice Industries (Toledo, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Toledo, OH",
+    "tier": "Tier 2",
+    "addressRaw": "2345 S. Byrne Road, Toledo, OH 43614, USA",
+    "addressComponents": {
+      "city": "Toledo",
+      "state": "OH",
+      "postal_code": "43614",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.iceindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Metal forming",
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal forming",
+      "deep draw",
+      "roll forming",
+      "stamping"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ice Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2345 S. Byrne Road, Toledo, OH 43614, USA",
+        "supplier_address_normalized": {
+          "city": "Toledo",
+          "state": "OH",
+          "postal_code": "43614",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal forming",
+          "stamping",
+          "roll forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2ed73a24af97",
+    "companyKey": "iceindustries.com",
+    "locationId": "loc_4f58ac4444df",
+    "company": "Ice Industries Deerfield (Mason, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Mason, OH",
+    "tier": "Tier 2",
+    "addressRaw": "320 N. Mason-Montgomery Road, Mason, OH 45040, USA",
+    "addressComponents": {
+      "city": "Mason",
+      "state": "OH",
+      "postal_code": "45040",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.iceindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Metal forming",
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal forming",
+      "deep draw",
+      "roll forming",
+      "stamping"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ice Industries Deerfield",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "320 N. Mason-Montgomery Road, Mason, OH 45040, USA",
+        "supplier_address_normalized": {
+          "city": "Mason",
+          "state": "OH",
+          "postal_code": "45040",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal forming",
+          "stamping",
+          "roll forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d3f294b18854",
+    "companyKey": "nissinoh.com",
+    "locationId": "loc_0837d327ebf4",
+    "company": "Nissin Precision North America (Englewood, OH)",
+    "parentCompany": "Nissin (Japan)",
+    "parentCompanyId": "cmp_617f6c19badc",
+    "segment": "USA | OH | Englewood, OH",
+    "tier": "Tier 2",
+    "addressRaw": "375 Union Blvd, Englewood, OH 45322, USA",
+    "addressComponents": {
+      "city": "Englewood",
+      "state": "OH",
+      "postal_code": "45322",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://nissinoh.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping & assemblies",
+    "capabilityTags": [
+      "Stamping",
+      "Tooling",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision stamping",
+      "tooling",
+      "washing",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nissin Precision North America",
+        "parent_company": "Nissin (Japan)",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "375 Union Blvd, Englewood, OH 45322, USA",
+        "supplier_address_normalized": {
+          "city": "Englewood",
+          "state": "OH",
+          "postal_code": "45322",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision stamping",
+          "tooling",
+          "assembly",
+          "parts washing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "footer_address"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4dc9f1c9b40",
+    "companyKey": "pennex.com",
+    "locationId": "loc_ba2ec0b7894a",
+    "company": "Pennex (York, PA)",
+    "parentCompany": "MX Holdings",
+    "parentCompanyId": "cmp_aa14b60409a1",
+    "segment": "USA | PA | York, PA",
+    "tier": "Tier 2",
+    "addressRaw": "2205 Pennsylvania Avenue, York, PA 17404, USA",
+    "addressComponents": {
+      "city": "York",
+      "state": "PA",
+      "postal_code": "17404",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pennex.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "casting",
+      "extrusion",
+      "fabrication",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pennex",
+        "parent_company": "MX Holdings",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2205 Pennsylvania Avenue, York, PA 17404, USA",
+        "supplier_address_normalized": {
+          "city": "York",
+          "state": "PA",
+          "postal_code": "17404",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum casting",
+          "extrusion",
+          "fabrication",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4dc9f1c9b40",
+    "companyKey": "pennex.com",
+    "locationId": "loc_3fab9a2ec91c",
+    "company": "Pennex (Greenville, PA)",
+    "parentCompany": "MX Holdings",
+    "parentCompanyId": "cmp_aa14b60409a1",
+    "segment": "USA | PA | Greenville, PA",
+    "tier": "Tier 2",
+    "addressRaw": "93 Werner Rd, Greenville, PA 16125, USA",
+    "addressComponents": {
+      "city": "Greenville",
+      "state": "PA",
+      "postal_code": "16125",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pennex.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "casting",
+      "extrusion",
+      "fabrication",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pennex",
+        "parent_company": "MX Holdings",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "93 Werner Rd, Greenville, PA 16125, USA",
+        "supplier_address_normalized": {
+          "city": "Greenville",
+          "state": "PA",
+          "postal_code": "16125",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum casting",
+          "extrusion",
+          "fabrication",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4dc9f1c9b40",
+    "companyKey": "pennex.com",
+    "locationId": "loc_e8021ccd20e8",
+    "company": "Pennex (Wellsville, PA)",
+    "parentCompany": "MX Holdings",
+    "parentCompanyId": "cmp_aa14b60409a1",
+    "segment": "USA | PA | Wellsville, PA",
+    "tier": "Tier 2",
+    "addressRaw": "1075 E. Maple Street, Wellsville, PA 17365, USA",
+    "addressComponents": {
+      "city": "Wellsville",
+      "state": "PA",
+      "postal_code": "17365",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pennex.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "casting",
+      "extrusion",
+      "fabrication",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pennex",
+        "parent_company": "MX Holdings",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1075 E. Maple Street, Wellsville, PA 17365, USA",
+        "supplier_address_normalized": {
+          "city": "Wellsville",
+          "state": "PA",
+          "postal_code": "17365",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum casting",
+          "extrusion",
+          "fabrication",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d4dc9f1c9b40",
+    "companyKey": "pennex.com",
+    "locationId": "loc_c4e1daeda284",
+    "company": "Pennex (Leetonia, OH)",
+    "parentCompany": "MX Holdings",
+    "parentCompanyId": "cmp_aa14b60409a1",
+    "segment": "USA | OH | Leetonia, OH",
+    "tier": "Tier 2",
+    "addressRaw": "1 Commerce Avenue, Leetonia, OH 44431, USA",
+    "addressComponents": {
+      "city": "Leetonia",
+      "state": "OH",
+      "postal_code": "44431",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pennex.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "casting",
+      "extrusion",
+      "fabrication",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pennex",
+        "parent_company": "MX Holdings",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Commerce Avenue, Leetonia, OH 44431, USA",
+        "supplier_address_normalized": {
+          "city": "Leetonia",
+          "state": "OH",
+          "postal_code": "44431",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum casting",
+          "extrusion",
+          "fabrication",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_b6703df411b7",
+    "companyKey": "weiss-aug.com",
+    "locationId": "loc_2a57d568fcdd",
+    "company": "Weiss-Aug (New Kensington, PA)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | PA | New Kensington, PA",
+    "tier": "Tier 2",
+    "addressRaw": "148 Prominence Drive, New Kensington, PA 15068, USA",
+    "addressComponents": {
+      "city": "New Kensington",
+      "state": "PA",
+      "postal_code": "15068",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://weiss-aug.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Machining",
+      "Stamping",
+      "Tool & Die",
+      "Assembly",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision metal stamping",
+      "precision machining",
+      "tool & die",
+      "assembly",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Weiss-Aug",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "148 Prominence Drive, New Kensington, PA 15068, USA",
+        "supplier_address_normalized": {
+          "city": "New Kensington",
+          "state": "PA",
+          "postal_code": "15068",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision machining",
+          "precision metal stamping",
+          "tool & die",
+          "assembly",
+          "injection molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_b6703df411b7",
+    "companyKey": "weiss-aug.com",
+    "locationId": "loc_c991e4f8f803",
+    "company": "Weiss-Aug Precision Tech (New Kensington, PA)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | PA | New Kensington, PA",
+    "tier": "Tier 2",
+    "addressRaw": "550 Hunt Valley Rd, New Kensington, PA 15068, USA",
+    "addressComponents": {
+      "city": "New Kensington",
+      "state": "PA",
+      "postal_code": "15068",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://weiss-aug.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "capabilityTags": [
+      "Machining",
+      "Stamping",
+      "Tool & Die",
+      "Assembly",
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision metal stamping",
+      "precision machining",
+      "tool & die",
+      "assembly",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Weiss-Aug Precision Tech",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "550 Hunt Valley Rd, New Kensington, PA 15068, USA",
+        "supplier_address_normalized": {
+          "city": "New Kensington",
+          "state": "PA",
+          "postal_code": "15068",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision machining",
+          "precision metal stamping",
+          "tool & die",
+          "assembly",
+          "injection molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_86810fac57ef",
+    "companyKey": "phbcorp.com",
+    "locationId": "loc_0baa85d5b80c",
+    "company": "PHB Inc. (Fairview, PA)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | PA | Fairview, PA",
+    "tier": "Tier 2",
+    "addressRaw": "7900 West Ridge Rd, Fairview, PA 16415, USA",
+    "addressComponents": {
+      "city": "Fairview",
+      "state": "PA",
+      "postal_code": "16415",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.phbcorp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum die casting",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum die casting",
+      "zinc die casting",
+      "cnc machining",
+      "tool and die"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PHB Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7900 West Ridge Rd, Fairview, PA 16415, USA",
+        "supplier_address_normalized": {
+          "city": "Fairview",
+          "state": "PA",
+          "postal_code": "16415",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum die casting",
+          "zinc die casting",
+          "cnc machining",
+          "tool and die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "footer_locations"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_86810fac57ef",
+    "companyKey": "phbcorp.com",
+    "locationId": "loc_c547a2f3a94d",
+    "company": "PHB Machining & Molding (Fairview, PA)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | PA | Fairview, PA",
+    "tier": "Tier 2",
+    "addressRaw": "8150 West Ridge Rd, Fairview, PA 16415, USA",
+    "addressComponents": {
+      "city": "Fairview",
+      "state": "PA",
+      "postal_code": "16415",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.phbcorp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum die casting",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum die casting",
+      "zinc die casting",
+      "cnc machining",
+      "tool and die"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PHB Machining & Molding",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8150 West Ridge Rd, Fairview, PA 16415, USA",
+        "supplier_address_normalized": {
+          "city": "Fairview",
+          "state": "PA",
+          "postal_code": "16415",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum die casting",
+          "zinc die casting",
+          "cnc machining",
+          "tool and die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "footer_locations"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_86810fac57ef",
+    "companyKey": "phbcorp.com",
+    "locationId": "loc_a4a263a76448",
+    "company": "REDDOG Industries (Erie, PA)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | PA | Erie, PA",
+    "tier": "Tier 2",
+    "addressRaw": "2012 East 33rd St, Erie, PA 16510, USA",
+    "addressComponents": {
+      "city": "Erie",
+      "state": "PA",
+      "postal_code": "16510",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.phbcorp.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum die casting",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum die casting",
+      "zinc die casting",
+      "cnc machining",
+      "tool and die"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "REDDOG Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2012 East 33rd St, Erie, PA 16510, USA",
+        "supplier_address_normalized": {
+          "city": "Erie",
+          "state": "PA",
+          "postal_code": "16510",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum die casting",
+          "zinc die casting",
+          "cnc machining",
+          "tool and die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "footer_locations"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_90036902c187",
+    "companyKey": "hydro.com",
+    "locationId": "loc_6e14a9af3760",
+    "company": "Hydro Extrusions (North Liberty, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | North Liberty, IN",
+    "tier": "Tier 2",
+    "addressRaw": "5900 S. Range Road, North Liberty, IN 46554, USA",
+    "addressComponents": {
+      "city": "North Liberty",
+      "state": "IN",
+      "postal_code": "46554",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hydro.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Metal processing",
+      "Machining",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "extrusion",
+      "machining",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hydro Extrusions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5900 S. Range Road, North Liberty, IN 46554, USA",
+        "supplier_address_normalized": {
+          "city": "North Liberty",
+          "state": "IN",
+          "postal_code": "46554",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum extrusion",
+          "machining",
+          "fabrication"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_90036902c187",
+    "companyKey": "hydro.com",
+    "locationId": "loc_308b647a92d6",
+    "company": "Hydro Extrusions (Connersville, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Connersville, IN",
+    "tier": "Tier 2",
+    "addressRaw": "5120 Western Ave, Connersville, IN 47331, USA",
+    "addressComponents": {
+      "city": "Connersville",
+      "state": "IN",
+      "postal_code": "47331",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hydro.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Metal processing",
+      "Machining",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "extrusion",
+      "machining",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hydro Extrusions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5120 Western Ave, Connersville, IN 47331, USA",
+        "supplier_address_normalized": {
+          "city": "Connersville",
+          "state": "IN",
+          "postal_code": "47331",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum extrusion",
+          "machining",
+          "fabrication"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_90036902c187",
+    "companyKey": "hydro.com",
+    "locationId": "loc_120e2924a12d",
+    "company": "Hydro Extrusions (Elkhart, IN)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IN | Elkhart, IN",
+    "tier": "Tier 2",
+    "addressRaw": "3406 Reedy Drive, Elkhart, IN 46514, USA",
+    "addressComponents": {
+      "city": "Elkhart",
+      "state": "IN",
+      "postal_code": "46514",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hydro.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Metal processing",
+      "Machining",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "extrusion",
+      "machining",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hydro Extrusions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3406 Reedy Drive, Elkhart, IN 46514, USA",
+        "supplier_address_normalized": {
+          "city": "Elkhart",
+          "state": "IN",
+          "postal_code": "46514",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum extrusion",
+          "machining",
+          "fabrication"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_90036902c187",
+    "companyKey": "hydro.com",
+    "locationId": "loc_825ae6499960",
+    "company": "Hydro Extrusions (Sidney, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Sidney, OH",
+    "tier": "Tier 2",
+    "addressRaw": "401 N. Stolle Avenue, Sidney, OH 45365, USA",
+    "addressComponents": {
+      "city": "Sidney",
+      "state": "OH",
+      "postal_code": "45365",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hydro.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Metal processing",
+      "Machining",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "extrusion",
+      "machining",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hydro Extrusions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 N. Stolle Avenue, Sidney, OH 45365, USA",
+        "supplier_address_normalized": {
+          "city": "Sidney",
+          "state": "OH",
+          "postal_code": "45365",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum extrusion",
+          "machining",
+          "fabrication"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_90036902c187",
+    "companyKey": "hydro.com",
+    "locationId": "loc_984e753e2362",
+    "company": "Hydro Extrusions (Cressona, PA)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | PA | Cressona, PA",
+    "tier": "Tier 2",
+    "addressRaw": "53 Pottsville St, Cressona, PA 17929, USA",
+    "addressComponents": {
+      "city": "Cressona",
+      "state": "PA",
+      "postal_code": "17929",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.hydro.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining & sub-assemblies",
+    "capabilityTags": [
+      "Metal processing",
+      "Machining",
+      "Metal forming"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum",
+      "extrusion",
+      "machining",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hydro Extrusions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "53 Pottsville St, Cressona, PA 17929, USA",
+        "supplier_address_normalized": {
+          "city": "Cressona",
+          "state": "PA",
+          "postal_code": "17929",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "aluminum extrusion",
+          "machining",
+          "fabrication"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "location_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_5a2ddd31004c",
+    "companyKey": "getboldx.com",
+    "locationId": "loc_8e1bd9bf54f3",
+    "company": "BoldX Industries (Batavia, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Batavia, OH",
+    "tier": "Tier 2",
+    "addressRaw": "4288 Armstrong Blvd, Batavia, OH 45103, USA",
+    "addressComponents": {
+      "city": "Batavia",
+      "state": "OH",
+      "postal_code": "45103",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://getboldx.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined parts",
+    "capabilityTags": [
+      "Machining",
+      "Engineering"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision machining",
+      "engineering",
+      "CNC"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BoldX Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4288 Armstrong Blvd, Batavia, OH 45103, USA",
+        "supplier_address_normalized": {
+          "city": "Batavia",
+          "state": "OH",
+          "postal_code": "45103",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision machining",
+          "engineering services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f41bd70fa9c9",
+    "companyKey": "steeltreating.com",
+    "locationId": "loc_384c780b3bbc",
+    "company": "Cincinnati Steel Treating (Cincinnati, OH)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | OH | Cincinnati, OH",
+    "tier": "Tier 2",
+    "addressRaw": "5701 Mariemont Avenue, Cincinnati, OH 45227, USA",
+    "addressComponents": {
+      "city": "Cincinnati",
+      "state": "OH",
+      "postal_code": "45227",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://steeltreating.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Heat Treating",
+    "capabilityTags": [
+      "Heat Treating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "heat treating",
+      "metallurgy",
+      "processing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cincinnati Steel Treating",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5701 Mariemont Avenue, Cincinnati, OH 45227, USA",
+        "supplier_address_normalized": {
+          "city": "Cincinnati",
+          "state": "OH",
+          "postal_code": "45227",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "heat treating services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "eastward_supplier_sweep_round53"
+      }
+    }
+  }
+]

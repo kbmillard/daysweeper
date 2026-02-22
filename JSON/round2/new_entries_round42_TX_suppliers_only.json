@@ -1,0 +1,663 @@
+[
+  {
+    "company": "Corvac Composites (San Marcos, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "corvaccomposites.com",
+    "companyId": "cmp_042b3b98262f",
+    "locationId": "loc_98d74e089372",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2350 Clovis R Barker Rd, San Marcos, TX 78666, USA",
+    "addressComponents": {
+      "city": "San Marcos",
+      "state": "TX",
+      "postal_code": "78666",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.corvaccomposites.com/our-locations/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "composites",
+      "underbody systems"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Corvac Composites",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2350 Clovis R Barker Rd, San Marcos, TX 78666, USA",
+        "supplier_address_normalized": {
+          "city": "San Marcos",
+          "state": "TX",
+          "postal_code": "78666",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "Samvardhana Motherson Global Carriers (El Paso, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "motherson.com",
+    "companyId": "cmp_681b4ff1b5a5",
+    "locationId": "loc_623d9df713ff",
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "Butterfield Plaza 7, 7A Zane Grey St, El Paso, TX 79935, USA",
+    "addressComponents": {
+      "city": "El Paso",
+      "state": "TX",
+      "postal_code": "79935",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.motherson.com/",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Shuttle carriers",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Milk run / shuttle"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "logistics",
+      "shuttle",
+      "3pl"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Samvardhana Motherson Global Carriers",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "Butterfield Plaza 7, 7A Zane Grey St, El Paso, TX 79935, USA",
+        "supplier_address_normalized": {
+          "city": "El Paso",
+          "state": "TX",
+          "postal_code": "79935",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "milk run / shuttle"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "Davis Metal Stamping (Dallas, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "davismetal.com",
+    "companyId": "cmp_86c2e9faae7c",
+    "locationId": "loc_196aad1ba45f",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1100 N St Paul St Ste 990, Dallas, TX 75201, USA",
+    "addressComponents": {
+      "city": "Dallas",
+      "state": "TX",
+      "postal_code": "75201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.davismetal.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Davis Metal Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1100 N St Paul St Ste 990, Dallas, TX 75201, USA",
+        "supplier_address_normalized": {
+          "city": "Dallas",
+          "state": "TX",
+          "postal_code": "75201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "Davis Metal Stamping (Lancaster, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "davismetal.com",
+    "companyId": "cmp_86c2e9faae7c",
+    "locationId": "loc_037fb83d210f",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "3810 W Royal Ln, Lancaster, TX 75134, USA",
+    "addressComponents": {
+      "city": "Lancaster",
+      "state": "TX",
+      "postal_code": "75134",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.davismetal.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Davis Metal Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3810 W Royal Ln, Lancaster, TX 75134, USA",
+        "supplier_address_normalized": {
+          "city": "Lancaster",
+          "state": "TX",
+          "postal_code": "75134",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "Taylor Press Products (Jarrell, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "taylor-products.com",
+    "companyId": "cmp_039a0f4a4c4d",
+    "locationId": "loc_4d9c2824ff25",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "13675 Interstate 35, Jarrell, TX 76537, USA",
+    "addressComponents": {
+      "city": "Jarrell",
+      "state": "TX",
+      "postal_code": "76537",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.taylor-products.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly",
+      "Plating/Coating",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "metal stamping",
+      "welded assemblies"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Taylor Press Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13675 Interstate 35, Jarrell, TX 76537, USA",
+        "supplier_address_normalized": {
+          "city": "Jarrell",
+          "state": "TX",
+          "postal_code": "76537",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "assembly",
+          "plating/coating",
+          "tool & die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "Suprajit (Brownsville, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "suprajit.com",
+    "companyId": "cmp_7d22b4ba1daf",
+    "locationId": "loc_1026f23c1c63",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1931 Anei Cir Ste A, Brownsville, TX 78521, USA",
+    "addressComponents": {
+      "city": "Brownsville",
+      "state": "TX",
+      "postal_code": "78521",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://suprajit.com/locations/matamoros-mexico/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "control cables",
+      "distribution"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Suprajit",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1931 Anei Cir Ste A, Brownsville, TX 78521, USA",
+        "supplier_address_normalized": {
+          "city": "Brownsville",
+          "state": "TX",
+          "postal_code": "78521",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "AL3 Inc. (Jarrell, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "al3inc.com",
+    "companyId": "cmp_f3635cadf974",
+    "locationId": "loc_21eb448d8630",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "13685 N Interstate 35, Jarrell, TX 76537, USA",
+    "addressComponents": {
+      "city": "Jarrell",
+      "state": "TX",
+      "postal_code": "76537",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://al3inc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sheet metal",
+      "stamping",
+      "welding",
+      "e-coating",
+      "powder coating"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AL3 Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "13685 N Interstate 35, Jarrell, TX 76537, USA",
+        "supplier_address_normalized": {
+          "city": "Jarrell",
+          "state": "TX",
+          "postal_code": "76537",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "plating/coating"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "Wrico Stamping of Texas (Grapevine, TX)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "wrico-net.com",
+    "companyId": "cmp_733c2b21ebc0",
+    "locationId": "loc_1cba50140519",
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "650 Industrial Blvd, Grapevine, TX 76051, USA",
+    "addressComponents": {
+      "city": "Grapevine",
+      "state": "TX",
+      "postal_code": "76051",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.wrico-net.com/wrico-locations/tx/wrico-stamping-of-texas/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wrico Stamping of Texas",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "650 Industrial Blvd, Grapevine, TX 76051, USA",
+        "supplier_address_normalized": {
+          "city": "Grapevine",
+          "state": "TX",
+          "postal_code": "76051",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  },
+  {
+    "company": "TST NA Trim (Hidalgo, TX)",
+    "parentCompany": "TS Tech Co., Ltd.",
+    "parentCompanyId": "cmp_9e9707a94306",
+    "companyKey": "tstech.co.jp",
+    "companyId": "cmp_5a1315b3b5fe",
+    "locationId": "loc_73f0248ada47",
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "401 E Olmos Ave, Hidalgo, TX 78557, USA",
+    "addressComponents": {
+      "city": "Hidalgo",
+      "state": "TX",
+      "postal_code": "78557",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.tstech.com/tst-na-trim/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "interiors",
+      "trim"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TST NA Trim",
+        "parent_company": "TS Tech Co., Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 E Olmos Ave, Hidalgo, TX 78557, USA",
+        "supplier_address_normalized": {
+          "city": "Hidalgo",
+          "state": "TX",
+          "postal_code": "78557",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_company_website"
+        ],
+        "last_verified": "2026-02-19",
+        "discovery_method": "web_sweep_round42_tx"
+      }
+    }
+  }
+]

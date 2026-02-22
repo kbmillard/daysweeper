@@ -1,0 +1,3644 @@
+[
+  {
+    "company": "AISIN Automotive Casting, LLC (London, KY)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | KY | London",
+    "tier": "Tier 2",
+    "addressRaw": "4870 East Highway 552, London, KY 40744, US",
+    "addressComponents": {
+      "city": "London",
+      "state": "KY",
+      "postal_code": "40744",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Automotive Casting, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4870 East Highway 552, London, KY 40744, US",
+        "supplier_address_normalized": {
+          "city": "London",
+          "state": "KY",
+          "postal_code": "40744",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive castings"
+        ],
+        "primary_functions": [
+          "casting manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Castings & forgings",
+    "website": "https://www.aisinauto.com/",
+    "companyKey": "aisinauto.com",
+    "companyId": "cmp_b0ad1d7828d7",
+    "locationId": "loc_ddcfc52983ff",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "casting",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AISIN Automotive Casting Tennessee, Inc. (Clinton, TN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | TN | Clinton",
+    "tier": "Tier 2",
+    "addressRaw": "221 Frank L. Diggs Drive, Clinton, TN 37716, US",
+    "addressComponents": {
+      "city": "Clinton",
+      "state": "TN",
+      "postal_code": "37716",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Automotive Casting Tennessee, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "221 Frank L. Diggs Drive, Clinton, TN 37716, US",
+        "supplier_address_normalized": {
+          "city": "Clinton",
+          "state": "TN",
+          "postal_code": "37716",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive castings"
+        ],
+        "primary_functions": [
+          "casting manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Castings & forgings",
+    "website": "https://www.aisintn.com/",
+    "companyKey": "aisintn.com",
+    "companyId": "cmp_5bde50aeeabd",
+    "locationId": "loc_d3837b09e243",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "casting",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AISIN Electronics Illinois, LLC (Marion, IL)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | IL | Marion",
+    "tier": "Tier 1",
+    "addressRaw": "11200 Redco Drive, Marion, IL 62959, US",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IL",
+      "postal_code": "62959",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Electronics Illinois, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11200 Redco Drive, Marion, IL 62959, US",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IL",
+          "postal_code": "62959",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive electronics"
+        ],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.aisinillinois.com/aeil",
+    "companyKey": "aisinillinois.com",
+    "companyId": "cmp_45b0ae68d9b0",
+    "locationId": "loc_d33aaa186868",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AISIN Light Metals, LLC (Marion, IL)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | IL | Marion",
+    "tier": "Tier 2",
+    "addressRaw": "10900 Redco Drive, Marion, IL 62959, US",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IL",
+      "postal_code": "62959",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Light Metals, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "10900 Redco Drive, Marion, IL 62959, US",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IL",
+          "postal_code": "62959",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "aluminum components"
+        ],
+        "primary_functions": [
+          "light metals manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Castings & forgings",
+    "website": "https://www.aisinlightmetals.com/",
+    "companyKey": "aisinlightmetals.com",
+    "companyId": "cmp_05edc114f3bc",
+    "locationId": "loc_371cda04f1f6",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "light metals",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AISIN Mfg. Illinois, LLC (Marion, IL)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | IL | Marion",
+    "tier": "Tier 1",
+    "addressRaw": "11000 Redco Drive, Marion, IL 62959, US",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IL",
+      "postal_code": "62959",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Mfg. Illinois, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11000 Redco Drive, Marion, IL 62959, US",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IL",
+          "postal_code": "62959",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive components"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain components",
+    "website": "https://www.aisinillinois.com/",
+    "companyKey": "aisinillinois.com",
+    "companyId": "cmp_45b0ae68d9b0",
+    "locationId": "loc_b354b1190708",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "manufacturing",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AISIN U.S.A. Mfg., Inc. (Seymour, IN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | IN | Seymour",
+    "tier": "Tier 1",
+    "addressRaw": "1700 East 4th Street, Seymour, IN 47274, US",
+    "addressComponents": {
+      "city": "Seymour",
+      "state": "IN",
+      "postal_code": "47274",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN U.S.A. Mfg., Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1700 East 4th Street, Seymour, IN 47274, US",
+        "supplier_address_normalized": {
+          "city": "Seymour",
+          "state": "IN",
+          "postal_code": "47274",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive components"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive components",
+    "website": "https://www.aisinusa.com/",
+    "companyKey": "aisinusa.com",
+    "companyId": "cmp_60a9895baae4",
+    "locationId": "loc_634260f581d9",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "manufacturing",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AISIN World Corp. of America (Northville, MI)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | MI | Northville",
+    "tier": "Tier 1",
+    "addressRaw": "15300 Centennial Drive, Northville, MI 48168, US",
+    "addressComponents": {
+      "city": "Northville",
+      "state": "MI",
+      "postal_code": "48168",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN World Corp. of America",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15300 Centennial Drive, Northville, MI 48168, US",
+        "supplier_address_normalized": {
+          "city": "Northville",
+          "state": "MI",
+          "postal_code": "48168",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "engineering support"
+        ],
+        "primary_functions": [
+          "program engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & program support",
+    "website": "https://www.aisinworld.com/",
+    "companyKey": "aisinworld.com",
+    "companyId": "cmp_6abb93801465",
+    "locationId": "loc_e60687f08ba0",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "aisin"
+    ]
+  },
+  {
+    "company": "AWTEC Corporation (Plymouth, MI)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | MI | Plymouth",
+    "tier": "Tier 1",
+    "addressRaw": "14920 Keel Street, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AWTEC Corporation",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "14920 Keel Street, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "powertrain components"
+        ],
+        "primary_functions": [
+          "powertrain component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain components",
+    "website": "https://www.awtec.com/",
+    "companyKey": "awtec.com",
+    "companyId": "cmp_1527e2b772b7",
+    "locationId": "loc_41c5bbbd9836",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "awtec"
+    ]
+  },
+  {
+    "company": "FT Techno of America, LLC (Fowlerville, MI)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | MI | Fowlerville",
+    "tier": "Tier 1",
+    "addressRaw": "1750 Smith Road, Fowlerville, MI 48836, US",
+    "addressComponents": {
+      "city": "Fowlerville",
+      "state": "MI",
+      "postal_code": "48836",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FT Techno of America, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1750 Smith Road, Fowlerville, MI 48836, US",
+        "supplier_address_normalized": {
+          "city": "Fowlerville",
+          "state": "MI",
+          "postal_code": "48836",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "engineering services"
+        ],
+        "primary_functions": [
+          "engineering services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & support functions",
+    "website": "https://www.ftt-a.com/",
+    "companyKey": "ftt-a.com",
+    "companyId": "cmp_528c5cc6a416",
+    "locationId": "loc_766416c6bdb4",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "testing",
+      "ft techno"
+    ]
+  },
+  {
+    "company": "IMRA America, Inc. (Ann Arbor, MI)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | MI | Ann Arbor",
+    "tier": "Tier 1",
+    "addressRaw": "1044 Woodridge Avenue, Ann Arbor, MI 48105, US",
+    "addressComponents": {
+      "city": "Ann Arbor",
+      "state": "MI",
+      "postal_code": "48105",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "IMRA America, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1044 Woodridge Avenue, Ann Arbor, MI 48105, US",
+        "supplier_address_normalized": {
+          "city": "Ann Arbor",
+          "state": "MI",
+          "postal_code": "48105",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "R&D"
+        ],
+        "primary_functions": [
+          "R&D"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Design validation",
+    "website": "https://www.imra.com/ja/",
+    "companyKey": "imra.com",
+    "companyId": "cmp_8271d12e8ed0",
+    "locationId": "loc_aea044fbc8f2",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "R&D",
+      "imra"
+    ]
+  },
+  {
+    "company": "ADVICS Manufacturing Ohio, Inc. (Lebanon, OH)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | OH | Lebanon",
+    "tier": "Tier 1",
+    "addressRaw": "1650 Kingsview Drive, Lebanon, OH 45036, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "OH",
+      "postal_code": "45036",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ADVICS Manufacturing Ohio, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1650 Kingsview Drive, Lebanon, OH 45036, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "OH",
+          "postal_code": "45036",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "brake components"
+        ],
+        "primary_functions": [
+          "brake component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Brake systems",
+    "website": "https://www.advics-ohio.com",
+    "companyKey": "advics-ohio.com",
+    "companyId": "cmp_3ca41756e405",
+    "locationId": "loc_e853569a01b5",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "brake systems",
+      "advics"
+    ]
+  },
+  {
+    "company": "ADVICS North America, Inc. (Lebanon, OH)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | OH | Lebanon",
+    "tier": "Tier 1",
+    "addressRaw": "1650 Kingsview Drive, Lebanon, OH 45036, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "OH",
+      "postal_code": "45036",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ADVICS North America, Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1650 Kingsview Drive, Lebanon, OH 45036, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "OH",
+          "postal_code": "45036",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "brake systems"
+        ],
+        "primary_functions": [
+          "brake systems support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Brake systems",
+    "website": "https://www.advics-na.com",
+    "companyKey": "advics-na.com",
+    "companyId": "cmp_384feb45c309",
+    "locationId": "loc_6f9b0edaf743",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "brake systems",
+      "advics"
+    ]
+  },
+  {
+    "company": "SHIROKI-GA, LLC (Dalton, GA)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | GA | Dalton",
+    "tier": "Tier 1",
+    "addressRaw": "1300 Veterans Drive, Dalton, GA 30721, US",
+    "addressComponents": {
+      "city": "Dalton",
+      "state": "GA",
+      "postal_code": "30721",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SHIROKI-GA, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1300 Veterans Drive, Dalton, GA 30721, US",
+        "supplier_address_normalized": {
+          "city": "Dalton",
+          "state": "GA",
+          "postal_code": "30721",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive components"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive components",
+    "website": "https://www.shiroki.co.jp/english/",
+    "companyKey": "shiroki.co.jp",
+    "companyId": "cmp_67333aeeef39",
+    "locationId": "loc_8939ad16afe1",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "shiroki"
+    ]
+  },
+  {
+    "company": "SHIROKI-GT, LLC (Gordonsville, TN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | TN | Gordonsville",
+    "tier": "Tier 1",
+    "addressRaw": "165 Spicer Drive, Gordonsville, TN 38563, US",
+    "addressComponents": {
+      "city": "Gordonsville",
+      "state": "TN",
+      "postal_code": "38563",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SHIROKI-GT, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "165 Spicer Drive, Gordonsville, TN 38563, US",
+        "supplier_address_normalized": {
+          "city": "Gordonsville",
+          "state": "TN",
+          "postal_code": "38563",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive components"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive components",
+    "website": "https://www.shiroki.co.jp/english/",
+    "companyKey": "shiroki.co.jp",
+    "companyId": "cmp_67333aeeef39",
+    "locationId": "loc_26e5be39312b",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "shiroki"
+    ]
+  },
+  {
+    "company": "SHIROKI North America, LLC (Smithville, TN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | TN | Smithville",
+    "tier": "Tier 1",
+    "addressRaw": "1111 West Broad Street, Smithville, TN 37166, US",
+    "addressComponents": {
+      "city": "Smithville",
+      "state": "TN",
+      "postal_code": "37166",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "SHIROKI North America, LLC",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1111 West Broad Street, Smithville, TN 37166, US",
+        "supplier_address_normalized": {
+          "city": "Smithville",
+          "state": "TN",
+          "postal_code": "37166",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive components"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive components",
+    "website": "https://www.shiroki.co.jp/english/",
+    "companyKey": "shiroki.co.jp",
+    "companyId": "cmp_67333aeeef39",
+    "locationId": "loc_6abfba835cae",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "shiroki"
+    ]
+  },
+  {
+    "company": "Valeo (Bessemer, AL)",
+    "parentCompany": null,
+    "segment": "US | AL | Bessemer",
+    "tier": "Tier 1",
+    "addressRaw": "4961 Perimeter Way, Bessemer, AL 35022, US",
+    "addressComponents": {
+      "city": "Bessemer",
+      "state": "AL",
+      "postal_code": "35022",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4961 Perimeter Way, Bessemer, AL 35022, US",
+        "supplier_address_normalized": {
+          "city": "Bessemer",
+          "state": "AL",
+          "postal_code": "35022",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_8d9022fbbf22",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Greensburg, IN)",
+    "parentCompany": null,
+    "segment": "US | IN | Greensburg",
+    "tier": "Tier 1",
+    "addressRaw": "1100 East Barachel Lane, Greensburg, IN 47240, US",
+    "addressComponents": {
+      "city": "Greensburg",
+      "state": "IN",
+      "postal_code": "47240",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1100 East Barachel Lane, Greensburg, IN 47240, US",
+        "supplier_address_normalized": {
+          "city": "Greensburg",
+          "state": "IN",
+          "postal_code": "47240",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_0e7128cf8256",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Winchester, KY)",
+    "parentCompany": null,
+    "segment": "US | KY | Winchester",
+    "tier": "Tier 1",
+    "addressRaw": "1175 Enterprise Drive, Winchester, KY 40391, US",
+    "addressComponents": {
+      "city": "Winchester",
+      "state": "KY",
+      "postal_code": "40391",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1175 Enterprise Drive, Winchester, KY 40391, US",
+        "supplier_address_normalized": {
+          "city": "Winchester",
+          "state": "KY",
+          "postal_code": "40391",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_04dfde69c4aa",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Seymour, IN)",
+    "parentCompany": null,
+    "segment": "US | IN | Seymour",
+    "tier": "Tier 1",
+    "addressRaw": "1231 A Avenue North, Seymour, IN 47274, US",
+    "addressComponents": {
+      "city": "Seymour",
+      "state": "IN",
+      "postal_code": "47274",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1231 A Avenue North, Seymour, IN 47274, US",
+        "supplier_address_normalized": {
+          "city": "Seymour",
+          "state": "IN",
+          "postal_code": "47274",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_664282fe1b1b",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Troy, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Troy",
+    "tier": "Tier 1",
+    "addressRaw": "150 Stephenson Highway, Troy, MI 48083, US",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48083",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "150 Stephenson Highway, Troy, MI 48083, US",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48083",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & program support",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_7effd9fe1973",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Hamilton, OH)",
+    "parentCompany": null,
+    "segment": "US | OH | Hamilton",
+    "tier": "Tier 1",
+    "addressRaw": "3620 Symmes Road, Hamilton, OH 45015, US",
+    "addressComponents": {
+      "city": "Hamilton",
+      "state": "OH",
+      "postal_code": "45015",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3620 Symmes Road, Hamilton, OH 45015, US",
+        "supplier_address_normalized": {
+          "city": "Hamilton",
+          "state": "OH",
+          "postal_code": "45015",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_d4cbabd607bc",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Auburn Hills",
+    "tier": "Tier 1",
+    "addressRaw": "4100 North Atlantic Boulevard, Auburn Hills, MI 48326, US",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4100 North Atlantic Boulevard, Auburn Hills, MI 48326, US",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_6dd04f2ad90a",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Highland Park, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Highland Park",
+    "tier": "Tier 1",
+    "addressRaw": "12240 Oakland Parkway, Highland Park, MI 48203, US",
+    "addressComponents": {
+      "city": "Highland Park",
+      "state": "MI",
+      "postal_code": "48203",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12240 Oakland Parkway, Highland Park, MI 48203, US",
+        "supplier_address_normalized": {
+          "city": "Highland Park",
+          "state": "MI",
+          "postal_code": "48203",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_62527d453cb9",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (East Liberty, OH)",
+    "parentCompany": null,
+    "segment": "US | OH | East Liberty",
+    "tier": "Tier 1",
+    "addressRaw": "12979 County Road 153, East Liberty, OH 43319, US",
+    "addressComponents": {
+      "city": "East Liberty",
+      "state": "OH",
+      "postal_code": "43319",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12979 County Road 153, East Liberty, OH 43319, US",
+        "supplier_address_normalized": {
+          "city": "East Liberty",
+          "state": "OH",
+          "postal_code": "43319",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Lighting systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_b824f793f629",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Valeo (Smyrna, TN)",
+    "parentCompany": null,
+    "segment": "US | TN | Smyrna",
+    "tier": "Tier 1",
+    "addressRaw": "611 Enon Springs Road East, Smyrna, TN 37167, US",
+    "addressComponents": {
+      "city": "Smyrna",
+      "state": "TN",
+      "postal_code": "37167",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Valeo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "611 Enon Springs Road East, Smyrna, TN 37167, US",
+        "supplier_address_normalized": {
+          "city": "Smyrna",
+          "state": "TN",
+          "postal_code": "37167",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [
+          "automotive manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_valeo"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Lighting systems",
+    "website": "https://www.valeo.com/en/",
+    "companyKey": "valeo.com",
+    "companyId": "cmp_77754b18ecb3",
+    "locationId": "loc_e60fc7c2a46c",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "valeo"
+    ]
+  },
+  {
+    "company": "Mitsuba (American Mitsuba Corp., Mt. Pleasant, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Mt. Pleasant",
+    "tier": "Tier 1",
+    "addressRaw": "2945 Three Leaves Drive, Mt. Pleasant, MI 48858, US",
+    "addressComponents": {
+      "city": "Mt. Pleasant",
+      "state": "MI",
+      "postal_code": "48858",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mitsuba",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2945 Three Leaves Drive, Mt. Pleasant, MI 48858, US",
+        "supplier_address_normalized": {
+          "city": "Mt. Pleasant",
+          "state": "MI",
+          "postal_code": "48858",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "electric motors",
+          "actuators",
+          "wiper systems"
+        ],
+        "primary_functions": [
+          "electromechanical component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_mitsuba"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electric motors & actuators",
+    "website": "https://www.mitsuba.co.jp/en/",
+    "companyKey": "mitsuba.co.jp",
+    "companyId": "cmp_f6e490852554",
+    "locationId": "loc_a3ed08b9a7c6",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electromechanical",
+      "mitsuba"
+    ]
+  },
+  {
+    "company": "Mitsuba (American Mitsuba Corp., Monroeville, IN)",
+    "parentCompany": null,
+    "segment": "US | IN | Monroeville",
+    "tier": "Tier 1",
+    "addressRaw": "21600 Monroeville Road, Monroeville, IN 46773, US",
+    "addressComponents": {
+      "city": "Monroeville",
+      "state": "IN",
+      "postal_code": "46773",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mitsuba",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "21600 Monroeville Road, Monroeville, IN 46773, US",
+        "supplier_address_normalized": {
+          "city": "Monroeville",
+          "state": "IN",
+          "postal_code": "46773",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "electric motors",
+          "actuators",
+          "wiper systems"
+        ],
+        "primary_functions": [
+          "electromechanical component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_mitsuba"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electric motors & actuators",
+    "website": "https://www.mitsuba.co.jp/en/",
+    "companyKey": "mitsuba.co.jp",
+    "companyId": "cmp_f6e490852554",
+    "locationId": "loc_ca1b2ad7a728",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electromechanical",
+      "mitsuba"
+    ]
+  },
+  {
+    "company": "Mitsuba (American Mitsuba Corp., Bardstown, KY)",
+    "parentCompany": null,
+    "segment": "US | KY | Bardstown",
+    "tier": "Tier 1",
+    "addressRaw": "901 Withrow Court, Bardstown, KY 40004, US",
+    "addressComponents": {
+      "city": "Bardstown",
+      "state": "KY",
+      "postal_code": "40004",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mitsuba",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "901 Withrow Court, Bardstown, KY 40004, US",
+        "supplier_address_normalized": {
+          "city": "Bardstown",
+          "state": "KY",
+          "postal_code": "40004",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "electric motors",
+          "actuators",
+          "wiper systems"
+        ],
+        "primary_functions": [
+          "electromechanical component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_mitsuba"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electric motors & actuators",
+    "website": "https://www.mitsuba.co.jp/en/",
+    "companyKey": "mitsuba.co.jp",
+    "companyId": "cmp_f6e490852554",
+    "locationId": "loc_580eb6de78b5",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "electromechanical",
+      "mitsuba"
+    ]
+  },
+  {
+    "company": "NTN Americas (Schaumburg, IL)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | IL | Schaumburg",
+    "tier": "Tier 2",
+    "addressRaw": "1501 East Woodfield Road, Suite 400E, Schaumburg, IL 60173, US",
+    "addressComponents": {
+      "city": "Schaumburg",
+      "state": "IL",
+      "postal_code": "60173",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Americas",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1501 East Woodfield Road, Suite 400E, Schaumburg, IL 60173, US",
+        "supplier_address_normalized": {
+          "city": "Schaumburg",
+          "state": "IL",
+          "postal_code": "60173",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "bearings",
+          "power transmission components"
+        ],
+        "primary_functions": [
+          "bearing manufacturing",
+          "sales"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings & power transmission components",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_04d4a226dcf7",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "ntn"
+    ]
+  },
+  {
+    "company": "NTN Americas (East Peoria Sales Office, IL)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | IL | East Peoria",
+    "tier": "Tier 2",
+    "addressRaw": "2413 North Main Street, East Peoria, IL 61611, US",
+    "addressComponents": {
+      "city": "East Peoria",
+      "state": "IL",
+      "postal_code": "61611",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Americas",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2413 North Main Street, East Peoria, IL 61611, US",
+        "supplier_address_normalized": {
+          "city": "East Peoria",
+          "state": "IL",
+          "postal_code": "61611",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "bearings"
+        ],
+        "primary_functions": [
+          "sales office"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings & power transmission components",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_df42f5a6c5f1",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "ntn"
+    ]
+  },
+  {
+    "company": "NTN Americas (Automotive Center, Farmington Hills, MI)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | MI | Farmington Hills",
+    "tier": "Tier 2",
+    "addressRaw": "39255 W. 12 Mile Road, Farmington Hills, MI 48331-2975, US",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331-2975",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Americas",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "39255 W. 12 Mile Road, Farmington Hills, MI 48331-2975, US",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331-2975",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "R&D"
+        ],
+        "primary_functions": [
+          "R&D"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & support functions",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_f3f17022b48f",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "R&D",
+      "ntn"
+    ]
+  },
+  {
+    "company": "NTN Americas (American NTN Bearing Mfg. Corp., Elgin, IL)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | IL | Elgin",
+    "tier": "Tier 2",
+    "addressRaw": "1500 Holmes Road, Elgin, IL 60123, US",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Americas",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1500 Holmes Road, Elgin, IL 60123, US",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "bearings"
+        ],
+        "primary_functions": [
+          "bearing manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings & power transmission components",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_fce34dad1e71",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "ntn"
+    ]
+  },
+  {
+    "company": "NTN-Bower (Macomb, IL)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | IL | Macomb",
+    "tier": "Tier 2",
+    "addressRaw": "711 North Bower Road, Macomb, IL 61455-2511, US",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "IL",
+      "postal_code": "61455-2511",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN-Bower",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "711 North Bower Road, Macomb, IL 61455-2511, US",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "IL",
+          "postal_code": "61455-2511",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "bearings"
+        ],
+        "primary_functions": [
+          "bearing manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings & power transmission components",
+    "website": "https://www.ntnbower.com/",
+    "companyKey": "ntnbower.com",
+    "companyId": "cmp_cf2a90990a3a",
+    "locationId": "loc_f244684dfb96",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "ntn bower"
+    ]
+  },
+  {
+    "company": "NTN-Bower (Hamilton, AL)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | AL | Hamilton",
+    "tier": "Tier 2",
+    "addressRaw": "2086 Military Street South, Hamilton, AL 35570, US",
+    "addressComponents": {
+      "city": "Hamilton",
+      "state": "AL",
+      "postal_code": "35570",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN-Bower",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2086 Military Street South, Hamilton, AL 35570, US",
+        "supplier_address_normalized": {
+          "city": "Hamilton",
+          "state": "AL",
+          "postal_code": "35570",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "bearings"
+        ],
+        "primary_functions": [
+          "bearing manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings & power transmission components",
+    "website": "https://www.ntnbower.com/",
+    "companyKey": "ntnbower.com",
+    "companyId": "cmp_cf2a90990a3a",
+    "locationId": "loc_87af50d1c42b",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "ntn bower"
+    ]
+  },
+  {
+    "company": "NTN Driveshaft Anderson, Inc. (Anderson, IN)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | IN | Anderson",
+    "tier": "Tier 1",
+    "addressRaw": "7625 South Layton Road, Anderson, IN 46011, US",
+    "addressComponents": {
+      "city": "Anderson",
+      "state": "IN",
+      "postal_code": "46011",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Driveshaft Anderson, Inc.",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7625 South Layton Road, Anderson, IN 46011, US",
+        "supplier_address_normalized": {
+          "city": "Anderson",
+          "state": "IN",
+          "postal_code": "46011",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "driveshafts"
+        ],
+        "primary_functions": [
+          "driveshaft manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain components",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_178c7bf3d0e1",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "driveshaft",
+      "ntn"
+    ]
+  },
+  {
+    "company": "NTK Precision Axle Corp. (Frankfort, IN)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | IN | Frankfort",
+    "tier": "Tier 1",
+    "addressRaw": "741 South County Road 200 West, Frankfort, IN 46041, US",
+    "addressComponents": {
+      "city": "Frankfort",
+      "state": "IN",
+      "postal_code": "46041",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTK Precision Axle Corp.",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "741 South County Road 200 West, Frankfort, IN 46041, US",
+        "supplier_address_normalized": {
+          "city": "Frankfort",
+          "state": "IN",
+          "postal_code": "46041",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "axle components"
+        ],
+        "primary_functions": [
+          "axle component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain components",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_5bf9d8fa24a9",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "axles",
+      "ntn"
+    ]
+  },
+  {
+    "company": "Seohan-NTN Driveshaft USA Corp. (Auburn, AL)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | AL | Auburn",
+    "tier": "Tier 1",
+    "addressRaw": "264 Teague Court, Auburn, AL 36832, US",
+    "addressComponents": {
+      "city": "Auburn",
+      "state": "AL",
+      "postal_code": "36832",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Seohan-NTN Driveshaft USA Corp.",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "264 Teague Court, Auburn, AL 36832, US",
+        "supplier_address_normalized": {
+          "city": "Auburn",
+          "state": "AL",
+          "postal_code": "36832",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "driveshafts"
+        ],
+        "primary_functions": [
+          "driveshaft manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain components",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_b4e7d62ee4f0",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "driveshaft",
+      "ntn"
+    ]
+  },
+  {
+    "company": "Tokai Rika (TRAM, Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Plymouth",
+    "tier": "Tier 1",
+    "addressRaw": "47200 Port Street, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tokai Rika",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "47200 Port Street, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive parts"
+        ],
+        "primary_functions": [
+          "holding company",
+          "product development"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tokai_rika"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & program support",
+    "website": "https://www.tokai-rika.co.jp/en/",
+    "companyKey": "tokai-rika.co.jp",
+    "companyId": "cmp_0bd6ece8fc95",
+    "locationId": "loc_d84007c71f2a",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "switches",
+      "tokai rika"
+    ]
+  },
+  {
+    "company": "Tokai Rika (TRMI, Battle Creek, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Battle Creek",
+    "tier": "Tier 1",
+    "addressRaw": "100 Hill Brady Road, Battle Creek, MI 49037, US",
+    "addressComponents": {
+      "city": "Battle Creek",
+      "state": "MI",
+      "postal_code": "49037",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tokai Rika",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Hill Brady Road, Battle Creek, MI 49037, US",
+        "supplier_address_normalized": {
+          "city": "Battle Creek",
+          "state": "MI",
+          "postal_code": "49037",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive parts"
+        ],
+        "primary_functions": [
+          "automotive switch manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tokai_rika"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Switches, keys & locks",
+    "website": "https://www.tokai-rika.co.jp/en/",
+    "companyKey": "tokai-rika.co.jp",
+    "companyId": "cmp_0bd6ece8fc95",
+    "locationId": "loc_706978f1672e",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "switches",
+      "tokai rika"
+    ]
+  },
+  {
+    "company": "Tokai Rika (TAC Manufacturing, Jackson, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Jackson",
+    "tier": "Tier 1",
+    "addressRaw": "4111 County Farm Road, Jackson, MI 49201, US",
+    "addressComponents": {
+      "city": "Jackson",
+      "state": "MI",
+      "postal_code": "49201",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tokai Rika",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4111 County Farm Road, Jackson, MI 49201, US",
+        "supplier_address_normalized": {
+          "city": "Jackson",
+          "state": "MI",
+          "postal_code": "49201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive parts"
+        ],
+        "primary_functions": [
+          "shift lever and lock manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tokai_rika"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Switches, keys & locks",
+    "website": "https://www.tokai-rika.co.jp/en/",
+    "companyKey": "tokai-rika.co.jp",
+    "companyId": "cmp_0bd6ece8fc95",
+    "locationId": "loc_632ab0edd578",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "switches",
+      "tokai rika"
+    ]
+  },
+  {
+    "company": "Tokai Rika (TGR Technical Center, Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "US | MI | Plymouth",
+    "tier": "Tier 1",
+    "addressRaw": "47050 Port Street, Plymouth, MI 48170, US",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tokai Rika",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "47050 Port Street, Plymouth, MI 48170, US",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automotive parts"
+        ],
+        "primary_functions": [
+          "testing and evaluation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tokai_rika"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Engineering & program support",
+    "website": "https://www.tokai-rika.co.jp/en/",
+    "companyKey": "tokai-rika.co.jp",
+    "companyId": "cmp_0bd6ece8fc95",
+    "locationId": "loc_0c2a22c07d5c",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "switches",
+      "tokai rika"
+    ]
+  },
+  {
+    "company": "TPR (United Piston Ring, Manitowoc, WI)",
+    "parentCompany": null,
+    "segment": "US | WI | Manitowoc",
+    "tier": "Tier 2",
+    "addressRaw": "2318 Waldo Boulevard, Manitowoc, WI 54220, US",
+    "addressComponents": {
+      "city": "Manitowoc",
+      "state": "WI",
+      "postal_code": "54220",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TPR",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2318 Waldo Boulevard, Manitowoc, WI 54220, US",
+        "supplier_address_normalized": {
+          "city": "Manitowoc",
+          "state": "WI",
+          "postal_code": "54220",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "piston rings"
+        ],
+        "primary_functions": [
+          "piston ring manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tpr"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Engine components (piston rings)",
+    "website": "https://www.tpr.co.jp/tp_e/",
+    "companyKey": "tpr.co.jp",
+    "companyId": "cmp_49ccdba66842",
+    "locationId": "loc_5d990149e8c0",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engine components",
+      "tpr"
+    ]
+  },
+  {
+    "company": "TPR (TPR Federal-Mogul Tennessee, Lawrenceburg, TN)",
+    "parentCompany": null,
+    "segment": "US | TN | Lawrenceburg",
+    "tier": "Tier 2",
+    "addressRaw": "201 Helton Drive, Lawrenceburg, TN 38464, US",
+    "addressComponents": {
+      "city": "Lawrenceburg",
+      "state": "TN",
+      "postal_code": "38464",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TPR",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "201 Helton Drive, Lawrenceburg, TN 38464, US",
+        "supplier_address_normalized": {
+          "city": "Lawrenceburg",
+          "state": "TN",
+          "postal_code": "38464",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "cylinder liners"
+        ],
+        "primary_functions": [
+          "cylinder liner manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tpr"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Engine components (cylinder liners)",
+    "website": "https://www.tpr.co.jp/tp_e/",
+    "companyKey": "tpr.co.jp",
+    "companyId": "cmp_49ccdba66842",
+    "locationId": "loc_c0ca11b5f2be",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engine components",
+      "tpr"
+    ]
+  },
+  {
+    "company": "TPR (TPR America, Schaumburg, IL)",
+    "parentCompany": null,
+    "segment": "US | IL | Schaumburg",
+    "tier": "Tier 2",
+    "addressRaw": "10 North Martingale Road, Suite 145, Schaumburg, IL 60173, US",
+    "addressComponents": {
+      "city": "Schaumburg",
+      "state": "IL",
+      "postal_code": "60173",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TPR",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "10 North Martingale Road, Suite 145, Schaumburg, IL 60173, US",
+        "supplier_address_normalized": {
+          "city": "Schaumburg",
+          "state": "IL",
+          "postal_code": "60173",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "engine components"
+        ],
+        "primary_functions": [
+          "sales office"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tpr"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Engine components (sales)",
+    "website": "https://www.tpr.co.jp/tp_e/",
+    "companyKey": "tpr.co.jp",
+    "companyId": "cmp_49ccdba66842",
+    "locationId": "loc_7a2eac7fbb37",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sales",
+      "tpr"
+    ]
+  },
+  {
+    "company": "TPR (FALTEC America, Adairsville, GA)",
+    "parentCompany": null,
+    "segment": "US | GA | Adairsville",
+    "tier": "Tier 1",
+    "addressRaw": "500-B Soho Drive, Adairsville, GA 30103-2205, US",
+    "addressComponents": {
+      "city": "Adairsville",
+      "state": "GA",
+      "postal_code": "30103-2205",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TPR",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "500-B Soho Drive, Adairsville, GA 30103-2205, US",
+        "supplier_address_normalized": {
+          "city": "Adairsville",
+          "state": "GA",
+          "postal_code": "30103-2205",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "exterior parts"
+        ],
+        "primary_functions": [
+          "exterior parts manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tpr"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Exterior trim & body parts",
+    "website": "https://www.tpr.co.jp/tp_e/",
+    "companyKey": "tpr.co.jp",
+    "companyId": "cmp_49ccdba66842",
+    "locationId": "loc_74d22a3b5b78",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "exterior parts",
+      "faltec"
+    ]
+  },
+  {
+    "company": "AISIN Takaoka U.S.A., Inc. (Seymour, IN)",
+    "parentCompany": "AISIN Corporation",
+    "segment": "US | IN | Seymour",
+    "tier": "Tier 2",
+    "addressRaw": "1665 East 4th Street, Seymour, IN 47274, US",
+    "addressComponents": {
+      "city": "Seymour",
+      "state": "IN",
+      "postal_code": "47274",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AISIN Takaoka U.S.A., Inc.",
+        "parent_company": "AISIN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1665 East 4th Street, Seymour, IN 47274, US",
+        "supplier_address_normalized": {
+          "city": "Seymour",
+          "state": "IN",
+          "postal_code": "47274",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts"
+        ],
+        "primary_functions": [
+          "stamping manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_aisin"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.at-takaoka.co.jp/english/",
+    "companyKey": "at-takaoka.co.jp",
+    "companyId": "cmp_b13b62e11a89",
+    "locationId": "loc_585aff6b9389",
+    "parentCompanyId": "cmp_b789b1e6e498",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "aisin takaoka"
+    ]
+  },
+  {
+    "company": "NTN Automation (Lebanon, TN)",
+    "parentCompany": "NTN Corporation",
+    "segment": "US | TN | Lebanon",
+    "tier": "Tooling_and_Capital_Equipment",
+    "addressRaw": "960A Maddox Simpson Parkway, Lebanon, TN 37090, US",
+    "addressComponents": {
+      "city": "Lebanon",
+      "state": "TN",
+      "postal_code": "37090",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Automation",
+        "parent_company": "NTN Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tooling_and_Capital_Equipment",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "960A Maddox Simpson Parkway, Lebanon, TN 37090, US",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "TN",
+          "postal_code": "37090",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "automation systems"
+        ],
+        "primary_functions": [
+          "automation integration"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_ntn"
+      }
+    },
+    "supplyChainCategory": "Tooling_and_Capital_Equipment",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automation integration / Robotics",
+    "website": "https://ntnamericas.com/",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_bb4749477069",
+    "parentCompanyId": "cmp_f936bbfd7f77",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "automation",
+      "ntn"
+    ]
+  },
+  {
+    "company": "TPR (TPR Federal-Mogul Bimetallic Cylinder Liners, Marshall, MN)",
+    "parentCompany": null,
+    "segment": "US | MN | Marshall",
+    "tier": "Tier 2",
+    "addressRaw": "711 Airport Road, Marshall, MN 56258, US",
+    "addressComponents": {
+      "city": "Marshall",
+      "state": "MN",
+      "postal_code": "56258",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "TPR",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "711 Airport Road, Marshall, MN 56258, US",
+        "supplier_address_normalized": {
+          "city": "Marshall",
+          "state": "MN",
+          "postal_code": "56258",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "cylinder liners"
+        ],
+        "primary_functions": [
+          "cylinder liner manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_tpr"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Engine components (cylinder liners)",
+    "website": "https://www.tpr.co.jp/tp_e/",
+    "companyKey": "tpr.co.jp",
+    "companyId": "cmp_49ccdba66842",
+    "locationId": "loc_db2d1907ce9d",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engine components",
+      "tpr"
+    ]
+  },
+  {
+    "company": "Brose (Plant Tuscaloosa, Vance, AL)",
+    "parentCompany": null,
+    "segment": "US | AL | Vance",
+    "tier": "Tier 1",
+    "addressRaw": "10100 Brose Drive, Vance, AL 35490, US",
+    "addressComponents": {
+      "city": "Vance",
+      "state": "AL",
+      "postal_code": "35490",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Brose",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "10100 Brose Drive, Vance, AL 35490, US",
+        "supplier_address_normalized": {
+          "city": "Vance",
+          "state": "AL",
+          "postal_code": "35490",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "mechatronic systems"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_brose"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Electromechanical systems",
+    "website": "https://www.brose.com/",
+    "companyKey": "brose.com",
+    "companyId": "cmp_2865209ebec9",
+    "locationId": "loc_d7578e378298",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "mechatronics",
+      "brose"
+    ]
+  },
+  {
+    "company": "Brose (Plant Jefferson, Jefferson City, MO)",
+    "parentCompany": null,
+    "segment": "US | MO | Jefferson City",
+    "tier": "Tier 1",
+    "addressRaw": "1701 Lynch Road, Jefferson City, MO 65109, US",
+    "addressComponents": {
+      "city": "Jefferson City",
+      "state": "MO",
+      "postal_code": "65109",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Brose",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1701 Lynch Road, Jefferson City, MO 65109, US",
+        "supplier_address_normalized": {
+          "city": "Jefferson City",
+          "state": "MO",
+          "postal_code": "65109",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "mechatronic systems"
+        ],
+        "primary_functions": [
+          "automotive component manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round62_corridor_official_sites_brose"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Electromechanical systems",
+    "website": "https://www.brose.com/",
+    "companyKey": "brose.com",
+    "companyId": "cmp_2865209ebec9",
+    "locationId": "loc_7a5a1e492e4b",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "mechatronics",
+      "brose"
+    ]
+  }
+]

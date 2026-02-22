@@ -1,0 +1,3559 @@
+[
+  {
+    "company": "Coastal Automotive, LLC (Holland, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "900 Brooks Avenue, Holland, MI 49423, USA",
+    "addressComponents": {
+      "city": "Holland",
+      "state": "MI",
+      "postal_code": "49423",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Coastal Automotive, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "900 Brooks Avenue, Holland, MI 49423, USA",
+        "supplier_address_normalized": {
+          "city": "Holland",
+          "state": "MI",
+          "postal_code": "49423",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding / assembly",
+    "website": "https://www.coastal-automotive.com",
+    "companyKey": "coastal-automotive.com",
+    "companyId": "cmp_d693abbb539d",
+    "locationId": "loc_91769494c43b",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembly",
+      "automotive",
+      "injection",
+      "injection molding",
+      "molding"
+    ]
+  },
+  {
+    "company": "Coastal Automotive, LLC (Rochester Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2120 Austin Avenue, Rochester Hills, MI 48302, USA",
+    "addressComponents": {
+      "city": "Rochester Hills",
+      "state": "MI",
+      "postal_code": "48302",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Coastal Automotive, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2120 Austin Avenue, Rochester Hills, MI 48302, USA",
+        "supplier_address_normalized": {
+          "city": "Rochester Hills",
+          "state": "MI",
+          "postal_code": "48302",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding / assembly",
+    "website": "https://www.coastal-automotive.com",
+    "companyKey": "coastal-automotive.com",
+    "companyId": "cmp_d693abbb539d",
+    "locationId": "loc_e106beeed5c8",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembly",
+      "automotive",
+      "injection",
+      "injection molding",
+      "molding"
+    ]
+  },
+  {
+    "company": "BENTELER Automotive (Grand Rapids, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "3721 Hagen Drive SE, Grand Rapids, MI 49548, USA",
+    "addressComponents": {
+      "city": "Grand Rapids",
+      "state": "MI",
+      "postal_code": "49548",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BENTELER Automotive",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3721 Hagen Drive SE, Grand Rapids, MI 49548, USA",
+        "supplier_address_normalized": {
+          "city": "Grand Rapids",
+          "state": "MI",
+          "postal_code": "49548",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal forming",
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis / metal components",
+    "website": "https://www.benteler.com",
+    "companyKey": "benteler.com",
+    "companyId": "cmp_6951c2059222",
+    "locationId": "loc_777bef98e45e",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "chassis",
+      "components",
+      "metal",
+      "metal forming",
+      "stamping",
+      "welding"
+    ]
+  },
+  {
+    "company": "BENTELER Automotive (Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2650 N Opdyke Road, Building B, Auburn Hills, MI 48326, USA",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BENTELER Automotive",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2650 N Opdyke Road, Building B, Auburn Hills, MI 48326, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal forming",
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis / metal components",
+    "website": "https://www.benteler.com",
+    "companyKey": "benteler.com",
+    "companyId": "cmp_6951c2059222",
+    "locationId": "loc_ce2e1bd24b92",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "chassis",
+      "components",
+      "metal",
+      "metal forming",
+      "stamping",
+      "welding"
+    ]
+  },
+  {
+    "company": "Huf North America Automotive Parts Manufacturing Corp. (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "24860 Hathaway, Farmington Hills, MI 48335, USA",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48335",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Huf North America Automotive Parts Manufacturing Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "24860 Hathaway, Farmington Hills, MI 48335, USA",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48335",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive access systems",
+          "locking systems",
+          "electronics manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Access systems / locking",
+    "website": "https://www.huf-group.com",
+    "companyKey": "huf-group.com",
+    "companyId": "cmp_b1418d50bad6",
+    "locationId": "loc_4f804525a809",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "access",
+      "automotive",
+      "automotive access systems",
+      "electronics manufacturing",
+      "locking",
+      "locking systems",
+      "systems"
+    ]
+  },
+  {
+    "company": "EJOT ATF Michigan Operations (Romulus, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "6615 Ringle Road, Romulus, MI 48174, USA",
+    "addressComponents": {
+      "city": "Romulus",
+      "state": "MI",
+      "postal_code": "48174",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF Michigan Operations",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "6615 Ringle Road, Romulus, MI 48174, USA",
+        "supplier_address_normalized": {
+          "city": "Romulus",
+          "state": "MI",
+          "postal_code": "48174",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fastener manufacturing",
+          "cold forming",
+          "automotive fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automotive fasteners",
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_f848be60f411",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "automotive fasteners",
+      "cold forming",
+      "fastener manufacturing",
+      "fasteners"
+    ]
+  },
+  {
+    "company": "EJOT ATF Michigan Operations (Rose City, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "3547 Washington Ave, Rose City, MI 48654, USA",
+    "addressComponents": {
+      "city": "Rose City",
+      "state": "MI",
+      "postal_code": "48654",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF Michigan Operations",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "3547 Washington Ave, Rose City, MI 48654, USA",
+        "supplier_address_normalized": {
+          "city": "Rose City",
+          "state": "MI",
+          "postal_code": "48654",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fastener manufacturing",
+          "cold forming",
+          "automotive fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automotive fasteners",
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_727207568c83",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "automotive fasteners",
+      "cold forming",
+      "fastener manufacturing",
+      "fasteners"
+    ]
+  },
+  {
+    "company": "EJOT ATF Michigan Operations (Lincolnwood, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "7155 N Cicero Ave, Lincolnwood, IL 60712, USA",
+    "addressComponents": {
+      "city": "Lincolnwood",
+      "state": "IL",
+      "postal_code": "60712",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF Michigan Operations",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "7155 N Cicero Ave, Lincolnwood, IL 60712, USA",
+        "supplier_address_normalized": {
+          "city": "Lincolnwood",
+          "state": "IL",
+          "postal_code": "60712",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fastener manufacturing",
+          "cold forming",
+          "automotive fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automotive fasteners",
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_af7c32fca4c8",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "automotive fasteners",
+      "cold forming",
+      "fastener manufacturing",
+      "fasteners"
+    ]
+  },
+  {
+    "company": "Somaschini North America (South Bend, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "4601 Nimtz Parkway, South Bend, IN 46628, USA",
+    "addressComponents": {
+      "city": "South Bend",
+      "state": "IN",
+      "postal_code": "46628",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Somaschini North America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "4601 Nimtz Parkway, South Bend, IN 46628, USA",
+        "supplier_address_normalized": {
+          "city": "South Bend",
+          "state": "IN",
+          "postal_code": "46628",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "metal components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined / forged components",
+    "website": "https://www.somaschini.com",
+    "companyKey": "somaschini.com",
+    "companyId": "cmp_17992c51c85e",
+    "locationId": "loc_04bafb14512d",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "components",
+      "forged",
+      "machined",
+      "machining",
+      "metal components"
+    ]
+  },
+  {
+    "company": "ELANTAS PDG, Inc. (St. Louis, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "5200 North Second Street, St. Louis, MO 63147, USA",
+    "addressComponents": {
+      "city": "St. Louis",
+      "state": "MO",
+      "postal_code": "63147",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ELANTAS PDG, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "5200 North Second Street, St. Louis, MO 63147, USA",
+        "supplier_address_normalized": {
+          "city": "St. Louis",
+          "state": "MO",
+          "postal_code": "63147",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "resins manufacturing",
+          "electrical insulation materials"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Resins / electrical insulation materials",
+    "website": "https://www.elantas.com",
+    "companyKey": "elantas.com",
+    "companyId": "cmp_2d628ed5512b",
+    "locationId": "loc_b3006640516b",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "electrical",
+      "electrical insulation materials",
+      "insulation",
+      "materials",
+      "resins",
+      "resins manufacturing"
+    ]
+  },
+  {
+    "company": "American NTN Bearing Mfg. Corp. (Elgin, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1500 Holmes Road, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American NTN Bearing Mfg. Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1500 Holmes Road, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "bearing manufacturing",
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings",
+    "website": "https://www.ntnamericas.com",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_a0273870518c",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "bearing manufacturing",
+      "bearings",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "American NTN Bearing Mfg. Corp. (Elgin, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1400 Holmes Road, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American NTN Bearing Mfg. Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1400 Holmes Road, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "bearing manufacturing",
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings",
+    "website": "https://www.ntnamericas.com",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_42d4937eb1b6",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "bearing manufacturing",
+      "bearings",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "American NTN Bearing Mfg. Corp. (Elgin, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1700 Holmes Road, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American NTN Bearing Mfg. Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1700 Holmes Road, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "bearing manufacturing",
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings",
+    "website": "https://www.ntnamericas.com",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_31e262aed1e0",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "bearing manufacturing",
+      "bearings",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "American NTN Bearing Mfg. Corp. (Elgin, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "315 Corporate Drive, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American NTN Bearing Mfg. Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "315 Corporate Drive, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "support functions",
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings",
+    "website": "https://www.ntnamericas.com",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_47eb4a89a2a3",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "support functions",
+      "warehousing"
+    ]
+  },
+  {
+    "company": "American NTN Bearing Mfg. Corp. (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "39255 W 12 Mile Road, Farmington Hills, MI 48331, USA",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American NTN Bearing Mfg. Corp.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "39255 W 12 Mile Road, Farmington Hills, MI 48331, USA",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "support functions",
+          "engineering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Bearings",
+    "website": "https://www.ntnamericas.com",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_29ed33799a38",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "engineering",
+      "support functions"
+    ]
+  },
+  {
+    "company": "Stahl Specialty Company (Kingsville, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "34600 Old US Highway 50, Kingsville, MO 64061, USA",
+    "addressComponents": {
+      "city": "Kingsville",
+      "state": "MO",
+      "postal_code": "64061",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Stahl Specialty Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "34600 Old US Highway 50, Kingsville, MO 64061, USA",
+        "supplier_address_normalized": {
+          "city": "Kingsville",
+          "state": "MO",
+          "postal_code": "64061",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "casting",
+          "aluminum castings",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum castings",
+    "website": "https://www.stahlspecialty.com",
+    "companyKey": "stahlspecialty.com",
+    "companyId": "cmp_efa9a27e1d3b",
+    "locationId": "loc_b871a5726cf6",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "aluminum",
+      "aluminum castings",
+      "automotive",
+      "casting",
+      "castings",
+      "machining"
+    ]
+  },
+  {
+    "company": "Stahl Specialty Company (Warrensburg, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "695 E Young Ave, Warrensburg, MO 64093, USA",
+    "addressComponents": {
+      "city": "Warrensburg",
+      "state": "MO",
+      "postal_code": "64093",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Stahl Specialty Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "695 E Young Ave, Warrensburg, MO 64093, USA",
+        "supplier_address_normalized": {
+          "city": "Warrensburg",
+          "state": "MO",
+          "postal_code": "64093",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "casting",
+          "aluminum castings",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Aluminum castings",
+    "website": "https://www.stahlspecialty.com",
+    "companyKey": "stahlspecialty.com",
+    "companyId": "cmp_efa9a27e1d3b",
+    "locationId": "loc_d5d74f4b3dac",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "aluminum",
+      "aluminum castings",
+      "automotive",
+      "casting",
+      "castings",
+      "machining"
+    ]
+  },
+  {
+    "company": "Principal Manufacturing Corporation (Broadview, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2800 South 19th Avenue, Broadview, IL 60155, USA",
+    "addressComponents": {
+      "city": "Broadview",
+      "state": "IL",
+      "postal_code": "60155",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Principal Manufacturing Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2800 South 19th Avenue, Broadview, IL 60155, USA",
+        "supplier_address_normalized": {
+          "city": "Broadview",
+          "state": "IL",
+          "postal_code": "60155",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping / welding / assembly",
+    "website": "https://www.principalmfg.com",
+    "companyKey": "principalmfg.com",
+    "companyId": "cmp_6b8161017e56",
+    "locationId": "loc_f08961f77e21",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembly",
+      "automotive",
+      "metal stamping",
+      "stamping",
+      "welding"
+    ]
+  },
+  {
+    "company": "Principal Manufacturing Corporation (Broadview, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2001 West 19th Street, Broadview, IL 60155, USA",
+    "addressComponents": {
+      "city": "Broadview",
+      "state": "IL",
+      "postal_code": "60155",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Principal Manufacturing Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2001 West 19th Street, Broadview, IL 60155, USA",
+        "supplier_address_normalized": {
+          "city": "Broadview",
+          "state": "IL",
+          "postal_code": "60155",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping / welding / assembly",
+    "website": "https://www.principalmfg.com",
+    "companyKey": "principalmfg.com",
+    "companyId": "cmp_6b8161017e56",
+    "locationId": "loc_1e4bed98ef47",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembly",
+      "automotive",
+      "metal stamping",
+      "stamping",
+      "welding"
+    ]
+  },
+  {
+    "company": "Gerdau Special Steel North America (Monroe, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "910 S Telegraph Road, Monroe, MI 48161, USA",
+    "addressComponents": {
+      "city": "Monroe",
+      "state": "MI",
+      "postal_code": "48161",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gerdau Special Steel North America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "910 S Telegraph Road, Monroe, MI 48161, USA",
+        "supplier_address_normalized": {
+          "city": "Monroe",
+          "state": "MI",
+          "postal_code": "48161",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel production",
+          "special steel"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Special steel / bars",
+    "website": "https://gsn.gerdau.com",
+    "companyKey": "gsn.gerdau.com",
+    "companyId": "cmp_4cc65299efc8",
+    "locationId": "loc_894f27c30561",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "bars",
+      "special",
+      "special steel",
+      "steel",
+      "steel production"
+    ]
+  },
+  {
+    "company": "Bendix Commercial Vehicle Systems LLC (Huntington, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1515 E Western Avenue, Huntington, IN 46750, USA",
+    "addressComponents": {
+      "city": "Huntington",
+      "state": "IN",
+      "postal_code": "46750",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1515 E Western Avenue, Huntington, IN 46750, USA",
+        "supplier_address_normalized": {
+          "city": "Huntington",
+          "state": "IN",
+          "postal_code": "46750",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems",
+          "assembly",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Brake systems",
+    "website": "https://truck.knorr-bremse.com",
+    "companyKey": "truck.knorr-bremse.com",
+    "companyId": "cmp_8e010fea9d9b",
+    "locationId": "loc_a2c649f07b99",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "brake",
+      "brake systems",
+      "machining",
+      "systems"
+    ]
+  },
+  {
+    "company": "Bendix Commercial Vehicle Systems LLC (Huntington, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1850 Riverfork Drive, Huntington, IN 46750, USA",
+    "addressComponents": {
+      "city": "Huntington",
+      "state": "IN",
+      "postal_code": "46750",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1850 Riverfork Drive, Huntington, IN 46750, USA",
+        "supplier_address_normalized": {
+          "city": "Huntington",
+          "state": "IN",
+          "postal_code": "46750",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems",
+          "assembly",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Brake systems",
+    "website": "https://truck.knorr-bremse.com",
+    "companyKey": "truck.knorr-bremse.com",
+    "companyId": "cmp_8e010fea9d9b",
+    "locationId": "loc_4c9164f354e0",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "brake",
+      "brake systems",
+      "machining",
+      "systems"
+    ]
+  },
+  {
+    "company": "Bendix Commercial Vehicle Systems LLC (Huntington, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2051 Riverfork Drive, Huntington, IN 46750, USA",
+    "addressComponents": {
+      "city": "Huntington",
+      "state": "IN",
+      "postal_code": "46750",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2051 Riverfork Drive, Huntington, IN 46750, USA",
+        "supplier_address_normalized": {
+          "city": "Huntington",
+          "state": "IN",
+          "postal_code": "46750",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems",
+          "assembly",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Brake systems",
+    "website": "https://truck.knorr-bremse.com",
+    "companyKey": "truck.knorr-bremse.com",
+    "companyId": "cmp_8e010fea9d9b",
+    "locationId": "loc_ac15a541bee7",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "brake",
+      "brake systems",
+      "machining",
+      "systems"
+    ]
+  },
+  {
+    "company": "AGS Technology, Inc. (Batavia, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "951 Douglas Road, Batavia, IL 60510, USA",
+    "addressComponents": {
+      "city": "Batavia",
+      "state": "IL",
+      "postal_code": "60510",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AGS Technology, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "951 Douglas Road, Batavia, IL 60510, USA",
+        "supplier_address_normalized": {
+          "city": "Batavia",
+          "state": "IL",
+          "postal_code": "60510",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly",
+          "plastic components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded / assembled components",
+    "website": "https://www.agstech.com",
+    "companyKey": "agstech.com",
+    "companyId": "cmp_cef744339f70",
+    "locationId": "loc_cf149cdaa843",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembled",
+      "assembly",
+      "automotive",
+      "components",
+      "injection",
+      "injection molding",
+      "molded",
+      "plastic components"
+    ]
+  },
+  {
+    "company": "AGS Technology, Inc. (Batavia, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "101 N Raddant Road, Batavia, IL 60510, USA",
+    "addressComponents": {
+      "city": "Batavia",
+      "state": "IL",
+      "postal_code": "60510",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AGS Technology, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "101 N Raddant Road, Batavia, IL 60510, USA",
+        "supplier_address_normalized": {
+          "city": "Batavia",
+          "state": "IL",
+          "postal_code": "60510",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing",
+          "distribution",
+          "support functions"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded / assembled components",
+    "website": "https://www.agstech.com",
+    "companyKey": "agstech.com",
+    "companyId": "cmp_cef744339f70",
+    "locationId": "loc_171afc4c2278",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembled",
+      "automotive",
+      "components",
+      "distribution",
+      "injection",
+      "molded",
+      "support functions",
+      "warehousing"
+    ]
+  },
+  {
+    "company": "The Intec Group, Inc. (Palatine, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "666 South Vermont Street, Palatine, IL 60067, USA",
+    "addressComponents": {
+      "city": "Palatine",
+      "state": "IL",
+      "postal_code": "60067",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "The Intec Group, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "666 South Vermont Street, Palatine, IL 60067, USA",
+        "supplier_address_normalized": {
+          "city": "Palatine",
+          "state": "IL",
+          "postal_code": "60067",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "plastic components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic injection molding",
+    "website": "https://www.intecgrp.com",
+    "companyKey": "intecgrp.com",
+    "companyId": "cmp_38e8e84bd2d1",
+    "locationId": "loc_ef7eac4e7ac7",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "injection",
+      "injection molding",
+      "molding",
+      "plastic",
+      "plastic components"
+    ]
+  },
+  {
+    "company": "Michigan Production Machining Inc. (Macomb, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "16700 23 Mile Road, Macomb, MI 48044, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48044",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Production Machining Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "16700 23 Mile Road, Macomb, MI 48044, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48044",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "website": "https://www.michpro.com",
+    "companyKey": "michpro.com",
+    "companyId": "cmp_d3b488b37ae9",
+    "locationId": "loc_006eea49f7da",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "Michigan Production Machining Inc. (Macomb, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "51261 Milano, Macomb, MI 48042, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48042",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Production Machining Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "51261 Milano, Macomb, MI 48042, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48042",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "website": "https://www.michpro.com",
+    "companyKey": "michpro.com",
+    "companyId": "cmp_d3b488b37ae9",
+    "locationId": "loc_2b1568158ea4",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "Michigan Production Machining Inc. (Macomb, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "50523 Corporate Drive, Macomb, MI 48044, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48044",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Production Machining Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "50523 Corporate Drive, Macomb, MI 48044, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48044",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "precision manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "website": "https://www.michpro.com",
+    "companyKey": "michpro.com",
+    "companyId": "cmp_d3b488b37ae9",
+    "locationId": "loc_1bc8c34b8a74",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "Steel Dynamics, Inc. (Butler) (Butler, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "12501 N County Road 225 East, Butler, IN 46721, USA",
+    "addressComponents": {
+      "city": "Butler",
+      "state": "IN",
+      "postal_code": "46721",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Steel Dynamics, Inc. (Butler)",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "12501 N County Road 225 East, Butler, IN 46721, USA",
+        "supplier_address_normalized": {
+          "city": "Butler",
+          "state": "IN",
+          "postal_code": "46721",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel production",
+          "flat roll steel"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Flat roll steel",
+    "website": "https://www.steeldynamics.com",
+    "companyKey": "steeldynamics.com",
+    "companyId": "cmp_3ba738290a3d",
+    "locationId": "loc_3a5edbc67a0c",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "flat",
+      "flat roll steel",
+      "roll",
+      "steel",
+      "steel production"
+    ]
+  },
+  {
+    "company": "Modineer Co. (St. Peters, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "22 N Spencer Creek Road, St. Peters, MO 63376, USA",
+    "addressComponents": {
+      "city": "St. Peters",
+      "state": "MO",
+      "postal_code": "63376",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Modineer Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "22 N Spencer Creek Road, St. Peters, MO 63376, USA",
+        "supplier_address_normalized": {
+          "city": "St. Peters",
+          "state": "MO",
+          "postal_code": "63376",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal fabrication",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal components",
+    "website": "https://www.modineer.com",
+    "companyKey": "modineer.com",
+    "companyId": "cmp_4f2ff28ada14",
+    "locationId": "loc_03e20206744e",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "components",
+      "metal",
+      "metal fabrication"
+    ]
+  },
+  {
+    "company": "Modineer Co. (Niles, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "3025 S 11th Street, Niles, MI 49120, USA",
+    "addressComponents": {
+      "city": "Niles",
+      "state": "MI",
+      "postal_code": "49120",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Modineer Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "3025 S 11th Street, Niles, MI 49120, USA",
+        "supplier_address_normalized": {
+          "city": "Niles",
+          "state": "MI",
+          "postal_code": "49120",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal fabrication",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal components",
+    "website": "https://www.modineer.com",
+    "companyKey": "modineer.com",
+    "companyId": "cmp_4f2ff28ada14",
+    "locationId": "loc_4bbe261bafd2",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "components",
+      "metal",
+      "metal fabrication"
+    ]
+  },
+  {
+    "company": "Walker Products (Pacific, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "2411 Old Gray Summit Road, Pacific, MO 63069, USA",
+    "addressComponents": {
+      "city": "Pacific",
+      "state": "MO",
+      "postal_code": "63069",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Walker Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2411 Old Gray Summit Road, Pacific, MO 63069, USA",
+        "supplier_address_normalized": {
+          "city": "Pacific",
+          "state": "MO",
+          "postal_code": "63069",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "oxygen sensors",
+          "emissions components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Sensors / emission components",
+    "website": "https://www.walkerproducts.com",
+    "companyKey": "walkerproducts.com",
+    "companyId": "cmp_17c9a9c7ca65",
+    "locationId": "loc_9aa84adefc7c",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "components",
+      "emission",
+      "emissions components",
+      "oxygen sensors",
+      "sensors"
+    ]
+  },
+  {
+    "company": "Shannon Precision Fastener (Madison Heights, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "31600 Stephenson Highway, Madison Heights, MI 48071, USA",
+    "addressComponents": {
+      "city": "Madison Heights",
+      "state": "MI",
+      "postal_code": "48071",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Shannon Precision Fastener",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "31600 Stephenson Highway, Madison Heights, MI 48071, USA",
+        "supplier_address_normalized": {
+          "city": "Madison Heights",
+          "state": "MI",
+          "postal_code": "48071",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fastener manufacturing",
+          "cold heading",
+          "stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Special fasteners",
+    "website": "https://www.shannonpf.com",
+    "companyKey": "shannonpf.com",
+    "companyId": "cmp_a3bcc29a6e05",
+    "locationId": "loc_884a1dae61a2",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "cold heading",
+      "fastener manufacturing",
+      "fasteners",
+      "special",
+      "stamping"
+    ]
+  },
+  {
+    "company": "Shannon Precision Fastener (Madison Heights, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "800 East 14 Mile Road, Madison Heights, MI 48071, USA",
+    "addressComponents": {
+      "city": "Madison Heights",
+      "state": "MI",
+      "postal_code": "48071",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Shannon Precision Fastener",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "800 East 14 Mile Road, Madison Heights, MI 48071, USA",
+        "supplier_address_normalized": {
+          "city": "Madison Heights",
+          "state": "MI",
+          "postal_code": "48071",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fastener manufacturing",
+          "cold heading",
+          "stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Special fasteners",
+    "website": "https://www.shannonpf.com",
+    "companyKey": "shannonpf.com",
+    "companyId": "cmp_a3bcc29a6e05",
+    "locationId": "loc_80e99c7e4ca2",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "cold heading",
+      "fastener manufacturing",
+      "fasteners",
+      "special",
+      "stamping"
+    ]
+  },
+  {
+    "company": "Shannon Precision Fastener (Holly, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "6161 Stony Run, Holly, MI 48442, USA",
+    "addressComponents": {
+      "city": "Holly",
+      "state": "MI",
+      "postal_code": "48442",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Shannon Precision Fastener",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "6161 Stony Run, Holly, MI 48442, USA",
+        "supplier_address_normalized": {
+          "city": "Holly",
+          "state": "MI",
+          "postal_code": "48442",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fastener manufacturing",
+          "cold heading",
+          "stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Special fasteners",
+    "website": "https://www.shannonpf.com",
+    "companyKey": "shannonpf.com",
+    "companyId": "cmp_a3bcc29a6e05",
+    "locationId": "loc_b6de9a5a4fff",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "cold heading",
+      "fastener manufacturing",
+      "fasteners",
+      "special",
+      "stamping"
+    ]
+  },
+  {
+    "company": "Small Parts, Inc. (Logansport, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "600 Humphrey Street, Logansport, IN 46947, USA",
+    "addressComponents": {
+      "city": "Logansport",
+      "state": "IN",
+      "postal_code": "46947",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Small Parts, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "600 Humphrey Street, Logansport, IN 46947, USA",
+        "supplier_address_normalized": {
+          "city": "Logansport",
+          "state": "IN",
+          "postal_code": "46947",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "terminal manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping / terminals",
+    "website": "https://www.smallpartsinc.com",
+    "companyKey": "smallpartsinc.com",
+    "companyId": "cmp_500399448cf3",
+    "locationId": "loc_74ae55de1ee0",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembly",
+      "automotive",
+      "metal stamping",
+      "stamping",
+      "terminal manufacturing",
+      "terminals"
+    ]
+  },
+  {
+    "company": "Small Parts, Inc. (Logansport, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "112 East Mildred Street, Logansport, IN 46947, USA",
+    "addressComponents": {
+      "city": "Logansport",
+      "state": "IN",
+      "postal_code": "46947",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Small Parts, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "112 East Mildred Street, Logansport, IN 46947, USA",
+        "supplier_address_normalized": {
+          "city": "Logansport",
+          "state": "IN",
+          "postal_code": "46947",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "terminal manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping / terminals",
+    "website": "https://www.smallpartsinc.com",
+    "companyKey": "smallpartsinc.com",
+    "companyId": "cmp_500399448cf3",
+    "locationId": "loc_77241dd148b4",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "assembly",
+      "automotive",
+      "metal stamping",
+      "stamping",
+      "terminal manufacturing",
+      "terminals"
+    ]
+  },
+  {
+    "company": "Wright Plastic Products Company, LLC (St. Clair, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "2021 Christian B Haas, St. Clair, MI 48079, USA",
+    "addressComponents": {
+      "city": "St. Clair",
+      "state": "MI",
+      "postal_code": "48079",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wright Plastic Products Company, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2021 Christian B Haas, St. Clair, MI 48079, USA",
+        "supplier_address_normalized": {
+          "city": "St. Clair",
+          "state": "MI",
+          "postal_code": "48079",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "plastic components",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic injection molding",
+    "website": "https://www.wppinc.com",
+    "companyKey": "wppinc.com",
+    "companyId": "cmp_1fb006f9f507",
+    "locationId": "loc_91934142e099",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "injection",
+      "injection molding",
+      "molding",
+      "plastic",
+      "plastic components"
+    ]
+  },
+  {
+    "company": "Wright Plastic Products Company, LLC (Sheridan, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "201 Condensery Road, Sheridan, MI 48884, USA",
+    "addressComponents": {
+      "city": "Sheridan",
+      "state": "MI",
+      "postal_code": "48884",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wright Plastic Products Company, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "201 Condensery Road, Sheridan, MI 48884, USA",
+        "supplier_address_normalized": {
+          "city": "Sheridan",
+          "state": "MI",
+          "postal_code": "48884",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "plastic components",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic injection molding",
+    "website": "https://www.wppinc.com",
+    "companyKey": "wppinc.com",
+    "companyId": "cmp_1fb006f9f507",
+    "locationId": "loc_9270fa36f2ea",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "assembly",
+      "automotive",
+      "injection",
+      "injection molding",
+      "molding",
+      "plastic",
+      "plastic components"
+    ]
+  },
+  {
+    "company": "Roehm America LLC (Osceola, AR)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "1500 Richard Prewitt Dr, Osceola, AR 72370, USA",
+    "addressComponents": {
+      "city": "Osceola",
+      "state": "AR",
+      "postal_code": "72370",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Roehm America LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1500 Richard Prewitt Dr, Osceola, AR 72370, USA",
+        "supplier_address_normalized": {
+          "city": "Osceola",
+          "state": "AR",
+          "postal_code": "72370",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "polymer production",
+          "acrylic resins"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Acrylic polymers / resins",
+    "website": "https://www.roehm.com",
+    "companyKey": "roehm.com",
+    "companyId": "cmp_b69790a2c05c",
+    "locationId": "loc_707661ed7d7c",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "acrylic",
+      "acrylic resins",
+      "automotive",
+      "polymer production",
+      "polymers",
+      "resins"
+    ]
+  },
+  {
+    "company": "Bekaert (Rogers, AR)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "One Bekaert Drive, Rogers, AR 72756-1948, USA",
+    "addressComponents": {
+      "city": "Rogers",
+      "state": "AR",
+      "postal_code": "72756-1948",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bekaert",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "One Bekaert Drive, Rogers, AR 72756-1948, USA",
+        "supplier_address_normalized": {
+          "city": "Rogers",
+          "state": "AR",
+          "postal_code": "72756-1948",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel wire",
+          "cord manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Steel wire / cord",
+    "website": "https://www.bekaert.com",
+    "companyKey": "bekaert.com",
+    "companyId": "cmp_263be98e424b",
+    "locationId": "loc_28bd496f2b15",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "cord",
+      "cord manufacturing",
+      "steel",
+      "steel wire",
+      "wire"
+    ]
+  },
+  {
+    "company": "Big River Steel (Osceola, AR)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "2027 East State Highway 198, Osceola, AR 72370, USA",
+    "addressComponents": {
+      "city": "Osceola",
+      "state": "AR",
+      "postal_code": "72370",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Big River Steel",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2027 East State Highway 198, Osceola, AR 72370, USA",
+        "supplier_address_normalized": {
+          "city": "Osceola",
+          "state": "AR",
+          "postal_code": "72370",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel production",
+          "flat roll steel"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Flat roll steel",
+    "website": "https://www.ussteel.com",
+    "companyKey": "ussteel.com",
+    "companyId": "cmp_aabdb0eb5177",
+    "locationId": "loc_6fd14b30b56b",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "flat",
+      "flat roll steel",
+      "roll",
+      "steel",
+      "steel production"
+    ]
+  },
+  {
+    "company": "IDI Composites International (Noblesville, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 3",
+    "addressRaw": "15000 Herriman Blvd, Noblesville, IN 46060, USA",
+    "addressComponents": {
+      "city": "Noblesville",
+      "state": "IN",
+      "postal_code": "46060",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "IDI Composites International",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "15000 Herriman Blvd, Noblesville, IN 46060, USA",
+        "supplier_address_normalized": {
+          "city": "Noblesville",
+          "state": "IN",
+          "postal_code": "46060",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "composites materials",
+          "distribution"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Composites distribution / materials",
+    "website": "https://www.idicomposites.com",
+    "companyKey": "idicomposites.com",
+    "companyId": "cmp_03fbc8084b8b",
+    "locationId": "loc_f201a6d23a50",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "composites",
+      "composites materials",
+      "distribution",
+      "materials"
+    ]
+  },
+  {
+    "company": "Tec Air, Inc. (Munster, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "8200 Monrovia Street, Munster, IN 46321, USA",
+    "addressComponents": {
+      "city": "Munster",
+      "state": "IN",
+      "postal_code": "46321",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tec Air, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "8200 Monrovia Street, Munster, IN 46321, USA",
+        "supplier_address_normalized": {
+          "city": "Munster",
+          "state": "IN",
+          "postal_code": "46321",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "tube manufacturing",
+          "metal forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Tube manufacturing",
+    "website": "https://www.tecairllc.com",
+    "companyKey": "tecairllc.com",
+    "companyId": "cmp_cf1e4596aaa6",
+    "locationId": "loc_7cf1e8daa88d",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "manufacturing",
+      "metal forming",
+      "tube",
+      "tube manufacturing"
+    ]
+  },
+  {
+    "company": "RBC Precision Products (Plymouth, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "819 Spencer Road, Plymouth, IN 46563, USA",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "IN",
+      "postal_code": "46563",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "RBC Precision Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "819 Spencer Road, Plymouth, IN 46563, USA",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "IN",
+          "postal_code": "46563",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision manufacturing",
+          "bearings"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Bearings / precision components",
+    "website": "https://www.rbcbearings.com",
+    "companyKey": "rbcbearings.com",
+    "companyId": "cmp_4d548499574d",
+    "locationId": "loc_b4fa25140f4a",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "/",
+      "automotive",
+      "bearings",
+      "components",
+      "precision",
+      "precision manufacturing"
+    ]
+  },
+  {
+    "company": "Freeway Rockford, Inc. (Rockford, IL)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "7790 Ashland Avenue, Rockford, IL 61108, USA",
+    "addressComponents": {
+      "city": "Rockford",
+      "state": "IL",
+      "postal_code": "61108",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Freeway Rockford, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "7790 Ashland Avenue, Rockford, IL 61108, USA",
+        "supplier_address_normalized": {
+          "city": "Rockford",
+          "state": "IL",
+          "postal_code": "61108",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cold heading",
+          "stamping",
+          "fastener manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate",
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Special fasteners",
+    "website": "https://www.freewaycorp.com",
+    "companyKey": "freewaycorp.com",
+    "companyId": "cmp_31d0871648ca",
+    "locationId": "loc_503970e891ce",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "cold heading",
+      "fastener manufacturing",
+      "fasteners",
+      "special",
+      "stamping"
+    ]
+  },
+  {
+    "company": "WMI Plastics (Holland, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5745 West 143rd Avenue, Holland, MI 49423, USA",
+    "addressComponents": {
+      "city": "Holland",
+      "state": "MI",
+      "postal_code": "49423",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "WMI Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "5745 West 143rd Avenue, Holland, MI 49423, USA",
+        "supplier_address_normalized": {
+          "city": "Holland",
+          "state": "MI",
+          "postal_code": "49423",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "plastic components",
+          "automotive"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Plastic injection molding",
+    "website": "https://www.wmiplastics.com",
+    "companyKey": "wmiplastics.com",
+    "companyId": "cmp_d926e6b073b9",
+    "locationId": "loc_f20627aba5ec",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "automotive",
+      "injection",
+      "injection molding",
+      "molding",
+      "plastic",
+      "plastic components"
+    ]
+  },
+  {
+    "company": "Trans-Matic Mfg. Co., Inc. (Holland, MI)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "300 E 48th St, Holland, MI 49423, USA",
+    "addressComponents": {
+      "city": "Holland",
+      "state": "MI",
+      "postal_code": "49423",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Trans-Matic Mfg. Co., Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "300 E 48th St, Holland, MI 49423, USA",
+        "supplier_address_normalized": {
+          "city": "Holland",
+          "state": "MI",
+          "postal_code": "49423",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "deep draw stamping",
+          "progressive die stamping",
+          "transfer press stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping (deep draw)",
+    "website": "https://www.transmatic.com",
+    "companyKey": "transmatic.com",
+    "companyId": "cmp_097ae1548e3e",
+    "locationId": "loc_393f89a777ad",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "(deep",
+      "automotive",
+      "deep draw stamping",
+      "draw)",
+      "metal",
+      "progressive die stamping",
+      "stamping",
+      "transfer press stamping"
+    ]
+  },
+  {
+    "company": "Allison Transmission, Inc. (Indianapolis, IN)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "One Allison Way, Indianapolis, IN 46222, USA",
+    "addressComponents": {
+      "city": "Indianapolis",
+      "state": "IN",
+      "postal_code": "46222",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Allison Transmission, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "One Allison Way, Indianapolis, IN 46222, USA",
+        "supplier_address_normalized": {
+          "city": "Indianapolis",
+          "state": "IN",
+          "postal_code": "46222",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "transmission manufacturing",
+          "powertrain"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "quality_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "web_sweep_round66_MI_to_AR"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems (transmissions)",
+    "website": "https://www.allisontransmission.com",
+    "companyKey": "allisontransmission.com",
+    "companyId": "cmp_e9246682fc50",
+    "locationId": "loc_a46555f1f4c1",
+    "parentCompanyId": null,
+    "industryKeywords": [
+      "(transmissions)",
+      "automotive",
+      "powertrain",
+      "systems",
+      "transmission manufacturing"
+    ]
+  }
+]

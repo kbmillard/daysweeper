@@ -1,0 +1,3093 @@
+[
+  {
+    "company": "Wayne Tool & Design (Laotto, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Laotto",
+    "tier": "Tier 2",
+    "addressRaw": "6505 State Route 205, Laotto, IN 46763, USA",
+    "addressComponents": {
+      "city": "Laotto",
+      "state": "IN",
+      "postal_code": "46763",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wayne Tool & Design",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6505 State Route 205, Laotto, IN 46763, USA",
+        "supplier_address_normalized": {
+          "city": "Laotto",
+          "state": "IN",
+          "postal_code": "46763",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping / welding / machining",
+    "website": "https://waynetool.com",
+    "companyKey": "waynetool.com",
+    "companyId": "cmp_868c23a2182c",
+    "locationId": "loc_7149d6503e36"
+  },
+  {
+    "company": "Windsor Machine & Stamping (2009) Ltd (Princeton, IN)",
+    "parentCompany": "Windsor Machine & Stamping (2009) Ltd",
+    "segment": "USA | IN | Princeton",
+    "tier": "Tier 2",
+    "addressRaw": "908 Gach Road, Princeton, IN 47670, USA",
+    "addressComponents": {
+      "city": "Princeton",
+      "state": "IN",
+      "postal_code": "47670",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Windsor Machine & Stamping (2009) Ltd",
+        "parent_company": "Windsor Machine & Stamping (2009) Ltd",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "908 Gach Road, Princeton, IN 47670, USA",
+        "supplier_address_normalized": {
+          "city": "Princeton",
+          "state": "IN",
+          "postal_code": "47670",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Seat metal components",
+    "website": "https://windsor-machstamp.com",
+    "companyKey": "windsor-machstamp.com",
+    "companyId": "cmp_dcb1e6760513",
+    "locationId": "loc_846499bacf6c"
+  },
+  {
+    "company": "KEY Manufacturing (Madison, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Madison",
+    "tier": "Tier 2",
+    "addressRaw": "431 W 2nd Street, Madison, IN 47250, USA",
+    "addressComponents": {
+      "city": "Madison",
+      "state": "IN",
+      "postal_code": "47250",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KEY Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "431 W 2nd Street, Madison, IN 47250, USA",
+        "supplier_address_normalized": {
+          "city": "Madison",
+          "state": "IN",
+          "postal_code": "47250",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded products",
+    "website": "https://manarinc.com",
+    "companyKey": "manarinc.com",
+    "companyId": "cmp_3083ae2e0531",
+    "locationId": "loc_2cf60ba639ab"
+  },
+  {
+    "company": "Wabash Castings, LLC (Wabash, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Wabash",
+    "tier": "Tier 2",
+    "addressRaw": "3837 West Mill Street Extended, Wabash, IN 46992, USA",
+    "addressComponents": {
+      "city": "Wabash",
+      "state": "IN",
+      "postal_code": "46992",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wabash Castings, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3837 West Mill Street Extended, Wabash, IN 46992, USA",
+        "supplier_address_normalized": {
+          "city": "Wabash",
+          "state": "IN",
+          "postal_code": "46992",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings",
+    "website": "https://wabashcastings.com",
+    "companyKey": "wabashcastings.com",
+    "companyId": "cmp_43b9a1303907",
+    "locationId": "loc_e064bd000d89"
+  },
+  {
+    "company": "Flambeau Contract Molding (Columbus, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Columbus",
+    "tier": "Tier 2",
+    "addressRaw": "4325 Middle Road, Columbus, IN 47203, USA",
+    "addressComponents": {
+      "city": "Columbus",
+      "state": "IN",
+      "postal_code": "47203",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Flambeau Contract Molding",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4325 Middle Road, Columbus, IN 47203, USA",
+        "supplier_address_normalized": {
+          "city": "Columbus",
+          "state": "IN",
+          "postal_code": "47203",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "website": "https://flambeau.com",
+    "companyKey": "flambeau.com",
+    "companyId": "cmp_ab8ccef204e3",
+    "locationId": "loc_9da1eecef2ec"
+  },
+  {
+    "company": "KemKrest (Carmel, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Carmel",
+    "tier": "Tier 2",
+    "addressRaw": "1000 E. 116th Street, Carmel, IN 46032, USA",
+    "addressComponents": {
+      "city": "Carmel",
+      "state": "IN",
+      "postal_code": "46032",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KemKrest",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1000 E. 116th Street, Carmel, IN 46032, USA",
+        "supplier_address_normalized": {
+          "city": "Carmel",
+          "state": "IN",
+          "postal_code": "46032",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "machining",
+          "sub-assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Engine/vehicle sub-assemblies",
+    "website": "https://kemkrest.com",
+    "companyKey": "kemkrest.com",
+    "companyId": "cmp_893c5e26afbe",
+    "locationId": "loc_754fc71b9f2e"
+  },
+  {
+    "company": "IDI Composites International (Noblesville, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Noblesville",
+    "tier": "Tier 2",
+    "addressRaw": "407 S. 7th Street, Noblesville, IN 46061, USA",
+    "addressComponents": {
+      "city": "Noblesville",
+      "state": "IN",
+      "postal_code": "46061",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "IDI Composites International",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "407 S. 7th Street, Noblesville, IN 46061, USA",
+        "supplier_address_normalized": {
+          "city": "Noblesville",
+          "state": "IN",
+          "postal_code": "46061",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "materials compounding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Thermoset molding compounds",
+    "website": "https://idicomposites.com",
+    "companyKey": "idicomposites.com",
+    "companyId": "cmp_03fbc8084b8b",
+    "locationId": "loc_5ac7d9ff10d6"
+  },
+  {
+    "company": "Vandor Corporation (Richmond, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Richmond",
+    "tier": "Tier 2",
+    "addressRaw": "4251 West Industries Road, Richmond, IN 47374, USA",
+    "addressComponents": {
+      "city": "Richmond",
+      "state": "IN",
+      "postal_code": "47374",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Vandor Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4251 West Industries Road, Richmond, IN 47374, USA",
+        "supplier_address_normalized": {
+          "city": "Richmond",
+          "state": "IN",
+          "postal_code": "47374",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "decorative finishing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded & decorative components",
+    "website": "https://vandorcorp.com",
+    "companyKey": "vandorcorp.com",
+    "companyId": "cmp_9394512b344f",
+    "locationId": "loc_d86de37037b0"
+  },
+  {
+    "company": "Prestige Stamping, LLC (Warren, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Warren",
+    "tier": "Tier 2",
+    "addressRaw": "23513 Groesbeck Highway, Warren, MI 48089, USA",
+    "addressComponents": {
+      "city": "Warren",
+      "state": "MI",
+      "postal_code": "48089",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prestige Stamping, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "23513 Groesbeck Highway, Warren, MI 48089, USA",
+        "supplier_address_normalized": {
+          "city": "Warren",
+          "state": "MI",
+          "postal_code": "48089",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings",
+    "website": "https://prestige-stamp.com",
+    "companyKey": "prestige-stamp.com",
+    "companyId": "cmp_3d5da0700cf6",
+    "locationId": "loc_0a9a5e168903"
+  },
+  {
+    "company": "Advanced Auto Trends (Snover, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Snover",
+    "tier": "Tier 2",
+    "addressRaw": "3279 W. Snover Road, Snover, MI 48472, USA",
+    "addressComponents": {
+      "city": "Snover",
+      "state": "MI",
+      "postal_code": "48472",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Advanced Auto Trends",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3279 W. Snover Road, Snover, MI 48472, USA",
+        "supplier_address_normalized": {
+          "city": "Snover",
+          "state": "MI",
+          "postal_code": "48472",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded / assembled parts",
+    "website": "https://advancedautotrends.com",
+    "companyKey": "advancedautotrends.com",
+    "companyId": "cmp_d3c464946f1c",
+    "locationId": "loc_27d6b11200d2"
+  },
+  {
+    "company": "Advanced Auto Trends (Oxford, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Oxford",
+    "tier": "Tier 2",
+    "addressRaw": "3485 Metamora Road, Oxford, MI 48371, USA",
+    "addressComponents": {
+      "city": "Oxford",
+      "state": "MI",
+      "postal_code": "48371",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Advanced Auto Trends",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3485 Metamora Road, Oxford, MI 48371, USA",
+        "supplier_address_normalized": {
+          "city": "Oxford",
+          "state": "MI",
+          "postal_code": "48371",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "management",
+          "IT",
+          "sales"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Remote support",
+    "website": "https://advancedautotrends.com",
+    "companyKey": "advancedautotrends.com",
+    "companyId": "cmp_d3c464946f1c",
+    "locationId": "loc_16afed73a603"
+  },
+  {
+    "company": "Cadillac Products Automotive Company (Troy, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Troy",
+    "tier": "Tier 2",
+    "addressRaw": "1750 Stephenson Highway, Troy, MI 48098, USA",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48098",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cadillac Products Automotive Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1750 Stephenson Highway, Troy, MI 48098, USA",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48098",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "assembly",
+          "manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automotive components / assemblies",
+    "website": "https://cadprodauto.com",
+    "companyKey": "cadprodauto.com",
+    "companyId": "cmp_6f3b9e80e058",
+    "locationId": "loc_597ae9047676"
+  },
+  {
+    "company": "Cadillac Products Automotive Company (Troy, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Troy",
+    "tier": "Tier 2",
+    "addressRaw": "5800 Crooks Road, Troy, MI 48098, USA",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48098",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cadillac Products Automotive Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5800 Crooks Road, Troy, MI 48098, USA",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48098",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "logistics",
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Remote support",
+    "website": "https://cadprodauto.com",
+    "companyKey": "cadprodauto.com",
+    "companyId": "cmp_6f3b9e80e058",
+    "locationId": "loc_350b1fccbe32"
+  },
+  {
+    "company": "Michigan Rod Products (Howell, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Howell",
+    "tier": "Tier 2",
+    "addressRaw": "1326 Grand Oaks Drive, Howell, MI 48843, USA",
+    "addressComponents": {
+      "city": "Howell",
+      "state": "MI",
+      "postal_code": "48843",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Rod Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1326 Grand Oaks Drive, Howell, MI 48843, USA",
+        "supplier_address_normalized": {
+          "city": "Howell",
+          "state": "MI",
+          "postal_code": "48843",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "wire forming",
+          "fasteners",
+          "stamping",
+          "welded assemblies"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire forms / fasteners / exhaust hangers",
+    "website": "https://michrod.com",
+    "companyKey": "michrod.com",
+    "companyId": "cmp_0a10b3325fc0",
+    "locationId": "loc_2d34210bebd1"
+  },
+  {
+    "company": "Precision Stamping Co., Inc. (Howell, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Howell",
+    "tier": "Tier 2",
+    "addressRaw": "1244 Grand Oaks Drive, Howell, MI 48843, USA",
+    "addressComponents": {
+      "city": "Howell",
+      "state": "MI",
+      "postal_code": "48843",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Precision Stamping Co., Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1244 Grand Oaks Drive, Howell, MI 48843, USA",
+        "supplier_address_normalized": {
+          "city": "Howell",
+          "state": "MI",
+          "postal_code": "48843",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings",
+    "website": "https://precisionstamping.com",
+    "companyKey": "precisionstamping.com",
+    "companyId": "cmp_c1453e0daee3",
+    "locationId": "loc_ef27af735c4f"
+  },
+  {
+    "company": "Great Lakes Metal Stamping, LLC (Bridgman, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Bridgman",
+    "tier": "Tier 2",
+    "addressRaw": "9864 Church Street, Bridgman, MI 49106, USA",
+    "addressComponents": {
+      "city": "Bridgman",
+      "state": "MI",
+      "postal_code": "49106",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Great Lakes Metal Stamping, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9864 Church Street, Bridgman, MI 49106, USA",
+        "supplier_address_normalized": {
+          "city": "Bridgman",
+          "state": "MI",
+          "postal_code": "49106",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing",
+    "website": "https://glakesmetalstamping.com",
+    "companyKey": "glakesmetalstamping.com",
+    "companyId": "cmp_af5dbe041232",
+    "locationId": "loc_d3d71bce96ec"
+  },
+  {
+    "company": "Great Lakes Metal Stamping, LLC (Grand Haven, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Grand Haven",
+    "tier": "Tier 2",
+    "addressRaw": "11095 West Olive Road, Grand Haven, MI 49417, USA",
+    "addressComponents": {
+      "city": "Grand Haven",
+      "state": "MI",
+      "postal_code": "49417",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Great Lakes Metal Stamping, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11095 West Olive Road, Grand Haven, MI 49417, USA",
+        "supplier_address_normalized": {
+          "city": "Grand Haven",
+          "state": "MI",
+          "postal_code": "49417",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "information technology"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Information technology support",
+    "website": "https://glakesmetalstamping.com",
+    "companyKey": "glakesmetalstamping.com",
+    "companyId": "cmp_af5dbe041232",
+    "locationId": "loc_f6897df53e91"
+  },
+  {
+    "company": "New Center Stamping (Detroit, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Detroit",
+    "tier": "Tier 2",
+    "addressRaw": "950 East Milwaukee, Detroit, MI 48211, USA",
+    "addressComponents": {
+      "city": "Detroit",
+      "state": "MI",
+      "postal_code": "48211",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "New Center Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "950 East Milwaukee, Detroit, MI 48211, USA",
+        "supplier_address_normalized": {
+          "city": "Detroit",
+          "state": "MI",
+          "postal_code": "48211",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings",
+    "website": "https://newcenter.net",
+    "companyKey": "newcenter.net",
+    "companyId": "cmp_aca5b2b16cfd",
+    "locationId": "loc_ef83a8d0722f"
+  },
+  {
+    "company": "Nitto Automotive, Inc. (Novi, MI)",
+    "parentCompany": "Nitto Denko Corporation",
+    "segment": "USA | MI | Novi",
+    "tier": "Tier 1",
+    "addressRaw": "41000 Grand River Ave Suite 120, Novi, MI 48375, USA",
+    "addressComponents": {
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48375",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nitto Automotive, Inc.",
+        "parent_company": "Nitto Denko Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "41000 Grand River Ave Suite 120, Novi, MI 48375, USA",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48375",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "engineering",
+          "sales"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automotive tapes / NVH materials",
+    "website": "https://nitto.com",
+    "companyKey": "nitto.com",
+    "companyId": "cmp_da99eb6dddaf",
+    "locationId": "loc_f41ecdf77cc5"
+  },
+  {
+    "company": "Acemco Incorporated (Spring Lake, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Spring Lake",
+    "tier": "Tier 2",
+    "addressRaw": "7297 Enterprise Drive, Spring Lake, MI 49456, USA",
+    "addressComponents": {
+      "city": "Spring Lake",
+      "state": "MI",
+      "postal_code": "49456",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Acemco Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7297 Enterprise Drive, Spring Lake, MI 49456, USA",
+        "supplier_address_normalized": {
+          "city": "Spring Lake",
+          "state": "MI",
+          "postal_code": "49456",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "assemblies"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & assemblies",
+    "website": "https://acemco.com",
+    "companyKey": "acemco.com",
+    "companyId": "cmp_fa7695e37633",
+    "locationId": "loc_76c08ce9f807"
+  },
+  {
+    "company": "Acemco Incorporated (Norton Shores, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Norton Shores",
+    "tier": "Tier 2",
+    "addressRaw": "1218 Suite E East Pontaluna Road, Norton Shores, MI 49444, USA",
+    "addressComponents": {
+      "city": "Norton Shores",
+      "state": "MI",
+      "postal_code": "49444",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Acemco Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1218 Suite E East Pontaluna Road, Norton Shores, MI 49444, USA",
+        "supplier_address_normalized": {
+          "city": "Norton Shores",
+          "state": "MI",
+          "postal_code": "49444",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing",
+          "packaging",
+          "logistics"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing / packaging / logistics support",
+    "website": "https://acemco.com",
+    "companyKey": "acemco.com",
+    "companyId": "cmp_fa7695e37633",
+    "locationId": "loc_72aef25cf419"
+  },
+  {
+    "company": "Dajaco (Chesterfield, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Chesterfield",
+    "tier": "Tier 2",
+    "addressRaw": "49715 Leona Drive, Chesterfield, MI 48051, USA",
+    "addressComponents": {
+      "city": "Chesterfield",
+      "state": "MI",
+      "postal_code": "48051",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dajaco",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "49715 Leona Drive, Chesterfield, MI 48051, USA",
+        "supplier_address_normalized": {
+          "city": "Chesterfield",
+          "state": "MI",
+          "postal_code": "48051",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & small assemblies",
+    "website": "https://dajaco.com",
+    "companyKey": "dajaco.com",
+    "companyId": "cmp_2c4ebacf71cb",
+    "locationId": "loc_770c145958f9"
+  },
+  {
+    "company": "Kalkaska Screw Products Inc. (Kalkaska, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Kalkaska",
+    "tier": "Tier 2",
+    "addressRaw": "775 Rabourn Road, Kalkaska, MI 49646, USA",
+    "addressComponents": {
+      "city": "Kalkaska",
+      "state": "MI",
+      "postal_code": "49646",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kalkaska Screw Products Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "775 Rabourn Road, Kalkaska, MI 49646, USA",
+        "supplier_address_normalized": {
+          "city": "Kalkaska",
+          "state": "MI",
+          "postal_code": "49646",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "precision machining",
+          "assemblies"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Precision machined products",
+    "website": "https://kalkaskascrew.com",
+    "companyKey": "kalkaskascrew.com",
+    "companyId": "cmp_5f03c044b211",
+    "locationId": "loc_5beceebfed4d"
+  },
+  {
+    "company": "Majestic Industries, Inc. (Macomb, MI)",
+    "parentCompany": "Tooling Tech Group",
+    "segment": "USA | MI | Macomb",
+    "tier": "Tier 2",
+    "addressRaw": "15378 Hallmark Court, Macomb, MI 48042, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48042",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Majestic Industries, Inc.",
+        "parent_company": "Tooling Tech Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15378 Hallmark Court, Macomb, MI 48042, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48042",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings",
+    "website": "https://toolingtechgroup.com",
+    "companyKey": "toolingtechgroup.com",
+    "companyId": "cmp_e97ae8405d5d",
+    "locationId": "loc_f520db45d553"
+  },
+  {
+    "company": "Industrial Machine Products, Inc. (Oxford, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Oxford",
+    "tier": "Tier 2",
+    "addressRaw": "32 Louck Street, Oxford, MI 48371, USA",
+    "addressComponents": {
+      "city": "Oxford",
+      "state": "MI",
+      "postal_code": "48371",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Industrial Machine Products, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "32 Louck Street, Oxford, MI 48371, USA",
+        "supplier_address_normalized": {
+          "city": "Oxford",
+          "state": "MI",
+          "postal_code": "48371",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stampings & assembly",
+    "website": "https://industrialmachineprod.com",
+    "companyKey": "industrialmachineprod.com",
+    "companyId": "cmp_4283df69620b",
+    "locationId": "loc_3ba6c33344de"
+  },
+  {
+    "company": "Prism Plastics, Inc. (Port Huron, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Port Huron",
+    "tier": "Tier 2",
+    "addressRaw": "2040 International Way, Port Huron, MI 48060, USA",
+    "addressComponents": {
+      "city": "Port Huron",
+      "state": "MI",
+      "postal_code": "48060",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prism Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2040 International Way, Port Huron, MI 48060, USA",
+        "supplier_address_normalized": {
+          "city": "Port Huron",
+          "state": "MI",
+          "postal_code": "48060",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded components & assemblies",
+    "website": "https://prismplastics.com",
+    "companyKey": "prismplastics.com",
+    "companyId": "cmp_ab3f4594b00b",
+    "locationId": "loc_d811f8a8bf03"
+  },
+  {
+    "company": "Prism Plastics, Inc. (Chesterfield, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Chesterfield",
+    "tier": "Tier 2",
+    "addressRaw": "52111 Sierra Dr., Chesterfield, MI 48047, USA",
+    "addressComponents": {
+      "city": "Chesterfield",
+      "state": "MI",
+      "postal_code": "48047",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prism Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "52111 Sierra Dr., Chesterfield, MI 48047, USA",
+        "supplier_address_normalized": {
+          "city": "Chesterfield",
+          "state": "MI",
+          "postal_code": "48047",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "remote support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Remote support",
+    "website": "https://prismplastics.com",
+    "companyKey": "prismplastics.com",
+    "companyId": "cmp_ab3f4594b00b",
+    "locationId": "loc_d0dca5a7807e"
+  },
+  {
+    "company": "Consolidated Clips & Clamps Inc (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Plymouth",
+    "tier": "Tier 2",
+    "addressRaw": "15050 Keel Street, Plymouth, MI 48170, USA",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Consolidated Clips & Clamps Inc",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15050 Keel Street, Plymouth, MI 48170, USA",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "formed metal components",
+          "assemblies"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Formed metal components & assemblies",
+    "website": "https://clipsclamps.com",
+    "companyKey": "clipsclamps.com",
+    "companyId": "cmp_6d3b4c238cd1",
+    "locationId": "loc_4c3b208ae39f"
+  },
+  {
+    "company": "Argent International, Inc. (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Plymouth",
+    "tier": "Tier 2",
+    "addressRaw": "41016 Concept Drive, Plymouth, MI 48170, USA",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Argent International, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "41016 Concept Drive, Plymouth, MI 48170, USA",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Engineered components (automotive)",
+    "website": "https://argent-international.com",
+    "companyKey": "argent-international.com",
+    "companyId": "cmp_eebeb735fc0e",
+    "locationId": "loc_f07d1e4d257b"
+  },
+  {
+    "company": "All-Rite Industries (Lake Zurich, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Lake Zurich",
+    "tier": "Tier 2",
+    "addressRaw": "500 Oakwood Road, Lake Zurich, IL 60047, USA",
+    "addressComponents": {
+      "city": "Lake Zurich",
+      "state": "IL",
+      "postal_code": "60047",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "All-Rite Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "500 Oakwood Road, Lake Zurich, IL 60047, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Zurich",
+          "state": "IL",
+          "postal_code": "60047",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "assemblies"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Extended manufacturing",
+    "website": "https://allriteindustries.com",
+    "companyKey": "allriteindustries.com",
+    "companyId": "cmp_ac275848211d",
+    "locationId": "loc_f988ef475a92"
+  },
+  {
+    "company": "All-Rite Industries (Johnsburg, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Johnsburg",
+    "tier": "Tier 2",
+    "addressRaw": "3613 North Richmond Road, Johnsburg, IL 60051, USA",
+    "addressComponents": {
+      "city": "Johnsburg",
+      "state": "IL",
+      "postal_code": "60051",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "All-Rite Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3613 North Richmond Road, Johnsburg, IL 60051, USA",
+        "supplier_address_normalized": {
+          "city": "Johnsburg",
+          "state": "IL",
+          "postal_code": "60051",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "remote support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Remote support",
+    "website": "https://allriteindustries.com",
+    "companyKey": "allriteindustries.com",
+    "companyId": "cmp_ac275848211d",
+    "locationId": "loc_12f30dbd4675"
+  },
+  {
+    "company": "Quantum Plastics (Elgin, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Elgin",
+    "tier": "Tier 2",
+    "addressRaw": "1000 Davis Road, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quantum Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1000 Davis Road, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded products",
+    "website": "https://quantumplastics.com",
+    "companyKey": "quantumplastics.com",
+    "companyId": "cmp_5f20f7842f15",
+    "locationId": "loc_03caa3be1e90"
+  },
+  {
+    "company": "The Intec Group (Palatine, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Palatine",
+    "tier": "Tier 2",
+    "addressRaw": "666 South Vermont Street, Palatine, IL 60067, USA",
+    "addressComponents": {
+      "city": "Palatine",
+      "state": "IL",
+      "postal_code": "60067",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "The Intec Group",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "666 South Vermont Street, Palatine, IL 60067, USA",
+        "supplier_address_normalized": {
+          "city": "Palatine",
+          "state": "IL",
+          "postal_code": "60067",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding / assembled parts",
+    "website": "https://intecgroup.com",
+    "companyKey": "intecgroup.com",
+    "companyId": "cmp_1bf8713f865b",
+    "locationId": "loc_b40131846ad1"
+  },
+  {
+    "company": "Principal Manufacturing Corporation (Broadview, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Broadview",
+    "tier": "Tier 2",
+    "addressRaw": "1600 West 19th Street, Broadview, IL 60155, USA",
+    "addressComponents": {
+      "city": "Broadview",
+      "state": "IL",
+      "postal_code": "60155",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Principal Manufacturing Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1600 West 19th Street, Broadview, IL 60155, USA",
+        "supplier_address_normalized": {
+          "city": "Broadview",
+          "state": "IL",
+          "postal_code": "60155",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing",
+    "website": "https://principalmfg.com",
+    "companyKey": "principalmfg.com",
+    "companyId": "cmp_6b8161017e56",
+    "locationId": "loc_8fc5847631af"
+  },
+  {
+    "company": "AGS Technology, Inc. (Batavia, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Batavia",
+    "tier": "Tier 2",
+    "addressRaw": "951 Douglas Road, Batavia, IL 60510, USA",
+    "addressComponents": {
+      "city": "Batavia",
+      "state": "IL",
+      "postal_code": "60510",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AGS Technology, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "951 Douglas Road, Batavia, IL 60510, USA",
+        "supplier_address_normalized": {
+          "city": "Batavia",
+          "state": "IL",
+          "postal_code": "60510",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded & assembled parts",
+    "website": "https://agstechnology.com",
+    "companyKey": "agstechnology.com",
+    "companyId": "cmp_81d321d53519",
+    "locationId": "loc_92c9b48379c2"
+  },
+  {
+    "company": "Frantz Manufacturing Company (Sterling, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Sterling",
+    "tier": "Tier 2",
+    "addressRaw": "3809 West Lincolnway, Sterling, IL 61081, USA",
+    "addressComponents": {
+      "city": "Sterling",
+      "state": "IL",
+      "postal_code": "61081",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Frantz Manufacturing Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3809 West Lincolnway, Sterling, IL 61081, USA",
+        "supplier_address_normalized": {
+          "city": "Sterling",
+          "state": "IL",
+          "postal_code": "61081",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Industrial chains & sprockets (automotive)",
+    "website": "https://frantz-mfg.com",
+    "companyKey": "frantz-mfg.com",
+    "companyId": "cmp_fd711837373b",
+    "locationId": "loc_6e2bb778c45f"
+  },
+  {
+    "company": "Nitto Automotive, Inc. (Riverside, MO)",
+    "parentCompany": "Nitto Denko Corporation",
+    "segment": "USA | MO | Riverside",
+    "tier": "Tier 1",
+    "addressRaw": "4440 NW Riverside St., Riverside, MO 64150, USA",
+    "addressComponents": {
+      "city": "Riverside",
+      "state": "MO",
+      "postal_code": "64150",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nitto Automotive, Inc.",
+        "parent_company": "Nitto Denko Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4440 NW Riverside St., Riverside, MO 64150, USA",
+        "supplier_address_normalized": {
+          "city": "Riverside",
+          "state": "MO",
+          "postal_code": "64150",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing",
+    "website": "https://nitto.com",
+    "companyKey": "nitto.com",
+    "companyId": "cmp_da99eb6dddaf",
+    "locationId": "loc_a78dfd3b8d07"
+  },
+  {
+    "company": "Haldex Brake Products (Kansas City, MO)",
+    "parentCompany": "SAF-HOLLAND Group",
+    "segment": "USA | MO | Kansas City",
+    "tier": "Tier 1",
+    "addressRaw": "10930 N. Pomona Avenue, Kansas City, MO 64153-1256, USA",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64153-1256",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Haldex Brake Products",
+        "parent_company": "SAF-HOLLAND Group",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "10930 N. Pomona Avenue, Kansas City, MO 64153-1256, USA",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64153-1256",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "remote support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Brake systems (remote support)",
+    "website": "https://haldex.com",
+    "companyKey": "haldex.com",
+    "companyId": "cmp_1065dc3e7ade",
+    "locationId": "loc_0f33edc2aac4"
+  },
+  {
+    "company": "ELANTAS PDG, Inc. (St. Louis, MO)",
+    "parentCompany": "ALTANA AG",
+    "segment": "USA | MO | St. Louis",
+    "tier": "Tier 2",
+    "addressRaw": "5200 Oakland Avenue, St. Louis, MO 63110, USA",
+    "addressComponents": {
+      "city": "St. Louis",
+      "state": "MO",
+      "postal_code": "63110",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ELANTAS PDG, Inc.",
+        "parent_company": "ALTANA AG",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5200 Oakland Avenue, St. Louis, MO 63110, USA",
+        "supplier_address_normalized": {
+          "city": "St. Louis",
+          "state": "MO",
+          "postal_code": "63110",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "materials manufacturing",
+          "resins"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electrical insulating resins",
+    "website": "https://elantas.com",
+    "companyKey": "elantas.com",
+    "companyId": "cmp_2d628ed5512b",
+    "locationId": "loc_ed80c72ce5e9"
+  },
+  {
+    "company": "Roehm America LLC (Osceola, AR)",
+    "parentCompany": "Roehm GmbH",
+    "segment": "USA | AR | Osceola",
+    "tier": "Tier 2",
+    "addressRaw": "1500 Richard Prewitt Drive, Osceola, AR 72370, USA",
+    "addressComponents": {
+      "city": "Osceola",
+      "state": "AR",
+      "postal_code": "72370",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Roehm America LLC",
+        "parent_company": "Roehm GmbH",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1500 Richard Prewitt Drive, Osceola, AR 72370, USA",
+        "supplier_address_normalized": {
+          "city": "Osceola",
+          "state": "AR",
+          "postal_code": "72370",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "materials manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Acrylic sheet / polymer materials",
+    "website": "https://roehm.com",
+    "companyKey": "roehm.com",
+    "companyId": "cmp_b69790a2c05c",
+    "locationId": "loc_9f1790b96766"
+  },
+  {
+    "company": "New Center Stamping (Detroit, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Detroit",
+    "tier": "Tier 2",
+    "addressRaw": "1140 East Milwaukee Street, Detroit, MI 48211, USA",
+    "addressComponents": {
+      "city": "Detroit",
+      "state": "MI",
+      "postal_code": "48211",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "New Center Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1140 East Milwaukee Street, Detroit, MI 48211, USA",
+        "supplier_address_normalized": {
+          "city": "Detroit",
+          "state": "MI",
+          "postal_code": "48211",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing / support",
+    "website": "https://newcenter.net",
+    "companyKey": "newcenter.net",
+    "companyId": "cmp_aca5b2b16cfd",
+    "locationId": "loc_1ea720b0722a"
+  },
+  {
+    "company": "Jasper Rubber Products, Inc. (Jasper, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Jasper",
+    "tier": "Tier 2",
+    "addressRaw": "1010 First Avenue, Jasper, IN 47546, USA",
+    "addressComponents": {
+      "city": "Jasper",
+      "state": "IN",
+      "postal_code": "47546",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Jasper Rubber Products, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1010 First Avenue, Jasper, IN 47546, USA",
+        "supplier_address_normalized": {
+          "city": "Jasper",
+          "state": "IN",
+          "postal_code": "47546",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber molding",
+          "extrusion",
+          "thermoplastic components"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Molded/extruded rubber & plastic components",
+    "website": "https://jasperrubber.com",
+    "companyKey": "jasperrubber.com",
+    "companyId": "cmp_822782c657e6",
+    "locationId": "loc_8f607b784ec4"
+  },
+  {
+    "company": "Jasper Rubber Products, Inc. (Jasper, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Jasper",
+    "tier": "Tier 2",
+    "addressRaw": "1055 First Avenue, Jasper, IN 47546, USA",
+    "addressComponents": {
+      "city": "Jasper",
+      "state": "IN",
+      "postal_code": "47546",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Jasper Rubber Products, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1055 First Avenue, Jasper, IN 47546, USA",
+        "supplier_address_normalized": {
+          "city": "Jasper",
+          "state": "IN",
+          "postal_code": "47546",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber molding",
+          "extrusion"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Extended manufacturing",
+    "website": "https://jasperrubber.com",
+    "companyKey": "jasperrubber.com",
+    "companyId": "cmp_822782c657e6",
+    "locationId": "loc_d9b8e4c9bb40"
+  },
+  {
+    "company": "Jasper Rubber Products, Inc. (Jasper, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Jasper",
+    "tier": "Tier 2",
+    "addressRaw": "1093 First Avenue, Jasper, IN 47546, USA",
+    "addressComponents": {
+      "city": "Jasper",
+      "state": "IN",
+      "postal_code": "47546",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Jasper Rubber Products, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1093 First Avenue, Jasper, IN 47546, USA",
+        "supplier_address_normalized": {
+          "city": "Jasper",
+          "state": "IN",
+          "postal_code": "47546",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "rubber molding",
+          "extrusion"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Extended manufacturing",
+    "website": "https://jasperrubber.com",
+    "companyKey": "jasperrubber.com",
+    "companyId": "cmp_822782c657e6",
+    "locationId": "loc_693a8e3a7006"
+  },
+  {
+    "company": "Jasper Rubber Products, Inc. (Jasper, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Jasper",
+    "tier": "Tier 2",
+    "addressRaw": "1011 First Avenue, Jasper, IN 47546, USA",
+    "addressComponents": {
+      "city": "Jasper",
+      "state": "IN",
+      "postal_code": "47546",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Jasper Rubber Products, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1011 First Avenue, Jasper, IN 47546, USA",
+        "supplier_address_normalized": {
+          "city": "Jasper",
+          "state": "IN",
+          "postal_code": "47546",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "human resources"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Support site (HR)",
+    "website": "https://jasperrubber.com",
+    "companyKey": "jasperrubber.com",
+    "companyId": "cmp_822782c657e6",
+    "locationId": "loc_4f9d7626e6b9"
+  },
+  {
+    "company": "Ramco Specialties, Michigan (South Lyon, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | South Lyon",
+    "tier": "Tier 2",
+    "addressRaw": "465 North Mill Street, South Lyon, MI 48178, USA",
+    "addressComponents": {
+      "city": "South Lyon",
+      "state": "MI",
+      "postal_code": "48178",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ramco Specialties, Michigan",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "465 North Mill Street, South Lyon, MI 48178, USA",
+        "supplier_address_normalized": {
+          "city": "South Lyon",
+          "state": "MI",
+          "postal_code": "48178",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Automotive components",
+    "website": "https://ramcospecialties.com",
+    "companyKey": "ramcospecialties.com",
+    "companyId": "cmp_771d05d76b39",
+    "locationId": "loc_093cd62a91ac"
+  },
+  {
+    "company": "Julian Electric, Inc. (Lockport, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Lockport",
+    "tier": "Tier 2",
+    "addressRaw": "15706 West 147th Street, Lockport, IL 60491, USA",
+    "addressComponents": {
+      "city": "Lockport",
+      "state": "IL",
+      "postal_code": "60491",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Julian Electric, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15706 West 147th Street, Lockport, IL 60491, USA",
+        "supplier_address_normalized": {
+          "city": "Lockport",
+          "state": "IL",
+          "postal_code": "60491",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "electrical components manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Electrical components",
+    "website": "https://julianelectric.com",
+    "companyKey": "julianelectric.com",
+    "companyId": "cmp_727bf8916ded",
+    "locationId": "loc_4c507bea588f"
+  },
+  {
+    "company": "Precision Strip, Inc. (Canton, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Canton",
+    "tier": "Tier 3",
+    "addressRaw": "5100 Haggerty Road, Canton, MI 48188, USA",
+    "addressComponents": {
+      "city": "Canton",
+      "state": "MI",
+      "postal_code": "48188",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Precision Strip, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 3",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5100 Haggerty Road, Canton, MI 48188, USA",
+        "supplier_address_normalized": {
+          "city": "Canton",
+          "state": "MI",
+          "postal_code": "48188",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "steel processing",
+          "slitting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_3",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Precision steel strip",
+    "website": "https://precision-strip.com",
+    "companyKey": "precision-strip.com",
+    "companyId": "cmp_615ece0adf5d",
+    "locationId": "loc_13c5cc43fc07"
+  },
+  {
+    "company": "Dekalb Metal Finishing (Auburn, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Auburn",
+    "tier": "Tier 2",
+    "addressRaw": "625 W 15th Street, Auburn, IN 46706, USA",
+    "addressComponents": {
+      "city": "Auburn",
+      "state": "IN",
+      "postal_code": "46706",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dekalb Metal Finishing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "625 W 15th Street, Auburn, IN 46706, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn",
+          "state": "IN",
+          "postal_code": "46706",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal finishing",
+          "plating"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal finishing / plating",
+    "website": "https://dekalbmetal.com",
+    "companyKey": "dekalbmetal.com",
+    "companyId": "cmp_9546807c9c4e",
+    "locationId": "loc_c7b293584f12"
+  },
+  {
+    "company": "IPF, LLC (Shelbyville, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Shelbyville",
+    "tier": "Tier 2",
+    "addressRaw": "302 Northbrook Drive, Shelbyville, IN 46176, USA",
+    "addressComponents": {
+      "city": "Shelbyville",
+      "state": "IN",
+      "postal_code": "46176",
+      "country": "US"
+    },
+    "addressConfidence": 0.85,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "IPF, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "302 Northbrook Drive, Shelbyville, IN 46176, USA",
+        "supplier_address_normalized": {
+          "city": "Shelbyville",
+          "state": "IN",
+          "postal_code": "46176",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website",
+          "iatf_certificate"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "iatf_certificate_scrape"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molded parts / assemblies",
+    "website": "https://ipfllc.com",
+    "companyKey": "ipfllc.com",
+    "companyId": "cmp_403f4bc7cb50",
+    "locationId": "loc_3107504050bb"
+  }
+]

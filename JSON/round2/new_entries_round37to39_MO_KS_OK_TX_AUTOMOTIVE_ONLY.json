@@ -1,0 +1,1082 @@
+[
+  {
+    "company": "Martinrea Riverside, LLC (Riverside, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5233 NW 41st Street, Riverside, MO 64150, US",
+    "addressComponents": {
+      "city": "Riverside",
+      "state": "MO",
+      "postal_code": "64150",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Martinrea Riverside, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5233 NW 41st Street, Riverside, MO 64150, US",
+        "supplier_address_normalized": {
+          "city": "Riverside",
+          "state": "MO",
+          "postal_code": "64150",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "osha",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.martinrea.com/",
+    "companyKey": "martinrea.com",
+    "companyId": "cmp_697f69d6e992",
+    "locationId": "loc_9cc0dd8a2217",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "assemblies"
+    ]
+  },
+  {
+    "company": "FORVIA (Faurecia Interior Systems, Blue Springs, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "650 NW Blue Pkwy, Blue Springs, MO 64015, US",
+    "addressComponents": {
+      "city": "Blue Springs",
+      "state": "MO",
+      "postal_code": "64015",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "650 NW Blue Pkwy, Blue Springs, MO 64015, US",
+        "supplier_address_normalized": {
+          "city": "Blue Springs",
+          "state": "MO",
+          "postal_code": "64015",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "epa_tri",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_bfd5627fd180",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "interior",
+      "assembly"
+    ]
+  },
+  {
+    "company": "M+M Quality Solutions (Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "10960 N Congress Ave, Kansas City, MO 64153, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64153",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "M+M Quality Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "10960 N Congress Ave, Kansas City, MO 64153, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64153",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "kitting",
+          "quality inspection",
+          "rework"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": "https://mmqualitysolutions.com/",
+    "companyKey": "mmqualitysolutions.com",
+    "companyId": "cmp_837a8cda2d81",
+    "locationId": "loc_6ededf25f2a9",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Quality inspection",
+      "Rework"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "kitting",
+      "quality"
+    ]
+  },
+  {
+    "company": "M+M Quality Solutions (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1601 Fairfax Trafficway, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "M+M Quality Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1601 Fairfax Trafficway, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "kitting",
+          "quality inspection",
+          "rework"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": "https://mmqualitysolutions.com/",
+    "companyKey": "mmqualitysolutions.com",
+    "companyId": "cmp_837a8cda2d81",
+    "locationId": "loc_b2e39e113800",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Quality inspection",
+      "Rework"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "kitting",
+      "quality"
+    ]
+  },
+  {
+    "company": "Best Way Distribution (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1705 Kansas Ave, Kansas City, KS 66105, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66105",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Best Way Distribution",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1705 Kansas Ave, Kansas City, KS 66105, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66105",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing",
+          "cross-dock",
+          "transportation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "website": "https://www.bwdst.com/",
+    "companyKey": "bwdst.com",
+    "companyId": "cmp_af61960807cf",
+    "locationId": "loc_9fe76d1369d4",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Cross-dock",
+      "Warehousing",
+      "Transportation"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "3pl",
+      "warehousing",
+      "cross-dock",
+      "transportation"
+    ],
+    "contactInfo": {
+      "email": "info@bwdst.com"
+    }
+  },
+  {
+    "company": "Comprehensive Logistics (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "230 Kindleberger Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Comprehensive Logistics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "230 Kindleberger Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "line-side logistics",
+          "kitting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "supplier_directory",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sequencing centers",
+    "website": "https://complog.com/",
+    "companyKey": "complog.com",
+    "companyId": "cmp_2f93b92c4996",
+    "locationId": "loc_2eff47ac7c5d",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Line-side delivery"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "line-side",
+      "jit"
+    ]
+  },
+  {
+    "company": "Sun Manufacturing (Coweta, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12232 S State Hwy 51, Coweta, OK 74429, US",
+    "addressComponents": {
+      "city": "Coweta",
+      "state": "OK",
+      "postal_code": "74429",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Sun Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12232 S State Hwy 51, Coweta, OK 74429, US",
+        "supplier_address_normalized": {
+          "city": "Coweta",
+          "state": "OK",
+          "postal_code": "74429",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "tool and die",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.sunmfg.net/",
+    "companyKey": "sunmfg.net",
+    "companyId": "cmp_574254492c09",
+    "locationId": "loc_56ad992aa34d",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "welding"
+    ]
+  },
+  {
+    "company": "HyPro (Vinita, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1100 Industrial Dr, Vinita, OK 74301, US",
+    "addressComponents": {
+      "city": "Vinita",
+      "state": "OK",
+      "postal_code": "74301",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HyPro",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1100 Industrial Dr, Vinita, OK 74301, US",
+        "supplier_address_normalized": {
+          "city": "Vinita",
+          "state": "OK",
+          "postal_code": "74301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cnc machining",
+          "contract manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "website": "https://www.hypro.com/",
+    "companyKey": "hypro.com",
+    "companyId": "cmp_3cb6af2149b7",
+    "locationId": "loc_3eba52c90168",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "machining",
+      "cnc",
+      "contract manufacturing",
+      "oem"
+    ]
+  },
+  {
+    "company": "Lippert (Transportation Windows, Tulsa, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1575 N 93rd East Ave, Tulsa, OK 74115, US",
+    "addressComponents": {
+      "city": "Tulsa",
+      "state": "OK",
+      "postal_code": "74115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Lippert",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1575 N 93rd East Ave, Tulsa, OK 74115, US",
+        "supplier_address_normalized": {
+          "city": "Tulsa",
+          "state": "OK",
+          "postal_code": "74115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "window manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.lippert.com/",
+    "companyKey": "lippert.com",
+    "companyId": "cmp_52536e5f175c",
+    "locationId": "loc_0e5cda6024d3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "transportation",
+      "windows",
+      "assembly"
+    ],
+    "contactInfo": {
+      "phone": "+1 (432) 547-7378"
+    }
+  },
+  {
+    "company": "Optronics International (Muskogee, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "401 S 41st Street East, Muskogee, OK 74403, US",
+    "addressComponents": {
+      "city": "Muskogee",
+      "state": "OK",
+      "postal_code": "74403",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Optronics International",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 S 41st Street East, Muskogee, OK 74403, US",
+        "supplier_address_normalized": {
+          "city": "Muskogee",
+          "state": "OK",
+          "postal_code": "74403",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicular lighting manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.optronicsinc.com/",
+    "companyKey": "optronicsinc.com",
+    "companyId": "cmp_0b0fa6c7742d",
+    "locationId": "loc_e876c274f785",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Lighting assembly",
+      "Assembly",
+      "Electronics manufacturing"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "lighting",
+      "vehicular safety",
+      "assembly"
+    ],
+    "contactInfo": {
+      "phone": "+1 (918) 683-9514",
+      "email": "info@optronicsinc.com"
+    }
+  },
+  {
+    "company": "Arvin Sango, Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 6, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Arvin Sango, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 6, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "exhaust systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.arvinsango.com/",
+    "companyKey": "arvinsango.com",
+    "companyId": "cmp_ff18bf32d3bb",
+    "locationId": "loc_e1dd1ec65a0f",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Exhaust systems",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "exhaust",
+      "tier 1",
+      "jit"
+    ]
+  },
+  {
+    "company": "Nolato (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "901 Paulsun Street, San Antonio, TX 78219, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78219",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nolato",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "901 Paulsun Street, San Antonio, TX 78219, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78219",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://www.nolato.com/",
+    "companyKey": "nolato.com",
+    "companyId": "cmp_3244f73d2126",
+    "locationId": "loc_d337425910f3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "plastics",
+      "assembly"
+    ]
+  },
+  {
+    "company": "Dayton Rogers (Arlington, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1107 Commercial Blvd N, Arlington, TX 76001, US",
+    "addressComponents": {
+      "city": "Arlington",
+      "state": "TX",
+      "postal_code": "76001",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dayton Rogers",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1107 Commercial Blvd N, Arlington, TX 76001, US",
+        "supplier_address_normalized": {
+          "city": "Arlington",
+          "state": "TX",
+          "postal_code": "76001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://daytonrogers.com/",
+    "companyKey": "daytonrogers.com",
+    "companyId": "cmp_26308dd8c30e",
+    "locationId": "loc_8a2103ce1905",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "metal stamping",
+      "welding",
+      "machining",
+      "assemblies"
+    ]
+  },
+  {
+    "company": "All-Plastics, Inc. (Kerrville, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "200 Holdsworth Dr, Kerrville, TX 78028, US",
+    "addressComponents": {
+      "city": "Kerrville",
+      "state": "TX",
+      "postal_code": "78028",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "All-Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Holdsworth Dr, Kerrville, TX 78028, US",
+        "supplier_address_normalized": {
+          "city": "Kerrville",
+          "state": "TX",
+          "postal_code": "78028",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://all-plastics.com/",
+    "companyKey": "all-plastics.com",
+    "companyId": "cmp_083bfff294ff",
+    "locationId": "loc_bce67dacbba8",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "plastics",
+      "injection molding",
+      "manufacturing"
+    ]
+  }
+]

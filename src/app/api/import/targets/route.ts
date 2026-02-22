@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 // Accepts JSON array or { items: [...] } of rows like:
 // { company, addressRaw, website?, phone?, email?, companyId?, locationId?, parentCompanyId?,
 //   segment?, tier?, supplyChainCategory?, supplyChainSubtypeGroup?, supplyChainSubtype?,
-//   capabilityTags?[], packagingSignals?[], addressComponents?, addressConfidence?, legacyJson?, companyKey? }
+//   capabilityTags?[], packagingSignals?[], addressComponents?, legacyJson?, companyKey? }
 
 type Row = {
   company: string;
@@ -27,7 +27,6 @@ type Row = {
   packagingSignals?: string[] | null;
 
   addressComponents?: any;
-  addressConfidence?: number | null;
 
   legacyJson?: any;
   companyKey?: string | null;
@@ -81,7 +80,6 @@ export async function POST(req: Request) {
             ...(r.supplyChainSubtype ? { supplyChainSubtype: r.supplyChainSubtype } : {}),
             ...(r.capabilityTags ? { capabilityTags: r.capabilityTags } : {}),
             ...(r.packagingSignals ? { packagingSignals: r.packagingSignals } : {}),
-            ...(r.addressConfidence != null ? { addressConfidence: r.addressConfidence } : {}),
             ...(r.companyId ? { companyId: r.companyId } : {}),
             ...(r.locationId ? { locationId: r.locationId } : {}),
             ...(r.parentCompanyId ? { parentCompanyId: r.parentCompanyId } : {}),

@@ -1,0 +1,2387 @@
+[
+  {
+    "company": "General Motors (Wentzville Assembly, Wentzville, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "1500 East Route A, Wentzville, MO 63385, US",
+    "addressComponents": {
+      "city": "Wentzville",
+      "state": "MO",
+      "postal_code": "63385",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "General Motors",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1500 East Route A, Wentzville, MO 63385, US",
+        "supplier_address_normalized": {
+          "city": "Wentzville",
+          "state": "MO",
+          "postal_code": "63385",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicle assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "gm_us_operations_page"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Passenger vehicle OEMs",
+    "website": "https://www.gm.com/",
+    "companyKey": "gm.com",
+    "companyId": "cmp_f16271c54826",
+    "locationId": "loc_e373c19839cc",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "vehicle assembly",
+      "automotive"
+    ]
+  },
+  {
+    "company": "Ford Motor Company (Kansas City Assembly Plant, Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "8121 NE Underground Dr, Kansas City, MO 64161, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64161",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ford Motor Company",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8121 NE Underground Dr, Kansas City, MO 64161, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64161",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicle assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "epa_tri",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Passenger vehicle OEMs",
+    "website": "https://www.ford.com/",
+    "companyKey": "ford.com",
+    "companyId": "cmp_e8dca04eb815",
+    "locationId": "loc_1523eba0b171",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "vehicle assembly",
+      "automotive"
+    ]
+  },
+  {
+    "company": "Martinrea Riverside, LLC (Riverside, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "5233 NW 41st Street, Riverside, MO 64150, US",
+    "addressComponents": {
+      "city": "Riverside",
+      "state": "MO",
+      "postal_code": "64150",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Martinrea Riverside, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5233 NW 41st Street, Riverside, MO 64150, US",
+        "supplier_address_normalized": {
+          "city": "Riverside",
+          "state": "MO",
+          "postal_code": "64150",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "osha",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.martinrea.com/",
+    "companyKey": "martinrea.com",
+    "companyId": "cmp_697f69d6e992",
+    "locationId": "loc_9cc0dd8a2217",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "assemblies"
+    ]
+  },
+  {
+    "company": "FORVIA (Faurecia Interior Systems, Blue Springs, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "650 NW Blue Pkwy, Blue Springs, MO 64015, US",
+    "addressComponents": {
+      "city": "Blue Springs",
+      "state": "MO",
+      "postal_code": "64015",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "650 NW Blue Pkwy, Blue Springs, MO 64015, US",
+        "supplier_address_normalized": {
+          "city": "Blue Springs",
+          "state": "MO",
+          "postal_code": "64015",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "interior systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "epa_tri",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "website": "https://www.forvia.com/",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_bfd5627fd180",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Interior modules",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "tier 1",
+      "interior",
+      "assembly"
+    ]
+  },
+  {
+    "company": "M+M Quality Solutions (Kansas City, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "10960 N Congress Ave, Kansas City, MO 64153, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "MO",
+      "postal_code": "64153",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "M+M Quality Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "10960 N Congress Ave, Kansas City, MO 64153, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "MO",
+          "postal_code": "64153",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "kitting",
+          "quality inspection",
+          "rework"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": "https://mmqualitysolutions.com/",
+    "companyKey": "mmqualitysolutions.com",
+    "companyId": "cmp_837a8cda2d81",
+    "locationId": "loc_6ededf25f2a9",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Quality inspection",
+      "Rework"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "kitting",
+      "quality"
+    ]
+  },
+  {
+    "company": "KAW Services (Pleasant Valley, MO)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "9100 W Liberty Dr, Pleasant Valley, MO 64068, US",
+    "addressComponents": {
+      "city": "Pleasant Valley",
+      "state": "MO",
+      "postal_code": "64068",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KAW Services",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9100 W Liberty Dr, Pleasant Valley, MO 64068, US",
+        "supplier_address_normalized": {
+          "city": "Pleasant Valley",
+          "state": "MO",
+          "postal_code": "64068",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "trailer repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kawservices.com/",
+    "companyKey": "kawservices.com",
+    "companyId": "cmp_e87f00bc046e",
+    "locationId": "loc_df283aecbe22",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "trailer repair",
+      "logistics"
+    ],
+    "contactInfo": {
+      "phone": "+1 (816) 781-6300"
+    }
+  },
+  {
+    "company": "General Motors (Fairfax Assembly & Stamping, Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "3201 Fairfax Trafficway, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "General Motors",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3201 Fairfax Trafficway, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicle assembly",
+          "stamping"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "gm_us_operations_page"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Passenger vehicle OEMs",
+    "website": "https://www.gm.com/",
+    "companyKey": "gm.com",
+    "companyId": "cmp_f16271c54826",
+    "locationId": "loc_2b37d8de21a3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly",
+      "Stamping"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "assembly",
+      "stamping"
+    ]
+  },
+  {
+    "company": "M+M Quality Solutions (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1601 Fairfax Trafficway, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "M+M Quality Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1601 Fairfax Trafficway, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "kitting",
+          "quality inspection",
+          "rework"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Kitting operations",
+    "website": "https://mmqualitysolutions.com/",
+    "companyKey": "mmqualitysolutions.com",
+    "companyId": "cmp_837a8cda2d81",
+    "locationId": "loc_b2e39e113800",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Quality inspection",
+      "Rework"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "kitting",
+      "quality"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "301 Donovan Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "301 Donovan Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_94956d9cfd9e",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Best Way Distribution (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1705 Kansas Ave, Kansas City, KS 66105, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66105",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Best Way Distribution",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1705 Kansas Ave, Kansas City, KS 66105, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66105",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing",
+          "cross-dock",
+          "transportation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Cross-dock facilities",
+    "website": "https://www.bwdst.com/",
+    "companyKey": "bwdst.com",
+    "companyId": "cmp_af61960807cf",
+    "locationId": "loc_9fe76d1369d4",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Cross-dock",
+      "Warehousing",
+      "Transportation"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "3pl",
+      "warehousing",
+      "cross-dock",
+      "transportation"
+    ],
+    "contactInfo": {
+      "email": "info@bwdst.com"
+    }
+  },
+  {
+    "company": "Comprehensive Logistics (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "230 Kindleberger Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Comprehensive Logistics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "230 Kindleberger Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sequencing",
+          "line-side logistics",
+          "kitting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "supplier_directory",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sequencing centers",
+    "website": "https://complog.com/",
+    "companyKey": "complog.com",
+    "companyId": "cmp_2f93b92c4996",
+    "locationId": "loc_2eff47ac7c5d",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery",
+      "Sequenced Parts Delivery (SPD)"
+    ],
+    "capabilityTags": [
+      "Sequencing",
+      "Kitting",
+      "Line-side delivery"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "sequencing",
+      "line-side",
+      "jit"
+    ]
+  },
+  {
+    "company": "Quala (Kansas City, KS)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "320 Kindleberger Rd, Kansas City, KS 66115, US",
+    "addressComponents": {
+      "city": "Kansas City",
+      "state": "KS",
+      "postal_code": "66115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Quala",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "320 Kindleberger Rd, Kansas City, KS 66115, US",
+        "supplier_address_normalized": {
+          "city": "Kansas City",
+          "state": "KS",
+          "postal_code": "66115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "container wash",
+          "container repair",
+          "tank cleaning"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://quala.us.com/",
+    "companyKey": "quala.us.com",
+    "companyId": "cmp_3cbaa83fd0b9",
+    "locationId": "loc_40c30629a3fe",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTags": [
+      "Container wash",
+      "Container repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "container cleaning",
+      "tank wash",
+      "ibc cleaning"
+    ],
+    "contactInfo": {
+      "phone": "+1 (913) 374-0601"
+    }
+  },
+  {
+    "company": "Sun Manufacturing (Coweta, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "12232 S State Hwy 51, Coweta, OK 74429, US",
+    "addressComponents": {
+      "city": "Coweta",
+      "state": "OK",
+      "postal_code": "74429",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Sun Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12232 S State Hwy 51, Coweta, OK 74429, US",
+        "supplier_address_normalized": {
+          "city": "Coweta",
+          "state": "OK",
+          "postal_code": "74429",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "tool and die",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://www.sunmfg.net/",
+    "companyKey": "sunmfg.net",
+    "companyId": "cmp_574254492c09",
+    "locationId": "loc_56ad992aa34d",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Welding"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool and die",
+      "welding"
+    ]
+  },
+  {
+    "company": "HyPro (Vinita, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1100 Industrial Dr, Vinita, OK 74301, US",
+    "addressComponents": {
+      "city": "Vinita",
+      "state": "OK",
+      "postal_code": "74301",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "HyPro",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1100 Industrial Dr, Vinita, OK 74301, US",
+        "supplier_address_normalized": {
+          "city": "Vinita",
+          "state": "OK",
+          "postal_code": "74301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cnc machining",
+          "contract manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "website": "https://www.hypro.com/",
+    "companyKey": "hypro.com",
+    "companyId": "cmp_3cb6af2149b7",
+    "locationId": "loc_3eba52c90168",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "machining",
+      "cnc",
+      "contract manufacturing",
+      "oem"
+    ]
+  },
+  {
+    "company": "Lippert (Transportation Windows, Tulsa, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1575 N 93rd East Ave, Tulsa, OK 74115, US",
+    "addressComponents": {
+      "city": "Tulsa",
+      "state": "OK",
+      "postal_code": "74115",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Lippert",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1575 N 93rd East Ave, Tulsa, OK 74115, US",
+        "supplier_address_normalized": {
+          "city": "Tulsa",
+          "state": "OK",
+          "postal_code": "74115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "window manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.lippert.com/",
+    "companyKey": "lippert.com",
+    "companyId": "cmp_52536e5f175c",
+    "locationId": "loc_0e5cda6024d3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "transportation",
+      "windows",
+      "assembly"
+    ],
+    "contactInfo": {
+      "phone": "+1 (432) 547-7378"
+    }
+  },
+  {
+    "company": "Optronics International (Muskogee, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "401 S 41st Street East, Muskogee, OK 74403, US",
+    "addressComponents": {
+      "city": "Muskogee",
+      "state": "OK",
+      "postal_code": "74403",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Optronics International",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 S 41st Street East, Muskogee, OK 74403, US",
+        "supplier_address_normalized": {
+          "city": "Muskogee",
+          "state": "OK",
+          "postal_code": "74403",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicular lighting manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "website": "https://www.optronicsinc.com/",
+    "companyKey": "optronicsinc.com",
+    "companyId": "cmp_0b0fa6c7742d",
+    "locationId": "loc_e876c274f785",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Lighting assembly",
+      "Assembly",
+      "Electronics manufacturing"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "lighting",
+      "vehicular safety",
+      "assembly"
+    ],
+    "contactInfo": {
+      "phone": "+1 (918) 683-9514",
+      "email": "info@optronicsinc.com"
+    }
+  },
+  {
+    "company": "48forty Solutions (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2211 South May Avenue, Oklahoma City, OK 73108, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73108",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "48forty Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2211 South May Avenue, Oklahoma City, OK 73108, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73108",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet supply",
+          "pallet retrieval",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.48forty.com/",
+    "companyKey": "48forty.com",
+    "companyId": "cmp_7c3ea5b91d9c",
+    "locationId": "loc_bbd8099a9d35",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "recycling",
+      "packaging"
+    ],
+    "contactInfo": {
+      "phone": "+1 (405) 681-4259"
+    }
+  },
+  {
+    "company": "Cimarron Pallet MFG LLC (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1430 W Sheridan Ave, Oklahoma City, OK 73106, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73106",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cimarron Pallet MFG LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1430 W Sheridan Ave, Oklahoma City, OK 73106, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73106",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet manufacturing",
+          "pallet recycling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.cimarronpallet.com/",
+    "companyKey": "cimarronpallet.com",
+    "companyId": "cmp_53ffb69a157a",
+    "locationId": "loc_447c256376ff",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "Pallet Logistics of America (Oklahoma City, OK)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "1901 S Skyline Dr, Oklahoma City, OK 73129, US",
+    "addressComponents": {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postal_code": "73129",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pallet Logistics of America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1901 S Skyline Dr, Oklahoma City, OK 73129, US",
+        "supplier_address_normalized": {
+          "city": "Oklahoma City",
+          "state": "OK",
+          "postal_code": "73129",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet repair",
+          "logistics management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.plasolutions.com/",
+    "companyKey": "plasolutions.com",
+    "companyId": "cmp_aab81118a62d",
+    "locationId": "loc_96d459e1ab2b",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "logistics",
+      "recycling"
+    ],
+    "contactInfo": {
+      "phone": "+1 (405) 670-1414",
+      "email": "site02@plasolutions.com"
+    }
+  },
+  {
+    "company": "Tesla (Gigafactory Texas, Austin, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "1 Tesla Road, Austin, TX 78725, US",
+    "addressComponents": {
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78725",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tesla",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Tesla Road, Austin, TX 78725, US",
+        "supplier_address_normalized": {
+          "city": "Austin",
+          "state": "TX",
+          "postal_code": "78725",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicle manufacturing",
+          "final assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "EV / Battery-electric OEMs",
+    "website": "https://www.tesla.com/",
+    "companyKey": "tesla.com",
+    "companyId": "cmp_bee43fb56894",
+    "locationId": "loc_8a2c918a69fa",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "ev",
+      "vehicle manufacturing",
+      "assembly"
+    ]
+  },
+  {
+    "company": "General Motors (Arlington Assembly, Arlington, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "2625 E Abram, Arlington, TX 76010, US",
+    "addressComponents": {
+      "city": "Arlington",
+      "state": "TX",
+      "postal_code": "76010",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "General Motors",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2625 E Abram, Arlington, TX 76010, US",
+        "supplier_address_normalized": {
+          "city": "Arlington",
+          "state": "TX",
+          "postal_code": "76010",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicle assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website",
+          "gm_us_operations_page"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Passenger vehicle OEMs",
+    "website": "https://www.gm.com/",
+    "companyKey": "gm.com",
+    "companyId": "cmp_f16271c54826",
+    "locationId": "loc_68d18b4f79dd",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "vehicle assembly",
+      "automotive"
+    ]
+  },
+  {
+    "company": "Toyota (Toyota Motor Manufacturing Texas, San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "1 Lone Star Pass, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.75,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Toyota",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "vehicle assembly",
+          "manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": false,
+        "requires_human_review": true
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_directory",
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Passenger vehicle OEMs",
+    "website": "https://www.toyota.com/",
+    "companyKey": "toyota.com",
+    "companyId": "cmp_a55754aba5bd",
+    "locationId": "loc_0b9c45ea8b76",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "vehicle assembly",
+      "manufacturing"
+    ]
+  },
+  {
+    "company": "Peterbilt Motors Company (Denton, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 0 - OEM",
+    "addressRaw": "1700 Woodbrook Street, Denton, TX 76205, US",
+    "addressComponents": {
+      "city": "Denton",
+      "state": "TX",
+      "postal_code": "76205",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Peterbilt Motors Company",
+        "parent_company": null,
+        "supplier_type": "OEM",
+        "tier": "Tier 0 - OEM",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1700 Woodbrook Street, Denton, TX 76205, US",
+        "supplier_address_normalized": {
+          "city": "Denton",
+          "state": "TX",
+          "postal_code": "76205",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "truck manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "OEM",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Commercial vehicle OEMs",
+    "website": "https://www.peterbilt.com/",
+    "companyKey": "peterbilt.com",
+    "companyId": "cmp_7f5cce062a78",
+    "locationId": "loc_ccf8ab86d3b4",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Vehicle assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "oem",
+      "commercial vehicles",
+      "truck manufacturing"
+    ],
+    "contactInfo": {
+      "phone": "+1 (940) 591-4000"
+    }
+  },
+  {
+    "company": "Arvin Sango, Inc. (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 1",
+    "addressRaw": "1 Lone Star Pass, Bldg 6, San Antonio, TX 78264, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78264",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Arvin Sango, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Lone Star Pass, Bldg 6, San Antonio, TX 78264, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78264",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "exhaust systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "website": "https://www.arvinsango.com/",
+    "companyKey": "arvinsango.com",
+    "companyId": "cmp_ff18bf32d3bb",
+    "locationId": "loc_e1dd1ec65a0f",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "capabilityTags": [
+      "Exhaust systems",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "exhaust",
+      "tier 1",
+      "jit"
+    ]
+  },
+  {
+    "company": "Nolato (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "901 Paulsun Street, San Antonio, TX 78219, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78219",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Nolato",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "901 Paulsun Street, San Antonio, TX 78219, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78219",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://www.nolato.com/",
+    "companyKey": "nolato.com",
+    "companyId": "cmp_3244f73d2126",
+    "locationId": "loc_d337425910f3",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "plastics",
+      "assembly"
+    ]
+  },
+  {
+    "company": "Dayton Rogers (Arlington, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "1107 Commercial Blvd N, Arlington, TX 76001, US",
+    "addressComponents": {
+      "city": "Arlington",
+      "state": "TX",
+      "postal_code": "76001",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dayton Rogers",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1107 Commercial Blvd N, Arlington, TX 76001, US",
+        "supplier_address_normalized": {
+          "city": "Arlington",
+          "state": "TX",
+          "postal_code": "76001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "website": "https://daytonrogers.com/",
+    "companyKey": "daytonrogers.com",
+    "companyId": "cmp_26308dd8c30e",
+    "locationId": "loc_8a2103ce1905",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "metal stamping",
+      "welding",
+      "machining",
+      "assemblies"
+    ]
+  },
+  {
+    "company": "All-Plastics, Inc. (Kerrville, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Tier 2",
+    "addressRaw": "200 Holdsworth Dr, Kerrville, TX 78028, US",
+    "addressComponents": {
+      "city": "Kerrville",
+      "state": "TX",
+      "postal_code": "78028",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "All-Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Holdsworth Dr, Kerrville, TX 78028, US",
+        "supplier_address_normalized": {
+          "city": "Kerrville",
+          "state": "TX",
+          "postal_code": "78028",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "website": "https://all-plastics.com/",
+    "companyKey": "all-plastics.com",
+    "companyId": "cmp_083bfff294ff",
+    "locationId": "loc_bce67dacbba8",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "plastics",
+      "injection molding",
+      "manufacturing"
+    ]
+  },
+  {
+    "company": "Kamps Pallets (San Antonio, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "5889 FM 1346, San Antonio, TX 78220, US",
+    "addressComponents": {
+      "city": "San Antonio",
+      "state": "TX",
+      "postal_code": "78220",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kamps Pallets",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5889 FM 1346, San Antonio, TX 78220, US",
+        "supplier_address_normalized": {
+          "city": "San Antonio",
+          "state": "TX",
+          "postal_code": "78220",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet recycling",
+          "pallet sales",
+          "pallet management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.kampspallets.com/",
+    "companyKey": "kampspallets.com",
+    "companyId": "cmp_a080fce14146",
+    "locationId": "loc_6aecdcad7ad2",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Returnable packaging",
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet recycling",
+      "Pallet repair",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "packaging",
+      "recycling"
+    ]
+  },
+  {
+    "company": "UFP Packaging (Grandview, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "200 E Criner St, Grandview, TX 76050, US",
+    "addressComponents": {
+      "city": "Grandview",
+      "state": "TX",
+      "postal_code": "76050",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "UFP Packaging",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 E Criner St, Grandview, TX 76050, US",
+        "supplier_address_normalized": {
+          "city": "Grandview",
+          "state": "TX",
+          "postal_code": "76050",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "custom crates",
+          "shipping boxes",
+          "dunnage",
+          "pallets"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.palletone.com/",
+    "companyKey": "palletone.com",
+    "companyId": "cmp_09ea5585e454",
+    "locationId": "loc_924bf8320b42",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Dunnage",
+      "Returnable packaging"
+    ],
+    "capabilityTags": [
+      "Dunnage",
+      "Pallets",
+      "Crates"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "packaging",
+      "dunnage",
+      "crates",
+      "pallets"
+    ],
+    "contactInfo": {
+      "phone": "+1 (817) 210-6537"
+    }
+  },
+  {
+    "company": "PLA Solutions (Corporate Office, Addison, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "3939 Beltline Road, Addison, TX 75001, US",
+    "addressComponents": {
+      "city": "Addison",
+      "state": "TX",
+      "postal_code": "75001",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PLA Solutions",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "3939 Beltline Road, Addison, TX 75001, US",
+        "supplier_address_normalized": {
+          "city": "Addison",
+          "state": "TX",
+          "postal_code": "75001",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet management",
+          "logistics services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.plasolutions.com/",
+    "companyKey": "plasolutions.com",
+    "companyId": "cmp_aab81118a62d",
+    "locationId": "loc_3cf3ec65c021",
+    "parentCompanyId": null,
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Pallet management",
+      "Logistics management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallets",
+      "logistics",
+      "supply chain"
+    ],
+    "contactInfo": {
+      "email": "info@plasolutions.com"
+    }
+  },
+  {
+    "company": "Pal-Serv (Balch Springs, TX)",
+    "parentCompany": null,
+    "segment": "USA",
+    "tier": "Aftermarket_and_Services",
+    "addressRaw": "2150 S Peachtree Rd, Balch Springs, TX 75180, US",
+    "addressComponents": {
+      "city": "Balch Springs",
+      "state": "TX",
+      "postal_code": "75180",
+      "country": "US"
+    },
+    "addressConfidence": 0.9,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pal-Serv",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Aftermarket_and_Services",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2150 S Peachtree Rd, Balch Springs, TX 75180, US",
+        "supplier_address_normalized": {
+          "city": "Balch Springs",
+          "state": "TX",
+          "postal_code": "75180",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "pallet repair",
+          "pallet recycling",
+          "pallet return programs"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "company_website"
+        ],
+        "last_verified": "2026-02-03",
+        "discovery_method": "web_sweep_round37"
+      }
+    },
+    "supplyChainCategory": "Aftermarket_and_Services",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Packaging services",
+    "website": "https://www.plasolutions.com/",
+    "companyKey": "plasolutions.com",
+    "companyId": "cmp_aab81118a62d",
+    "locationId": "loc_414a6a1faa01",
+    "parentCompanyId": null,
+    "packagingSignals": [
+      "Pallet repair",
+      "Pallet recycling"
+    ],
+    "capabilityTags": [
+      "Pallet repair",
+      "Pallet recycling",
+      "Pallet management"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "pallet repair",
+      "recycling",
+      "packaging"
+    ]
+  }
+]

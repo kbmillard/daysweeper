@@ -8,7 +8,6 @@ type SupplierJson = {
   phone?: string | null;
   addressRaw?: string;
   addressComponents?: any;
-  addressConfidence?: number | null;
   tier?: string | null;
   supplyChainCategory?: string | null;
   supplyChainSubtype?: string | null;
@@ -257,7 +256,6 @@ export async function POST(req: Request) {
               addressRaw: supplier.addressRaw || '',
               addressNormalized: null,
               addressComponents: supplier.addressComponents ?? null,
-              addressConfidence: supplier.addressConfidence ?? null,
               metadata: {
                 _importedAt: now.toISOString(),
                 _importSource: "crm_import_v1"
@@ -271,7 +269,6 @@ export async function POST(req: Request) {
               addressRaw: supplier.addressRaw || '',
               addressNormalized: null,
               addressComponents: supplier.addressComponents ?? null,
-              addressConfidence: supplier.addressConfidence ?? null,
               metadata: {
                 _importedAt: now.toISOString(),
                 _importSource: "crm_import_v1"

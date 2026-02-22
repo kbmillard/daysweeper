@@ -1,0 +1,2135 @@
+[
+  {
+    "companyId": "cmp_bff7433ad16f",
+    "companyKey": "macleanfogg.com",
+    "locationId": "loc_119d5d094db4",
+    "company": "MacLean-Fogg (Mundelein, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Mundelein, IL",
+    "tier": "Tier 2",
+    "addressRaw": "1000 Allanson Rd, Mundelein, IL 60060, USA",
+    "addressComponents": {
+      "city": "Mundelein",
+      "state": "IL",
+      "postal_code": "60060",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://macleanfogg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "capabilityTags": [
+      "Machining",
+      "Forging"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "cold forming",
+      "CNC machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "MacLean-Fogg",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1000 Allanson Rd, Mundelein, IL 60060, USA",
+        "supplier_address_normalized": {
+          "city": "Mundelein",
+          "state": "IL",
+          "postal_code": "60060",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fasteners"
+        ],
+        "primary_functions": [
+          "manufacturing fasteners",
+          "precision forming",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_bff7433ad16f",
+    "companyKey": "macleanfogg.com",
+    "locationId": "loc_b3d4ec6a13e3",
+    "company": "MacLean-Fogg (Richmond, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Richmond, IL",
+    "tier": "Tier 2",
+    "addressRaw": "5600 Wilson Road, Richmond, IL 60071, USA",
+    "addressComponents": {
+      "city": "Richmond",
+      "state": "IL",
+      "postal_code": "60071",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://macleanfogg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "capabilityTags": [
+      "Machining",
+      "Forging"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "cold forming",
+      "CNC machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "MacLean-Fogg",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5600 Wilson Road, Richmond, IL 60071, USA",
+        "supplier_address_normalized": {
+          "city": "Richmond",
+          "state": "IL",
+          "postal_code": "60071",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fasteners"
+        ],
+        "primary_functions": [
+          "manufacturing fasteners",
+          "precision forming",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_361c63921288",
+    "companyKey": "larsenmfg.com",
+    "locationId": "loc_5ac7acd2e6b3",
+    "company": "Larsen Manufacturing (Mundelein, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Mundelein, IL",
+    "tier": "Tier 2",
+    "addressRaw": "1201 Allanson Road, Mundelein, IL 60060, USA",
+    "addressComponents": {
+      "city": "Mundelein",
+      "state": "IL",
+      "postal_code": "60060",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.larsenmfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "machining",
+      "assembly",
+      "powder coating",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Larsen Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1201 Allanson Road, Mundelein, IL 60060, USA",
+        "supplier_address_normalized": {
+          "city": "Mundelein",
+          "state": "IL",
+          "postal_code": "60060",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "welded assemblies",
+          "machined components"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly",
+          "coating"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_361c63921288",
+    "companyKey": "larsenmfg.com",
+    "locationId": "loc_e59f180ee425",
+    "company": "Larsen Manufacturing (Mundelein, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Mundelein, IL",
+    "tier": "Tier 2",
+    "addressRaw": "930 Turret Court, Mundelein, IL 60060, USA",
+    "addressComponents": {
+      "city": "Mundelein",
+      "state": "IL",
+      "postal_code": "60060",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.larsenmfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "machining",
+      "assembly",
+      "powder coating",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Larsen Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "930 Turret Court, Mundelein, IL 60060, USA",
+        "supplier_address_normalized": {
+          "city": "Mundelein",
+          "state": "IL",
+          "postal_code": "60060",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "welded assemblies",
+          "machined components"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly",
+          "coating"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_361c63921288",
+    "companyKey": "larsenmfg.com",
+    "locationId": "loc_f9ec5e3c5d25",
+    "company": "Larsen Manufacturing (Mundelein, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Mundelein, IL",
+    "tier": "Tier 2",
+    "addressRaw": "401 Terrace Drive, Mundelein, IL 60060, USA",
+    "addressComponents": {
+      "city": "Mundelein",
+      "state": "IL",
+      "postal_code": "60060",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.larsenmfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Plating/Coating"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "machining",
+      "assembly",
+      "powder coating",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Larsen Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "401 Terrace Drive, Mundelein, IL 60060, USA",
+        "supplier_address_normalized": {
+          "city": "Mundelein",
+          "state": "IL",
+          "postal_code": "60060",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "welded assemblies",
+          "machined components"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "welding",
+          "machining",
+          "assembly",
+          "coating"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_727bf8916ded",
+    "companyKey": "julianelectric.com",
+    "locationId": "loc_961840276837",
+    "company": "Julian Electric (Lockport, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Lockport, IL",
+    "tier": "Tier 1",
+    "addressRaw": "15706 W 147th St, Lockport, IL 60491, USA",
+    "addressComponents": {
+      "city": "Lockport",
+      "state": "IL",
+      "postal_code": "60491",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://julianelectric.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Wire harness & cable assemblies",
+    "capabilityTags": [
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "wiring harnesses",
+      "cable assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Julian Electric",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "15706 W 147th St, Lockport, IL 60491, USA",
+        "supplier_address_normalized": {
+          "city": "Lockport",
+          "state": "IL",
+          "postal_code": "60491",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wiring harnesses",
+          "cable assemblies",
+          "electrical assemblies"
+        ],
+        "primary_functions": [
+          "wire harness manufacturing",
+          "electrical assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2106894c455a",
+    "companyKey": "northstarstamping.com",
+    "locationId": "loc_c94326269ec5",
+    "company": "North Star Stamping & Tool (Lake in the Hills, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Lake in the Hills, IL",
+    "tier": "Tier 2",
+    "addressRaw": "1264 Industrial Drive, Lake in the Hills, IL 60156, USA",
+    "addressComponents": {
+      "city": "Lake in the Hills",
+      "state": "IL",
+      "postal_code": "60156",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://northstarstamping.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool & die",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "North Star Stamping & Tool",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1264 Industrial Drive, Lake in the Hills, IL 60156, USA",
+        "supplier_address_normalized": {
+          "city": "Lake in the Hills",
+          "state": "IL",
+          "postal_code": "60156",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "tooling"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "tool & die"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_6b8161017e56",
+    "companyKey": "principalmfg.com",
+    "locationId": "loc_faf15fbbaa6a",
+    "company": "Principal Manufacturing (Broadview, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Broadview, IL",
+    "tier": "Tier 2",
+    "addressRaw": "2800 S 19th Ave, Broadview, IL 60155, USA",
+    "addressComponents": {
+      "city": "Broadview",
+      "state": "IL",
+      "postal_code": "60155",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.principalmfg.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Machining",
+      "Tool & Die",
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "fine blanking",
+      "metal stamping",
+      "overmolding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Principal Manufacturing",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2800 S 19th Ave, Broadview, IL 60155, USA",
+        "supplier_address_normalized": {
+          "city": "Broadview",
+          "state": "IL",
+          "postal_code": "60155",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "fine blanked components",
+          "overmolded components"
+        ],
+        "primary_functions": [
+          "fine blanking",
+          "metal stamping",
+          "machining",
+          "overmolding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_24ae06301a83",
+    "companyKey": "performancestamping.com",
+    "locationId": "loc_f85fe6dc280b",
+    "company": "Performance Stamping (Carpentersville, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Carpentersville, IL",
+    "tier": "Tier 2",
+    "addressRaw": "20 Lake Marian Rd, Carpentersville, IL 60110, USA",
+    "addressComponents": {
+      "city": "Carpentersville",
+      "state": "IL",
+      "postal_code": "60110",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.performancestamping.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Performance Stamping",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "20 Lake Marian Rd, Carpentersville, IL 60110, USA",
+        "supplier_address_normalized": {
+          "city": "Carpentersville",
+          "state": "IL",
+          "postal_code": "60110",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "assemblies"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "about_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_7dc9398ea840",
+    "companyKey": "kenmode.com",
+    "locationId": "loc_1e1a932f5d9a",
+    "company": "Kenmode (Algonquin, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Algonquin, IL",
+    "tier": "Tier 2",
+    "addressRaw": "820 W Algonquin Rd, Algonquin, IL 60102, USA",
+    "addressComponents": {
+      "city": "Algonquin",
+      "state": "IL",
+      "postal_code": "60102",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.kenmode.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision metal stamping",
+      "tool & die",
+      "assembly",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Kenmode",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "820 W Algonquin Rd, Algonquin, IL 60102, USA",
+        "supplier_address_normalized": {
+          "city": "Algonquin",
+          "state": "IL",
+          "postal_code": "60102",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "assemblies",
+          "tooling"
+        ],
+        "primary_functions": [
+          "precision metal stamping",
+          "tool & die",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_89c786570355",
+    "companyKey": "allrite.com",
+    "locationId": "loc_44f6913bbf16",
+    "company": "All-Rite Industries (Lake Zurich, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Lake Zurich, IL",
+    "tier": "Tier 2",
+    "addressRaw": "470 Oakwood Rd, Lake Zurich, IL 60047, USA",
+    "addressComponents": {
+      "city": "Lake Zurich",
+      "state": "IL",
+      "postal_code": "60047",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://allrite.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Injection molding",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [
+      "Just-in-Time (JIT) delivery"
+    ],
+    "industryKeywords": [
+      "automotive",
+      "JIT",
+      "metal stamping",
+      "injection molding",
+      "wire forming",
+      "assembly",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "All-Rite Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "470 Oakwood Rd, Lake Zurich, IL 60047, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Zurich",
+          "state": "IL",
+          "postal_code": "60047",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "injection-molded plastics",
+          "assemblies"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "injection molding",
+          "welding",
+          "assembly",
+          "JIT delivery"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "capabilities_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2e950a281e04",
+    "companyKey": "ramcel.com",
+    "locationId": "loc_dbcefe15d301",
+    "company": "Ramcel (Northbrook, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Northbrook, IL",
+    "tier": "Tier 2",
+    "addressRaw": "2926 MacArthur Blvd, Northbrook, IL 60062, USA",
+    "addressComponents": {
+      "city": "Northbrook",
+      "state": "IL",
+      "postal_code": "60062",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://ramcel.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Automation integration",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision stamping",
+      "robotic welding",
+      "automation",
+      "assembly",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ramcel",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2926 MacArthur Blvd, Northbrook, IL 60062, USA",
+        "supplier_address_normalized": {
+          "city": "Northbrook",
+          "state": "IL",
+          "postal_code": "60062",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "precision stamping",
+          "robotic welding",
+          "automation",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "capabilities_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_8198f4e4195d",
+    "companyKey": "fabrikind.com",
+    "locationId": "loc_d61062ac7fb7",
+    "company": "Fabrik Molded Plastics (McHenry, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | McHenry, IL",
+    "tier": "Tier 2",
+    "addressRaw": "5213 Prime Parkway, McHenry, IL 60050, USA",
+    "addressComponents": {
+      "city": "McHenry",
+      "state": "IL",
+      "postal_code": "60050",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.fabrikind.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "capabilityTags": [
+      "Injection molding",
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "insert molding",
+      "automotive lighting",
+      "lenses",
+      "automation",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Fabrik Molded Plastics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5213 Prime Parkway, McHenry, IL 60050, USA",
+        "supplier_address_normalized": {
+          "city": "McHenry",
+          "state": "IL",
+          "postal_code": "60050",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection-molded plastics",
+          "automotive lighting lenses"
+        ],
+        "primary_functions": [
+          "plastic injection molding",
+          "insert molding",
+          "automation services"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_49d4706acc66",
+    "companyKey": "cpielgin.com",
+    "locationId": "loc_664527df981f",
+    "company": "Component Plastics, Inc. (Elgin, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Elgin, IL",
+    "tier": "Tier 2",
+    "addressRaw": "700 Tollgate Road, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.cpielgin.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "capabilityTags": [
+      "Injection molding",
+      "Tool & Die",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "ultrasonic welding",
+      "tool & die",
+      "assembly",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Component Plastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "700 Tollgate Road, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection-molded plastics",
+          "assemblies"
+        ],
+        "primary_functions": [
+          "plastic injection molding",
+          "ultrasonic welding",
+          "tooling",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_fecceaee5b90",
+    "companyKey": "mpiinc.com",
+    "locationId": "loc_719236e7661a",
+    "company": "Microplastics, Inc. (St. Charles, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | St. Charles, IL",
+    "tier": "Tier 2",
+    "addressRaw": "406 38th Avenue, St. Charles, IL 60174, USA",
+    "addressComponents": {
+      "city": "St. Charles",
+      "state": "IL",
+      "postal_code": "60174",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://mpiinc.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "capabilityTags": [
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "insert molding",
+      "injection molding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Microplastics, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "406 38th Avenue, St. Charles, IL 60174, USA",
+        "supplier_address_normalized": {
+          "city": "St. Charles",
+          "state": "IL",
+          "postal_code": "60174",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection-molded plastics"
+        ],
+        "primary_functions": [
+          "plastic injection molding",
+          "insert molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "site_snippet_address"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f392abbb8c93",
+    "companyKey": "pnamolding.com",
+    "locationId": "loc_3fd545079595",
+    "company": "PNA Molding (Romeoville, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Romeoville, IL",
+    "tier": "Tier 2",
+    "addressRaw": "950 Chicago Tube Dr, Romeoville, IL 60446, USA",
+    "addressComponents": {
+      "city": "Romeoville",
+      "state": "IL",
+      "postal_code": "60446",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.pnamolding.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "capabilityTags": [
+      "Injection molding"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "PNA Molding",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "950 Chicago Tube Dr, Romeoville, IL 60446, USA",
+        "supplier_address_normalized": {
+          "city": "Romeoville",
+          "state": "IL",
+          "postal_code": "60446",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection-molded plastics"
+        ],
+        "primary_functions": [
+          "plastic injection molding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "quality_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_4680824781b0",
+    "companyKey": "dynacast.com",
+    "locationId": "loc_7f92a386d710",
+    "company": "Dynacast (Elgin, IL)",
+    "parentCompany": "Form Technologies",
+    "parentCompanyId": "cmp_801f19e794bb",
+    "segment": "USA | IL | Elgin, IL",
+    "tier": "Tier 2",
+    "addressRaw": "195 Corporate Dr, Elgin, IL 60123, USA",
+    "addressComponents": {
+      "city": "Elgin",
+      "state": "IL",
+      "postal_code": "60123",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dynacast.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Foundry/Casting",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "precision machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dynacast",
+        "parent_company": "Form Technologies",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "195 Corporate Dr, Elgin, IL 60123, USA",
+        "supplier_address_normalized": {
+          "city": "Elgin",
+          "state": "IL",
+          "postal_code": "60123",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "castings",
+          "machined components"
+        ],
+        "primary_functions": [
+          "die casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d892d58d9615",
+    "companyKey": "winzelergear.com",
+    "locationId": "loc_73beab82ed68",
+    "company": "Winzeler Gear (Harwood Heights, IL)",
+    "parentCompany": "Adkev",
+    "parentCompanyId": "cmp_68d0f8b3eb20",
+    "segment": "USA | IL | Harwood Heights, IL",
+    "tier": "Tier 2",
+    "addressRaw": "7355 W Wilson Ave, Harwood Heights, IL 60706, USA",
+    "addressComponents": {
+      "city": "Harwood Heights",
+      "state": "IL",
+      "postal_code": "60706",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.winzelergear.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "capabilityTags": [
+      "Injection molding",
+      "Automation integration"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "plastic gears",
+      "gear molding",
+      "overmolding",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Winzeler Gear",
+        "parent_company": "Adkev",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7355 W Wilson Ave, Harwood Heights, IL 60706, USA",
+        "supplier_address_normalized": {
+          "city": "Harwood Heights",
+          "state": "IL",
+          "postal_code": "60706",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection-molded plastics",
+          "gear systems"
+        ],
+        "primary_functions": [
+          "plastic gear molding",
+          "overmolding",
+          "automation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_83fd29e229a2",
+    "companyKey": "afiindustries.com",
+    "locationId": "loc_1d8199e87417",
+    "company": "AFI Industries (Carol Stream, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Carol Stream, IL",
+    "tier": "Tier 2",
+    "addressRaw": "475 Kehoe Blvd, Carol Stream, IL 60188, USA",
+    "addressComponents": {
+      "city": "Carol Stream",
+      "state": "IL",
+      "postal_code": "60188",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://afiindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "capabilityTags": [
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "cold heading",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AFI Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "475 Kehoe Blvd, Carol Stream, IL 60188, USA",
+        "supplier_address_normalized": {
+          "city": "Carol Stream",
+          "state": "IL",
+          "postal_code": "60188",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fasteners"
+        ],
+        "primary_functions": [
+          "fastener manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "about_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_f9a44b36bda4",
+    "companyKey": "wiegel.com",
+    "locationId": "loc_c14108fde757",
+    "company": "Wiegel Tool Works (Wood Dale, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Wood Dale, IL",
+    "tier": "Tier 2",
+    "addressRaw": "935 N Central Ave, Wood Dale, IL 60191, USA",
+    "addressComponents": {
+      "city": "Wood Dale",
+      "state": "IL",
+      "postal_code": "60191",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.wiegel.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamping",
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "tool & die",
+      "assemblies",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wiegel Tool Works",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "935 N Central Ave, Wood Dale, IL 60191, USA",
+        "supplier_address_normalized": {
+          "city": "Wood Dale",
+          "state": "IL",
+          "postal_code": "60191",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal parts",
+          "assemblies",
+          "tooling"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "tool & die",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_432334df0f6d",
+    "companyKey": "micmolding.com",
+    "locationId": "loc_1a5673c7a0dc",
+    "company": "MIC Molding (Rolling Meadows, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Rolling Meadows, IL",
+    "tier": "Tier 2",
+    "addressRaw": "3940 Industrial Avenue, Rolling Meadows, IL 60008, USA",
+    "addressComponents": {
+      "city": "Rolling Meadows",
+      "state": "IL",
+      "postal_code": "60008",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.micmolding.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection molding",
+    "capabilityTags": [
+      "Injection molding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "insert molding",
+      "overmolding",
+      "assembly",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "MIC Molding",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3940 Industrial Avenue, Rolling Meadows, IL 60008, USA",
+        "supplier_address_normalized": {
+          "city": "Rolling Meadows",
+          "state": "IL",
+          "postal_code": "60008",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection-molded plastics",
+          "assemblies"
+        ],
+        "primary_functions": [
+          "plastic injection molding",
+          "insert molding",
+          "overmolding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "about_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_0369e878e04b",
+    "companyKey": "ejbasler.com",
+    "locationId": "loc_f280d4e39a15",
+    "company": "E.J. Basler Co. (Schiller Park, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Schiller Park, IL",
+    "tier": "Tier 2",
+    "addressRaw": "9511 W Ainslie St, Schiller Park, IL 60176, USA",
+    "addressComponents": {
+      "city": "Schiller Park",
+      "state": "IL",
+      "postal_code": "60176",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ejbasler.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "capabilityTags": [
+      "Machining",
+      "Automation integration",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "precision machining",
+      "Swiss machining",
+      "assembly",
+      "automation",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "E.J. Basler Co.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "9511 W Ainslie St, Schiller Park, IL 60176, USA",
+        "supplier_address_normalized": {
+          "city": "Schiller Park",
+          "state": "IL",
+          "postal_code": "60176",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "machined components",
+          "assemblies"
+        ],
+        "primary_functions": [
+          "precision machining",
+          "contract manufacturing",
+          "assembly",
+          "automation"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "quality_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_d788ead2c094",
+    "companyKey": "kiindustries.com",
+    "locationId": "loc_3bb808d8739c",
+    "company": "KI Industries (Berkeley, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Berkeley, IL",
+    "tier": "Tier 2",
+    "addressRaw": "5540 McDermott Dr, Berkeley, IL 60163, USA",
+    "addressComponents": {
+      "city": "Berkeley",
+      "state": "IL",
+      "postal_code": "60163",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://kiindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Decorative components & trim",
+    "capabilityTags": [
+      "Injection molding",
+      "Foundry/Casting",
+      "Plating/Coating",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "decorative trim",
+      "plating",
+      "die casting",
+      "injection molding",
+      "assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "KI Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5540 McDermott Dr, Berkeley, IL 60163, USA",
+        "supplier_address_normalized": {
+          "city": "Berkeley",
+          "state": "IL",
+          "postal_code": "60163",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "decorative components",
+          "trim"
+        ],
+        "primary_functions": [
+          "automotive decorative components",
+          "finishing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "contact_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_86871df7b858",
+    "companyKey": "rcmindustries.com",
+    "locationId": "loc_176ea65beacf",
+    "company": "RCM Industries (Franklin Park, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Franklin Park, IL",
+    "tier": "Tier 2",
+    "addressRaw": "3021 Cullerton St, Franklin Park, IL 60131, USA",
+    "addressComponents": {
+      "city": "Franklin Park",
+      "state": "IL",
+      "postal_code": "60131",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.rcmindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Foundry/Casting",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "RCM Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3021 Cullerton St, Franklin Park, IL 60131, USA",
+        "supplier_address_normalized": {
+          "city": "Franklin Park",
+          "state": "IL",
+          "postal_code": "60131",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "castings",
+          "machined components"
+        ],
+        "primary_functions": [
+          "die casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_86871df7b858",
+    "companyKey": "rcmindustries.com",
+    "locationId": "loc_b1cdc3133240",
+    "company": "RCM Industries (Wheeling, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Wheeling, IL",
+    "tier": "Tier 2",
+    "addressRaw": "161 Carpenter Ave, Wheeling, IL 60090, USA",
+    "addressComponents": {
+      "city": "Wheeling",
+      "state": "IL",
+      "postal_code": "60090",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.rcmindustries.com",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Foundry/Casting",
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "machining",
+      "IATF 16949"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "RCM Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "161 Carpenter Ave, Wheeling, IL 60090, USA",
+        "supplier_address_normalized": {
+          "city": "Wheeling",
+          "state": "IL",
+          "postal_code": "60090",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "castings",
+          "machined components"
+        ],
+        "primary_functions": [
+          "die casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "locations_page"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  },
+  {
+    "companyId": "cmp_2b9c108c72d2",
+    "companyKey": "methode.com",
+    "locationId": "loc_656f32aa1502",
+    "company": "Methode Electronics (Chicago, IL)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "segment": "USA | IL | Chicago, IL",
+    "tier": "Tier 1",
+    "addressRaw": "8750 W Bryn Mawr Ave Suite 1000, Chicago, IL 60631, USA",
+    "addressComponents": {
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60631",
+      "country": "USA"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://methode.com",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Electronics manufacturing",
+    "capabilityTags": [],
+    "capabilityTagsLikely": [],
+    "packagingSignals": [],
+    "industryKeywords": [
+      "automotive",
+      "electronics",
+      "mechatronics",
+      "supplier portal"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Methode Electronics",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high",
+        "phone": "708-867-6777"
+      },
+      "location": {
+        "supplier_address_raw": "8750 W Bryn Mawr Ave Suite 1000, Chicago, IL 60631, USA",
+        "supplier_address_normalized": {
+          "city": "Chicago",
+          "state": "IL",
+          "postal_code": "60631",
+          "country": "USA"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "electronics systems",
+          "electrical components"
+        ],
+        "primary_functions": [
+          "automotive electronics manufacturing",
+          "systems integration"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_site",
+          "cookie_policy_contact_details"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "il_chicago_supplier_sweep_round50"
+      }
+    }
+  }
+]

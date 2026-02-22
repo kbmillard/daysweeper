@@ -1,0 +1,2142 @@
+[
+  {
+    "company": "Waukesha Metal Products (Grafton, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "waukeshametal.com",
+    "companyId": "cmp_d97f01705602",
+    "locationId": "loc_6ef2d15d3f23",
+    "segment": "USA | WI | Grafton, WI",
+    "tier": "Tier 2",
+    "addressRaw": "2076 1st Ave, Grafton, WI 53024, USA",
+    "addressComponents": {
+      "city": "Grafton",
+      "state": "WI",
+      "postal_code": "53024",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://waukeshametal.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Tool & Die",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "assemblies"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Waukesha Metal Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2076 1st Ave, Grafton, WI 53024, USA",
+        "supplier_address_normalized": {
+          "city": "Grafton",
+          "state": "WI",
+          "postal_code": "53024",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Waukesha Metal Products (Sussex, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "waukeshametal.com",
+    "companyId": "cmp_d97f01705602",
+    "locationId": "loc_cb299a8abb36",
+    "segment": "USA | WI | Sussex, WI",
+    "tier": "Tier 2",
+    "addressRaw": "N53 W24635 S Corporate Cir, PO Box 328, Sussex, WI 53089, USA",
+    "addressComponents": {
+      "city": "Sussex",
+      "state": "WI",
+      "postal_code": "53089",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://waukeshametal.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Tool & Die",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "welding",
+      "assemblies"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Waukesha Metal Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "N53 W24635 S Corporate Cir, PO Box 328, Sussex, WI 53089, USA",
+        "supplier_address_normalized": {
+          "city": "Sussex",
+          "state": "WI",
+          "postal_code": "53089",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [],
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Manitowoc Pattern & Machining (Manitowoc, WI)",
+    "parentCompany": "Wisconsin Aluminum Foundry",
+    "parentCompanyId": "cmp_36795bdc2db7",
+    "companyKey": "mpmonline.com",
+    "companyId": "cmp_4c323b0bae6b",
+    "locationId": "loc_3f87644c3e44",
+    "segment": "USA | WI | Manitowoc, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1445 Dufek Drive, Manitowoc, WI 54220, USA",
+    "addressComponents": {
+      "city": "Manitowoc",
+      "state": "WI",
+      "postal_code": "54220",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mpmonline.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Tooling",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "patternmaking",
+      "tooling"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Manitowoc Pattern & Machining",
+        "parent_company": "Wisconsin Aluminum Foundry",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1445 Dufek Drive, Manitowoc, WI 54220, USA",
+        "supplier_address_normalized": {
+          "city": "Manitowoc",
+          "state": "WI",
+          "postal_code": "54220",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "machined components",
+          "patterns",
+          "tooling"
+        ],
+        "primary_functions": [
+          "machining",
+          "tooling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Wisconsin Aluminum Foundry (Manitowoc, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "wafco.com",
+    "companyId": "cmp_36795bdc2db7",
+    "locationId": "loc_2ea8585f1bb5",
+    "segment": "USA | WI | Manitowoc, WI",
+    "tier": "Tier 2",
+    "addressRaw": "838 S 16th Street, Manitowoc, WI 54220, USA",
+    "addressComponents": {
+      "city": "Manitowoc",
+      "state": "WI",
+      "postal_code": "54220",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://wafco.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Foundry/Casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "aluminum castings",
+      "foundry",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wisconsin Aluminum Foundry",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "838 S 16th Street, Manitowoc, WI 54220, USA",
+        "supplier_address_normalized": {
+          "city": "Manitowoc",
+          "state": "WI",
+          "postal_code": "54220",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "aluminum castings",
+          "machined castings"
+        ],
+        "primary_functions": [
+          "foundry / casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Watry Industries (Sheboygan, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "watry.com",
+    "companyId": "cmp_f4e70d3a0742",
+    "locationId": "loc_b40f8f96fcfa",
+    "segment": "USA | WI | Sheboygan, WI",
+    "tier": "Tier 2",
+    "addressRaw": "3312 Lakeshore Drive, Sheboygan, WI 53081, USA",
+    "addressComponents": {
+      "city": "Sheboygan",
+      "state": "WI",
+      "postal_code": "53081",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://watry.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Foundry/Casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "foundry",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Watry Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3312 Lakeshore Drive, Sheboygan, WI 53081, USA",
+        "supplier_address_normalized": {
+          "city": "Sheboygan",
+          "state": "WI",
+          "postal_code": "53081",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "die cast components",
+          "machined castings"
+        ],
+        "primary_functions": [
+          "foundry / casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "AmeriMetals LLC (Sturtevant, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "amermetals.com",
+    "companyId": "cmp_582a1c05e0e4",
+    "locationId": "loc_9f43454a9a8c",
+    "segment": "USA | WI | Sturtevant, WI",
+    "tier": "Tier 2",
+    "addressRaw": "8213 Durand Ave, Sturtevant, WI 53177, USA",
+    "addressComponents": {
+      "city": "Sturtevant",
+      "state": "WI",
+      "postal_code": "53177",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://amermetals.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "precision manufacturing",
+      "machining",
+      "tier 1 suppliers"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AmeriMetals LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8213 Durand Ave, Sturtevant, WI 53177, USA",
+        "supplier_address_normalized": {
+          "city": "Sturtevant",
+          "state": "WI",
+          "postal_code": "53177",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "precision machined components"
+        ],
+        "primary_functions": [
+          "machining",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Velocity Machine (De Pere, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "velocitymachine.com",
+    "companyId": "cmp_1abb905da487",
+    "locationId": "loc_fee3bdd01d26",
+    "segment": "USA | WI | De Pere, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1400 W Main Ave, De Pere, WI 54115, USA",
+    "addressComponents": {
+      "city": "De Pere",
+      "state": "WI",
+      "postal_code": "54115",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.velocitymachine.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "IATF 16949",
+      "precision machining",
+      "tier 1 program management"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Velocity Machine",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1400 W Main Ave, De Pere, WI 54115, USA",
+        "supplier_address_normalized": {
+          "city": "De Pere",
+          "state": "WI",
+          "postal_code": "54115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "machined components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "machining",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Velocity Machine (De Pere, WI) - Plant 2",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "velocitymachine.com",
+    "companyId": "cmp_1abb905da487",
+    "locationId": "loc_230fe880e3ad",
+    "segment": "USA | WI | De Pere, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1733 Suburban Drive, De Pere, WI 54115, USA",
+    "addressComponents": {
+      "city": "De Pere",
+      "state": "WI",
+      "postal_code": "54115",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.velocitymachine.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machining",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Machining",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "IATF 16949",
+      "precision machining",
+      "tier 1 program management"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Velocity Machine",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1733 Suburban Drive, De Pere, WI 54115, USA",
+        "supplier_address_normalized": {
+          "city": "De Pere",
+          "state": "WI",
+          "postal_code": "54115",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "machined components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "machining",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Beaver Dam East (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_1ca3c1659740",
+    "segment": "USA | WI | Beaver Dam, WI",
+    "tier": "Tier 2",
+    "addressRaw": "210 Corporate Drive, Beaver Dam, WI 53916, USA",
+    "addressComponents": {
+      "city": "Beaver Dam",
+      "state": "WI",
+      "postal_code": "53916",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "210 Corporate Drive, Beaver Dam, WI 53916, USA",
+        "supplier_address_normalized": {
+          "city": "Beaver Dam",
+          "state": "WI",
+          "postal_code": "53916",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Beaver Dam West (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_f284b7a85f70",
+    "segment": "USA | WI | Beaver Dam, WI",
+    "tier": "Tier 2",
+    "addressRaw": "120 Industrial Drive, Beaver Dam, WI 53916, USA",
+    "addressComponents": {
+      "city": "Beaver Dam",
+      "state": "WI",
+      "postal_code": "53916",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "120 Industrial Drive, Beaver Dam, WI 53916, USA",
+        "supplier_address_normalized": {
+          "city": "Beaver Dam",
+          "state": "WI",
+          "postal_code": "53916",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Fond du Lac (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_b784fa20a902",
+    "segment": "USA | WI | Fond du Lac, WI",
+    "tier": "Tier 2",
+    "addressRaw": "132 Trowbridge Drive, Fond du Lac, WI 54937, USA",
+    "addressComponents": {
+      "city": "Fond du Lac",
+      "state": "WI",
+      "postal_code": "54937",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "132 Trowbridge Drive, Fond du Lac, WI 54937, USA",
+        "supplier_address_normalized": {
+          "city": "Fond du Lac",
+          "state": "WI",
+          "postal_code": "54937",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Mayville North (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_5319f432cd0b",
+    "segment": "USA | WI | Mayville, WI",
+    "tier": "Tier 2",
+    "addressRaw": "800 Horicon Street Suite 1, Mayville, WI 53050, USA",
+    "addressComponents": {
+      "city": "Mayville",
+      "state": "WI",
+      "postal_code": "53050",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "800 Horicon Street Suite 1, Mayville, WI 53050, USA",
+        "supplier_address_normalized": {
+          "city": "Mayville",
+          "state": "WI",
+          "postal_code": "53050",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Mayville South (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_51166e25608c",
+    "segment": "USA | WI | Mayville, WI",
+    "tier": "Tier 2",
+    "addressRaw": "715 South Street, Mayville, WI 53050, USA",
+    "addressComponents": {
+      "city": "Mayville",
+      "state": "WI",
+      "postal_code": "53050",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "715 South Street, Mayville, WI 53050, USA",
+        "supplier_address_normalized": {
+          "city": "Mayville",
+          "state": "WI",
+          "postal_code": "53050",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Neillsville North (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_89d46f22e07c",
+    "segment": "USA | WI | Neillsville, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1515 Industrial Park Drive, Neillsville, WI 54456, USA",
+    "addressComponents": {
+      "city": "Neillsville",
+      "state": "WI",
+      "postal_code": "54456",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1515 Industrial Park Drive, Neillsville, WI 54456, USA",
+        "supplier_address_normalized": {
+          "city": "Neillsville",
+          "state": "WI",
+          "postal_code": "54456",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) - Neillsville South (WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_8c9667a5a497",
+    "segment": "USA | WI | Neillsville, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1506 Industrial Park Drive, Neillsville, WI 54456, USA",
+    "addressComponents": {
+      "city": "Neillsville",
+      "state": "WI",
+      "postal_code": "54456",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal fabrication",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Welding",
+      "Machining",
+      "Assembly",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicles",
+      "metal fabrication",
+      "welding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1506 Industrial Park Drive, Neillsville, WI 54456, USA",
+        "supplier_address_normalized": {
+          "city": "Neillsville",
+          "state": "WI",
+          "postal_code": "54456",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "fabricated metal components",
+          "welded assemblies"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Excel Connection (Milwaukee, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "excelconn.com",
+    "companyId": "cmp_49b0f159fbb5",
+    "locationId": "loc_812b6cf3dcd5",
+    "segment": "USA | WI | Milwaukee, WI",
+    "tier": "Tier 2",
+    "addressRaw": "5415 S 9th Street, Milwaukee, WI 53221, USA",
+    "addressComponents": {
+      "city": "Milwaukee",
+      "state": "WI",
+      "postal_code": "53221",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://excelconn.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire harness assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "cable assemblies",
+      "electromechanical"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Excel Connection",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5415 S 9th Street, Milwaukee, WI 53221, USA",
+        "supplier_address_normalized": {
+          "city": "Milwaukee",
+          "state": "WI",
+          "postal_code": "53221",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wire harnesses",
+          "cable assemblies"
+        ],
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "ICA Midwest (Greenville, WI)",
+    "parentCompany": "ICA Holdings",
+    "parentCompanyId": "cmp_6e7bfc875ea0",
+    "companyKey": "name:ica-midwest|parent:ica-holdings",
+    "companyId": "cmp_46e6453e24ec",
+    "locationId": "loc_77e871854ca3",
+    "segment": "USA | WI | Greenville, WI",
+    "tier": "Tier 2",
+    "addressRaw": "N1043 Quality Drive, Greenville, WI 54942-8625, USA",
+    "addressComponents": {
+      "city": "Greenville",
+      "state": "WI",
+      "postal_code": "54942-8625",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.icaholdings.com/facilities/ica-midwest/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire harness assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "commercial vehicle",
+      "wire harness",
+      "cable assembly"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ICA Midwest",
+        "parent_company": "ICA Holdings",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "N1043 Quality Drive, Greenville, WI 54942-8625, USA",
+        "supplier_address_normalized": {
+          "city": "Greenville",
+          "state": "WI",
+          "postal_code": "54942-8625",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wire harnesses",
+          "cable assemblies"
+        ],
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "La Cro Products (La Crosse, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "lacroproducts.com",
+    "companyId": "cmp_88c27e51087a",
+    "locationId": "loc_26a2369da712",
+    "segment": "USA | WI | La Crosse, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1648 Liberty St, La Crosse, WI 54603, USA",
+    "addressComponents": {
+      "city": "La Crosse",
+      "state": "WI",
+      "postal_code": "54603",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.lacroproducts.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wire harness assemblies",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Electrical systems",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "wire harness",
+      "cable assemblies",
+      "electronic assemblies"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "La Cro Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1648 Liberty St, La Crosse, WI 54603, USA",
+        "supplier_address_normalized": {
+          "city": "La Crosse",
+          "state": "WI",
+          "postal_code": "54603",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "wire harnesses",
+          "cable assemblies"
+        ],
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "R2 Quality Castings (Waukesha, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "qualitycastingswi.com",
+    "companyId": "cmp_e6740f9f93dd",
+    "locationId": "loc_0f2e626e353a",
+    "segment": "USA | WI | Waukesha, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1908 Mac Arthur Rd, Waukesha, WI 53188, USA",
+    "addressComponents": {
+      "city": "Waukesha",
+      "state": "WI",
+      "postal_code": "53188",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.qualitycastingswi.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Foundry/Casting",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Foundry/Casting",
+      "Machining"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "investment casting",
+      "foundry",
+      "machining"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "R2 Quality Castings",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1908 Mac Arthur Rd, Waukesha, WI 53188, USA",
+        "supplier_address_normalized": {
+          "city": "Waukesha",
+          "state": "WI",
+          "postal_code": "53188",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "investment cast components",
+          "machined castings"
+        ],
+        "primary_functions": [
+          "foundry / casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Husco Automotive (Waukesha, WI) - HQ",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "husco.com",
+    "companyId": "cmp_067831dd8312",
+    "locationId": "loc_3aff4a11c046",
+    "segment": "USA | WI | Waukesha, WI",
+    "tier": "Tier 1",
+    "addressRaw": "1233 Hickory Street, Waukesha, WI 53186, USA",
+    "addressComponents": {
+      "city": "Waukesha",
+      "state": "WI",
+      "postal_code": "53186",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.husco.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Hydraulic control systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Drive train",
+      "Steering",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "hydraulic controls",
+      "engineering"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Husco",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1233 Hickory Street, Waukesha, WI 53186, USA",
+        "supplier_address_normalized": {
+          "city": "Waukesha",
+          "state": "WI",
+          "postal_code": "53186",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "hydraulic valves",
+          "transmission control systems"
+        ],
+        "primary_functions": [
+          "systems engineering",
+          "manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Husco Automotive (Whitewater, WI) - Operations",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "husco.com",
+    "companyId": "cmp_067831dd8312",
+    "locationId": "loc_f09fa7411608",
+    "segment": "USA | WI | Whitewater, WI",
+    "tier": "Tier 1",
+    "addressRaw": "1116 Universal Blvd, Whitewater, WI 53190, USA",
+    "addressComponents": {
+      "city": "Whitewater",
+      "state": "WI",
+      "postal_code": "53190",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.husco.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Hydraulic control systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Drive train",
+      "Steering",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "powertrain",
+      "hydraulic controls",
+      "manufacturing"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Husco",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1116 Universal Blvd, Whitewater, WI 53190, USA",
+        "supplier_address_normalized": {
+          "city": "Whitewater",
+          "state": "WI",
+          "postal_code": "53190",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "hydraulic valves",
+          "transmission control systems"
+        ],
+        "primary_functions": [
+          "manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Cenflex (Weston, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "cenflex.com",
+    "companyId": "cmp_495b0260c2d3",
+    "locationId": "loc_7275e9d05f38",
+    "segment": "USA | WI | Weston, WI",
+    "tier": "Tier 2",
+    "addressRaw": "8510 Enterprise Way, Weston, WI 54476, USA",
+    "addressComponents": {
+      "city": "Weston",
+      "state": "WI",
+      "postal_code": "54476",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.cenflex.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Exhaust systems",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Exhaust systems",
+      "Welding",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "exhaust",
+      "flexible metal connectors",
+      "fabrication"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cenflex",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "8510 Enterprise Way, Weston, WI 54476, USA",
+        "supplier_address_normalized": {
+          "city": "Weston",
+          "state": "WI",
+          "postal_code": "54476",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "exhaust flex connectors",
+          "metal bellows"
+        ],
+        "primary_functions": [
+          "fabrication",
+          "welding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Engineered Plastics Company (Menomonee Falls, WI)",
+    "parentCompany": "MacLean-Fogg Company",
+    "parentCompanyId": "cmp_bff7433ad16f",
+    "companyKey": "name:engineered-plastics-company|parent:maclean-fogg",
+    "companyId": "cmp_0a70f7c5eafc",
+    "locationId": "loc_8bd61d1de173",
+    "segment": "USA | WI | Menomonee Falls, WI",
+    "tier": "Tier 2",
+    "addressRaw": "N92W14555 Anthony Ave, Menomonee Falls, WI 53051, USA",
+    "addressComponents": {
+      "city": "Menomonee Falls",
+      "state": "WI",
+      "postal_code": "53051",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.macleanfoggcs.com/locations/epc/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineered plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Engineered Plastics Company",
+        "parent_company": "MacLean-Fogg Company",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "N92W14555 Anthony Ave, Menomonee Falls, WI 53051, USA",
+        "supplier_address_normalized": {
+          "city": "Menomonee Falls",
+          "state": "WI",
+          "postal_code": "53051",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection molded components",
+          "engineered plastics"
+        ],
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Engineered Plastics Company (Whitewater, WI)",
+    "parentCompany": "MacLean-Fogg Company",
+    "parentCompanyId": "cmp_bff7433ad16f",
+    "companyKey": "name:engineered-plastics-company|parent:maclean-fogg",
+    "companyId": "cmp_0a70f7c5eafc",
+    "locationId": "loc_4b0f0d5cd1b5",
+    "segment": "USA | WI | Whitewater, WI",
+    "tier": "Tier 2",
+    "addressRaw": "420 N Universal Blvd, Whitewater, WI 53190, USA",
+    "addressComponents": {
+      "city": "Whitewater",
+      "state": "WI",
+      "postal_code": "53190",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.macleanfoggcs.com/locations/epc/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "engineered plastics",
+      "injection molding"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Engineered Plastics Company",
+        "parent_company": "MacLean-Fogg Company",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "420 N Universal Blvd, Whitewater, WI 53190, USA",
+        "supplier_address_normalized": {
+          "city": "Whitewater",
+          "state": "WI",
+          "postal_code": "53190",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection molded components",
+          "engineered plastics"
+        ],
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Ultratech Automotive Stampings (Fond du Lac, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "ultratechstampings.com",
+    "companyId": "cmp_b46083f50520",
+    "locationId": "loc_bd85b3fb0863",
+    "segment": "USA | WI | Fond du Lac, WI",
+    "tier": "Tier 2",
+    "addressRaw": "1210 W Scott St, Fond du Lac, WI 54937, USA",
+    "addressComponents": {
+      "city": "Fond du Lac",
+      "state": "WI",
+      "postal_code": "54937",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ultratechstampings.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Metal stamping",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Stamping",
+      "Tool & Die",
+      "Tooling"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "metal stamping",
+      "IATF 16949",
+      "tool and die"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Ultratech Tool & Design Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1210 W Scott St, Fond du Lac, WI 54937, USA",
+        "supplier_address_normalized": {
+          "city": "Fond du Lac",
+          "state": "WI",
+          "postal_code": "54937",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "stamped metal components",
+          "automotive stampings"
+        ],
+        "primary_functions": [
+          "metal stamping",
+          "tooling"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Muth Mirror Systems (Sheboygan, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "muthco.com",
+    "companyId": "cmp_71effcbc14ec",
+    "locationId": "loc_1ad7e0b0b3ee",
+    "segment": "USA | WI | Sheboygan, WI",
+    "tier": "Tier 1",
+    "addressRaw": "4221 High Tech Lane, Sheboygan, WI 53083, USA",
+    "addressComponents": {
+      "city": "Sheboygan",
+      "state": "WI",
+      "postal_code": "53083",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://muthco.com/",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "Lighting assembly",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Lighting assembly",
+      "Assembly"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "OEM",
+      "lighting",
+      "electronics"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Muth Mirror Systems",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4221 High Tech Lane, Sheboygan, WI 53083, USA",
+        "supplier_address_normalized": {
+          "city": "Sheboygan",
+          "state": "WI",
+          "postal_code": "53083",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "exterior lighting",
+          "interior lighting"
+        ],
+        "primary_functions": [
+          "electronics manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  },
+  {
+    "company": "Wisconsin Plastics Inc. (Green Bay, WI)",
+    "parentCompany": null,
+    "parentCompanyId": null,
+    "companyKey": "wisconsinplastics.com",
+    "companyId": "cmp_7fb9898a40a1",
+    "locationId": "loc_adb60840cb15",
+    "segment": "USA | WI | Green Bay, WI",
+    "tier": "Tier 2",
+    "addressRaw": "3155 Commodity Lane, Green Bay, WI 54304, USA",
+    "addressComponents": {
+      "city": "Green Bay",
+      "state": "WI",
+      "postal_code": "54304",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://wisconsinplastics.com/",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "packagingSignals": [],
+    "capabilityTags": [
+      "Injection molding",
+      "Plastic forming",
+      "Assembly",
+      "Electrical systems"
+    ],
+    "capabilityTagsLikely": [],
+    "industryKeywords": [
+      "automotive",
+      "IATF-16949",
+      "injection molding",
+      "electromechanical assemblies"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Wisconsin Plastics Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3155 Commodity Lane, Green Bay, WI 54304, USA",
+        "supplier_address_normalized": {
+          "city": "Green Bay",
+          "state": "WI",
+          "postal_code": "54304",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "supplier_part_categories": [
+          "injection molded components",
+          "electromechanical assemblies"
+        ],
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "official_website"
+        ],
+        "last_verified": "2026-02-20",
+        "discovery_method": "WI_supplier_sweep_round47"
+      }
+    }
+  }
+]
