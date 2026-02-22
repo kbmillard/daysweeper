@@ -42,7 +42,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
   const lng = location.longitude != null ? Number(location.longitude) : null;
 
   return (
-    <div className='space-y-6'>
+    <div className='flex flex-col gap-6 pb-8'>
       {/* Header Actions */}
       <div className='flex items-center justify-between'>
         <div className='flex gap-2'>
@@ -92,7 +92,9 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
         }}
       />
 
-      <CompanyInteractions companyId={company.id} />
+      <div className='w-full min-w-0'>
+        <CompanyInteractions companyId={company.id} />
+      </div>
     </div>
   );
 }
