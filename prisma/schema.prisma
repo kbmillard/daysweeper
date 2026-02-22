@@ -134,6 +134,9 @@ model Location {
   geom              Unsupported("geometry")?
   legacyJson        Json?
   metadata          Json?
+  phone             String?
+  email             String?
+  website           String?
   createdAt         DateTime                 @default(now())
   updatedAt         DateTime
   Company           Company                  @relation(fields: [companyId], references: [id], onDelete: Cascade)
@@ -288,11 +291,13 @@ model User {
   Target    Target[]
 }
 
-/// Layout preferences per user (Clerk userId). Sidebar state, etc.
+/// All UI preferences per user (Clerk userId). Layout, theme, tables, etc.
 model UserPreference {
   id        String   @id @default(cuid())
   userId    String   @unique
-  layout    Json?    // { sidebarOpen?: boolean }
+  layout    Json?    // { sidebarOpen?: boolean, infobarOpen?: boolean }
+  theme     String?  // active theme
+  ui        Json?    // { tables?: Record<string, unknown>, ... }
   updatedAt DateTime @updatedAt
 
   @@index([userId])

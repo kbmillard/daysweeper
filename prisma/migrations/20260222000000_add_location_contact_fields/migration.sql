@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Location" ADD COLUMN IF NOT EXISTS "phone" TEXT;
+ALTER TABLE "Location" ADD COLUMN IF NOT EXISTS "email" TEXT;
+ALTER TABLE "Location" ADD COLUMN IF NOT EXISTS "website" TEXT;

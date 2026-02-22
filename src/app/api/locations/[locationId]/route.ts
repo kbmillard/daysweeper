@@ -19,7 +19,10 @@ export async function PATCH(
       externalId,
       addressComponents,
       latitude,
-      longitude
+      longitude,
+      phone,
+      email,
+      website
     } = body;
 
     const data: Record<string, unknown> = {
@@ -94,6 +97,16 @@ export async function PATCH(
         );
       }
       data.longitude = n;
+    }
+
+    if (phone !== undefined) {
+      data.phone = typeof phone === 'string' && phone.trim() ? phone.trim() : null;
+    }
+    if (email !== undefined) {
+      data.email = typeof email === 'string' && email.trim() ? email.trim() : null;
+    }
+    if (website !== undefined) {
+      data.website = typeof website === 'string' && website.trim() ? website.trim() : null;
     }
 
     const location = await prisma.location.update({

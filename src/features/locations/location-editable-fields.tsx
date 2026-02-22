@@ -29,6 +29,9 @@ type LocationEditableData = {
   addressComponents: AddressComponents;
   latitude: number | null;
   longitude: number | null;
+  phone?: string | null;
+  email?: string | null;
+  website?: string | null;
 };
 
 type CompanyEditableData = {
@@ -44,11 +47,14 @@ type Props = {
   company: CompanyEditableData;
   /** When true, only show Location Details card (hide Company card). Use for primary address on company page. */
   locationOnly?: boolean;
+  /** When true, show "Contact at this location" card (phone/email/website) that saves to Location, not Company. Use on location detail page. */
+  editableLocationContact?: boolean;
 };
 
-export default function LocationEditableFields({ location, company, locationOnly = false }: Props) {
+export default function LocationEditableFields({ location, company, locationOnly = false, editableLocationContact = false }: Props) {
   const router = useRouter();
   const [savingLocation, setSavingLocation] = useState(false);
+  const [savingLocationContact, setSavingLocationContact] = useState(false);
   const [savingCompany, setSavingCompany] = useState(false);
 
   const [locForm, setLocForm] = useState({
@@ -82,12 +88,58 @@ export default function LocationEditableFields({ location, company, locationOnly
     email: company.email ?? ''
   });
 
+  const [locContactForm, setLocContactForm] = useState({
+    phone: location.phone ?? '',
+    email: location.email ?? '',
+    website: location.website ?? ''
+  });
+
+  useEffect(() => {
+    if (editableLocationContact) {
+      setLocContactForm({
+        phone: location.phone ?? '',
+        email: location.email ?? '',
+        website: location.website ?? ''
+      });
+    }
+  }, [editableLocationContact, location.phone, location.email, location.website]);
+
   const handleLocChange = (field: keyof typeof locForm, value: string) => {
     setLocForm((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleCompChange = (field: keyof typeof compForm, value: string) => {
     setCompForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleLocContactChange = (field: keyof typeof locContactForm, value: string) => {
+    setLocContactForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSaveLocationContact = async () => {
+    setSavingLocationContact(true);
+    try {
+      const res = await fetch(`/api/locations/${location.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone: locContactForm.phone.trim() || null,
+          email: locContactForm.email.trim() || null,
+          website: locContactForm.website.trim() || null
+        })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? 'Failed to save contact');
+        return;
+      }
+      toast.success('Location contact saved');
+      router.refresh();
+    } catch {
+      toast.error('Failed to save contact');
+    } finally {
+      setSavingLocationContact(false);
+    }
   };
 
   const handleSaveLocation = async () => {
@@ -327,7 +379,61 @@ export default function LocationEditableFields({ location, company, locationOnly
         </CardContent>
       </Card>
 
-      {!locationOnly && (
+      {!locationOnly && editableLocationContact && (
+      <Card>
+        <CardHeader className='flex flex-row items-center justify-between space-y-0'>
+          <div>
+            <CardTitle className='flex items-center gap-2'>
+              <IconBuilding className='h-5 w-5' />
+              Contact at this location
+            </CardTitle>
+            <CardDescription>
+              Phone, email, website for this location only (does not change company)
+            </CardDescription>
+          </div>
+          <Button onClick={handleSaveLocationContact} disabled={savingLocationContact} size='sm'>
+            {savingLocationContact ? 'Saving…' : 'Save'}
+          </Button>
+        </CardHeader>
+        <CardContent className='space-y-4'>
+          <div className='text-muted-foreground text-sm'>
+            Company: {company.name}
+          </div>
+          <div>
+            <Label htmlFor='locPhone'>Phone</Label>
+            <Input
+              id='locPhone'
+              value={locContactForm.phone}
+              onChange={(e) => handleLocContactChange('phone', e.target.value)}
+              placeholder='Location phone'
+              className='mt-1'
+            />
+          </div>
+          <div>
+            <Label htmlFor='locEmail'>Email</Label>
+            <Input
+              id='locEmail'
+              type='email'
+              value={locContactForm.email}
+              onChange={(e) => handleLocContactChange('email', e.target.value)}
+              placeholder='Location email'
+              className='mt-1'
+            />
+          </div>
+          <div>
+            <Label htmlFor='locWebsite'>Website</Label>
+            <Input
+              id='locWebsite'
+              value={locContactForm.website}
+              onChange={(e) => handleLocContactChange('website', e.target.value)}
+              placeholder='https://...'
+              className='mt-1'
+            />
+          </div>
+        </CardContent>
+      </Card>
+      )}
+      {!locationOnly && !editableLocationContact && (
       <Card>
         <CardHeader className='flex flex-row items-center justify-between space-y-0'>
           <div>

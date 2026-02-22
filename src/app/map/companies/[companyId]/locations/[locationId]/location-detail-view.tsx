@@ -15,6 +15,9 @@ type LocationWithCompany = {
   addressComponents: any;
   latitude: any;
   longitude: any;
+  phone: string | null;
+  email: string | null;
+  website: string | null;
   geom?: any;
   legacyJson: any;
   metadata: any;
@@ -81,7 +84,10 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           addressNormalized: location.addressNormalized,
           addressComponents: location.addressComponents,
           latitude: lat,
-          longitude: lng
+          longitude: lng,
+          phone: location.phone,
+          email: location.email,
+          website: location.website
         }}
         company={{
           id: company.id,
@@ -90,6 +96,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           phone: company.phone,
           email: company.email
         }}
+        editableLocationContact
       />
 
       <div className='w-full min-w-0'>
