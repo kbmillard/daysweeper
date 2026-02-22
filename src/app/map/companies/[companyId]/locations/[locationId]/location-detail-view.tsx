@@ -15,9 +15,9 @@ type LocationWithCompany = {
   addressComponents: any;
   latitude: any;
   longitude: any;
-  phone: string | null;
-  email: string | null;
-  website: string | null;
+  phone?: string | null;
+  email?: string | null;
+  website?: string | null;
   geom?: any;
   legacyJson: any;
   metadata: any;

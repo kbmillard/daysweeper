@@ -28,7 +28,9 @@ export default async function Page(props: PageProps) {
   const companyId = params.companyId;
   const baseUrl = await getBaseUrl();
 
-  const company = await prisma.company.findUnique({
+  let company;
+  try {
+    company = await prisma.company.findUnique({
     where: { id: companyId },
     select: {
       id: true,
@@ -99,6 +101,9 @@ export default async function Page(props: PageProps) {
       }
     }
   });
+  } catch {
+    notFound();
+  }
 
   if (!company) {
     notFound();
