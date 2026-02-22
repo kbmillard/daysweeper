@@ -100,23 +100,44 @@ export async function PATCH(
       data.longitude = n;
     }
 
+    const contactData: Record<string, unknown> = {};
     if (locationName !== undefined) {
-      data.locationName = typeof locationName === 'string' && locationName.trim() ? locationName.trim() : null;
+      contactData.locationName = typeof locationName === 'string' && locationName.trim() ? locationName.trim() : null;
     }
     if (phone !== undefined) {
-      data.phone = typeof phone === 'string' && phone.trim() ? phone.trim() : null;
+      contactData.phone = typeof phone === 'string' && phone.trim() ? phone.trim() : null;
     }
     if (email !== undefined) {
-      data.email = typeof email === 'string' && email.trim() ? email.trim() : null;
+      contactData.email = typeof email === 'string' && email.trim() ? email.trim() : null;
     }
     if (website !== undefined) {
-      data.website = typeof website === 'string' && website.trim() ? website.trim() : null;
+      contactData.website = typeof website === 'string' && website.trim() ? website.trim() : null;
     }
 
-    const location = await prisma.location.update({
-      where: { id: locationId },
-      data: data as Parameters<typeof prisma.location.update>[0]['data']
-    });
+    const hasContactFields = Object.keys(contactData).length > 0;
+    const fullData = hasContactFields ? { ...data, ...contactData } : data;
+
+    let location;
+    try {
+      location = await prisma.location.update({
+        where: { id: locationId },
+        data: fullData as Parameters<typeof prisma.location.update>[0]['data']
+      });
+    } catch (updateError: any) {
+      const msg = String(updateError?.message ?? '');
+      const isColumnMissing = msg.includes('does not exist') || msg.includes('(not available)');
+      if (isColumnMissing && hasContactFields) {
+        location = await prisma.location.update({
+          where: { id: locationId },
+          data: data as Parameters<typeof prisma.location.update>[0]['data']
+        });
+        return NextResponse.json({
+          location,
+          warning: 'Contact fields (location name, phone, email, website) could not be saved. Database migration may be pending. Other changes were saved.'
+        });
+      }
+      throw updateError;
+    }
 
     return NextResponse.json({ location });
   } catch (error: any) {

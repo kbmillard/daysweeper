@@ -137,7 +137,11 @@ export default function LocationEditableFields({ location, company, locationOnly
         toast.error(data.error ?? 'Failed to save contact');
         return;
       }
-      toast.success('Location contact saved');
+      if (data.warning) {
+        toast.warning(data.warning);
+      } else {
+        toast.success('Location contact saved');
+      }
       router.refresh();
     } catch {
       toast.error('Failed to save contact');
