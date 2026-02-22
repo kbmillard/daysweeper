@@ -9,11 +9,14 @@ const LEGACY_KEY_PATTERNS = [
   'created',
   'updated',
   'addressconfidence',
+  'address_confidence',
+  'addressconfidencelevel',
   'externalid'
 ];
 
 export function isLegacyMetadataKey(key: string): boolean {
   const lower = key.toLowerCase().replace(/[\s_-]/g, '');
+  if (lower.includes('address') && lower.includes('confidence')) return true;
   return LEGACY_KEY_PATTERNS.some(
     (pattern) => lower.includes(pattern) || lower === pattern
   );
