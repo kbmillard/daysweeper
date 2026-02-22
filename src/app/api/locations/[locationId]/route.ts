@@ -124,17 +124,24 @@ export async function PATCH(
         data: fullData as Parameters<typeof prisma.location.update>[0]['data']
       });
     } catch (updateError: any) {
-      const msg = String(updateError?.message ?? '');
-      const isColumnMissing = msg.includes('does not exist') || msg.includes('(not available)');
+      const msg = String(updateError?.message ?? '') + String(JSON.stringify(updateError ?? ''));
+      const isColumnMissing =
+        msg.includes('does not exist') ||
+        msg.includes('(not available)') ||
+        msg.includes('Unknown column');
       if (isColumnMissing && hasContactFields) {
-        location = await prisma.location.update({
-          where: { id: locationId },
-          data: data as Parameters<typeof prisma.location.update>[0]['data']
-        });
-        return NextResponse.json({
-          location,
-          warning: 'Contact fields (location name, phone, email, website) could not be saved. Database migration may be pending. Other changes were saved.'
-        });
+        try {
+          location = await prisma.location.update({
+            where: { id: locationId },
+            data: data as Parameters<typeof prisma.location.update>[0]['data']
+          });
+          return NextResponse.json({
+            location,
+            warning: 'Contact fields (location name, phone, email, website) could not be saved. Run database migrations in production.'
+          });
+        } catch {
+          throw updateError;
+        }
       }
       throw updateError;
     }
