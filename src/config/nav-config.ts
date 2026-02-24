@@ -41,7 +41,14 @@ export const navItems: NavItem[] = [
     shortcut: ['d', 'd'],
     items: []
   },
-  // Map nav hidden for now
+  {
+    title: 'Map',
+    url: '/map',
+    icon: 'mapPin',
+    isActive: false,
+    shortcut: ['m', 'm'],
+    items: []
+  },
   {
     title: 'Companies',
     url: '/map/companies',

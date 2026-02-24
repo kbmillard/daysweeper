@@ -1,0 +1,2952 @@
+[
+  {
+    "company": "Mayville Engineering Company (MEC) (Heber Springs, AR)",
+    "parentCompany": null,
+    "segment": "USA | AR | Heber Springs",
+    "tier": "Tier 2",
+    "addressRaw": "944 Bypass Rd, Heber Springs, AR 72543, USA",
+    "addressComponents": {
+      "street": "944 Bypass Rd",
+      "city": "Heber Springs",
+      "state": "AR",
+      "postal_code": "72543",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_49d7b25cc9f8",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "944 Bypass Rd, Heber Springs, AR 72543, USA",
+        "supplier_address_normalized": {
+          "city": "Heber Springs",
+          "state": "AR",
+          "postal_code": "72543",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Wheeling, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Wheeling",
+    "tier": "Tier 2",
+    "addressRaw": "1550 Abbott Drive, Wheeling, IL 60090, USA",
+    "addressComponents": {
+      "street": "1550 Abbott Drive",
+      "city": "Wheeling",
+      "state": "IL",
+      "postal_code": "60090",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_1e0256d2abe3",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1550 Abbott Drive, Wheeling, IL 60090, USA",
+        "supplier_address_normalized": {
+          "city": "Wheeling",
+          "state": "IL",
+          "postal_code": "60090",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Greenville, MS)",
+    "parentCompany": null,
+    "segment": "USA | MS | Greenville",
+    "tier": "Tier 2",
+    "addressRaw": "1281 Pickett Street, Greenville, MS 38703, USA",
+    "addressComponents": {
+      "street": "1281 Pickett Street",
+      "city": "Greenville",
+      "state": "MS",
+      "postal_code": "38703",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_0286e8bb7098",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1281 Pickett Street, Greenville, MS 38703, USA",
+        "supplier_address_normalized": {
+          "city": "Greenville",
+          "state": "MS",
+          "postal_code": "38703",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Defiance, OH - North)",
+    "parentCompany": null,
+    "segment": "USA | OH | Defiance",
+    "tier": "Tier 2",
+    "addressRaw": "6728 St. Rt. 66 North, Defiance, OH 43512, USA",
+    "addressComponents": {
+      "street": "6728 St. Rt. 66 North",
+      "city": "Defiance",
+      "state": "OH",
+      "postal_code": "43512",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_d7745d589696",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "6728 St. Rt. 66 North, Defiance, OH 43512, USA",
+        "supplier_address_normalized": {
+          "city": "Defiance",
+          "state": "OH",
+          "postal_code": "43512",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Defiance, OH - Seneca)",
+    "parentCompany": null,
+    "segment": "USA | OH | Defiance",
+    "tier": "Tier 2",
+    "addressRaw": "21 Seneca Street, Defiance, OH 43512, USA",
+    "addressComponents": {
+      "street": "21 Seneca Street",
+      "city": "Defiance",
+      "state": "OH",
+      "postal_code": "43512",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_f0e76f21c063",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "21 Seneca Street, Defiance, OH 43512, USA",
+        "supplier_address_normalized": {
+          "city": "Defiance",
+          "state": "OH",
+          "postal_code": "43512",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Carlex Glass America (Nashville, TN - Corporate Office & Glass Plant)",
+    "parentCompany": null,
+    "segment": "USA | TN | Nashville",
+    "tier": "Tier 1",
+    "addressRaw": "7200 Centennial Boulevard, Nashville, TN 37209, USA",
+    "addressComponents": {
+      "street": "7200 Centennial Boulevard",
+      "city": "Nashville",
+      "state": "TN",
+      "postal_code": "37209",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.carlex.com",
+    "companyKey": "carlex.com",
+    "companyId": "cmp_cebdaf291c20",
+    "locationId": "loc_0243383e6b65",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive glass",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Carlex Glass America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7200 Centennial Boulevard, Nashville, TN 37209, USA",
+        "supplier_address_normalized": {
+          "city": "Nashville",
+          "state": "TN",
+          "postal_code": "37209",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "carlex.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Carlex Glass America (Auburn, IN - Glass Fabrication)",
+    "parentCompany": null,
+    "segment": "USA | IN | Auburn",
+    "tier": "Tier 1",
+    "addressRaw": "1900 Center Street, Auburn, IN 46706, USA",
+    "addressComponents": {
+      "street": "1900 Center Street",
+      "city": "Auburn",
+      "state": "IN",
+      "postal_code": "46706",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.carlex.com",
+    "companyKey": "carlex.com",
+    "companyId": "cmp_cebdaf291c20",
+    "locationId": "loc_4e17afa26e98",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive glass",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Carlex Glass America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1900 Center Street, Auburn, IN 46706, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn",
+          "state": "IN",
+          "postal_code": "46706",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "carlex.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Carlex Glass America (Ligonier, IN - Glass Fabrication)",
+    "parentCompany": null,
+    "segment": "USA | IN | Ligonier",
+    "tier": "Tier 1",
+    "addressRaw": "860 W U.S. HWY 6, Ligonier, IN 46767, USA",
+    "addressComponents": {
+      "street": "860 W U.S. HWY 6",
+      "city": "Ligonier",
+      "state": "IN",
+      "postal_code": "46767",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.carlex.com",
+    "companyKey": "carlex.com",
+    "companyId": "cmp_cebdaf291c20",
+    "locationId": "loc_9fe050650eb2",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive glass",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Carlex Glass America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "860 W U.S. HWY 6, Ligonier, IN 46767, USA",
+        "supplier_address_normalized": {
+          "city": "Ligonier",
+          "state": "IN",
+          "postal_code": "46767",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "carlex.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Carlex Glass America (Vonore, TN - Glass Fabrication)",
+    "parentCompany": null,
+    "segment": "USA | TN | Vonore",
+    "tier": "Tier 1",
+    "addressRaw": "77 Excellence Way, Vonore, TN 37885, USA",
+    "addressComponents": {
+      "street": "77 Excellence Way",
+      "city": "Vonore",
+      "state": "TN",
+      "postal_code": "37885",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.carlex.com",
+    "companyKey": "carlex.com",
+    "companyId": "cmp_cebdaf291c20",
+    "locationId": "loc_9aa0b1bb5fd5",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive glass",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Carlex Glass America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "77 Excellence Way, Vonore, TN 37885, USA",
+        "supplier_address_normalized": {
+          "city": "Vonore",
+          "state": "TN",
+          "postal_code": "37885",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "carlex.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Carlex Glass America (Lebanon, TN - Automotive Glass Solutions)",
+    "parentCompany": null,
+    "segment": "USA | TN | Lebanon",
+    "tier": "Tier 1",
+    "addressRaw": "340 Bridgestone Parkway, Lebanon, TN 37090, USA",
+    "addressComponents": {
+      "street": "340 Bridgestone Parkway",
+      "city": "Lebanon",
+      "state": "TN",
+      "postal_code": "37090",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.carlex.com",
+    "companyKey": "carlex.com",
+    "companyId": "cmp_cebdaf291c20",
+    "locationId": "loc_d15337a373d2",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Automotive glass",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Carlex Glass America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "340 Bridgestone Parkway, Lebanon, TN 37090, USA",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "TN",
+          "postal_code": "37090",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "carlex.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Auburn, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Auburn",
+    "tier": "Tier 1",
+    "addressRaw": "801 West 15th Street, Auburn, IN 46706, USA",
+    "addressComponents": {
+      "street": "801 West 15th Street",
+      "city": "Auburn",
+      "state": "IN",
+      "postal_code": "46706",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_1e2262e6e1c0",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "801 West 15th Street, Auburn, IN 46706, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn",
+          "state": "IN",
+          "postal_code": "46706",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Avon, OH)",
+    "parentCompany": null,
+    "segment": "USA | OH | Avon",
+    "tier": "Tier 1",
+    "addressRaw": "1190 Jaycox Road, Avon, OH 44011, USA",
+    "addressComponents": {
+      "street": "1190 Jaycox Road",
+      "city": "Avon",
+      "state": "OH",
+      "postal_code": "44011",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_b4cdae316699",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1190 Jaycox Road, Avon, OH 44011, USA",
+        "supplier_address_normalized": {
+          "city": "Avon",
+          "state": "OH",
+          "postal_code": "44011",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Paulo (St. Louis, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | St. Louis",
+    "tier": "Tier 2",
+    "addressRaw": "3500 Midwest Avenue, St. Louis, MO 63118, USA",
+    "addressComponents": {
+      "street": "3500 Midwest Avenue",
+      "city": "St. Louis",
+      "state": "MO",
+      "postal_code": "63118",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.paulo.com",
+    "companyKey": "paulo.com",
+    "companyId": "cmp_8432943cb32d",
+    "locationId": "loc_e1812543a071",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Heat treating",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Paulo",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3500 Midwest Avenue, St. Louis, MO 63118, USA",
+        "supplier_address_normalized": {
+          "city": "St. Louis",
+          "state": "MO",
+          "postal_code": "63118",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "paulo.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "EPC (Columbia, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Columbia",
+    "tier": "Tier 1",
+    "addressRaw": "4000 Waco Road, Columbia, MO 65202, USA",
+    "addressComponents": {
+      "street": "4000 Waco Road",
+      "city": "Columbia",
+      "state": "MO",
+      "postal_code": "65202",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.epcmfg.com",
+    "companyKey": "epcmfg.com",
+    "companyId": "cmp_3477db972f09",
+    "locationId": "loc_d616c3ad2e7a",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EPC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4000 Waco Road, Columbia, MO 65202, USA",
+        "supplier_address_normalized": {
+          "city": "Columbia",
+          "state": "MO",
+          "postal_code": "65202",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "epcmfg.com location page (Columbia, MO)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "American Stitchco (Mountain Home, AR)",
+    "parentCompany": null,
+    "segment": "USA | AR | Mountain Home",
+    "tier": "Tier 2",
+    "addressRaw": "4662 Highway 62 W., Mountain Home, AR 72653, USA",
+    "addressComponents": {
+      "street": "4662 Highway 62 W.",
+      "city": "Mountain Home",
+      "state": "AR",
+      "postal_code": "72653",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.americanstitchco.com",
+    "companyKey": "americanstitchco.com",
+    "companyId": "cmp_64c5824ba283",
+    "locationId": "loc_14bd1ffb8d4a",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sewn components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "American Stitchco",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4662 Highway 62 W., Mountain Home, AR 72653, USA",
+        "supplier_address_normalized": {
+          "city": "Mountain Home",
+          "state": "AR",
+          "postal_code": "72653",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "americanstitchco.com about / contact section"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Saint Jean Industries (Heber Springs, AR)",
+    "parentCompany": null,
+    "segment": "USA | AR | Heber Springs",
+    "tier": "Tier 1",
+    "addressRaw": "424 Industrial Park Road, Heber Springs, AR 72543, USA",
+    "addressComponents": {
+      "street": "424 Industrial Park Road",
+      "city": "Heber Springs",
+      "state": "AR",
+      "postal_code": "72543",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.st-ji.com",
+    "companyKey": "st-ji.com",
+    "companyId": "cmp_a4b172e51b63",
+    "locationId": "loc_40bce227224a",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Wheels & cast components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Saint Jean Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "424 Industrial Park Road, Heber Springs, AR 72543, USA",
+        "supplier_address_normalized": {
+          "city": "Heber Springs",
+          "state": "AR",
+          "postal_code": "72543",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "st-ji.com contact page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Tooling Tech Group (Washington, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Washington",
+    "tier": "Tooling_and_Capital_Equipment",
+    "addressRaw": "423 W-W Industrial Park Drive, Washington, MO 63090, USA",
+    "addressComponents": {
+      "street": "423 W-W Industrial Park Drive",
+      "city": "Washington",
+      "state": "MO",
+      "postal_code": "63090",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.toolingtechgroup.com",
+    "companyKey": "toolingtechgroup.com",
+    "companyId": "cmp_e97ae8405d5d",
+    "locationId": "loc_6dce36228839",
+    "supplyChainCategory": "Tooling_and_Capital_Equipment",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Tool & die",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Tooling Tech Group",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tooling_and_Capital_Equipment",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "423 W-W Industrial Park Drive, Washington, MO 63090, USA",
+        "supplier_address_normalized": {
+          "city": "Washington",
+          "state": "MO",
+          "postal_code": "63090",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "toolingtechgroup.com location page (Washington, MO)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Cloyes Gear & Products (Fort Smith, AR - HQ)",
+    "parentCompany": null,
+    "segment": "USA | AR | Fort Smith",
+    "tier": "Tier 2",
+    "addressRaw": "2621A Market Trace, Fort Smith, AR 72908, USA",
+    "addressComponents": {
+      "street": "2621A Market Trace",
+      "city": "Fort Smith",
+      "state": "AR",
+      "postal_code": "72908",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://cloyes.com",
+    "companyKey": "cloyes.com",
+    "companyId": "cmp_6ac9b245b758",
+    "locationId": "loc_1c5add7257ab",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Gears & timing components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cloyes Gear & Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "2621A Market Trace, Fort Smith, AR 72908, USA",
+        "supplier_address_normalized": {
+          "city": "Fort Smith",
+          "state": "AR",
+          "postal_code": "72908",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "cloyes.com corporate locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Cloyes Gear & Products (Fort Smith, AR - Distribution & Engineering)",
+    "parentCompany": null,
+    "segment": "USA | AR | Fort Smith",
+    "tier": "Tier 2",
+    "addressRaw": "7800 Ball Road, Fort Smith, AR 72908, USA",
+    "addressComponents": {
+      "street": "7800 Ball Road",
+      "city": "Fort Smith",
+      "state": "AR",
+      "postal_code": "72908",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://cloyes.com",
+    "companyKey": "cloyes.com",
+    "companyId": "cmp_6ac9b245b758",
+    "locationId": "loc_619696700bc2",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Gears & timing components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cloyes Gear & Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "7800 Ball Road, Fort Smith, AR 72908, USA",
+        "supplier_address_normalized": {
+          "city": "Fort Smith",
+          "state": "AR",
+          "postal_code": "72908",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "cloyes.com corporate locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Cloyes Gear & Products (Paris, AR - Manufacturing Plant)",
+    "parentCompany": null,
+    "segment": "USA | AR | Paris",
+    "tier": "Tier 2",
+    "addressRaw": "615 West Walnut, Paris, AR 72855, USA",
+    "addressComponents": {
+      "street": "615 West Walnut",
+      "city": "Paris",
+      "state": "AR",
+      "postal_code": "72855",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://cloyes.com",
+    "companyKey": "cloyes.com",
+    "companyId": "cmp_6ac9b245b758",
+    "locationId": "loc_e4df2676f366",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Gears & timing components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Cloyes Gear & Products",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "615 West Walnut, Paris, AR 72855, USA",
+        "supplier_address_normalized": {
+          "city": "Paris",
+          "state": "AR",
+          "postal_code": "72855",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "cloyes.com corporate locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Axis Engineering - Watertown, TN)",
+    "parentCompany": null,
+    "segment": "USA | TN | Watertown",
+    "tier": "Tier 1",
+    "addressRaw": "200 Tennessee Blvd, Watertown, TN 37184, USA",
+    "addressComponents": {
+      "street": "200 Tennessee Blvd",
+      "city": "Watertown",
+      "state": "TN",
+      "postal_code": "37184",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_62055590f626",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Tennessee Blvd, Watertown, TN 37184, USA",
+        "supplier_address_normalized": {
+          "city": "Watertown",
+          "state": "TN",
+          "postal_code": "37184",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Bardstown, KY)",
+    "parentCompany": null,
+    "segment": "USA | KY | Bardstown",
+    "tier": "Tier 1",
+    "addressRaw": "850 Withrow Court, Bardstown, KY 40004, USA",
+    "addressComponents": {
+      "street": "850 Withrow Court",
+      "city": "Bardstown",
+      "state": "KY",
+      "postal_code": "40004",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_dd899006ee7b",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "850 Withrow Court, Bardstown, KY 40004, USA",
+        "supplier_address_normalized": {
+          "city": "Bardstown",
+          "state": "KY",
+          "postal_code": "40004",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Bellevue, OH)",
+    "parentCompany": null,
+    "segment": "USA | OH | Bellevue",
+    "tier": "Tier 1",
+    "addressRaw": "630 Southwest Street, Bellevue, OH 44811, USA",
+    "addressComponents": {
+      "street": "630 Southwest Street",
+      "city": "Bellevue",
+      "state": "OH",
+      "postal_code": "44811",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_1f6b6e499576",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "630 Southwest Street, Bellevue, OH 44811, USA",
+        "supplier_address_normalized": {
+          "city": "Bellevue",
+          "state": "OH",
+          "postal_code": "44811",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Bluffton, OH)",
+    "parentCompany": null,
+    "segment": "USA | OH | Bluffton",
+    "tier": "Tier 1",
+    "addressRaw": "18717 County Road 15, Bluffton, OH 45817, USA",
+    "addressComponents": {
+      "street": "18717 County Road 15",
+      "city": "Bluffton",
+      "state": "OH",
+      "postal_code": "45817",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_b1b7d7336941",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "18717 County Road 15, Bluffton, OH 45817, USA",
+        "supplier_address_normalized": {
+          "city": "Bluffton",
+          "state": "OH",
+          "postal_code": "45817",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Chicago, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Chicago",
+    "tier": "Tier 1",
+    "addressRaw": "12350 South Avenue O, Chicago, IL 60633, USA",
+    "addressComponents": {
+      "street": "12350 South Avenue O",
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60633",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_533a3b1c15cf",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "12350 South Avenue O, Chicago, IL 60633, USA",
+        "supplier_address_normalized": {
+          "city": "Chicago",
+          "state": "IL",
+          "postal_code": "60633",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Haggerty Logistics - Springdale, OH - Location 3)",
+    "parentCompany": null,
+    "segment": "USA | OH | Springdale",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "95 West Cresentville Road, Springdale, OH 45246, USA",
+    "addressComponents": {
+      "street": "95 West Cresentville Road",
+      "city": "Springdale",
+      "state": "OH",
+      "postal_code": "45246",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_3bed92949683",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Line-side logistics / sequencing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Logistics Provider",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "95 West Cresentville Road, Springdale, OH 45246, USA",
+        "supplier_address_normalized": {
+          "city": "Springdale",
+          "state": "OH",
+          "postal_code": "45246",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Haggerty Logistics - East Chicago, IN - Location 5)",
+    "parentCompany": null,
+    "segment": "USA | IN | East Chicago",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "3600 Michigan Avenue, East Chicago, IN 46312, USA",
+    "addressComponents": {
+      "street": "3600 Michigan Avenue",
+      "city": "East Chicago",
+      "state": "IN",
+      "postal_code": "46312",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_6e89e39fdfba",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Line-side logistics / sequencing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Logistics Provider",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3600 Michigan Avenue, East Chicago, IN 46312, USA",
+        "supplier_address_normalized": {
+          "city": "East Chicago",
+          "state": "IN",
+          "postal_code": "46312",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Lebanon, TN)",
+    "parentCompany": null,
+    "segment": "USA | TN | Lebanon",
+    "tier": "Tier 1",
+    "addressRaw": "712 Briskin Lane, Lebanon, TN 37087, USA",
+    "addressComponents": {
+      "street": "712 Briskin Lane",
+      "city": "Lebanon",
+      "state": "TN",
+      "postal_code": "37087",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_8ee334805e53",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "712 Briskin Lane, Lebanon, TN 37087, USA",
+        "supplier_address_normalized": {
+          "city": "Lebanon",
+          "state": "TN",
+          "postal_code": "37087",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Madison, MS)",
+    "parentCompany": null,
+    "segment": "USA | MS | Madison",
+    "tier": "Tier 1",
+    "addressRaw": "440 Church Road, Madison, MS 39110, USA",
+    "addressComponents": {
+      "street": "440 Church Road",
+      "city": "Madison",
+      "state": "MS",
+      "postal_code": "39110",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_0fefc49a8dff",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "440 Church Road, Madison, MS 39110, USA",
+        "supplier_address_normalized": {
+          "city": "Madison",
+          "state": "MS",
+          "postal_code": "39110",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Meridian, MS)",
+    "parentCompany": null,
+    "segment": "USA | MS | Meridian",
+    "tier": "Tier 1",
+    "addressRaw": "6305 St Louis St, Meridian, MS 39307, USA",
+    "addressComponents": {
+      "street": "6305 St Louis St",
+      "city": "Meridian",
+      "state": "MS",
+      "postal_code": "39307",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_4d6c067f9834",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6305 St Louis St, Meridian, MS 39307, USA",
+        "supplier_address_normalized": {
+          "city": "Meridian",
+          "state": "MS",
+          "postal_code": "39307",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Shepherdsville, KY)",
+    "parentCompany": null,
+    "segment": "USA | KY | Shepherdsville",
+    "tier": "Tier 1",
+    "addressRaw": "550 Cedar Grove Road, Shepherdsville, KY 40165, USA",
+    "addressComponents": {
+      "street": "550 Cedar Grove Road",
+      "city": "Shepherdsville",
+      "state": "KY",
+      "postal_code": "40165",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_f6cac149689d",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "550 Cedar Grove Road, Shepherdsville, KY 40165, USA",
+        "supplier_address_normalized": {
+          "city": "Shepherdsville",
+          "state": "KY",
+          "postal_code": "40165",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Byron Center, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Byron Center",
+    "tier": "Tier 2",
+    "addressRaw": "990 84th Street S.W., Byron Center, MI 49315, USA",
+    "addressComponents": {
+      "street": "990 84th Street S.W.",
+      "city": "Byron Center",
+      "state": "MI",
+      "postal_code": "49315",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_4ba66499bd70",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "990 84th Street S.W., Byron Center, MI 49315, USA",
+        "supplier_address_normalized": {
+          "city": "Byron Center",
+          "state": "MI",
+          "postal_code": "49315",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Hazel Park, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Hazel Park",
+    "tier": "Tier 2",
+    "addressRaw": "1430 E. 10 Mile Rd, Suite 350, Hazel Park, MI 48030, USA",
+    "addressComponents": {
+      "street": "1430 E. 10 Mile Rd, Suite 350",
+      "city": "Hazel Park",
+      "state": "MI",
+      "postal_code": "48030",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_fabff1c32551",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1430 E. 10 Mile Rd, Suite 350, Hazel Park, MI 48030, USA",
+        "supplier_address_normalized": {
+          "city": "Hazel Park",
+          "state": "MI",
+          "postal_code": "48030",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Vanderbilt, MI - North)",
+    "parentCompany": null,
+    "segment": "USA | MI | Vanderbilt",
+    "tier": "Tier 2",
+    "addressRaw": "1444 Alexander Road, Vanderbilt, MI 49795, USA",
+    "addressComponents": {
+      "street": "1444 Alexander Road",
+      "city": "Vanderbilt",
+      "state": "MI",
+      "postal_code": "49795",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_785d53b98551",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "1444 Alexander Road, Vanderbilt, MI 49795, USA",
+        "supplier_address_normalized": {
+          "city": "Vanderbilt",
+          "state": "MI",
+          "postal_code": "49795",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Vanderbilt, MI - South)",
+    "parentCompany": null,
+    "segment": "USA | MI | Vanderbilt",
+    "tier": "Tier 2",
+    "addressRaw": "8276 Yuill Street, Vanderbilt, MI 49795, USA",
+    "addressComponents": {
+      "street": "8276 Yuill Street",
+      "city": "Vanderbilt",
+      "state": "MI",
+      "postal_code": "49795",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_be5d40d87a9b",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "8276 Yuill Street, Vanderbilt, MI 49795, USA",
+        "supplier_address_normalized": {
+          "city": "Vanderbilt",
+          "state": "MI",
+          "postal_code": "49795",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Mayville Engineering Company (MEC) (Wayland, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Wayland",
+    "tier": "Tier 2",
+    "addressRaw": "4714 Circuit Court, Wayland, MI 49348, USA",
+    "addressComponents": {
+      "street": "4714 Circuit Court",
+      "city": "Wayland",
+      "state": "MI",
+      "postal_code": "49348",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.mecinc.com",
+    "companyKey": "mecinc.com",
+    "companyId": "cmp_858e3860c05e",
+    "locationId": "loc_b7322bbf1de3",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Sub-assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Mayville Engineering Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "4714 Circuit Court, Wayland, MI 49348, USA",
+        "supplier_address_normalized": {
+          "city": "Wayland",
+          "state": "MI",
+          "postal_code": "49348",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "mecinc.com facilities page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Carlex Glass America (Troy, MI - OE Sales & Engineering)",
+    "parentCompany": null,
+    "segment": "USA | MI | Troy",
+    "tier": "Tier 1",
+    "addressRaw": "1209 E. Big Beaver Road, Troy, MI 48083, USA",
+    "addressComponents": {
+      "street": "1209 E. Big Beaver Road",
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48083",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.carlex.com",
+    "companyKey": "carlex.com",
+    "companyId": "cmp_cebdaf291c20",
+    "locationId": "loc_734eff5cf56a",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Sales & engineering center",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Carlex Glass America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1209 E. Big Beaver Road, Troy, MI 48083, USA",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48083",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "carlex.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Motus Integrated Technologies (Holland, MI - HQ)",
+    "parentCompany": null,
+    "segment": "USA | MI | Holland",
+    "tier": "Tier 1",
+    "addressRaw": "88 E 48th St, Holland, MI 49423, USA",
+    "addressComponents": {
+      "street": "88 E 48th St",
+      "city": "Holland",
+      "state": "MI",
+      "postal_code": "49423",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://motusintegrated.com",
+    "companyKey": "motusintegrated.com",
+    "companyId": "cmp_689ed0e64442",
+    "locationId": "loc_2967b5a1d521",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Motus Integrated Technologies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "88 E 48th St, Holland, MI 49423, USA",
+        "supplier_address_normalized": {
+          "city": "Holland",
+          "state": "MI",
+          "postal_code": "49423",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "motusintegrated.com contact page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Motus Integrated Technologies (Battle Creek, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Battle Creek",
+    "tier": "Tier 1",
+    "addressRaw": "2500 Logistics Dr, Battle Creek, MI 49037, USA",
+    "addressComponents": {
+      "street": "2500 Logistics Dr",
+      "city": "Battle Creek",
+      "state": "MI",
+      "postal_code": "49037",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://motusintegrated.com",
+    "companyKey": "motusintegrated.com",
+    "companyId": "cmp_689ed0e64442",
+    "locationId": "loc_8c055134714d",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Interior modules",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Motus Integrated Technologies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2500 Logistics Dr, Battle Creek, MI 49037, USA",
+        "supplier_address_normalized": {
+          "city": "Battle Creek",
+          "state": "MI",
+          "postal_code": "49037",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "motusintegrated.com contact page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Motus Integrated Technologies (Wixom, MI - Technical/Sales Center)",
+    "parentCompany": null,
+    "segment": "USA | MI | Wixom",
+    "tier": "Tier 1",
+    "addressRaw": "79716 Martin Dr, Wixom, MI 48393, USA",
+    "addressComponents": {
+      "street": "79716 Martin Dr",
+      "city": "Wixom",
+      "state": "MI",
+      "postal_code": "48393",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://motusintegrated.com",
+    "companyKey": "motusintegrated.com",
+    "companyId": "cmp_689ed0e64442",
+    "locationId": "loc_8e40588156b4",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Technical / sales center",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Motus Integrated Technologies",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "79716 Martin Dr, Wixom, MI 48393, USA",
+        "supplier_address_normalized": {
+          "city": "Wixom",
+          "state": "MI",
+          "postal_code": "48393",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "motusintegrated.com contact page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "US Farathane (Auburn Hills, MI - World HQ)",
+    "parentCompany": null,
+    "segment": "USA | MI | Auburn Hills",
+    "tier": "Tier 2",
+    "addressRaw": "2700 High Meadow Cir, Auburn Hills, MI 48326, USA",
+    "addressComponents": {
+      "street": "2700 High Meadow Cir",
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.usfarathane.com",
+    "companyKey": "usfarathane.com",
+    "companyId": "cmp_eae0fa1b0420",
+    "locationId": "loc_774c3c4a0f6e",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "US Farathane",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2700 High Meadow Cir, Auburn Hills, MI 48326, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "usfarathane.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "US Farathane (Auburn Hills, MI - Harmon Rd.)",
+    "parentCompany": null,
+    "segment": "USA | MI | Auburn Hills",
+    "tier": "Tier 2",
+    "addressRaw": "1350 Harmon Rd, Auburn Hills, MI 48326, USA",
+    "addressComponents": {
+      "street": "1350 Harmon Rd",
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.usfarathane.com",
+    "companyKey": "usfarathane.com",
+    "companyId": "cmp_eae0fa1b0420",
+    "locationId": "loc_b433143f16fc",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "US Farathane",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1350 Harmon Rd, Auburn Hills, MI 48326, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "usfarathane.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "US Farathane (Lake Orion, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Lake Orion",
+    "tier": "Tier 2",
+    "addressRaw": "4872 S Lapeer Rd, Lake Orion, MI 48359, USA",
+    "addressComponents": {
+      "street": "4872 S Lapeer Rd",
+      "city": "Lake Orion",
+      "state": "MI",
+      "postal_code": "48359",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.usfarathane.com",
+    "companyKey": "usfarathane.com",
+    "companyId": "cmp_eae0fa1b0420",
+    "locationId": "loc_a09d32cc0b09",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "US Farathane",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4872 S Lapeer Rd, Lake Orion, MI 48359, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Orion",
+          "state": "MI",
+          "postal_code": "48359",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "usfarathane.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Oakland Stamping - Detroit, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Detroit",
+    "tier": "Tier 1",
+    "addressRaw": "1200 Woodland Avenue, Detroit, MI 48211, USA",
+    "addressComponents": {
+      "street": "1200 Woodland Avenue",
+      "city": "Detroit",
+      "state": "MI",
+      "postal_code": "48211",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_c1c67e49fe4b",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1200 Woodland Avenue, Detroit, MI 48211, USA",
+        "supplier_address_normalized": {
+          "city": "Detroit",
+          "state": "MI",
+          "postal_code": "48211",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Belleville, MI - Location 1)",
+    "parentCompany": null,
+    "segment": "USA | MI | Belleville",
+    "tier": "Tier 1",
+    "addressRaw": "6771 Haggerty Road, Belleville, MI 48111, USA",
+    "addressComponents": {
+      "street": "6771 Haggerty Road",
+      "city": "Belleville",
+      "state": "MI",
+      "postal_code": "48111",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_a00c31ac54c9",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6771 Haggerty Road, Belleville, MI 48111, USA",
+        "supplier_address_normalized": {
+          "city": "Belleville",
+          "state": "MI",
+          "postal_code": "48111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Belleville, MI - Location 2)",
+    "parentCompany": null,
+    "segment": "USA | MI | Belleville",
+    "tier": "Tier 1",
+    "addressRaw": "6201 Haggerty Road, Belleville, MI 48111, USA",
+    "addressComponents": {
+      "street": "6201 Haggerty Road",
+      "city": "Belleville",
+      "state": "MI",
+      "postal_code": "48111",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_c44730a31ac7",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6201 Haggerty Road, Belleville, MI 48111, USA",
+        "supplier_address_normalized": {
+          "city": "Belleville",
+          "state": "MI",
+          "postal_code": "48111",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Axis Engineering - Dundee, MI - Location 1)",
+    "parentCompany": null,
+    "segment": "USA | MI | Dundee",
+    "tier": "Tier 1",
+    "addressRaw": "5461 Circle Seven Drive, Dundee, MI 48131, USA",
+    "addressComponents": {
+      "street": "5461 Circle Seven Drive",
+      "city": "Dundee",
+      "state": "MI",
+      "postal_code": "48131",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_acaa395c528a",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5461 Circle Seven Drive, Dundee, MI 48131, USA",
+        "supplier_address_normalized": {
+          "city": "Dundee",
+          "state": "MI",
+          "postal_code": "48131",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Axis Engineering - Dundee, MI - Location 2)",
+    "parentCompany": null,
+    "segment": "USA | MI | Dundee",
+    "tier": "Tier 1",
+    "addressRaw": "105 Research Parkway, Dundee, MI 48131, USA",
+    "addressComponents": {
+      "street": "105 Research Parkway",
+      "city": "Dundee",
+      "state": "MI",
+      "postal_code": "48131",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_4b29d3954731",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "105 Research Parkway, Dundee, MI 48131, USA",
+        "supplier_address_normalized": {
+          "city": "Dundee",
+          "state": "MI",
+          "postal_code": "48131",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (Clinton Township, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Clinton Township",
+    "tier": "Tier 1",
+    "addressRaw": "44850 Groesbeck Highway, Clinton Township, MI 48036, USA",
+    "addressComponents": {
+      "street": "44850 Groesbeck Highway",
+      "city": "Clinton Township",
+      "state": "MI",
+      "postal_code": "48036",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_258d1fb61145",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Stamped & welded assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "44850 Groesbeck Highway, Clinton Township, MI 48036, USA",
+        "supplier_address_normalized": {
+          "city": "Clinton Township",
+          "state": "MI",
+          "postal_code": "48036",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "AUTOKINITON (New Boston, MI - Technical Center)",
+    "parentCompany": null,
+    "segment": "USA | MI | New Boston",
+    "tier": "Tier 1",
+    "addressRaw": "17757 Woodland Drive, New Boston, MI 48164, USA",
+    "addressComponents": {
+      "street": "17757 Woodland Drive",
+      "city": "New Boston",
+      "state": "MI",
+      "postal_code": "48164",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.autokiniton.com",
+    "companyKey": "autokiniton.com",
+    "companyId": "cmp_a65821710d6b",
+    "locationId": "loc_2e8baab4fcb3",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AUTOKINITON",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "17757 Woodland Drive, New Boston, MI 48164, USA",
+        "supplier_address_normalized": {
+          "city": "New Boston",
+          "state": "MI",
+          "postal_code": "48164",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "autokiniton.com all locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  }
+]

@@ -1,0 +1,1316 @@
+[
+  {
+    "company": "FORVIA (Columbus, IN - Tech Center)",
+    "parentCompany": null,
+    "segment": "USA | IN | Columbus",
+    "tier": "Tier 1",
+    "addressRaw": "950 West 450 South, Tech Center, Columbus, IN 47201, USA",
+    "addressComponents": {
+      "street": "950 West 450 South, Tech Center",
+      "city": "Columbus",
+      "state": "IN",
+      "postal_code": "47201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_2051508e03dd",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "950 West 450 South, Tech Center, Columbus, IN 47201, USA",
+        "supplier_address_normalized": {
+          "city": "Columbus",
+          "state": "IN",
+          "postal_code": "47201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "forvia.com global presence / locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "FORVIA (Columbus, IN - W 450 S)",
+    "parentCompany": null,
+    "segment": "USA | IN | Columbus",
+    "tier": "Tier 1",
+    "addressRaw": "830 W 450 S, Columbus, IN 47203, USA",
+    "addressComponents": {
+      "street": "830 W 450 S",
+      "city": "Columbus",
+      "state": "IN",
+      "postal_code": "47203",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_25369f974180",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "830 W 450 S, Columbus, IN 47203, USA",
+        "supplier_address_normalized": {
+          "city": "Columbus",
+          "state": "IN",
+          "postal_code": "47203",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "forvia.com global presence / locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "FORVIA (Blue Springs, MO - NE Jefferson St)",
+    "parentCompany": null,
+    "segment": "USA | MO | Blue Springs",
+    "tier": "Tier 1",
+    "addressRaw": "2005 NE Jefferson Street, Blue Springs, MO 64015, USA",
+    "addressComponents": {
+      "street": "2005 NE Jefferson Street",
+      "city": "Blue Springs",
+      "state": "MO",
+      "postal_code": "64015",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_1966ec28c14b",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2005 NE Jefferson Street, Blue Springs, MO 64015, USA",
+        "supplier_address_normalized": {
+          "city": "Blue Springs",
+          "state": "MO",
+          "postal_code": "64015",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "forvia.com global presence / locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "FORVIA (Wentzville, MO - Edinger Rd)",
+    "parentCompany": null,
+    "segment": "USA | MO | Wentzville",
+    "tier": "Tier 1",
+    "addressRaw": "555 Edinger Rd, Wentzville, MO 63385-2819, USA",
+    "addressComponents": {
+      "street": "555 Edinger Rd",
+      "city": "Wentzville",
+      "state": "MO",
+      "postal_code": "63385-2819",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.forvia.com",
+    "companyKey": "forvia.com",
+    "companyId": "cmp_4647801cd3b7",
+    "locationId": "loc_560ce60de25c",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "FORVIA",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "555 Edinger Rd, Wentzville, MO 63385-2819, USA",
+        "supplier_address_normalized": {
+          "city": "Wentzville",
+          "state": "MO",
+          "postal_code": "63385-2819",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "forvia.com global presence / locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Auburn Hills",
+    "tier": "Tier 1",
+    "addressRaw": "4440 North Atlantic Blvd., Auburn Hills, MI 48326, USA",
+    "addressComponents": {
+      "street": "4440 North Atlantic Blvd.",
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_2f8424f54e1f",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4440 North Atlantic Blvd., Auburn Hills, MI 48326, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Novi, MI - Technology Center)",
+    "parentCompany": null,
+    "segment": "USA | MI | Novi",
+    "tier": "Tier 1",
+    "addressRaw": "28001 Cabot Drive, Novi, MI 48377, USA",
+    "addressComponents": {
+      "street": "28001 Cabot Drive",
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_68e31e5d9cd8",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "28001 Cabot Drive, Novi, MI 48377, USA",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Novi, MI - Cabot Dr)",
+    "parentCompany": null,
+    "segment": "USA | MI | Novi",
+    "tier": "Tier 1",
+    "addressRaw": "27870 Cabot Drive, Novi, MI 48377, USA",
+    "addressComponents": {
+      "street": "27870 Cabot Drive",
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_559894ef5a19",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "27870 Cabot Drive, Novi, MI 48377, USA",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Warren, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Warren",
+    "tier": "Tier 1",
+    "addressRaw": "28201 Van Dyke, Warren, MI 48093, USA",
+    "addressComponents": {
+      "street": "28201 Van Dyke",
+      "city": "Warren",
+      "state": "MI",
+      "postal_code": "48093",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_1363701bbe03",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "28201 Van Dyke, Warren, MI 48093, USA",
+        "supplier_address_normalized": {
+          "city": "Warren",
+          "state": "MI",
+          "postal_code": "48093",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Avilla, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Avilla",
+    "tier": "Tier 1",
+    "addressRaw": "301 Progress Way, Avilla, IN 46710-9668, USA",
+    "addressComponents": {
+      "street": "301 Progress Way",
+      "city": "Avilla",
+      "state": "IN",
+      "postal_code": "46710-9668",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_4256a9281c26",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "301 Progress Way, Avilla, IN 46710-9668, USA",
+        "supplier_address_normalized": {
+          "city": "Avilla",
+          "state": "IN",
+          "postal_code": "46710-9668",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Fort Wayne, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Fort Wayne",
+    "tier": "Tier 1",
+    "addressRaw": "2100 W State Blvd., Fort Wayne, IN 46808, USA",
+    "addressComponents": {
+      "street": "2100 W State Blvd.",
+      "city": "Fort Wayne",
+      "state": "IN",
+      "postal_code": "46808",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_a829e199962d",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2100 W State Blvd., Fort Wayne, IN 46808, USA",
+        "supplier_address_normalized": {
+          "city": "Fort Wayne",
+          "state": "IN",
+          "postal_code": "46808",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Yorktown, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Yorktown",
+    "tier": "Tier 1",
+    "addressRaw": "14141 W. Brevini Drive, Yorktown, IN 47396, USA",
+    "addressComponents": {
+      "street": "14141 W. Brevini Drive",
+      "city": "Yorktown",
+      "state": "IN",
+      "postal_code": "47396",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_c6145ac6e502",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "14141 W. Brevini Drive, Yorktown, IN 47396, USA",
+        "supplier_address_normalized": {
+          "city": "Yorktown",
+          "state": "IN",
+          "postal_code": "47396",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Robinson, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Robinson",
+    "tier": "Tier 1",
+    "addressRaw": "1201 E Victor Dana Road, Robinson, IL 62454, USA",
+    "addressComponents": {
+      "street": "1201 E Victor Dana Road",
+      "city": "Robinson",
+      "state": "IL",
+      "postal_code": "62454",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_36e99438da87",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1201 E Victor Dana Road, Robinson, IL 62454, USA",
+        "supplier_address_normalized": {
+          "city": "Robinson",
+          "state": "IL",
+          "postal_code": "62454",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Sterling, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Sterling",
+    "tier": "Tier 1",
+    "addressRaw": "2001 Eastwood Drive, Sterling, IL 61081, USA",
+    "addressComponents": {
+      "street": "2001 Eastwood Drive",
+      "city": "Sterling",
+      "state": "IL",
+      "postal_code": "61081",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_23ab9196c1d4",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2001 Eastwood Drive, Sterling, IL 61081, USA",
+        "supplier_address_normalized": {
+          "city": "Sterling",
+          "state": "IL",
+          "postal_code": "61081",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Dana Incorporated (Columbia, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Columbia",
+    "tier": "Tier 1",
+    "addressRaw": "2400 Lemone Industrial Blvd., Columbia, MO 65201, USA",
+    "addressComponents": {
+      "street": "2400 Lemone Industrial Blvd.",
+      "city": "Columbia",
+      "state": "MO",
+      "postal_code": "65201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dana.com",
+    "companyKey": "dana.com",
+    "companyId": "cmp_096de045d87d",
+    "locationId": "loc_753740e00c0d",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Dana Incorporated",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2400 Lemone Industrial Blvd., Columbia, MO 65201, USA",
+        "supplier_address_normalized": {
+          "city": "Columbia",
+          "state": "MO",
+          "postal_code": "65201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "dana.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Hino Motors Manufacturing U.S.A., Inc. (Novi, MI - HQ)",
+    "parentCompany": "Hino Motors, Ltd.",
+    "segment": "USA | MI | Novi",
+    "tier": "Tier 1",
+    "addressRaw": "45501 Twelve Mile Rd, Novi, MI 48377, USA",
+    "addressComponents": {
+      "street": "45501 Twelve Mile Rd",
+      "city": "Novi",
+      "state": "MI",
+      "postal_code": "48377",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://hmmusa.com",
+    "companyKey": "hmmusa.com",
+    "companyId": "cmp_3ee9d00a8546",
+    "locationId": "loc_556416e245c8",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hino Motors Manufacturing U.S.A., Inc.",
+        "parent_company": "Hino Motors, Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "45501 Twelve Mile Rd, Novi, MI 48377, USA",
+        "supplier_address_normalized": {
+          "city": "Novi",
+          "state": "MI",
+          "postal_code": "48377",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "hmmusa.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "Hino Motors Manufacturing U.S.A., Inc. (Marion, AR)",
+    "parentCompany": "Hino Motors, Ltd.",
+    "segment": "USA | AR | Marion",
+    "tier": "Tier 1",
+    "addressRaw": "100 Hino Boulevard, Marion, AR 72364, USA",
+    "addressComponents": {
+      "street": "100 Hino Boulevard",
+      "city": "Marion",
+      "state": "AR",
+      "postal_code": "72364",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://hmmusa.com",
+    "companyKey": "hmmusa.com",
+    "companyId": "cmp_3ee9d00a8546",
+    "locationId": "loc_e4d77bd35415",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Hino Motors Manufacturing U.S.A., Inc.",
+        "parent_company": "Hino Motors, Ltd.",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Hino Boulevard, Marion, AR 72364, USA",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "AR",
+          "postal_code": "72364",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "hmmusa.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "DENSO Manufacturing Michigan, Inc. (Battle Creek, MI)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA | MI | Battle Creek",
+    "tier": "Tier 1",
+    "addressRaw": "One Denso Road, Battle Creek, MI 49037-7356, USA",
+    "addressComponents": {
+      "street": "One Denso Road",
+      "city": "Battle Creek",
+      "state": "MI",
+      "postal_code": "49037-7356",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.denso.com",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_4cfc9036bc48",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": null,
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Michigan, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "One Denso Road, Battle Creek, MI 49037-7356, USA",
+        "supplier_address_normalized": {
+          "city": "Battle Creek",
+          "state": "MI",
+          "postal_code": "49037-7356",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "denso.com global network (North America) page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "DENSO Air Systems Michigan, Inc. (Hopkinsville, KY)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA | KY | Hopkinsville",
+    "tier": "Tier 1",
+    "addressRaw": "1405 Frank Yost Lane, Hopkinsville, KY 42240, USA",
+    "addressComponents": {
+      "street": "1405 Frank Yost Lane",
+      "city": "Hopkinsville",
+      "state": "KY",
+      "postal_code": "42240",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.denso.com",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_bff3dcd8f555",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": null,
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Air Systems Michigan, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1405 Frank Yost Lane, Hopkinsville, KY 42240, USA",
+        "supplier_address_normalized": {
+          "city": "Hopkinsville",
+          "state": "KY",
+          "postal_code": "42240",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "denso.com global network (North America) page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "DENSO Manufacturing Athens Tennessee, Inc. (Athens, TN)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA | TN | Athens",
+    "tier": "Tier 1",
+    "addressRaw": "2400 Denso Drive, Athens, TN 37303, USA",
+    "addressComponents": {
+      "street": "2400 Denso Drive",
+      "city": "Athens",
+      "state": "TN",
+      "postal_code": "37303",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.denso.com",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_6567466b41cd",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": null,
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Athens Tennessee, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2400 Denso Drive, Athens, TN 37303, USA",
+        "supplier_address_normalized": {
+          "city": "Athens",
+          "state": "TN",
+          "postal_code": "37303",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "denso.com global network (North America) page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "DENSO Manufacturing Tennessee, Inc. (Maryville, TN)",
+    "parentCompany": "DENSO Corporation",
+    "segment": "USA | TN | Maryville",
+    "tier": "Tier 1",
+    "addressRaw": "1720 Robert C Jackson Drive, Maryville, TN 37801, USA",
+    "addressComponents": {
+      "street": "1720 Robert C Jackson Drive",
+      "city": "Maryville",
+      "state": "TN",
+      "postal_code": "37801",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.denso.com",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_63f0a7859058",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": null,
+    "industryKeywords": [
+      "automotive",
+      "tier 1"
+    ],
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO Manufacturing Tennessee, Inc.",
+        "parent_company": "DENSO Corporation",
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1720 Robert C Jackson Drive, Maryville, TN 37801, USA",
+        "supplier_address_normalized": {
+          "city": "Maryville",
+          "state": "TN",
+          "postal_code": "37801",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "denso.com global network (North America) page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "BorgWarner (Hanover Park, IL - Distribution Center)",
+    "parentCompany": null,
+    "segment": "USA | IL | Hanover Park",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "5800 Turnberry Dr, Hanover Park, IL 60133, USA",
+    "addressComponents": {
+      "street": "5800 Turnberry Dr",
+      "city": "Hanover Park",
+      "state": "IL",
+      "postal_code": "60133",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.borgwarner.com",
+    "companyKey": "borgwarner.com",
+    "companyId": "cmp_b13e880e376c",
+    "locationId": "loc_739eb3d1d1d1",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BorgWarner",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "medium"
+      },
+      "location": {
+        "supplier_address_raw": "5800 Turnberry Dr, Hanover Park, IL 60133, USA",
+        "supplier_address_normalized": {
+          "city": "Hanover Park",
+          "state": "IL",
+          "postal_code": "60133",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "borgwarner.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  },
+  {
+    "company": "BorgWarner (Livonia, MI - Production Plant)",
+    "parentCompany": null,
+    "segment": "USA | MI | Livonia",
+    "tier": "Tier 1",
+    "addressRaw": "32059 Schoolcraft, Livonia, MI 48150, USA",
+    "addressComponents": {
+      "street": "32059 Schoolcraft",
+      "city": "Livonia",
+      "state": "MI",
+      "postal_code": "48150",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.borgwarner.com",
+    "companyKey": "borgwarner.com",
+    "companyId": "cmp_b13e880e376c",
+    "locationId": "loc_a701e6b69cb3",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": null,
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "BorgWarner",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "32059 Schoolcraft, Livonia, MI 48150, USA",
+        "supplier_address_normalized": {
+          "city": "Livonia",
+          "state": "MI",
+          "postal_code": "48150",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "borgwarner.com locations page"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_location_page"
+      }
+    }
+  }
+]

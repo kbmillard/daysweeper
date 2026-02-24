@@ -35,7 +35,7 @@ export function UserNav() {
                 {user.fullName}
               </p>
               <p className='text-muted-foreground text-xs leading-none'>
-                {user.emailAddresses[0].emailAddress}
+                {user.primaryEmailAddress?.emailAddress ?? user.primaryPhoneNumber?.phoneNumber ?? 'Signed in'}
               </p>
             </div>
           </DropdownMenuLabel>

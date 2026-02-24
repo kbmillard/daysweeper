@@ -1,0 +1,3284 @@
+[
+  {
+    "company": "Autotech Engineering R&D USA (Auburn Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Auburn Hills",
+    "tier": "Tier 1",
+    "addressRaw": "1600 Harmon Road, Auburn Hills, MI 48326, USA",
+    "addressComponents": {
+      "city": "Auburn Hills",
+      "state": "MI",
+      "postal_code": "48326",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_6305b3e72c5a",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Design validation",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Autotech Engineering R&D USA Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1600 Harmon Road, Auburn Hills, MI 48326, USA",
+        "supplier_address_normalized": {
+          "city": "Auburn Hills",
+          "state": "MI",
+          "postal_code": "48326",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "R&D",
+          "testing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Gestamp Chelsea IATF 16949 certificate PDF (gestamp.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "R&D",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Gestamp (Chelsea, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Chelsea",
+    "tier": "Tier 1",
+    "addressRaw": "5800 Sibley Road, Chelsea, MI 48118, USA",
+    "addressComponents": {
+      "city": "Chelsea",
+      "state": "MI",
+      "postal_code": "48118",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_0a33d3f81684",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp Washtenaw LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "5800 Sibley Road, Chelsea, MI 48118, USA",
+        "supplier_address_normalized": {
+          "city": "Chelsea",
+          "state": "MI",
+          "postal_code": "48118",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Gestamp Chelsea IATF 16949 certificate PDF (gestamp.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "NTN Corporation of America (Farmington Hills, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Farmington Hills",
+    "tier": "Tier 1",
+    "addressRaw": "39255 W 12 Mile Road, Suite 400, Farmington Hills, MI 48331, USA",
+    "addressComponents": {
+      "city": "Farmington Hills",
+      "state": "MI",
+      "postal_code": "48331",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://ntnamericas.com",
+    "companyKey": "ntnamericas.com",
+    "companyId": "cmp_5a89eb3b933f",
+    "locationId": "loc_37798136776d",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "NTN Corporation of America",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "39255 W 12 Mile Road, Suite 400, Farmington Hills, MI 48331, USA",
+        "supplier_address_normalized": {
+          "city": "Farmington Hills",
+          "state": "MI",
+          "postal_code": "48331",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "engineering",
+          "sales"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "American NTN Bearing Mfg. Corp. IATF 16949 certificate PDF (ntnamericas.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "bearings",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Melling Tool Company (Jackson, MI - Saradan Dr 2700)",
+    "parentCompany": null,
+    "segment": "USA | MI | Jackson",
+    "tier": "Tier 1",
+    "addressRaw": "2700 Saradan Drive, Jackson, MI 49201, USA",
+    "addressComponents": {
+      "city": "Jackson",
+      "state": "MI",
+      "postal_code": "49201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.melling.com",
+    "companyKey": "melling.com",
+    "companyId": "cmp_723f3881fdff",
+    "locationId": "loc_a079e07a6d5b",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Melling Tool Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2700 Saradan Drive, Jackson, MI 49201, USA",
+        "supplier_address_normalized": {
+          "city": "Jackson",
+          "state": "MI",
+          "postal_code": "49201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "pump manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Melling Tool IATF 16949 certificate PDF (melling.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "oil pumps",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Melling Tool Company (Jackson, MI - Saradan Dr 2710)",
+    "parentCompany": null,
+    "segment": "USA | MI | Jackson",
+    "tier": "Tier 1",
+    "addressRaw": "2710 Saradan Drive, Jackson, MI 49201, USA",
+    "addressComponents": {
+      "city": "Jackson",
+      "state": "MI",
+      "postal_code": "49201",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.melling.com",
+    "companyKey": "melling.com",
+    "companyId": "cmp_723f3881fdff",
+    "locationId": "loc_5985ece71f55",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Melling Tool Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2710 Saradan Drive, Jackson, MI 49201, USA",
+        "supplier_address_normalized": {
+          "city": "Jackson",
+          "state": "MI",
+          "postal_code": "49201",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "pump manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Melling Tool IATF 16949 certificate PDF (melling.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "oil pumps",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Melling Tool Company (Jackson, MI - Scheele Dr 3700)",
+    "parentCompany": null,
+    "segment": "USA | MI | Jackson",
+    "tier": "Tier 1",
+    "addressRaw": "3700 Scheele Drive, Jackson, MI 49202, USA",
+    "addressComponents": {
+      "city": "Jackson",
+      "state": "MI",
+      "postal_code": "49202",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.melling.com",
+    "companyKey": "melling.com",
+    "companyId": "cmp_723f3881fdff",
+    "locationId": "loc_79f9573219de",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Melling Tool Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3700 Scheele Drive, Jackson, MI 49202, USA",
+        "supplier_address_normalized": {
+          "city": "Jackson",
+          "state": "MI",
+          "postal_code": "49202",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "pump manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Melling Tool IATF 16949 certificate PDF (melling.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "oil pumps",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Michigan Production Machining (Macomb, MI - 23 Mile Rd)",
+    "parentCompany": null,
+    "segment": "USA | MI | Macomb",
+    "tier": "Tier 2",
+    "addressRaw": "16700 23 Mile Road, Macomb, MI 48044, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48044",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.michiganproductionmachining.com",
+    "companyKey": "michiganproductionmachining.com",
+    "companyId": "cmp_6b6492040320",
+    "locationId": "loc_8540d93c76ee",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Production Machining",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "16700 23 Mile Road, Macomb, MI 48044, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48044",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Michigan Production Machining IATF 16949 certificate PDF (michiganproductionmachining.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Michigan Production Machining (Macomb, MI - Corporate Dr)",
+    "parentCompany": null,
+    "segment": "USA | MI | Macomb",
+    "tier": "Tier 2",
+    "addressRaw": "50523 Corporate Drive, Macomb, MI 48044, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48044",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.michiganproductionmachining.com",
+    "companyKey": "michiganproductionmachining.com",
+    "companyId": "cmp_6b6492040320",
+    "locationId": "loc_db96f0fb366f",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Production Machining",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "50523 Corporate Drive, Macomb, MI 48044, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48044",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Michigan Production Machining IATF 16949 certificate PDF (michiganproductionmachining.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Michigan Production Machining (Macomb, MI - Milano)",
+    "parentCompany": null,
+    "segment": "USA | MI | Macomb",
+    "tier": "Tier 2",
+    "addressRaw": "51261 Milano Drive, Macomb, MI 48042, USA",
+    "addressComponents": {
+      "city": "Macomb",
+      "state": "MI",
+      "postal_code": "48042",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.michiganproductionmachining.com",
+    "companyKey": "michiganproductionmachining.com",
+    "companyId": "cmp_6b6492040320",
+    "locationId": "loc_9d1cdc93b46a",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Production Machining",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "51261 Milano Drive, Macomb, MI 48042, USA",
+        "supplier_address_normalized": {
+          "city": "Macomb",
+          "state": "MI",
+          "postal_code": "48042",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Michigan Production Machining IATF 16949 certificate PDF (michiganproductionmachining.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Modineer Company (Niles, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Niles",
+    "tier": "Tier 2",
+    "addressRaw": "2102 South 11th Street, Niles, MI 49120, USA",
+    "addressComponents": {
+      "city": "Niles",
+      "state": "MI",
+      "postal_code": "49120",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://modineer.com",
+    "companyKey": "modineer.com",
+    "companyId": "cmp_4f2ff28ada14",
+    "locationId": "loc_6503e6e9b687",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Modineer Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2102 South 11th Street, Niles, MI 49120, USA",
+        "supplier_address_normalized": {
+          "city": "Niles",
+          "state": "MI",
+          "postal_code": "49120",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "HQ/support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Modineer Plant 7 IATF 16949 certificate PDF (modineer.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Michigan Automotive Compressor (Parma, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Parma",
+    "tier": "Tier 1",
+    "addressRaw": "2400 N. Dearing Road, Parma, MI 49269, USA",
+    "addressComponents": {
+      "city": "Parma",
+      "state": "MI",
+      "postal_code": "49269",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.michauto.com",
+    "companyKey": "michauto.com",
+    "companyId": "cmp_ec510de4571d",
+    "locationId": "loc_33c7d2cfc50a",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Michigan Automotive Compressor, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2400 N. Dearing Road, Parma, MI 49269, USA",
+        "supplier_address_normalized": {
+          "city": "Parma",
+          "state": "MI",
+          "postal_code": "49269",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "compressor manufacturing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Michigan Automotive Compressor IATF 16949 certificate PDF (michauto.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "compressors",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "ElringKlinger (Plymouth, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Plymouth",
+    "tier": "Tier 1",
+    "addressRaw": "47912 Halyard Drive, Suite 111, Plymouth, MI 48170, USA",
+    "addressComponents": {
+      "city": "Plymouth",
+      "state": "MI",
+      "postal_code": "48170",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.elringklinger.de",
+    "companyKey": "elringklinger.de",
+    "companyId": "cmp_656cbbbc3fca",
+    "locationId": "loc_d7a8c9bc5d85",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ElringKlinger",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "47912 Halyard Drive, Suite 111, Plymouth, MI 48170, USA",
+        "supplier_address_normalized": {
+          "city": "Plymouth",
+          "state": "MI",
+          "postal_code": "48170",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sealing systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "ElringKlinger Manufacturing Indiana IATF 16949 certificate PDF (elringklinger.de)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "sealing",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "THK Rhythm Automotive (Portland, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Portland",
+    "tier": "Tier 1",
+    "addressRaw": "902 Lyons Road, Portland, MI 48875, USA",
+    "addressComponents": {
+      "city": "Portland",
+      "state": "MI",
+      "postal_code": "48875",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.thk-rhythm-auto.com",
+    "companyKey": "thk-rhythm-auto.com",
+    "companyId": "cmp_2b2a1bfef05d",
+    "locationId": "loc_ed17d4f9da7b",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "THK Rhythm Automotive Michigan Corp",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "902 Lyons Road, Portland, MI 48875, USA",
+        "supplier_address_normalized": {
+          "city": "Portland",
+          "state": "MI",
+          "postal_code": "48875",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "suspension components",
+          "steering"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "THK Rhythm Automotive Michigan Corp IATF 16949 certificate PDF (thk-rhythm-auto.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "suspension",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "EJOT ATF Michigan Operations (Romulus, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Romulus",
+    "tier": "Tier 2",
+    "addressRaw": "11850 Wayne Road, Romulus, MI 48174, USA",
+    "addressComponents": {
+      "city": "Romulus",
+      "state": "MI",
+      "postal_code": "48174",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_670e5dd8008f",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF, LP",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "11850 Wayne Road, Romulus, MI 48174, USA",
+        "supplier_address_normalized": {
+          "city": "Romulus",
+          "state": "MI",
+          "postal_code": "48174",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fasteners",
+          "cold forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "EJOT ATF Michigan Operations IATF 16949 certificate PDF (ejot-atf.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "EJOT ATF Michigan Operations (Rose City, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Rose City",
+    "tier": "Tier 2",
+    "addressRaw": "285 Casemaster Drive, Rose City, MI 48654, USA",
+    "addressComponents": {
+      "city": "Rose City",
+      "state": "MI",
+      "postal_code": "48654",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_4286986a265f",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF, LP",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "285 Casemaster Drive, Rose City, MI 48654, USA",
+        "supplier_address_normalized": {
+          "city": "Rose City",
+          "state": "MI",
+          "postal_code": "48654",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fasteners",
+          "cold forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "EJOT ATF Michigan Operations IATF 16949 certificate PDF (ejot-atf.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "DENSO International America (Southfield, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Southfield",
+    "tier": "Tier 1",
+    "addressRaw": "24777 Denso Drive, Southfield, MI 48033, USA",
+    "addressComponents": {
+      "city": "Southfield",
+      "state": "MI",
+      "postal_code": "48033",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.denso.com",
+    "companyKey": "denso.com",
+    "companyId": "cmp_f272c2595573",
+    "locationId": "loc_36ffba1dcbaa",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Electronics_and_Mechatronics",
+    "supplyChainSubtype": "ECUs",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DENSO International America, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "24777 Denso Drive, Southfield, MI 48033, USA",
+        "supplier_address_normalized": {
+          "city": "Southfield",
+          "state": "MI",
+          "postal_code": "48033",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "corporate support"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Michigan Automotive Compressor IATF 16949 certificate PDF (michauto.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "electronics",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "ElringKlinger (Southfield, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Southfield",
+    "tier": "Tier 1",
+    "addressRaw": "23300 Northwestern Hwy, Southfield, MI 48075, USA",
+    "addressComponents": {
+      "city": "Southfield",
+      "state": "MI",
+      "postal_code": "48075",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.elringklinger.de",
+    "companyKey": "elringklinger.de",
+    "companyId": "cmp_656cbbbc3fca",
+    "locationId": "loc_f49cb72a09ef",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ElringKlinger",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "23300 Northwestern Hwy, Southfield, MI 48075, USA",
+        "supplier_address_normalized": {
+          "city": "Southfield",
+          "state": "MI",
+          "postal_code": "48075",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sealing systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "ElringKlinger Automotive Manufacturing IATF 16949 certificate PDF (elringklinger.de)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "sealing",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "DN Automotive USA (Taylor, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Taylor",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "2450 Northline Road, Taylor, MI 48180, USA",
+    "addressComponents": {
+      "city": "Taylor",
+      "state": "MI",
+      "postal_code": "48180",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dnautomotive.com",
+    "companyKey": "dnautomotive.com",
+    "companyId": "cmp_0b573dfc7826",
+    "locationId": "loc_8992bf586d7e",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DN Automotive USA Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2450 Northline Road, Taylor, MI 48180, USA",
+        "supplier_address_normalized": {
+          "city": "Taylor",
+          "state": "MI",
+          "postal_code": "48180",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing",
+          "logistics"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "DN Automotive Corporation IATF 16949 certificate PDF (dnautomotive.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "warehousing",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "DN Automotive USA Tech Center (Troy, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Troy",
+    "tier": "Tier 1",
+    "addressRaw": "1807 East Maple Road, Troy, MI 48083, USA",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48083",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.dnautomotive.com",
+    "companyKey": "dnautomotive.com",
+    "companyId": "cmp_0b573dfc7826",
+    "locationId": "loc_16cc6f98d922",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Program engineering",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "DN Automotive USA Tech Center Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1807 East Maple Road, Troy, MI 48083, USA",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48083",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "product design"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "DN Automotive Corporation IATF 16949 certificate PDF (dnautomotive.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "engineering",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Gestamp North America (Troy, MI)",
+    "parentCompany": null,
+    "segment": "USA | MI | Troy",
+    "tier": "Tier 1",
+    "addressRaw": "2701 Troy Center Drive, Suite 330, Troy, MI 48084, USA",
+    "addressComponents": {
+      "city": "Troy",
+      "state": "MI",
+      "postal_code": "48084",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.gestamp.com",
+    "companyKey": "gestamp.com",
+    "companyId": "cmp_231b10cc8e2a",
+    "locationId": "loc_d66f4b59f962",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Engineering_and_Technology",
+    "supplyChainSubtype": "Systems integration",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Gestamp North America Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2701 Troy Center Drive, Suite 330, Troy, MI 48084, USA",
+        "supplier_address_normalized": {
+          "city": "Troy",
+          "state": "MI",
+          "postal_code": "48084",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "purchasing",
+          "supplier management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Gestamp Chelsea IATF 16949 certificate PDF (gestamp.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "ElringKlinger (Fort Wayne, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Fort Wayne",
+    "tier": "Tier 1",
+    "addressRaw": "4770 Investment Drive, Fort Wayne, IN 46808, USA",
+    "addressComponents": {
+      "city": "Fort Wayne",
+      "state": "IN",
+      "postal_code": "46808",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.elringklinger.de",
+    "companyKey": "elringklinger.de",
+    "companyId": "cmp_656cbbbc3fca",
+    "locationId": "loc_a323a80f0e5b",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "ElringKlinger",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4770 Investment Drive, Fort Wayne, IN 46808, USA",
+        "supplier_address_normalized": {
+          "city": "Fort Wayne",
+          "state": "IN",
+          "postal_code": "46808",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "sealing systems"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "ElringKlinger Manufacturing Indiana IATF 16949 certificate PDF (elringklinger.de)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "sealing",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Adkev (Goodland, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Goodland",
+    "tier": "Tier 2",
+    "addressRaw": "2303 North Rail Road Street, Goodland, IN 47948, USA",
+    "addressComponents": {
+      "city": "Goodland",
+      "state": "IN",
+      "postal_code": "47948",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.adkev.com",
+    "companyKey": "adkev.com",
+    "companyId": "cmp_68d0f8b3eb20",
+    "locationId": "loc_bb9f198afa6c",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Adkev, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "2303 North Rail Road Street, Goodland, IN 47948, USA",
+        "supplier_address_normalized": {
+          "city": "Goodland",
+          "state": "IN",
+          "postal_code": "47948",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Adkev IATF 16949 certificate PDF (adkev.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Bendix (Huntington, IN - 1515 Riverfork Dr)",
+    "parentCompany": null,
+    "segment": "USA | IN | Huntington",
+    "tier": "Tier 1",
+    "addressRaw": "1515 Riverfork Drive, Huntington, IN 46750, USA",
+    "addressComponents": {
+      "city": "Huntington",
+      "state": "IN",
+      "postal_code": "46750",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.bendix.com",
+    "companyKey": "bendix.com",
+    "companyId": "cmp_7471a4ed600c",
+    "locationId": "loc_5b212acb074f",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1515 Riverfork Drive, Huntington, IN 46750, USA",
+        "supplier_address_normalized": {
+          "city": "Huntington",
+          "state": "IN",
+          "postal_code": "46750",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Bendix Huntington IATF 16949 certificate PDF (bendix.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "brake systems",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Bendix (Huntington, IN - 1850 Riverfork Dr)",
+    "parentCompany": null,
+    "segment": "USA | IN | Huntington",
+    "tier": "Tier 1",
+    "addressRaw": "1850 Riverfork Drive, Huntington, IN 46750, USA",
+    "addressComponents": {
+      "city": "Huntington",
+      "state": "IN",
+      "postal_code": "46750",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.bendix.com",
+    "companyKey": "bendix.com",
+    "companyId": "cmp_7471a4ed600c",
+    "locationId": "loc_09f58e04427c",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Chassis systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Bendix Commercial Vehicle Systems LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1850 Riverfork Drive, Huntington, IN 46750, USA",
+        "supplier_address_normalized": {
+          "city": "Huntington",
+          "state": "IN",
+          "postal_code": "46750",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "brake systems manufacturing",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Bendix Huntington IATF 16949 certificate PDF (bendix.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "brake systems",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Prysmian (Indianapolis, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Indianapolis",
+    "tier": "Tier 2",
+    "addressRaw": "7950 Rockville Road, Indianapolis, IN 46214, USA",
+    "addressComponents": {
+      "city": "Indianapolis",
+      "state": "IN",
+      "postal_code": "46214",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.prysmian.com",
+    "companyKey": "prysmian.com",
+    "companyId": "cmp_21680b572d39",
+    "locationId": "loc_1f6c6084c2cc",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prysmian",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "7950 Rockville Road, Indianapolis, IN 46214, USA",
+        "supplier_address_normalized": {
+          "city": "Indianapolis",
+          "state": "IN",
+          "postal_code": "46214",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Prysmian Group IATF 16949 certificate annex PDF (na.prysmian.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "cables",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Prysmian (Marion, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Marion",
+    "tier": "Tier 2",
+    "addressRaw": "440 East 8th Street, Marion, IN 46953, USA",
+    "addressComponents": {
+      "city": "Marion",
+      "state": "IN",
+      "postal_code": "46953",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.prysmian.com",
+    "companyKey": "prysmian.com",
+    "companyId": "cmp_21680b572d39",
+    "locationId": "loc_84cdf0d8a09d",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prysmian",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "440 East 8th Street, Marion, IN 46953, USA",
+        "supplier_address_normalized": {
+          "city": "Marion",
+          "state": "IN",
+          "postal_code": "46953",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Prysmian Group IATF 16949 certificate annex PDF (na.prysmian.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "cables",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Adkev (Monticello, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Monticello",
+    "tier": "Tier 2",
+    "addressRaw": "1207 North 6th Street, Monticello, IN 47960, USA",
+    "addressComponents": {
+      "city": "Monticello",
+      "state": "IN",
+      "postal_code": "47960",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.adkev.com",
+    "companyKey": "adkev.com",
+    "companyId": "cmp_68d0f8b3eb20",
+    "locationId": "loc_8ee4db50a289",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Adkev, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1207 North 6th Street, Monticello, IN 47960, USA",
+        "supplier_address_normalized": {
+          "city": "Monticello",
+          "state": "IN",
+          "postal_code": "47960",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Adkev IATF 16949 certificate PDF (adkev.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Donaldson Company (Monticello, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Monticello",
+    "tier": "Tier 1",
+    "addressRaw": "303 North 6th Street, Monticello, IN 47960, USA",
+    "addressComponents": {
+      "city": "Monticello",
+      "state": "IN",
+      "postal_code": "47960",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.donaldson.com",
+    "companyKey": "donaldson.com",
+    "companyId": "cmp_71d5a277c8e7",
+    "locationId": "loc_eef5c4387737",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Donaldson Company, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "303 North 6th Street, Monticello, IN 47960, USA",
+        "supplier_address_normalized": {
+          "city": "Monticello",
+          "state": "IN",
+          "postal_code": "47960",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "exhaust/aftertreatment",
+          "filtration"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Donaldson Monticello IATF 16949 certificate PDF (donaldson.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "aftertreatment",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "O&K American, Inc. (Seymour, IN)",
+    "parentCompany": null,
+    "segment": "USA | IN | Seymour",
+    "tier": "Tier 2",
+    "addressRaw": "1625 Bateman Drive, Seymour, IN 47274, USA",
+    "addressComponents": {
+      "city": "Seymour",
+      "state": "IN",
+      "postal_code": "47274",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.okamerican.com",
+    "companyKey": "okamerican.com",
+    "companyId": "cmp_8700aec4228e",
+    "locationId": "loc_cb5fcb4deaac",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Machined components",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "O&K American, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1625 Bateman Drive, Seymour, IN 47274, USA",
+        "supplier_address_normalized": {
+          "city": "Seymour",
+          "state": "IN",
+          "postal_code": "47274",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "machining",
+          "tube/pipe products"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "O&K American IATF 16949 certificate PDF (okamerican.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "machining",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "AGS Technology (Batavia, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Batavia",
+    "tier": "Tier 2",
+    "addressRaw": "951 Douglas Rd, Batavia, IL 60510, USA",
+    "addressComponents": {
+      "city": "Batavia",
+      "state": "IL",
+      "postal_code": "60510",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.agstech.com",
+    "companyKey": "agstech.com",
+    "companyId": "cmp_cef744339f70",
+    "locationId": "loc_9bb02bcdb616",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "AGS Technology",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "951 Douglas Rd, Batavia, IL 60510, USA",
+        "supplier_address_normalized": {
+          "city": "Batavia",
+          "state": "IL",
+          "postal_code": "60510",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "plastic forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "AGS Technology IATF 16949 certificate PDF (agstech.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Prysmian (Du Quoin, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Du Quoin",
+    "tier": "Tier 2",
+    "addressRaw": "1453 S. Washington Street, Du Quoin, IL 62832, USA",
+    "addressComponents": {
+      "city": "Du Quoin",
+      "state": "IL",
+      "postal_code": "62832",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.prysmian.com",
+    "companyKey": "prysmian.com",
+    "companyId": "cmp_21680b572d39",
+    "locationId": "loc_fc394e5aa3de",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prysmian",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1453 S. Washington Street, Du Quoin, IL 62832, USA",
+        "supplier_address_normalized": {
+          "city": "Du Quoin",
+          "state": "IL",
+          "postal_code": "62832",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Prysmian Group IATF 16949 certificate annex PDF (na.prysmian.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "cables",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Semblex Corporation (Elmhurst, IL - Carol Ln 370)",
+    "parentCompany": null,
+    "segment": "USA | IL | Elmhurst",
+    "tier": "Tier 2",
+    "addressRaw": "370 Carol Lane, Elmhurst, IL 60126, USA",
+    "addressComponents": {
+      "city": "Elmhurst",
+      "state": "IL",
+      "postal_code": "60126",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.semblex.com",
+    "companyKey": "semblex.com",
+    "companyId": "cmp_132fc19bb660",
+    "locationId": "loc_432904716a9f",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Semblex Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "370 Carol Lane, Elmhurst, IL 60126, USA",
+        "supplier_address_normalized": {
+          "city": "Elmhurst",
+          "state": "IL",
+          "postal_code": "60126",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cold heading",
+          "fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Semblex IATF 16949 certificate PDF (semblex.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Semblex Corporation (Elmhurst, IL - Carol Ln 388)",
+    "parentCompany": null,
+    "segment": "USA | IL | Elmhurst",
+    "tier": "Tier 2",
+    "addressRaw": "388 Carol Lane, Elmhurst, IL 60126, USA",
+    "addressComponents": {
+      "city": "Elmhurst",
+      "state": "IL",
+      "postal_code": "60126",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.semblex.com",
+    "companyKey": "semblex.com",
+    "companyId": "cmp_132fc19bb660",
+    "locationId": "loc_83c0da9813c3",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Semblex Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "388 Carol Lane, Elmhurst, IL 60126, USA",
+        "supplier_address_normalized": {
+          "city": "Elmhurst",
+          "state": "IL",
+          "postal_code": "60126",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cold heading",
+          "fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Semblex IATF 16949 certificate PDF (semblex.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Semblex Corporation (Elmhurst, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Elmhurst",
+    "tier": "Tier 2",
+    "addressRaw": "900 Church Road, Elmhurst, IL 60126, USA",
+    "addressComponents": {
+      "city": "Elmhurst",
+      "state": "IL",
+      "postal_code": "60126",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.semblex.com",
+    "companyKey": "semblex.com",
+    "companyId": "cmp_132fc19bb660",
+    "locationId": "loc_d5a0aba42763",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Semblex Corporation",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "900 Church Road, Elmhurst, IL 60126, USA",
+        "supplier_address_normalized": {
+          "city": "Elmhurst",
+          "state": "IL",
+          "postal_code": "60126",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "cold heading",
+          "fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Semblex IATF 16949 certificate PDF (semblex.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Termax Company (Lake Zurich, IL - 1155 Rose Rd)",
+    "parentCompany": null,
+    "segment": "USA | IL | Lake Zurich",
+    "tier": "Tier 2",
+    "addressRaw": "1155 Rose Road, Lake Zurich, IL 60047, USA",
+    "addressComponents": {
+      "city": "Lake Zurich",
+      "state": "IL",
+      "postal_code": "60047",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.termax.com",
+    "companyKey": "termax.com",
+    "companyId": "cmp_a04c512d92d5",
+    "locationId": "loc_78bfcef191dc",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Termax Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1155 Rose Road, Lake Zurich, IL 60047, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Zurich",
+          "state": "IL",
+          "postal_code": "60047",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Termax Company IATF 16949 certificate PDF (termax.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Termax Company (Lake Zurich, IL - 1300 Rose Rd)",
+    "parentCompany": null,
+    "segment": "USA | IL | Lake Zurich",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "1300 Rose Road, Lake Zurich, IL 60047, USA",
+    "addressComponents": {
+      "city": "Lake Zurich",
+      "state": "IL",
+      "postal_code": "60047",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.termax.com",
+    "companyKey": "termax.com",
+    "companyId": "cmp_a04c512d92d5",
+    "locationId": "loc_614fbcb9c2cf",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Termax Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1300 Rose Road, Lake Zurich, IL 60047, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Zurich",
+          "state": "IL",
+          "postal_code": "60047",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Termax Company IATF 16949 certificate PDF (termax.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Termax Company (Lake Zurich, IL - 200 Telser Rd)",
+    "parentCompany": null,
+    "segment": "USA | IL | Lake Zurich",
+    "tier": "Tier 2",
+    "addressRaw": "200 Telser Road, Lake Zurich, IL 60047, USA",
+    "addressComponents": {
+      "city": "Lake Zurich",
+      "state": "IL",
+      "postal_code": "60047",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.termax.com",
+    "companyKey": "termax.com",
+    "companyId": "cmp_a04c512d92d5",
+    "locationId": "loc_b9fbfb9e373e",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Termax Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "200 Telser Road, Lake Zurich, IL 60047, USA",
+        "supplier_address_normalized": {
+          "city": "Lake Zurich",
+          "state": "IL",
+          "postal_code": "60047",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fasteners"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Termax Company IATF 16949 certificate PDF (termax.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "EJOT ATF (Lincolnwood, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Lincolnwood",
+    "tier": "Tier 2",
+    "addressRaw": "3550 W. Pratt Avenue, Lincolnwood, IL 60712, USA",
+    "addressComponents": {
+      "city": "Lincolnwood",
+      "state": "IL",
+      "postal_code": "60712",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_318f952cd5d0",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Fasteners",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF, LP",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "3550 W. Pratt Avenue, Lincolnwood, IL 60712, USA",
+        "supplier_address_normalized": {
+          "city": "Lincolnwood",
+          "state": "IL",
+          "postal_code": "60712",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "fasteners",
+          "cold forming"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "EJOT ATF IATF 16949 certificate PDF (ejot-atf.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "EJOT ATF (Niles, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Niles",
+    "tier": "Logistics_and_3PL",
+    "addressRaw": "6700 W. Touhy Avenue, Niles, IL 60714, USA",
+    "addressComponents": {
+      "city": "Niles",
+      "state": "IL",
+      "postal_code": "60714",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.ejot-atf.com",
+    "companyKey": "ejot-atf.com",
+    "companyId": "cmp_795c0dcc2739",
+    "locationId": "loc_b405490e7a6e",
+    "supplyChainCategory": "Logistics_and_3PL",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Warehousing",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "EJOT ATF, LP",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Logistics_and_3PL",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "6700 W. Touhy Avenue, Niles, IL 60714, USA",
+        "supplier_address_normalized": {
+          "city": "Niles",
+          "state": "IL",
+          "postal_code": "60714",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "warehousing"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "EJOT ATF IATF 16949 certificate PDF (ejot-atf.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "fasteners",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "The Intec Group (Palatine, IL)",
+    "parentCompany": null,
+    "segment": "USA | IL | Palatine",
+    "tier": "Tier 2",
+    "addressRaw": "666 S Vermont Street, Palatine, IL 60067, USA",
+    "addressComponents": {
+      "city": "Palatine",
+      "state": "IL",
+      "postal_code": "60067",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.intecgroup.com",
+    "companyKey": "intecgroup.com",
+    "companyId": "cmp_1bf8713f865b",
+    "locationId": "loc_4651e2506121",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "The Intec Group",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "666 S Vermont Street, Palatine, IL 60067, USA",
+        "supplier_address_normalized": {
+          "city": "Palatine",
+          "state": "IL",
+          "postal_code": "60067",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "The Intec Group IATF 16949 certificate PDF (intecgroup.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Donaldson Company (Chillicothe, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Chillicothe",
+    "tier": "Tier 1",
+    "addressRaw": "400 Donaldson Drive, Chillicothe, MO 64601, USA",
+    "addressComponents": {
+      "city": "Chillicothe",
+      "state": "MO",
+      "postal_code": "64601",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.donaldson.com",
+    "companyKey": "donaldson.com",
+    "companyId": "cmp_71d5a277c8e7",
+    "locationId": "loc_96c4e2d42063",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Donaldson Company, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "400 Donaldson Drive, Chillicothe, MO 64601, USA",
+        "supplier_address_normalized": {
+          "city": "Chillicothe",
+          "state": "MO",
+          "postal_code": "64601",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "exhaust/aftertreatment",
+          "filtration"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Donaldson Missouri IATF 16949 certificate PDF (donaldson.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "aftertreatment",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Stahl Specialty Company (Kingsville, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Kingsville",
+    "tier": "Tier 2",
+    "addressRaw": "111 East Pacific, Kingsville, MO 64061, USA",
+    "addressComponents": {
+      "city": "Kingsville",
+      "state": "MO",
+      "postal_code": "64061",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://stahlspecialty.com",
+    "companyKey": "stahlspecialty.com",
+    "companyId": "cmp_efa9a27e1d3b",
+    "locationId": "loc_0b3864fede33",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings and forgings",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Stahl Specialty Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "111 East Pacific, Kingsville, MO 64061, USA",
+        "supplier_address_normalized": {
+          "city": "Kingsville",
+          "state": "MO",
+          "postal_code": "64061",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "foundry",
+          "casting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Stahl Specialty Company IATF 16949 certificate PDF (stahlspecialty.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "aluminum castings",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Walker Products (Pacific, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Pacific",
+    "tier": "Tier 1",
+    "addressRaw": "525 Congress St, Pacific, MO 63069, USA",
+    "addressComponents": {
+      "city": "Pacific",
+      "state": "MO",
+      "postal_code": "63069",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.walkerproducts.com",
+    "companyKey": "walkerproducts.com",
+    "companyId": "cmp_17c9a9c7ca65",
+    "locationId": "loc_efcf70d14ff6",
+    "supplyChainCategory": "Tier_1",
+    "supplyChainSubtypeGroup": "Manufacturing",
+    "supplyChainSubtype": "Powertrain systems",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Walker Products, Inc",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 1",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "525 Congress St, Pacific, MO 63069, USA",
+        "supplier_address_normalized": {
+          "city": "Pacific",
+          "state": "MO",
+          "postal_code": "63069",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "oxygen sensors",
+          "engine management"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Walker Products IATF 16949 certificate PDF (walkerproducts.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "oxygen sensors",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Prysmian (Sedalia, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Sedalia",
+    "tier": "Tier 2",
+    "addressRaw": "20213 Whitfield Rd, Sedalia, MO 65301, USA",
+    "addressComponents": {
+      "city": "Sedalia",
+      "state": "MO",
+      "postal_code": "65301",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.prysmian.com",
+    "companyKey": "prysmian.com",
+    "companyId": "cmp_21680b572d39",
+    "locationId": "loc_0132dab3f492",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prysmian",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "20213 Whitfield Rd, Sedalia, MO 65301, USA",
+        "supplier_address_normalized": {
+          "city": "Sedalia",
+          "state": "MO",
+          "postal_code": "65301",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Prysmian Group IATF 16949 certificate annex PDF (na.prysmian.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "cables",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Modineer Company (St. Peters, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | St. Peters",
+    "tier": "Tier 2",
+    "addressRaw": "17 Cermak Rd, St. Peters, MO 63376, USA",
+    "addressComponents": {
+      "city": "St. Peters",
+      "state": "MO",
+      "postal_code": "63376",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://modineer.com",
+    "companyKey": "modineer.com",
+    "companyId": "cmp_4f2ff28ada14",
+    "locationId": "loc_7f3277e30542",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Stamped metal parts",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Modineer Company, LLC",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "17 Cermak Rd, St. Peters, MO 63376, USA",
+        "supplier_address_normalized": {
+          "city": "St. Peters",
+          "state": "MO",
+          "postal_code": "63376",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "stamping",
+          "machining",
+          "welding"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Modineer Plant 7 IATF 16949 certificate PDF (modineer.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "stamping",
+      "welding",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Stahl Specialty Company (Warrensburg, MO)",
+    "parentCompany": null,
+    "segment": "USA | MO | Warrensburg",
+    "tier": "Tier 2",
+    "addressRaw": "1301 Stahl Drive, Warrensburg, MO 64093, USA",
+    "addressComponents": {
+      "city": "Warrensburg",
+      "state": "MO",
+      "postal_code": "64093",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://stahlspecialty.com",
+    "companyKey": "stahlspecialty.com",
+    "companyId": "cmp_efa9a27e1d3b",
+    "locationId": "loc_b10a7a1343d4",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings and forgings",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Stahl Specialty Company",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1301 Stahl Drive, Warrensburg, MO 64093, USA",
+        "supplier_address_normalized": {
+          "city": "Warrensburg",
+          "state": "MO",
+          "postal_code": "64093",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "foundry",
+          "casting"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Stahl Specialty Company IATF 16949 certificate PDF (stahlspecialty.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "aluminum castings",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Pace Industries (Harrison, AR)",
+    "parentCompany": null,
+    "segment": "USA | AR | Harrison",
+    "tier": "Tier 2",
+    "addressRaw": "513 Hwy 62/65 Bypass North, Harrison, AR 72601, USA",
+    "addressComponents": {
+      "city": "Harrison",
+      "state": "AR",
+      "postal_code": "72601",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.paceind.com",
+    "companyKey": "paceind.com",
+    "companyId": "cmp_d99c35df8bca",
+    "locationId": "loc_e39fbfe4c02e",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Castings and forgings",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Pace Industries",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "513 Hwy 62/65 Bypass North, Harrison, AR 72601, USA",
+        "supplier_address_normalized": {
+          "city": "Harrison",
+          "state": "AR",
+          "postal_code": "72601",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "die casting",
+          "machining"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Pace Industries IATF 16949 certificate PDF (paceind.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "die casting",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Prysmian (Paragould, AR)",
+    "parentCompany": null,
+    "segment": "USA | AR | Paragould",
+    "tier": "Tier 2",
+    "addressRaw": "1 Prestolite Drive, Paragould, AR 72450, USA",
+    "addressComponents": {
+      "city": "Paragould",
+      "state": "AR",
+      "postal_code": "72450",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.prysmian.com",
+    "companyKey": "prysmian.com",
+    "companyId": "cmp_21680b572d39",
+    "locationId": "loc_4fb76bfa7506",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prysmian",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "1 Prestolite Drive, Paragould, AR 72450, USA",
+        "supplier_address_normalized": {
+          "city": "Paragould",
+          "state": "AR",
+          "postal_code": "72450",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Prysmian Group IATF 16949 certificate annex PDF (na.prysmian.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "cables",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Adkev (Danville, KY)",
+    "parentCompany": null,
+    "segment": "USA | KY | Danville",
+    "tier": "Tier 2",
+    "addressRaw": "100 Corporate Drive, Danville, KY 40422, USA",
+    "addressComponents": {
+      "city": "Danville",
+      "state": "KY",
+      "postal_code": "40422",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.adkev.com",
+    "companyKey": "adkev.com",
+    "companyId": "cmp_68d0f8b3eb20",
+    "locationId": "loc_e567a3e992f4",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Injection-molded plastics",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Adkev, Inc.",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "100 Corporate Drive, Danville, KY 40422, USA",
+        "supplier_address_normalized": {
+          "city": "Danville",
+          "state": "KY",
+          "postal_code": "40422",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "injection molding",
+          "assembly"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Adkev IATF 16949 certificate PDF (adkev.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "injection molding",
+      "IATF 16949"
+    ]
+  },
+  {
+    "company": "Prysmian (Highland Heights, KY)",
+    "parentCompany": null,
+    "segment": "USA | KY | Highland Heights",
+    "tier": "Tier 2",
+    "addressRaw": "4 Tesseneer Drive, Highland Heights, KY 41076, USA",
+    "addressComponents": {
+      "city": "Highland Heights",
+      "state": "KY",
+      "postal_code": "41076",
+      "country": "US"
+    },
+    "addressConfidence": 0.95,
+    "website": "https://www.prysmian.com",
+    "companyKey": "prysmian.com",
+    "companyId": "cmp_21680b572d39",
+    "locationId": "loc_d0d5e7966c90",
+    "supplyChainCategory": "Tier_2",
+    "supplyChainSubtypeGroup": null,
+    "supplyChainSubtype": "Wiring harness assemblies",
+    "legacyJson": {
+      "supplier": {
+        "supplier_name": "Prysmian",
+        "parent_company": null,
+        "supplier_type": "Automotive Supplier",
+        "tier": "Tier 2",
+        "confidence_level": "high"
+      },
+      "location": {
+        "supplier_address_raw": "4 Tesseneer Drive, Highland Heights, KY 41076, USA",
+        "supplier_address_normalized": {
+          "city": "Highland Heights",
+          "state": "KY",
+          "postal_code": "41076",
+          "country": "US"
+        }
+      },
+      "operations": {
+        "primary_functions": [
+          "automotive cable"
+        ],
+        "production_characteristics": {}
+      },
+      "oem_association": {},
+      "logistics_packaging_signals": {},
+      "intelligence_flags": {
+        "automotive_confirmed": true,
+        "oem_link_verified": false,
+        "address_verified": true,
+        "requires_human_review": false
+      },
+      "source_metadata": {
+        "data_sources": [
+          "Prysmian Group IATF 16949 certificate annex PDF (na.prysmian.com)"
+        ],
+        "last_verified": "2026-02-21",
+        "discovery_method": "official_site_certificate_pdf"
+      }
+    },
+    "industryKeywords": [
+      "automotive",
+      "cables",
+      "IATF 16949"
+    ]
+  }
+]

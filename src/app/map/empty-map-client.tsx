@@ -3,7 +3,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 
 const MAPBOX_STYLE = 'mapbox://styles/mapbox/satellite-streets-v12';
 const DEFAULT_CENTER: [number, number] = [-98, 39];
@@ -20,27 +19,11 @@ type GeoJSONResponse = {
   features: GeoJSONFeature[];
 };
 
-type LocationNeedingGeocode = {
-  id: string;
-  companyId: string;
-  addressRaw: string;
-  addressForGeocode: string;
-};
-
-export default function DashboardMapClient() {
+export default function EmptyMapClient() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<import('mapbox-gl').Map | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [needingGeocode, setNeedingGeocode] = useState<LocationNeedingGeocode[]>([]);
-  const [dotCount, setDotCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    void fetch('/api/locations/for-geocode?missingOnly=true')
-      .then((res) => res.json())
-      .then((data) => (data?.locations ? setNeedingGeocode(data.locations) : []))
-      .catch(() => setNeedingGeocode([]));
-  }, []);
 
   useEffect(() => {
     const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
@@ -59,10 +42,9 @@ export default function DashboardMapClient() {
         const data = await res.json();
         if (data?.features) geojson = data;
       } catch {
-        // keep empty features
+        // keep empty
       }
       if (cancelled || !containerRef.current) return;
-      setDotCount(geojson.features.length);
 
       const mapboxgl = (await import('mapbox-gl')).default;
       mapboxgl.accessToken = token;
@@ -123,48 +105,11 @@ export default function DashboardMapClient() {
 
   if (error) {
     return (
-      <div className="flex h-[500px] items-center justify-center rounded-lg border border-dashed bg-muted/30 text-muted-foreground text-sm">
+      <div className="flex h-[100vh] items-center justify-center rounded-lg border border-dashed bg-muted/30 text-muted-foreground text-sm">
         {error}
       </div>
     );
   }
 
-  return (
-    <div className="space-y-4">
-      {dotCount !== null && (
-        <p className="text-sm text-muted-foreground">
-          {dotCount === 0
-            ? 'No locations with coordinates. Run: npx tsx scripts/import-dots-kmz-to-locations.ts'
-            : `${dotCount} location${dotCount === 1 ? '' : 's'} on map (click → company).`}
-        </p>
-      )}
-      <div className="rounded-lg border overflow-hidden">
-        <div ref={containerRef} className="h-[500px] w-full" />
-      </div>
-      <section className="rounded-lg border bg-muted/20 p-4">
-        <h3 className="text-sm font-semibold text-muted-foreground mb-2">
-          Geocodes to get
-        </h3>
-        {needingGeocode.length === 0 ? (
-          <p className="text-sm text-muted-foreground">All locations have coordinates.</p>
-        ) : (
-          <ul className="space-y-2 text-sm">
-            {needingGeocode.map((loc) => (
-              <li key={loc.id} className="flex items-center gap-2 flex-wrap">
-                <span className="text-muted-foreground truncate max-w-[min(100%,400px)]" title={loc.addressRaw}>
-                  {loc.addressForGeocode || loc.addressRaw || 'No address'}
-                </span>
-                <Link
-                  href={`/dashboard/companies/${loc.companyId}`}
-                  className="text-primary hover:underline shrink-0"
-                >
-                  View company
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-    </div>
-  );
+  return <div ref={containerRef} className="h-full min-h-[100vh] w-full" />;
 }

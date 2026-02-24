@@ -48,15 +48,16 @@ export function CustomSignInForm() {
   return (
     <form onSubmit={handleSubmit} className='w-full space-y-4'>
       <div className='space-y-2'>
-        <Label htmlFor='email'>Email</Label>
+        <Label htmlFor='email'>Email or phone</Label>
         <Input
           id='email'
-          type='email'
+          type='text'
+          inputMode='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder='you@example.com'
+          placeholder='you@example.com or +1 555 000 0000'
           required
-          autoComplete='email'
+          autoComplete='username'
           disabled={isLoading}
         />
       </div>

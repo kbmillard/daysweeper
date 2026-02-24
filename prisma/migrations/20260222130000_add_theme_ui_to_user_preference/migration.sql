@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "UserPreference" ADD COLUMN IF NOT EXISTS "theme" TEXT;
+ALTER TABLE "UserPreference" ADD COLUMN IF NOT EXISTS "ui" JSONB;
