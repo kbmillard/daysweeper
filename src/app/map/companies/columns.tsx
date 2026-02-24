@@ -159,7 +159,17 @@ export function getColumns(options?: {
           <span className='text-muted-foreground'>—</span>
         );
       },
-      enableColumnFilter: false
+      meta: {
+        label: 'Status',
+        variant: 'select',
+        options: [
+          { label: 'APR Account', value: 'APR Account' },
+          { label: 'Contacted - meeting set', value: 'Contacted - meeting set' },
+          { label: 'Contacted - no answer', value: 'Contacted - no answer' },
+          { label: 'Contacted - not interested', value: 'Contacted - not interested' }
+        ]
+      },
+      enableColumnFilter: true
     },
     {
       id: 'actions',

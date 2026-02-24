@@ -13,6 +13,7 @@ import { DeleteLocationButton } from '@/features/locations/delete-location-butto
 import { PrimaryAddressSection } from '@/features/locations/primary-address-section';
 import CompanyLocationsMap from '@/features/companies/company-locations-map';
 import { filterLegacyKeyFacts } from '@/lib/filter-legacy-metadata';
+import { googleEarthUrl } from '@/lib/google-earth-url';
 import { DeleteCompanyButton } from './delete-company-button';
 
 type CompanyMetadata = {
@@ -40,6 +41,7 @@ type CompanyData = {
   email: string | null;
   status: string | null;
   metadata: unknown;
+  primaryLocationId?: string | null;
   Location: Array<{
     id?: string;
     externalId?: string | null;
@@ -49,6 +51,7 @@ type CompanyData = {
     addressComponents?: unknown;
     latitude?: number | null | unknown;
     longitude?: number | null | unknown;
+    phone?: string | null;
     createdAt?: Date;
     updatedAt?: Date;
   }>;
@@ -69,16 +72,20 @@ function CompanyCard({
   company: CompanyData;
   title: string;
 }) {
-  const primaryLocation = company.Location?.[0];
-  const addressComponents = (primaryLocation?.addressComponents || {}) as {
+  const primaryLocationOrFirst =
+    company.primaryLocationId && company.Location?.length
+      ? company.Location.find((l) => l.id === company.primaryLocationId) ?? company.Location[0]
+      : company.Location?.[0];
+  const addressComponents = (primaryLocationOrFirst?.addressComponents || {}) as {
     city?: string;
     state?: string;
     postal_code?: string;
     country?: string;
   };
 
-  // Get phone from metadata.contactInfo if phone field is empty
+  // Prefer primary location phone, then company phone, then metadata
   const phone =
+    (primaryLocationOrFirst as { phone?: string | null } | undefined)?.phone ||
     company.phone ||
     (company.metadata as CompanyMetadata | null)?.contactInfo?.phone ||
     null;
@@ -139,8 +146,8 @@ function CompanyCard({
             <label className='text-muted-foreground text-sm font-medium'>
               Address
             </label>
-            {primaryLocation?.addressRaw ? (
-              <p className='mt-1 text-base'>{primaryLocation.addressRaw}</p>
+            {primaryLocationOrFirst?.addressRaw ? (
+              <p className='mt-1 text-base'>{primaryLocationOrFirst.addressRaw}</p>
             ) : (
               <p className='text-muted-foreground mt-1 text-base'>—</p>
             )}
@@ -198,7 +205,10 @@ function CompanyCard({
 
 export default function CompanyDetailView({ company, baseUrl }: Props) {
   const meta = (company.metadata ?? null) as CompanyMetadata | null;
-  const primaryLocation = company.Location?.[0];
+  const primaryLocationResolved =
+    company.primaryLocationId && company.Location?.length
+      ? company.Location.find((l) => l.id === company.primaryLocationId) ?? company.Location[0]
+      : company.Location?.[0];
 
   return (
     <div className='space-y-6'>
@@ -217,7 +227,7 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
           id: company.id,
           name: company.name,
           website: company.website,
-          phone: company.phone,
+          phone: primaryLocationResolved?.phone ?? company.phone ?? null,
           email: company.email ?? null,
           status: company.status ?? null
         }}
@@ -305,7 +315,21 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         </Card>
       )}
 
-      <CompanyLocationsMap locations={company.Location ?? []} companyName={company.name} />
+      <CompanyLocationsMap
+        basePath='dashboard'
+        companyId={company.id}
+        locations={[
+          ...(company.Location ?? []).map((loc) => ({ ...loc, companyId: company.id })),
+          ...(company.other_Company ?? []).flatMap((child) =>
+            (child.Location ?? []).map((loc) => ({
+              ...loc,
+              companyId: child.id,
+              addressRaw: loc.addressRaw ? `${loc.addressRaw} · ${child.name}` : child.name
+            }))
+          )
+        ]}
+        companyName={company.name}
+      />
 
       {/* Locations list – all addresses for this company */}
       <div className='space-y-4'>
@@ -347,17 +371,29 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                     {loc.addressRaw || 'Address not specified'}
                   </span>
                 )}
-                {loc.id && (
-                  <DeleteLocationButton
-                    locationId={loc.id}
-                    companyId={company.id}
-                    basePath='dashboard'
-                    refreshOnly
-                    variant='outline'
-                    size='sm'
-                    buttonText='Delete'
-                  />
-                )}
+                <div className='flex items-center gap-2 shrink-0'>
+                  {loc.id && (() => {
+                    const lat = loc.latitude != null ? Number(loc.latitude) : null;
+                    const lng = loc.longitude != null ? Number(loc.longitude) : null;
+                    const hasCoords = typeof lat === 'number' && !Number.isNaN(lat) && typeof lng === 'number' && !Number.isNaN(lng);
+                    return hasCoords ? (
+                      <a href={googleEarthUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-primary hover:underline text-sm'>
+                        Google Earth
+                      </a>
+                    ) : null;
+                  })()}
+                  {loc.id && (
+                    <DeleteLocationButton
+                      locationId={loc.id}
+                      companyId={company.id}
+                      basePath='dashboard'
+                      refreshOnly
+                      variant='outline'
+                      size='sm'
+                      buttonText='Delete'
+                    />
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -372,9 +408,9 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         </div>
       </div>
 
-      {primaryLocation && primaryLocation.id && (
+      {primaryLocationResolved && primaryLocationResolved.id && (
         <PrimaryAddressSection
-          primaryLocation={{ ...primaryLocation, id: primaryLocation.id }}
+          primaryLocation={{ ...primaryLocationResolved, id: primaryLocationResolved.id }}
           company={{
             id: company.id,
             name: company.name,

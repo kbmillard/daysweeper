@@ -28,3 +28,19 @@ export function buildLastLegGeocodeUrl(params: {
 export function buildLastLegOpenUrl(): string {
   return `${SCHEME}://`;
 }
+
+/** Only attempt to open LastLeg app on mobile (iOS/Android); safe no-op on desktop. */
+export function safeOpenLastLegApp(): void {
+  if (typeof window === 'undefined') return;
+  const ua = navigator.userAgent ?? '';
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(ua) || (navigator.maxTouchPoints ?? 0) > 0;
+  if (!isMobile) return;
+  try {
+    const url = buildLastLegOpenUrl();
+    setTimeout(() => {
+      window.location.href = url;
+    }, 400);
+  } catch {
+    // ignore
+  }
+}

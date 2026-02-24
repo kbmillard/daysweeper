@@ -11,6 +11,7 @@ import {
   IconBuilding
 } from '@tabler/icons-react';
 import { parseDmsCoordinates } from '@/lib/geocode-address';
+import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
 type AddressComponents = {
@@ -232,6 +233,7 @@ export default function LocationEditableFields({ location, company, locationOnly
         toast.error(data.error ?? 'Failed to save location');
         return;
       }
+      if (lat !== undefined || lng !== undefined) notifyLocationsMapUpdate();
       toast.success('Location saved');
       router.refresh();
     } catch {

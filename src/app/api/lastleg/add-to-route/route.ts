@@ -11,7 +11,10 @@ export async function POST(req: Request) {
   try {
     const { userId } = await auth();
     if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json(
+        { error: 'Please sign in to add stops to your LastLeg route.' },
+        { status: 401 }
+      );
     }
 
     const body = await req.json();
@@ -45,7 +48,8 @@ export async function POST(req: Request) {
       companyName = company.name;
       addressRaw = location.addressRaw ?? '';
       website = company.website ?? undefined;
-      phone = company.phone ?? undefined;
+      // Prefer primary location phone (matches company page display)
+      phone = location.phone ?? company.phone ?? undefined;
       email = company.email ?? undefined;
     } else if (latIn != null && lngIn != null && !Number.isNaN(latIn) && !Number.isNaN(lngIn)) {
       if (latIn < -90 || latIn > 90 || lngIn < -180 || lngIn > 180) {
@@ -120,7 +124,13 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true, routeId: route.id, target_id: target.id });
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Failed to add to route';
+    const raw = error instanceof Error ? error.message : String(error);
+    const isDbMissing =
+      typeof raw === 'string' &&
+      (raw.includes('does not exist') || raw.includes('Unknown column') || raw.includes('(not available)'));
+    const message = isDbMissing
+      ? 'Server database is missing Route/Target tables. Deploy or run migrations.'
+      : raw || 'Failed to add to route';
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

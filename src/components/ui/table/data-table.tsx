@@ -26,10 +26,13 @@ export function DataTable<TData>({
   const rows = table.getRowModel().rows;
   
   return (
-    <div className='flex flex-1 flex-col space-y-4'>
+    <div className='flex min-h-0 flex-1 flex-col space-y-4'>
       {children}
-      <div className='relative w-full' style={{ minHeight: '400px', height: '600px' }}>
-        <div className='absolute inset-0 flex overflow-hidden rounded-lg border'>
+      <div
+        className='relative w-full shrink-0 rounded-lg border'
+        style={{ minHeight: '200px', height: 'min(600px, 55vh)' }}
+      >
+        <div className='absolute inset-0 flex overflow-hidden'>
           <ScrollArea className='h-full w-full'>
             <Table className='w-full'>
               <TableHeader className='bg-muted sticky top-0 z-10'>
@@ -92,7 +95,7 @@ export function DataTable<TData>({
           </ScrollArea>
         </div>
       </div>
-      <div className='flex flex-col gap-2.5'>
+      <div className='flex shrink-0 flex-col gap-2.5'>
         <DataTablePagination table={table} />
         {actionBar &&
           table.getFilteredSelectedRowModel().rows.length > 0 &&

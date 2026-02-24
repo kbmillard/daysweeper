@@ -51,7 +51,7 @@ export async function PATCH(
     const { companyId } = await params;
     const body = await req.json();
 
-    const { status, parentCompanyId, name, website, phone, email } = body;
+    const { status, parentCompanyId, primaryLocationId, name, website, phone, email } = body;
 
     if (name !== undefined) {
       if (typeof name !== 'string' || !name.trim()) {
@@ -106,6 +106,26 @@ export async function PATCH(
       }
     }
 
+    if (primaryLocationId !== undefined) {
+      if (primaryLocationId !== null && typeof primaryLocationId !== 'string') {
+        return NextResponse.json(
+          { error: 'primaryLocationId must be a string or null' },
+          { status: 400 }
+        );
+      }
+      if (primaryLocationId) {
+        const loc = await prisma.location.findFirst({
+          where: { id: primaryLocationId, companyId }
+        });
+        if (!loc) {
+          return NextResponse.json(
+            { error: 'Location not found or does not belong to this company' },
+            { status: 404 }
+          );
+        }
+      }
+    }
+
     const company = await prisma.company.update({
       where: { id: companyId },
       data: {
@@ -116,6 +136,9 @@ export async function PATCH(
         ...(status !== undefined && { status: status === '' ? null : status }),
         ...(parentCompanyId !== undefined && {
           parentCompanyDbId: parentCompanyId === '' || parentCompanyId === null ? null : parentCompanyId
+        }),
+        ...(primaryLocationId !== undefined && {
+          primaryLocationId: primaryLocationId === '' || primaryLocationId === null ? null : primaryLocationId
         }),
         updatedAt: new Date()
       }

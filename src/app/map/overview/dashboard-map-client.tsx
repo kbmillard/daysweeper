@@ -1,13 +1,18 @@
 'use client';
 
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
+import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
+import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
+import { googleEarthUrl } from '@/lib/google-earth-url';
 
-const MAPBOX_STYLE = 'mapbox://styles/mapbox/satellite-streets-v12';
-const DEFAULT_CENTER: [number, number] = [-98, 39];
+const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM = 2;
+
+type RedPin = { lng: number; lat: number; id?: string; source?: 'kml' | 'user' };
+type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
 
 type GeoJSONFeature = {
   type: 'Feature';
@@ -27,13 +32,84 @@ type LocationNeedingGeocode = {
   addressForGeocode: string;
 };
 
+function createCircleMarker(color: string, size: number): google.maps.Symbol {
+  return {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: size,
+    fillColor: color,
+    fillOpacity: 1,
+    strokeColor: '#fff',
+    strokeWeight: 1
+  };
+}
+
 export default function DashboardMapClient() {
-  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<import('mapbox-gl').Map | null>(null);
+  const mapRef = useRef<google.maps.Map | null>(null);
+  const locationMarkersRef = useRef<google.maps.Marker[]>([]);
+  const dotMarkersRef = useRef<google.maps.Marker[]>([]);
+  const unsubMapRef = useRef<(() => void) | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [needingGeocode, setNeedingGeocode] = useState<LocationNeedingGeocode[]>([]);
-  const [dotCount, setDotCount] = useState<number | null>(null);
+  const [locationCount, setLocationCount] = useState<number | null>(null);
+  const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
+  const [selectedPin, setSelectedPin] = useState<{ type: 'location'; data: LocationPin } | { type: 'dot'; data: RedPin } | null>(null);
+
+  const handleAddToLastLeg = async () => {
+    if (!selectedPin) return;
+    try {
+      const body =
+        selectedPin.type === 'location'
+          ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
+          : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
+      const res = await fetch('/api/lastleg/add-to-route', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(body)
+      });
+      let data: { error?: string } = {};
+      try {
+        data = await res.json();
+      } catch {
+        data = { error: res.status === 401 ? 'Please sign in to add stops to your LastLeg route.' : `Server error (${res.status})` };
+      }
+      if (!res.ok) throw new Error(data.error ?? 'Failed');
+      toast.success('Added to LastLeg');
+      setSelectedPin(null);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed');
+    }
+  };
+
+  const handleDeleteRedPin = async () => {
+    if (!selectedPin || selectedPin.type !== 'dot') return;
+    const { id, lat, lng } = selectedPin.data;
+    try {
+      if (id) {
+        const res = await fetch(`/api/map-pins/${id}`, { method: 'DELETE' });
+        if (!res.ok) {
+          const d = await res.json();
+          throw new Error(d?.error ?? 'Failed');
+        }
+      } else {
+        const res = await fetch('/api/dots-pins/hide', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ latitude: lat, longitude: lng })
+        });
+        if (!res.ok) {
+          const d = await res.json();
+          throw new Error(d?.error ?? 'Failed');
+        }
+      }
+      toast.success('Pin removed');
+      setSelectedPin(null);
+      await refetchDotsRef.current?.();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to delete');
+    }
+  };
 
   useEffect(() => {
     void fetch('/api/locations/for-geocode?missingOnly=true')
@@ -43,83 +119,142 @@ export default function DashboardMapClient() {
   }, []);
 
   useEffect(() => {
-    const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-    if (!token?.trim()) {
-      setError('Mapbox token not configured (NEXT_PUBLIC_MAPBOX_TOKEN)');
-      return;
-    }
     if (!containerRef.current) return;
 
     let cancelled = false;
 
     void (async () => {
       let geojson: GeoJSONResponse = { type: 'FeatureCollection', features: [] };
+      let dotsPins: RedPin[] = [];
       try {
-        const res = await fetch('/api/locations/map');
-        const data = await res.json();
-        if (data?.features) geojson = data;
+        const [locRes, dotsRes] = await Promise.all([
+          fetch('/api/locations/map', { cache: 'no-store' }),
+          fetch('/api/dots-pins', { cache: 'no-store' })
+        ]);
+        const locData = await locRes.json();
+        const dotsData = await dotsRes.json();
+        if (locData?.features) geojson = locData;
+        if (Array.isArray(dotsData?.pins)) dotsPins = dotsData.pins;
       } catch {
-        // keep empty features
+        // keep empty
       }
       if (cancelled || !containerRef.current) return;
-      setDotCount(geojson.features.length);
+      setLocationCount(geojson.features.length);
 
-      const mapboxgl = (await import('mapbox-gl')).default;
-      mapboxgl.accessToken = token;
-      const map = new mapboxgl.Map({
-        container: containerRef.current,
-        style: MAPBOX_STYLE,
+      let google: Awaited<ReturnType<typeof loadGoogleMaps>>;
+      try {
+        google = await loadGoogleMaps();
+      } catch {
+        if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
+        return;
+      }
+      if (cancelled || !containerRef.current) return;
+
+      const map = new google.maps.Map(containerRef.current, {
         center: DEFAULT_CENTER,
-        zoom: DEFAULT_ZOOM
+        zoom: DEFAULT_ZOOM,
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        mapTypeControl: true,
+        mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
       });
 
-      map.on('load', () => {
-        if (cancelled) return;
-        if (geojson.features.length > 0) {
-          map.addSource('locations', { type: 'geojson', data: geojson });
-          map.addLayer({
-            id: 'locations-dots',
-            type: 'circle',
-            source: 'locations',
-            paint: {
-              'circle-radius': 6,
-              'circle-color': '#22c55e',
-              'circle-stroke-width': 1,
-              'circle-stroke-color': '#fff'
-            }
+      const clearLocationMarkers = () => {
+        locationMarkersRef.current.forEach((m) => m.setMap(null));
+        locationMarkersRef.current = [];
+      };
+      const clearDotMarkers = () => {
+        dotMarkersRef.current.forEach((m) => m.setMap(null));
+        dotMarkersRef.current = [];
+      };
+
+      const addLocationMarkers = (features: GeoJSONFeature[]) => {
+        clearLocationMarkers();
+        features.forEach((f) => {
+          const [lng, lat] = f.geometry.coordinates;
+          const props = f.properties;
+          const marker = new google.maps.Marker({
+            map,
+            position: { lat, lng },
+            icon: createCircleMarker('#0ea5e9', 6),
+            zIndex: 2
           });
-          map.on('click', 'locations-dots', (e) => {
-            const f = e.features?.[0];
-            const companyId = f?.properties?.companyId;
-            if (companyId) router.push(`/map/companies/${companyId}`);
+          marker.addListener('click', () => {
+            if (props?.id && props?.companyId) setSelectedPin({ type: 'location', data: { locationId: props.id, companyId: props.companyId, addressRaw: props.addressRaw, lat, lng } });
           });
-          map.on('mouseenter', 'locations-dots', () => {
-            map.getCanvas().style.cursor = 'pointer';
+          locationMarkersRef.current.push(marker);
+        });
+      };
+
+      const addDotMarkers = (pins: RedPin[]) => {
+        clearDotMarkers();
+        pins.forEach((p) => {
+          const marker = new google.maps.Marker({
+            map,
+            position: { lat: p.lat, lng: p.lng },
+            icon: createCircleMarker('#dc2626', 5),
+            zIndex: 1
           });
-          map.on('mouseleave', 'locations-dots', () => {
-            map.getCanvas().style.cursor = '';
+          marker.addListener('click', () => {
+            setSelectedPin({ type: 'dot', data: { lng: p.lng, lat: p.lat, id: p.id, source: p.source } });
           });
-          const bounds = new mapboxgl.LngLatBounds();
-          geojson.features.forEach((f) => bounds.extend(f.geometry.coordinates as [number, number]));
-          if (geojson.features.length > 1) {
-            map.fitBounds(bounds, { padding: 40, maxZoom: 10 });
-          } else {
-            map.setCenter(geojson.features[0].geometry.coordinates);
-            map.setZoom(8);
-          }
+          dotMarkersRef.current.push(marker);
+        });
+      };
+
+      addLocationMarkers(geojson.features);
+      addDotMarkers(dotsPins);
+
+      refetchDotsRef.current = async () => {
+        if (cancelled || !mapRef.current) return;
+        try {
+          const res = await fetch('/api/dots-pins', { cache: 'no-store' });
+          const data = await res.json();
+          if (Array.isArray(data?.pins)) addDotMarkers(data.pins);
+        } catch {
+          // ignore
         }
-        mapRef.current = map;
+      };
+
+      const total = geojson.features.length + dotsPins.length;
+      if (total > 0) {
+        const bounds = new google.maps.LatLngBounds();
+        geojson.features.forEach((f) => bounds.extend({ lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0] }));
+        dotsPins.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
+        map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+      } else if (total === 1) {
+        const c = geojson.features[0]
+          ? { lat: geojson.features[0].geometry.coordinates[1], lng: geojson.features[0].geometry.coordinates[0] }
+          : { lat: dotsPins[0]!.lat, lng: dotsPins[0]!.lng };
+        map.setCenter(c);
+        map.setZoom(8);
+      }
+
+      mapRef.current = map;
+
+      unsubMapRef.current = subscribeToLocationsMapUpdate(async () => {
+        if (cancelled) return;
+        try {
+          const res = await fetch('/api/locations/map', { cache: 'no-store' });
+          const data = await res.json();
+          if (data?.features != null && mapRef.current) addLocationMarkers(data.features);
+        } catch {
+          // ignore
+        }
       });
     })();
 
     return () => {
+      unsubMapRef.current?.();
+      unsubMapRef.current = null;
+      refetchDotsRef.current = null;
       cancelled = true;
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
+      locationMarkersRef.current.forEach((m) => m.setMap(null));
+      locationMarkersRef.current = [];
+      dotMarkersRef.current.forEach((m) => m.setMap(null));
+      dotMarkersRef.current = [];
+      mapRef.current = null;
     };
-  }, [router]);
+  }, []);
 
   if (error) {
     return (
@@ -131,15 +266,33 @@ export default function DashboardMapClient() {
 
   return (
     <div className="space-y-4">
-      {dotCount !== null && (
+      {locationCount !== null && (
         <p className="text-sm text-muted-foreground">
-          {dotCount === 0
-            ? 'No locations with coordinates. Run: npx tsx scripts/import-dots-kmz-to-locations.ts'
-            : `${dotCount} location${dotCount === 1 ? '' : 's'} on map (click → company).`}
+          {locationCount === 0
+            ? 'No locations with coordinates.'
+            : `${locationCount} location${locationCount === 1 ? '' : 's'} on map (click → company).`}
         </p>
       )}
-      <div className="rounded-lg border overflow-hidden">
+      <div className="relative rounded-lg border overflow-hidden">
         <div ref={containerRef} className="h-[500px] w-full" />
+        {selectedPin && (
+          <div className="absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md rounded-lg border bg-background p-4 shadow-lg">
+            <p className="text-sm text-muted-foreground mb-2">
+              {selectedPin.type === 'location' ? (selectedPin.data.addressRaw || 'Location') : `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`}
+            </p>
+            <div className="flex flex-wrap gap-2 items-center">
+              <Button size="sm" onClick={handleAddToLastLeg}>Add to LastLeg</Button>
+              <a href={googleEarthUrl(selectedPin.data.lat, selectedPin.data.lng)} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">Google Earth</a>
+              {selectedPin.type === 'location' && (
+                <Link href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`} className="text-sm text-primary hover:underline">Location page</Link>
+              )}
+              {selectedPin.type === 'dot' && (
+                <Button variant="destructive" size="sm" onClick={handleDeleteRedPin}>Delete pin</Button>
+              )}
+              <Button variant="ghost" size="sm" onClick={() => setSelectedPin(null)}>Close</Button>
+            </div>
+          </div>
+        )}
       </div>
       <section className="rounded-lg border bg-muted/20 p-4">
         <h3 className="text-sm font-semibold text-muted-foreground mb-2">

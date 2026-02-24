@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
 import { parseDmsCoordinates } from '@/lib/geocode-address';
+import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
 export default function NewLocationPage() {
@@ -47,6 +48,7 @@ export default function NewLocationPage() {
         setError(data.error ?? 'Failed to add location');
         return;
       }
+      if (body.latitude != null || body.longitude != null) notifyLocationsMapUpdate();
       router.push(`/dashboard/companies/${companyId}/locations/${data.location.id}`);
       router.refresh();
     } catch {

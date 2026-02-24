@@ -14,6 +14,8 @@ export const metadata = {
   title: 'Dashboard: Companies'
 };
 
+export const dynamic = 'force-dynamic';
+
 type pageProps = {
   searchParams: Promise<SearchParams>;
 };
@@ -103,7 +105,7 @@ export default async function Page(props: pageProps) {
 
   return (
     <PageContainer
-      scrollable={false}
+      scrollable={true}
       pageTitle='Companies'
       pageDescription='Manage companies and targets'
       pageHeaderAction={

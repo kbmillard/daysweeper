@@ -8,6 +8,9 @@ export default async function MapPage() {
   if (!userId) {
     return redirect('/auth/sign-in');
   }
-
-  return <EmptyMapClient />;
+  return (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <EmptyMapClient />
+    </div>
+  );
 }

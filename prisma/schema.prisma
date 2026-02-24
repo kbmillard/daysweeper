@@ -24,6 +24,7 @@ model Company {
   subtype            String?
   subtypeGroup       String?
   status             String?              // Contacted - no answer | Contacted - not interested | Contacted - meeting set | APR Account
+  primaryLocationId  String?              @unique
   legacyJson         Json?
   metadata           Json?
   createdAt          DateTime             @default(now())
@@ -32,6 +33,7 @@ model Company {
   other_Company      Company[]            @relation("CompanyToCompany")
   Customer           Customer[]
   Location           Location[]
+  primaryLocation   Location?             @relation("CompanyPrimaryLocation", fields: [primaryLocationId], references: [id], onDelete: SetNull)
   CompanyInteraction CompanyInteraction[]
 
   @@index([companyKey])
@@ -141,6 +143,7 @@ model Location {
   createdAt         DateTime                 @default(now())
   updatedAt         DateTime
   Company           Company                  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  CompanyPrimary    Company?                 @relation("CompanyPrimaryLocation")
 
   @@index([companyId])
   @@index([externalId])
@@ -441,4 +444,23 @@ model MetaKV {
   key       String   @id
   value     Json
   updatedAt DateTime @updatedAt
+}
+
+model MapPin {
+  id        String   @id @default(cuid())
+  latitude  Decimal  @db.Decimal(10, 6)
+  longitude Decimal  @db.Decimal(11, 6)
+  createdAt DateTime @default(now())
+
+  @@index([latitude, longitude])
+}
+
+model HiddenDot {
+  id        String   @id @default(cuid())
+  latitude  Decimal  @db.Decimal(10, 6)
+  longitude Decimal  @db.Decimal(11, 6)
+  createdAt DateTime @default(now())
+
+  @@unique([latitude, longitude])
+  @@index([latitude, longitude])
 }

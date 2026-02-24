@@ -15,10 +15,9 @@ export async function GET() {
 
     const features = locs
       .map((loc) => {
-        const coords = toMapboxCoordinates(
-          loc.latitude != null ? Number(loc.latitude) : null,
-          loc.longitude != null ? Number(loc.longitude) : null
-        );
+        const lat = loc.latitude != null ? Number(loc.latitude) : null;
+        const lng = loc.longitude != null ? Number(loc.longitude) : null;
+        const coords = toMapboxCoordinates(lat, lng);
         if (!coords) return null;
         return {
           type: 'Feature' as const,
@@ -35,10 +34,15 @@ export async function GET() {
       })
       .filter((f): f is NonNullable<typeof f> => f != null);
 
-    return NextResponse.json({
-      type: 'FeatureCollection',
-      features
-    });
+    return NextResponse.json(
+      { type: 'FeatureCollection', features },
+      {
+        headers: {
+          'Cache-Control': 'no-store, max-age=0',
+          Pragma: 'no-cache'
+        }
+      }
+    );
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to fetch map locations';
     return NextResponse.json({ error: message }, { status: 500 });

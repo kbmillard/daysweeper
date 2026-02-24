@@ -1,9 +1,11 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const isProtectedRoute = createRouteMatcher(['/map(.*)', '/dashboard(.*)']);
+const isPublicApi = createRouteMatcher(['/api/config/google-maps-key']);
 
 export default clerkMiddleware(async (auth, req: NextRequest) => {
+  if (isPublicApi(req)) return NextResponse.next();
   if (isProtectedRoute(req)) await auth.protect();
 });
 export const config = {

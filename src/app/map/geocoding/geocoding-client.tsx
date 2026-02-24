@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/card';
 import { toast } from 'sonner';
 import { Loader2, MapPin, AlertCircle, CheckCircle } from 'lucide-react';
+import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 
 type LocationNeedingGeocode = {
   id: string;
@@ -59,6 +60,7 @@ export default function GeocodingClient({
         toast.warning(`${result.failed} locations failed to geocode`);
       }
 
+      if (result.success > 0) notifyLocationsMapUpdate();
       // Refresh the page to show updated data
       window.location.reload();
     } catch (error) {

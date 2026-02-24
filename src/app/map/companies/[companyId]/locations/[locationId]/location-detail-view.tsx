@@ -4,6 +4,8 @@ import Link from 'next/link';
 import LocationEditableFields from '@/features/locations/location-editable-fields';
 import LocationMapCard from '@/features/locations/location-map-card';
 import { DeleteLocationButton } from '@/features/locations/delete-location-button';
+import { AddToLastLegButton } from '@/features/locations/add-to-lastleg-button';
+import { SetAsHeadquartersButton } from '@/features/companies/set-as-headquarters-button';
 import CompanyInteractions from '../../company-interactions';
 
 type LocationWithCompany = {
@@ -56,6 +58,14 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
               Back to Company
             </Button>
           </Link>
+          <SetAsHeadquartersButton companyId={company.id} locationId={location.id} basePath='map' />
+          <AddToLastLegButton
+            locationId={location.id}
+            companyId={company.id}
+            addressRaw={location.addressRaw}
+            latitude={lat}
+            longitude={lng}
+          />
           <DeleteLocationButton
             locationId={location.id}
             companyId={company.id}
@@ -74,6 +84,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
         latitude={lat}
         longitude={lng}
         address={location.addressRaw}
+        locationId={location.id}
       />
 
       <LocationEditableFields

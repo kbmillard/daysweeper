@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { IconBrandApple } from '@tabler/icons-react';
+import { toast } from 'sonner';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -43,18 +44,29 @@ export function AddToLastLegButton({
       const res = await fetch('/api/lastleg/add-to-route', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({ locationId, companyId })
       });
-      const data = await res.json();
+      let data: { error?: string } = {};
+      try {
+        data = await res.json();
+      } catch {
+        data = { error: res.status === 401 ? 'Please sign in to add stops to your LastLeg route.' : `Server error (${res.status})` };
+      }
 
       if (!res.ok) {
-        setError(data?.error ?? `Server error (${res.status})`);
+        const msg = data.error ?? `Server error (${res.status})`;
+        setError(msg);
+        toast.error(msg);
         return;
       }
 
       setOpen(false);
+      toast.success('Added to LastLeg');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Network error');
+      const msg = err instanceof Error ? err.message : 'Network error';
+      setError(msg);
+      toast.error(msg);
     } finally {
       setLoading(false);
     }

@@ -19,13 +19,14 @@ function key(lng, lat) {
 const publicDir = path.join(root, 'public');
 if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
 
+const MAX_LOCATIONS = 1600;
 let pins = [];
 if (fs.existsSync(kmlPath)) {
   const content = fs.readFileSync(kmlPath, 'utf-8');
   const coordRegex = /<coordinates>\s*([^<]+)<\/coordinates>/g;
   const seen = new Set();
   let m;
-  while ((m = coordRegex.exec(content)) !== null) {
+  while ((m = coordRegex.exec(content)) !== null && pins.length < MAX_LOCATIONS) {
     const parts = m[1].trim().split(/[\s,]+/);
     const lng = parseFloat(parts[0]);
     const lat = parseFloat(parts[1]);
@@ -41,4 +42,4 @@ if (fs.existsSync(kmlPath)) {
 }
 
 fs.writeFileSync(outPath, JSON.stringify({ pins }, null, 0), 'utf-8');
-console.log('Wrote', outPath, 'with', pins.length, 'pins (deduped).');
+console.log('Wrote', outPath, 'with', pins.length, 'pins (deduped, max', MAX_LOCATIONS, ').');
