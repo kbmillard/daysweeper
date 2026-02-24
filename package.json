@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma migrate deploy && next build --webpack",
+    "build": "node scripts/generate-dots-pins.mjs && prisma generate && prisma migrate deploy && next build --webpack",
+    "deploy": "npm run build",
     "postbuild": "node -e \"if (!process.env.VERCEL) require('child_process').spawnSync('npx', ['vercel', '--prod'], { stdio: 'inherit' });\"",
     "start": "next start",
     "lint": "eslint --no-eslintrc -c .eslintrc.lint.json \"src/**/*.{ts,tsx,js,jsx}\" --max-warnings 999",
@@ -24,7 +25,8 @@
     "crm-enrich": "tsx scripts/crm-enrich/run.ts",
     "geocode-crm-hierarchy": "node scripts/geocode-crm-hierarchy.mjs",
     "import-crm-geocoded": "tsx scripts/import-crm-geocoded-hierarchy.ts",
-    "import-crm-v6": "tsx scripts/importCrmV6.ts"
+    "import-crm-v6": "tsx scripts/importCrmV6.ts",
+    "generate:dots-pins": "node scripts/generate-dots-pins.mjs"
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,css,less,scss,sass}": [
