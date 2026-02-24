@@ -4,14 +4,16 @@ import { auth } from '@clerk/nextjs/server';
 import { targetToLead } from '@/lib/target-to-lead';
 
 /**
- * GET - Fetch a single target by ID (LastLeg app).
+ * GET - Fetch a single target by ID (LastLeg app). Accepts session or Bearer token.
  */
 export async function GET(
   _req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { userId } = await auth();
+    const { userId } = await auth({
+      acceptsToken: ['session_token', 'oauth_token']
+    });
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -42,7 +44,7 @@ export async function GET(
 const VALID_OUTCOMES = ['VISITED', 'NO_ANSWER', 'WRONG_ADDRESS', 'FOLLOW_UP'] as const;
 
 /**
- * PATCH - Update target (LastLeg app).
+ * PATCH - Update target (LastLeg app). Accepts session or Bearer token.
  * Body: { status?, notes?, visited?, latitude?, longitude? }
  */
 export async function PATCH(
@@ -50,7 +52,9 @@ export async function PATCH(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { userId } = await auth();
+    const { userId } = await auth({
+      acceptsToken: ['session_token', 'oauth_token']
+    });
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }

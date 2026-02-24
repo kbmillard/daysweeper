@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useAuth } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 import { IconBrandApple } from '@tabler/icons-react';
 import { toast } from 'sonner';
@@ -28,9 +29,28 @@ export function AddToLastLegButton({
   locationId,
   companyId
 }: Props) {
+  const { getToken } = useAuth();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [copyingToken, setCopyingToken] = useState(false);
+
+  const handleCopyRouteToken = async () => {
+    setCopyingToken(true);
+    try {
+      const token = await getToken();
+      if (!token) {
+        toast.error('Not signed in');
+        return;
+      }
+      await navigator.clipboard.writeText(token);
+      toast.success('Route token copied. Paste it in LastLeg app settings if targets don’t load.');
+    } catch {
+      toast.error('Could not copy token');
+    } finally {
+      setCopyingToken(false);
+    }
+  };
 
   const handleOpenChange = (next: boolean) => {
     setOpen(next);
@@ -62,7 +82,7 @@ export function AddToLastLegButton({
       }
 
       setOpen(false);
-      toast.success('Added to LastLeg');
+      toast.success('Added to LastLeg. Open the app and pull to refresh to see it.');
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Network error';
       setError(msg);
@@ -88,8 +108,16 @@ export function AddToLastLegButton({
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Send to LastLeg?</AlertDialogTitle>
-            <AlertDialogDescription>
-              Add this company and address to your route in the LastLeg app.
+            <AlertDialogDescription asChild>
+              <div className="space-y-2">
+                <p>Add this company and address to your route in the LastLeg app. Then open LastLeg and pull to refresh to load your route.</p>
+                <p className="text-muted-foreground text-xs">
+                  If targets don’t load in the app, copy your route token and paste it in LastLeg’s settings (Authorization: Bearer).
+                </p>
+                <Button type="button" variant="secondary" size="sm" onClick={handleCopyRouteToken} disabled={copyingToken}>
+                  {copyingToken ? 'Copying…' : 'Copy route token'}
+                </Button>
+              </div>
             </AlertDialogDescription>
             {error && (
               <p className="text-destructive font-medium text-sm">{error}</p>

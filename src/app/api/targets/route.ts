@@ -5,12 +5,18 @@ import { targetToLead } from '@/lib/target-to-lead';
 
 /**
  * GET - List targets for the current user's route (LastLeg app).
+ * Accepts session (cookies) or Bearer token so the iOS app can send Authorization: Bearer <token>.
  */
 export async function GET() {
   try {
-    const { userId } = await auth();
+    const { userId } = await auth({
+      acceptsToken: ['session_token', 'oauth_token']
+    });
     if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json(
+        { targets: [], error: 'Sign in required. Sign in at this app in a browser, or use your route token in LastLeg.' },
+        { status: 401 }
+      );
     }
 
     const route = await prisma.route.findFirst({
@@ -39,18 +45,30 @@ export async function GET() {
 
     return NextResponse.json({ targets });
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Failed to fetch targets';
-    return NextResponse.json({ error: message }, { status: 500 });
+    const raw = error instanceof Error ? error.message : String(error);
+    const isDbMissing =
+      typeof raw === 'string' &&
+      (raw.includes('does not exist') || raw.includes('Unknown column') || raw.includes('(not available)'));
+    const message = isDbMissing
+      ? 'Route/target tables missing. Run migrations or ensure-route-tables script.'
+      : raw || 'Failed to fetch targets';
+    return NextResponse.json(
+      { targets: [], error: message },
+      { status: isDbMissing ? 503 : 500 }
+    );
   }
 }
 
 /**
  * POST - Create target and add to user's route (LastLeg app).
  * Body: { company, address?, segment?, category?, website?, phone?, latitude?, longitude? }
+ * Accepts session or Bearer token.
  */
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth();
+    const { userId } = await auth({
+      acceptsToken: ['session_token', 'oauth_token']
+    });
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }

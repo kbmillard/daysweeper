@@ -11,7 +11,7 @@ import { googleEarthUrl } from '@/lib/google-earth-url';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
-const DEFAULT_ZOOM = 17;
+const DEFAULT_ZOOM = 19;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_COORDS = 4;
 

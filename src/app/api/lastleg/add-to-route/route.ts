@@ -9,7 +9,9 @@ import { auth } from '@clerk/nextjs/server';
  */
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth();
+    const { userId } = await auth({
+      acceptsToken: ['session_token', 'oauth_token']
+    });
     if (!userId) {
       return NextResponse.json(
         { error: 'Please sign in to add stops to your LastLeg route.' },

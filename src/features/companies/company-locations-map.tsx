@@ -12,7 +12,7 @@ import { googleEarthUrl } from '@/lib/google-earth-url';
 import { subscribeToLocationsMapUpdate, notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
-const DEFAULT_ZOOM = 12;
+const DEFAULT_ZOOM = 15;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_POINTS = 3;
 
@@ -150,7 +150,7 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
         total === 0
           ? DEFAULT_ZOOM_NO_POINTS
           : total === 1
-            ? 14
+            ? 17
             : DEFAULT_ZOOM;
 
       const map = new google.maps.Map(containerRef.current, {
@@ -196,6 +196,8 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
         pointsWithCoords.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
         dotsPins.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
         map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+        const currentZoom = map.getZoom() ?? DEFAULT_ZOOM;
+        if (currentZoom < DEFAULT_ZOOM) map.setZoom(DEFAULT_ZOOM);
       }
 
       if (canDropPin) {
