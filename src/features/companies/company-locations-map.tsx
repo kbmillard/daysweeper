@@ -197,18 +197,26 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
           : dotsPins.length > 0
             ? [dotsPins[0].lat, dotsPins[0].lng]
             : [DEFAULT_CENTER.lat, DEFAULT_CENTER.lng];
-      const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : 15;
 
       const singleLocation = pointsWithCoords.length === 1;
+      // Tilt requires zoom >= 18 on satellite; start there for single pins
+      const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : singleLocation ? 19 : 15;
 
       const map = new google.maps.Map(containerRef.current, {
         center: { lat: centerLat, lng: centerLng },
         zoom: initialZoom,
-        tilt: singleLocation ? 45 : 0,
+        tilt: 0,
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         mapTypeControl: true,
         mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
       });
+
+      // Apply 45° tilt after map is idle so Google has loaded tiles at the right zoom
+      if (singleLocation) {
+        google.maps.event.addListenerOnce(map, 'idle', () => {
+          map.setTilt(45);
+        });
+      }
 
       const locationMarkers: google.maps.Marker[] = [];
       pointsWithCoords.forEach((p) => {
