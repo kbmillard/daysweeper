@@ -16,6 +16,14 @@ const DEFAULT_ZOOM = 15;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_POINTS = 3;
 
+function isMobileDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || navigator.maxTouchPoints > 0;
+}
+function openLastLegApp(): void {
+  setTimeout(() => { window.location.href = 'lastleg://'; }, 300);
+}
+
 type LocationWithCoords = {
   id?: string;
   companyId?: string;
@@ -60,7 +68,39 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
   const [selectedPin, setSelectedPin] = useState<SelectedPin | null>(null);
   const [draftPin, setDraftPin] = useState<{ lat: number; lng: number } | null>(null);
   const [saving, setSaving] = useState(false);
+  const [addingToLastLeg, setAddingToLastLeg] = useState(false);
   const canDropPin = Boolean(companyId);
+
+  const handleAddToLastLeg = async () => {
+    if (!selectedPin || selectedPin.type === 'draft' || addingToLastLeg) return;
+    setAddingToLastLeg(true);
+    try {
+      const body =
+        selectedPin.type === 'location'
+          ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
+          : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
+      const res = await fetch('/api/lastleg/add-to-route', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(body)
+      });
+      let data: { error?: string } = {};
+      try { data = await res.json(); } catch { data = {}; }
+      if (!res.ok) throw new Error(data.error ?? 'Failed');
+      setSelectedPin(null);
+      if (isMobileDevice()) {
+        toast.success('Added — opening LastLeg…');
+        openLastLegApp();
+      } else {
+        toast.success('Added to LastLeg. Pull to refresh in the app.');
+      }
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to add');
+    } finally {
+      setAddingToLastLeg(false);
+    }
+  };
 
   const handleAddLocationAtPin = async () => {
     if (!companyId || !draftPin) return;
@@ -280,6 +320,11 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
                         : `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`}
                   </p>
                   <div className='flex flex-wrap gap-2 items-center'>
+                    {selectedPin.type !== 'draft' && (
+                      <Button size='sm' onClick={handleAddToLastLeg} disabled={addingToLastLeg}>
+                        {addingToLastLeg ? 'Adding…' : 'Add to LastLeg'}
+                      </Button>
+                    )}
                     <a href={googleEarthUrl(selectedPin.data.lat, selectedPin.data.lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
                       Google Earth
                     </a>
