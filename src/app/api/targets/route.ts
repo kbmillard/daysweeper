@@ -3,21 +3,25 @@ import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
 import { targetToLead } from '@/lib/target-to-lead';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+const SHARED_USER_ID = 'shared';
+
 /**
  * GET - List targets for the current user's route (LastLeg app).
  * Accepts session (cookies) or Bearer token so the iOS app can send Authorization: Bearer <token>.
+ * Falls back to shared route when not authenticated.
  */
 export async function GET() {
   try {
-    const { userId } = await auth({
-      acceptsToken: ['session_token', 'oauth_token']
-    });
-    if (!userId) {
-      return NextResponse.json(
-        { targets: [], error: 'Sign in required. Sign in at this app in a browser, or use your route token in LastLeg.' },
-        { status: 401 }
-      );
-    }
+    const authResult = await Promise.race([
+      auth({ acceptsToken: ['session_token', 'oauth_token'] }).catch(() => null),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 3000))
+    ]);
+    const userId =
+      (authResult && 'userId' in authResult ? (authResult as { userId: string }).userId : null) ??
+      SHARED_USER_ID;
 
     const route = await prisma.route.findFirst({
       where: { assignedToUserId: userId },
@@ -66,12 +70,13 @@ export async function GET() {
  */
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth({
-      acceptsToken: ['session_token', 'oauth_token']
-    });
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const authResult = await Promise.race([
+      auth({ acceptsToken: ['session_token', 'oauth_token'] }).catch(() => null),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 3000))
+    ]);
+    const userId =
+      (authResult && 'userId' in authResult ? (authResult as { userId: string }).userId : null) ??
+      SHARED_USER_ID;
 
     const body = await req.json();
     const { company, address, segment, category, website, phone, latitude, longitude } = body;

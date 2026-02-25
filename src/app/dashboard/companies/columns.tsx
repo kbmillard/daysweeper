@@ -1,6 +1,7 @@
 'use client';
 import type { Option } from '@/types/data-table';
 import { Badge } from '@/components/ui/badge';
+import { displayStatus } from '@/constants/company-status';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Column, ColumnDef } from '@tanstack/react-table';
 import { Text, Globe, MapPin } from 'lucide-react';
@@ -151,9 +152,10 @@ export function getColumns(options?: {
       ),
       cell: ({ cell }) => {
         const status = cell.getValue<Company['status']>();
-        return status ? (
+        const label = status ? displayStatus(status) : null;
+        return label ? (
           <Badge variant='outline' className='text-xs'>
-            {status}
+            {label}
           </Badge>
         ) : (
           <span className='text-muted-foreground'>—</span>
@@ -163,7 +165,7 @@ export function getColumns(options?: {
         label: 'Status',
         variant: 'select',
         options: [
-          { label: 'APR Account', value: 'APR Account' },
+          { label: 'Account', value: 'Account' },
           { label: 'Contacted - meeting set', value: 'Contacted - meeting set' },
           { label: 'Contacted - no answer', value: 'Contacted - no answer' },
           { label: 'Contacted - not interested', value: 'Contacted - not interested' }

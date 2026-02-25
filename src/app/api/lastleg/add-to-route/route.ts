@@ -2,22 +2,25 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * POST - Add a location (company + geocode) or a pin (lat/lng) to the current user's LastLeg route.
  * Body: { locationId, companyId } OR { latitude, longitude, label? }
  * Creates Target and RouteStop in daysweeper DB. LastLeg app fetches via GET /api/targets.
  */
+const SHARED_USER_ID = 'shared';
+
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth({
-      acceptsToken: ['session_token', 'oauth_token']
-    });
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'Please sign in to add stops to your LastLeg route.' },
-        { status: 401 }
-      );
-    }
+    const authResult = await Promise.race([
+      auth({ acceptsToken: ['session_token', 'oauth_token'] }).catch(() => null),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 3000))
+    ]);
+    const userId =
+      (authResult && 'userId' in authResult ? (authResult as { userId: string }).userId : null) ??
+      SHARED_USER_ID;
 
     const body = await req.json();
     const { locationId, companyId } = body;

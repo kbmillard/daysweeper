@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // DELETE - Remove an interaction (must belong to the company)
 export async function DELETE(
   _req: Request,

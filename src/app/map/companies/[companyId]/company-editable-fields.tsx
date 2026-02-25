@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { COMPANY_STATUSES } from '@/constants/company-status';
+import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
 import { toast } from 'sonner';
 
 export type CompanyEditableData = {
@@ -37,7 +37,7 @@ export default function CompanyEditableFields({ company }: Props) {
     website: company.website ?? '',
     phone: company.phone ?? '',
     email: company.email ?? '',
-    status: company.status ?? ''
+    status: displayStatus(company.status) ?? ''
   });
 
   const handleChange = (field: keyof typeof form, value: string) => {

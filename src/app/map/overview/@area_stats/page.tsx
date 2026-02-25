@@ -1,5 +1,5 @@
 import { CompanyAreaGraph } from '@/features/overview/components/company-area-graph';
-import { COMPANY_STATUSES } from '@/constants/company-status';
+import { COMPANY_STATUSES, normalizeStatus } from '@/constants/company-status';
 import { prisma } from '@/lib/prisma';
 
 function safeKey(status: string) {
@@ -33,11 +33,13 @@ export default async function AreaStats() {
 
   companies.forEach((company) => {
     if (!company.status) return;
+    const normalized = normalizeStatus(company.status);
+    if (!normalized) return;
     const date = new Date(company.createdAt);
     const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     const row = monthMap.get(monthKey);
     if (!row) return;
-    const key = safeKey(company.status);
+    const key = safeKey(normalized);
     if (key in row) row[key] = (row[key] as number) + 1;
   });
 

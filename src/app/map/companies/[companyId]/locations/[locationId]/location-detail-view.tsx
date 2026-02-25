@@ -62,6 +62,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           <AddToLastLegButton
             locationId={location.id}
             companyId={company.id}
+            companyName={company.name}
             addressRaw={location.addressRaw}
             latitude={lat}
             longitude={lng}

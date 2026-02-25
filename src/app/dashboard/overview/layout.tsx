@@ -111,7 +111,7 @@ export default async function OverViewLayout({
           </Card>
         </div>
 
-        {/* APR Account Growth line graph */}
+        {/* Account Growth line graph */}
         {area_stats != null && (
           <div className='grid grid-cols-1 gap-4'>
             {area_stats}

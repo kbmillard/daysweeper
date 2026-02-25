@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { toMapboxCoordinates } from '@/lib/geocode-address';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * GET - GeoJSON FeatureCollection of all locations with valid latitude/longitude for Mapbox.
  * Only includes coordinates that pass WGS84 validation so the map is accurate.

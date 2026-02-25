@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * GET - List locations with addressRaw for Apple geocoding (e.g. from LastLeg iOS app).
  * ?missingOnly=true returns only locations without latitude/longitude.

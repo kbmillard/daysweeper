@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * POST - Hide a KML dot at the given coordinates (so it no longer appears as a red pin).
  */

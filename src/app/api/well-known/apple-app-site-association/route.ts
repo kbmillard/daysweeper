@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * Apple App Site Association (AASA) for Universal Links / "Open in App" on iOS.
  * Served at /.well-known/apple-app-site-association via next.config rewrite.

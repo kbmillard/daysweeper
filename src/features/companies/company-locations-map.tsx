@@ -30,6 +30,8 @@ type Props = {
   basePath?: 'map' | 'dashboard';
   /** When set, map allows dropping a pin to add a new location for this company (syncs with main map). */
   companyId?: string | null;
+  /** When set, map centers on and zooms to this location first. */
+  primaryLocationId?: string | null;
 };
 
 function createCircleMarker(color: string, size: number): google.maps.Symbol {
@@ -47,7 +49,7 @@ type RedPin = { lat: number; lng: number };
 type LocationPoint = { lat: number; lng: number; address: string; locationId?: string; companyId?: string };
 type SelectedPin = { type: 'location'; data: LocationPoint } | { type: 'dot'; data: RedPin } | { type: 'draft'; data: { lat: number; lng: number } };
 
-export default function CompanyLocationsMap({ locations, companyName, basePath = 'map', companyId }: Props) {
+export default function CompanyLocationsMap({ locations, companyName, basePath = 'map', companyId, primaryLocationId }: Props) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
@@ -102,18 +104,27 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
     }
   }, [draftPin]);
 
-  const pointsWithCoords: LocationPoint[] = locations.flatMap((loc) => {
-    const lat = loc.latitude != null ? Number(loc.latitude) : null;
-    const lng = loc.longitude != null ? Number(loc.longitude) : null;
-    if (!isValidMapboxCoordinate(lat, lng)) return [];
-    return [{
-      lat: lat as number,
-      lng: lng as number,
-      address: loc.addressRaw || 'Location',
-      locationId: loc.id,
-      companyId: loc.companyId
-    }];
-  });
+  const pointsWithCoords: LocationPoint[] = locations
+    .flatMap((loc) => {
+      const lat = loc.latitude != null ? Number(loc.latitude) : null;
+      const lng = loc.longitude != null ? Number(loc.longitude) : null;
+      if (!isValidMapboxCoordinate(lat, lng)) return [];
+      return [{
+        lat: lat as number,
+        lng: lng as number,
+        address: loc.addressRaw || 'Location',
+        locationId: loc.id,
+        companyId: loc.companyId
+      }];
+    })
+    .sort((a, b) => {
+      // Primary location always first
+      if (primaryLocationId) {
+        if (a.locationId === primaryLocationId) return -1;
+        if (b.locationId === primaryLocationId) return 1;
+      }
+      return 0;
+    });
 
   const hasAnyCoords = pointsWithCoords.length > 0;
 
@@ -139,23 +150,18 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
       });
       if (!google || cancelled || !containerRef.current) return;
 
-      const total = pointsWithCoords.length + dotsPins.length;
+      // Center on primary location (first in sorted list), fall back to dots, then world view
       const [centerLat, centerLng] =
         pointsWithCoords.length > 0
           ? [pointsWithCoords[0].lat, pointsWithCoords[0].lng]
           : dotsPins.length > 0
             ? [dotsPins[0].lat, dotsPins[0].lng]
             : [DEFAULT_CENTER.lat, DEFAULT_CENTER.lng];
-      const zoom =
-        total === 0
-          ? DEFAULT_ZOOM_NO_POINTS
-          : total === 1
-            ? 17
-            : DEFAULT_ZOOM;
+      const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : 15;
 
       const map = new google.maps.Map(containerRef.current, {
         center: { lat: centerLat, lng: centerLng },
-        zoom,
+        zoom: initialZoom,
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         mapTypeControl: true,
         mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
@@ -191,13 +197,15 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
       });
       dotMarkersRef.current = dotMarkers;
 
-      if (total > 1) {
+      // Fit to company locations only (not global dots which could be worldwide).
+      // If there's a primary location, keep it centered at zoom 15; only fitBounds
+      // when there are multiple company locations and no primary is set.
+      if (pointsWithCoords.length > 1 && !primaryLocationId) {
         const bounds = new google.maps.LatLngBounds();
         pointsWithCoords.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
-        dotsPins.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
         map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
         const currentZoom = map.getZoom() ?? DEFAULT_ZOOM;
-        if (currentZoom < DEFAULT_ZOOM) map.setZoom(DEFAULT_ZOOM);
+        if (currentZoom > 15) map.setZoom(15);
       }
 
       if (canDropPin) {

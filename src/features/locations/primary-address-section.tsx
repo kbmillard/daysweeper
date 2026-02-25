@@ -34,6 +34,7 @@ export function PrimaryAddressSection({ primaryLocation, company, basePath }: Pr
             <AddToLastLegButton
               locationId={primaryLocation.id}
               companyId={company.id}
+              companyName={company.name}
               addressRaw={primaryLocation.addressRaw}
               latitude={primaryLocation.latitude != null ? Number(primaryLocation.latitude) : null}
               longitude={primaryLocation.longitude != null ? Number(primaryLocation.longitude) : null}

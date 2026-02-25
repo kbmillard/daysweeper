@@ -54,9 +54,12 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  // Status (APR Account, Contacted - meeting set, etc.)
+  // Status (Account, Contacted - meeting set, etc.; "Account" includes legacy "APR Account")
   if (statusFilter) {
-    where.status = { equals: statusFilter, mode: 'insensitive' as const };
+    where.status =
+      statusFilter === 'Account'
+        ? { in: ['Account', 'APR Account'], mode: 'insensitive' as const }
+        : { equals: statusFilter, mode: 'insensitive' as const };
   }
 
   // Build orderBy from sort parameter

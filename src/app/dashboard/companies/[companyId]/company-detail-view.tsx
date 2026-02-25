@@ -318,6 +318,7 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
       <CompanyLocationsMap
         basePath='dashboard'
         companyId={company.id}
+        primaryLocationId={company.primaryLocationId ?? company.Location?.[0]?.id ?? null}
         locations={[
           ...(company.Location ?? []).map((loc) => ({ ...loc, companyId: company.id })),
           ...(company.other_Company ?? []).flatMap((child) =>

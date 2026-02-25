@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // Bins are global: all authenticated users see and edit the same list. No org/user scoping.
 

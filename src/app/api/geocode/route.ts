@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { geocodeAddress } from '@/lib/geocode-server';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * POST - Geocode a single address (Nominatim then Mapbox).
  * Returns latitude, longitude, and parsed address components for form autofill.

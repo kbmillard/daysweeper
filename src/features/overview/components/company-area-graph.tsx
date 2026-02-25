@@ -67,7 +67,7 @@ export function CompanyAreaGraph({ data, categories }: CompanyAreaGraphProps) {
     return (
       <Card className='@container/card'>
         <CardHeader>
-          <CardTitle>APR Account Growth - Last 6 Months</CardTitle>
+          <CardTitle>Account Growth - Last 6 Months</CardTitle>
           <CardDescription>
             Leads added by company status
           </CardDescription>
@@ -82,7 +82,7 @@ export function CompanyAreaGraph({ data, categories }: CompanyAreaGraphProps) {
   return (
     <Card className='@container/card'>
       <CardHeader>
-        <CardTitle>APR Account Growth - Last 6 Months</CardTitle>
+        <CardTitle>Account Growth - Last 6 Months</CardTitle>
         <CardDescription>
           Leads added by company status (each line = one status)
         </CardDescription>
@@ -131,7 +131,7 @@ export function CompanyAreaGraph({ data, categories }: CompanyAreaGraphProps) {
               <IconTrendingUp className='h-4 w-4' />
             </div>
             <div className='text-muted-foreground flex items-center gap-2 leading-none'>
-              APR account growth by status over last 6 months
+              Account growth by status over last 6 months
             </div>
           </div>
         </div>

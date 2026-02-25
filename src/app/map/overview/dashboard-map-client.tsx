@@ -8,6 +8,15 @@ import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 
+function isMobileDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || navigator.maxTouchPoints > 0;
+}
+
+function openLastLegApp(): void {
+  setTimeout(() => { window.location.href = 'lastleg://'; }, 300);
+}
+
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM = 2;
 
@@ -54,31 +63,51 @@ export default function DashboardMapClient() {
   const [locationCount, setLocationCount] = useState<number | null>(null);
   const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
   const [selectedPin, setSelectedPin] = useState<{ type: 'location'; data: LocationPin } | { type: 'dot'; data: RedPin } | null>(null);
+  const [addingToLastLeg, setAddingToLastLeg] = useState(false);
 
   const handleAddToLastLeg = async () => {
-    if (!selectedPin) return;
+    if (!selectedPin || addingToLastLeg) return;
+    setAddingToLastLeg(true);
+    const controller = new AbortController();
+    const hardTimeout = setTimeout(() => {
+      controller.abort();
+      setAddingToLastLeg(false);
+      toast.error('Request timed out. Try again.');
+    }, 10000);
     try {
       const body =
         selectedPin.type === 'location'
           ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
           : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
+
       const res = await fetch('/api/lastleg/add-to-route', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
+        signal: controller.signal,
         body: JSON.stringify(body)
       });
+
       let data: { error?: string } = {};
-      try {
-        data = await res.json();
-      } catch {
-        data = { error: res.status === 401 ? 'Please sign in to add stops to your LastLeg route.' : `Server error (${res.status})` };
+      try { data = await res.json(); } catch {
+        data = { error: res.status === 401 ? 'Please sign in.' : `Server error (${res.status})` };
       }
       if (!res.ok) throw new Error(data.error ?? 'Failed');
-      toast.success('Added to LastLeg');
+
       setSelectedPin(null);
+      if (isMobileDevice()) {
+        toast.success('Added — opening LastLeg…');
+        openLastLegApp();
+      } else {
+        toast.success('Added to LastLeg. Pull to refresh in the app.');
+      }
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Failed');
+      if ((err as Error)?.name !== 'AbortError') {
+        toast.error(err instanceof Error ? err.message : 'Failed to add');
+      }
+    } finally {
+      clearTimeout(hardTimeout);
+      setAddingToLastLeg(false);
     }
   };
 
@@ -281,7 +310,9 @@ export default function DashboardMapClient() {
               {selectedPin.type === 'location' ? (selectedPin.data.addressRaw || 'Location') : `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`}
             </p>
             <div className="flex flex-wrap gap-2 items-center">
-              <Button size="sm" onClick={handleAddToLastLeg}>Add to LastLeg</Button>
+              <Button size="sm" onClick={handleAddToLastLeg} disabled={addingToLastLeg}>
+                {addingToLastLeg ? 'Adding…' : 'Add to LastLeg'}
+              </Button>
               <a href={googleEarthUrl(selectedPin.data.lat, selectedPin.data.lng)} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">Google Earth</a>
               {selectedPin.type === 'location' && (
                 <Link href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`} className="text-sm text-primary hover:underline">Location page</Link>

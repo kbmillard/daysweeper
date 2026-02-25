@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { COMPANY_STATUSES } from '@/constants/company-status';
+import { isValidStatus, normalizeStatus } from '@/constants/company-status';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET(
   _req: Request,
@@ -72,9 +75,9 @@ export async function PATCH(
     }
 
     if (status !== undefined && status !== null) {
-      if (typeof status !== 'string' || (status !== '' && !(COMPANY_STATUSES as readonly string[]).includes(status))) {
+      if (typeof status !== 'string' || (status !== '' && !isValidStatus(status))) {
         return NextResponse.json(
-          { error: 'Invalid status. Must be one of: ' + COMPANY_STATUSES.join(', ') },
+          { error: 'Invalid status. Use one of: Contacted - no answer, Contacted - not interested, Contacted - meeting set, Account' },
           { status: 400 }
         );
       }
@@ -133,7 +136,7 @@ export async function PATCH(
         ...(website !== undefined && { website: website === '' ? null : website?.trim() ?? null }),
         ...(phone !== undefined && { phone: phone === '' ? null : phone?.trim() ?? null }),
         ...(email !== undefined && { email: email === '' ? null : email?.trim() ?? null }),
-        ...(status !== undefined && { status: status === '' ? null : status }),
+        ...(status !== undefined && { status: status === '' ? null : normalizeStatus(status) }),
         ...(parentCompanyId !== undefined && {
           parentCompanyDbId: parentCompanyId === '' || parentCompanyId === null ? null : parentCompanyId
         }),

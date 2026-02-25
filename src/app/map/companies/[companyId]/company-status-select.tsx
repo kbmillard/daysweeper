@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { COMPANY_STATUSES } from '@/constants/company-status';
+import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
 import { toast } from 'sonner';
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default function CompanyStatusSelect({ companyId, currentStatus, onUpdate }: Props) {
-  const [status, setStatus] = useState<string | null>(currentStatus);
+  const [status, setStatus] = useState<string | null>(displayStatus(currentStatus));
   const [loading, setLoading] = useState(false);
 
   const handleChange = async (value: string) => {

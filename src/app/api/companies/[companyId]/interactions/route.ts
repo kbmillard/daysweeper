@@ -3,6 +3,9 @@ import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
 import { ensureCompanyInteractionTable } from '@/lib/ensure-company-interaction-table';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // GET - Fetch all interactions for a company
 export async function GET(
   req: Request,
