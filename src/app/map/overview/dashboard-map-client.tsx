@@ -153,6 +153,7 @@ export default function DashboardMapClient() {
     let cancelled = false;
 
     void (async () => {
+      try {
       let geojson: GeoJSONResponse = { type: 'FeatureCollection', features: [] };
       let dotsPins: RedPin[] = [];
       try {
@@ -270,6 +271,9 @@ export default function DashboardMapClient() {
           // ignore
         }
       });
+      } catch (err) {
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Map failed to load');
+      }
     })();
 
     return () => {

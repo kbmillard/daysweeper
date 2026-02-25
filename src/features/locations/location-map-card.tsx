@@ -87,6 +87,7 @@ export default function LocationMapCard({ latitude, longitude, address, location
     const initialZoom = hasCoords ? DEFAULT_ZOOM : DEFAULT_ZOOM_NO_COORDS;
 
     void (async () => {
+      try {
       // Fetch red dots
       let redDots: RedDot[] = [];
       try {
@@ -177,6 +178,9 @@ export default function LocationMapCard({ latitude, longitude, address, location
 
         mapRef.current = map;
         markerRef.current = marker;
+      } catch (err) {
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Map failed to load');
+      }
     })();
 
     return () => {

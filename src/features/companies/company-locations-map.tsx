@@ -176,19 +176,20 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
 
     void (async () => {
       try {
-        const res = await fetch('/api/dots-pins', { cache: 'no-store' });
-        const data = await res.json();
-        if (Array.isArray(data?.pins)) dotsPins = data.pins.map((p: { lat: number; lng: number }) => ({ lat: p.lat, lng: p.lng }));
-      } catch {
-        // keep empty
-      }
-      if (cancelled || !containerRef.current) return;
+        try {
+          const res = await fetch('/api/dots-pins', { cache: 'no-store' });
+          const data = await res.json();
+          if (Array.isArray(data?.pins)) dotsPins = data.pins.map((p: { lat: number; lng: number }) => ({ lat: p.lat, lng: p.lng }));
+        } catch {
+          // keep empty
+        }
+        if (cancelled || !containerRef.current) return;
 
-      const google = await loadGoogleMaps().catch(() => {
-        if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
-        return null;
-      });
-      if (!google || cancelled || !containerRef.current) return;
+        const google = await loadGoogleMaps().catch(() => {
+          if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
+          return null;
+        });
+        if (!google || cancelled || !containerRef.current) return;
 
       // Center on primary location (first in sorted list), fall back to dots, then world view
       const [centerLat, centerLng] =
@@ -281,7 +282,10 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
         });
       }
 
-      mapRef.current = map;
+        mapRef.current = map;
+      } catch (err) {
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Map failed to load');
+      }
     })();
 
     return () => {
