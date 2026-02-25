@@ -237,15 +237,17 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
       });
       dotMarkersRef.current = dotMarkers;
 
-      // Fit to company locations only (not global dots which could be worldwide).
-      // If there's a primary location, keep it centered at zoom 15; only fitBounds
-      // when there are multiple company locations and no primary is set.
-      if (pointsWithCoords.length > 1 && !primaryLocationId) {
+      // Always fit all blue location pins in view when there are multiple.
+      // Single pin: stay at zoom 17 centered on that pin.
+      if (pointsWithCoords.length > 1) {
         const bounds = new google.maps.LatLngBounds();
         pointsWithCoords.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
-        map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
-        const currentZoom = map.getZoom() ?? DEFAULT_ZOOM;
-        if (currentZoom > 15) map.setZoom(15);
+        map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
+        // After fitBounds resolves, cap zoom so we don't zoom in too tight
+        google.maps.event.addListenerOnce(map, 'idle', () => {
+          const z = map.getZoom() ?? DEFAULT_ZOOM;
+          if (z > 17) map.setZoom(17);
+        });
       }
 
       if (canDropPin) {
