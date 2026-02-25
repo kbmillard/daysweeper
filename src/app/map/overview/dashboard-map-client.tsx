@@ -36,7 +36,7 @@ type LocationNeedingGeocode = { id: string; companyId: string; addressRaw: strin
 
 function createDot(color: string, size: number): google.maps.Symbol {
   return {
-    path: google.maps.SymbolPath.CIRCLE,
+    path: 0 as google.maps.SymbolPath, // 0 = google.maps.SymbolPath.CIRCLE, avoid referencing google at module init time
     scale: size,
     fillColor: color,
     fillOpacity: 1,
@@ -165,8 +165,12 @@ function DashboardMapClientInner() {
     let cancelled = false;
 
     const cleanupListeners = () => {
-      listenersRef.current.forEach((l) => { try { google.maps.event.removeListener(l); } catch { /* ignore */ } });
-      listenersRef.current = [];
+      try {
+        listenersRef.current.forEach((l) => {
+          try { (window as { google?: { maps?: { event?: { removeListener?: (l: unknown) => void } } } }).google?.maps?.event?.removeListener?.(l); } catch { /* ignore */ }
+        });
+        listenersRef.current = [];
+      } catch { /* ignore */ }
     };
 
     void (async () => {
@@ -283,23 +287,22 @@ function DashboardMapClientInner() {
           } catch { /* ignore */ }
         };
 
-        // fitBounds
+        // fitBounds on BLUE LOCATION PINS ONLY — red dots are cosmetic, never affect viewport
         try {
-          const total = geojson.features.length + dotsPins.length;
-          if (total > 1) {
+          const blueCount = geojson.features.length;
+          if (blueCount > 1) {
             const bounds = new google.maps.LatLngBounds();
             geojson.features.forEach((f) => {
               const la = safeNum(f.geometry.coordinates[1]);
               const lo = safeNum(f.geometry.coordinates[0]);
               if (la != null && lo != null) bounds.extend({ lat: la, lng: lo });
             });
-            dotsPins.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
             map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
-          } else if (total === 1) {
-            const c = geojson.features[0]
-              ? { lat: safeNum(geojson.features[0].geometry.coordinates[1]) ?? DEFAULT_CENTER.lat, lng: safeNum(geojson.features[0].geometry.coordinates[0]) ?? DEFAULT_CENTER.lng }
-              : { lat: dotsPins[0]!.lat, lng: dotsPins[0]!.lng };
-            map.setCenter(c);
+          } else if (blueCount === 1) {
+            const f = geojson.features[0]!;
+            const la = safeNum(f.geometry.coordinates[1]) ?? DEFAULT_CENTER.lat;
+            const lo = safeNum(f.geometry.coordinates[0]) ?? DEFAULT_CENTER.lng;
+            map.setCenter({ lat: la, lng: lo });
             map.setZoom(8);
           }
         } catch { /* ignore fitBounds failure */ }

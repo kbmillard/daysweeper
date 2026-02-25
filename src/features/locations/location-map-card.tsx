@@ -24,7 +24,7 @@ function safeNum(v: unknown): number | null {
 }
 function createDot(color: string, size: number): google.maps.Symbol {
   return {
-    path: google.maps.SymbolPath.CIRCLE,
+    path: 0 as google.maps.SymbolPath, // 0 = google.maps.SymbolPath.CIRCLE, avoid referencing google at module init time
     scale: size,
     fillColor: color,
     fillOpacity: 1,
