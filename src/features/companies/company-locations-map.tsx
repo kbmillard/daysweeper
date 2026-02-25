@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { Component, useEffect, useRef, useState } from 'react';
+import type { ErrorInfo, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,14 +17,56 @@ const DEFAULT_ZOOM = 15;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_POINTS = 3;
 
-function isMobileDevice(): boolean {
+function isMobile(): boolean {
   if (typeof navigator === 'undefined') return false;
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || navigator.maxTouchPoints > 0;
 }
 function openLastLegApp(): void {
-  setTimeout(() => { window.location.href = 'lastleg://'; }, 300);
+  try { setTimeout(() => { window.location.href = 'lastleg://'; }, 300); } catch { /* ignore */ }
+}
+function safeNum(v: unknown): number | null {
+  const n = Number(v);
+  return v != null && !Number.isNaN(n) && Number.isFinite(n) ? n : null;
+}
+function safeCoord(lat: unknown, lng: unknown): { lat: number; lng: number } | null {
+  const la = safeNum(lat);
+  const lo = safeNum(lng);
+  if (la == null || lo == null) return null;
+  if (!isValidMapboxCoordinate(la, lo)) return null;
+  return { lat: la, lng: lo };
+}
+function createDot(color: string, size: number): google.maps.Symbol {
+  return {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: size,
+    fillColor: color,
+    fillOpacity: 1,
+    strokeColor: '#fff',
+    strokeWeight: 1,
+  };
 }
 
+// ── Error boundary ───────────────────────────────────────────────────────────
+class MapErrorBoundary extends Component<{ children: ReactNode }, { caught: string | null }> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { caught: null };
+  }
+  static getDerivedStateFromError(e: Error) { return { caught: e?.message ?? 'Map error' }; }
+  componentDidCatch(e: Error, i: ErrorInfo) { console.error('[CompanyLocationsMap]', e, i); }
+  render() {
+    if (this.state.caught) {
+      return (
+        <div className='flex min-h-[280px] items-center justify-center rounded-lg border border-dashed bg-muted/30 text-muted-foreground text-sm px-4 text-center'>
+          Map unavailable — {this.state.caught}
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+// ── Types ────────────────────────────────────────────────────────────────────
 type LocationWithCoords = {
   id?: string;
   companyId?: string;
@@ -31,39 +74,29 @@ type LocationWithCoords = {
   latitude?: number | null | unknown;
   longitude?: number | null | unknown;
 };
-
 type Props = {
   locations: LocationWithCoords[];
   companyName?: string;
   basePath?: 'map' | 'dashboard';
-  /** When set, map allows dropping a pin to add a new location for this company (syncs with main map). */
   companyId?: string | null;
-  /** When set, map centers on and zooms to this location first. */
   primaryLocationId?: string | null;
 };
-
-function createCircleMarker(color: string, size: number): google.maps.Symbol {
-  return {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: size,
-    fillColor: color,
-    fillOpacity: 1,
-    strokeColor: '#fff',
-    strokeWeight: 1
-  };
-}
-
 type RedPin = { lat: number; lng: number };
 type LocationPoint = { lat: number; lng: number; address: string; locationId?: string; companyId?: string };
-type SelectedPin = { type: 'location'; data: LocationPoint } | { type: 'dot'; data: RedPin } | { type: 'draft'; data: { lat: number; lng: number } };
+type SelectedPin =
+  | { type: 'location'; data: LocationPoint }
+  | { type: 'dot'; data: RedPin }
+  | { type: 'draft'; data: { lat: number; lng: number } };
 
-export default function CompanyLocationsMap({ locations, companyName, basePath = 'map', companyId, primaryLocationId }: Props) {
+// ── Inner map component ──────────────────────────────────────────────────────
+function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', companyId, primaryLocationId }: Props) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const locationMarkersRef = useRef<google.maps.Marker[]>([]);
   const dotMarkersRef = useRef<google.maps.Marker[]>([]);
   const draftMarkerRef = useRef<google.maps.Marker | null>(null);
+  const listenersRef = useRef<google.maps.MapsEventListener[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [selectedPin, setSelectedPin] = useState<SelectedPin | null>(null);
   const [draftPin, setDraftPin] = useState<{ lat: number; lng: number } | null>(null);
@@ -83,18 +116,14 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
       let data: { error?: string } = {};
-      try { data = await res.json(); } catch { data = {}; }
+      try { data = await res.json(); } catch { /* ignore */ }
       if (!res.ok) throw new Error(data.error ?? 'Failed');
       setSelectedPin(null);
-      if (isMobileDevice()) {
-        toast.success('Added — opening LastLeg…');
-        openLastLegApp();
-      } else {
-        toast.success('Added to LastLeg. Pull to refresh in the app.');
-      }
+      if (isMobile()) { toast.success('Added — opening LastLeg…'); openLastLegApp(); }
+      else toast.success('Added to LastLeg. Pull to refresh in the app.');
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Failed to add');
     } finally {
@@ -110,14 +139,11 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
       const res = await fetch(`/api/companies/${companyId}/locations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          addressRaw,
-          latitude: draftPin.lat,
-          longitude: draftPin.lng
-        })
+        body: JSON.stringify({ addressRaw, latitude: draftPin.lat, longitude: draftPin.lng }),
       });
       if (!res.ok) {
-        const d = await res.json();
+        let d: { error?: string } = {};
+        try { d = await res.json(); } catch { /* ignore */ }
         throw new Error(d?.error ?? 'Failed to add location');
       }
       notifyLocationsMapUpdate();
@@ -133,32 +159,24 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
   };
 
   useEffect(() => {
-    const unsub = subscribeToLocationsMapUpdate(() => router.refresh());
-    return unsub;
+    try { return subscribeToLocationsMapUpdate(() => { try { router.refresh(); } catch { /* ignore */ } }); }
+    catch { return undefined; }
   }, [router]);
 
   useEffect(() => {
     if (draftPin === null) {
-      draftMarkerRef.current?.setMap(null);
+      try { draftMarkerRef.current?.setMap(null); } catch { /* ignore */ }
       draftMarkerRef.current = null;
     }
   }, [draftPin]);
 
   const pointsWithCoords: LocationPoint[] = locations
     .flatMap((loc) => {
-      const lat = loc.latitude != null ? Number(loc.latitude) : null;
-      const lng = loc.longitude != null ? Number(loc.longitude) : null;
-      if (!isValidMapboxCoordinate(lat, lng)) return [];
-      return [{
-        lat: lat as number,
-        lng: lng as number,
-        address: loc.addressRaw || 'Location',
-        locationId: loc.id,
-        companyId: loc.companyId
-      }];
+      const c = safeCoord(loc.latitude, loc.longitude);
+      if (!c) return [];
+      return [{ lat: c.lat, lng: c.lng, address: loc.addressRaw || 'Location', locationId: loc.id, companyId: loc.companyId }];
     })
     .sort((a, b) => {
-      // Primary location always first
       if (primaryLocationId) {
         if (a.locationId === primaryLocationId) return -1;
         if (b.locationId === primaryLocationId) return 1;
@@ -172,115 +190,116 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
     if (!containerRef.current) return;
 
     let cancelled = false;
-    let dotsPins: RedPin[] = [];
+    const cleanupListeners = () => {
+      listenersRef.current.forEach((l) => { try { google.maps.event.removeListener(l); } catch { /* ignore */ } });
+      listenersRef.current = [];
+    };
 
     void (async () => {
       try {
+        let dotsPins: RedPin[] = [];
         try {
           const res = await fetch('/api/dots-pins', { cache: 'no-store' });
-          const data = await res.json();
-          if (Array.isArray(data?.pins)) dotsPins = data.pins.map((p: { lat: number; lng: number }) => ({ lat: p.lat, lng: p.lng }));
-        } catch {
-          // keep empty
-        }
+          const data = await res.json() as { pins?: unknown[] };
+          if (Array.isArray(data?.pins)) {
+            dotsPins = data.pins.flatMap((p) => {
+              if (typeof p !== 'object' || p === null) return [];
+              const pp = p as Record<string, unknown>;
+              const c = safeCoord(pp.lat, pp.lng);
+              return c ? [c] : [];
+            });
+          }
+        } catch { /* keep empty */ }
+
         if (cancelled || !containerRef.current) return;
 
-        const google = await loadGoogleMaps().catch(() => {
+        const google = await loadGoogleMaps().catch(() => null);
+        if (!google || cancelled || !containerRef.current) {
           if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
-          return null;
-        });
-        if (!google || cancelled || !containerRef.current) return;
+          return;
+        }
 
-      // Center on primary location (first in sorted list), fall back to dots, then world view
-      const [centerLat, centerLng] =
-        pointsWithCoords.length > 0
-          ? [pointsWithCoords[0].lat, pointsWithCoords[0].lng]
-          : dotsPins.length > 0
-            ? [dotsPins[0].lat, dotsPins[0].lng]
-            : [DEFAULT_CENTER.lat, DEFAULT_CENTER.lng];
+        const firstPoint = pointsWithCoords[0] ?? null;
+        const firstDot = dotsPins[0] ?? null;
+        const center = firstPoint ?? firstDot ?? DEFAULT_CENTER;
+        const singleLocation = pointsWithCoords.length === 1;
+        const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : singleLocation ? 19 : DEFAULT_ZOOM;
 
-      const singleLocation = pointsWithCoords.length === 1;
-      // Tilt requires zoom >= 18 on satellite; start there for single pins
-      const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : singleLocation ? 19 : 15;
+        const map = new google.maps.Map(containerRef.current, {
+          center,
+          zoom: initialZoom,
+          tilt: 0,
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+          mapTypeControl: true,
+          mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
+          gestureHandling: 'cooperative',
+        });
 
-      const map = new google.maps.Map(containerRef.current, {
-        center: { lat: centerLat, lng: centerLng },
-        zoom: initialZoom,
-        tilt: 0,
-        mapTypeId: google.maps.MapTypeId.SATELLITE,
-        mapTypeControl: true,
-        mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
-      });
+        // 45° tilt for single location after idle
+        if (singleLocation) {
+          listenersRef.current.push(
+            google.maps.event.addListenerOnce(map, 'idle', () => {
+              try { map.setTilt(45); } catch { /* ignore */ }
+            })
+          );
+        }
 
-      // Apply 45° tilt after map is idle so Google has loaded tiles at the right zoom
-      if (singleLocation) {
-        google.maps.event.addListenerOnce(map, 'idle', () => {
-          map.setTilt(45);
+        // Blue location markers
+        const locationMarkers: google.maps.Marker[] = [];
+        pointsWithCoords.forEach((p) => {
+          try {
+            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#0ea5e9', 6), zIndex: 2 });
+            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'location', data: p }); } catch { /* ignore */ } }));
+            locationMarkers.push(m);
+          } catch { /* skip bad marker */ }
         });
-      }
+        locationMarkersRef.current = locationMarkers;
 
-      const locationMarkers: google.maps.Marker[] = [];
-      pointsWithCoords.forEach((p) => {
-        const m = new google.maps.Marker({
-          map,
-          position: { lat: p.lat, lng: p.lng },
-          icon: createCircleMarker('#0ea5e9', 6),
-          zIndex: 2
+        // Red dot markers
+        const dotMarkers: google.maps.Marker[] = [];
+        dotsPins.forEach((p) => {
+          try {
+            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#dc2626', 5), zIndex: 1 });
+            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'dot', data: p }); } catch { /* ignore */ } }));
+            dotMarkers.push(m);
+          } catch { /* skip bad marker */ }
         });
-        m.addListener('click', () => {
-          setSelectedPin({ type: 'location', data: p });
-        });
-        locationMarkers.push(m);
-      });
-      locationMarkersRef.current = locationMarkers;
+        dotMarkersRef.current = dotMarkers;
 
-      const dotMarkers: google.maps.Marker[] = [];
-      dotsPins.forEach((p) => {
-        const m = new google.maps.Marker({
-          map,
-          position: { lat: p.lat, lng: p.lng },
-          icon: createCircleMarker('#dc2626', 5),
-          zIndex: 1
-        });
-        m.addListener('click', () => {
-          setSelectedPin({ type: 'dot', data: p });
-        });
-        dotMarkers.push(m);
-      });
-      dotMarkersRef.current = dotMarkers;
+        // fitBounds for multiple locations
+        if (pointsWithCoords.length > 1) {
+          try {
+            const bounds = new google.maps.LatLngBounds();
+            pointsWithCoords.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
+            map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
+            listenersRef.current.push(
+              google.maps.event.addListenerOnce(map, 'idle', () => {
+                try { const z = map.getZoom() ?? DEFAULT_ZOOM; if (z > 17) map.setZoom(17); } catch { /* ignore */ }
+              })
+            );
+          } catch { /* ignore fitBounds failure */ }
+        }
 
-      // Always fit all blue location pins in view when there are multiple.
-      // Single pin: stay at zoom 17 centered on that pin.
-      if (pointsWithCoords.length > 1) {
-        const bounds = new google.maps.LatLngBounds();
-        pointsWithCoords.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
-        map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
-        // After fitBounds resolves, cap zoom so we don't zoom in too tight
-        google.maps.event.addListenerOnce(map, 'idle', () => {
-          const z = map.getZoom() ?? DEFAULT_ZOOM;
-          if (z > 17) map.setZoom(17);
-        });
-      }
-
-      if (canDropPin) {
-        map.addListener('click', (e: google.maps.MapMouseEvent) => {
-          const pos = e.latLng;
-          if (!pos) return;
-          const lat = pos.lat();
-          const lng = pos.lng();
-          draftMarkerRef.current?.setMap(null);
-          draftMarkerRef.current = null;
-          const m = new google.maps.Marker({
-            map,
-            position: { lat, lng },
-            icon: createCircleMarker('#0ea5e9', 6),
-            zIndex: 3
-          });
-          draftMarkerRef.current = m;
-          setDraftPin({ lat, lng });
-          setSelectedPin({ type: 'draft', data: { lat, lng } });
-        });
-      }
+        // Drop-pin click handler
+        if (canDropPin) {
+          listenersRef.current.push(
+            map.addListener('click', (e: google.maps.MapMouseEvent) => {
+              try {
+                const pos = e.latLng;
+                if (!pos) return;
+                const lat = pos.lat();
+                const lng = pos.lng();
+                if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+                try { draftMarkerRef.current?.setMap(null); } catch { /* ignore */ }
+                draftMarkerRef.current = null;
+                const m = new google.maps.Marker({ map, position: { lat, lng }, icon: createDot('#0ea5e9', 6), zIndex: 3 });
+                draftMarkerRef.current = m;
+                setDraftPin({ lat, lng });
+                setSelectedPin({ type: 'draft', data: { lat, lng } });
+              } catch { /* ignore click handler error */ }
+            })
+          );
+        }
 
         mapRef.current = map;
       } catch (err) {
@@ -290,11 +309,12 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
 
     return () => {
       cancelled = true;
-      draftMarkerRef.current?.setMap(null);
+      cleanupListeners();
+      try { draftMarkerRef.current?.setMap(null); } catch { /* ignore */ }
       draftMarkerRef.current = null;
-      locationMarkersRef.current.forEach((m) => m.setMap(null));
+      locationMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       locationMarkersRef.current = [];
-      dotMarkersRef.current.forEach((m) => m.setMap(null));
+      dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       dotMarkersRef.current = [];
       mapRef.current = null;
     };
@@ -320,7 +340,7 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
       </CardHeader>
       <CardContent>
         {error ? (
-          <div className='flex min-h-[280px] items-center justify-center rounded-lg border border-dashed bg-muted/30 text-muted-foreground text-sm'>
+          <div className='flex min-h-[280px] items-center justify-center rounded-lg border border-dashed bg-muted/30 text-muted-foreground text-sm px-4 text-center'>
             {error}
           </div>
         ) : (
@@ -360,19 +380,16 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
                         </Button>
                       </>
                     )}
-                    <Button variant='ghost' size='sm' onClick={() => { setSelectedPin(null); if (selectedPin.type === 'draft') setDraftPin(null); }}>Close</Button>
+                    <Button variant='ghost' size='sm' onClick={() => { setSelectedPin(null); if (selectedPin.type === 'draft') setDraftPin(null); }}>
+                      Close
+                    </Button>
                   </div>
                 </div>
               )}
             </div>
             {pointsWithCoords.length > 0 && (
               <div className='rounded-lg border bg-background p-3 shadow-sm'>
-                <a
-                  href={googleEarthUrl(pointsWithCoords[0].lat, pointsWithCoords[0].lng)}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-sm text-primary hover:underline'
-                >
+                <a href={googleEarthUrl(pointsWithCoords[0].lat, pointsWithCoords[0].lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
                   Open in Google Earth{pointsWithCoords.length > 1 ? ' (first location)' : ''}
                 </a>
               </div>
@@ -381,5 +398,13 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
         )}
       </CardContent>
     </Card>
+  );
+}
+
+export default function CompanyLocationsMap(props: Props) {
+  return (
+    <MapErrorBoundary>
+      <CompanyLocationsMapInner {...props} />
+    </MapErrorBoundary>
   );
 }
