@@ -158,7 +158,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           mapTypeId: google.maps.MapTypeId.SATELLITE,
           mapTypeControl: true,
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
-          gestureHandling: 'cooperative',
+          gestureHandling: 'greedy',
         });
 
         // Apply 45° tilt after idle

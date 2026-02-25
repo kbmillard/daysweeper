@@ -241,7 +241,7 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
           mapTypeId: google.maps.MapTypeId.SATELLITE,
           mapTypeControl: true,
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
-          gestureHandling: 'cooperative',
+          gestureHandling: 'greedy',
         });
 
         // 45° tilt for single location after idle
