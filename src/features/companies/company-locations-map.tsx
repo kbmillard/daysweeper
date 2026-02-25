@@ -199,9 +199,12 @@ export default function CompanyLocationsMap({ locations, companyName, basePath =
             : [DEFAULT_CENTER.lat, DEFAULT_CENTER.lng];
       const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : 15;
 
+      const singleLocation = pointsWithCoords.length === 1;
+
       const map = new google.maps.Map(containerRef.current, {
         center: { lat: centerLat, lng: centerLng },
         zoom: initialZoom,
+        tilt: singleLocation ? 45 : 0,
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         mapTypeControl: true,
         mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
