@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? '';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`;
 
 type SnapshotData = {
   legalName: string;
@@ -78,24 +78,26 @@ export async function POST(req: NextRequest) {
 
     // --- Gemini call ---
     const locationContext = address ? ` located at ${address}` : '';
-    const prompt = `You are a B2B sales intelligence assistant. Given the company name and location, return a JSON object with these exact fields:
-- legalName: the company's proper legal/trade name (string)
-- industry: the primary industry or product category, concise (string, ≤5 words)
-- employees: estimated headcount at this facility as an integer (use 0 if unknown)
-- siteFunction: what this specific site does, e.g. "Manufacturing Plant", "Distribution Center", "HQ & R&D" (string)
-- summary: 1-2 sentence plain-English summary of what this company/facility does, written for a sales rep visiting the site (string)
-- contactPhone: main phone number if you know it with confidence, otherwise null
+    const prompt = `You are a B2B sales intelligence assistant. Fill in this JSON for the company below. Return ONLY the raw JSON object, no markdown, no code fences, no explanation.
 
-Company: ${name.trim()}${locationContext}
+{"legalName":"...","industry":"...","employees":0,"siteFunction":"...","summary":"...","contactPhone":null}
 
-Respond ONLY with valid JSON, no markdown, no explanation.`;
+Fields:
+- legalName: proper legal/trade name
+- industry: primary industry, 5 words max
+- employees: integer headcount estimate (0 if unknown)
+- siteFunction: what this site does, e.g. "Manufacturing Plant" (6 words max)
+- summary: 1-2 sentences for a sales rep visiting this site
+- contactPhone: phone number string if known, otherwise null
+
+Company: ${name.trim()}${locationContext}`;
 
     const geminiRes = await fetch(GEMINI_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.2, maxOutputTokens: 1024 }
+        generationConfig: { temperature: 0.1, maxOutputTokens: 512 }
       })
     });
 
@@ -122,10 +124,20 @@ Respond ONLY with valid JSON, no markdown, no explanation.`;
       return NextResponse.json({ ok: false, error: 'enrichment_failed' }, { status: 422 });
     }
 
+    // Parse employees — handle integer, float, or string ranges like "10-50" or "50+"
+    const rawEmployees = parsed.employees as number | string | undefined;
+    let employees = 0;
+    if (typeof rawEmployees === 'number') {
+      employees = Math.max(0, Math.round(rawEmployees));
+    } else if (typeof rawEmployees === 'string') {
+      const match = rawEmployees.match(/\d+/);
+      if (match) employees = parseInt(match[0], 10);
+    }
+
     const data: SnapshotData = {
       legalName: typeof parsed.legalName === 'string' ? parsed.legalName : name.trim(),
       industry: typeof parsed.industry === 'string' ? parsed.industry : 'Unknown',
-      employees: typeof parsed.employees === 'number' ? Math.max(0, Math.round(parsed.employees)) : 0,
+      employees,
       siteFunction: typeof parsed.siteFunction === 'string' ? parsed.siteFunction : 'Facility',
       summary: typeof parsed.summary === 'string' ? parsed.summary : '',
       contactPhone:
@@ -147,12 +159,12 @@ Respond ONLY with valid JSON, no markdown, no explanation.`;
               id: `enr_${targetId}`,
               targetId,
               enrichedJson: { snapshot: data },
-              model: 'gemini-2.5-flash',
+              model: 'gemini-2.5-flash-lite',
               updatedAt: new Date()
             },
             update: {
               enrichedJson: { snapshot: data },
-              model: 'gemini-2.5-flash',
+              model: 'gemini-2.5-flash-lite',
               updatedAt: new Date()
             }
           });
