@@ -15,13 +15,7 @@ const DEFAULT_ZOOM = 19;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_COORDS = 4;
 
-type Props = {
-  latitude: number | null;
-  longitude: number | null;
-  address?: string | null;
-  /** When set, map allows dropping/moving a pin and saving to this location (syncs with main map). */
-  locationId?: string | null;
-};
+type RedDot = { lat: number; lng: number };
 
 function createCircleMarker(color: string, size: number): google.maps.Symbol {
   return {
@@ -33,6 +27,14 @@ function createCircleMarker(color: string, size: number): google.maps.Symbol {
     strokeWeight: 1
   };
 }
+
+type Props = {
+  latitude: number | null;
+  longitude: number | null;
+  address?: string | null;
+  /** When set, map allows dropping/moving a pin and saving to this location (syncs with main map). */
+  locationId?: string | null;
+};
 
 export default function LocationMapCard({ latitude, longitude, address, locationId }: Props) {
   const router = useRouter();
@@ -84,21 +86,47 @@ export default function LocationMapCard({ latitude, longitude, address, location
     const initialCenter = savedLat != null && savedLng != null ? { lat: savedLat, lng: savedLng } : DEFAULT_CENTER;
     const initialZoom = hasCoords ? DEFAULT_ZOOM : DEFAULT_ZOOM_NO_COORDS;
 
-    void loadGoogleMaps()
-      .catch(() => {
+    void (async () => {
+      // Fetch red dots
+      let redDots: RedDot[] = [];
+      try {
+        const res = await fetch('/api/dots-pins', { cache: 'no-store' });
+        const data = await res.json();
+        if (Array.isArray(data?.pins)) redDots = data.pins.map((p: { lat: number; lng: number }) => ({ lat: p.lat, lng: p.lng }));
+      } catch { /* keep empty */ }
+      if (cancelled || !containerRef.current) return;
+
+      const google = await loadGoogleMaps().catch(() => {
         if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
         return null;
-      })
-      .then((google) => {
-        if (!google || cancelled || !containerRef.current) return;
+      });
+      if (!google || cancelled || !containerRef.current) return;
 
-        const map = new google.maps.Map(containerRef.current, {
-          center: initialCenter,
-          zoom: initialZoom,
-          mapTypeId: google.maps.MapTypeId.SATELLITE,
-          mapTypeControl: true,
-          mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
+      const map = new google.maps.Map(containerRef.current, {
+        center: initialCenter,
+        zoom: initialZoom,
+        tilt: hasCoords ? 45 : 0,
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        mapTypeControl: true,
+        mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
+      });
+
+      // Apply tilt after tiles load
+      if (hasCoords) {
+        google.maps.event.addListenerOnce(map, 'idle', () => {
+          map.setTilt(45);
         });
+      }
+
+      // Red dots
+      redDots.forEach((p) => {
+        new google.maps.Marker({
+          map,
+          position: { lat: p.lat, lng: p.lng },
+          icon: createCircleMarker('#dc2626', 5),
+          zIndex: 1
+        });
+      });
 
         const pinPos = lat != null && lng != null ? { lat, lng } : null;
         const marker = pinPos
@@ -149,7 +177,7 @@ export default function LocationMapCard({ latitude, longitude, address, location
 
         mapRef.current = map;
         markerRef.current = marker;
-      });
+    })();
 
     return () => {
       cancelled = true;
