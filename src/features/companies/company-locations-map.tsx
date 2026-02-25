@@ -191,39 +191,48 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
 
     let cancelled = false;
     const cleanupListeners = () => {
-      listenersRef.current.forEach((l) => { try { google.maps.event.removeListener(l); } catch { /* ignore */ } });
-      listenersRef.current = [];
+      try {
+        listenersRef.current.forEach((l) => {
+          try { (window as { google?: { maps?: { event?: { removeListener?: (l: unknown) => void } } } }).google?.maps?.event?.removeListener?.(l); } catch { /* ignore */ }
+        });
+        listenersRef.current = [];
+      } catch { /* ignore */ }
     };
 
     void (async () => {
       try {
-        let dotsPins: RedPin[] = [];
-        try {
-          const res = await fetch('/api/dots-pins', { cache: 'no-store' });
-          const data = await res.json() as { pins?: unknown[] };
-          if (Array.isArray(data?.pins)) {
-            dotsPins = data.pins.flatMap((p) => {
-              if (typeof p !== 'object' || p === null) return [];
-              const pp = p as Record<string, unknown>;
-              const c = safeCoord(pp.lat, pp.lng);
-              return c ? [c] : [];
-            });
-          }
-        } catch { /* keep empty */ }
+        // Load Google Maps and red dots in parallel.
+        // Red dots NEVER affect zoom/center — blue pins own the viewport.
+        const [google, dotsData] = await Promise.all([
+          loadGoogleMaps().catch(() => null),
+          fetch('/api/dots-pins', { cache: 'no-store' })
+            .then((r) => r.json() as Promise<{ pins?: unknown[] }>)
+            .catch(() => ({ pins: [] as unknown[] }))
+        ]);
 
-        if (cancelled || !containerRef.current) return;
-
-        const google = await loadGoogleMaps().catch(() => null);
         if (!google || cancelled || !containerRef.current) {
           if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
           return;
         }
 
-        const firstPoint = pointsWithCoords[0] ?? null;
-        const firstDot = dotsPins[0] ?? null;
-        const center = firstPoint ?? firstDot ?? DEFAULT_CENTER;
+        // Parse red dots — safe, never used for viewport
+        const redDots: RedPin[] = [];
+        if (Array.isArray(dotsData?.pins)) {
+          for (const p of dotsData.pins) {
+            if (typeof p !== 'object' || p === null) continue;
+            const pp = p as Record<string, unknown>;
+            const c = safeCoord(pp.lat, pp.lng);
+            if (c) redDots.push(c);
+          }
+        }
+
+        // Blue pins control center & zoom — red dots are cosmetic only
+        const firstBlue = pointsWithCoords[0] ?? null;
+        const center = firstBlue ?? DEFAULT_CENTER;
         const singleLocation = pointsWithCoords.length === 1;
-        const initialZoom = pointsWithCoords.length === 0 ? DEFAULT_ZOOM_NO_POINTS : singleLocation ? 19 : DEFAULT_ZOOM;
+        const initialZoom = pointsWithCoords.length === 0
+          ? DEFAULT_ZOOM_NO_POINTS
+          : singleLocation ? 19 : DEFAULT_ZOOM;
 
         const map = new google.maps.Map(containerRef.current, {
           center,
@@ -244,29 +253,7 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
           );
         }
 
-        // Blue location markers
-        const locationMarkers: google.maps.Marker[] = [];
-        pointsWithCoords.forEach((p) => {
-          try {
-            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#0ea5e9', 6), zIndex: 2 });
-            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'location', data: p }); } catch { /* ignore */ } }));
-            locationMarkers.push(m);
-          } catch { /* skip bad marker */ }
-        });
-        locationMarkersRef.current = locationMarkers;
-
-        // Red dot markers
-        const dotMarkers: google.maps.Marker[] = [];
-        dotsPins.forEach((p) => {
-          try {
-            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#dc2626', 5), zIndex: 1 });
-            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'dot', data: p }); } catch { /* ignore */ } }));
-            dotMarkers.push(m);
-          } catch { /* skip bad marker */ }
-        });
-        dotMarkersRef.current = dotMarkers;
-
-        // fitBounds for multiple locations
+        // fitBounds on BLUE PINS ONLY — never red dots
         if (pointsWithCoords.length > 1) {
           try {
             const bounds = new google.maps.LatLngBounds();
@@ -277,8 +264,30 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
                 try { const z = map.getZoom() ?? DEFAULT_ZOOM; if (z > 17) map.setZoom(17); } catch { /* ignore */ }
               })
             );
-          } catch { /* ignore fitBounds failure */ }
+          } catch { /* ignore */ }
         }
+
+        // Blue location markers
+        const locationMarkers: google.maps.Marker[] = [];
+        pointsWithCoords.forEach((p) => {
+          try {
+            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#0ea5e9', 6), zIndex: 2 });
+            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'location', data: p }); } catch { /* ignore */ } }));
+            locationMarkers.push(m);
+          } catch { /* skip */ }
+        });
+        locationMarkersRef.current = locationMarkers;
+
+        // Red dot markers — cosmetic only, no effect on viewport
+        const dotMarkers: google.maps.Marker[] = [];
+        redDots.forEach((p) => {
+          try {
+            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#dc2626', 5), zIndex: 1 });
+            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'dot', data: p }); } catch { /* ignore */ } }));
+            dotMarkers.push(m);
+          } catch { /* skip */ }
+        });
+        dotMarkersRef.current = dotMarkers;
 
         // Drop-pin click handler
         if (canDropPin) {
@@ -296,7 +305,7 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
                 draftMarkerRef.current = m;
                 setDraftPin({ lat, lng });
                 setSelectedPin({ type: 'draft', data: { lat, lng } });
-              } catch { /* ignore click handler error */ }
+              } catch { /* ignore */ }
             })
           );
         }

@@ -115,34 +115,40 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
     const initialZoom = hasCoords ? DEFAULT_ZOOM : DEFAULT_ZOOM_NO_COORDS;
 
     const cleanupListeners = () => {
-      listenersRef.current.forEach((l) => { try { google.maps.event.removeListener(l); } catch { /* ignore */ } });
-      listenersRef.current = [];
+      try {
+        listenersRef.current.forEach((l) => {
+          try { (window as { google?: { maps?: { event?: { removeListener?: (l: unknown) => void } } } }).google?.maps?.event?.removeListener?.(l); } catch { /* ignore */ }
+        });
+        listenersRef.current = [];
+      } catch { /* ignore */ }
     };
 
     void (async () => {
       try {
-        // Fetch red dots
-        let redDots: RedDot[] = [];
-        try {
-          const res = await fetch('/api/dots-pins', { cache: 'no-store' });
-          const data = await res.json() as { pins?: unknown[] };
-          if (Array.isArray(data?.pins)) {
-            redDots = data.pins.flatMap((p) => {
-              if (typeof p !== 'object' || p === null) return [];
-              const pp = p as Record<string, unknown>;
-              const la = safeNum(pp.lat);
-              const lo = safeNum(pp.lng);
-              return la != null && lo != null ? [{ lat: la, lng: lo }] : [];
-            });
-          }
-        } catch { /* keep empty */ }
+        // Load Google Maps and red dots in parallel.
+        // Red dots are cosmetic — they NEVER affect zoom/center.
+        const [google, dotsData] = await Promise.all([
+          loadGoogleMaps().catch(() => null),
+          fetch('/api/dots-pins', { cache: 'no-store' })
+            .then((r) => r.json() as Promise<{ pins?: unknown[] }>)
+            .catch(() => ({ pins: [] as unknown[] }))
+        ]);
 
-        if (cancelled || !containerRef.current) return;
-
-        const google = await loadGoogleMaps().catch(() => null);
         if (!google || cancelled || !containerRef.current) {
           if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
           return;
+        }
+
+        // Safe parse red dots — never used for viewport
+        const redDots: RedDot[] = [];
+        if (Array.isArray(dotsData?.pins)) {
+          for (const p of dotsData.pins) {
+            if (typeof p !== 'object' || p === null) continue;
+            const pp = p as Record<string, unknown>;
+            const la = safeNum(pp.lat);
+            const lo = safeNum(pp.lng);
+            if (la != null && lo != null) redDots.push({ lat: la, lng: lo });
+          }
         }
 
         const map = new google.maps.Map(containerRef.current, {
