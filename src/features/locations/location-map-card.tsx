@@ -22,9 +22,9 @@ function safeNum(v: unknown): number | null {
   const n = Number(v);
   return v != null && !Number.isNaN(n) && Number.isFinite(n) ? n : null;
 }
-function createDot(color: string, size: number): google.maps.Symbol {
+function createDot(g: typeof google, color: string, size: number): google.maps.Symbol {
   return {
-    path: 0 as google.maps.SymbolPath, // 0 = google.maps.SymbolPath.CIRCLE, avoid referencing google at module init time
+    path: g.maps.SymbolPath.CIRCLE,
     scale: size,
     fillColor: color,
     fillOpacity: 1,
@@ -173,14 +173,14 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
         // Red dots (no click handler needed here)
         redDots.forEach((p) => {
           try {
-            new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#dc2626', 5), zIndex: 1 });
+            new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot(google, '#dc2626', 5), zIndex: 1 });
           } catch { /* skip */ }
         });
 
         // Blue location marker
         const pinPos = lat != null && lng != null ? { lat, lng } : null;
         const marker = pinPos
-          ? new google.maps.Marker({ map, position: pinPos, icon: createDot('#0ea5e9', 6), draggable: canEdit, zIndex: 2 })
+          ? new google.maps.Marker({ map, position: pinPos, icon: createDot(google, '#0ea5e9', 6), draggable: canEdit, zIndex: 2 })
           : null;
 
         if (marker) {
@@ -212,7 +212,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
                   marker.setPosition({ lat: newLat, lng: newLng });
                   marker.setMap(map);
                 } else {
-                  const m = new google.maps.Marker({ map, position: { lat: newLat, lng: newLng }, icon: createDot('#0ea5e9', 6), draggable: true, zIndex: 2 });
+                  const m = new google.maps.Marker({ map, position: { lat: newLat, lng: newLng }, icon: createDot(google, '#0ea5e9', 6), draggable: true, zIndex: 2 });
                   listenersRef.current.push(
                     m.addListener('dragend', () => {
                       try { const p = m.getPosition(); if (p) setDraft({ lat: p.lat(), lng: p.lng() }); } catch { /* ignore */ }

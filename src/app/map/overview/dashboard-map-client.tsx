@@ -34,9 +34,9 @@ type GeoJSONFeature = {
 type GeoJSONResponse = { type: 'FeatureCollection'; features: GeoJSONFeature[] };
 type LocationNeedingGeocode = { id: string; companyId: string; addressRaw: string; addressForGeocode: string };
 
-function createDot(color: string, size: number): google.maps.Symbol {
+function createDot(g: typeof google, color: string, size: number): google.maps.Symbol {
   return {
-    path: 0 as google.maps.SymbolPath, // 0 = google.maps.SymbolPath.CIRCLE, avoid referencing google at module init time
+    path: g.maps.SymbolPath.CIRCLE,
     scale: size,
     fillColor: color,
     fillOpacity: 1,
@@ -234,7 +234,7 @@ function DashboardMapClientInner() {
               const lng = safeNum(rawLng);
               if (lat == null || lng == null) return;
               const props = f.properties;
-              const marker = new google.maps.Marker({ map, position: { lat, lng }, icon: createDot('#0ea5e9', 6), zIndex: 2 });
+              const marker = new google.maps.Marker({ map, position: { lat, lng }, icon: createDot(google, '#0ea5e9', 6), zIndex: 2 });
               listenersRef.current.push(
                 marker.addListener('click', () => {
                   try {
@@ -253,7 +253,7 @@ function DashboardMapClientInner() {
           clearDotMarkers();
           pins.forEach((p) => {
             try {
-              const marker = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot('#dc2626', 5), zIndex: 1 });
+              const marker = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot(google, '#dc2626', 5), zIndex: 1 });
               listenersRef.current.push(
                 marker.addListener('click', () => {
                   try { setSelectedPin({ type: 'dot', data: { lng: p.lng, lat: p.lat, id: p.id, source: p.source } }); } catch { /* ignore */ }
