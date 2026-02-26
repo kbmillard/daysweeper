@@ -3,7 +3,6 @@ import { withSentryConfig } from '@sentry/nextjs';
 
 // Define the base Next.js configuration
 const baseConfig: NextConfig = {
-  // Never cache any page — always fetch fresh from the server
   experimental: {
     staleTimes: {
       dynamic: 0,
@@ -13,24 +12,13 @@ const baseConfig: NextConfig = {
   async headers() {
     return [
       {
-        // No-cache for all page/document requests
-        source: '/((?!_next/static|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+        // Kill browser cache for every page and API route
+        source: '/:path*',
         headers: [
-          {
-            key: 'Cache-Control',
-            value: 'private, no-cache, no-store, max-age=0, must-revalidate'
-          }
-        ]
-      },
-      {
-        // JS/CSS chunks: versioned by Next.js build hash, safe to cache but
-        // force revalidation so stale bundles are never served after a deploy
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate'
-          }
+          { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+          { key: 'Surrogate-Control', value: 'no-store' },
         ]
       }
     ];
