@@ -235,7 +235,13 @@ export default function EmptyMapClient() {
         zoom: DEFAULT_ZOOM,
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         mapTypeControl: true,
-        mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
+        mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
+        styles: [
+          // Make state boundary lines bright white and thick on satellite
+          { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2.5 }, { visibility: 'on' }] },
+          { featureType: 'administrative.province', elementType: 'labels', stylers: [{ visibility: 'on' }] },
+          { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2 }, { visibility: 'on' }] }
+        ]
       });
 
       const clearLocationMarkers = () => {
