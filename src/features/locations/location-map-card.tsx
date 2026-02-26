@@ -23,14 +23,14 @@ function safeNum(v: unknown): number | null {
   const n = Number(v);
   return v != null && !Number.isNaN(n) && Number.isFinite(n) ? n : null;
 }
-function createDot(g: typeof google, color: string, size: number): google.maps.Symbol {
+function svgPin(color: string, size: number): google.maps.Icon {
+  const r = size;
+  const d = r * 2;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${d}" height="${d}"><circle cx="${r}" cy="${r}" r="${r - 1}" fill="${color}" stroke="#fff" stroke-width="1.5"/></svg>`;
   return {
-    path: g.maps.SymbolPath.CIRCLE,
-    scale: size,
-    fillColor: color,
-    fillOpacity: 1,
-    strokeColor: '#fff',
-    strokeWeight: 1,
+    url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
+    scaledSize: new google.maps.Size(d, d),
+    anchor: new google.maps.Point(r, r),
   };
 }
 
@@ -181,14 +181,14 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
         // Red dots (no click handler needed here)
         redDots.forEach((p) => {
           try {
-            new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: createDot(google, '#dc2626', 5), zIndex: 1 });
+            new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin('#dc2626', 5), zIndex: 1 });
           } catch { /* skip */ }
         });
 
         // Blue location marker
         const pinPos = lat != null && lng != null ? { lat, lng } : null;
         const marker = pinPos
-          ? new google.maps.Marker({ map, position: pinPos, icon: createDot(google, '#0ea5e9', 6), draggable: canEdit, zIndex: 2 })
+          ? new google.maps.Marker({ map, position: pinPos, icon: svgPin('#0ea5e9', 6), draggable: canEdit, zIndex: 2 })
           : null;
 
         if (marker) {
@@ -220,7 +220,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
                   marker.setPosition({ lat: newLat, lng: newLng });
                   marker.setMap(map);
                 } else {
-                  const m = new google.maps.Marker({ map, position: { lat: newLat, lng: newLng }, icon: createDot(google, '#0ea5e9', 6), draggable: true, zIndex: 2 });
+                  const m = new google.maps.Marker({ map, position: { lat: newLat, lng: newLng }, icon: svgPin('#0ea5e9', 6), draggable: true, zIndex: 2 });
                   listenersRef.current.push(
                     m.addListener('dragend', () => {
                       try { const p = m.getPosition(); if (p) setDraft({ lat: p.lat(), lng: p.lng() }); } catch { /* ignore */ }
