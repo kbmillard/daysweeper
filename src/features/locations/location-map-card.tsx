@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { IconMapPin } from '@tabler/icons-react';
 import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
+import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
@@ -165,12 +166,8 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
           gestureHandling: 'greedy',
           backgroundColor: '#1a1a2e',
-          styles: [
-            { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2.5 }, { visibility: 'on' }] },
-            { featureType: 'administrative.province', elementType: 'labels', stylers: [{ visibility: 'on' }] },
-            { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2 }, { visibility: 'on' }] },
-          ],
         });
+        void addStateLines(map);
 
         // Apply 45° tilt after idle
         if (hasCoords) {

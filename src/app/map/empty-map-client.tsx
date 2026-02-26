@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
+import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { IconSearch } from '@tabler/icons-react';
 
@@ -237,13 +238,8 @@ export default function EmptyMapClient() {
         mapTypeControl: true,
         mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
         backgroundColor: '#1a1a2e',
-        styles: [
-          // Make state boundary lines bright white and thick on satellite
-          { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2.5 }, { visibility: 'on' }] },
-          { featureType: 'administrative.province', elementType: 'labels', stylers: [{ visibility: 'on' }] },
-          { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2 }, { visibility: 'on' }] }
-        ]
       });
+      void addStateLines(map);
 
       const clearLocationMarkers = () => {
         locationMarkersRef.current.forEach((m) => m.setMap(null));
