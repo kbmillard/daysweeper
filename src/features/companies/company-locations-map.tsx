@@ -203,11 +203,16 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
       try {
         // Load Google Maps and red dots in parallel.
         // Red dots NEVER affect zoom/center — blue pins own the viewport.
-        const [google, dotsData] = await Promise.all([
-          loadGoogleMaps().catch(() => null),
+        // Dots fetch has a hard 3s timeout so it never blocks map init.
+        const dotsFetch = Promise.race([
           fetch('/api/dots-pins', { cache: 'no-store' })
             .then((r) => r.json() as Promise<{ pins?: unknown[] }>)
-            .catch(() => ({ pins: [] as unknown[] }))
+            .catch(() => ({ pins: [] as unknown[] })),
+          new Promise<{ pins: unknown[] }>((r) => setTimeout(() => r({ pins: [] }), 3000))
+        ]);
+        const [google, dotsData] = await Promise.all([
+          loadGoogleMaps().catch(() => null),
+          dotsFetch
         ]);
 
         if (!google || cancelled || !containerRef.current) {
@@ -242,6 +247,12 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
           mapTypeControl: true,
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
           gestureHandling: 'greedy',
+          backgroundColor: '#1a1a2e',
+          styles: [
+            { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2.5 }, { visibility: 'on' }] },
+            { featureType: 'administrative.province', elementType: 'labels', stylers: [{ visibility: 'on' }] },
+            { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2 }, { visibility: 'on' }] },
+          ],
         });
 
         // 45° tilt for single location after idle
@@ -327,7 +338,8 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
       dotMarkersRef.current = [];
       mapRef.current = null;
     };
-  }, [hasAnyCoords, canDropPin, pointsWithCoords.length, JSON.stringify(pointsWithCoords.map((p) => [p.lat, p.lng]))]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasAnyCoords, canDropPin, pointsWithCoords.length]);
 
   return (
     <Card>
@@ -355,7 +367,7 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
         ) : (
           <div className='space-y-2'>
             <div className='relative rounded-lg border overflow-hidden min-h-[280px]'>
-              <div ref={containerRef} className='h-[280px] w-full min-h-[280px]' />
+              <div ref={containerRef} className='h-[280px] w-full min-h-[280px] bg-[#1a1a2e]' />
               {selectedPin && (
                 <div className='absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md rounded-lg border bg-background p-4 shadow-lg'>
                   <p className='text-sm text-muted-foreground mb-2'>

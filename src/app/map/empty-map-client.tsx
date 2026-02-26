@@ -236,6 +236,7 @@ export default function EmptyMapClient() {
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         mapTypeControl: true,
         mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
+        backgroundColor: '#1a1a2e',
         styles: [
           // Make state boundary lines bright white and thick on satellite
           { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2.5 }, { visibility: 'on' }] },
@@ -378,7 +379,7 @@ export default function EmptyMapClient() {
 
   return (
     <div className="relative flex min-h-0 flex-1 w-full">
-      <div ref={containerRef} className="absolute inset-0 h-full w-full" />
+      <div ref={containerRef} className="absolute inset-0 h-full w-full bg-[#1a1a2e]" />
       <div className="absolute top-4 left-4 right-4 z-10 flex flex-col gap-2">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <div className="flex flex-1 items-center gap-2 rounded-lg border bg-background/95 shadow-sm backdrop-blur px-2">

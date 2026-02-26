@@ -127,11 +127,16 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
       try {
         // Load Google Maps and red dots in parallel.
         // Red dots are cosmetic — they NEVER affect zoom/center.
-        const [google, dotsData] = await Promise.all([
-          loadGoogleMaps().catch(() => null),
+        // Hard 3s timeout so dots never block map init.
+        const dotsFetch = Promise.race([
           fetch('/api/dots-pins', { cache: 'no-store' })
             .then((r) => r.json() as Promise<{ pins?: unknown[] }>)
-            .catch(() => ({ pins: [] as unknown[] }))
+            .catch(() => ({ pins: [] as unknown[] })),
+          new Promise<{ pins: unknown[] }>((r) => setTimeout(() => r({ pins: [] }), 3000))
+        ]);
+        const [google, dotsData] = await Promise.all([
+          loadGoogleMaps().catch(() => null),
+          dotsFetch
         ]);
 
         if (!google || cancelled || !containerRef.current) {
@@ -159,6 +164,12 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           mapTypeControl: true,
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
           gestureHandling: 'greedy',
+          backgroundColor: '#1a1a2e',
+          styles: [
+            { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2.5 }, { visibility: 'on' }] },
+            { featureType: 'administrative.province', elementType: 'labels', stylers: [{ visibility: 'on' }] },
+            { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }, { weight: 2 }, { visibility: 'on' }] },
+          ],
         });
 
         // Apply 45° tilt after idle
@@ -279,7 +290,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
               </Button>
             )}
             <div className='relative rounded-lg border overflow-hidden'>
-              <div ref={containerRef} className='h-[280px] w-full' />
+              <div ref={containerRef} className='h-[280px] w-full bg-[#1a1a2e]' />
               {showCard && lat != null && lng != null && (
                 <div className='absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md rounded-lg border bg-background p-4 shadow-lg'>
                   <p className='text-sm text-muted-foreground mb-2'>
