@@ -275,7 +275,7 @@ export default function LocationEditableFields({ location, company, locationOnly
   };
 
   return (
-    <div className={locationOnly ? '' : 'grid gap-6 md:grid-cols-2'}>
+    <div className={locationOnly ? '' : 'grid gap-6 grid-cols-1 lg:grid-cols-2'}>
       {/* Location Details */}
       <Card>
         <CardHeader className='flex flex-row items-center justify-between space-y-0'>

@@ -50,31 +50,29 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
   return (
     <div className='flex flex-col gap-6 pb-8'>
       {/* Header Actions */}
-      <div className='flex items-center justify-between'>
-        <div className='flex gap-2'>
-          <Link href={`${BASE}/companies/${company.id}`}>
-            <Button variant='outline' size='sm'>
-              <IconArrowLeft className='mr-2 h-4 w-4' />
-              Back to Company
-            </Button>
-          </Link>
-          <SetAsHeadquartersButton companyId={company.id} locationId={location.id} basePath='map' />
-          <AddToLastLegButton
-            locationId={location.id}
-            companyId={company.id}
-            companyName={company.name}
-            addressRaw={location.addressRaw}
-            latitude={lat}
-            longitude={lng}
-          />
-          <DeleteLocationButton
-            locationId={location.id}
-            companyId={company.id}
-            basePath='map'
-            buttonText='Remove as location'
-          />
-        </div>
-        <Link href={`${BASE}/companies`}>
+      <div className='flex flex-wrap items-center gap-2'>
+        <Link href={`${BASE}/companies/${company.id}`}>
+          <Button variant='outline' size='sm'>
+            <IconArrowLeft className='mr-2 h-4 w-4' />
+            Back to Company
+          </Button>
+        </Link>
+        <SetAsHeadquartersButton companyId={company.id} locationId={location.id} basePath='map' />
+        <AddToLastLegButton
+          locationId={location.id}
+          companyId={company.id}
+          companyName={company.name}
+          addressRaw={location.addressRaw}
+          latitude={lat}
+          longitude={lng}
+        />
+        <DeleteLocationButton
+          locationId={location.id}
+          companyId={company.id}
+          basePath='map'
+          buttonText='Remove as location'
+        />
+        <Link href={`${BASE}/companies`} className='ml-auto'>
           <Button variant='ghost' size='sm'>
             All Companies
           </Button>
