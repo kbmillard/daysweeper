@@ -13,7 +13,7 @@ import { googleEarthUrl } from '@/lib/google-earth-url';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
-const DEFAULT_ZOOM = 15;
+const DEFAULT_ZOOM = 18;          // 18+ required for 45° tilt on satellite
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_COORDS = 4;
 
@@ -169,11 +169,14 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
         });
         void addStateLines(map);
 
-        // Apply 45° tilt after idle
+        // Zoom to tilt: wait for first idle, then animate to zoom 19 + 45° tilt
         if (hasCoords) {
           listenersRef.current.push(
             google.maps.event.addListenerOnce(map, 'idle', () => {
-              try { map.setTilt(45); } catch { /* ignore */ }
+              try {
+                map.setZoom(19);
+                map.setTilt(45);
+              } catch { /* ignore */ }
             })
           );
         }
