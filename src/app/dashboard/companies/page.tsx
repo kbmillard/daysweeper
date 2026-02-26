@@ -32,6 +32,7 @@ export default async function Page(props: pageProps) {
   const statusFilterRaw = searchParamsCache.get('status');
   const addressFilter = Array.isArray(addressFilterRaw) ? addressFilterRaw[0] : addressFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
+  const hideAccounts = searchParamsCache.get('hideAccounts') === '1';
   const sort = searchParamsCache.get('sort');
 
   const skip = (Number(page) - 1) * Number(perPage);
@@ -60,6 +61,13 @@ export default async function Page(props: pageProps) {
       statusFilter === 'Account'
         ? { in: ['Account', 'APR Account'], mode: 'insensitive' as const }
         : { equals: statusFilter, mode: 'insensitive' as const };
+  }
+
+  // Hide accounts (status = Account / APR Account)
+  if (hideAccounts) {
+    where.status = {
+      notIn: ['Account', 'APR Account']
+    };
   }
 
   // Build orderBy from sort parameter
@@ -128,6 +136,7 @@ export default async function Page(props: pageProps) {
         <CompaniesTable
           data={companies}
           totalItems={total}
+          hideAccounts={hideAccounts}
         />
       </Suspense>
     </PageContainer>

@@ -26,6 +26,7 @@ export const searchParams = {
   subCategoryGroup: parseAsString,
   locations: parseAsString,
   createdAt: parseAsString,
+  hideAccounts: parseAsString,
   sort: getSortingStateParser()
   // advanced filter
   // filters: getFiltersStateParser().withDefault([]),

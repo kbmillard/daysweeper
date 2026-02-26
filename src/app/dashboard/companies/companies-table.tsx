@@ -3,9 +3,10 @@
 import { DataTable } from '@/components/ui/table/data-table';
 import { DataTableAddColumn } from '@/components/ui/table/data-table-add-column';
 import { DataTableToolbar } from '@/components/ui/table/data-table-toolbar';
+import { Button } from '@/components/ui/button';
 import { useDataTable } from '@/hooks/use-data-table';
 import type { ColumnDef } from '@tanstack/react-table';
-import { parseAsInteger, useQueryState } from 'nuqs';
+import { parseAsInteger, parseAsString, useQueryState } from 'nuqs';
 import { useMemo } from 'react';
 import { getColumns } from './columns';
 
@@ -26,13 +27,16 @@ type Company = {
 interface CompaniesTableParams {
   data: Company[];
   totalItems: number;
+  hideAccounts?: boolean;
 }
 
 export default function CompaniesTable({
   data,
-  totalItems
+  totalItems,
+  hideAccounts = false
 }: CompaniesTableParams) {
   const [pageSize] = useQueryState('perPage', parseAsInteger.withDefault(10));
+  const [, setHideAccounts] = useQueryState('hideAccounts', parseAsString);
 
   const pageCount = Math.ceil(totalItems / pageSize);
 
@@ -55,6 +59,14 @@ export default function CompaniesTable({
   return (
     <DataTable table={table}>
       <DataTableToolbar table={table} showViewOptions={false}>
+        <Button
+          variant={hideAccounts ? 'default' : 'outline'}
+          size='sm'
+          onClick={() => setHideAccounts(hideAccounts ? null : '1')}
+          className='h-8 text-xs'
+        >
+          {hideAccounts ? 'Accounts hidden — show' : 'Hide accounts'}
+        </Button>
         <DataTableAddColumn table={table} />
       </DataTableToolbar>
     </DataTable>
