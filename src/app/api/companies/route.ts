@@ -11,8 +11,8 @@ export async function GET(req: Request) {
     const limit = Math.min(Number(searchParams.get('limit')) || 50, 500);
     const companies = await prisma.company.findMany({
       where: search
-        ? { name: { contains: search, mode: 'insensitive' } }
-        : undefined,
+        ? { hidden: false, name: { contains: search, mode: 'insensitive' } }
+        : { hidden: false },
       select: { id: true, name: true },
       orderBy: { name: 'asc' },
       take: limit

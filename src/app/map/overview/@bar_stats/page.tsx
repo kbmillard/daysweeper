@@ -7,6 +7,7 @@ export default async function BarStats() {
 
   const total = await prisma.company.count({
     where: {
+      hidden: false,
       createdAt: {
         gte: threeMonthsAgo
       }

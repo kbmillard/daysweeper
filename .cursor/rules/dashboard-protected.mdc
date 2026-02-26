@@ -11,7 +11,7 @@ The **dashboard** is under a protection order. It must stay exactly as it is, pe
 
 - **Dashboard overview** (`src/app/dashboard/overview/`): layout, KPIs (Total Leads, Total Locations only), or the APR Account Growth line graph (`area_stats`). Do not add or remove cards, charts, or sections.
 - **Dashboard nav/entry**: redirects or default route for `/` or `/dashboard` that land on the card dashboard.
-- **Sidebar/nav**: Map is hidden from nav; Dashboard, Companies, Bins remain. Do not re-add Map to the nav or change this set without the user asking.
+- **Sidebar/nav**: Map is shown in nav (user requested). Dashboard, Map, Companies, Bins. Do not remove Map from the nav.
 
 ## Allowed
 

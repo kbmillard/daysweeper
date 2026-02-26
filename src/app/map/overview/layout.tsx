@@ -13,7 +13,7 @@ import React from 'react';
 import { prisma } from '@/lib/prisma';
 import DashboardMapClient from './dashboard-map-client';
 
-const hasLocation = { Location: { some: {} } };
+const hasLocation = { Location: { some: {} }, hidden: false };
 
 async function getCompanyStats() {
   const [
@@ -26,7 +26,7 @@ async function getCompanyStats() {
     companiesWithChildren
   ] = await Promise.all([
     prisma.company.count({ where: hasLocation }),
-    prisma.location.count(),
+    prisma.location.count({ where: { Company: { hidden: false } } }),
     prisma.company.count({
       where: {
         ...hasLocation,

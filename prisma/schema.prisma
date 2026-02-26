@@ -24,6 +24,7 @@ model Company {
   subtype            String?
   subtypeGroup       String?
   status             String?              // Contacted - no answer | Contacted - not interested | Contacted - meeting set | APR Account
+  hidden             Boolean              @default(false)
   primaryLocationId  String?              @unique
   legacyJson         Json?
   metadata           Json?
@@ -450,6 +451,7 @@ model MapPin {
   id        String   @id @default(cuid())
   latitude  Decimal  @db.Decimal(10, 6)
   longitude Decimal  @db.Decimal(11, 6)
+  hidden    Boolean  @default(false)
   createdAt DateTime @default(now())
 
   @@index([latitude, longitude])

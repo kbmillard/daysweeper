@@ -65,6 +65,7 @@ export async function GET() {
     let userPinsList: RedPin[] = [];
     try {
       const userPins = await prisma.mapPin.findMany({
+        where: { hidden: false },
         select: { id: true, latitude: true, longitude: true }
       });
       userPinsList = userPins.map((p) => ({

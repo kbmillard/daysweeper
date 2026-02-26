@@ -12,12 +12,12 @@ import { IconTrendingUp } from '@tabler/icons-react';
 import React from 'react';
 import { prisma } from '@/lib/prisma';
 
-const hasLocation = { Location: { some: {} } };
+const hasLocation = { Location: { some: {} }, hidden: false };
 
 async function getCompanyStats() {
   const [totalCompanies, totalLocations, companiesThisMonth] = await Promise.all([
     prisma.company.count({ where: hasLocation }),
-    prisma.location.count(),
+    prisma.location.count({ where: { Company: { hidden: false } } }),
     prisma.company.count({
       where: {
         ...hasLocation,

@@ -37,7 +37,7 @@ export default async function Page(props: pageProps) {
   const skip = (Number(page) - 1) * Number(perPage);
   const take = Number(perPage);
 
-  const where: any = { Location: { some: {} } }; // Only companies with at least one location
+  const where: any = { Location: { some: {} }, hidden: false }; // Only companies with at least one location, not hidden
 
   // Search companies (name)
   if (nameFilter || companyFilter) {

@@ -96,6 +96,7 @@ export async function GET() {
     // User-dropped MapPins
     try {
       const userPins = await prisma.mapPin.findMany({
+        where: { hidden: false },
         select: { id: true, latitude: true, longitude: true }
       });
       for (const p of userPins) {
@@ -118,7 +119,8 @@ export async function GET() {
     const locations = await prisma.location.findMany({
       where: {
         latitude: { not: null },
-        longitude: { not: null }
+        longitude: { not: null },
+        Company: { hidden: false }
       },
       select: {
         id: true,

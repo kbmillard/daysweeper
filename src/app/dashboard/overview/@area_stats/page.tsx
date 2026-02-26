@@ -12,6 +12,7 @@ export default async function AreaStats() {
 
   const companies = await prisma.company.findMany({
     where: {
+      hidden: false,
       Location: { some: {} },
       createdAt: { gte: sixMonthsAgo },
       status: { not: null }
