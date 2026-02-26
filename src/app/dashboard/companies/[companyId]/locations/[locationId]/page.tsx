@@ -33,7 +33,9 @@ export default async function Page(props: PageProps) {
   const { companyId, locationId } = params;
   const baseUrl = await getBaseUrl();
 
-  const location = await prisma.location.findUnique({
+  let location;
+  try {
+    location = await prisma.location.findUnique({
     where: { id: locationId },
     select: {
       id: true,
@@ -69,6 +71,9 @@ export default async function Page(props: PageProps) {
       }
     }
   });
+  } catch (err) {
+    throw new Error(`Failed to load location: ${err instanceof Error ? err.message : String(err)}`);
+  }
 
   if (!location || location.companyId !== companyId) {
     notFound();
