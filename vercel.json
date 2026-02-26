@@ -1,5 +1,5 @@
 {
   "buildCommand": "prisma generate && node scripts/ensure-primary-location-column.mjs && node scripts/ensure-map-pin-tables.mjs && node scripts/ensure-route-tables.mjs && next build --webpack",
   "installCommand": "npm install",
-  "alias": ["daysweeper.apr.recyclicbravery.com", "daysweeper.recyclicbravery.com"]
+  "alias": ["daysweeper.apr.recyclicbravery.com", "daysweeper.recyclicbravery.com", "daysweeper.aprtest.recyclicbravery.com"]
 }
