@@ -27,9 +27,11 @@ export type CompanyEditableData = {
 
 type Props = {
   company: CompanyEditableData;
+  /** If provided, saving phone will also write to this location's phone field */
+  primaryLocationId?: string | null;
 };
 
-export default function CompanyEditableFields({ company }: Props) {
+export default function CompanyEditableFields({ company, primaryLocationId }: Props) {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
@@ -51,20 +53,37 @@ export default function CompanyEditableFields({ company }: Props) {
     }
     setSaving(true);
     try {
-      const res = await fetch(`/api/companies/${company.id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          website: form.website.trim() || null,
-          phone: form.phone.trim() || null,
-          email: form.email.trim() || null,
-          status: form.status.trim() || null
-        })
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.error ?? 'Failed to save');
+      const phone = form.phone.trim() || null;
+
+      const [companyRes, locationRes] = await Promise.all([
+        fetch(`/api/companies/${company.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: form.name.trim(),
+            website: form.website.trim() || null,
+            phone,
+            email: form.email.trim() || null,
+            status: form.status.trim() || null
+          })
+        }),
+        primaryLocationId
+          ? fetch(`/api/locations/${primaryLocationId}`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ phone })
+            })
+          : Promise.resolve(null)
+      ]);
+
+      const companyData = await companyRes.json();
+      if (!companyRes.ok) {
+        toast.error(companyData.error ?? 'Failed to save');
+        return;
+      }
+      if (locationRes && !locationRes.ok) {
+        const locData = await locationRes.json();
+        toast.error(locData.error ?? 'Failed to save phone to location');
         return;
       }
       toast.success('Company saved');

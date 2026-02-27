@@ -55,6 +55,7 @@ export default function EmptyMapClient() {
   const dotMarkersRef = useRef<google.maps.Marker[]>([]);
   const unsubMapRef = useRef<(() => void) | null>(null);
   const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
+  const selectedMarkerRef = useRef<google.maps.Marker | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
   const [selectedPin, setSelectedPin] = useState<{ type: 'location'; data: LocationPin } | { type: 'dot'; data: RedPin } | null>(null);
@@ -142,19 +143,34 @@ export default function EmptyMapClient() {
   const handleDeleteRedPin = async () => {
     if (!selectedPin || selectedPin.type !== 'dot') return;
     const { id, lat, lng } = selectedPin.data;
+    // Immediately remove the marker from the map for instant visual feedback
+    if (selectedMarkerRef.current) {
+      try { selectedMarkerRef.current.setMap(null); } catch { /* ignore */ }
+      dotMarkersRef.current = dotMarkersRef.current.filter((m) => m !== selectedMarkerRef.current);
+      selectedMarkerRef.current = null;
+    }
+    setSelectedPin(null);
     try {
       if (id) {
         const res = await fetch(`/api/map-pins/${id}`, { method: 'DELETE' });
-        if (!res.ok) { const d = await res.json(); throw new Error(d?.error ?? 'Failed'); }
+        if (!res.ok) {
+          let d: { error?: string } = {};
+          try { d = await res.json(); } catch { /* ignore */ }
+          throw new Error(d?.error ?? 'Failed');
+        }
       } else {
         const res = await fetch('/api/dots-pins/hide', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ latitude: lat, longitude: lng }) });
-        if (!res.ok) { const d = await res.json(); throw new Error(d?.error ?? 'Failed'); }
+        if (!res.ok) {
+          let d: { error?: string } = {};
+          try { d = await res.json(); } catch { /* ignore */ }
+          throw new Error(d?.error ?? 'Failed');
+        }
       }
       toast.success('Pin removed');
-      setSelectedPin(null);
-      await refetchDotsRef.current?.();
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Failed to delete');
+      // Re-fetch to restore the marker if the delete failed
+      await refetchDotsRef.current?.();
     }
   };
 
@@ -228,7 +244,10 @@ export default function EmptyMapClient() {
           pins.forEach((p) => {
             try {
               const marker = new g.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin(g, '#dc2626', 5), zIndex: 1 });
-              marker.addListener('click', () => setSelectedPin({ type: 'dot', data: { lng: p.lng, lat: p.lat, id: p.id, source: p.source } }));
+              marker.addListener('click', () => {
+                selectedMarkerRef.current = marker;
+                setSelectedPin({ type: 'dot', data: { lng: p.lng, lat: p.lat, id: p.id, source: p.source } });
+              });
               dotMarkersRef.current.push(marker);
             } catch { /* skip bad pin */ }
           });

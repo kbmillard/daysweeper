@@ -231,6 +231,7 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
           email: company.email ?? null,
           status: company.status ?? null
         }}
+        primaryLocationId={primaryLocationResolved?.id ?? null}
       />
 
       {/* Company profile (summary, key facts, business activities, role, local presence, markdown) */}
