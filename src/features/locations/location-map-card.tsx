@@ -13,11 +13,13 @@ import { googleEarthUrl } from '@/lib/google-earth-url';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
-const DEFAULT_ZOOM = 18;          // 18+ required for 45° tilt on satellite
+const DEFAULT_ZOOM = 18; // 18+ required for 45° tilt on satellite
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_COORDS = 4;
 
-type RedDot = { lat: number; lng: number };
+/** Single location pin on this page only (no global dots-pins layer). */
+const LOCATION_DOT_COLOR = '#0ea5e9';
+const LOCATION_DOT_PX = 7;
 
 function safeNum(v: unknown): number | null {
   const n = Number(v);
@@ -73,15 +75,48 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
   const [showCard, setShowCard] = useState(false);
   const [draft, setDraft] = useState<{ lat: number; lng: number } | null>(null);
   const [saving, setSaving] = useState(false);
+  /** Geocoded position for this address when DB coords are missing (map-only; Save persists). */
+  const [addressHint, setAddressHint] = useState<{ lat: number; lng: number } | null>(null);
 
   const hasCoords = isValidMapboxCoordinate(latitude, longitude);
   const savedLat = safeNum(latitude);
   const savedLng = safeNum(longitude);
-  const lat = draft?.lat ?? savedLat;
-  const lng = draft?.lng ?? savedLng;
+  const lat = draft?.lat ?? savedLat ?? addressHint?.lat ?? null;
+  const lng = draft?.lng ?? savedLng ?? addressHint?.lng ?? null;
   const canEdit = Boolean(locationId);
   const showMap = canEdit || hasCoords;
-  const isDirty = draft != null && (savedLat === null || savedLng === null || draft.lat !== savedLat || draft.lng !== savedLng);
+  const isDirty =
+    (savedLat != null && savedLng != null && draft != null && (draft.lat !== savedLat || draft.lng !== savedLng))
+    || (savedLat == null && savedLng == null && lat != null && lng != null);
+
+  useEffect(() => {
+    if (hasCoords || !canEdit) {
+      setAddressHint(null);
+      return;
+    }
+    const q = address?.trim();
+    if (!q) {
+      setAddressHint(null);
+      return;
+    }
+    let cancelled = false;
+    void fetch('/api/geocode', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ address: q }),
+    })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: { latitude?: unknown; longitude?: unknown } | null) => {
+        if (cancelled || !data) return;
+        const la = safeNum(data.latitude);
+        const lo = safeNum(data.longitude);
+        if (la != null && lo != null) setAddressHint({ lat: la, lng: lo });
+      })
+      .catch(() => { /* non-fatal */ });
+    return () => {
+      cancelled = true;
+    };
+  }, [hasCoords, canEdit, address]);
 
   const handleSavePin = async () => {
     if (!locationId || lat == null || lng == null) return;
@@ -112,8 +147,14 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
     if (!showMap || !containerRef.current) return;
 
     let cancelled = false;
-    const initialCenter = savedLat != null && savedLng != null ? { lat: savedLat, lng: savedLng } : DEFAULT_CENTER;
-    const initialZoom = hasCoords ? DEFAULT_ZOOM : DEFAULT_ZOOM_NO_COORDS;
+    const hint = addressHint;
+    const initialCenter =
+      savedLat != null && savedLng != null
+        ? { lat: savedLat, lng: savedLng }
+        : hint != null
+          ? { lat: hint.lat, lng: hint.lng }
+          : DEFAULT_CENTER;
+    const initialZoom = hasCoords || hint != null ? DEFAULT_ZOOM : DEFAULT_ZOOM_NO_COORDS;
 
     const cleanupListeners = () => {
       try {
@@ -126,35 +167,11 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
 
     void (async () => {
       try {
-        // Load Google Maps and red dots in parallel.
-        // Red dots are cosmetic — they NEVER affect zoom/center.
-        // Hard 3s timeout so dots never block map init.
-        const dotsFetch = Promise.race([
-          fetch('/api/dots-pins', { cache: 'no-store' })
-            .then((r) => r.json() as Promise<{ pins?: unknown[] }>)
-            .catch(() => ({ pins: [] as unknown[] })),
-          new Promise<{ pins: unknown[] }>((r) => setTimeout(() => r({ pins: [] }), 3000))
-        ]);
-        const [google, dotsData] = await Promise.all([
-          loadGoogleMaps().catch(() => null),
-          dotsFetch
-        ]);
+        const google = await loadGoogleMaps().catch(() => null);
 
         if (!google || cancelled || !containerRef.current) {
           if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
           return;
-        }
-
-        // Safe parse red dots — never used for viewport
-        const redDots: RedDot[] = [];
-        if (Array.isArray(dotsData?.pins)) {
-          for (const p of dotsData.pins) {
-            if (typeof p !== 'object' || p === null) continue;
-            const pp = p as Record<string, unknown>;
-            const la = safeNum(pp.lat);
-            const lo = safeNum(pp.lng);
-            if (la != null && lo != null) redDots.push({ lat: la, lng: lo });
-          }
         }
 
         const map = new google.maps.Map(containerRef.current, {
@@ -169,11 +186,22 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
         });
         void addStateLines(map);
 
-        // Zoom to tilt: wait for first idle, then animate to zoom 19 + 45° tilt
-        if (hasCoords) {
+        // Tight view on this location only (no other pins on this map).
+        if (savedLat != null && savedLng != null) {
           listenersRef.current.push(
             google.maps.event.addListenerOnce(map, 'idle', () => {
               try {
+                map.setCenter({ lat: savedLat, lng: savedLng });
+                map.setZoom(19);
+                map.setTilt(45);
+              } catch { /* ignore */ }
+            })
+          );
+        } else if (hint != null) {
+          listenersRef.current.push(
+            google.maps.event.addListenerOnce(map, 'idle', () => {
+              try {
+                map.setCenter({ lat: hint.lat, lng: hint.lng });
                 map.setZoom(19);
                 map.setTilt(45);
               } catch { /* ignore */ }
@@ -181,17 +209,12 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           );
         }
 
-        // Red dots (no click handler needed here)
-        redDots.forEach((p) => {
-          try {
-            new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin('#dc2626', 5), zIndex: 1 });
-          } catch { /* skip */ }
-        });
-
-        // Blue location marker
-        const pinPos = lat != null && lng != null ? { lat, lng } : null;
+        const pinIcon = svgPin(LOCATION_DOT_COLOR, LOCATION_DOT_PX);
+        const pinLat = draft?.lat ?? savedLat ?? hint?.lat ?? null;
+        const pinLng = draft?.lng ?? savedLng ?? hint?.lng ?? null;
+        const pinPos = pinLat != null && pinLng != null ? { lat: pinLat, lng: pinLng } : null;
         const marker = pinPos
-          ? new google.maps.Marker({ map, position: pinPos, icon: svgPin('#0ea5e9', 6), draggable: canEdit, zIndex: 2 })
+          ? new google.maps.Marker({ map, position: pinPos, icon: pinIcon, draggable: canEdit, zIndex: 2 })
           : null;
 
         if (marker) {
@@ -223,7 +246,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
                   marker.setPosition({ lat: newLat, lng: newLng });
                   marker.setMap(map);
                 } else {
-                  const m = new google.maps.Marker({ map, position: { lat: newLat, lng: newLng }, icon: svgPin('#0ea5e9', 6), draggable: true, zIndex: 2 });
+                  const m = new google.maps.Marker({ map, position: { lat: newLat, lng: newLng }, icon: pinIcon, draggable: true, zIndex: 2 });
                   listenersRef.current.push(
                     m.addListener('dragend', () => {
                       try { const p = m.getPosition(); if (p) setDraft({ lat: p.lat(), lng: p.lng() }); } catch { /* ignore */ }
@@ -251,7 +274,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
       markerRef.current = null;
       mapRef.current = null;
     };
-  }, [showMap, canEdit, hasCoords, savedLat, savedLng]);
+  }, [showMap, canEdit, hasCoords, savedLat, savedLng, addressHint?.lat, addressHint?.lng]);
 
   useEffect(() => {
     try {
