@@ -10,15 +10,16 @@ import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
+import { regridUrl } from '@/lib/regrid-url';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
-const DEFAULT_ZOOM = 18; // 18+ required for 45° tilt on satellite
+const DEFAULT_ZOOM = 18;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_COORDS = 4;
 
 /** Single location pin on this page only (no global dots-pins layer). */
-const LOCATION_DOT_COLOR = '#0ea5e9';
+const LOCATION_DOT_COLOR = '#9333ea';
 const LOCATION_DOT_PX = 7;
 
 function safeNum(v: unknown): number | null {
@@ -178,6 +179,8 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           center: initialCenter,
           zoom: initialZoom,
           tilt: 0,
+          heading: 0,
+          rotateControl: false,
           mapTypeId: google.maps.MapTypeId.SATELLITE,
           mapTypeControl: true,
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
@@ -193,7 +196,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
               try {
                 map.setCenter({ lat: savedLat, lng: savedLng });
                 map.setZoom(19);
-                map.setTilt(45);
+                map.setTilt(0);
               } catch { /* ignore */ }
             })
           );
@@ -203,7 +206,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
               try {
                 map.setCenter({ lat: hint.lat, lng: hint.lng });
                 map.setZoom(19);
-                map.setTilt(45);
+                map.setTilt(0);
               } catch { /* ignore */ }
             })
           );
@@ -323,6 +326,9 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
                     <a href={googleEarthUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
                       Google Earth
                     </a>
+                    <a href={regridUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+                      Regrid
+                    </a>
                     <Button variant='ghost' size='sm' onClick={() => setShowCard(false)}>Close</Button>
                   </div>
                 </div>
@@ -330,8 +336,11 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
             </div>
             {lat != null && lng != null && (
               <div className='rounded-lg border bg-background p-3 shadow-sm'>
-                <a href={googleEarthUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+                <a href={googleEarthUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline mr-4'>
                   Open in Google Earth
+                </a>
+                <a href={regridUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+                  Open in Regrid
                 </a>
               </div>
             )}

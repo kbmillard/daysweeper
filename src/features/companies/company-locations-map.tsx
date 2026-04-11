@@ -11,12 +11,15 @@ import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
-import { subscribeToLocationsMapUpdate, notifyLocationsMapUpdate } from '@/lib/locations-map-update';
+import { regridUrl } from '@/lib/regrid-url';
+import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
+import { AlertModal } from '@/components/modal/alert-modal';
 
 const DEFAULT_ZOOM = 15;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_POINTS = 3;
+const COMPANY_PIN_COLOR = '#9333ea';
 
 function isMobile(): boolean {
   if (typeof navigator === 'undefined') return false;
@@ -82,37 +85,33 @@ type Props = {
   companyId?: string | null;
   primaryLocationId?: string | null;
 };
-type RedPin = { lat: number; lng: number };
 type LocationPoint = { lat: number; lng: number; address: string; locationId?: string; companyId?: string };
-type SelectedPin =
-  | { type: 'location'; data: LocationPoint }
-  | { type: 'dot'; data: RedPin }
-  | { type: 'draft'; data: { lat: number; lng: number } };
+type SelectedPin = { type: 'location'; data: LocationPoint };
 
 // ── Inner map component ──────────────────────────────────────────────────────
-function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', companyId, primaryLocationId }: Props) {
+function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', primaryLocationId }: Props) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const locationMarkersRef = useRef<google.maps.Marker[]>([]);
-  const dotMarkersRef = useRef<google.maps.Marker[]>([]);
-  const draftMarkerRef = useRef<google.maps.Marker | null>(null);
   const listenersRef = useRef<google.maps.MapsEventListener[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [selectedPin, setSelectedPin] = useState<SelectedPin | null>(null);
-  const [draftPin, setDraftPin] = useState<{ lat: number; lng: number } | null>(null);
-  const [saving, setSaving] = useState(false);
   const [addingToLastLeg, setAddingToLastLeg] = useState(false);
-  const canDropPin = Boolean(companyId);
+  const [addToLastLegLocked, setAddToLastLegLocked] = useState(false);
+  const [deletingPin, setDeletingPin] = useState(false);
+  const [deleteLocationConfirmOpen, setDeleteLocationConfirmOpen] = useState(false);
+
+  useEffect(() => {
+    if (!selectedPin) return;
+    setAddToLastLegLocked(false);
+  }, [selectedPin]);
 
   const handleAddToLastLeg = async () => {
-    if (!selectedPin || selectedPin.type === 'draft' || addingToLastLeg) return;
+    if (!selectedPin || addingToLastLeg) return;
     setAddingToLastLeg(true);
     try {
-      const body =
-        selectedPin.type === 'location'
-          ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
-          : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
+      const body = { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId };
       const res = await fetch('/api/lastleg/add-to-route', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -122,7 +121,7 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
       let data: { error?: string } = {};
       try { data = await res.json(); } catch { /* ignore */ }
       if (!res.ok) throw new Error(data.error ?? 'Failed');
-      setSelectedPin(null);
+      setAddToLastLegLocked(true);
       if (isMobile()) { toast.success('Added — opening LastLeg…'); openLastLegApp(); }
       else toast.success('Added to LastLeg. Pull to refresh in the app.');
     } catch (err) {
@@ -132,30 +131,25 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
     }
   };
 
-  const handleAddLocationAtPin = async () => {
-    if (!companyId || !draftPin) return;
-    setSaving(true);
+  const handleDeleteLocationPin = async () => {
+    const locationId = selectedPin?.data.locationId;
+    if (!locationId || deletingPin) return;
+    setDeletingPin(true);
     try {
-      const addressRaw = `Dropped pin (${draftPin.lat.toFixed(5)}, ${draftPin.lng.toFixed(5)})`;
-      const res = await fetch(`/api/companies/${companyId}/locations`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ addressRaw, latitude: draftPin.lat, longitude: draftPin.lng }),
-      });
+      const res = await fetch(`/api/locations/${locationId}`, { method: 'DELETE' });
       if (!res.ok) {
         let d: { error?: string } = {};
         try { d = await res.json(); } catch { /* ignore */ }
-        throw new Error(d?.error ?? 'Failed to add location');
+        throw new Error(d?.error ?? 'Failed to delete location');
       }
-      notifyLocationsMapUpdate();
-      setDraftPin(null);
+      toast.success('Location deleted');
       setSelectedPin(null);
+      setDeleteLocationConfirmOpen(false);
       router.refresh();
-      toast.success('Location added');
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Failed to add location');
+      toast.error(err instanceof Error ? err.message : 'Failed to delete location');
     } finally {
-      setSaving(false);
+      setDeletingPin(false);
     }
   };
 
@@ -163,13 +157,6 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
     try { return subscribeToLocationsMapUpdate(() => { try { router.refresh(); } catch { /* ignore */ } }); }
     catch { return undefined; }
   }, [router]);
-
-  useEffect(() => {
-    if (draftPin === null) {
-      try { draftMarkerRef.current?.setMap(null); } catch { /* ignore */ }
-      draftMarkerRef.current = null;
-    }
-  }, [draftPin]);
 
   const pointsWithCoords: LocationPoint[] = locations
     .flatMap((loc) => {
@@ -202,37 +189,13 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
 
     void (async () => {
       try {
-        // Load Google Maps and red dots in parallel.
-        // Red dots NEVER affect zoom/center — blue pins own the viewport.
-        // Dots fetch has a hard 3s timeout so it never blocks map init.
-        const dotsFetch = Promise.race([
-          fetch('/api/dots-pins', { cache: 'no-store' })
-            .then((r) => r.json() as Promise<{ pins?: unknown[] }>)
-            .catch(() => ({ pins: [] as unknown[] })),
-          new Promise<{ pins: unknown[] }>((r) => setTimeout(() => r({ pins: [] }), 3000))
-        ]);
-        const [google, dotsData] = await Promise.all([
-          loadGoogleMaps().catch(() => null),
-          dotsFetch
-        ]);
+        const google = await loadGoogleMaps().catch(() => null);
 
         if (!google || cancelled || !containerRef.current) {
           if (!cancelled) setError(GOOGLE_MAPS_ERROR_MESSAGE);
           return;
         }
 
-        // Parse red dots — safe, never used for viewport
-        const redDots: RedPin[] = [];
-        if (Array.isArray(dotsData?.pins)) {
-          for (const p of dotsData.pins) {
-            if (typeof p !== 'object' || p === null) continue;
-            const pp = p as Record<string, unknown>;
-            const c = safeCoord(pp.lat, pp.lng);
-            if (c) redDots.push(c);
-          }
-        }
-
-        // Blue pins control center & zoom — red dots are cosmetic only
         const firstBlue = pointsWithCoords[0] ?? null;
         const center = firstBlue ?? DEFAULT_CENTER;
         const singleLocation = pointsWithCoords.length === 1;
@@ -244,6 +207,8 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
           center,
           zoom: initialZoom,
           tilt: 0,
+          heading: 0,
+          rotateControl: false,
           mapTypeId: google.maps.MapTypeId.SATELLITE,
           mapTypeControl: true,
           mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
@@ -252,16 +217,7 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
         });
         void addStateLines(map);
 
-        // 45° tilt for single location after idle
-        if (singleLocation) {
-          listenersRef.current.push(
-            google.maps.event.addListenerOnce(map, 'idle', () => {
-              try { map.setTilt(45); } catch { /* ignore */ }
-            })
-          );
-        }
-
-        // fitBounds on BLUE PINS ONLY — never red dots
+        // fitBounds on BLUE PINS ONLY
         if (pointsWithCoords.length > 1) {
           try {
             const bounds = new google.maps.LatLngBounds();
@@ -279,44 +235,12 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
         const locationMarkers: google.maps.Marker[] = [];
         pointsWithCoords.forEach((p) => {
           try {
-            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin('#0ea5e9', 6), zIndex: 2 });
+            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin(COMPANY_PIN_COLOR, 6), zIndex: 2 });
             listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'location', data: p }); } catch { /* ignore */ } }));
             locationMarkers.push(m);
           } catch { /* skip */ }
         });
         locationMarkersRef.current = locationMarkers;
-
-        // Red dot markers — cosmetic only, no effect on viewport
-        const dotMarkers: google.maps.Marker[] = [];
-        redDots.forEach((p) => {
-          try {
-            const m = new google.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin('#dc2626', 5), zIndex: 1 });
-            listenersRef.current.push(m.addListener('click', () => { try { setSelectedPin({ type: 'dot', data: p }); } catch { /* ignore */ } }));
-            dotMarkers.push(m);
-          } catch { /* skip */ }
-        });
-        dotMarkersRef.current = dotMarkers;
-
-        // Drop-pin click handler
-        if (canDropPin) {
-          listenersRef.current.push(
-            map.addListener('click', (e: google.maps.MapMouseEvent) => {
-              try {
-                const pos = e.latLng;
-                if (!pos) return;
-                const lat = pos.lat();
-                const lng = pos.lng();
-                if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
-                try { draftMarkerRef.current?.setMap(null); } catch { /* ignore */ }
-                draftMarkerRef.current = null;
-                const m = new google.maps.Marker({ map, position: { lat, lng }, icon: svgPin('#0ea5e9', 6), zIndex: 3 });
-                draftMarkerRef.current = m;
-                setDraftPin({ lat, lng });
-                setSelectedPin({ type: 'draft', data: { lat, lng } });
-              } catch { /* ignore */ }
-            })
-          );
-        }
 
         mapRef.current = map;
       } catch (err) {
@@ -327,33 +251,33 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
     return () => {
       cancelled = true;
       cleanupListeners();
-      try { draftMarkerRef.current?.setMap(null); } catch { /* ignore */ }
-      draftMarkerRef.current = null;
       locationMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       locationMarkersRef.current = [];
-      dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
-      dotMarkersRef.current = [];
       mapRef.current = null;
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasAnyCoords, canDropPin, pointsWithCoords.length]);
+  }, [hasAnyCoords, pointsWithCoords.length]);
 
   return (
     <Card>
+      <AlertModal
+        isOpen={deleteLocationConfirmOpen}
+        onClose={() => setDeleteLocationConfirmOpen(false)}
+        onConfirm={() => void handleDeleteLocationPin()}
+        loading={deletingPin}
+        description='This location will be removed from the database.'
+      />
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
           <IconMapPin className='h-5 w-5' />
           Map
         </CardTitle>
         <CardDescription>
-          {canDropPin && 'Click the map to drop a pin, then add as a new location. '}
           {hasAnyCoords
             ? companyName
               ? `${pointsWithCoords.length} location${pointsWithCoords.length === 1 ? '' : 's'} for ${companyName}`
               : `${pointsWithCoords.length} location${pointsWithCoords.length === 1 ? '' : 's'}`
-            : !canDropPin
-              ? 'Add latitude and longitude to a location to see pins on the map'
-              : 'Drop a pin to add the first location.'}
+            : 'Add latitude and longitude to a location to see pins on the map'}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -363,51 +287,79 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', co
           </div>
         ) : (
           <div className='space-y-2'>
-            <div className='relative rounded-lg border overflow-hidden min-h-[280px]'>
+            <div className='relative rounded-2xl overflow-hidden min-h-[280px] shadow-lg'>
               <div ref={containerRef} className='h-[280px] w-full min-h-[280px] bg-[#1a1a2e]' />
               {selectedPin && (
-                <div className='absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md rounded-lg border bg-background p-4 shadow-lg'>
-                  <p className='text-sm text-muted-foreground mb-2'>
-                    {selectedPin.type === 'location'
-                      ? selectedPin.data.address
-                      : selectedPin.type === 'draft'
-                        ? `Dropped pin: ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`
-                        : `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`}
+                <div className='absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md ios-card ios-animate-in p-5'>
+                  <p className='text-[15px] font-semibold text-foreground/90 mb-3 leading-snug'>
+                    {selectedPin.data.address}
                   </p>
-                  <div className='flex flex-wrap gap-2 items-center'>
-                    {selectedPin.type !== 'draft' && (
-                      <Button size='sm' onClick={handleAddToLastLeg} disabled={addingToLastLeg}>
-                        {addingToLastLeg ? 'Adding…' : 'Add to LastLeg'}
-                      </Button>
+                  <div className='flex flex-wrap gap-2.5 items-center mb-4'>
+                    <button
+                      type='button'
+                      onClick={handleAddToLastLeg}
+                      disabled={addingToLastLeg || addToLastLegLocked}
+                      className='ios-bubble ios-bubble-primary h-9 px-4 rounded-full text-[14px] font-semibold tracking-tight'
+                    >
+                      {addingToLastLeg ? 'Adding…' : 'Add to LastLeg'}
+                    </button>
+                    <button
+                      type='button'
+                      onClick={() => setAddToLastLegLocked(false)}
+                      className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px]'
+                    >
+                      Reactivate pin
+                    </button>
+                    {selectedPin.data.locationId && (
+                      <button
+                        type='button'
+                        onClick={() => setDeleteLocationConfirmOpen(true)}
+                        disabled={deletingPin}
+                        className='ios-bubble ios-bubble-destructive h-9 px-4 rounded-full text-[14px]'
+                      >
+                        Delete pin
+                      </button>
                     )}
-                    <a href={googleEarthUrl(selectedPin.data.lat, selectedPin.data.lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+                  </div>
+                  <div className='flex flex-wrap gap-2.5 items-center'>
+                    <a
+                      href={googleEarthUrl(selectedPin.data.lat, selectedPin.data.lng)}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center'
+                    >
                       Google Earth
                     </a>
-                    {selectedPin.type === 'location' && selectedPin.data.locationId && selectedPin.data.companyId && (
-                      <Link href={`/${basePath}/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`} className='text-sm text-primary hover:underline'>
+                    <a
+                      href={regridUrl(selectedPin.data.lat, selectedPin.data.lng)}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center'
+                    >
+                      Regrid
+                    </a>
+                    {selectedPin.data.locationId && selectedPin.data.companyId && (
+                      <Link
+                        href={`/${basePath}/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`}
+                        className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center'
+                      >
                         Location page
                       </Link>
                     )}
-                    {selectedPin.type === 'draft' && (
-                      <>
-                        <Button size='sm' onClick={handleAddLocationAtPin} disabled={saving}>
-                          {saving ? 'Adding…' : 'Add location at pin'}
-                        </Button>
-                        <Button variant='ghost' size='sm' onClick={() => { setDraftPin(null); setSelectedPin(null); }}>
-                          Cancel
-                        </Button>
-                      </>
-                    )}
-                    <Button variant='ghost' size='sm' onClick={() => { setSelectedPin(null); if (selectedPin.type === 'draft') setDraftPin(null); }}>
+                    <button
+                      type='button'
+                      onClick={() => setSelectedPin(null)}
+                      className='ios-bubble ios-bubble-ghost h-9 px-4 rounded-full text-[14px]'
+                    >
                       Close
-                    </Button>
+                    </button>
                   </div>
                 </div>
               )}
             </div>
             {pointsWithCoords.length > 0 && (
-              <div className='rounded-lg border bg-background p-3 shadow-sm'>
-                <a href={googleEarthUrl(pointsWithCoords[0].lat, pointsWithCoords[0].lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+              <div className='ios-glass rounded-2xl p-4'>
+                <a href={googleEarthUrl(pointsWithCoords[0].lat, pointsWithCoords[0].lng)} target='_blank' rel='noopener noreferrer' className='ios-link text-[14px]'>
                   Open in Google Earth{pointsWithCoords.length > 1 ? ' (first location)' : ''}
                 </a>
               </div>
