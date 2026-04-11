@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import { AlertModal } from '@/components/modal/alert-modal';
 import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { addStateLines } from '@/lib/add-state-lines';
@@ -48,6 +49,24 @@ type GeoJSONResponse = { type: 'FeatureCollection'; features: GeoJSONFeature[] }
 type RedPin = { lng: number; lat: number; id?: string; source?: 'kml' | 'user' };
 type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
 
+type PinResearchChosen = {
+  name: string;
+  formattedAddress: string | null;
+  phone: string | null;
+  website: string | null;
+  mapsUrl: string | null;
+};
+
+type PinResearchApiOk = {
+  ok: true;
+  cached: boolean;
+  provider: string;
+  llmProvider: string;
+  chosen: PinResearchChosen | null;
+  candidates: PinResearchChosen[];
+  disambiguationNote: string | null;
+};
+
 export default function EmptyMapClient() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
@@ -62,6 +81,55 @@ export default function EmptyMapClient() {
   const [addressSearch, setAddressSearch] = useState('');
   const [searching, setSearching] = useState(false);
   const [addingToLastLeg, setAddingToLastLeg] = useState(false);
+  const [deleteDotConfirmOpen, setDeleteDotConfirmOpen] = useState(false);
+  const [deletingRedDot, setDeletingRedDot] = useState(false);
+  const [placeResearchHint, setPlaceResearchHint] = useState('');
+  const [placeResearchLoading, setPlaceResearchLoading] = useState(false);
+  const [placeResearchResult, setPlaceResearchResult] = useState<PinResearchApiOk | null>(null);
+
+  useEffect(() => {
+    if (!selectedPin) {
+      setPlaceResearchResult(null);
+      setPlaceResearchHint('');
+      return;
+    }
+    setPlaceResearchResult(null);
+    if (selectedPin.type === 'location') {
+      setPlaceResearchHint(selectedPin.data.addressRaw?.trim() ?? '');
+    } else {
+      setPlaceResearchHint('');
+    }
+  }, [selectedPin]);
+
+  const handleResearchPlace = async () => {
+    if (!selectedPin || placeResearchLoading) return;
+    const lat = selectedPin.data.lat;
+    const lng = selectedPin.data.lng;
+    setPlaceResearchLoading(true);
+    try {
+      const res = await fetch('/api/pin-place-research', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          latitude: lat,
+          longitude: lng,
+          hint: placeResearchHint.trim(),
+        }),
+      });
+      const data = (await res.json()) as PinResearchApiOk | { ok?: false; error?: string };
+      if (!res.ok || !data || (data as PinResearchApiOk).ok !== true) {
+        const err = (data as { error?: string })?.error ?? `Request failed (${res.status})`;
+        throw new Error(err);
+      }
+      setPlaceResearchResult(data as PinResearchApiOk);
+      toast.success((data as PinResearchApiOk).cached ? 'Loaded cached result' : 'Place research complete');
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Research failed');
+    } finally {
+      setPlaceResearchLoading(false);
+    }
+  };
 
   const handleAddToLastLeg = async () => {
     if (!selectedPin || addingToLastLeg) return;
@@ -143,6 +211,7 @@ export default function EmptyMapClient() {
   const handleDeleteRedPin = async () => {
     if (!selectedPin || selectedPin.type !== 'dot') return;
     const { id, lat, lng } = selectedPin.data;
+    setDeletingRedDot(true);
     // Immediately remove the marker from the map for instant visual feedback
     if (selectedMarkerRef.current) {
       try { selectedMarkerRef.current.setMap(null); } catch { /* ignore */ }
@@ -150,27 +219,37 @@ export default function EmptyMapClient() {
       selectedMarkerRef.current = null;
     }
     setSelectedPin(null);
+    setDeleteDotConfirmOpen(false);
     try {
-      if (id) {
-        const res = await fetch(`/api/map-pins/${id}`, { method: 'DELETE' });
-        if (!res.ok) {
-          let d: { error?: string } = {};
-          try { d = await res.json(); } catch { /* ignore */ }
-          throw new Error(d?.error ?? 'Failed');
+      const res = await fetch('/api/map-pins', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(id ? { id } : { latitude: lat, longitude: lng })
+      });
+      if (!res.ok) {
+        let d: { error?: string } = {};
+        try {
+          d = await res.json();
+        } catch {
+          /* ignore */
         }
-      } else {
-        const res = await fetch('/api/dots-pins/hide', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ latitude: lat, longitude: lng }) });
-        if (!res.ok) {
-          let d: { error?: string } = {};
-          try { d = await res.json(); } catch { /* ignore */ }
-          throw new Error(d?.error ?? 'Failed');
-        }
+        throw new Error(d?.error ?? 'Failed');
       }
-      toast.success('Pin removed');
+      const data = (await res.json().catch(() => ({}))) as {
+        deletedMapPins?: number;
+        by?: string;
+      };
+      if (!id && data.by === 'coordinates' && data.deletedMapPins === 0) {
+        toast.warning('No matching pin in the database (map refreshed).');
+      } else {
+        toast.success('Pin removed');
+      }
+      await refetchDotsRef.current?.();
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Failed to delete');
-      // Re-fetch to restore the marker if the delete failed
       await refetchDotsRef.current?.();
+    } finally {
+      setDeletingRedDot(false);
     }
   };
 
@@ -210,6 +289,9 @@ export default function EmptyMapClient() {
           mapTypeControlOptions: { style: g.maps.MapTypeControlStyle.DROPDOWN_MENU },
           backgroundColor: '#1a1a2e',
           gestureHandling: 'greedy',
+          tilt: 0,
+          heading: 0,
+          rotateControl: false,
         });
 
         // State lines — non-blocking, non-fatal
@@ -345,6 +427,13 @@ export default function EmptyMapClient() {
 
   return (
     <div className="relative flex min-h-0 flex-1 w-full">
+      <AlertModal
+        isOpen={deleteDotConfirmOpen}
+        onClose={() => setDeleteDotConfirmOpen(false)}
+        onConfirm={() => void handleDeleteRedPin()}
+        loading={deletingRedDot}
+        description="This map pin will be removed from the database."
+      />
       {/* Dark background shown until map tiles load — eliminates white flash */}
       <div ref={containerRef} className="absolute inset-0 h-full w-full bg-[#1a1a2e]" />
 
@@ -392,9 +481,81 @@ export default function EmptyMapClient() {
               <Link href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`} className="text-sm text-primary hover:underline">Location page</Link>
             )}
             {selectedPin.type === 'dot' && (
-              <Button variant="destructive" size="sm" onClick={handleDeleteRedPin}>Delete pin</Button>
+              <Button variant="destructive" size="sm" onClick={() => setDeleteDotConfirmOpen(true)}>
+                Delete pin
+              </Button>
             )}
             <Button variant="ghost" size="sm" onClick={() => setSelectedPin(null)}>Close</Button>
+          </div>
+          <div className="mt-4 pt-4 border-t space-y-2">
+            <p className="text-xs font-medium text-muted-foreground">Research nearby place (Google Places + optional AI)</p>
+            <Input
+              placeholder="Optional hint: business name or address fragment"
+              value={placeResearchHint}
+              onChange={(e) => setPlaceResearchHint(e.target.value)}
+              className="text-sm"
+            />
+            <Button
+              type="button"
+              variant="secondary"
+              size="sm"
+              onClick={() => void handleResearchPlace()}
+              disabled={placeResearchLoading}
+            >
+              {placeResearchLoading ? 'Researching…' : 'Research place'}
+            </Button>
+            {placeResearchResult && (
+              <div className="rounded-md border bg-muted/40 p-3 text-sm space-y-1.5">
+                <p className="text-xs text-muted-foreground">
+                  {(placeResearchResult.cached ? 'Cached · ' : '') + placeResearchResult.provider}
+                  {placeResearchResult.llmProvider !== 'none' ? ` · LLM: ${placeResearchResult.llmProvider}` : ''}
+                </p>
+                {placeResearchResult.chosen ? (
+                  <>
+                    <p className="font-semibold">{placeResearchResult.chosen.name}</p>
+                    {placeResearchResult.chosen.formattedAddress && (
+                      <p className="text-muted-foreground">{placeResearchResult.chosen.formattedAddress}</p>
+                    )}
+                    {placeResearchResult.chosen.phone && (
+                      <p>
+                        <a href={`tel:${placeResearchResult.chosen.phone.replace(/\s/g, '')}`} className="text-primary hover:underline">
+                          {placeResearchResult.chosen.phone}
+                        </a>
+                      </p>
+                    )}
+                    {placeResearchResult.chosen.website && (
+                      <p>
+                        <a href={placeResearchResult.chosen.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">
+                          Website
+                        </a>
+                      </p>
+                    )}
+                    {placeResearchResult.chosen.mapsUrl && (
+                      <p>
+                        <a href={placeResearchResult.chosen.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          Open in Google Maps
+                        </a>
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <p className="text-muted-foreground">No place found within search radius.</p>
+                )}
+                {placeResearchResult.disambiguationNote && (
+                  <p className="text-xs text-muted-foreground italic">{placeResearchResult.disambiguationNote}</p>
+                )}
+                {placeResearchResult.candidates.length > 1 && (
+                  <details className="text-xs">
+                    <summary className="cursor-pointer text-muted-foreground">Other candidates ({placeResearchResult.candidates.length})</summary>
+                    <ul className="mt-1 list-disc pl-4 space-y-1">
+                      {placeResearchResult.candidates.map((c, i) => (
+                        <li key={i}>{c.name}{c.formattedAddress ? ` — ${c.formattedAddress}` : ''}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
