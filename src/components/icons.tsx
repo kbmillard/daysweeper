@@ -79,5 +79,7 @@ export const Icons = {
   account: IconUserCircle,
   profile: IconUser,
   companies: IconBuilding,
-  mapPin: IconMapPin
+  mapPin: IconMapPin,
+  /** Competitors / vendor research (Sellers nav) */
+  sellers: IconShoppingBag
 };

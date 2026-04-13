@@ -4,9 +4,12 @@ import { NextRequest, NextResponse } from 'next/server';
 const isProtectedRoute = createRouteMatcher(['/map(.*)', '/dashboard(.*)']);
 const isPublicApi = createRouteMatcher(['/api/config/google-maps-key']);
 
+/** Set true to bypass Clerk on /map and /dashboard (dev only). */
+const AUTH_DISABLED = false;
+
 export default clerkMiddleware(async (auth, req: NextRequest) => {
   if (isPublicApi(req)) return NextResponse.next();
-  if (isProtectedRoute(req)) await auth.protect();
+  if (!AUTH_DISABLED && isProtectedRoute(req)) await auth.protect();
 
   const res = NextResponse.next();
   res.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');

@@ -85,9 +85,9 @@ export function DataTableFacetedFilter<TData, TValue>({
               aria-label={`Clear ${title} filter`}
               tabIndex={0}
               onClick={onReset}
-              className='focus-visible:ring-ring rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-1 focus-visible:outline-none'
+              className='focus-visible:ring-ring inline-flex size-7 shrink-0 items-center justify-center rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-1 focus-visible:outline-none'
             >
-              <XCircle />
+              <XCircle className='size-4' aria-hidden />
             </div>
           ) : (
             <PlusCircle />

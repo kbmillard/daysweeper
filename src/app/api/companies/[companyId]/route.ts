@@ -1,6 +1,11 @@
+import { Prisma } from '@prisma/client';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { isValidStatus, normalizeStatus } from '@/constants/company-status';
+import {
+  isCompanyPrimarySyncSuppressed,
+  mergePrimaryLocationMirrorMetadata
+} from '@/lib/location-primary-sync-metadata';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -54,7 +59,8 @@ export async function PATCH(
     const { companyId } = await params;
     const body = await req.json();
 
-    const { status, parentCompanyId, primaryLocationId, name, website, phone, email } = body;
+    const { status, parentCompanyId, primaryLocationId, name, website, phone, email, productType } =
+      body;
 
     if (name !== undefined) {
       if (typeof name !== 'string' || !name.trim()) {
@@ -74,6 +80,13 @@ export async function PATCH(
       return NextResponse.json({ error: 'email must be a string or null' }, { status: 400 });
     }
 
+    if (productType !== undefined && productType !== null && typeof productType !== 'string') {
+      return NextResponse.json(
+        { error: 'productType must be a string or null' },
+        { status: 400 }
+      );
+    }
+
     if (status !== undefined && status !== null) {
       if (typeof status !== 'string' || (status !== '' && !isValidStatus(status))) {
         return NextResponse.json(
@@ -83,6 +96,7 @@ export async function PATCH(
       }
     }
 
+    let parentRecordForLink: { externalId: string | null } | null = null;
     if (parentCompanyId !== undefined) {
       if (parentCompanyId !== null && typeof parentCompanyId !== 'string') {
         return NextResponse.json(
@@ -92,7 +106,8 @@ export async function PATCH(
       }
       if (parentCompanyId) {
         const parent = await prisma.company.findUnique({
-          where: { id: parentCompanyId }
+          where: { id: parentCompanyId },
+          select: { id: true, externalId: true }
         });
         if (!parent) {
           return NextResponse.json(
@@ -106,6 +121,7 @@ export async function PATCH(
             { status: 400 }
           );
         }
+        parentRecordForLink = parent;
       }
     }
 
@@ -129,6 +145,25 @@ export async function PATCH(
       }
     }
 
+    let mergedMetadata: Record<string, unknown> | undefined;
+    if (productType !== undefined) {
+      const current = await prisma.company.findUnique({
+        where: { id: companyId },
+        select: { metadata: true }
+      });
+      const raw = current?.metadata;
+      const base =
+        raw && typeof raw === 'object' && !Array.isArray(raw)
+          ? { ...(raw as Record<string, unknown>) }
+          : {};
+      if (productType === null || (typeof productType === 'string' && productType.trim() === '')) {
+        delete base.productType;
+      } else {
+        base.productType = (productType as string).trim();
+      }
+      mergedMetadata = base;
+    }
+
     const company = await prisma.company.update({
       where: { id: companyId },
       data: {
@@ -138,14 +173,78 @@ export async function PATCH(
         ...(email !== undefined && { email: email === '' ? null : email?.trim() ?? null }),
         ...(status !== undefined && { status: status === '' ? null : normalizeStatus(status) }),
         ...(parentCompanyId !== undefined && {
-          parentCompanyDbId: parentCompanyId === '' || parentCompanyId === null ? null : parentCompanyId
+          parentCompanyDbId:
+            parentCompanyId === '' || parentCompanyId === null ? null : parentCompanyId,
+          externalParentId:
+            parentCompanyId === '' || parentCompanyId === null
+              ? null
+              : (parentRecordForLink?.externalId ?? null)
         }),
         ...(primaryLocationId !== undefined && {
           primaryLocationId: primaryLocationId === '' || primaryLocationId === null ? null : primaryLocationId
         }),
+        ...(mergedMetadata !== undefined && {
+          metadata: mergedMetadata as Prisma.InputJsonValue
+        }),
         updatedAt: new Date()
       }
     });
+
+    const newPrimaryId =
+      typeof primaryLocationId === 'string' && primaryLocationId.trim() !== ''
+        ? primaryLocationId.trim()
+        : null;
+
+    if (newPrimaryId) {
+      const loc = await prisma.location.findFirst({
+        where: { id: newPrimaryId, companyId },
+        select: { id: true, metadata: true }
+      });
+      if (loc) {
+        await prisma.location.update({
+          where: { id: newPrimaryId },
+          data: {
+            locationName: company.name,
+            phone: company.phone,
+            website: company.website,
+            email: company.email,
+            metadata: mergePrimaryLocationMirrorMetadata(loc.metadata, company, {
+              clearSuppress: true
+            }) as Prisma.InputJsonValue,
+            updatedAt: new Date()
+          }
+        });
+      }
+    } else if (
+      company.primaryLocationId &&
+      (name !== undefined ||
+        website !== undefined ||
+        phone !== undefined ||
+        email !== undefined ||
+        status !== undefined ||
+        mergedMetadata !== undefined)
+    ) {
+      const plId = company.primaryLocationId as string;
+      const loc = await prisma.location.findFirst({
+        where: { id: plId, companyId },
+        select: { id: true, metadata: true }
+      });
+      if (loc && !isCompanyPrimarySyncSuppressed(loc.metadata)) {
+        await prisma.location.update({
+          where: { id: plId },
+          data: {
+            locationName: company.name,
+            phone: company.phone,
+            website: company.website,
+            email: company.email,
+            metadata: mergePrimaryLocationMirrorMetadata(loc.metadata, company, {
+              clearSuppress: false
+            }) as Prisma.InputJsonValue,
+            updatedAt: new Date()
+          }
+        });
+      }
+    }
 
     return NextResponse.json({ company });
   } catch (error: any) {

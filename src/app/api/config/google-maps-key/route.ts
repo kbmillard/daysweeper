@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
+import { LASTLEG_IOS_GOOGLE_MAPS_DEFAULT_KEY } from '@/lib/lastleg-google-maps-key';
 
 export const dynamic = 'force-dynamic';
 
 /**
- * GET - Return the Google Maps API key for client-side map loading.
- * Reads from NEXT_PUBLIC_GOOGLE_MAPS_API_KEY or GOOGLE_MAPS_API_KEY.
- * In Vercel: set one of these in Project Settings → Environment Variables
- * for Production (and Preview if needed), then redeploy.
+ * GET - Google Maps API key for LastLeg iOS (and any client that fetches this URL).
+ * LASTLEG_IOS_GOOGLE_MAPS_API_KEY overrides; otherwise uses the bundled LastLeg default.
  */
 export async function GET() {
   const key =
-    (process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '').trim() ||
-    (process.env.GOOGLE_MAPS_API_KEY ?? '').trim();
+    (process.env.LASTLEG_IOS_GOOGLE_MAPS_API_KEY ?? '').trim() ||
+    LASTLEG_IOS_GOOGLE_MAPS_DEFAULT_KEY;
   return NextResponse.json({ key });
 }

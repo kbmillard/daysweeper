@@ -1,6 +1,7 @@
 'use client';
 import { AlertModal } from '@/components/modal/alert-modal';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,11 +19,19 @@ interface CellActionProps {
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
-  const [loading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const onConfirm = async () => {};
+  const onConfirm = async () => {
+    setLoading(true);
+    try {
+      setOpen(false);
+      toast.info('Sample products are not stored in the database and cannot be deleted.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -31,6 +40,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
         onClose={() => setOpen(false)}
         onConfirm={onConfirm}
         loading={loading}
+        description={`“${data.name}” is demo data only — nothing will be removed from the database.`}
       />
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>

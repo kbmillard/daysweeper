@@ -5,6 +5,7 @@ import { DataTableAddColumn } from '@/components/ui/table/data-table-add-column'
 import { DataTableToolbar } from '@/components/ui/table/data-table-toolbar';
 import { Button } from '@/components/ui/button';
 import { useDataTable } from '@/hooks/use-data-table';
+import type { Option } from '@/types/data-table';
 import type { ColumnDef } from '@tanstack/react-table';
 import { parseAsInteger, parseAsString, useQueryState } from 'nuqs';
 import { useMemo } from 'react';
@@ -16,6 +17,7 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
+  metadata: unknown;
   createdAt: Date;
   updatedAt: Date;
   Location: Array<{
@@ -28,12 +30,14 @@ interface CompaniesTableParams {
   data: Company[];
   totalItems: number;
   hideAccounts?: boolean;
+  stateOptions: Option[];
 }
 
 export default function CompaniesTable({
   data,
   totalItems,
-  hideAccounts = false
+  hideAccounts = false,
+  stateOptions
 }: CompaniesTableParams) {
   const [pageSize] = useQueryState('perPage', parseAsInteger.withDefault(10));
   const [, setHideAccounts] = useQueryState('hideAccounts', parseAsString);
@@ -41,8 +45,8 @@ export default function CompaniesTable({
   const pageCount = Math.ceil(totalItems / pageSize);
 
   const columns = useMemo(
-    () => getColumns() as ColumnDef<Company>[],
-    []
+    () => getColumns({ stateOptions }) as ColumnDef<Company>[],
+    [stateOptions]
   );
 
   const { table } = useDataTable({

@@ -1,0 +1,223 @@
+{
+  "suppliers": [
+    {
+      "company": "Röchling Group",
+      "companyKey": "roechling.com",
+      "companyId": "cmp_72p91de44a83",
+      "website": "https://www.roechling.com",
+      "segment": "USA",
+      "parentCompanyId": null
+    },
+    {
+      "company": "Sodecia Group",
+      "companyKey": "sodecia.com",
+      "companyId": "cmp_72p2f0b6838d",
+      "website": "https://www.sodecia.com",
+      "segment": "USA",
+      "parentCompanyId": null
+    },
+    {
+      "company": "Röchling Automotive USA LLP",
+      "parentCompany": "Röchling Group",
+      "website": "https://www.roechling.com/us/automotive/about/locations/duncan/contact-duncan",
+      "companyKey": "roechling.com",
+      "companyId": "cmp_72a8f14c6b21",
+      "parentCompanyId": "cmp_72p91de44a83",
+      "locationId": "loc_72c31f8aa402",
+      "addressRaw": "245 Parkway East, Duncan, SC 29334, US",
+      "addressComponents": {
+        "city": "Duncan",
+        "state": "SC",
+        "postal_code": "29334",
+        "country": "US"
+      },
+      "addressConfidence": 0.99,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Plastic forming / injection molding",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "plastic forming",
+        "injection molding",
+        "BMW Spartanburg corridor"
+      ]
+    },
+    {
+      "company": "Röchling Automotive USA LLP",
+      "parentCompany": "Röchling Group",
+      "website": "https://www.roechling.com/lv/automotive/about/locations",
+      "companyKey": "roechling.com",
+      "companyId": "cmp_72a8f14c6b21",
+      "parentCompanyId": "cmp_72p91de44a83",
+      "locationId": "loc_72f9e20d9b51",
+      "addressRaw": "44312 Akron, OH, US",
+      "addressComponents": {
+        "city": "Akron",
+        "state": "OH",
+        "postal_code": "44312",
+        "country": "US"
+      },
+      "addressConfidence": 0.9,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Plastic forming / injection molding",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "plastic forming",
+        "injection molding",
+        "Ohio corridor"
+      ]
+    },
+    {
+      "company": "Röchling Automotive USA LLP",
+      "parentCompany": "Röchling Group",
+      "website": "https://www.roechling.com/lv/automotive/about/locations",
+      "companyKey": "roechling.com",
+      "companyId": "cmp_72a8f14c6b21",
+      "parentCompanyId": "cmp_72p91de44a83",
+      "locationId": "loc_72e0b2c4fa17",
+      "addressRaw": "2370 Meijer Drive, Troy, MI 48084, US",
+      "addressComponents": {
+        "city": "Troy",
+        "state": "MI",
+        "postal_code": "48084",
+        "country": "US"
+      },
+      "addressConfidence": 0.99,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Plastic forming / injection molding",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "plastic forming",
+        "injection molding",
+        "Michigan corridor"
+      ]
+    },
+    {
+      "company": "Sodecia Automotive North America Inc.",
+      "parentCompany": "Sodecia Group",
+      "website": "https://www.sodecia.com/index.php/locations/",
+      "companyKey": "sodecia.com",
+      "companyId": "cmp_72d5a77b309c",
+      "parentCompanyId": "cmp_72p2f0b6838d",
+      "locationId": "loc_7204a1d2be67",
+      "addressRaw": "969 Chicago Road, Troy, MI 48083, US",
+      "addressComponents": {
+        "city": "Troy",
+        "state": "MI",
+        "postal_code": "48083",
+        "country": "US"
+      },
+      "addressConfidence": 0.99,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Body-in-white / stamped components",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "body in white",
+        "stamped components",
+        "structural components"
+      ]
+    },
+    {
+      "company": "Sodecia Automotive Detroit Corp",
+      "parentCompany": "Sodecia Group",
+      "website": "https://www.sodecia.com/index.php/locations/",
+      "companyKey": "sodecia.com",
+      "companyId": "cmp_72d5a77b309c",
+      "parentCompanyId": "cmp_72p2f0b6838d",
+      "locationId": "loc_729af42e3d10",
+      "addressRaw": "24331 Sherwood Avenue, Center Line, MI 48015, US",
+      "addressComponents": {
+        "city": "Center Line",
+        "state": "MI",
+        "postal_code": "48015",
+        "country": "US"
+      },
+      "addressConfidence": 0.99,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Body-in-white / stamped components",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "stamped components",
+        "body in white",
+        "Michigan supplier base"
+      ]
+    },
+    {
+      "company": "Sodecia Automotive Detroit Corp",
+      "parentCompany": "Sodecia Group",
+      "website": "https://www.sodecia.com/index.php/locations/",
+      "companyKey": "sodecia.com",
+      "companyId": "cmp_72d5a77b309c",
+      "parentCompanyId": "cmp_72p2f0b6838d",
+      "locationId": "loc_72bb513c0a4e",
+      "addressRaw": "15260 Common Road, Roseville, MI 48066, US",
+      "addressComponents": {
+        "city": "Roseville",
+        "state": "MI",
+        "postal_code": "48066",
+        "country": "US"
+      },
+      "addressConfidence": 0.99,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Body-in-white / stamped components",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "stamped components",
+        "body in white",
+        "Roseville supplier base"
+      ]
+    },
+    {
+      "company": "Sodecia Safety & Mobility Auburn Inc",
+      "parentCompany": "Sodecia Group",
+      "website": "https://www.sodecia.com/index.php/locations/",
+      "companyKey": "sodecia.com",
+      "companyId": "cmp_72d5a77b309c",
+      "parentCompanyId": "cmp_72p2f0b6838d",
+      "locationId": "loc_72de86b4f2a9",
+      "addressRaw": "2440 Innovation Drive, Auburn, AL 36832, US",
+      "addressComponents": {
+        "city": "Auburn",
+        "state": "AL",
+        "postal_code": "36832",
+        "country": "US"
+      },
+      "addressConfidence": 0.99,
+      "tier": "Tier 2",
+      "segment": "USA",
+      "supplyChainCategory": "Tier_2",
+      "supplyChainSubtypeGroup": "Manufacturing",
+      "supplyChainSubtype": "Safety / mobility components",
+      "legacyJson": {},
+      "industryKeywords": [
+        "automotive",
+        "safety",
+        "mobility",
+        "Auburn supplier cluster"
+      ]
+    }
+  ]
+}

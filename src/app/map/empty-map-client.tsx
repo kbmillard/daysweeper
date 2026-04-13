@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,7 +11,19 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
-import { IconSearch } from '@tabler/icons-react';
+import { IconSearch, IconX } from '@tabler/icons-react';
+import { RoutePlannerSheet } from '@/components/map/route-planner-sheet';
+import {
+  MapPinLayersControl,
+  type MapPinLayers
+} from '@/components/map/map-pin-layers-control';
+import type { RoutePlannerState } from '@/lib/route-planner-types';
+import {
+  fetchMapKitAddressSuggestions,
+  geocodeWithAppleMapKit,
+  type MapKitAddressSuggestion
+} from '@/lib/mapkit-geocode-client';
+import { useDebouncedCallback } from '@/hooks/use-debounced-callback';
 
 /** Company / location markers on the map (not red dots). */
 const COMPANY_PIN_COLOR = '#9333ea';
@@ -93,6 +105,17 @@ type RedPin = {
   targetId?: string;
 };
 type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
+type SellerPin = {
+  id: string;
+  lat: number;
+  lng: number;
+  label: string;
+  addressRaw?: string;
+  phone?: string;
+  website?: string;
+  role?: string;
+  notes?: string;
+};
 
 type PinResearchChosen = {
   name: string;
@@ -117,13 +140,29 @@ export default function EmptyMapClient() {
   const mapRef = useRef<google.maps.Map | null>(null);
   const locationMarkersRef = useRef<google.maps.Marker[]>([]);
   const dotMarkersRef = useRef<google.maps.Marker[]>([]);
+  const sellerMarkersRef = useRef<google.maps.Marker[]>([]);
   const unsubMapRef = useRef<(() => void) | null>(null);
   const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
   const selectedMarkerRef = useRef<google.maps.Marker | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
-  const [selectedPin, setSelectedPin] = useState<{ type: 'location'; data: LocationPin } | { type: 'dot'; data: RedPin } | null>(null);
+  const [selectedPin, setSelectedPin] = useState<
+    | { type: 'location'; data: LocationPin }
+    | { type: 'dot'; data: RedPin }
+    | { type: 'seller'; data: SellerPin }
+    | null
+  >(null);
+  const [pinLayers, setPinLayers] = useState<MapPinLayers>({
+    containers: true,
+    companies: true,
+    sellers: true
+  });
+  const pinLayersRef = useRef(pinLayers);
+  pinLayersRef.current = pinLayers;
+  const applyMarkerLayersRef = useRef<(() => void) | null>(null);
   const [addressSearch, setAddressSearch] = useState('');
+  const [addressSuggestions, setAddressSuggestions] = useState<MapKitAddressSuggestion[]>([]);
+  const [suggestOpen, setSuggestOpen] = useState(false);
   const [searching, setSearching] = useState(false);
   const [addingToLastLeg, setAddingToLastLeg] = useState(false);
   /** When true, "Add to LastLeg" is dimmed/disabled until user clicks Reactivate. Red dots start locked (already on map route). */
@@ -134,6 +173,48 @@ export default function EmptyMapClient() {
   const [placeResearchLoading, setPlaceResearchLoading] = useState(false);
   const [placeResearchResult, setPlaceResearchResult] = useState<PinResearchApiOk | null>(null);
   const [mapType, setMapType] = useState<'satellite' | 'roadmap'>('satellite');
+  const [corridorPlanner, setCorridorPlanner] = useState<RoutePlannerState | null>(null);
+  const corridorPlannerRef = useRef<RoutePlannerState | null>(null);
+  corridorPlannerRef.current = corridorPlanner;
+  const replayDotsRef = useRef<(() => void) | null>(null);
+  const routePolylineRef = useRef<google.maps.Polyline | null>(null);
+
+  useEffect(() => {
+    void (async () => {
+      try {
+        const res = await fetch('/api/route-planner', { credentials: 'include' });
+        const data = (await res.json()) as RoutePlannerState;
+        if (data.active) setCorridorPlanner(data);
+      } catch {
+        /* ignore */
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (!ready || !mapRef.current || typeof google === 'undefined') return;
+    routePolylineRef.current?.setMap(null);
+    routePolylineRef.current = null;
+    const p = corridorPlanner;
+    if (p?.active && p.vertices.length >= 2) {
+      routePolylineRef.current = new google.maps.Polyline({
+        path: p.vertices.map((v) => ({ lat: v.lat, lng: v.lng })),
+        strokeColor: '#ec4899',
+        strokeOpacity: 0.78,
+        strokeWeight: 3,
+        map: mapRef.current,
+        zIndex: 0
+      });
+    }
+    return () => {
+      routePolylineRef.current?.setMap(null);
+      routePolylineRef.current = null;
+    };
+  }, [ready, corridorPlanner]);
+
+  useEffect(() => {
+    replayDotsRef.current?.();
+  }, [corridorPlanner]);
 
   const toggleMapType = () => {
     const newType = mapType === 'satellite' ? 'roadmap' : 'satellite';
@@ -142,6 +223,39 @@ export default function EmptyMapClient() {
       mapRef.current.setMapTypeId(newType === 'satellite' ? google.maps.MapTypeId.SATELLITE : google.maps.MapTypeId.ROADMAP);
     }
   };
+
+  const debouncedFetchSuggestions = useDebouncedCallback(async (text: string) => {
+    const t = text.trim();
+    if (t.length < 2) {
+      setAddressSuggestions([]);
+      setSuggestOpen(false);
+      return;
+    }
+    try {
+      const rows = await fetchMapKitAddressSuggestions(t, 6);
+      setAddressSuggestions(rows);
+      setSuggestOpen(rows.length > 0);
+    } catch {
+      setAddressSuggestions([]);
+      setSuggestOpen(false);
+    }
+  }, 240);
+
+  useEffect(() => {
+    debouncedFetchSuggestions(addressSearch);
+  }, [addressSearch, debouncedFetchSuggestions]);
+
+  const clearAddressSearch = useCallback(() => {
+    setAddressSearch('');
+    setAddressSuggestions([]);
+    setSuggestOpen(false);
+  }, []);
+
+  const pickSuggestion = useCallback((s: MapKitAddressSuggestion) => {
+    setAddressSearch(s.geocodeQuery);
+    setAddressSuggestions([]);
+    setSuggestOpen(false);
+  }, []);
   const [settingPrimary, setSettingPrimary] = useState(false);
   const [pinStatus, setPinStatus] = useState<string | null>(null);
 
@@ -154,6 +268,8 @@ export default function EmptyMapClient() {
     setPlaceResearchResult(null);
     if (selectedPin.type === 'location') {
       setPlaceResearchHint(selectedPin.data.addressRaw?.trim() ?? '');
+    } else if (selectedPin.type === 'seller') {
+      setPlaceResearchHint(selectedPin.data.addressRaw?.trim() ?? '');
     } else {
       setPlaceResearchHint('');
     }
@@ -163,6 +279,10 @@ export default function EmptyMapClient() {
     if (!selectedPin) return;
     setAddToLastLegLocked(selectedPin.type === 'dot');
   }, [selectedPin]);
+
+  useEffect(() => {
+    applyMarkerLayersRef.current?.();
+  }, [pinLayers]);
 
   // Sync local pin status from accountState when pin changes
   useEffect(() => {
@@ -258,9 +378,12 @@ export default function EmptyMapClient() {
       toast.error('Request timed out. Try again.');
     }, 10000);
     try {
-      const body = selectedPin.type === 'location'
-        ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
-        : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
+      const body =
+        selectedPin.type === 'location'
+          ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
+          : selectedPin.type === 'seller'
+            ? { sellerId: selectedPin.data.id }
+            : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
       const res = await fetch('/api/lastleg/add-to-route', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         credentials: 'include', signal: controller.signal, body: JSON.stringify(body)
@@ -285,30 +408,26 @@ export default function EmptyMapClient() {
     const q = addressSearch.trim();
     if (!q) return;
     setSearching(true);
+    setSuggestOpen(false);
     try {
-      const res = await fetch('/api/geocode', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: q }) });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error ?? 'Could not find address');
-      const { latitude: lat, longitude: lng } = data;
-      if (typeof lat !== 'number' || typeof lng !== 'number') throw new Error('Invalid result');
+      const { lat, lng } = await geocodeWithAppleMapKit(q);
       mapRef.current?.panTo({ lat, lng });
       mapRef.current?.setZoom(17);
       toast.success('Zoomed to address');
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Search failed');
-    } finally { setSearching(false); }
+    } finally {
+      setSearching(false);
+    }
   };
 
   const handleAddressAddPin = async () => {
     const q = addressSearch.trim();
     if (!q) return;
     setSearching(true);
+    setSuggestOpen(false);
     try {
-      const res = await fetch('/api/geocode', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: q }) });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error ?? 'Could not find address');
-      const { latitude: lat, longitude: lng } = data;
-      if (typeof lat !== 'number' || typeof lng !== 'number') throw new Error('Invalid result');
+      const { lat, lng } = await geocodeWithAppleMapKit(q);
       const pinRes = await fetch('/api/map-pins', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ latitude: lat, longitude: lng }) });
       const pinData = await pinRes.json();
       if (!pinRes.ok) throw new Error(pinData?.error ?? 'Failed to add pin');
@@ -390,8 +509,9 @@ export default function EmptyMapClient() {
           center: DEFAULT_CENTER,
           zoom: DEFAULT_ZOOM,
           mapTypeId: g.maps.MapTypeId.SATELLITE,
-          mapTypeControl: true,
-          mapTypeControlOptions: { style: g.maps.MapTypeControlStyle.DROPDOWN_MENU },
+          mapTypeControl: false,
+          fullscreenControl: false,
+          streetViewControl: false,
           backgroundColor: '#1a1a2e',
           gestureHandling: 'greedy',
           tilt: 0,
@@ -410,9 +530,14 @@ export default function EmptyMapClient() {
           dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
           dotMarkersRef.current = [];
         };
+        const clearSellerMarkers = () => {
+          sellerMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
+          sellerMarkersRef.current = [];
+        };
 
         const addLocationMarkers = (features: GeoJSONFeature[]) => {
           clearLocationMarkers();
+          if (!pinLayersRef.current.companies) return;
           features.forEach((f) => {
             try {
               const [lng, lat] = f.geometry.coordinates;
@@ -428,9 +553,40 @@ export default function EmptyMapClient() {
 
         const addDotMarkers = (pins: RedPin[]) => {
           clearDotMarkers();
+          if (!pinLayersRef.current.containers) return;
+          const planner = corridorPlannerRef.current;
           pins.forEach((p) => {
             try {
-              const marker = new g.maps.Marker({ map, position: { lat: p.lat, lng: p.lng }, icon: svgPin(g, '#dc2626', 5), zIndex: 1 });
+              let color = '#dc2626';
+              let size = 5;
+              let label: string | undefined;
+              let z = 1;
+              if (planner?.active && p.targetId) {
+                const idx = planner.rankedTargetIds.indexOf(p.targetId);
+                if (idx >= 0) {
+                  color = '#ec4899';
+                  size = 6;
+                  label = String(idx + 1);
+                  z = 3;
+                } else {
+                  color = '#78716c';
+                  size = 4;
+                  z = 1;
+                }
+              } else if (planner?.active) {
+                color = '#9ca3af';
+                size = 4;
+                z = 1;
+              }
+              const marker = new g.maps.Marker({
+                map,
+                position: { lat: p.lat, lng: p.lng },
+                icon: svgPin(g, color, size),
+                zIndex: z,
+                label: label
+                  ? { text: label, color: '#ffffff', fontSize: '11px', fontWeight: 'bold' }
+                  : undefined
+              });
               marker.addListener('click', () => {
                 selectedMarkerRef.current = marker;
                 setSelectedPin({
@@ -456,21 +612,51 @@ export default function EmptyMapClient() {
               dotMarkersRef.current.push(marker);
             } catch { /* skip bad pin */ }
           });
+          replayDotsRef.current = () => addDotMarkers(boundsState.dots);
         };
 
-        const boundsState: { locations: GeoJSONFeature[]; dots: RedPin[] } = { locations: [], dots: [] };
+        const SELLER_PIN_COLOR = '#6b7280';
+
+        const addSellerMarkers = (pins: SellerPin[]) => {
+          clearSellerMarkers();
+          if (!pinLayersRef.current.sellers) return;
+          pins.forEach((p) => {
+            try {
+              const marker = new g.maps.Marker({
+                map,
+                position: { lat: p.lat, lng: p.lng },
+                icon: svgPin(g, SELLER_PIN_COLOR, 6),
+                zIndex: 2
+              });
+              marker.addListener('click', () => {
+                selectedMarkerRef.current = marker;
+                setSelectedPin({ type: 'seller', data: { ...p } });
+              });
+              sellerMarkersRef.current.push(marker);
+            } catch { /* skip */ }
+          });
+        };
+
+        const boundsState: { locations: GeoJSONFeature[]; dots: RedPin[]; sellers: SellerPin[] } = {
+          locations: [],
+          dots: [],
+          sellers: []
+        };
 
         const refitViewport = () => {
           if (cancelled || !mapRef.current) return;
-          const features = boundsState.locations;
-          const pins = boundsState.dots;
-          const total = features.length + pins.length;
+          const layers = pinLayersRef.current;
+          const features = layers.companies ? boundsState.locations : [];
+          const pins = layers.containers ? boundsState.dots : [];
+          const sellers = layers.sellers ? boundsState.sellers : [];
+          const total = features.length + pins.length + sellers.length;
           if (total < 1) return;
           try {
             if (total > 1) {
               const bounds = new g.maps.LatLngBounds();
               features.forEach((f) => bounds.extend({ lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0] }));
               pins.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
+              sellers.forEach((s) => bounds.extend({ lat: s.lat, lng: s.lng }));
               map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
             } else if (features[0]) {
               const c = { lat: features[0].geometry.coordinates[1], lng: features[0].geometry.coordinates[0] };
@@ -479,9 +665,21 @@ export default function EmptyMapClient() {
             } else if (pins[0]) {
               map.setCenter({ lat: pins[0].lat, lng: pins[0].lng });
               map.setZoom(8);
+            } else if (sellers[0]) {
+              map.setCenter({ lat: sellers[0].lat, lng: sellers[0].lng });
+              map.setZoom(8);
             }
           } catch { /* ignore bounds error */ }
         };
+
+        const applyAllMarkerLayers = () => {
+          if (cancelled || !mapRef.current) return;
+          addLocationMarkers(boundsState.locations);
+          addDotMarkers(boundsState.dots);
+          addSellerMarkers(boundsState.sellers);
+          refitViewport();
+        };
+        applyMarkerLayersRef.current = applyAllMarkerLayers;
 
         refetchDotsRef.current = async () => {
           if (cancelled || !mapRef.current) return;
@@ -496,8 +694,7 @@ export default function EmptyMapClient() {
             const routePins = Array.isArray(routeData.pins) ? routeData.pins : [];
             const merged = mergeRedPins(mapPins, routePins);
             boundsState.dots = merged;
-            addDotMarkers(merged);
-            refitViewport();
+            applyAllMarkerLayers();
           } catch { /* ignore */ }
         };
 
@@ -524,8 +721,7 @@ export default function EmptyMapClient() {
             }
             if (pins.length === 0 || cancelled || dotsApiSettled) return;
             boundsState.dots = pins;
-            addDotMarkers(pins);
-            refitViewport();
+            applyAllMarkerLayers();
           } catch { /* ignore */ }
         })();
 
@@ -543,8 +739,7 @@ export default function EmptyMapClient() {
             const routePins = Array.isArray(routeData.pins) ? routeData.pins : [];
             const merged = mergeRedPins(mapPins, routePins);
             boundsState.dots = merged;
-            addDotMarkers(merged);
-            refitViewport();
+            applyAllMarkerLayers();
           } catch {
             dotsApiSettled = true;
           }
@@ -556,8 +751,38 @@ export default function EmptyMapClient() {
             const data = (await res.json().catch(() => ({}))) as GeoJSONResponse | { features?: GeoJSONFeature[] };
             if (cancelled || !Array.isArray(data?.features)) return;
             boundsState.locations = data.features;
-            addLocationMarkers(data.features);
-            refitViewport();
+            applyAllMarkerLayers();
+          } catch { /* ignore */ }
+        })();
+
+        void (async () => {
+          try {
+            const res = await fetchWithTimeout('/api/sellers/map', 8000);
+            const data = (await res.json().catch(() => ({}))) as { pins?: unknown[] };
+            if (cancelled || !Array.isArray(data?.pins)) return;
+            const sellers: SellerPin[] = [];
+            for (const raw of data.pins) {
+              if (typeof raw !== 'object' || raw === null) continue;
+              const o = raw as Record<string, unknown>;
+              const lat = typeof o.lat === 'number' ? o.lat : Number(o.lat);
+              const lng = typeof o.lng === 'number' ? o.lng : Number(o.lng);
+              const id = typeof o.id === 'string' ? o.id : '';
+              const label = typeof o.label === 'string' ? o.label : '';
+              if (!id || !label || !Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+              sellers.push({
+                id,
+                lat,
+                lng,
+                label,
+                addressRaw: typeof o.addressRaw === 'string' ? o.addressRaw : undefined,
+                phone: typeof o.phone === 'string' ? o.phone : undefined,
+                website: typeof o.website === 'string' ? o.website : undefined,
+                role: typeof o.role === 'string' ? o.role : undefined,
+                notes: typeof o.notes === 'string' ? o.notes : undefined
+              });
+            }
+            boundsState.sellers = sellers;
+            applyAllMarkerLayers();
           } catch { /* ignore */ }
         })();
 
@@ -696,8 +921,7 @@ export default function EmptyMapClient() {
             const data = await res.json();
             if (data?.features != null && mapRef.current) {
               boundsState.locations = data.features as GeoJSONFeature[];
-              addLocationMarkers(boundsState.locations);
-              refitViewport();
+              applyAllMarkerLayers();
             }
           } catch { /* ignore */ }
         });
@@ -708,6 +932,13 @@ export default function EmptyMapClient() {
 
     return () => {
       cancelled = true;
+      try {
+        routePolylineRef.current?.setMap(null);
+      } catch {
+        /* ignore */
+      }
+      routePolylineRef.current = null;
+      replayDotsRef.current = null;
       effectCleanups.forEach((fn) => {
         try {
           fn();
@@ -723,6 +954,8 @@ export default function EmptyMapClient() {
       locationMarkersRef.current = [];
       dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       dotMarkersRef.current = [];
+      sellerMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
+      sellerMarkersRef.current = [];
       mapRef.current = null;
     };
   }, []);
@@ -758,19 +991,60 @@ export default function EmptyMapClient() {
       )}
 
       <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 max-w-sm sm:max-w-md">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-          <div className="ios-glass flex items-center gap-2.5 rounded-2xl px-4 py-2 min-w-0">
-            <IconSearch className="h-[18px] w-[18px] shrink-0 text-muted-foreground/60" />
-            <input
-              type="text"
-              placeholder="Search address..."
-              value={addressSearch}
-              onChange={(e) => setAddressSearch(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleAddressGo()}
-              className="w-full min-w-[140px] bg-transparent border-none outline-none text-[15px] placeholder:text-muted-foreground/50"
-            />
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start">
+          <div className="relative min-w-0 flex-1">
+            <div className="ios-glass flex min-h-10 items-center gap-2 rounded-2xl py-1.5 pl-3 pr-1 min-w-0">
+              <IconSearch className="h-[18px] w-[18px] shrink-0 text-muted-foreground/60" aria-hidden />
+              <input
+                type="text"
+                placeholder="Search address…"
+                value={addressSearch}
+                onChange={(e) => setAddressSearch(e.target.value)}
+                onFocus={() => addressSuggestions.length > 0 && setSuggestOpen(true)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') void handleAddressGo();
+                  if (e.key === 'Escape') {
+                    setSuggestOpen(false);
+                  }
+                }}
+                autoComplete="off"
+                className="min-h-9 w-full min-w-0 flex-1 bg-transparent border-none py-1.5 outline-none text-[15px] placeholder:text-muted-foreground/50"
+              />
+              {addressSearch.trim().length > 0 ? (
+                <button
+                  type="button"
+                  aria-label="Clear search"
+                  onClick={() => clearAddressSearch()}
+                  className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-black/10 dark:hover:bg-white/15"
+                >
+                  <IconX className="size-[18px]" strokeWidth={2} aria-hidden />
+                </button>
+              ) : null}
+            </div>
+            {suggestOpen && addressSuggestions.length > 0 ? (
+              <ul
+                className="absolute left-0 right-0 top-[calc(100%+6px)] z-30 max-h-56 overflow-auto rounded-xl border border-white/20 bg-white/95 py-1 text-foreground shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-zinc-900/95"
+                role="listbox"
+              >
+                {addressSuggestions.map((s, i) => (
+                  <li key={`${s.geocodeQuery}-${i}`} role="option">
+                    <button
+                      type="button"
+                      className="flex w-full flex-col items-start gap-0.5 px-3 py-2 text-left text-[14px] hover:bg-black/5 dark:hover:bg-white/10"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => pickSuggestion(s)}
+                    >
+                      <span className="font-medium leading-tight">{s.title}</span>
+                      {s.geocodeQuery !== s.title ? (
+                        <span className="line-clamp-2 text-[12px] text-muted-foreground">{s.geocodeQuery}</span>
+                      ) : null}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
-          <div className="flex gap-2 shrink-0">
+          <div className="flex gap-2 shrink-0 sm:pt-0.5">
             <button
               type="button"
               onClick={handleAddressGo}
@@ -792,12 +1066,19 @@ export default function EmptyMapClient() {
         <p className="text-white/70 text-[13px] drop-shadow-sm pl-1">Or press and hold the map to drop a red pin</p>
       </div>
 
-      {/* Map type toggle */}
-      <div className="absolute top-4 right-4 z-10">
+      {/* Route planner + map type */}
+      <div className="absolute top-4 right-4 z-10 flex flex-col items-end gap-2 sm:flex-row sm:items-center">
+        <MapPinLayersControl variant="dark" value={pinLayers} onChange={setPinLayers} />
+        <RoutePlannerSheet
+          onApplied={(state) => setCorridorPlanner(state)}
+          onCleared={() => setCorridorPlanner(null)}
+          pinLayers={pinLayers}
+          onPinLayersChange={setPinLayers}
+        />
         <button
           type="button"
           onClick={toggleMapType}
-          className="ios-glass h-10 px-4 rounded-2xl text-[14px] font-medium flex items-center gap-2 hover:bg-white/90 dark:hover:bg-white/20 transition-colors"
+          className="ios-glass flex h-10 items-center gap-2 rounded-2xl px-4 text-[14px] font-medium transition-colors hover:bg-white/90 dark:hover:bg-white/20"
         >
           {mapType === 'satellite' ? 'Map' : 'Satellite'}
         </button>
@@ -809,10 +1090,45 @@ export default function EmptyMapClient() {
           <p className="text-[15px] font-semibold text-foreground/90 mb-1 leading-snug">
             {selectedPin.type === 'location'
               ? (selectedPin.data.addressRaw || 'Location')
-              : (selectedPin.data.label || `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`)}
+              : selectedPin.type === 'seller'
+                ? selectedPin.data.label
+                : (selectedPin.data.label || `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`)}
           </p>
 
           {/* Additional pin details */}
+          {selectedPin.type === 'seller' &&
+            (selectedPin.data.addressRaw ||
+              selectedPin.data.role ||
+              selectedPin.data.phone ||
+              selectedPin.data.website ||
+              selectedPin.data.notes) && (
+              <div className="mb-4 space-y-1 text-[14px]">
+                {selectedPin.data.role && (
+                  <p className="text-muted-foreground/70 text-[13px] italic">{selectedPin.data.role}</p>
+                )}
+                {selectedPin.data.addressRaw && (
+                  <p className="text-muted-foreground/80">{selectedPin.data.addressRaw}</p>
+                )}
+                {selectedPin.data.phone && (
+                  <p>
+                    <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className="ios-link">
+                      {selectedPin.data.phone}
+                    </a>
+                  </p>
+                )}
+                {selectedPin.data.website && (
+                  <p>
+                    <a href={selectedPin.data.website} target="_blank" rel="noopener noreferrer" className="ios-link break-all">
+                      {selectedPin.data.website}
+                    </a>
+                  </p>
+                )}
+                {selectedPin.data.notes && (
+                  <p className="text-muted-foreground/80">{selectedPin.data.notes}</p>
+                )}
+              </div>
+            )}
+
           {selectedPin.type === 'dot' && (selectedPin.data.addressRaw || selectedPin.data.phone || selectedPin.data.email || selectedPin.data.website || selectedPin.data.industry || selectedPin.data.summary) && (
             <div className="mb-4 space-y-1 text-[14px]">
               {selectedPin.data.addressRaw && (
@@ -947,6 +1263,14 @@ export default function EmptyMapClient() {
                 className="ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center"
               >
                 Location page
+              </Link>
+            )}
+            {selectedPin.type === 'seller' && (
+              <Link
+                href={`/map/sellers/${selectedPin.data.id}`}
+                className="ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center"
+              >
+                Seller page
               </Link>
             )}
             <button

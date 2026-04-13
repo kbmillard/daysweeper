@@ -1,18 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect, useMemo, useCallback } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle
+} from '@/components/ui/dialog';
+import {
   IconMapPin,
-  IconBuilding
+  IconBuilding,
+  IconPlus
 } from '@tabler/icons-react';
 import { parseDmsCoordinates } from '@/lib/geocode-address';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
+import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
+import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
+import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
 
 type AddressComponents = {
   city?: string;
@@ -34,6 +53,7 @@ type LocationEditableData = {
   phone?: string | null;
   email?: string | null;
   website?: string | null;
+  metadata?: unknown;
 };
 
 type CompanyEditableData = {
@@ -42,6 +62,11 @@ type CompanyEditableData = {
   website: string | null;
   phone: string | null;
   email: string | null;
+  /** Pipeline status (company row); used when this location is HQ */
+  status?: string | null;
+  /** From company.metadata.productType when isPrimaryLocation */
+  productType?: string | null;
+  primaryLocationId?: string | null;
 };
 
 type Props = {
@@ -51,14 +76,39 @@ type Props = {
   locationOnly?: boolean;
   /** When true, show "Contact at this location" card (phone/email/website) that saves to Location, not Company. Use on location detail page. */
   editableLocationContact?: boolean;
+  /** This row is the company headquarters — status/product type follow the company record */
+  isPrimaryLocation?: boolean;
 };
 
-export default function LocationEditableFields({ location, company, locationOnly = false, editableLocationContact = false }: Props) {
+function strAddr(v: unknown): string {
+  return typeof v === 'string' && v.trim() ? v.trim() : '';
+}
+
+function statusFromLocationMetadata(metadata: unknown): string | null {
+  const m = parseLocationMetadata(metadata);
+  const s = m.status;
+  return typeof s === 'string' && s.trim() ? s.trim() : null;
+}
+
+export default function LocationEditableFields({
+  location,
+  company,
+  locationOnly = false,
+  editableLocationContact = false,
+  isPrimaryLocation = false
+}: Props) {
   const router = useRouter();
+  const pathname = usePathname();
+  const companiesBase = pathname.startsWith('/map') ? '/map' : '/dashboard';
   const [savingLocation, setSavingLocation] = useState(false);
   const [savingLocationContact, setSavingLocationContact] = useState(false);
   const [savingCompany, setSavingCompany] = useState(false);
   const [autofilling, setAutofilling] = useState(false);
+  const [productTypeOptions, setProductTypeOptions] = useState<string[]>([]);
+  const [typesLoaded, setTypesLoaded] = useState(false);
+  const [addOpen, setAddOpen] = useState(false);
+  const [newTypeName, setNewTypeName] = useState('');
+  const [addingType, setAddingType] = useState(false);
 
   const [locForm, setLocForm] = useState({
     addressRaw: location.addressRaw ?? '',
@@ -82,7 +132,14 @@ export default function LocationEditableFields({ location, company, locationOnly
       latitude: location.latitude != null ? String(location.latitude) : '',
       longitude: location.longitude != null ? String(location.longitude) : ''
     });
-  }, [location.addressRaw, location.addressNormalized, location.addressComponents, location.latitude, location.longitude]);
+  }, [
+    location.id,
+    location.addressRaw,
+    location.addressNormalized,
+    location.addressComponents,
+    location.latitude,
+    location.longitude
+  ]);
 
   const [compForm, setCompForm] = useState({
     name: company.name ?? '',
@@ -91,23 +148,70 @@ export default function LocationEditableFields({ location, company, locationOnly
     email: company.email ?? ''
   });
 
-  const [locContactForm, setLocContactForm] = useState({
-    locationName: location.locationName ?? '',
-    phone: location.phone ?? '',
-    email: location.email ?? '',
-    website: location.website ?? ''
-  });
+  const buildLocContactForm = useCallback(
+    () => ({
+      locationName: location.locationName ?? '',
+      phone: location.phone ?? '',
+      email: location.email ?? '',
+      website: location.website ?? '',
+      status:
+        displayStatus(
+          isPrimaryLocation ? (company.status ?? null) : statusFromLocationMetadata(location.metadata)
+        ) ?? '',
+      productType: isPrimaryLocation
+        ? (company.productType ?? '').trim()
+        : productTypeFromMetadata(location.metadata)
+    }),
+    [
+      location.locationName,
+      location.phone,
+      location.email,
+      location.website,
+      location.metadata,
+      isPrimaryLocation,
+      company.status,
+      company.productType
+    ]
+  );
+
+  const [locContactForm, setLocContactForm] = useState(buildLocContactForm);
 
   useEffect(() => {
     if (editableLocationContact) {
-      setLocContactForm({
-        locationName: location.locationName ?? '',
-        phone: location.phone ?? '',
-        email: location.email ?? '',
-        website: location.website ?? ''
-      });
+      setLocContactForm(buildLocContactForm());
     }
-  }, [editableLocationContact, location.locationName, location.phone, location.email, location.website]);
+  }, [editableLocationContact, location.id, buildLocContactForm]);
+
+  useEffect(() => {
+    if (!editableLocationContact) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch('/api/product-types');
+        const data = await res.json();
+        if (!res.ok) {
+          if (!cancelled) toast.error(data.error ?? 'Could not load product types');
+          return;
+        }
+        if (!cancelled && Array.isArray(data.types)) {
+          setProductTypeOptions(data.types);
+        }
+      } catch {
+        if (!cancelled) toast.error('Could not load product types');
+      } finally {
+        if (!cancelled) setTypesLoaded(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [editableLocationContact]);
+
+  const selectProductTypeOptions = useMemo(() => {
+    const set = new Set(productTypeOptions);
+    if (locContactForm.productType.trim()) set.add(locContactForm.productType.trim());
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  }, [productTypeOptions, locContactForm.productType]);
 
   const handleLocChange = (field: keyof typeof locForm, value: string) => {
     setLocForm((prev) => ({ ...prev, [field]: value }));
@@ -119,6 +223,38 @@ export default function LocationEditableFields({ location, company, locationOnly
 
   const handleLocContactChange = (field: keyof typeof locContactForm, value: string) => {
     setLocContactForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleAddProductType = async () => {
+    const name = newTypeName.trim();
+    if (!name) {
+      toast.error('Enter a product type name');
+      return;
+    }
+    setAddingType(true);
+    try {
+      const res = await fetch('/api/product-types', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? 'Failed to add product type');
+        return;
+      }
+      if (Array.isArray(data.types)) {
+        setProductTypeOptions(data.types);
+        setLocContactForm((prev) => ({ ...prev, productType: name }));
+      }
+      setNewTypeName('');
+      setAddOpen(false);
+      toast.success('Product type added');
+    } catch {
+      toast.error('Failed to add product type');
+    } finally {
+      setAddingType(false);
+    }
   };
 
   const handleAutofillAddress = async () => {
@@ -139,16 +275,20 @@ export default function LocationEditableFields({ location, company, locationOnly
         toast.error(data.error ?? 'Could not geocode address');
         return;
       }
-      const ac = data.addressComponents ?? {};
+      const ac = (data.addressComponents ?? {}) as Record<string, unknown>;
+      // Replace components from geocoder only — do not keep stale city/ZIP/coords when the API omits a field.
       setLocForm((prev) => ({
         ...prev,
-        city: ac.city ?? prev.city,
-        state: ac.state ?? prev.state,
-        postal_code: ac.postal_code ?? prev.postal_code,
-        country: ac.country ?? prev.country,
-        ...(data.addressNormalized && { addressNormalized: data.addressNormalized }),
-        ...(data.latitude != null && { latitude: String(data.latitude) }),
-        ...(data.longitude != null && { longitude: String(data.longitude) })
+        city: strAddr(ac.city),
+        state: strAddr(ac.state),
+        postal_code: strAddr(ac.postal_code),
+        country: strAddr(ac.country),
+        addressNormalized:
+          data.addressNormalized != null && String(data.addressNormalized).trim()
+            ? String(data.addressNormalized).trim()
+            : prev.addressNormalized,
+        latitude: data.latitude != null ? String(data.latitude) : '',
+        longitude: data.longitude != null ? String(data.longitude) : ''
       }));
       toast.success('City, state, ZIP, country filled from address');
     } catch {
@@ -161,21 +301,46 @@ export default function LocationEditableFields({ location, company, locationOnly
   const handleSaveLocationContact = async () => {
     setSavingLocationContact(true);
     try {
+      const locationBody: Record<string, unknown> = {
+        locationName: locContactForm.locationName.trim() || null,
+        phone: locContactForm.phone.trim() || null,
+        email: locContactForm.email.trim() || null,
+        website: locContactForm.website.trim() || null,
+        ...(editableLocationContact && { userTookOwnershipOfPrimaryFields: true })
+      };
+      if (!isPrimaryLocation) {
+        locationBody.status = locContactForm.status.trim() || null;
+        locationBody.productType = locContactForm.productType.trim() || null;
+      }
+
       const res = await fetch(`/api/locations/${location.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          locationName: locContactForm.locationName.trim() || null,
-          phone: locContactForm.phone.trim() || null,
-          email: locContactForm.email.trim() || null,
-          website: locContactForm.website.trim() || null
-        })
+        body: JSON.stringify(locationBody)
       });
       const data = await res.json();
       if (!res.ok) {
         toast.error(data.error ?? 'Failed to save contact');
         return;
       }
+
+      if (isPrimaryLocation && editableLocationContact) {
+        const cr = await fetch(`/api/companies/${company.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            status: locContactForm.status.trim() || null,
+            productType: locContactForm.productType.trim() || null
+          })
+        });
+        const cd = await cr.json();
+        if (!cr.ok) {
+          toast.error(cd.error ?? 'Saved location contact but failed to update company status/type');
+          router.refresh();
+          return;
+        }
+      }
+
       if (data.warning) {
         toast.warning(data.warning);
       } else {
@@ -225,7 +390,8 @@ export default function LocationEditableFields({ location, company, locationOnly
           addressNormalized: locForm.addressNormalized.trim() || null,
           addressComponents,
           ...(lat !== undefined && { latitude: lat }),
-          ...(lng !== undefined && { longitude: lng })
+          ...(lng !== undefined && { longitude: lng }),
+          ...(editableLocationContact && { userTookOwnershipOfPrimaryFields: true })
         })
       });
       const data = await res.json();
@@ -291,6 +457,15 @@ export default function LocationEditableFields({ location, company, locationOnly
           </Button>
         </CardHeader>
         <CardContent className='space-y-4'>
+          <div className='text-sm'>
+            <span className='text-muted-foreground'>Company: </span>
+            <Link
+              href={`${companiesBase}/companies/${company.id}`}
+              className='font-medium text-primary hover:underline'
+            >
+              {company.name}
+            </Link>
+          </div>
           <div>
             <div className='flex items-center justify-between gap-2'>
               <Label htmlFor='addressRaw'>Address</Label>
@@ -439,6 +614,7 @@ export default function LocationEditableFields({ location, company, locationOnly
       </Card>
 
       {!locationOnly && editableLocationContact && (
+      <>
       <Card>
         <CardHeader className='flex flex-row items-center justify-between space-y-0'>
           <div>
@@ -447,7 +623,9 @@ export default function LocationEditableFields({ location, company, locationOnly
               Contact at this location
             </CardTitle>
             <CardDescription>
-              Phone, email, website for this location only (does not change company)
+              {isPrimaryLocation
+                ? 'HQ contact fields; status and product type are saved on the company record (same as Company details).'
+                : 'Contact, site-only status, and product type for this location — does not change the company record.'}
             </CardDescription>
           </div>
           <Button onClick={handleSaveLocationContact} disabled={savingLocationContact} size='sm'>
@@ -455,9 +633,6 @@ export default function LocationEditableFields({ location, company, locationOnly
           </Button>
         </CardHeader>
         <CardContent className='space-y-4'>
-          <div className='text-muted-foreground text-sm'>
-            Company: {company.name}
-          </div>
           <div>
             <Label htmlFor='locName'>Location name</Label>
             <Input
@@ -499,8 +674,86 @@ export default function LocationEditableFields({ location, company, locationOnly
               className='mt-1'
             />
           </div>
+          <div>
+            <Label htmlFor='locStatus'>Status</Label>
+            <Select
+              value={locContactForm.status || '__none__'}
+              onValueChange={(v) => handleLocContactChange('status', v === '__none__' ? '' : v)}
+            >
+              <SelectTrigger id='locStatus' className='mt-1'>
+                <SelectValue placeholder='Status' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value='__none__'>— No status —</SelectItem>
+                {COMPANY_STATUSES.map((s) => (
+                  <SelectItem key={s} value={s}>
+                    {s}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label htmlFor='loc-product-type'>Product type</Label>
+            <div className='mt-1 flex w-full gap-2'>
+              <Select
+                value={locContactForm.productType.trim() ? locContactForm.productType.trim() : '__none__'}
+                onValueChange={(v) => handleLocContactChange('productType', v === '__none__' ? '' : v)}
+                disabled={!typesLoaded}
+              >
+                <SelectTrigger id='loc-product-type' className='min-h-9 min-w-0 w-full flex-1'>
+                  <SelectValue placeholder={typesLoaded ? 'Select product type' : 'Loading…'} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='__none__'>— None —</SelectItem>
+                  {selectProductTypeOptions.map((t) => (
+                    <SelectItem key={t} value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Button
+                type='button'
+                variant='outline'
+                size='icon'
+                className='shrink-0'
+                onClick={() => setAddOpen(true)}
+                aria-label='Add product type'
+              >
+                <IconPlus className='h-4 w-4' />
+              </Button>
+            </div>
+          </div>
         </CardContent>
       </Card>
+      <Dialog open={addOpen} onOpenChange={setAddOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Add product type</DialogTitle>
+          </DialogHeader>
+          <Input
+            value={newTypeName}
+            onChange={(e) => setNewTypeName(e.target.value)}
+            placeholder='e.g. engine components'
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                void handleAddProductType();
+              }
+            }}
+          />
+          <DialogFooter>
+            <Button type='button' variant='outline' onClick={() => setAddOpen(false)}>
+              Cancel
+            </Button>
+            <Button type='button' onClick={() => void handleAddProductType()} disabled={addingType}>
+              {addingType ? 'Adding…' : 'Add'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+      </>
       )}
       {!locationOnly && !editableLocationContact && (
       <Card>

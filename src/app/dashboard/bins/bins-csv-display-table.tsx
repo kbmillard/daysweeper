@@ -15,6 +15,7 @@ import { DataTableToolbar } from '@/components/ui/table/data-table-toolbar';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Plus, Trash2 } from 'lucide-react';
+import { AlertModal } from '@/components/modal/alert-modal';
 
 export type CsvBinRow = {
   partNumber: string;
@@ -132,7 +133,7 @@ function EditableCell({
 }
 
 function csvRowsToCsv(rows: CsvBinRow[]): string {
-  const header = 'BIN,PART NUMBER,PART DESCRIPTION';
+  const header = 'BIN,PART NUMBER,PART DESCRIPTION,QTY';
   const escape = (v: string | number | null | undefined) => {
     if (v === null || v === undefined) return '';
     const s = String(v);
@@ -141,7 +142,12 @@ function csvRowsToCsv(rows: CsvBinRow[]): string {
       : s;
   };
   const lines = rows.map((r) =>
-    [escape(r.bin), escape(r.partNumber), escape(r.description)].join(',')
+    [
+      escape(r.bin),
+      escape(r.partNumber),
+      escape(r.description),
+      escape(r.quantity)
+    ].join(',')
   );
   return [header, ...lines].join('\n');
 }
@@ -154,6 +160,7 @@ function filterCsvRowsBySearch(rows: CsvBinRow[], search: string): CsvBinRow[] {
       r.partNumber,
       r.description,
       r.bin,
+      String(r.quantity),
       r.changedAt,
       r.changedBy
     ]
@@ -178,6 +185,7 @@ export function BinsCsvDisplayTable({
   } | null>(null);
   const [editValue, setEditValue] = useState('');
   const [globalFilter, setGlobalFilter] = useState('');
+  const [csvRowPendingDelete, setCsvRowPendingDelete] = useState<CsvBinRow | null>(null);
 
   const updateCell = useCallback(
     (rowIndex: number, key: keyof CsvBinRow, value: string | number | null) => {
@@ -234,6 +242,7 @@ export function BinsCsvDisplayTable({
         onRowsChange?.(next);
         return next;
       });
+      setCsvRowPendingDelete(null);
     },
     [onRowsChange]
   );
@@ -324,6 +333,34 @@ export function BinsCsvDisplayTable({
       minSize: 180
     },
     {
+      accessorKey: 'quantity',
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title='QTY' />
+      ),
+      cell: ({ row }) => (
+        <EditableCell
+          value={row.original.quantity}
+          rowIndex={row.index}
+          accessorKey='quantity'
+          type='number'
+          align='right'
+          onSave={updateCell}
+          editing={editing}
+          editValue={editValue}
+          onStartEdit={startEdit}
+          onEditValueChange={setEditValue}
+          onClearEdit={() => setEditing(null)}
+          displayFormat={(v) => (
+            <span className='font-mono text-right'>
+              {v == null || v === 0 ? '-' : Number(v).toLocaleString()}
+            </span>
+          )}
+        />
+      ),
+      enableSorting: true,
+      enableColumnFilter: false
+    },
+    {
       accessorKey: 'changedAt',
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title='Date Changed' />
@@ -354,7 +391,7 @@ export function BinsCsvDisplayTable({
           variant='ghost'
           size='icon'
           className='text-destructive hover:text-destructive h-8 w-8'
-          onClick={() => deleteRow(row.original)}
+          onClick={() => setCsvRowPendingDelete(row.original)}
           aria-label='Delete row'
         >
           <Trash2 className='h-4 w-4' />
@@ -381,6 +418,15 @@ export function BinsCsvDisplayTable({
 
   return (
     <DataTable table={table}>
+      <AlertModal
+        isOpen={csvRowPendingDelete !== null}
+        onClose={() => setCsvRowPendingDelete(null)}
+        onConfirm={() => {
+          if (csvRowPendingDelete) deleteRow(csvRowPendingDelete);
+        }}
+        loading={false}
+        description='This row will be removed from the table. Export or save your CSV if you need a backup.'
+      />
       <div className='flex flex-1 items-center gap-2'>
         <div className='relative max-w-sm flex-1'>
           <Search className='text-muted-foreground absolute top-1/2 left-2.5 h-4 w-4 -translate-y-1/2' />

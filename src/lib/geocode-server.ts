@@ -4,8 +4,33 @@
  */
 import {
   normalizeAddressForGeocode,
+  parseUsMailingFromAddress,
   type ParsedAddressComponents
 } from './geocode-address';
+
+function mapboxToken(): string | undefined {
+  return (
+    process.env.MAPBOX_ACCESS_TOKEN ||
+    process.env.MAPBOX_SECRET_TOKEN ||
+    process.env.NEXT_PUBLIC_MAPBOX_TOKEN ||
+    process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+  );
+}
+
+/** Prefer city/state/ZIP from the typed US mailing line; keep geocoder lat/lng + normalized label. */
+function applyUsMailingOverride(originalAddress: string, result: GeocodeResult): GeocodeResult {
+  const parsed = parseUsMailingFromAddress(originalAddress);
+  if (!parsed) return result;
+  return {
+    ...result,
+    addressComponents: {
+      city: parsed.city,
+      state: parsed.state,
+      postal_code: parsed.postal_code,
+      country: parsed.country ?? result.addressComponents?.country
+    }
+  };
+}
 
 export type GeocodeResult = {
   latitude: number;
@@ -42,6 +67,12 @@ async function geocodeWithNominatim(address: string): Promise<GeocodeResult | nu
       city?: string;
       town?: string;
       village?: string;
+      hamlet?: string;
+      municipality?: string;
+      suburb?: string;
+      neighbourhood?: string;
+      county?: string;
+      borough?: string;
       state?: string;
       postcode?: string;
       country_code?: string;
@@ -59,7 +90,14 @@ async function geocodeWithNominatim(address: string): Promise<GeocodeResult | nu
   let addressComponents: ParsedAddressComponents | undefined;
   const addr = first.address;
   if (addr && typeof addr === 'object') {
-    const city = addr.city ?? addr.town ?? addr.village;
+    const city =
+      addr.city ??
+      addr.town ??
+      addr.village ??
+      addr.hamlet ??
+      addr.municipality ??
+      addr.suburb ??
+      addr.neighbourhood;
     const country = addr.country_code?.toUpperCase() ?? addr.country;
     if (city || addr.state || addr.postcode || country) {
       addressComponents = {
@@ -111,11 +149,15 @@ async function geocodeWithMapbox(address: string): Promise<GeocodeResult | null>
   const placeName = feature.place_name;
 
   let addressComponents: ParsedAddressComponents | undefined;
+  const placeFirst =
+    typeof feature.place_name === 'string'
+      ? feature.place_name.split(',')[0]?.trim() || undefined
+      : undefined;
   if (Array.isArray(feature.context) && feature.context.length > 0) {
     const ctx = feature.context as Array<{ id: string; text: string }>;
     const get = (prefix: string) => ctx.find((c) => c.id.startsWith(prefix))?.text;
     addressComponents = {
-      city: get('place') ?? get('locality'),
+      city: get('place') ?? get('locality') ?? placeFirst,
       state: get('region'),
       postal_code: get('postcode'),
       country: get('country')
@@ -123,6 +165,8 @@ async function geocodeWithMapbox(address: string): Promise<GeocodeResult | null>
     if (!addressComponents.city && !addressComponents.state && !addressComponents.postal_code && !addressComponents.country) {
       addressComponents = undefined;
     }
+  } else if (placeFirst) {
+    addressComponents = { city: placeFirst };
   }
 
   return {
@@ -192,14 +236,27 @@ export async function geocodeAddress(address: string): Promise<GeocodeResult | n
   const trimmed = address?.trim();
   if (!trimmed) return null;
 
-  const nominatim = await geocodeWithNominatim(trimmed);
-  if (nominatim) return nominatim;
+  const finish = (r: GeocodeResult | null) => (r ? applyUsMailingOverride(trimmed, r) : null);
 
-  const mapbox = await geocodeWithMapbox(trimmed);
-  if (mapbox) return mapbox;
+  const usMailing = parseUsMailingFromAddress(trimmed);
+  const token = mapboxToken();
+
+  // US addresses with a clear "City, ST ZIP" tail: Mapbox tends to hit the street; Nominatim often returns township as "city".
+  if (usMailing && token) {
+    const mapboxFirst = await geocodeWithMapbox(trimmed);
+    if (mapboxFirst) return finish(mapboxFirst);
+  }
+
+  const nominatim = await geocodeWithNominatim(trimmed);
+  if (nominatim) return finish(nominatim);
+
+  if (!usMailing || !token) {
+    const mapbox = await geocodeWithMapbox(trimmed);
+    if (mapbox) return finish(mapbox);
+  }
 
   const google = await geocodeWithGoogle(trimmed);
-  if (google) return google;
+  if (google) return finish(google);
 
   return null;
 }

@@ -7,16 +7,21 @@ import Link from 'next/link';
 import CompanyEditableFields from './company-editable-fields';
 import CompanyInteractions from './company-interactions';
 import { AddChildCompanySearch } from './add-child-company-search';
-import { LinkExistingCompanyAsLocation } from '@/features/companies/link-existing-company-as-location';
+import { LinkParentCompanySearch } from '@/features/companies/link-parent-company-search';
 import { RemoveAsChildButton } from '@/features/companies/remove-as-child-button';
+import { RemoveParentButton } from '@/features/companies/remove-parent-button';
+import { Badge } from '@/components/ui/badge';
 import { DeleteLocationButton } from '@/features/locations/delete-location-button';
 import { PrimaryAddressSection } from '@/features/locations/primary-address-section';
+import { SetAsHeadquartersButton } from '@/features/companies/set-as-headquarters-button';
+import { RemoveAsHeadquartersButton } from '@/features/companies/remove-as-headquarters-button';
 import CompanyLocationsMap from '@/features/companies/company-locations-map';
 import { filterLegacyKeyFacts } from '@/lib/filter-legacy-metadata';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { DeleteCompanyButton } from './delete-company-button';
 
 type CompanyMetadata = {
+  productType?: string | null;
   keyProducts?: string[] | null;
   industryKeywords?: string[] | null;
   keyFacts?: Record<string, unknown> | null;
@@ -64,151 +69,21 @@ type Props = {
   baseUrl?: string;
 };
 
-// Component to render a company card (reusable for parent/child)
-function CompanyCard({
-  company,
-  title
-}: {
-  company: CompanyData;
-  title: string;
-}) {
-  const primaryLocationOrFirst =
-    company.primaryLocationId && company.Location?.length
-      ? company.Location.find((l) => l.id === company.primaryLocationId) ?? company.Location[0]
-      : company.Location?.[0];
-  const addressComponents = (primaryLocationOrFirst?.addressComponents || {}) as {
-    city?: string;
-    state?: string;
-    postal_code?: string;
-    country?: string;
-  };
-
-  // Prefer primary location phone, then company phone, then metadata
-  const phone =
-    (primaryLocationOrFirst as { phone?: string | null } | undefined)?.phone ||
-    company.phone ||
-    (company.metadata as CompanyMetadata | null)?.contactInfo?.phone ||
-    null;
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle className='flex items-center justify-between'>
-          <span>{title}</span>
-          <Link href={`/dashboard/companies/${company.id}`}>
-            <Button variant='outline' size='sm'>
-              View Details
-            </Button>
-          </Link>
-        </CardTitle>
-      </CardHeader>
-      <CardContent className='space-y-4'>
-        <div className='grid gap-4 md:grid-cols-2'>
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Company
-            </label>
-            <p className='mt-1 text-base font-semibold'>{company.name}</p>
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Website
-            </label>
-            {company.website ? (
-              <p className='mt-1 text-base'>
-                <a
-                  href={company.website}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  {company.website}
-                </a>
-              </p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Phone
-            </label>
-            {phone ? (
-              <p className='mt-1 text-base'>{phone}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Address
-            </label>
-            {primaryLocationOrFirst?.addressRaw ? (
-              <p className='mt-1 text-base'>{primaryLocationOrFirst.addressRaw}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              City
-            </label>
-            {addressComponents.city ? (
-              <p className='mt-1 text-base'>{String(addressComponents.city)}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              State
-            </label>
-            {addressComponents.state ? (
-              <p className='mt-1 text-base'>{String(addressComponents.state)}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Postal Code
-            </label>
-            {addressComponents.postal_code ? (
-              <p className='mt-1 text-base'>{String(addressComponents.postal_code)}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-          <div>
-            <label className='text-muted-foreground text-sm font-medium'>
-              Country
-            </label>
-            {addressComponents.country ? (
-              <p className='mt-1 text-base'>{String(addressComponents.country)}</p>
-            ) : (
-              <p className='text-muted-foreground mt-1 text-base'>—</p>
-            )}
-          </div>
-
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
 export default function CompanyDetailView({ company, baseUrl }: Props) {
   const meta = (company.metadata ?? null) as CompanyMetadata | null;
+  const productType =
+    meta?.productType != null && String(meta.productType).trim() !== ''
+      ? String(meta.productType).trim()
+      : null;
   const primaryLocationResolved =
     company.primaryLocationId && company.Location?.length
       ? company.Location.find((l) => l.id === company.primaryLocationId) ?? company.Location[0]
       : company.Location?.[0];
+
+  const childCompanyIdsKey = (company.other_Company ?? [])
+    .map((c) => c.id)
+    .sort()
+    .join('|');
 
   return (
     <div className='space-y-6'>
@@ -229,7 +104,8 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
           website: company.website,
           phone: primaryLocationResolved?.phone ?? company.phone ?? null,
           email: company.email ?? null,
-          status: company.status ?? null
+          status: company.status ?? null,
+          productType
         }}
         primaryLocationId={primaryLocationResolved?.id ?? null}
       />
@@ -373,7 +249,24 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                     {loc.addressRaw || 'Address not specified'}
                   </span>
                 )}
-                <div className='flex items-center gap-2 shrink-0'>
+                <div className='flex flex-wrap items-center justify-end gap-2 shrink-0'>
+                  {loc.id &&
+                    (company.primaryLocationId === loc.id ? (
+                      <>
+                        <Badge variant='secondary' className='shrink-0 font-normal'>
+                          HQ
+                        </Badge>
+                        <RemoveAsHeadquartersButton companyId={company.id} />
+                      </>
+                    ) : (
+                      <SetAsHeadquartersButton
+                        companyId={company.id}
+                        locationId={loc.id}
+                        basePath='dashboard'
+                        variant='outline'
+                        size='sm'
+                      />
+                    ))}
                   {loc.id && (() => {
                     const lat = loc.latitude != null ? Number(loc.latitude) : null;
                     const lng = loc.longitude != null ? Number(loc.longitude) : null;
@@ -384,6 +277,21 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
                       </a>
                     ) : null;
                   })()}
+                  {loc.id && (
+                    <AddChildCompanySearch
+                      mode='pickParentForNewChild'
+                      currentCompanyId={company.id}
+                      basePath='dashboard'
+                      locationPrefill={{
+                        addressRaw: loc.addressRaw,
+                        latitude: loc.latitude,
+                        longitude: loc.longitude,
+                        sourceLocationId: loc.id,
+                        sourceCompanyId: company.id
+                      }}
+                      compact
+                    />
+                  )}
                   {loc.id && (
                     <DeleteLocationButton
                       locationId={loc.id}
@@ -404,10 +312,6 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
             No locations yet. Add one to get started.
           </p>
         )}
-        <div className='pt-2 border-t'>
-          <p className='text-sm font-medium mb-2'>Link existing company as location</p>
-          <LinkExistingCompanyAsLocation targetCompanyId={company.id} />
-        </div>
       </div>
 
       {primaryLocationResolved && primaryLocationResolved.id && (
@@ -424,30 +328,48 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         />
       )}
 
-      {/* Parent Company – only show when there is a parent and it's different from this company */}
-      {company.Company && company.Company.id !== company.id ? (
-        <div className='space-y-2'>
+      {/* Parent company — same layout pattern as child companies */}
+      <div className='space-y-4'>
+        <div className='flex items-center justify-between flex-wrap gap-2'>
           <h2 className='text-xl font-semibold'>Parent Company</h2>
-          <CompanyCard company={company.Company} title='Parent Company' />
           <Link href={`/dashboard/companies/${company.id}/set-parent`}>
-            <Button variant='ghost' size='sm'>
-              Change or clear parent
-            </Button>
-          </Link>
-        </div>
-      ) : (
-        <div className='flex items-center gap-2'>
-          <span className='text-muted-foreground text-sm'>
-            No parent company.
-          </span>
-          <Link href={`/dashboard/companies/${company.id}/set-parent`}>
-            <Button variant='outline' size='sm'>
+            <Button size='sm'>
               <IconPlus className='mr-2 h-4 w-4' />
-              Add parent
+              Add parent company
             </Button>
           </Link>
         </div>
-      )}
+        {company.Company && company.Company.id !== company.id ? (
+          <ul className='space-y-2'>
+            <li className='flex flex-wrap items-center justify-between gap-2'>
+              <Link
+                href={`/dashboard/companies/${company.Company.id}`}
+                className='text-primary font-medium hover:underline'
+              >
+                {company.Company.name}
+              </Link>
+              <div className='flex items-center gap-2'>
+                <Link href={`/dashboard/companies/${company.Company.id}`}>
+                  <Button variant='outline' size='sm'>
+                    View Details
+                  </Button>
+                </Link>
+                <RemoveParentButton companyId={company.id} buttonText='Remove' />
+              </div>
+            </li>
+          </ul>
+        ) : (
+          <p className='text-muted-foreground text-sm'>No parent company yet.</p>
+        )}
+        <div className='border-t pt-2'>
+          <p className='mb-2 text-sm font-medium'>Link existing company as parent</p>
+          <LinkParentCompanySearch
+            companyId={company.id}
+            basePath='dashboard'
+            childCompanyIdsKey={childCompanyIdsKey}
+          />
+        </div>
+      </div>
 
       {/* Child companies – list with option to create new or link existing */}
       <div className='space-y-4'>

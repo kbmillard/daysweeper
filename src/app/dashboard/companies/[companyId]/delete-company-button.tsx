@@ -37,6 +37,7 @@ export function DeleteCompanyButton({ companyId, companyName }: { companyId: str
         onClose={() => setOpen(false)}
         onConfirm={onConfirm}
         loading={loading}
+        description={`This will permanently delete “${companyName}” and its data from the database.`}
       />
       <Button variant='destructive' size='sm' onClick={() => setOpen(true)}>
         <IconTrash className='mr-2 h-4 w-4' />

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import PageContainer from '@/components/layout/page-container';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,6 +9,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
+
+const BASE = '/dashboard';
 
 type CompanyOption = { id: string; name: string };
 
@@ -30,26 +32,41 @@ export default function SetParentPage() {
       .catch(() => {});
   }, [companyId]);
 
-  const fetchOptions = useCallback(() => {
-    if (!search.trim()) {
+  useEffect(() => {
+    const q = search.trim();
+    if (!q) {
       setOptions([]);
+      setLoading(false);
       return;
     }
-    setLoading(true);
-    fetch(`/api/companies?search=${encodeURIComponent(search)}&limit=200`)
-      .then((r) => r.json())
-      .then((data) => {
-        const list = data.companies ?? [];
-        setOptions(list.filter((c: CompanyOption) => c.id !== companyId));
+    const ac = new AbortController();
+    const t = setTimeout(() => {
+      setLoading(true);
+      fetch(`/api/companies?search=${encodeURIComponent(q)}&limit=200`, {
+        signal: ac.signal
       })
-      .catch(() => setOptions([]))
-      .finally(() => setLoading(false));
+        .then((r) => r.json())
+        .then((data) => {
+          if (data?.error) {
+            setOptions([]);
+            return;
+          }
+          const list = (data.companies ?? []) as CompanyOption[];
+          setOptions(list.filter((c) => c.id !== companyId));
+        })
+        .catch((e: unknown) => {
+          if ((e as { name?: string })?.name === 'AbortError') return;
+          setOptions([]);
+        })
+        .finally(() => {
+          if (!ac.signal.aborted) setLoading(false);
+        });
+    }, 300);
+    return () => {
+      clearTimeout(t);
+      ac.abort();
+    };
   }, [search, companyId]);
-
-  useEffect(() => {
-    const t = setTimeout(fetchOptions, 300);
-    return () => clearTimeout(t);
-  }, [fetchOptions]);
 
   async function setParent(parentId: string | null) {
     setError(null);
@@ -65,7 +82,7 @@ export default function SetParentPage() {
         setError(data.error ?? 'Failed to update parent');
         return;
       }
-      router.push(`/dashboard/companies/${companyId}`);
+      router.push(`${BASE}/companies/${companyId}`);
       router.refresh();
     } catch {
       setError('Something went wrong');
@@ -82,7 +99,7 @@ export default function SetParentPage() {
     >
       <div className='space-y-6'>
         <div>
-          <Link href={`/dashboard/companies/${companyId}`}>
+          <Link href={`${BASE}/companies/${companyId}`}>
             <Button variant='outline' size='sm'>
               <IconArrowLeft className='mr-2 h-4 w-4' />
               Back to Company
@@ -94,42 +111,60 @@ export default function SetParentPage() {
           <CardHeader>
             <CardTitle>Set parent company</CardTitle>
             <CardDescription>
-              Search for an existing company to set as the parent. This company will appear as a child of the selected parent.
+              Search all companies by name. Open a record to avoid duplicates, or set one as parent.
             </CardDescription>
           </CardHeader>
           <CardContent className='space-y-4'>
             <div>
-              <Label htmlFor='search'>Search companies</Label>
+              <Label htmlFor='search'>Company name</Label>
               <Input
                 id='search'
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder='Type company name…'
+                placeholder='Type company name to search…'
                 className='mt-1'
+                autoComplete='off'
               />
             </div>
-            {loading && <p className='text-muted-foreground text-sm'>Searching…</p>}
-            {options.length > 0 && (
-              <ul className='space-y-2 border rounded-md p-2 max-h-60 overflow-auto'>
-                {options.map((c) => (
-                  <li key={c.id} className='flex items-center justify-between gap-2'>
-                    <span className='font-medium'>{c.name}</span>
-                    <Button
-                      type='button'
-                      size='sm'
-                      disabled={submitting}
-                      onClick={() => setParent(c.id)}
+            {loading && (
+              <p className='text-muted-foreground text-sm'>Searching…</p>
+            )}
+            {search.trim() && !loading && options.length > 0 && (
+              <>
+                <p className='text-muted-foreground text-xs font-medium'>
+                  Existing companies — open one to avoid linking the wrong entity
+                </p>
+                <ul className='max-h-60 space-y-2 overflow-auto rounded-md border p-2'>
+                  {options.map((c) => (
+                    <li
+                      key={c.id}
+                      className='flex flex-wrap items-center justify-between gap-2'
                     >
-                      Set as parent
-                    </Button>
-                  </li>
-                ))}
-              </ul>
+                      <Link
+                        href={`${BASE}/companies/${c.id}`}
+                        className='text-primary font-medium hover:underline'
+                      >
+                        {c.name}
+                      </Link>
+                      <Button
+                        type='button'
+                        size='sm'
+                        disabled={submitting}
+                        onClick={() => setParent(c.id)}
+                      >
+                        Set as parent
+                      </Button>
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
             {search.trim() && !loading && options.length === 0 && (
-              <p className='text-muted-foreground text-sm'>No companies found. Try a different search.</p>
+              <p className='text-muted-foreground text-sm'>
+                No companies found. Try a different search.
+              </p>
             )}
-            <div className='pt-2 border-t'>
+            <div className='border-t pt-2'>
               <Button
                 type='button'
                 variant='outline'

@@ -7,6 +7,8 @@ import { DeleteLocationButton } from '@/features/locations/delete-location-butto
 import { AddToLastLegButton } from '@/features/locations/add-to-lastleg-button';
 import { SetAsHeadquartersButton } from '@/features/companies/set-as-headquarters-button';
 import CompanyInteractions from '../../company-interactions';
+import { AddChildCompanySearch } from '@/app/dashboard/companies/[companyId]/add-child-company-search';
+import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
 
 type LocationWithCompany = {
   id: string;
@@ -15,8 +17,8 @@ type LocationWithCompany = {
   addressRaw: string;
   addressNormalized: string | null;
   addressComponents: any;
-  latitude: any;
-  longitude: any;
+  latitude: number | null;
+  longitude: number | null;
   locationName?: string | null;
   phone?: string | null;
   email?: string | null;
@@ -32,6 +34,13 @@ type LocationWithCompany = {
     website: string | null;
     phone: string | null;
     email: string | null;
+    status: string | null;
+    metadata: unknown;
+    primaryLocationId: string | null;
+    Location: Array<{
+      id: string;
+      addressRaw: string;
+    }>;
   };
 };
 
@@ -46,6 +55,8 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
   const company = location.Company;
   const lat = location.latitude != null ? Number(location.latitude) : null;
   const lng = location.longitude != null ? Number(location.longitude) : null;
+  const isPrimaryLocation = company.primaryLocationId === location.id;
+  const companyProductType = productTypeFromMetadata(company.metadata);
 
   return (
     <div className='flex flex-col gap-6 pb-8'>
@@ -65,6 +76,19 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           addressRaw={location.addressRaw}
           latitude={lat}
           longitude={lng}
+        />
+        <AddChildCompanySearch
+          mode='pickParentForNewChild'
+          currentCompanyId={company.id}
+          basePath='map'
+          locationPrefill={{
+            addressRaw: location.addressRaw,
+            latitude: location.latitude,
+            longitude: location.longitude,
+            sourceLocationId: location.id,
+            sourceCompanyId: company.id
+          }}
+          compact
         />
         <DeleteLocationButton
           locationId={location.id}
@@ -99,16 +123,21 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           locationName: location.locationName,
           phone: location.phone,
           email: location.email,
-          website: location.website
+          website: location.website,
+          metadata: location.metadata
         }}
         company={{
           id: company.id,
           name: company.name,
           website: company.website,
           phone: company.phone,
-          email: company.email
+          email: company.email,
+          status: company.status,
+          productType: companyProductType || null,
+          primaryLocationId: company.primaryLocationId
         }}
         editableLocationContact
+        isPrimaryLocation={isPrimaryLocation}
       />
 
       <div className='w-full min-w-0'>

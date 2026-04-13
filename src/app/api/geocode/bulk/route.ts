@@ -1,59 +1,24 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const runtime = 'nodejs';
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { geocodeAddress } from '@/lib/geocode-server';
-
-const MAX_PER_REQUEST = 100;
-const DELAY_MS = 1100; // Nominatim asks for max 1 req/sec
-
-function delay(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+import { authorizeBulkGeocode } from '@/lib/geocode-route-auth';
+import { runGeocodeBulkQueue } from '@/lib/geocode-bulk-queue';
 
 /**
  * POST - Geocode all locations that have addressRaw but no latitude/longitude.
  * Uses server geocoder (Nominatim then Mapbox). Rate-limited; processes up to
- * MAX_PER_REQUEST per call. Call again to process more.
+ * 100 per call. Call again to process more.
  */
-export async function POST() {
+export async function POST(req: NextRequest) {
   try {
-    const locations = await prisma.location.findMany({
-      where: {
-        OR: [{ latitude: null }, { longitude: null }],
-        addressRaw: { not: '' }
-      },
-      select: { id: true, addressRaw: true },
-      orderBy: { createdAt: 'asc' },
-      take: MAX_PER_REQUEST
-    });
-
-    let success = 0;
-    let failed = 0;
-
-    for (let i = 0; i < locations.length; i++) {
-      if (i > 0) await delay(DELAY_MS);
-
-      const loc = locations[i];
-      const geo = await geocodeAddress(loc.addressRaw ?? '');
-      if (geo) {
-        await prisma.location.update({
-          where: { id: loc.id },
-          data: {
-            latitude: geo.latitude,
-            longitude: geo.longitude,
-            ...(geo.addressNormalized != null && { addressNormalized: geo.addressNormalized }),
-            ...(geo.addressComponents != null && { addressComponents: geo.addressComponents }),
-            updatedAt: new Date()
-          }
-        });
-        success++;
-      } else {
-        failed++;
-      }
+    if (!(await authorizeBulkGeocode(req))) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const { success, failed } = await runGeocodeBulkQueue(prisma);
     return NextResponse.json({ success, failed });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Bulk geocode failed';

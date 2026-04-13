@@ -1,8 +1,11 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+import { Prisma } from '@prisma/client';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
+import { isValidStatus, normalizeStatus } from '@/constants/company-status';
 
 /**
  * PATCH - Update location fields. Use the Apple (CLGeocoder) script or LastLeg
@@ -26,8 +29,75 @@ export async function PATCH(
       locationName,
       phone,
       email,
-      website
+      website,
+      status,
+      productType,
+      userTookOwnershipOfPrimaryFields
     } = body;
+
+    const wantsMetadataRead =
+      userTookOwnershipOfPrimaryFields === true ||
+      status !== undefined ||
+      productType !== undefined;
+
+    let mergedMetadata: Prisma.InputJsonValue | undefined;
+    if (wantsMetadataRead) {
+      const existing = await prisma.location.findUnique({
+        where: { id: locationId },
+        select: { metadata: true, companyId: true }
+      });
+      if (!existing) {
+        return NextResponse.json({ error: 'Location not found' }, { status: 404 });
+      }
+      const parent = await prisma.company.findUnique({
+        where: { id: existing.companyId },
+        select: { primaryLocationId: true }
+      });
+      const isPrimaryLocation = parent?.primaryLocationId === locationId;
+
+      const applyStatus = status !== undefined && !isPrimaryLocation;
+      const applyProductType = productType !== undefined && !isPrimaryLocation;
+      const needsMetadataMerge =
+        userTookOwnershipOfPrimaryFields === true || applyStatus || applyProductType;
+
+      if (needsMetadataMerge) {
+        const m = parseLocationMetadata(existing.metadata);
+        if (userTookOwnershipOfPrimaryFields === true) {
+          m.suppressCompanyPrimarySync = true;
+        }
+        if (applyStatus) {
+          if (status === null || status === '') {
+            delete m.status;
+          } else {
+            if (typeof status !== 'string' || !isValidStatus(status)) {
+              return NextResponse.json(
+                {
+                  error:
+                    'Invalid status. Use one of: Contacted - no answer, Contacted - not interested, Contacted - meeting set, Account'
+                },
+                { status: 400 }
+              );
+            }
+            const ns = normalizeStatus(status);
+            if (ns) m.status = ns;
+            else delete m.status;
+          }
+        }
+        if (applyProductType) {
+          if (productType === null || (typeof productType === 'string' && productType.trim() === '')) {
+            delete m.productType;
+          } else if (typeof productType === 'string') {
+            m.productType = productType.trim();
+          } else {
+            return NextResponse.json(
+              { error: 'productType must be a string or null' },
+              { status: 400 }
+            );
+          }
+        }
+        mergedMetadata = m as Prisma.InputJsonValue;
+      }
+    }
 
     const data: Record<string, unknown> = {
       updatedAt: new Date()
@@ -119,6 +189,10 @@ export async function PATCH(
 
     const hasContactFields = Object.keys(contactData).length > 0;
     const fullData = hasContactFields ? { ...data, ...contactData } : data;
+
+    if (mergedMetadata !== undefined) {
+      (fullData as Record<string, unknown>).metadata = mergedMetadata;
+    }
 
     let location;
     try {

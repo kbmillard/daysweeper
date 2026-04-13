@@ -4,7 +4,10 @@ export const revalidate = 0;
 import { NextRequest, NextResponse } from 'next/server';
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? '';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+/** Best quality on the free tier. Set GEMINI_CHAT_MODEL=gemini-2.5-flash on Vercel if you hit Pro rate limits (RPM/RPD). */
+const GEMINI_CHAT_MODEL = process.env.GEMINI_CHAT_MODEL?.trim() || 'gemini-2.5-pro';
+const geminiChatUrl = () =>
+  `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_CHAT_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
 /**
  * POST /api/chat
@@ -55,7 +58,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Last message must be from user' }, { status: 400 });
     }
 
-    const geminiRes = await fetch(GEMINI_URL, {
+    const geminiRes = await fetch(geminiChatUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -71,7 +74,7 @@ export async function POST(req: NextRequest) {
     }
 
     const geminiData = await geminiRes.json();
-    // Find last part with text — gemini-2.5-flash may emit a thought part first
+    // Find last part with text — 2.5 models may emit a thought/reasoning part first
     const parts: Array<{ text?: string }> = geminiData?.candidates?.[0]?.content?.parts ?? [];
     const text = [...parts].reverse().find((p) => typeof p.text === 'string' && p.text.trim())?.text ?? '';
 

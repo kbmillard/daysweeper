@@ -1,13 +1,15 @@
 import { NextResponse } from 'next/server';
+import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
+import { readDefaultPinResearchCache } from '@/lib/pin-place-research';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 /**
  * POST - Add a location (company + geocode) or a pin (lat/lng) to the current user's LastLeg route.
- * Body: { locationId, companyId } OR { latitude, longitude, label? }
+ * Body: { locationId, companyId } OR { sellerId } OR { latitude, longitude, label? }
  * Creates Target and RouteStop in daysweeper DB. LastLeg app fetches via GET /api/targets.
  */
 const SHARED_USER_ID = 'shared';
@@ -23,7 +25,7 @@ export async function POST(req: Request) {
       SHARED_USER_ID;
 
     const body = await req.json();
-    const { locationId, companyId } = body;
+    const { locationId, companyId, sellerId } = body;
     const latIn = body.latitude != null ? Number(body.latitude) : null;
     const lngIn = body.longitude != null ? Number(body.longitude) : null;
     const label = typeof body.label === 'string' ? body.label : null;
@@ -35,8 +37,26 @@ export async function POST(req: Request) {
     let website: string | undefined;
     let phone: string | undefined;
     let email: string | undefined;
+    let targetLegacyJson: Record<string, unknown> | undefined;
 
-    if (locationId && companyId) {
+    if (sellerId && typeof sellerId === 'string') {
+      const seller = await prisma.seller.findUnique({ where: { id: sellerId } });
+      if (!seller) {
+        return NextResponse.json({ error: 'Seller not found' }, { status: 404 });
+      }
+      lat = seller.latitude != null ? Number(seller.latitude) : null;
+      lng = seller.longitude != null ? Number(seller.longitude) : null;
+      companyName = seller.name;
+      addressRaw = seller.addressRaw ?? '';
+      website = seller.website ?? undefined;
+      phone = seller.phone ?? undefined;
+      email = undefined;
+      targetLegacyJson = {
+        daysweeper_pin_kind: 'seller',
+        sellerId: seller.id,
+        sellerExternalId: seller.externalId
+      };
+    } else if (locationId && companyId) {
       const location = await prisma.location.findUnique({
         where: { id: locationId },
         include: { Company: { select: { id: true, name: true, website: true, phone: true, email: true } } }
@@ -65,14 +85,15 @@ export async function POST(req: Request) {
       }
       lat = latIn;
       lng = lngIn;
-      companyName = label?.trim() || 'Pin';
-      addressRaw = '';
-      website = undefined;
-      phone = undefined;
+      const cached = await readDefaultPinResearchCache(latIn, lngIn).catch(() => null);
+      companyName = cached?.chosen?.name?.trim() || label?.trim() || 'Pin';
+      addressRaw = cached?.chosen?.formattedAddress?.trim() || '';
+      website = cached?.chosen?.website ?? undefined;
+      phone = cached?.chosen?.phone ?? undefined;
       email = undefined;
     } else {
       return NextResponse.json(
-        { error: 'Provide locationId+companyId or latitude+longitude' },
+        { error: 'Provide locationId+companyId, sellerId, or latitude+longitude' },
         { status: 400 }
       );
     }
@@ -112,10 +133,85 @@ export async function POST(req: Request) {
         latitude: lat ?? undefined,
         longitude: lng ?? undefined,
         geocodeStatus: lat != null && lng != null ? 'geocoded' : 'missing',
+        legacyJson: targetLegacyJson
+          ? (targetLegacyJson as Prisma.InputJsonValue)
+          : undefined,
+        category: targetLegacyJson ? 'SELLER' : undefined,
         createdAt: now,
         updatedAt: now
       }
     });
+
+    if (lat != null && lng != null) {
+      const cached = await readDefaultPinResearchCache(lat, lng).catch(() => null);
+      if (cached?.chosen) {
+        const previousSummary = cached.webSummary?.trim();
+        const placesContext = [
+          `Listed as: ${cached.chosen.name}`,
+          cached.chosen.formattedAddress ? `Address: ${cached.chosen.formattedAddress}` : null,
+          cached.chosen.phone ? `Phone (public): ${cached.chosen.phone}` : null,
+          cached.chosen.website ? `Website: ${cached.chosen.website}` : null,
+          previousSummary ? `Summary: ${previousSummary}` : null,
+          'Source: GPT web research with Google Maps coordinate context.'
+        ]
+          .filter(Boolean)
+          .join(' ') + ' ';
+
+        await prisma.targetEnrichment.upsert({
+          where: { targetId: target.id },
+          create: {
+            id: `enr_${target.id}`,
+            targetId: target.id,
+            enrichedJson: {
+              snapshot: {
+                legalName: cached.chosen.name,
+                industry: 'Unknown',
+                employees: 0,
+                siteFunction: 'Facility',
+                summary: previousSummary ?? '',
+                contactPhone: cached.chosen.phone ?? null
+              },
+              places_context: placesContext,
+              pin_research: {
+                summary: cached.webSummary ?? null,
+                sources: cached.sources ?? [],
+                confidence: cached.confidence ?? null,
+                companyName: cached.chosen.name,
+                address: cached.chosen.formattedAddress,
+                phone: cached.chosen.phone,
+                website: cached.chosen.website
+              }
+            },
+            model: `pin-cache:${cached.provider}`,
+            updatedAt: now
+          },
+          update: {
+            enrichedJson: {
+              snapshot: {
+                legalName: cached.chosen.name,
+                industry: 'Unknown',
+                employees: 0,
+                siteFunction: 'Facility',
+                summary: previousSummary ?? '',
+                contactPhone: cached.chosen.phone ?? null
+              },
+              places_context: placesContext,
+              pin_research: {
+                summary: cached.webSummary ?? null,
+                sources: cached.sources ?? [],
+                confidence: cached.confidence ?? null,
+                companyName: cached.chosen.name,
+                address: cached.chosen.formattedAddress,
+                phone: cached.chosen.phone,
+                website: cached.chosen.website
+              }
+            },
+            model: `pin-cache:${cached.provider}`,
+            updatedAt: now
+          }
+        }).catch(() => undefined);
+      }
+    }
 
     await prisma.routeStop.create({
       data: {

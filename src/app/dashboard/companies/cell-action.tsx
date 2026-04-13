@@ -42,6 +42,7 @@ export function CellAction({ companyId, companyName }: CellActionProps) {
         onClose={() => setOpen(false)}
         onConfirm={onConfirm}
         loading={loading}
+        description={`This will permanently delete “${companyName}” and its data from the database.`}
       />
       <div className='flex items-center gap-2'>
         <Button variant='outline' size='sm' onClick={() => router.push(`/dashboard/companies/${companyId}`)}>

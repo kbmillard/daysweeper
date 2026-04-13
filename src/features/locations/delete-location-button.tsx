@@ -64,6 +64,7 @@ export function DeleteLocationButton({
         onClose={() => setOpen(false)}
         onConfirm={onConfirm}
         loading={loading}
+        description='This location will be removed from the database. The company will remain unless it has no other locations.'
       />
       <Button variant={variant} size={size} onClick={() => setOpen(true)}>
         <IconTrash className='mr-1.5 h-4 w-4' />

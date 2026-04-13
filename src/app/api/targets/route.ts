@@ -29,8 +29,14 @@ export async function GET() {
       include: {
         stops: {
           orderBy: { seq: 'asc' },
-          include: {
-            target: true
+      include: {
+            target: {
+              include: {
+                TargetEnrichment: {
+                  select: { enrichedJson: true }
+                }
+              }
+            }
           }
         }
       }
@@ -43,7 +49,7 @@ export async function GET() {
     const targets = route.stops.map((s) =>
       targetToLead({
         ...s.target,
-        RouteStop: [{ seq: s.seq }]
+        RouteStop: [{ seq: s.seq, outcome: s.outcome }]
       })
     );
 

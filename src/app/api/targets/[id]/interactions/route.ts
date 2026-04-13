@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
 
@@ -73,6 +74,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
         targetId: id,
         type: r.type,
         content: r.content,
+        metadata: r.metadata ?? null,
         createdAt: r.createdAt.toISOString(),
         userId: r.userId
       }))
@@ -92,10 +94,14 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const { id } = await params;
   try {
     const userId = await resolveUserId();
-    const body = await req.json() as { type?: string; content?: string };
+    const body = await req.json() as { type?: string; content?: string; metadata?: unknown };
 
     const type = (body.type ?? 'note').trim();
     const content = (body.content ?? '').trim();
+    const metadata: Prisma.InputJsonValue | undefined =
+      body.metadata !== undefined && body.metadata !== null && typeof body.metadata === 'object' && !Array.isArray(body.metadata)
+        ? (body.metadata as Prisma.InputJsonValue)
+        : undefined;
 
     if (!content) {
       return NextResponse.json({ error: 'content is required' }, { status: 400 });
@@ -111,6 +117,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         companyId,
         type,
         content,
+        metadata: metadata ?? undefined,
         userId: userId === SHARED_USER_ID ? null : userId
       }
     });
@@ -122,6 +129,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         targetId: id,
         type: interaction.type,
         content: interaction.content,
+        metadata: interaction.metadata ?? null,
         createdAt: interaction.createdAt.toISOString(),
         userId: interaction.userId
       }

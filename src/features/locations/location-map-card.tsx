@@ -182,8 +182,9 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           heading: 0,
           rotateControl: false,
           mapTypeId: google.maps.MapTypeId.SATELLITE,
-          mapTypeControl: true,
-          mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
+          mapTypeControl: false,
+          fullscreenControl: false,
+          streetViewControl: false,
           gestureHandling: 'greedy',
           backgroundColor: '#1a1a2e',
         });

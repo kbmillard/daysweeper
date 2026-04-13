@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,8 +13,16 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle
+} from '@/components/ui/dialog';
 import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
 import { toast } from 'sonner';
+import { IconPlus } from '@tabler/icons-react';
 
 export type CompanyEditableData = {
   id: string;
@@ -23,6 +31,8 @@ export type CompanyEditableData = {
   phone: string | null;
   email: string | null;
   status: string | null;
+  /** Stored in company.metadata.productType */
+  productType: string | null;
 };
 
 type Props = {
@@ -34,16 +44,104 @@ type Props = {
 export default function CompanyEditableFields({ company, primaryLocationId }: Props) {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
+  const [productTypeOptions, setProductTypeOptions] = useState<string[]>([]);
+  const [typesLoaded, setTypesLoaded] = useState(false);
+  const [addOpen, setAddOpen] = useState(false);
+  const [newTypeName, setNewTypeName] = useState('');
+  const [addingType, setAddingType] = useState(false);
+
   const [form, setForm] = useState({
     name: company.name ?? '',
     website: company.website ?? '',
     phone: company.phone ?? '',
     email: company.email ?? '',
-    status: displayStatus(company.status) ?? ''
+    status: displayStatus(company.status) ?? '',
+    productType: company.productType ?? ''
   });
+
+  useEffect(() => {
+    setForm({
+      name: company.name ?? '',
+      website: company.website ?? '',
+      phone: company.phone ?? '',
+      email: company.email ?? '',
+      status: displayStatus(company.status) ?? '',
+      productType: company.productType ?? ''
+    });
+  }, [
+    company.id,
+    company.name,
+    company.website,
+    company.phone,
+    company.email,
+    company.status,
+    company.productType
+  ]);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch('/api/product-types');
+        const data = await res.json();
+        if (!res.ok) {
+          if (!cancelled) toast.error(data.error ?? 'Could not load product types');
+          return;
+        }
+        if (!cancelled && Array.isArray(data.types)) {
+          setProductTypeOptions(data.types);
+        }
+      } catch {
+        if (!cancelled) toast.error('Could not load product types');
+      } finally {
+        if (!cancelled) setTypesLoaded(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const selectOptions = useMemo(() => {
+    const set = new Set(productTypeOptions);
+    if (form.productType.trim()) set.add(form.productType.trim());
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  }, [productTypeOptions, form.productType]);
 
   const handleChange = (field: keyof typeof form, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleAddProductType = async () => {
+    const name = newTypeName.trim();
+    if (!name) {
+      toast.error('Enter a product type name');
+      return;
+    }
+    setAddingType(true);
+    try {
+      const res = await fetch('/api/product-types', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? 'Failed to add product type');
+        return;
+      }
+      if (Array.isArray(data.types)) {
+        setProductTypeOptions(data.types);
+        setForm((prev) => ({ ...prev, productType: name }));
+      }
+      setNewTypeName('');
+      setAddOpen(false);
+      toast.success('Product type added');
+    } catch {
+      toast.error('Failed to add product type');
+    } finally {
+      setAddingType(false);
+    }
   };
 
   const handleSave = async () => {
@@ -64,7 +162,8 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
             website: form.website.trim() || null,
             phone,
             email: form.email.trim() || null,
-            status: form.status.trim() || null
+            status: form.status.trim() || null,
+            productType: form.productType.trim() || null
           })
         }),
         primaryLocationId
@@ -166,8 +265,69 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
               className='mt-1'
             />
           </div>
+          <div>
+            <Label htmlFor='product-type'>Product type</Label>
+            <div className='mt-1 flex w-full gap-2'>
+              <Select
+                value={form.productType.trim() ? form.productType.trim() : '__none__'}
+                onValueChange={(v) => handleChange('productType', v === '__none__' ? '' : v)}
+                disabled={!typesLoaded}
+              >
+                <SelectTrigger id='product-type' className='min-h-9 min-w-0 w-full flex-1'>
+                  <SelectValue
+                    placeholder={typesLoaded ? 'Select product type' : 'Loading…'}
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='__none__'>— None —</SelectItem>
+                  {selectOptions.map((t) => (
+                    <SelectItem key={t} value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Button
+                type='button'
+                variant='outline'
+                size='icon'
+                className='shrink-0'
+                onClick={() => setAddOpen(true)}
+                aria-label='Add product type'
+              >
+                <IconPlus className='h-4 w-4' />
+              </Button>
+            </div>
+          </div>
         </div>
       </CardContent>
+
+      <Dialog open={addOpen} onOpenChange={setAddOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Add product type</DialogTitle>
+          </DialogHeader>
+          <Input
+            value={newTypeName}
+            onChange={(e) => setNewTypeName(e.target.value)}
+            placeholder='e.g. engine components'
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                void handleAddProductType();
+              }
+            }}
+          />
+          <DialogFooter>
+            <Button type='button' variant='outline' onClick={() => setAddOpen(false)}>
+              Cancel
+            </Button>
+            <Button type='button' onClick={() => void handleAddProductType()} disabled={addingType}>
+              {addingType ? 'Adding…' : 'Add'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </Card>
   );
 }

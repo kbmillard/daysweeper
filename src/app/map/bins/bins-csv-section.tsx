@@ -112,7 +112,7 @@ export function BinsCsvSection({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Bins CSV</CardTitle>
+        <CardTitle>Inventory CSV</CardTitle>
         <CardDescription>
           Edit the CSV below and click Apply to update warehouse items, or
           download the current data.

@@ -55,8 +55,8 @@ export function RemoveAsChildButton({
         onClose={() => setOpen(false)}
         onConfirm={onConfirm}
         loading={loading}
-        title="Remove as child?"
-        description={`This will unlink "${childCompanyName}" from this parent. The company will remain in the system but no longer appear as a child.`}
+        description={`“${childCompanyName}” will be unlinked from this parent. The company record stays in the database.`}
+        confirmLabel='Remove'
       />
       <Button variant={variant} size={size} onClick={() => setOpen(true)}>
         {buttonText}

@@ -7,6 +7,13 @@ import { IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
 import { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
+import { buildCompaniesListOrderBy } from '@/lib/companies-list-order-by';
+import { buildCompaniesLocationSomeWhere } from '@/lib/companies-table-location-filter';
+import {
+  BLANK_STATE_FILTER_VALUE,
+  getDistinctCompanyLocationStates,
+  getLocationIdsWithBlankParsedState
+} from '@/lib/company-location-states';
 import { prisma } from '@/lib/prisma';
 import CompaniesTable from './companies-table';
 
@@ -30,29 +37,35 @@ export default async function Page(props: pageProps) {
   const companyFilter = searchParamsCache.get('company');
   const addressFilterRaw = searchParamsCache.get('address');
   const statusFilterRaw = searchParamsCache.get('status');
+  const stateFilterRaw = searchParamsCache.get('state');
   const addressFilter = Array.isArray(addressFilterRaw) ? addressFilterRaw[0] : addressFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
+  const stateFilter = stateFilterRaw?.filter(Boolean) ?? [];
   const hideAccounts = searchParamsCache.get('hideAccounts') === '1';
   const sort = searchParamsCache.get('sort');
 
   const skip = (Number(page) - 1) * Number(perPage);
   const take = Number(perPage);
 
-  const where: any = { Location: { some: {} }, hidden: false }; // Only companies with at least one location, not hidden
+  const blankStateLocationIds = stateFilter.includes(BLANK_STATE_FILTER_VALUE)
+    ? await getLocationIdsWithBlankParsedState()
+    : null;
+
+  const where: any = {
+    Location: {
+      some: buildCompaniesLocationSomeWhere({
+        addressContains: addressFilter,
+        states: stateFilter.length ? stateFilter : null,
+        blankStateLocationIds
+      })
+    },
+    hidden: false
+  };
 
   // Search companies (name)
   if (nameFilter || companyFilter) {
     const filterValue = nameFilter || companyFilter;
     where.name = { contains: filterValue, mode: 'insensitive' as const };
-  }
-
-  // Search address: companies that have at least one location whose address contains the search
-  if (addressFilter) {
-    where.Location = {
-      some: {
-        addressRaw: { contains: addressFilter, mode: 'insensitive' as const }
-      }
-    };
   }
 
   // Status (Account, Contacted - meeting set, etc.; "Account" includes legacy "APR Account")
@@ -70,25 +83,10 @@ export default async function Page(props: pageProps) {
     };
   }
 
-  // Build orderBy from sort parameter
-  let orderBy: any = { createdAt: 'desc' }; // default
-  if (sort && sort.length > 0) {
-    const firstSort = sort[0];
-    // Map column IDs to Prisma field names
-    const fieldMap: Record<string, string> = {
-      name: 'name',
-      website: 'website',
-      status: 'status',
-      createdAt: 'createdAt'
-    };
-    
-    const field = fieldMap[firstSort.id] || 'createdAt';
-    orderBy = {
-      [field]: firstSort.desc ? 'desc' : 'asc'
-    };
-  }
+  const orderBy = buildCompaniesListOrderBy(sort);
 
-  const [companies, total] = await Promise.all([
+  const [stateOptions, companies, total] = await Promise.all([
+    getDistinctCompanyLocationStates(),
     prisma.company.findMany({
       where,
       skip,
@@ -99,6 +97,7 @@ export default async function Page(props: pageProps) {
         name: true,
         website: true,
         status: true,
+        metadata: true,
         createdAt: true,
         updatedAt: true,
         Location: {
@@ -130,13 +129,14 @@ export default async function Page(props: pageProps) {
     >
       <Suspense
         fallback={
-          <DataTableSkeleton columnCount={6} rowCount={8} filterCount={3} />
+          <DataTableSkeleton columnCount={7} rowCount={8} filterCount={3} />
         }
       >
         <CompaniesTable
           data={companies}
           totalItems={total}
           hideAccounts={hideAccounts}
+          stateOptions={stateOptions}
         />
       </Suspense>
     </PageContainer>

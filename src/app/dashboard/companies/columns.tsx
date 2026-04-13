@@ -4,8 +4,9 @@ import { Badge } from '@/components/ui/badge';
 import { displayStatus } from '@/constants/company-status';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Column, ColumnDef } from '@tanstack/react-table';
-import { Text, Globe, MapPin } from 'lucide-react';
+import { Text, Globe, MapPin, Package } from 'lucide-react';
 import Link from 'next/link';
+import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
 import { CellAction } from './cell-action';
 
 type Company = {
@@ -13,6 +14,7 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
+  metadata: unknown;
   createdAt: Date;
   updatedAt: Date;
   Location: Array<{
@@ -65,7 +67,7 @@ export function getColumns(options?: {
     {
       id: 'address',
       accessorFn: (row) => row.Location?.[0]?.addressRaw || '',
-      enableSorting: false,
+      enableSorting: true,
       enableHiding: true,
       header: ({ column }: { column: Column<Company, unknown> }) => (
         <DataTableColumnHeader column={column} title='Address' />
@@ -93,7 +95,7 @@ export function getColumns(options?: {
       id: 'state',
       accessorFn: (row) =>
         (row.Location?.[0]?.addressComponents as { state?: string } | null)?.state ?? '',
-      enableSorting: false,
+      enableSorting: true,
       enableHiding: true,
       header: ({ column }: { column: Column<Company, unknown> }) => (
         <DataTableColumnHeader column={column} title='State' />
@@ -108,11 +110,11 @@ export function getColumns(options?: {
       },
       meta: {
         label: 'State',
-        variant: 'select',
+        variant: 'multiSelect',
         options: stateOptions,
         icon: MapPin
       },
-      enableColumnFilter: false
+      enableColumnFilter: true
     },
     {
       id: 'website',
@@ -139,6 +141,31 @@ export function getColumns(options?: {
         ) : (
           <span className='text-muted-foreground'>—</span>
         );
+      },
+      enableColumnFilter: false
+    },
+    {
+      id: 'productType',
+      accessorFn: (row) => productTypeFromMetadata(row.metadata),
+      enableSorting: true,
+      enableHiding: true,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Product type' />
+      ),
+      cell: ({ row }) => {
+        const label = productTypeFromMetadata(row.original.metadata);
+        return label ? (
+          <span className='text-sm max-w-[200px] truncate block' title={label}>
+            {label}
+          </span>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        );
+      },
+      meta: {
+        label: 'Product type',
+        variant: 'text',
+        icon: Package
       },
       enableColumnFilter: false
     },
@@ -176,8 +203,10 @@ export function getColumns(options?: {
     {
       id: 'actions',
       enableSorting: false,
-      enableHiding: false,
-      header: () => <span className="text-xs">Actions</span>,
+      enableHiding: true,
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title='Actions' />
+      ),
       cell: ({ row }) => (
         <CellAction companyId={row.original.id} companyName={row.original.name} />
       ),

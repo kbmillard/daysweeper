@@ -18,6 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Plus, Trash2, Trash, Save } from 'lucide-react';
 import { toast } from 'sonner';
+import { AlertModal } from '@/components/modal/alert-modal';
 
 export type WarehouseItem = {
   id: string;
@@ -171,6 +172,9 @@ export function BinsTable({ initialData }: BinsTableProps) {
   const [globalFilter, setGlobalFilter] = useState('');
   const [adding, setAdding] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [rowPendingDelete, setRowPendingDelete] = useState<string | null>(null);
+  const [rowDeleteLoading, setRowDeleteLoading] = useState(false);
+  const [clearAllOpen, setClearAllOpen] = useState(false);
 
   useEffect(() => {
     setData(initialData);
@@ -259,22 +263,24 @@ export function BinsTable({ initialData }: BinsTableProps) {
     }
   }, [adding, displayName, refetchBins]);
 
-  const deleteRow = useCallback(
-    async (rowId: string) => {
-      try {
-        const res = await fetch(`/api/bins/${rowId}`, { method: 'DELETE' });
-        if (!res.ok) {
-          const err = await res.json();
-          throw new Error(err.error || 'Delete failed');
-        }
-        toast.success('Row deleted');
-        await refetchBins();
-      } catch (e) {
-        toast.error(e instanceof Error ? e.message : 'Failed to delete');
+  const executeDeleteRow = useCallback(async () => {
+    if (!rowPendingDelete) return;
+    setRowDeleteLoading(true);
+    try {
+      const res = await fetch(`/api/bins/${rowPendingDelete}`, { method: 'DELETE' });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Delete failed');
       }
-    },
-    [refetchBins]
-  );
+      toast.success('Row deleted');
+      setRowPendingDelete(null);
+      await refetchBins();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : 'Failed to delete');
+    } finally {
+      setRowDeleteLoading(false);
+    }
+  }, [rowPendingDelete, refetchBins]);
 
   const saveCurrentEdit = useCallback(async () => {
     if (!editing) return;
@@ -296,8 +302,7 @@ export function BinsTable({ initialData }: BinsTableProps) {
     }
   }, [editing, editValue, updateCell]);
 
-  const clearAllBins = useCallback(async () => {
-    if (!confirm('Clear all bins? This cannot be undone.')) return;
+  const executeClearAllBins = useCallback(async () => {
     setClearing(true);
     try {
       const res = await fetch('/api/bins', { method: 'DELETE' });
@@ -307,10 +312,11 @@ export function BinsTable({ initialData }: BinsTableProps) {
       }
       const json = await res.json();
       toast.success(`Cleared ${json.deleted ?? 0} rows`);
+      setClearAllOpen(false);
       await refetchBins();
       router.refresh();
     } catch (e) {
-      toast.error(e instanceof Error ? e.message : 'Failed to clear bins');
+      toast.error(e instanceof Error ? e.message : 'Failed to clear inventory');
     } finally {
       setClearing(false);
     }
@@ -457,7 +463,7 @@ export function BinsTable({ initialData }: BinsTableProps) {
           variant='ghost'
           size='icon'
           className='text-destructive hover:text-destructive h-8 w-8'
-          onClick={() => deleteRow(row.original.id)}
+          onClick={() => setRowPendingDelete(row.original.id)}
           aria-label='Delete row'
         >
           <Trash2 className='h-4 w-4' />
@@ -499,6 +505,21 @@ export function BinsTable({ initialData }: BinsTableProps) {
 
   return (
     <DataTable table={table}>
+      <AlertModal
+        isOpen={rowPendingDelete !== null}
+        onClose={() => setRowPendingDelete(null)}
+        onConfirm={() => void executeDeleteRow()}
+        loading={rowDeleteLoading}
+        description='This inventory row will be removed from the database.'
+      />
+      <AlertModal
+        isOpen={clearAllOpen}
+        onClose={() => setClearAllOpen(false)}
+        onConfirm={() => void executeClearAllBins()}
+        loading={clearing}
+        description='All inventory rows will be removed from the database. This cannot be undone.'
+        confirmLabel='Clear all'
+      />
       <div className='flex flex-1 items-center gap-2'>
         <div className='relative max-w-sm flex-1'>
           <Search className='text-muted-foreground absolute top-1/2 left-2.5 h-4 w-4 -translate-y-1/2' />
@@ -529,7 +550,7 @@ export function BinsTable({ initialData }: BinsTableProps) {
         <Button
           variant='outline'
           size='sm'
-          onClick={clearAllBins}
+          onClick={() => setClearAllOpen(true)}
           disabled={clearing || data.length === 0}
           className='text-destructive hover:text-destructive'
         >

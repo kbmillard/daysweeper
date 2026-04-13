@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { geocodeAddress } from '@/lib/geocode-server';
+import { requireSignedInUser } from '@/lib/geocode-route-auth';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -10,6 +11,10 @@ export const revalidate = 0;
  */
 export async function POST(req: NextRequest) {
   try {
+    if (!(await requireSignedInUser())) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { address } = await req.json();
 
     if (!address || typeof address !== 'string') {

@@ -3,11 +3,16 @@ export const revalidate = 0;
 
 import { NextRequest, NextResponse } from 'next/server';
 import { Client } from '@googlemaps/google-maps-services-js';
+import { requireSignedInUser } from '@/lib/geocode-route-auth';
 
 const client = new Client({});
 
 export async function POST(req: NextRequest) {
   try {
+    if (!(await requireSignedInUser())) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { address } = await req.json();
 
     if (!address || typeof address !== 'string') {

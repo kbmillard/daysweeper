@@ -10,6 +10,8 @@ interface AlertModalProps {
   loading: boolean;
   title?: string;
   description?: string;
+  /** Primary action label (default: Delete). */
+  confirmLabel?: string;
 }
 
 export const AlertModal: React.FC<AlertModalProps> = ({
@@ -17,8 +19,9 @@ export const AlertModal: React.FC<AlertModalProps> = ({
   onClose,
   onConfirm,
   loading,
-  title = 'Are you sure?',
-  description = 'This action cannot be undone.'
+  title = 'Are you sure you want to delete?',
+  description = 'This will be removed from the database. This action cannot be undone.',
+  confirmLabel = 'Delete'
 }) => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -42,7 +45,7 @@ export const AlertModal: React.FC<AlertModalProps> = ({
           Cancel
         </Button>
         <Button disabled={loading} variant='destructive' onClick={onConfirm}>
-          Continue
+          {loading ? '…' : confirmLabel}
         </Button>
       </div>
     </Modal>

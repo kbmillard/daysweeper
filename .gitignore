@@ -46,3 +46,8 @@ next-env.d.ts
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Local dumps / one-off research output (do not commit)
+/backups/
+research-batch-*.json
+/exports/*.json

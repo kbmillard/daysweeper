@@ -1,5 +1,9 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import PageContainer from '@/components/layout/page-container';
 import { prisma } from '@/lib/prisma';
+import { reconcilePrimaryLocationFromCompanyIfNeeded } from '@/lib/reconcile-primary-location-from-company';
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -7,7 +11,7 @@ import FormCardSkeleton from '@/components/form-card-skeleton';
 import LocationDetailView from './location-detail-view';
 
 export const metadata = {
-  title: 'Dashboard: Location Details'
+  title: 'Map: Location Details'
 };
 
 async function getBaseUrl(): Promise<string> {
@@ -21,6 +25,43 @@ async function getBaseUrl(): Promise<string> {
   }
 }
 
+const locationDetailSelect = {
+  id: true,
+  externalId: true,
+  companyId: true,
+  addressRaw: true,
+  addressNormalized: true,
+  addressComponents: true,
+  latitude: true,
+  longitude: true,
+  locationName: true,
+  phone: true,
+  email: true,
+  website: true,
+  legacyJson: true,
+  metadata: true,
+  createdAt: true,
+  updatedAt: true,
+  Company: {
+    select: {
+      id: true,
+      name: true,
+      website: true,
+      phone: true,
+      email: true,
+      status: true,
+      metadata: true,
+      primaryLocationId: true,
+      Location: {
+        select: {
+          id: true,
+          addressRaw: true
+        }
+      }
+    }
+  }
+} as const;
+
 type PageProps = {
   params: Promise<{ companyId: string; locationId: string }>;
 };
@@ -30,46 +71,31 @@ export default async function Page(props: PageProps) {
   const { companyId, locationId } = params;
   const baseUrl = await getBaseUrl();
 
-  const location = await prisma.location.findUnique({
+  let location = await prisma.location.findUnique({
     where: { id: locationId },
-    select: {
-      id: true,
-      externalId: true,
-      companyId: true,
-      addressRaw: true,
-      addressNormalized: true,
-      addressComponents: true,
-      latitude: true,
-      longitude: true,
-      locationName: true,
-      phone: true,
-      email: true,
-      website: true,
-      legacyJson: true,
-      metadata: true,
-      createdAt: true,
-      updatedAt: true,
-      Company: {
-        select: {
-          id: true,
-          name: true,
-          website: true,
-          phone: true,
-          email: true,
-          Location: {
-            select: {
-              id: true,
-              addressRaw: true
-            }
-          }
-        }
-      }
-    }
+    select: locationDetailSelect
   });
 
   if (!location || location.companyId !== companyId) {
     notFound();
   }
+
+  if (location.Company.primaryLocationId === location.id) {
+    await reconcilePrimaryLocationFromCompanyIfNeeded(locationId, companyId);
+    location = await prisma.location.findUnique({
+      where: { id: locationId },
+      select: locationDetailSelect
+    });
+    if (!location) {
+      notFound();
+    }
+  }
+
+  const serialized = {
+    ...location,
+    latitude: location.latitude != null ? Number(location.latitude) : null,
+    longitude: location.longitude != null ? Number(location.longitude) : null
+  };
 
   return (
     <PageContainer
@@ -77,7 +103,7 @@ export default async function Page(props: PageProps) {
       pageDescription={`Location for ${location.Company.name}`}
     >
       <Suspense fallback={<FormCardSkeleton />}>
-        <LocationDetailView location={location} baseUrl={baseUrl} />
+        <LocationDetailView location={serialized} baseUrl={baseUrl} />
       </Suspense>
     </PageContainer>
   );

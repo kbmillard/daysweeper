@@ -5,7 +5,8 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 /**
- * POST - Hide a KML dot at the given coordinates (so it no longer appears as a red pin).
+ * POST - Hide a dot at the given coordinates.
+ * Supports legacy KML fallback (HiddenDot) and DB-first MapPin hiding.
  */
 export async function POST(req: Request) {
   try {
@@ -20,6 +21,17 @@ export async function POST(req: Request) {
     }
     lat = Math.round(lat * 1e6) / 1e6;
     lng = Math.round(lng * 1e6) / 1e6;
+    await prisma.mapPin
+      .updateMany({
+        where: {
+          latitude: lat,
+          longitude: lng
+        },
+        data: { hidden: true }
+      })
+      .catch(() => {
+        // ignore if MapPin table/column unavailable
+      });
     await prisma.hiddenDot.create({ data: { latitude: lat, longitude: lng } }).catch(() => {
       // ignore duplicate (already hidden)
     });

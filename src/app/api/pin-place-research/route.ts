@@ -3,7 +3,7 @@ export const revalidate = 0;
 
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
-import { researchPinPlace } from '@/lib/pin-place-research';
+import { researchPinPlace, DEFAULT_PIN_RESEARCH_RADIUS_METERS } from '@/lib/pin-place-research';
 
 /**
  * POST /api/pin-place-research
@@ -30,7 +30,9 @@ export async function POST(req: NextRequest) {
     const lng = body?.longitude != null ? Number(body.longitude) : NaN;
     const hint = typeof body?.hint === 'string' ? body.hint : '';
     const radiusMeters =
-      body?.radiusMeters != null ? Math.min(500, Math.max(30, Number(body.radiusMeters))) : 120;
+      body?.radiusMeters != null
+        ? Math.min(800, Math.max(30, Number(body.radiusMeters)))
+        : DEFAULT_PIN_RESEARCH_RADIUS_METERS;
     const skipCache = Boolean(body?.skipCache);
 
     if (Number.isNaN(lat) || lat < -90 || lat > 90) {

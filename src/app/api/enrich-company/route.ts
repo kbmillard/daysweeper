@@ -5,7 +5,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? '';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`;
+/** Stronger than flash-lite; higher volume than Pro. Override with GEMINI_ENRICH_MODEL if needed. */
+const GEMINI_ENRICH_MODEL = process.env.GEMINI_ENRICH_MODEL?.trim() || 'gemini-2.5-flash';
+const geminiEnrichUrl = () =>
+  `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_ENRICH_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
 type SnapshotData = {
   legalName: string;
@@ -92,7 +95,7 @@ Fields:
 
 Company: ${name.trim()}${locationContext}`;
 
-    const geminiRes = await fetch(GEMINI_URL, {
+    const geminiRes = await fetch(geminiEnrichUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -153,18 +156,33 @@ Company: ${name.trim()}${locationContext}`;
           select: { id: true }
         });
         if (targetExists) {
+          const existing = await prisma.targetEnrichment.findUnique({
+            where: { targetId },
+            select: { enrichedJson: true }
+          });
+          const existingJson =
+            existing?.enrichedJson && typeof existing.enrichedJson === 'object'
+              ? (existing.enrichedJson as Record<string, unknown>)
+              : {};
+
           await prisma.targetEnrichment.upsert({
             where: { targetId },
             create: {
               id: `enr_${targetId}`,
               targetId,
-              enrichedJson: { snapshot: data },
-              model: 'gemini-2.5-flash-lite',
+              enrichedJson: {
+                ...existingJson,
+                snapshot: data
+              },
+              model: GEMINI_ENRICH_MODEL,
               updatedAt: new Date()
             },
             update: {
-              enrichedJson: { snapshot: data },
-              model: 'gemini-2.5-flash-lite',
+              enrichedJson: {
+                ...existingJson,
+                snapshot: data
+              },
+              model: GEMINI_ENRICH_MODEL,
               updatedAt: new Date()
             }
           });

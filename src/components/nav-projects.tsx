@@ -1,11 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import {
   IconFolder,
   IconShare,
   IconDots,
   IconTrash
 } from '@tabler/icons-react';
+import { toast } from 'sonner';
+import { AlertModal } from '@/components/modal/alert-modal';
 
 import {
   DropdownMenu,
@@ -35,9 +38,20 @@ export function NavProjects({
   }[];
 }) {
   const { isMobile } = useSidebar();
+  const [deleteProjectOpen, setDeleteProjectOpen] = useState(false);
 
   return (
     <SidebarGroup className='group-data-[collapsible=icon]:hidden'>
+      <AlertModal
+        isOpen={deleteProjectOpen}
+        onClose={() => setDeleteProjectOpen(false)}
+        onConfirm={() => {
+          setDeleteProjectOpen(false);
+          toast.info('Sidebar projects are display links only — nothing was deleted from the database.');
+        }}
+        loading={false}
+        description='These project links are not connected to CRM data.'
+      />
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
@@ -69,7 +83,12 @@ export function NavProjects({
                   <span>Share Project</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
+                <DropdownMenuItem
+                  onSelect={(e) => {
+                    e.preventDefault();
+                    setDeleteProjectOpen(true);
+                  }}
+                >
                   <IconTrash className='text-muted-foreground mr-2 h-4 w-4' />
                   <span>Delete Project</span>
                 </DropdownMenuItem>

@@ -124,6 +124,11 @@ model GeocodeCache {
   @@index([query, country])
 }
 
+// Map pins (three sources on the Daysweeper map):
+// - MapPin: red/blue dots route pins (canonical pin set, synced from dots JSON/KML).
+// - Location (+ Company / Target on routes): purple company facility pins (geocoded addresses).
+// - Seller: grey seller pins. New pins INSERT into the table for that layer.
+
 model Location {
   id                String                   @id
   externalId        String?                  @unique
@@ -369,6 +374,8 @@ model Route {
   assignedToEmail      String? // primary email
   assignedToExternalId String? // optional: provider id (e.g., Google sub)
   scheduledFor         DateTime?
+  /// LastLeg route corridor planner (sync web map + iOS). JSON: active, addresses, radius, vertices, rankedTargetIds, etc.
+  corridorPlanner      Json?
   stops                RouteStop[]
   TargetNote           TargetNote[]
   Meeting              Meeting[]
@@ -447,6 +454,7 @@ model MetaKV {
   updatedAt DateTime @updatedAt
 }
 
+// Red/blue dots pins (LastLeg canonical set). See preflight sync from public/dots-pins.json.
 model MapPin {
   id        String   @id @default(cuid())
   latitude  Decimal  @db.Decimal(10, 6)
@@ -465,4 +473,26 @@ model HiddenDot {
 
   @@unique([latitude, longitude])
   @@index([latitude, longitude])
+}
+
+// Grey seller pins (imported seller list + geocode). See /api/sellers and map sellers UI.
+model Seller {
+  id                String   @id @default(cuid())
+  externalId        String   @unique
+  name              String
+  addressRaw        String   @default("")
+  addressNormalized String?
+  addressComponents Json?
+  latitude          Decimal? @db.Decimal(9, 6)
+  longitude         Decimal? @db.Decimal(9, 6)
+  phone             String?
+  website           String?
+  role              String?
+  notes             String?  @db.Text
+  importCategory    String?
+  legacyJson        Json?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([importCategory])
 }

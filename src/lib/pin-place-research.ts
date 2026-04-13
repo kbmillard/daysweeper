@@ -4,6 +4,12 @@
  */
 import { createHash } from 'crypto';
 import { prisma } from '@/lib/prisma';
+import {
+  shouldExcludeConsumerPoi,
+  PIN_RESEARCH_LLM_INDUSTRIAL_BIAS
+} from '@/lib/pin-place-consumer-filter';
+
+export { shouldExcludeConsumerPoi } from '@/lib/pin-place-consumer-filter';
 
 export type PinPlaceCandidate = {
   placeId: string;
@@ -14,20 +20,36 @@ export type PinPlaceCandidate = {
   latitude: number | null;
   longitude: number | null;
   mapsUrl: string | null;
+  distanceMeters?: number | null;
+  /** Google Places `types` from Place Details (when available). */
+  types?: string[];
 };
 
 export type PinPlaceResearchResult = {
   ok: true;
   cached: boolean;
-  provider: 'places' | 'places+llm';
+  provider: 'places' | 'places+llm' | 'gpt-web';
   llmProvider: 'none' | 'gemini' | 'openai' | 'anthropic';
   radiusMeters: number;
   candidates: PinPlaceCandidate[];
   chosen: PinPlaceCandidate | null;
   disambiguationNote: string | null;
+  webSummary?: string | null;
+  sources?: string[];
+  confidence?: string | null;
 };
 
 const CACHE_PREFIX = 'pin_place_research:v2:';
+
+/** Default search radius. 120m was too tight for large plants — nearby retail/medical POIs won. */
+const _envRadius = Number(process.env.PIN_RESEARCH_RADIUS_METERS);
+export const DEFAULT_PIN_RESEARCH_RADIUS_METERS =
+  Number.isFinite(_envRadius) && _envRadius >= 80 && _envRadius <= 2000
+    ? Math.round(_envRadius)
+    : 420;
+
+const MAX_RADIUS_METERS = 800;
+const RETRY_RADIUS_FACTOR = 2;
 
 function googlePlacesKey(): string {
   return (
@@ -52,7 +74,18 @@ export function pinResearchCacheKey(
   return `${CACHE_PREFIX}${la}:${lo}:${h}:r${radiusMeters}`;
 }
 
-type NearbyResult = { results?: Array<{ place_id?: string; name?: string; vicinity?: string }> };
+export function pinResearchDefaultCacheKey(lat: number, lng: number): string {
+  return pinResearchCacheKey(lat, lng, '', DEFAULT_PIN_RESEARCH_RADIUS_METERS);
+}
+
+type NearbyResult = {
+  results?: Array<{
+    place_id?: string;
+    name?: string;
+    vicinity?: string;
+    types?: string[];
+  }>;
+};
 type DetailsResult = {
   result?: {
     place_id?: string;
@@ -62,6 +95,7 @@ type DetailsResult = {
     international_phone_number?: string;
     website?: string;
     url?: string;
+    types?: string[];
     geometry?: { location?: { lat?: number; lng?: number } };
   };
 };
@@ -72,7 +106,7 @@ async function nearbySearch(
   radiusMeters: number,
   keyword: string | undefined,
   key: string
-): Promise<Array<{ place_id: string; name: string; vicinity?: string }>> {
+): Promise<Array<{ place_id: string; name: string; vicinity?: string; types?: string[] }>> {
   const u = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
   u.searchParams.set('location', `${lat},${lng}`);
   u.searchParams.set('radius', String(radiusMeters));
@@ -86,10 +120,17 @@ async function nearbySearch(
     console.error('[pin-place-research] nearby status:', data.status, data.error_message);
     return [];
   }
-  const out: Array<{ place_id: string; name: string; vicinity?: string }> = [];
+  const out: Array<{ place_id: string; name: string; vicinity?: string; types?: string[] }> = [];
   for (const r of data.results ?? []) {
-    if (r.place_id && r.name) out.push({ place_id: r.place_id, name: r.name, vicinity: r.vicinity });
-    if (out.length >= 8) break;
+    if (r.place_id && r.name) {
+      out.push({
+        place_id: r.place_id,
+        name: r.name,
+        vicinity: r.vicinity,
+        types: Array.isArray(r.types) ? r.types : undefined
+      });
+    }
+    if (out.length >= 20) break;
   }
   return out;
 }
@@ -102,7 +143,7 @@ async function placeDetails(
   u.searchParams.set('place_id', placeId);
   u.searchParams.set(
     'fields',
-    'place_id,name,formatted_address,formatted_phone_number,international_phone_number,website,geometry,url'
+    'place_id,name,formatted_address,formatted_phone_number,international_phone_number,website,geometry,url,types'
   );
   u.searchParams.set('key', key);
 
@@ -113,6 +154,7 @@ async function placeDetails(
   const r = data.result;
   const lat = r.geometry?.location?.lat ?? null;
   const lng = r.geometry?.location?.lng ?? null;
+  const types = Array.isArray(r.types) ? r.types : [];
   return {
     placeId: r.place_id ?? placeId,
     name: r.name ?? 'Unknown',
@@ -121,8 +163,22 @@ async function placeDetails(
     website: r.website ?? null,
     latitude: lat,
     longitude: lng,
-    mapsUrl: r.url ?? null
+    mapsUrl: r.url ?? null,
+    types
   };
+}
+
+function distanceMeters(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const earthRadius = 6_371_000;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return earthRadius * c;
 }
 
 type Disambiguation = { chosenIndex: number | null; note: string | null };
@@ -153,11 +209,15 @@ async function disambiguateWithGemini(
   const list = candidates
     .map(
       (c, i) =>
-        `${i}. ${c.name} | ${c.formattedAddress ?? 'no address'} | phone: ${c.phone ?? 'n/a'}`
+        `${i}. ${c.name} | ${c.formattedAddress ?? 'no address'} | distance: ${
+          c.distanceMeters != null ? `${Math.round(c.distanceMeters)}m` : 'unknown'
+        } | phone: ${c.phone ?? 'n/a'}`
     )
     .join('\n');
 
   const prompt = `You pick which Google Places result best matches a map pin. User hint (may be empty): "${hint || '(none)'}"
+
+${PIN_RESEARCH_LLM_INDUSTRIAL_BIAS}
 
 Candidates (index 0-based):
 ${list}
@@ -199,11 +259,13 @@ async function disambiguateWithOpenAI(
   const list = candidates
     .map(
       (c, i) =>
-        `${i}. ${c.name} | ${c.formattedAddress ?? 'no address'} | phone: ${c.phone ?? 'n/a'}`
+        `${i}. ${c.name} | ${c.formattedAddress ?? 'no address'} | distance: ${
+          c.distanceMeters != null ? `${Math.round(c.distanceMeters)}m` : 'unknown'
+        } | phone: ${c.phone ?? 'n/a'}`
     )
     .join('\n');
 
-  const prompt = `Pick which place best matches the map pin. Hint: "${hint || '(none)'}". Candidates:\n${list}\nJSON only: {"chosenIndex":number or null,"note":"string"}`;
+  const prompt = `Pick which place best matches the map pin. Hint: "${hint || '(none)'}".\n${PIN_RESEARCH_LLM_INDUSTRIAL_BIAS}\nCandidates:\n${list}\nJSON only: {"chosenIndex":number or null,"note":"string"}`;
 
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -243,11 +305,13 @@ async function disambiguateWithAnthropic(
   const list = candidates
     .map(
       (c, i) =>
-        `${i}. ${c.name} | ${c.formattedAddress ?? 'no address'} | phone: ${c.phone ?? 'n/a'}`
+        `${i}. ${c.name} | ${c.formattedAddress ?? 'no address'} | distance: ${
+          c.distanceMeters != null ? `${Math.round(c.distanceMeters)}m` : 'unknown'
+        } | phone: ${c.phone ?? 'n/a'}`
     )
     .join('\n');
 
-  const prompt = `Pick which place best matches the map pin. Hint: "${hint || '(none)'}". Candidates:\n${list}\nReply with only JSON: {"chosenIndex":number or null,"note":"string"}`;
+  const prompt = `Pick which place best matches the map pin. Hint: "${hint || '(none)'}".\n${PIN_RESEARCH_LLM_INDUSTRIAL_BIAS}\nCandidates:\n${list}\nReply with only JSON: {"chosenIndex":number or null,"note":"string"}`;
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -285,7 +349,12 @@ async function runDisambiguation(
     return { chosen: null, note: null, llm: 'none' };
   }
   if (candidates.length === 1) {
-    return { chosen: candidates[0]!, note: null, llm: 'none' };
+    const only = candidates[0]!;
+    return {
+      chosen: shouldExcludeConsumerPoi(only.types, only.name) ? null : only,
+      note: null,
+      llm: 'none'
+    };
   }
 
   const mode = PIN_RESEARCH_LLM;
@@ -308,11 +377,20 @@ async function runDisambiguation(
   }
 
   if (d.chosenIndex != null && candidates[d.chosenIndex]) {
-    return { chosen: candidates[d.chosenIndex]!, note: d.note, llm };
+    const pick = candidates[d.chosenIndex]!;
+    if (shouldExcludeConsumerPoi(pick.types, pick.name)) {
+      const fallback = candidates.find((c) => !shouldExcludeConsumerPoi(c.types, c.name));
+      return {
+        chosen: fallback ?? null,
+        note: d.note ?? 'LLM pick failed consumer filter; using next best.',
+        llm
+      };
+    }
+    return { chosen: pick, note: d.note, llm };
   }
   return {
-    chosen: candidates[0]!,
-    note: d.note ?? 'LLM did not pick; using first candidate.',
+    chosen: candidates[0] ?? null,
+    note: d.note ?? 'LLM did not pick; using closest remaining candidate.',
     llm
   };
 }
@@ -344,6 +422,13 @@ export async function writePinResearchCache(key: string, payload: PinPlaceResear
   }
 }
 
+export async function readDefaultPinResearchCache(
+  latitude: number,
+  longitude: number
+): Promise<PinPlaceResearchResult | null> {
+  return readPinResearchCache(pinResearchDefaultCacheKey(latitude, longitude));
+}
+
 export async function researchPinPlace(options: {
   latitude: number;
   longitude: number;
@@ -351,7 +436,13 @@ export async function researchPinPlace(options: {
   radiusMeters?: number;
   skipCache?: boolean;
 }): Promise<PinPlaceResearchResult> {
-  const { latitude, longitude, hint = '', radiusMeters = 120, skipCache = false } = options;
+  const {
+    latitude,
+    longitude,
+    hint = '',
+    radiusMeters = DEFAULT_PIN_RESEARCH_RADIUS_METERS,
+    skipCache = false
+  } = options;
 
   const key = googlePlacesKey();
   const cacheKey = pinResearchCacheKey(latitude, longitude, hint, radiusMeters);
@@ -365,12 +456,59 @@ export async function researchPinPlace(options: {
     throw new Error('GOOGLE_PLACES_API_KEY or GOOGLE_MAPS_API_KEY is not configured');
   }
 
-  const nearby = await nearbySearch(latitude, longitude, radiusMeters, hint || undefined, key);
-  const detailIds = nearby.slice(0, 5).map((n) => n.place_id);
-  const candidates: PinPlaceCandidate[] = [];
-  for (const pid of detailIds) {
-    const d = await placeDetails(pid, key);
-    if (d) candidates.push(d);
+  const requestedCap = Math.min(radiusMeters, MAX_RADIUS_METERS);
+  let effectiveRadius = requestedCap;
+  let expandedRadius = false;
+
+  const buildCandidates = async (radius: number): Promise<PinPlaceCandidate[]> => {
+    const nearby = await nearbySearch(latitude, longitude, radius, hint || undefined, key);
+    const prelim = nearby.filter((n) => !shouldExcludeConsumerPoi(n.types, n.name));
+    const detailIds = prelim.map((n) => n.place_id).slice(0, 12);
+    const list: PinPlaceCandidate[] = [];
+    for (const pid of detailIds) {
+      const d = await placeDetails(pid, key);
+      if (!d) continue;
+      if (shouldExcludeConsumerPoi(d.types, d.name)) continue;
+      const candidateDistance =
+        d.latitude != null && d.longitude != null
+          ? distanceMeters(latitude, longitude, d.latitude, d.longitude)
+          : null;
+      list.push({ ...d, distanceMeters: candidateDistance });
+    }
+    list.sort(
+      (a, b) => (a.distanceMeters ?? Number.POSITIVE_INFINITY) - (b.distanceMeters ?? Number.POSITIVE_INFINITY)
+    );
+    return list;
+  };
+
+  let candidates = await buildCandidates(effectiveRadius);
+  if (
+    candidates.length === 0 &&
+    effectiveRadius * RETRY_RADIUS_FACTOR <= MAX_RADIUS_METERS
+  ) {
+    effectiveRadius = Math.min(
+      MAX_RADIUS_METERS,
+      Math.round(effectiveRadius * RETRY_RADIUS_FACTOR)
+    );
+    expandedRadius = true;
+    candidates = await buildCandidates(effectiveRadius);
+  }
+
+  if (candidates.length === 0) {
+    const result: PinPlaceResearchResult = {
+      ok: true,
+      cached: false,
+      provider: 'places',
+      llmProvider: 'none',
+      radiusMeters: effectiveRadius,
+      candidates: [],
+      chosen: null,
+      disambiguationNote: `No Places match after filtering retail/medical/restaurants/etc. (${effectiveRadius}m${
+        expandedRadius ? ', after auto-expand' : ''
+      }). Add a hint with the facility name or increase PIN_RESEARCH_RADIUS_METERS / request radiusMeters.`
+    };
+    await writePinResearchCache(cacheKey, result);
+    return result;
   }
 
   const { chosen, note, llm } = await runDisambiguation(hint, candidates);
@@ -378,15 +516,22 @@ export async function researchPinPlace(options: {
   const provider: PinPlaceResearchResult['provider'] =
     llm === 'none' ? 'places' : 'places+llm';
 
+  const disambiguationNote =
+    expandedRadius && note
+      ? `${note} (search radius expanded to ${effectiveRadius}m)`
+      : expandedRadius
+        ? `Search radius expanded to ${effectiveRadius}m to find non-retail matches.`
+        : note;
+
   const result: PinPlaceResearchResult = {
     ok: true,
     cached: false,
     provider,
     llmProvider: llm,
-    radiusMeters,
+    radiusMeters: effectiveRadius,
     candidates,
     chosen,
-    disambiguationNote: note
+    disambiguationNote
   };
 
   await writePinResearchCache(cacheKey, result);

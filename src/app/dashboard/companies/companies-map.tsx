@@ -26,8 +26,9 @@ export default function CompaniesMap() {
         center: DEFAULT_CENTER,
         zoom: DEFAULT_ZOOM,
         mapTypeId: google.maps.MapTypeId.SATELLITE,
-        mapTypeControl: true,
-        mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }
+        mapTypeControl: false,
+        fullscreenControl: false,
+        streetViewControl: false,
       });
       mapRef.current = map;
     });
