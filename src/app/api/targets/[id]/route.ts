@@ -2,12 +2,36 @@ import { Prisma } from '@prisma/client';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
+import {
+  isRouteOutcomeValue,
+  parseRouteOutcomeFromBody,
+  stopFieldsFromRouteOutcome,
+  type RouteOutcomeValue
+} from '@/lib/route-stop-outcome';
 import { targetToLead } from '@/lib/target-to-lead';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 const SHARED_USER_ID = 'shared';
+
+const TARGET_INCLUDE = {
+  TargetEnrichment: {
+    select: { enrichedJson: true }
+  },
+  RouteStop: {
+    take: 1,
+    orderBy: { seq: 'asc' as const },
+    select: { seq: true, outcome: true }
+  }
+} as const;
+
+async function fetchTargetForLead(id: string) {
+  return prisma.target.findUnique({
+    where: { id },
+    include: TARGET_INCLUDE
+  });
+}
 
 /**
  * GET - Fetch a single target by ID (LastLeg app). Accepts session or Bearer token.
@@ -18,19 +42,7 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const target = await prisma.target.findUnique({
-      where: { id },
-      include: {
-        TargetEnrichment: {
-          select: { enrichedJson: true }
-        },
-        RouteStop: {
-          take: 1,
-          orderBy: { seq: 'asc' },
-          select: { seq: true, outcome: true }
-        }
-      }
-    });
+    const target = await fetchTargetForLead(id);
 
     if (!target) {
       return NextResponse.json({ error: 'Target not found' }, { status: 404 });
@@ -43,11 +55,24 @@ export async function GET(
   }
 }
 
-const VALID_OUTCOMES = ['VISITED', 'NO_ANSWER', 'WRONG_ADDRESS', 'FOLLOW_UP'] as const;
+const VALID_OUTCOMES = [
+  'VISITED',
+  'NO_ANSWER',
+  'WRONG_ADDRESS',
+  'FOLLOW_UP',
+  'NOT_INTERESTED',
+  'REVISITING_INTERESTED',
+  'DEAL_MADE',
+  'CONTAINERS_CLEARED'
+] as const;
 
 /**
  * PATCH - Update target (LastLeg app). Accepts session or Bearer token.
- * Body: { status?, notes?, visited?, latitude?, longitude? }
+ *
+ * Canonical route stop: **`route_outcome`** (snake) or **`routeOutcome`** (camel). JSON **`null`** clears
+ * outcome + `visitedAt` (reactivate). Idempotent merge with other fields.
+ *
+ * Legacy: **`status`** (`visited` | `no_answer` | `trashed` | `active` | or a StopOutcome string) when `route_outcome` is omitted.
  */
 export async function PATCH(
   req: Request,
@@ -63,11 +88,22 @@ export async function PATCH(
       SHARED_USER_ID;
 
     const { id } = await params;
-    const body = await req.json();
-    const { status, notes, visited, latitude, longitude,
-            places_context, address_raw, address, pin_research,
-            facility_snapshot, enriched_intelligence, account_state,
-            primary_name } = body;
+    const body = (await req.json()) as Record<string, unknown>;
+    const {
+      status,
+      notes,
+      visited,
+      latitude,
+      longitude,
+      places_context,
+      address_raw,
+      address,
+      pin_research,
+      facility_snapshot,
+      enriched_intelligence,
+      account_state,
+      primary_name
+    } = body;
 
     const target = await prisma.target.findUnique({ where: { id } });
     if (!target) {
@@ -76,16 +112,17 @@ export async function PATCH(
 
     const now = new Date();
 
-    // Base target updates (coords + address fields that live on the Target row)
     const targetUpdates: Record<string, unknown> = { updatedAt: now };
 
-    // account_state maps to Target.accountState — used for pin color sync iOS ↔ Daysweeper
-    const VALID_STATES = ['NEW_UNCONTACTED', 'NEW_CONTACTED_NO_ANSWER', 'ACCOUNT'] as const;
-    if (typeof account_state === 'string' && VALID_STATES.includes(account_state as (typeof VALID_STATES)[number])) {
-      targetUpdates.accountState = account_state;
+    if (account_state === null) {
+      targetUpdates.accountState = 'NEW_UNCONTACTED';
+    } else {
+      const VALID_STATES = ['NEW_UNCONTACTED', 'NEW_CONTACTED_NO_ANSWER', 'ACCOUNT'] as const;
+      if (typeof account_state === 'string' && VALID_STATES.includes(account_state as (typeof VALID_STATES)[number])) {
+        targetUpdates.accountState = account_state;
+      }
     }
 
-    // primary_name — overrides the company display name when user selects from alternative_names
     if (typeof primary_name === 'string' && primary_name.trim()) {
       targetUpdates.company = primary_name.trim();
     }
@@ -97,9 +134,11 @@ export async function PATCH(
       await prisma.target.update({ where: { id }, data: targetUpdates as Prisma.TargetUpdateInput });
     }
 
-    // Enrichment fields — stored in TargetEnrichment.enrichedJson as a merged JSON blob
-    const hasEnrichment = places_context != null || pin_research != null ||
-                          facility_snapshot != null || enriched_intelligence != null;
+    const hasEnrichment =
+      places_context != null ||
+      pin_research != null ||
+      facility_snapshot != null ||
+      enriched_intelligence != null;
     if (hasEnrichment) {
       const existing = await prisma.targetEnrichment.findUnique({ where: { targetId: id } });
       const existingJson: Record<string, unknown> =
@@ -124,20 +163,40 @@ export async function PATCH(
       });
     }
 
-    const route = await prisma.route.findFirst({
-      where: { assignedToUserId: userId },
+    const stop = await prisma.routeStop.findFirst({
+      where: {
+        targetId: id,
+        route: { assignedToUserId: userId }
+      },
       orderBy: { updatedAt: 'desc' }
     });
-    if (route) {
-      const stop = await prisma.routeStop.findFirst({
-        where: { routeId: route.id, targetId: id }
-      });
-      if (stop) {
-        const stopUpdates: Record<string, unknown> = {};
-        if (typeof notes === 'string') stopUpdates.note = notes;
+
+    if (stop) {
+      const routeOutcomeInput = parseRouteOutcomeFromBody(body);
+      const noteData: { note?: string } =
+        typeof notes === 'string' ? { note: notes } : {};
+
+      if (routeOutcomeInput !== undefined) {
+        if (routeOutcomeInput !== null && !isRouteOutcomeValue(routeOutcomeInput)) {
+          return NextResponse.json(
+            {
+              error: `Invalid route_outcome: "${routeOutcomeInput}". Expected null or one of: ${VALID_OUTCOMES.join(', ')}`
+            },
+            { status: 400 }
+          );
+        }
+        const canonical: null | RouteOutcomeValue =
+          routeOutcomeInput === null ? null : routeOutcomeInput;
+        const fields = stopFieldsFromRouteOutcome(canonical, now);
+        await prisma.routeStop.update({
+          where: { id: stop.id },
+          data: { ...fields, ...noteData }
+        });
+      } else {
+        const stopUpdates: Record<string, unknown> = { ...noteData };
         if (visited === true) {
-          stopUpdates.visitedAt = now;
           stopUpdates.outcome = 'VISITED';
+          stopUpdates.visitedAt = now;
         } else if (typeof status === 'string') {
           const normalizedStatus = status.trim();
           if (normalizedStatus === 'visited') {
@@ -152,20 +211,24 @@ export async function PATCH(
           } else if (normalizedStatus === 'active') {
             stopUpdates.outcome = null;
             stopUpdates.visitedAt = null;
-          } else if (VALID_OUTCOMES.includes(normalizedStatus as (typeof VALID_OUTCOMES)[number])) {
-            stopUpdates.outcome = normalizedStatus;
-            if (normalizedStatus === 'VISITED') {
-              stopUpdates.visitedAt = now;
-            }
+          } else if (isRouteOutcomeValue(normalizedStatus)) {
+            Object.assign(stopUpdates, stopFieldsFromRouteOutcome(normalizedStatus, now));
           }
         }
         if (Object.keys(stopUpdates).length > 0) {
-          await prisma.routeStop.update({ where: { id: stop.id }, data: stopUpdates });
+          await prisma.routeStop.update({
+            where: { id: stop.id },
+            data: stopUpdates as Prisma.RouteStopUpdateInput
+          });
         }
       }
     }
 
-    return NextResponse.json({ ok: true });
+    const refreshed = await fetchTargetForLead(id);
+    return NextResponse.json({
+      ok: true,
+      ...(refreshed ? { target: targetToLead(refreshed) } : {})
+    });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to update target';
     return NextResponse.json({ error: message }, { status: 500 });

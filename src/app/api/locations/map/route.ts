@@ -12,7 +12,11 @@ export const revalidate = 0;
 export async function GET() {
   try {
     const locs = await prisma.location.findMany({
-      where: { latitude: { not: null }, longitude: { not: null }, Company: { hidden: false } },
+      where: {
+        latitude: { not: null },
+        longitude: { not: null },
+        Company: { hidden: false, isBuyer: false }
+      },
       select: { id: true, companyId: true, addressRaw: true, latitude: true, longitude: true }
     });
 

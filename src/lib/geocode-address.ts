@@ -52,11 +52,12 @@ export function parseDmsCoordinates(text: string): { lat: number; lng: number } 
   const t = text.trim();
   if (!t) return null;
 
-  // Match DMS: degrees°minutes'seconds"N/S or E/W (supports ° ' " and unicode ′ ″)
+  // Match DMS: degrees°minutes'seconds"N/S or E/W (supports ° ' " and unicode ′ ″).
+  // No `g` flag — we only need the first lat / first lng match; `g` + module-level `.exec` is error-prone.
   const dms =
-    /(-?\d+(?:\.\d+)?)\s*[°º]\s*(\d+(?:\.\d+)?)\s*['′]\s*(\d+(?:\.\d+)?)\s*["″]?\s*([NS])/gi;
+    /(-?\d+(?:\.\d+)?)\s*[°º]\s*(\d+(?:\.\d+)?)\s*['′]\s*(\d+(?:\.\d+)?)\s*["″]?\s*([NS])/i;
   const dmsLng =
-    /(-?\d+(?:\.\d+)?)\s*[°º]\s*(\d+(?:\.\d+)?)\s*['′]\s*(\d+(?:\.\d+)?)\s*["″]?\s*([EW])/gi;
+    /(-?\d+(?:\.\d+)?)\s*[°º]\s*(\d+(?:\.\d+)?)\s*['′]\s*(\d+(?:\.\d+)?)\s*["″]?\s*([EW])/i;
 
   const toDecimal = (d: number, m: number, s: number, dir: string): number => {
     const dec = Math.abs(d) + m / 60 + s / 3600;

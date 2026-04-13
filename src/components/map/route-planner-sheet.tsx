@@ -14,19 +14,56 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 import type { RoutePlannerState } from '@/lib/route-planner-types';
-import { geocodeWithAppleMapKit, tryParseLatLng } from '@/lib/mapkit-geocode-client';
+import { tryParseLatLng } from '@/lib/mapkit-geocode-client';
+import { resolveRouteWaypoint } from '@/lib/route-geocode-client';
 import {
   MapPinLayersControl,
   type MapPinLayers
 } from '@/components/map/map-pin-layers-control';
+import {
+  buildLastLegPlannedRouteUrl,
+  safeOpenLastLegPlannedRoute
+} from '@/lib/lastleg-url';
 
 type Props = {
   onApplied: (state: RoutePlannerState) => void;
   onCleared: () => void;
+  /** Keeps the map polyline + pin dimming in sync when this sheet loads server state (e.g. corridor applied on LastLeg iOS). */
+  onServerPlannerState?: (state: RoutePlannerState | null) => void;
   pinLayers?: MapPinLayers;
   onPinLayersChange?: (next: MapPinLayers) => void;
 };
+
+type RouteRow = {
+  id: string;
+  name: string;
+  updatedAt: string;
+  _count: { stops: number };
+};
+
+const DEFAULT_LAYERS: MapPinLayers = {
+  containers: true,
+  companies: true,
+  sellers: true
+};
+
+/** Corridor hit count for layers that are turned on (matches map emphasis). */
+function corridorVisibleCount(state: RoutePlannerState | null, layers: MapPinLayers | undefined): number {
+  if (!state?.active) return 0;
+  const L = layers ?? DEFAULT_LAYERS;
+  let n = 0;
+  if (L.containers) n += state.filteredTargetIds.length;
+  if (L.companies) n += state.filteredLocationIds?.length ?? 0;
+  return n;
+}
 
 function googleDirectionsUrl(vertices: { lat: number; lng: number }[]): string | null {
   if (vertices.length < 2) return null;
@@ -55,6 +92,7 @@ function appleMapsUrl(vertices: { lat: number; lng: number }[]): string | null {
 export function RoutePlannerSheet({
   onApplied,
   onCleared,
+  onServerPlannerState,
   pinLayers,
   onPinLayersChange
 }: Props) {
@@ -65,28 +103,71 @@ export function RoutePlannerSheet({
   const [radiusMiles, setRadiusMiles] = useState(25);
   const [loading, setLoading] = useState(false);
   const [activeSummary, setActiveSummary] = useState<RoutePlannerState | null>(null);
+  const [routeName, setRouteName] = useState('');
+  const [selectedRouteId, setSelectedRouteId] = useState('');
+  const [routes, setRoutes] = useState<RouteRow[]>([]);
+
+  const loadRoutes = useCallback(async () => {
+    try {
+      const res = await fetch('/api/routes', { credentials: 'include' });
+      const j = (await res.json()) as { routes?: RouteRow[] };
+      if (Array.isArray(j.routes)) setRoutes(j.routes);
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   const loadState = useCallback(async () => {
     try {
       const res = await fetch('/api/route-planner', { credentials: 'include' });
       const data = (await res.json()) as RoutePlannerState;
+      if (typeof data.activeRouteId === 'string' && data.activeRouteId) {
+        setSelectedRouteId(data.activeRouteId);
+      }
+      if (typeof data.activeRouteName === 'string') {
+        setRouteName(data.activeRouteName);
+      }
       if (data.active) {
         setActiveSummary(data);
         setStartAddress(data.startAddress);
         setEndAddress(data.endAddress);
         setVias([...data.intermediateAddresses]);
         setRadiusMiles(data.radiusMiles);
+        onServerPlannerState?.(data);
       } else {
         setActiveSummary(null);
+        onServerPlannerState?.(null);
       }
     } catch {
       /* ignore */
     }
-  }, []);
+  }, [onServerPlannerState]);
 
   useEffect(() => {
-    if (open) void loadState();
-  }, [open, loadState]);
+    if (!open) return;
+    void loadState();
+    void loadRoutes();
+  }, [open, loadState, loadRoutes]);
+
+  const onPickRoute = async (routeId: string) => {
+    setSelectedRouteId(routeId);
+    try {
+      const res = await fetch('/api/route-planner/active-route', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ routeId })
+      });
+      if (!res.ok) {
+        const j = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(j.error ?? 'Could not switch route');
+      }
+      await loadState();
+      toast.success('Switched active route — corridor loaded for this route.');
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : 'Could not switch route');
+    }
+  };
 
   const addVia = () => setVias((v) => [...v, '']);
   const removeVia = (i: number) => setVias((v) => v.filter((_, j) => j !== i));
@@ -98,15 +179,85 @@ export function RoutePlannerSheet({
       toast.error('Geolocation not available');
       return;
     }
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        setStartAddress(`${latitude.toFixed(6)}, ${longitude.toFixed(6)}`);
-        toast.success('Start set to your location');
-      },
-      () => toast.error('Could not read your location'),
-      { enableHighAccuracy: true, timeout: 12_000 }
-    );
+
+    const read = (enableHighAccuracy: boolean) =>
+      new Promise<GeolocationPosition>((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+          enableHighAccuracy,
+          timeout: enableHighAccuracy ? 30_000 : 35_000,
+          maximumAge: enableHighAccuracy ? 0 : 600_000
+        });
+      });
+
+    const readWatch = () =>
+      new Promise<GeolocationPosition>((resolve, reject) => {
+        let settled = false;
+        const id = navigator.geolocation.watchPosition(
+          (pos) => {
+            if (settled) return;
+            settled = true;
+            try {
+              navigator.geolocation.clearWatch(id);
+            } catch {
+              /* ignore */
+            }
+            resolve(pos);
+          },
+          (err) => {
+            if (settled) return;
+            settled = true;
+            try {
+              navigator.geolocation.clearWatch(id);
+            } catch {
+              /* ignore */
+            }
+            reject(err);
+          },
+          { enableHighAccuracy: false, maximumAge: 600_000 }
+        );
+        setTimeout(() => {
+          if (settled) return;
+          settled = true;
+          try {
+            navigator.geolocation.clearWatch(id);
+          } catch {
+            /* ignore */
+          }
+          reject(Object.assign(new Error('timeout'), { code: 3 }));
+        }, 50_000);
+      });
+
+    const applyPosition = (pos: GeolocationPosition) => {
+      const { latitude, longitude } = pos.coords;
+      setStartAddress(`${latitude.toFixed(6)}, ${longitude.toFixed(6)}`);
+      toast.success('Start set to your location');
+    };
+
+    void (async () => {
+      try {
+        applyPosition(await read(true));
+      } catch {
+        try {
+          applyPosition(await read(false));
+        } catch {
+          try {
+            applyPosition(await readWatch());
+          } catch (e) {
+            const code =
+              typeof e === 'object' && e !== null && 'code' in e
+                ? (e as GeolocationPositionError).code
+                : undefined;
+            const hint =
+              code === 1
+                ? 'Permission was denied.'
+                : code === 3
+                  ? 'Timed out — try again or enter lat, lng manually.'
+                  : 'Location unavailable in this browser.';
+            toast.error('Could not read your location', { description: hint });
+          }
+        }
+      }
+    })();
   };
 
   const apply = async () => {
@@ -119,7 +270,7 @@ export function RoutePlannerSheet({
       const resolvePoint = async (addr: string) => {
         const direct = tryParseLatLng(addr);
         if (direct) return direct;
-        return geocodeWithAppleMapKit(addr);
+        return resolveRouteWaypoint(addr);
       };
 
       const vertices: { lat: number; lng: number }[] = [];
@@ -133,7 +284,7 @@ export function RoutePlannerSheet({
       for (const via of viaStrings) {
         vertices.push(await resolvePoint(via));
         viaOrdinal += 1;
-        vertexLabels.push(`Via ${viaOrdinal}`);
+        vertexLabels.push(`Stop ${viaOrdinal}`);
       }
 
       vertices.push(await resolvePoint(endAddress.trim()));
@@ -149,22 +300,28 @@ export function RoutePlannerSheet({
           intermediateAddresses: viaStrings,
           radiusMiles,
           vertices,
-          vertexLabels
+          vertexLabels,
+          routeName: routeName.trim() || undefined
         })
       });
       const data = (await res.json()) as RoutePlannerState & { error?: string };
       if (!res.ok) throw new Error(data.error ?? `Failed (${res.status})`);
       setActiveSummary(data);
+      if (typeof data.activeRouteName === 'string') setRouteName(data.activeRouteName);
+      if (typeof data.activeRouteId === 'string') setSelectedRouteId(data.activeRouteId);
       onApplied(data);
-      toast.success(`${data.filteredTargetIds.length} targets in corridor`);
+      const vis = corridorVisibleCount(data, pinLayers);
+      const L = pinLayers ?? DEFAULT_LAYERS;
+      const parts: string[] = [];
+      if (L.containers) parts.push(`${data.filteredTargetIds.length} route targets`);
+      if (L.companies) parts.push(`${data.filteredLocationIds?.length ?? 0} company pins`);
+      toast.success(
+        vis > 0 ? `${vis} in corridor (${parts.join(' · ')})` : 'Corridor applied (no pins in range for visible layers)'
+      );
       setOpen(false);
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'Apply failed';
-      toast.error(
-        msg.includes('not configured') || msg.includes('MapKit')
-          ? `${msg} You can still use decimal lat, lng pairs (e.g. 35.0, -86.8).`
-          : msg
-      );
+      toast.error(msg);
     } finally {
       setLoading(false);
     }
@@ -187,8 +344,43 @@ export function RoutePlannerSheet({
     }
   };
 
+  const sendRouteToLastLeg = async () => {
+    const routeId = selectedRouteId.trim();
+    if (!routeId) {
+      toast.error('Choose a route in “LastLeg route” first.');
+      return;
+    }
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    const deepLink = buildLastLegPlannedRouteUrl({ routeId, baseUrl });
+    const ua = typeof navigator !== 'undefined' ? navigator.userAgent ?? '' : '';
+    const isMobile =
+      /iPhone|iPad|iPod|Android/i.test(ua) || (typeof navigator !== 'undefined' && (navigator.maxTouchPoints ?? 0) > 0);
+
+    if (isMobile) {
+      safeOpenLastLegPlannedRoute(routeId, baseUrl);
+      toast.message('LastLeg', {
+        description:
+          'Opening the app with this route id. In LastLeg, fetch the route and add it to planned routes (see LASTLEG_URL_SCHEME.md).'
+      });
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(deepLink);
+      toast.success('LastLeg link copied', {
+        description:
+          'Paste on iPhone (Notes/Messages) and tap to open, or build URL handling in LastLeg for planned-route.'
+      });
+    } catch {
+      toast.message('Open from iPhone', {
+        description: `LastLeg should register lastleg://planned-route — route id ${routeId}.`
+      });
+    }
+  };
+
   const gUrl = activeSummary?.active ? googleDirectionsUrl(activeSummary.vertices) : null;
   const aUrl = activeSummary?.active ? appleMapsUrl(activeSummary.vertices) : null;
+  const badgeCount = corridorVisibleCount(activeSummary, pinLayers);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -202,7 +394,7 @@ export function RoutePlannerSheet({
           <span className='hidden sm:inline'>Route</span>
           {activeSummary?.active && (
             <span className='rounded-full bg-pink-500/20 px-2 py-0.5 text-[11px] text-pink-200'>
-              {activeSummary.filteredTargetIds.length}
+              {badgeCount}
             </span>
           )}
         </button>
@@ -217,13 +409,47 @@ export function RoutePlannerSheet({
             Route corridor
           </SheetTitle>
           <p className='text-left text-[13px] font-normal text-white/60'>
-            Addresses are geocoded in your browser with Apple MapKit JS (not the Daysweeper server). Use
-            decimal <span className='text-white/80'>lat, lng</span> if MapKit keys are not configured on
-            the server. Syncs to LastLeg via API.
+            Waypoints use <span className='text-white/80'>Apple MapKit</span> when available, then{' '}
+            <span className='text-white/80'>Google Geocoder</span> (same key as the map). You can always
+            paste <span className='text-white/80'>lat, lng</span>. Corridor is saved on the route below and
+            syncs to LastLeg with your account.
           </p>
         </SheetHeader>
 
         <div className='flex flex-1 flex-col gap-4 px-4 py-4'>
+          <div className='space-y-2'>
+            <Label className='text-white/80'>LastLeg route</Label>
+            <Select
+              value={selectedRouteId || undefined}
+              onValueChange={(v) => void onPickRoute(v)}
+            >
+              <SelectTrigger className='h-10 w-full max-w-full border-white/15 bg-white/5 text-white'>
+                <SelectValue placeholder='Select route…' />
+              </SelectTrigger>
+              <SelectContent>
+                {routes.map((r) => (
+                  <SelectItem key={r.id} value={r.id}>
+                    {r.name} ({r._count.stops} stops)
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <p className='text-[12px] text-white/45'>
+              Choosing a route loads its saved corridor (if any). Apply below updates this route for the
+              LastLeg app after refresh.
+            </p>
+          </div>
+
+          <div className='space-y-2'>
+            <Label className='text-white/80'>Route name</Label>
+            <Input
+              value={routeName}
+              onChange={(e) => setRouteName(e.target.value)}
+              placeholder='Name shown in Daysweeper + LastLeg'
+              className='border-white/15 bg-white/5 text-white placeholder:text-white/35'
+            />
+          </div>
+
           {pinLayers && onPinLayersChange && (
             <div className='rounded-xl border border-white/10 bg-white/5 px-3 py-3'>
               <p className='mb-2 text-[12px] font-medium uppercase tracking-wide text-white/50'>
@@ -234,8 +460,27 @@ export function RoutePlannerSheet({
           )}
           {activeSummary?.active && (
             <div className='rounded-xl border border-pink-500/30 bg-pink-500/10 px-3 py-2 text-[13px] text-pink-100'>
-              Active: {activeSummary.filteredTargetIds.length} targets in corridor ·{' '}
-              {activeSummary.radiusMiles} mi radius
+              Active: {activeSummary.filteredTargetIds.length} route targets ·{' '}
+              {activeSummary.filteredLocationIds?.length ?? 0} company locations · {activeSummary.radiusMiles}{' '}
+              mi radius
+            </div>
+          )}
+
+          {activeSummary?.active && (activeSummary.corridorLines?.length ?? 0) > 0 && (
+            <div className='rounded-xl border border-white/10 bg-white/5 px-3 py-2'>
+              <p className='mb-2 text-[12px] font-medium uppercase tracking-wide text-white/50'>
+                In corridor (along route)
+              </p>
+              <ol className='max-h-48 list-decimal space-y-1 overflow-y-auto pl-4 text-[13px] text-white/85'>
+                {(activeSummary.corridorLines ?? []).map((line, i) => (
+                  <li key={`${line.kind}-${i}`}>
+                    <span className='text-white/50'>
+                      {line.kind === 'target' ? 'Route · ' : 'Company · '}
+                    </span>
+                    {line.label}
+                  </li>
+                ))}
+              </ol>
             </div>
           )}
 
@@ -263,7 +508,7 @@ export function RoutePlannerSheet({
           {vias.map((via, i) => (
             <div key={i} className='flex gap-2'>
               <div className='min-w-0 flex-1 space-y-2'>
-                <Label className='text-white/80'>Via {i + 1}</Label>
+                <Label className='text-white/80'>Stop {i + 1}</Label>
                 <Input
                   value={via}
                   onChange={(e) => setVia(i, e.target.value)}
@@ -325,6 +570,15 @@ export function RoutePlannerSheet({
               onClick={() => void apply()}
             >
               {loading ? 'Applying…' : 'Apply route filter'}
+            </Button>
+            <Button
+              type='button'
+              variant='outline'
+              className='border-sky-500/40 bg-sky-500/10 text-sky-100 hover:bg-sky-500/20'
+              disabled={!selectedRouteId.trim()}
+              onClick={() => void sendRouteToLastLeg()}
+            >
+              Send route to LastLeg
             </Button>
             <Button
               type='button'

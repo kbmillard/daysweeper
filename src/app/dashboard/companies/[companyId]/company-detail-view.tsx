@@ -45,6 +45,7 @@ type CompanyData = {
   phone: string | null;
   email: string | null;
   status: string | null;
+  isBuyer?: boolean;
   metadata: unknown;
   primaryLocationId?: string | null;
   Location: Array<{
@@ -105,7 +106,8 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
           phone: primaryLocationResolved?.phone ?? company.phone ?? null,
           email: company.email ?? null,
           status: company.status ?? null,
-          productType
+          productType,
+          isBuyer: Boolean(company.isBuyer)
         }}
         primaryLocationId={primaryLocationResolved?.id ?? null}
       />

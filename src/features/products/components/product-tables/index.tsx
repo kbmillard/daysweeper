@@ -25,6 +25,7 @@ export function ProductTable<TData, TValue>({
     data, // product data
     columns, // product columns
     pageCount: pageCount,
+    rowCount: totalItems,
     shallow: false, //Setting to false triggers a network request with the updated querystring.
     debounceMs: 500
   });

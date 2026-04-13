@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-04-13T12:00:00-04:00",
+  "report": "EXECUTIVE SUMMARY: Kentucky-based vendors for collapsible plastic bulk containers include major manufacturers and local distributors. Examples are ORBIS (facilities in Bardstown and Georgetown), IPL Schoeller (Shelbyville), Top Line Containers (Louisville), and Fastenal (Louisville branch). These companies supply new and reconditioned collapsible bins and related material handling products.\nMETHODS: We used official sources (company contact and product pages, directories) to collect addresses, phones, and product lines. Data was verified against company sites and registries. Uncertain or missing information is marked \"unspecified\".\nMERMAID LOCATION CHART:\nflowchart LR\n  subgraph KY[KY]\n    LOU(Louisville area) --- BAR(Bardstown - ORBIS)\n    LOU --- SHE(Shelbyville - IPL Schoeller)\n    LOU --- GEO(Georgetown - ORBIS)\n  end",
+  "vendor_count": 5,
+  "vendors": [
+    {
+      "vendor_id": "V001",
+      "company_name": "ORBIS Corporation",
+      "role": "manufacturer",
+      "street_address": "705 Wilson Parkway",
+      "city": "Bardstown",
+      "state": "KY",
+      "zip": "40004",
+      "primary_phone": "800-890-7292",
+      "website_url": "https://www.orbiscorporation.com/",
+      "product_notes": "BulkPak collapsible bulk containers; ORBIS manufacturing facility.",
+      "brands_or_product_lines": ["BulkPak", "bulk containers"],
+      "verification_notes": "Address and role per ORBIS locations; phone is corporate number (location page lists no local phone).",
+      "sources": [
+        {"source_type": "company_locations", "url": "https://www.orbiscorporation.com/en-us/about-orbis/locations/"},
+        {"source_type": "product_page", "url": "https://www.orbiscorporation.com/en-us/products/bulk-containers/"}
+      ]
+    },
+    {
+      "vendor_id": "V002",
+      "company_name": "ORBIS Corporation",
+      "role": "manufacturer",
+      "street_address": "120 Commerce Court",
+      "city": "Georgetown",
+      "state": "KY",
+      "zip": "40324",
+      "primary_phone": "800-890-7292",
+      "website_url": "https://www.orbiscorporation.com/",
+      "product_notes": "BulkPak collapsible bulk containers; ORBIS manufacturing facility.",
+      "brands_or_product_lines": ["BulkPak", "bulk containers"],
+      "verification_notes": "Address and role per ORBIS locations; phone is corporate number.",
+      "sources": [
+        {"source_type": "company_locations", "url": "https://www.orbiscorporation.com/en-us/about-orbis/locations/"},
+        {"source_type": "product_page", "url": "https://www.orbiscorporation.com/en-us/products/bulk-containers/"}
+      ]
+    },
+    {
+      "vendor_id": "V003",
+      "company_name": "IPL Schoeller",
+      "role": "manufacturer",
+      "street_address": "545 Pearce Industrial Road",
+      "city": "Shelbyville",
+      "state": "KY",
+      "zip": "40065",
+      "primary_phone": "502-647-5353",
+      "website_url": "https://www.iplschoeller.com/",
+      "product_notes": "Manufacturer of reusable transport packaging; produces Foldable Large Containers (knockdown bulk boxes).",
+      "brands_or_product_lines": ["Foldable Large Containers", "Rigid Pallet Containers"],
+      "verification_notes": "Address and phone from IPL Schoeller U.S. locations page.",
+      "sources": [
+        {"source_type": "company_locations", "url": "https://www.iplschoeller.com/us/locations"}
+      ]
+    },
+    {
+      "vendor_id": "V004",
+      "company_name": "Top Line Containers (Top Line Material Handling)",
+      "role": "reseller",
+      "street_address": "2600 Holloway Road",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40299",
+      "primary_phone": "502-297-8686",
+      "website_url": "https://www.toplinecontainers.com/",
+      "product_notes": "Resells new and reconditioned collapsible bulk containers and offers repair services.",
+      "brands_or_product_lines": ["Collapsible Bulk Containers", "Reconditioned Bulk Containers", "Repairs"],
+      "verification_notes": "Address and phone from company contact page.",
+      "sources": [
+        {"source_type": "company_contact_page", "url": "https://www.toplinecontainers.com/contact.html"}
+      ]
+    },
+    {
+      "vendor_id": "V005",
+      "company_name": "Fastenal",
+      "role": "distributor",
+      "street_address": "3244 Commerce Center Place",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40211",
+      "primary_phone": "502-458-9924",
+      "website_url": "https://www.fastenal.com/",
+      "product_notes": "Industrial distributor branch; sells collapsible plastic bulk boxes.",
+      "brands_or_product_lines": ["Bulk Boxes", "Collapsible Bulk Boxes"],
+      "verification_notes": "Branch address and phone from Fastenal location page.",
+      "sources": [
+        {"source_type": "branch_page", "url": "https://www.fastenal.com/locations/details/KYLOU"}
+      ]
+    }
+  ]
+}

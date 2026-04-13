@@ -1,0 +1,5 @@
+-- LastLeg pin lifecycle: extend RouteStop.outcome enum (see docs/DAYSWEEPER_PIN_STATUS_HANDOFF.md)
+ALTER TYPE "StopOutcome" ADD VALUE 'NOT_INTERESTED';
+ALTER TYPE "StopOutcome" ADD VALUE 'REVISITING_INTERESTED';
+ALTER TYPE "StopOutcome" ADD VALUE 'DEAL_MADE';
+ALTER TYPE "StopOutcome" ADD VALUE 'CONTAINERS_CLEARED';

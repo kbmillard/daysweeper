@@ -1,0 +1,105 @@
+{
+  "vendor_count": 9,
+  "category": "collapsible_plastic_bulk_container_vendors_south_carolina",
+  "vendors": [
+    {
+      "company": "ORBIS Corporation",
+      "address": "1700 Old Grove Road, Suite A",
+      "city": "Piedmont",
+      "state": "SC",
+      "zip": "29673",
+      "phone": "(800) 890-7292",
+      "website": "https://www.orbiscorporation.com/",
+      "role": "Manufacturer",
+      "notes": "Bulk container portfolio includes collapsible options and BulkPak brand."
+    },
+    {
+      "company": "Con-Pearl North America Inc.",
+      "address": "6400 Augusta Road, Suite 101",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29605-3752",
+      "phone": "(864) 365-0674",
+      "website": "https://www.con-pearl.com/",
+      "role": "Manufacturer",
+      "notes": "Returnable packaging manufacturer aligned with plastic Gaylord and foldable transport packaging systems."
+    },
+    {
+      "company": "Returnable Packaging Resource",
+      "address": "34 Pelham Davis Circle",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29615",
+      "phone": "(864) 288-3900",
+      "website": "https://rprinc.com/",
+      "role": "Distributor / Integrator",
+      "notes": "Works with multiple packaging manufacturers and supports returnable packaging programs."
+    },
+    {
+      "company": "Del-Tec Packaging",
+      "address": "4020 Pelham Court",
+      "city": "Greer",
+      "state": "SC",
+      "zip": "29650",
+      "phone": "(864) 288-7390",
+      "website": "https://del-tec.com/",
+      "role": "Custom Packaging Fabricator / Distributor",
+      "notes": "Returnable packaging catalog includes bulk bins, containers, crates, racks, and dunnage."
+    },
+    {
+      "company": "PackIQ",
+      "address": "1 American Way",
+      "city": "Anderson",
+      "state": "SC",
+      "zip": "29621",
+      "phone": "(864) 231-8908",
+      "website": "https://www.packiq.com/",
+      "role": "Packaging Design + Services",
+      "notes": "Reusable packaging offerings include bulk containers and totes; public pages emphasize lifecycle services like washing and repairs."
+    },
+    {
+      "company": "Custom Equipment Company",
+      "address": "2700 Hwy 41",
+      "city": "Charleston",
+      "state": "SC",
+      "zip": "29492",
+      "phone": "(855) 905-0875",
+      "website": "https://www.cecmhs.com/",
+      "role": "Distributor",
+      "notes": "Sells bulk collapsible containers described as reusable, stackable, and collapsible."
+    },
+    {
+      "company": "repurposedMATERIALS",
+      "address": "70 State St",
+      "city": "Williston",
+      "state": "SC",
+      "zip": "29853",
+      "phone": "1-(877) 282-8733",
+      "website": "https://www.repurposedmaterialsinc.com/",
+      "role": "Reseller",
+      "notes": "South Carolina warehouse with used/surplus collapsible bulk container inventory that may vary over time."
+    },
+    {
+      "company": "Warehouse Rack & Shelf LLC",
+      "address": null,
+      "city": "Sumter",
+      "state": "SC",
+      "zip": null,
+      "phone": "1-800-763-9020",
+      "website": "https://rackandshelf.com/",
+      "role": "Distributor / Reseller",
+      "notes": "Publishes collapsible bulk plastic container product pages and lists a Sumter stocking location, but the cited page did not publish a full street address."
+    },
+    {
+      "company": "Grainger Industrial Supply - Greenville Branch #332",
+      "address": "730 Congaree Rd.",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29607",
+      "phone": "1-800-472-4643",
+      "website": "https://www.grainger.com/",
+      "role": "Distributor / Reseller",
+      "notes": "Branch location tied to catalog listings for collapsible plastic bulk containers."
+    }
+  ]
+}

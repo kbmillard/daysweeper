@@ -3,7 +3,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
 import { searchParamsCache } from '@/lib/searchparams';
 import { cn } from '@/lib/utils';
-import { IconPlus } from '@tabler/icons-react';
+import { IconPlus, IconUpload } from '@tabler/icons-react';
 import Link from 'next/link';
 import { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
@@ -38,9 +38,11 @@ export default async function Page(props: pageProps) {
   const addressFilterRaw = searchParamsCache.get('address');
   const statusFilterRaw = searchParamsCache.get('status');
   const stateFilterRaw = searchParamsCache.get('state');
+  const buyerFilterRaw = searchParamsCache.get('buyer');
   const addressFilter = Array.isArray(addressFilterRaw) ? addressFilterRaw[0] : addressFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const stateFilter = stateFilterRaw?.filter(Boolean) ?? [];
+  const buyerVals = buyerFilterRaw?.filter(Boolean) ?? [];
   const hideAccounts = searchParamsCache.get('hideAccounts') === '1';
   const sort = searchParamsCache.get('sort');
 
@@ -83,6 +85,11 @@ export default async function Page(props: pageProps) {
     };
   }
 
+  if (buyerVals.length === 1) {
+    if (buyerVals[0] === 'yes') where.isBuyer = true;
+    else if (buyerVals[0] === 'no') where.isBuyer = false;
+  }
+
   const orderBy = buildCompaniesListOrderBy(sort);
 
   const [stateOptions, companies, total] = await Promise.all([
@@ -97,6 +104,7 @@ export default async function Page(props: pageProps) {
         name: true,
         website: true,
         status: true,
+        isBuyer: true,
         metadata: true,
         createdAt: true,
         updatedAt: true,
@@ -119,17 +127,26 @@ export default async function Page(props: pageProps) {
       pageTitle='Companies'
       pageDescription='Manage companies and targets'
       pageHeaderAction={
-        <Link
-          href='/dashboard/companies/new'
-          className={cn(buttonVariants(), 'text-xs md:text-sm')}
-        >
-          <IconPlus className='mr-2 h-4 w-4' /> Add New
-        </Link>
+        <div className='flex flex-wrap items-center gap-2'>
+          <Link
+            href='/map/companies/import'
+            className={cn(buttonVariants({ variant: 'outline' }), 'text-xs md:text-sm')}
+          >
+            <IconUpload className='mr-2 h-4 w-4' />
+            Import JSON
+          </Link>
+          <Link
+            href='/dashboard/companies/new'
+            className={cn(buttonVariants(), 'text-xs md:text-sm')}
+          >
+            <IconPlus className='mr-2 h-4 w-4' /> Add New
+          </Link>
+        </div>
       }
     >
       <Suspense
         fallback={
-          <DataTableSkeleton columnCount={7} rowCount={8} filterCount={3} />
+          <DataTableSkeleton columnCount={8} rowCount={8} filterCount={5} />
         }
       >
         <CompaniesTable

@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-dots-pins.mjs && prisma generate && prisma migrate deploy && next build --webpack",
+    "build": "prisma generate && prisma migrate deploy && next build --webpack",
     "deploy": "npm run build",
     "postbuild": "node -e \"if (!process.env.VERCEL) require('child_process').spawnSync('npx', ['vercel', '--prod'], { stdio: 'inherit' });\"",
     "start": "next start",

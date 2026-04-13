@@ -2,8 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
 import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
@@ -20,10 +18,11 @@ import {
 import type { RoutePlannerState } from '@/lib/route-planner-types';
 import {
   fetchMapKitAddressSuggestions,
-  geocodeWithAppleMapKit,
   type MapKitAddressSuggestion
 } from '@/lib/mapkit-geocode-client';
+import { resolveRouteWaypoint } from '@/lib/route-geocode-client';
 import { useDebouncedCallback } from '@/hooks/use-debounced-callback';
+import { minDistanceToPolyline } from '@/lib/route-corridor';
 
 /** Company / location markers on the map (not red dots). */
 const COMPANY_PIN_COLOR = '#9333ea';
@@ -105,8 +104,11 @@ type RedPin = {
   targetId?: string;
 };
 type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
+/** Grey pins: buyer companies (Company.isBuyer + geocoded location) */
 type SellerPin = {
   id: string;
+  companyId: string;
+  locationId: string;
   lat: number;
   lng: number;
   label: string;
@@ -179,17 +181,27 @@ export default function EmptyMapClient() {
   const replayDotsRef = useRef<(() => void) | null>(null);
   const routePolylineRef = useRef<google.maps.Polyline | null>(null);
 
-  useEffect(() => {
-    void (async () => {
-      try {
-        const res = await fetch('/api/route-planner', { credentials: 'include' });
-        const data = (await res.json()) as RoutePlannerState;
-        if (data.active) setCorridorPlanner(data);
-      } catch {
-        /* ignore */
-      }
-    })();
+  const syncCorridorPlanner = useCallback(async () => {
+    try {
+      const res = await fetch('/api/route-planner', { credentials: 'include' });
+      const data = (await res.json()) as RoutePlannerState;
+      setCorridorPlanner(data.active ? data : null);
+    } catch {
+      /* ignore */
+    }
   }, []);
+
+  useEffect(() => {
+    void syncCorridorPlanner();
+  }, [syncCorridorPlanner]);
+
+  useEffect(() => {
+    const onVis = () => {
+      if (document.visibilityState === 'visible') void syncCorridorPlanner();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, [syncCorridorPlanner]);
 
   useEffect(() => {
     if (!ready || !mapRef.current || typeof google === 'undefined') return;
@@ -214,6 +226,7 @@ export default function EmptyMapClient() {
 
   useEffect(() => {
     replayDotsRef.current?.();
+    applyMarkerLayersRef.current?.();
   }, [corridorPlanner]);
 
   const toggleMapType = () => {
@@ -382,7 +395,10 @@ export default function EmptyMapClient() {
         selectedPin.type === 'location'
           ? { locationId: selectedPin.data.locationId, companyId: selectedPin.data.companyId }
           : selectedPin.type === 'seller'
-            ? { sellerId: selectedPin.data.id }
+            ? {
+                locationId: selectedPin.data.locationId,
+                companyId: selectedPin.data.companyId
+              }
             : { latitude: selectedPin.data.lat, longitude: selectedPin.data.lng };
       const res = await fetch('/api/lastleg/add-to-route', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -410,7 +426,7 @@ export default function EmptyMapClient() {
     setSearching(true);
     setSuggestOpen(false);
     try {
-      const { lat, lng } = await geocodeWithAppleMapKit(q);
+      const { lat, lng } = await resolveRouteWaypoint(q);
       mapRef.current?.panTo({ lat, lng });
       mapRef.current?.setZoom(17);
       toast.success('Zoomed to address');
@@ -427,7 +443,7 @@ export default function EmptyMapClient() {
     setSearching(true);
     setSuggestOpen(false);
     try {
-      const { lat, lng } = await geocodeWithAppleMapKit(q);
+      const { lat, lng } = await resolveRouteWaypoint(q);
       const pinRes = await fetch('/api/map-pins', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ latitude: lat, longitude: lng }) });
       const pinData = await pinRes.json();
       if (!pinRes.ok) throw new Error(pinData?.error ?? 'Failed to add pin');
@@ -538,13 +554,41 @@ export default function EmptyMapClient() {
         const addLocationMarkers = (features: GeoJSONFeature[]) => {
           clearLocationMarkers();
           if (!pinLayersRef.current.companies) return;
+          const planner = corridorPlannerRef.current;
+          const radiusM =
+            planner?.active && planner.vertices.length >= 2
+              ? planner.radiusMiles * 1609.34
+              : null;
+          const locInCorridor =
+            planner?.active && Array.isArray(planner.filteredLocationIds) && planner.filteredLocationIds.length > 0
+              ? new Set(planner.filteredLocationIds)
+              : null;
           features.forEach((f) => {
             try {
               const [lng, lat] = f.geometry.coordinates;
               const props = f.properties;
-              const marker = new g.maps.Marker({ map, position: { lat, lng }, icon: svgPin(g, COMPANY_PIN_COLOR, 6), zIndex: 2 });
+              let inCorridor = true;
+              if (planner?.active && radiusM != null && planner.vertices.length >= 2) {
+                if (locInCorridor) {
+                  inCorridor = props?.id ? locInCorridor.has(props.id) : false;
+                } else {
+                  inCorridor =
+                    minDistanceToPolyline({ lat, lng }, planner.vertices) <= radiusM;
+                }
+              }
+              const marker = new g.maps.Marker({
+                map,
+                position: { lat, lng },
+                icon: svgPin(g, inCorridor ? COMPANY_PIN_COLOR : '#7c3aed', inCorridor ? 6 : 5),
+                zIndex: inCorridor ? 2 : 1,
+                opacity: inCorridor ? 1 : 0.32
+              });
               marker.addListener('click', () => {
-                if (props?.id && props?.companyId) setSelectedPin({ type: 'location', data: { locationId: props.id, companyId: props.companyId, addressRaw: props.addressRaw, lat, lng } });
+                if (props?.id && props?.companyId)
+                  setSelectedPin({
+                    type: 'location',
+                    data: { locationId: props.id, companyId: props.companyId, addressRaw: props.addressRaw, lat, lng }
+                  });
               });
               locationMarkersRef.current.push(marker);
             } catch { /* skip bad feature */ }
@@ -555,13 +599,27 @@ export default function EmptyMapClient() {
           clearDotMarkers();
           if (!pinLayersRef.current.containers) return;
           const planner = corridorPlannerRef.current;
+          const radiusM =
+            planner?.active && planner.vertices.length >= 2
+              ? planner.radiusMiles * 1609.34
+              : null;
           pins.forEach((p) => {
             try {
               let color = '#dc2626';
               let size = 5;
               let label: string | undefined;
               let z = 1;
-              if (planner?.active && p.targetId) {
+              let opacity = 1;
+              const insideCorridor =
+                planner?.active && radiusM != null && planner.vertices.length >= 2
+                  ? minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM
+                  : true;
+              if (!insideCorridor) {
+                color = '#57534e';
+                size = 4;
+                z = 0;
+                opacity = 0.3;
+              } else if (planner?.active && p.targetId) {
                 const idx = planner.rankedTargetIds.indexOf(p.targetId);
                 if (idx >= 0) {
                   color = '#ec4899';
@@ -583,6 +641,7 @@ export default function EmptyMapClient() {
                 position: { lat: p.lat, lng: p.lng },
                 icon: svgPin(g, color, size),
                 zIndex: z,
+                opacity,
                 label: label
                   ? { text: label, color: '#ffffff', fontSize: '11px', fontWeight: 'bold' }
                   : undefined
@@ -620,13 +679,23 @@ export default function EmptyMapClient() {
         const addSellerMarkers = (pins: SellerPin[]) => {
           clearSellerMarkers();
           if (!pinLayersRef.current.sellers) return;
+          const planner = corridorPlannerRef.current;
+          const radiusM =
+            planner?.active && planner.vertices.length >= 2
+              ? planner.radiusMiles * 1609.34
+              : null;
           pins.forEach((p) => {
             try {
+              const insideCorridor =
+                planner?.active && radiusM != null && planner.vertices.length >= 2
+                  ? minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM
+                  : true;
               const marker = new g.maps.Marker({
                 map,
                 position: { lat: p.lat, lng: p.lng },
-                icon: svgPin(g, SELLER_PIN_COLOR, 6),
-                zIndex: 2
+                icon: svgPin(g, SELLER_PIN_COLOR, insideCorridor ? 6 : 5),
+                zIndex: insideCorridor ? 2 : 1,
+                opacity: insideCorridor ? 1 : 0.32
               });
               marker.addListener('click', () => {
                 selectedMarkerRef.current = marker;
@@ -672,14 +741,14 @@ export default function EmptyMapClient() {
           } catch { /* ignore bounds error */ }
         };
 
-        const applyAllMarkerLayers = () => {
+        const applyAllMarkerLayers = (shouldRefitViewport = true) => {
           if (cancelled || !mapRef.current) return;
           addLocationMarkers(boundsState.locations);
           addDotMarkers(boundsState.dots);
           addSellerMarkers(boundsState.sellers);
-          refitViewport();
+          if (shouldRefitViewport) refitViewport();
         };
-        applyMarkerLayersRef.current = applyAllMarkerLayers;
+        applyMarkerLayersRef.current = () => applyAllMarkerLayers(true);
 
         refetchDotsRef.current = async () => {
           if (cancelled || !mapRef.current) return;
@@ -694,7 +763,7 @@ export default function EmptyMapClient() {
             const routePins = Array.isArray(routeData.pins) ? routeData.pins : [];
             const merged = mergeRedPins(mapPins, routePins);
             boundsState.dots = merged;
-            applyAllMarkerLayers();
+            applyAllMarkerLayers(false);
           } catch { /* ignore */ }
         };
 
@@ -766,11 +835,21 @@ export default function EmptyMapClient() {
               const o = raw as Record<string, unknown>;
               const lat = typeof o.lat === 'number' ? o.lat : Number(o.lat);
               const lng = typeof o.lng === 'number' ? o.lng : Number(o.lng);
-              const id = typeof o.id === 'string' ? o.id : '';
+              const companyId =
+                typeof o.companyId === 'string'
+                  ? o.companyId
+                  : typeof o.id === 'string'
+                    ? o.id
+                    : '';
+              const locationId = typeof o.locationId === 'string' ? o.locationId : '';
               const label = typeof o.label === 'string' ? o.label : '';
-              if (!id || !label || !Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+              if (!companyId || !locationId || !label || !Number.isFinite(lat) || !Number.isFinite(lng)) {
+                continue;
+              }
               sellers.push({
-                id,
+                id: companyId,
+                companyId,
+                locationId,
                 lat,
                 lng,
                 label,
@@ -921,7 +1000,7 @@ export default function EmptyMapClient() {
             const data = await res.json();
             if (data?.features != null && mapRef.current) {
               boundsState.locations = data.features as GeoJSONFeature[];
-              applyAllMarkerLayers();
+              applyAllMarkerLayers(false);
             }
           } catch { /* ignore */ }
         });
@@ -997,7 +1076,7 @@ export default function EmptyMapClient() {
               <IconSearch className="h-[18px] w-[18px] shrink-0 text-muted-foreground/60" aria-hidden />
               <input
                 type="text"
-                placeholder="Search address…"
+                placeholder="Address, lat,lng, or DMS…"
                 value={addressSearch}
                 onChange={(e) => setAddressSearch(e.target.value)}
                 onFocus={() => addressSuggestions.length > 0 && setSuggestOpen(true)}
@@ -1072,6 +1151,7 @@ export default function EmptyMapClient() {
         <RoutePlannerSheet
           onApplied={(state) => setCorridorPlanner(state)}
           onCleared={() => setCorridorPlanner(null)}
+          onServerPlannerState={setCorridorPlanner}
           pinLayers={pinLayers}
           onPinLayersChange={setPinLayers}
         />
@@ -1267,10 +1347,10 @@ export default function EmptyMapClient() {
             )}
             {selectedPin.type === 'seller' && (
               <Link
-                href={`/map/sellers/${selectedPin.data.id}`}
+                href={`/map/companies/${selectedPin.data.companyId}`}
                 className="ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center"
               >
-                Seller page
+                Company page
               </Link>
             )}
             <button

@@ -3,6 +3,10 @@ export const revalidate = 0;
 
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import {
+  isBuyerVendorImportBody,
+  runBuyerVendorImport
+} from '@/lib/buyer-vendor-import';
 import { runCrmSupplierImport, type CrmSupplierJson } from '@/lib/crm-supplier-import';
 import { runGeocodeBulkQueue } from '@/lib/geocode-bulk-queue';
 
@@ -84,49 +88,119 @@ function parseCSVLine(line: string): string[] {
 export async function POST(req: Request) {
   try {
     const contentType = (req.headers.get('content-type') || '').toLowerCase();
-    let suppliers: CrmSupplierJson[];
 
     if (contentType.includes('text/csv')) {
       const csvText = await req.text();
-      suppliers = parseCSVToSuppliers(csvText);
-    } else {
-      const body = await req.json().catch(() => null);
-      suppliers = Array.isArray(body)
-        ? body
-        : Array.isArray(body?.suppliers)
-          ? body.suppliers
-          : [];
+      const suppliers = parseCSVToSuppliers(csvText);
+      if (!suppliers.length) {
+        return NextResponse.json(
+          {
+            error:
+              'CSV has no data rows. Expected columns: companyId, locationId, company, website, phone, addressRaw, city, state, postalCode, country, tier, supplyChainCategory, supplyChainSubtype, supplyChainSubtypeGroup, companyKey, parentCompanyId, segment, keyProducts'
+          },
+          { status: 400 }
+        );
+      }
+
+      const result = await runCrmSupplierImport(prisma, suppliers);
+
+      const geocode = await runGeocodeBulkQueue(prisma, {
+        locationExternalIds:
+          result.locationExternalIdsTouched.length > 0
+            ? result.locationExternalIdsTouched
+            : undefined
+      });
+
+      return NextResponse.json({
+        ok: true,
+        companiesCreated: result.companiesCreated,
+        companiesTotal: result.companiesTotal,
+        parentsLinked: result.parentsLinked,
+        locationsCreated: result.locationsCreated,
+        rowsRemappedToDbMaster: result.rowsRemappedToDbMaster,
+        geocode
+      });
     }
 
-    if (!suppliers.length) {
+    const body = await req.json().catch(() => null);
+    const hasBuyerPayload = Boolean(body && isBuyerVendorImportBody(body));
+    const suppliers = Array.isArray(body)
+      ? body
+      : Array.isArray(body?.suppliers)
+        ? body.suppliers
+        : [];
+
+    if (!hasBuyerPayload && !suppliers.length) {
       return NextResponse.json(
         {
           error:
-            'Provide JSON array, { suppliers: [...] }, or CSV (Content-Type: text/csv) with columns: companyId, locationId, company, website, phone, addressRaw, city, state, postalCode, country, tier, supplyChainCategory, supplyChainSubtype, supplyChainSubtypeGroup, companyKey, parentCompanyId, segment, keyProducts'
+            'Provide JSON: { suppliers: [...] } (CRM), { vendors: [...] } or { companies: [...] } (buyers / vendor research), or both in one object. Or send CSV (Content-Type: text/csv).'
         },
         { status: 400 }
       );
     }
 
-    const result = await runCrmSupplierImport(prisma, suppliers);
+    let geocodeSuppliers = { success: 0, failed: 0 };
+    let geocodeBuyers = { success: 0, failed: 0 };
+    let crmResult: Awaited<ReturnType<typeof runCrmSupplierImport>> | null = null;
+    let buyerResult: Awaited<ReturnType<typeof runBuyerVendorImport>> | null = null;
 
-    const geocode = await runGeocodeBulkQueue(prisma, {
-      locationExternalIds:
-        result.locationExternalIdsTouched.length > 0
-          ? result.locationExternalIdsTouched
-          : undefined
-    });
+    if (suppliers.length) {
+      crmResult = await runCrmSupplierImport(prisma, suppliers);
+      geocodeSuppliers = await runGeocodeBulkQueue(prisma, {
+        locationExternalIds:
+          crmResult.locationExternalIdsTouched.length > 0
+            ? crmResult.locationExternalIdsTouched
+            : undefined
+      });
+    }
+
+    if (hasBuyerPayload) {
+      buyerResult = await runBuyerVendorImport(prisma, body);
+      geocodeBuyers = buyerResult.geocode;
+    }
+
+    if (crmResult && !buyerResult) {
+      return NextResponse.json({
+        ok: true,
+        companiesCreated: crmResult.companiesCreated,
+        companiesTotal: crmResult.companiesTotal,
+        parentsLinked: crmResult.parentsLinked,
+        locationsCreated: crmResult.locationsCreated,
+        rowsRemappedToDbMaster: crmResult.rowsRemappedToDbMaster,
+        geocode: geocodeSuppliers
+      });
+    }
+
+    if (buyerResult && !crmResult) {
+      return NextResponse.json({
+        ok: true,
+        importKind: 'buyers',
+        upserted: buyerResult.upserted,
+        locationExternalIdsTouched: buyerResult.locationExternalIdsTouched,
+        geocode: geocodeBuyers
+      });
+    }
 
     return NextResponse.json({
       ok: true,
-      companiesCreated: result.companiesCreated,
-      companiesTotal: result.companiesTotal,
-      parentsLinked: result.parentsLinked,
-      locationsCreated: result.locationsCreated,
-      rowsRemappedToDbMaster: result.rowsRemappedToDbMaster,
-      geocode
+      importKind: 'mixed',
+      crm: {
+        companiesCreated: crmResult!.companiesCreated,
+        companiesTotal: crmResult!.companiesTotal,
+        parentsLinked: crmResult!.parentsLinked,
+        locationsCreated: crmResult!.locationsCreated,
+        rowsRemappedToDbMaster: crmResult!.rowsRemappedToDbMaster,
+        geocode: geocodeSuppliers
+      },
+      buyers: {
+        upserted: buyerResult!.upserted,
+        locationExternalIdsTouched: buyerResult!.locationExternalIdsTouched,
+        geocode: geocodeBuyers
+      }
     });
   } catch (e: unknown) {
+    // eslint-disable-next-line no-console -- server import diagnostics
     console.error('Import error:', e);
     return NextResponse.json(
       { error: e instanceof Error ? e.message : 'import failed' },

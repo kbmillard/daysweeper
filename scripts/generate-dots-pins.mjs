@@ -6,7 +6,10 @@
  * 1. docs/Dots.kml (manual verified pin source)
  * 2. JSON/round2/Dots.csv (legacy fallback)
  *
- * Run: node scripts/generate-dots-pins.mjs
+ * Run: npm run generate:dots-pins
+ *
+ * Vercel runs this via scripts/vercel-build-preflight.mjs before next build.
+ * Local `npm run build` does not — avoids rewriting public/dots-pins.json on every deploy.
  */
 import fs from 'fs';
 import path from 'path';

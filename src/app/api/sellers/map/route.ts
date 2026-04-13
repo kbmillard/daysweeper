@@ -5,44 +5,93 @@ import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+type BuyerPin = {
+  /** Same as companyId (legacy grey-pin id) */
+  id: string;
+  companyId: string;
+  locationId: string;
+  lat: number;
+  lng: number;
+  label: string;
+  addressRaw?: string;
+  phone?: string;
+  website?: string;
+  role?: string;
+  notes?: string;
+};
+
+function buyerImportMeta(metadata: unknown): { role?: string; notes?: string } {
+  if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) return {};
+  const bi = (metadata as { buyerImport?: unknown }).buyerImport;
+  if (!bi || typeof bi !== 'object' || Array.isArray(bi)) return {};
+  const o = bi as Record<string, unknown>;
+  const role = typeof o.role === 'string' ? o.role : undefined;
+  const notes = typeof o.notes === 'string' ? o.notes : undefined;
+  return { role, notes };
+}
+
 /**
- * GET - Seller pins for map overlay (grey markers). Same auth pattern as /api/locations/map (open).
+ * GET — Grey buyer/vendor pins (Company.isBuyer + geocoded Location). Same auth pattern as /api/locations/map (open).
  */
 export async function GET() {
   try {
-    const rows = await prisma.seller.findMany({
-      where: { latitude: { not: null }, longitude: { not: null } },
+    const companies = await prisma.company.findMany({
+      where: {
+        isBuyer: true,
+        hidden: false,
+        Location: {
+          some: {
+            latitude: { not: null },
+            longitude: { not: null }
+          }
+        }
+      },
       select: {
         id: true,
         name: true,
-        addressRaw: true,
         phone: true,
         website: true,
-        role: true,
-        notes: true,
-        latitude: true,
-        longitude: true
+        metadata: true,
+        Location: {
+          where: {
+            latitude: { not: null },
+            longitude: { not: null }
+          },
+          orderBy: { createdAt: 'asc' },
+          take: 1,
+          select: {
+            id: true,
+            addressRaw: true,
+            latitude: true,
+            longitude: true
+          }
+        }
       }
     });
 
-    const pins = rows
-      .map((r) => {
-        const lat = r.latitude != null ? Number(r.latitude) : null;
-        const lng = r.longitude != null ? Number(r.longitude) : null;
-        if (!isValidMapboxCoordinate(lat, lng)) return null;
-        return {
-          id: r.id,
-          lat: lat!,
-          lng: lng!,
-          label: r.name,
-          addressRaw: r.addressRaw || undefined,
-          phone: r.phone ?? undefined,
-          website: r.website ?? undefined,
-          role: r.role ?? undefined,
-          notes: r.notes ?? undefined
-        };
-      })
-      .filter((p): p is NonNullable<typeof p> => p != null);
+    const pins: BuyerPin[] = [];
+
+    for (const c of companies) {
+      const loc = c.Location[0];
+      if (!loc) continue;
+      const lat = loc.latitude != null ? Number(loc.latitude) : null;
+      const lng = loc.longitude != null ? Number(loc.longitude) : null;
+      if (!isValidMapboxCoordinate(lat, lng)) continue;
+      const { role, notes } = buyerImportMeta(c.metadata);
+      pins.push({
+        id: c.id,
+        companyId: c.id,
+        locationId: loc.id,
+        lat: lat!,
+        lng: lng!,
+        label: c.name,
+        addressRaw: loc.addressRaw || undefined,
+        phone: c.phone ?? undefined,
+        website: c.website ?? undefined,
+        role,
+        notes
+      });
+    }
 
     return NextResponse.json({ pins }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (e) {

@@ -59,8 +59,17 @@ export async function PATCH(
     const { companyId } = await params;
     const body = await req.json();
 
-    const { status, parentCompanyId, primaryLocationId, name, website, phone, email, productType } =
-      body;
+    const {
+      status,
+      parentCompanyId,
+      primaryLocationId,
+      name,
+      website,
+      phone,
+      email,
+      productType,
+      isBuyer
+    } = body;
 
     if (name !== undefined) {
       if (typeof name !== 'string' || !name.trim()) {
@@ -85,6 +94,10 @@ export async function PATCH(
         { error: 'productType must be a string or null' },
         { status: 400 }
       );
+    }
+
+    if (isBuyer !== undefined && typeof isBuyer !== 'boolean') {
+      return NextResponse.json({ error: 'isBuyer must be a boolean' }, { status: 400 });
     }
 
     if (status !== undefined && status !== null) {
@@ -186,6 +199,7 @@ export async function PATCH(
         ...(mergedMetadata !== undefined && {
           metadata: mergedMetadata as Prisma.InputJsonValue
         }),
+        ...(isBuyer !== undefined && { isBuyer }),
         updatedAt: new Date()
       }
     });

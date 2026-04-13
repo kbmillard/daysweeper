@@ -35,10 +35,19 @@ export function DataTablePagination<TData>({
         {table.getFilteredSelectedRowModel().rows.length > 0 ? (
           <>
             {table.getFilteredSelectedRowModel().rows.length} of{' '}
-            {table.getFilteredRowModel().rows.length} row(s) selected.
+            {table.getRowModel().rows.length} row(s) on this page selected.
           </>
         ) : (
-          <>{table.getFilteredRowModel().rows.length} row(s) total.</>
+          <>
+            {table.getRowCount()} row(s) total
+            {table.getRowModel().rows.length < table.getRowCount() ? (
+              <>
+                {' '}
+                ({table.getRowModel().rows.length} on this page)
+              </>
+            ) : null}
+            .
+          </>
         )}
       </div>
       <div className='flex flex-col-reverse items-center gap-4 sm:flex-row sm:gap-6 lg:gap-8'>

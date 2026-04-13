@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-04-13",
+  "state": "TN",
+  "category": "collapsible_plastic_bulk_container_sellers",
+  "mode": "full_sweeper_b",
+  "inclusion_rule": "Include Tennessee manufacturers, distributors, and packaging companies with Tennessee locations and public evidence that they sell, design, or supply reusable plastic bulk packaging or collapsible plastic bulk container systems. Exclude repair-only companies with no public sales evidence.",
+  "company_count": 4,
+  "location_count": 8,
+  "companies": [
+    {
+      "company_id": "TN-001",
+      "company_name": "Grainger",
+      "role": "industrial_distributor",
+      "confidence": "high",
+      "website_url": "https://www.grainger.com/",
+      "product_keywords": [
+        "ORBIS collapsible bulk container",
+        "plastic bulk container",
+        "industrial supply"
+      ],
+      "evidence_summary": "Grainger has multiple Tennessee branches and publicly lists ORBIS collapsible bulk containers made of plastic.",
+      "locations": [
+        {
+          "location_id": "TN-001-L1",
+          "location_type": "branch",
+          "street_address": "902 Creekside Rd.",
+          "city": "Chattanooga",
+          "state": "TN",
+          "zip": "37406",
+          "phone": "1-800-472-4643"
+        },
+        {
+          "location_id": "TN-001-L2",
+          "location_type": "branch",
+          "street_address": "6500 Baum Dr.",
+          "city": "Knoxville",
+          "state": "TN",
+          "zip": "37919",
+          "phone": "1-800-472-4643"
+        },
+        {
+          "location_id": "TN-001-L3",
+          "location_type": "branch",
+          "street_address": "1901 Nonconnah Blvd.",
+          "city": "Memphis",
+          "state": "TN",
+          "zip": "38132",
+          "phone": "1-800-472-4643"
+        },
+        {
+          "location_id": "TN-001-L4",
+          "location_type": "branch",
+          "street_address": "1021 Dr. M.L.K. Jr Blvd.",
+          "city": "Nashville",
+          "state": "TN",
+          "zip": "37203",
+          "phone": "1-800-472-4643"
+        },
+        {
+          "location_id": "TN-001-L5",
+          "location_type": "branch",
+          "street_address": "1938 Elm Tree Dr.",
+          "city": "Nashville",
+          "state": "TN",
+          "zip": "37210",
+          "phone": "1-800-472-4643"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_branch_locator",
+          "url": "https://www.grainger.com/content/find-branch-location"
+        },
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Chattanooga-Branch-132"
+        },
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Nashville-Branch-513"
+        },
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Nashville-Branch-512"
+        },
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Knoxville-Branch-416"
+        },
+        {
+          "source_type": "official_product_page",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-8YKH1"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-002",
+      "company_name": "Nefab / PolyFlex Products",
+      "role": "manufacturer_and_packaging_supplier",
+      "confidence": "high",
+      "website_url": "https://www.nefab.com/",
+      "product_keywords": [
+        "plastic bulk packaging",
+        "plastic containers",
+        "sleeve packs",
+        "reusable plastic packaging"
+      ],
+      "evidence_summary": "Nefab lists a McMinnville, Tennessee PolyFlex location and markets plastic bulk packaging plus sleeve-pack systems built from a plastic pallet base, folding sleeve, and plastic lid.",
+      "locations": [
+        {
+          "location_id": "TN-002-L1",
+          "location_type": "manufacturing_or_operations",
+          "street_address": "904 Red Road",
+          "city": "McMinnville",
+          "state": "TN",
+          "zip": "37110",
+          "phone": "+1 734-458-4194"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_locations",
+          "url": "https://www.nefab.com/locations/"
+        },
+        {
+          "source_type": "official_product_page",
+          "url": "https://www.nefab.com/solutions/packaging-solutions/outer-packaging/plastic-containers-totes-bins/"
+        },
+        {
+          "source_type": "official_product_page",
+          "url": "https://www.nefab.com/solutions/packaging-solutions/outer-packaging/sleeve-pack/"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-003",
+      "company_name": "Stephen Gould",
+      "role": "custom_packaging_supplier",
+      "confidence": "medium",
+      "website_url": "https://www.stephengould.com/",
+      "product_keywords": [
+        "industrial packaging",
+        "automotive packaging",
+        "bulk racks",
+        "work-in-progress containers"
+      ],
+      "evidence_summary": "Stephen Gould’s Nashville office serves Tennessee industrial and automotive customers and publicly describes programs involving bulk racks and work-in-progress containers.",
+      "locations": [
+        {
+          "location_id": "TN-003-L1",
+          "location_type": "office",
+          "street_address": "Two Town Center, 4068 Rural Plains Circle, Suite 190",
+          "city": "Franklin",
+          "state": "TN",
+          "zip": "37064",
+          "phone": "+1 615 550 1999"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_location_page",
+          "url": "https://www.stephengould.com/contact/franklin-tennessee/"
+        },
+        {
+          "source_type": "official_tennessee_office_page",
+          "url": "https://www.stephengould.com/our-nashville-tn-office/"
+        },
+        {
+          "source_type": "official_project_page",
+          "url": "https://www.stephengould.com/precision-in-motion/"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-004",
+      "company_name": "Inca Molded Products",
+      "role": "custom_manufacturer",
+      "confidence": "medium",
+      "website_url": "http://www.incaproducts.com",
+      "product_keywords": [
+        "material handling products",
+        "storage bins",
+        "carts",
+        "reusable pallets",
+        "rotationally molded plastic products"
+      ],
+      "evidence_summary": "Directory-backed public company information identifies Inca Molded Products in Nashville and describes its material-handling offerings as including storage bins, carts, and reusable pallets.",
+      "locations": [
+        {
+          "location_id": "TN-004-L1",
+          "location_type": "manufacturing",
+          "street_address": "6400 Louisiana Ave",
+          "city": "Nashville",
+          "state": "TN",
+          "zip": "37209",
+          "phone": "+1 615 350 7290"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "directory_profile",
+          "url": "https://www.ndt.org/vendor.asp?ObjectID=42789"
+        }
+      ]
+    }
+  ]
+}

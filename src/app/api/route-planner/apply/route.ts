@@ -1,8 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getLastLegUserId } from '@/lib/lastleg-route-user';
-import { filterAndRankTargetsAlongCorridor, type LatLng } from '@/lib/route-corridor';
-import type { RoutePlannerState } from '@/lib/route-planner-types';
+import {
+  arcPositionAlongPolyline,
+  filterAndRankTargetsAlongCorridor,
+  type LatLng
+} from '@/lib/route-corridor';
+import type { CorridorLine, RoutePlannerState } from '@/lib/route-planner-types';
+import { findActiveRouteIdForUser } from '@/lib/user-active-route';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -15,6 +20,8 @@ type ApplyBody = {
   startAddress?: string;
   endAddress?: string;
   intermediateAddresses?: string[];
+  /** Updates `Route.name` when non-empty. */
+  routeName?: string;
 };
 
 function parseVertices(raw: unknown): LatLng[] | null {
@@ -68,38 +75,43 @@ export async function POST(req: NextRequest) {
     if (vertexLabels.length !== vertices.length) {
       vertexLabels = ['Start'];
       for (let i = 1; i < vertices.length - 1; i++) {
-        vertexLabels.push(`Via ${i}`);
+        vertexLabels.push(`Stop ${i}`);
       }
       vertexLabels.push('End');
     }
 
     const radiusMeters = radiusMiles * 1609.34;
 
-    let route = await prisma.route.findFirst({
-      where: { assignedToUserId: userId },
-      orderBy: { updatedAt: 'desc' },
-      include: {
-        stops: {
-          orderBy: { seq: 'asc' },
-          include: {
-            target: { select: { id: true, latitude: true, longitude: true } }
+    const routeInclude = {
+      stops: {
+        orderBy: { seq: 'asc' as const },
+        include: {
+          target: {
+            select: {
+              id: true,
+              latitude: true,
+              longitude: true,
+              company: true,
+              addressRaw: true
+            }
           }
         }
       }
-    });
+    } as const;
+
+    const preferredId = await findActiveRouteIdForUser(userId);
+    let route = preferredId
+      ? await prisma.route.findFirst({
+          where: { id: preferredId, assignedToUserId: userId },
+          include: routeInclude
+        })
+      : null;
 
     if (!route) {
       const now = new Date();
       route = await prisma.route.create({
         data: { name: 'My route', assignedToUserId: userId, created: now, updatedAt: now },
-        include: {
-          stops: {
-            orderBy: { seq: 'asc' },
-            include: {
-              target: { select: { id: true, latitude: true, longitude: true } }
-            }
-          }
-        }
+        include: routeInclude
       });
     }
 
@@ -118,6 +130,66 @@ export async function POST(req: NextRequest) {
       radiusMeters
     );
 
+    const locRows = await prisma.location.findMany({
+      where: {
+        latitude: { not: null },
+        longitude: { not: null },
+        Company: { hidden: false, isBuyer: false }
+      },
+      select: { id: true, addressRaw: true, latitude: true, longitude: true }
+    });
+    const locPoints = locRows
+      .map((l) => ({
+        id: l.id,
+        lat: Number(l.latitude),
+        lng: Number(l.longitude)
+      }))
+      .filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng));
+
+    const { filteredIds: filteredLocIds, rankedIds: rankedLocIds } = filterAndRankTargetsAlongCorridor(
+      locPoints,
+      vertices,
+      radiusMeters
+    );
+
+    const targetById = new Map(
+      route.stops.map((s) => [s.target.id, s.target] as const)
+    );
+
+    const lineCands: { kind: 'target' | 'location'; label: string; arc: number }[] = [];
+    for (const id of rankedIds) {
+      const t = targetById.get(id);
+      if (!t || t.latitude == null || t.longitude == null) continue;
+      const lat = Number(t.latitude);
+      const lng = Number(t.longitude);
+      const label = (t.company || t.addressRaw || id).trim() || id;
+      lineCands.push({
+        kind: 'target',
+        label,
+        arc: arcPositionAlongPolyline({ lat, lng }, vertices)
+      });
+    }
+    const locById = new Map(locRows.map((l) => [l.id, l] as const));
+    for (const id of rankedLocIds) {
+      const loc = locById.get(id);
+      if (!loc || loc.latitude == null || loc.longitude == null) continue;
+      const lat = Number(loc.latitude);
+      const lng = Number(loc.longitude);
+      lineCands.push({
+        kind: 'location',
+        label: (loc.addressRaw || id).trim() || id,
+        arc: arcPositionAlongPolyline({ lat, lng }, vertices)
+      });
+    }
+    lineCands.sort((a, b) => a.arc - b.arc);
+    const corridorLines: CorridorLine[] = lineCands.slice(0, 100).map(({ kind, label }) => ({
+      kind,
+      label
+    }));
+
+    const routeNameIn =
+      typeof body.routeName === 'string' ? body.routeName.trim().slice(0, 160) : '';
+
     const now = new Date();
     const state: RoutePlannerState = {
       active: true,
@@ -129,15 +201,26 @@ export async function POST(req: NextRequest) {
       vertexLabels,
       filteredTargetIds: Array.from(filteredIds),
       rankedTargetIds: rankedIds,
+      filteredLocationIds: Array.from(filteredLocIds),
+      rankedLocationIds: rankedLocIds,
+      corridorLines,
       updatedAt: now.toISOString()
     };
 
     await prisma.route.update({
       where: { id: route.id },
-      data: { corridorPlanner: state as object, updatedAt: now }
+      data: {
+        corridorPlanner: state as object,
+        updatedAt: now,
+        ...(routeNameIn ? { name: routeNameIn } : {})
+      }
     });
 
-    return NextResponse.json(state);
+    return NextResponse.json({
+      ...state,
+      activeRouteId: route.id,
+      activeRouteName: routeNameIn || route.name
+    });
   } catch (e) {
     console.error('route-planner/apply', e);
     const message = e instanceof Error ? e.message : 'Apply failed';

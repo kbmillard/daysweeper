@@ -17,6 +17,7 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
+  isBuyer: boolean;
   metadata: unknown;
   createdAt: Date;
   updatedAt: Date;
@@ -53,6 +54,7 @@ export default function CompaniesTable({
     data,
     columns,
     pageCount: pageCount,
+    rowCount: totalItems,
     shallow: false,
     debounceMs: 500,
     initialState: {

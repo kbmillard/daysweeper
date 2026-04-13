@@ -45,14 +45,27 @@ function loadMapKitScript(): Promise<void> {
   return new Promise((resolve, reject) => {
     const existing = document.querySelector(`script[src="${MAPKIT_SCRIPT}"]`);
     if (existing) {
-      existing.addEventListener('load', () => resolve(), { once: true });
+      if (w.mapkit) {
+        resolve();
+        return;
+      }
+      const onDone = () => {
+        if ((window as unknown as { mapkit?: MapKitGlobal }).mapkit) resolve();
+        else reject(new Error('MapKit script loaded but mapkit global missing'));
+      };
+      existing.addEventListener('load', onDone, { once: true });
       existing.addEventListener('error', () => reject(new Error('MapKit script error')), { once: true });
+      // If the script finished loading before we subscribed, `load` will not fire again.
+      queueMicrotask(() => {
+        if ((window as unknown as { mapkit?: MapKitGlobal }).mapkit) onDone();
+      });
       return;
     }
     const s = document.createElement('script');
     s.src = MAPKIT_SCRIPT;
     s.async = true;
-    s.crossOrigin = 'anonymous';
+    // Do not set crossOrigin: Apple's CDN does not always participate in CORS for this script;
+    // crossorigin="anonymous" can cause the browser to block execution.
     s.onload = () => resolve();
     s.onerror = () => reject(new Error('Failed to load MapKit JS'));
     document.head.appendChild(s);
@@ -62,7 +75,14 @@ function loadMapKitScript(): Promise<void> {
 let initPromise: Promise<void> | null = null;
 
 export async function ensureMapKitInitialized(): Promise<void> {
-  if (initPromise) return initPromise;
+  if (initPromise) {
+    try {
+      await initPromise;
+      return;
+    } catch {
+      initPromise = null;
+    }
+  }
   initPromise = (async () => {
     await loadMapKitScript();
     const tokenRes = await fetch('/api/mapkit-js/token', { credentials: 'include' });
@@ -77,7 +97,12 @@ export async function ensureMapKitInitialized(): Promise<void> {
       }
     });
   })();
-  return initPromise;
+  try {
+    await initPromise;
+  } catch (e) {
+    initPromise = null;
+    throw e;
+  }
 }
 
 /** Parse `lat, lng` (same as LastLeg iOS). */

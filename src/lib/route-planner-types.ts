@@ -1,5 +1,11 @@
 import type { LatLng } from '@/lib/route-corridor';
 
+/** One row for the route sheet “in corridor” list (targets + company locations). */
+export type CorridorLine = {
+  kind: 'target' | 'location';
+  label: string;
+};
+
 /** Stored on `Route.corridorPlanner` and returned by GET/POST `/api/route-planner`. */
 export type RoutePlannerState = {
   active: boolean;
@@ -11,7 +17,15 @@ export type RoutePlannerState = {
   vertexLabels: string[];
   filteredTargetIds: string[];
   rankedTargetIds: string[];
+  /** Purple company pins inside the corridor (Location ids). */
+  filteredLocationIds?: string[];
+  rankedLocationIds?: string[];
+  /** Ordered labels for the route popout (subset). */
+  corridorLines?: CorridorLine[];
   updatedAt: string;
+  /** Set by GET /api/route-planner from the Route row (not inside stored corridorPlanner JSON). */
+  activeRouteId?: string;
+  activeRouteName?: string;
 };
 
 export function emptyRoutePlannerResponse(): RoutePlannerState {
@@ -25,6 +39,9 @@ export function emptyRoutePlannerResponse(): RoutePlannerState {
     vertexLabels: [],
     filteredTargetIds: [],
     rankedTargetIds: [],
+    filteredLocationIds: [],
+    rankedLocationIds: [],
+    corridorLines: [],
     updatedAt: new Date(0).toISOString()
   };
 }
@@ -61,6 +78,24 @@ export function parseStoredPlanner(raw: unknown): RoutePlannerState | null {
   const rankedTargetIds = Array.isArray(o.rankedTargetIds)
     ? o.rankedTargetIds.filter((x): x is string => typeof x === 'string')
     : [];
+  const filteredLocationIds = Array.isArray(o.filteredLocationIds)
+    ? o.filteredLocationIds.filter((x): x is string => typeof x === 'string')
+    : [];
+  const rankedLocationIds = Array.isArray(o.rankedLocationIds)
+    ? o.rankedLocationIds.filter((x): x is string => typeof x === 'string')
+    : [];
+  const corridorLines = Array.isArray(o.corridorLines)
+    ? o.corridorLines
+        .map((row) => {
+          if (!row || typeof row !== 'object') return null;
+          const r = row as Record<string, unknown>;
+          const kind = r.kind === 'location' || r.kind === 'target' ? r.kind : null;
+          const label = typeof r.label === 'string' ? r.label : '';
+          if (!kind || !label.trim()) return null;
+          return { kind, label: label.trim() } as CorridorLine;
+        })
+        .filter((x): x is CorridorLine => x != null)
+    : [];
   const updatedAt = typeof o.updatedAt === 'string' ? o.updatedAt : new Date().toISOString();
   return {
     active: true,
@@ -72,6 +107,9 @@ export function parseStoredPlanner(raw: unknown): RoutePlannerState | null {
     vertexLabels,
     filteredTargetIds,
     rankedTargetIds,
+    filteredLocationIds,
+    rankedLocationIds,
+    corridorLines,
     updatedAt
   };
 }

@@ -3,6 +3,7 @@ import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { getLastLegUserId } from '@/lib/lastleg-route-user';
 import { emptyRoutePlannerResponse, parseStoredPlanner } from '@/lib/route-planner-types';
+import { findActiveRouteIdForUser } from '@/lib/user-active-route';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -13,16 +14,25 @@ export const revalidate = 0;
 export async function GET() {
   try {
     const userId = await getLastLegUserId();
-    const route = await prisma.route.findFirst({
-      where: { assignedToUserId: userId },
-      orderBy: { updatedAt: 'desc' },
-      select: { corridorPlanner: true }
-    });
+    const activeId = await findActiveRouteIdForUser(userId);
+    const route = activeId
+      ? await prisma.route.findFirst({
+          where: { id: activeId, assignedToUserId: userId },
+          select: { id: true, name: true, corridorPlanner: true }
+        })
+      : null;
     const parsed = parseStoredPlanner(route?.corridorPlanner ?? null);
     if (!parsed) {
-      return NextResponse.json(emptyRoutePlannerResponse());
+      return NextResponse.json({
+        ...emptyRoutePlannerResponse(),
+        ...(route ? { activeRouteId: route.id, activeRouteName: route.name } : {})
+      });
     }
-    return NextResponse.json(parsed);
+    return NextResponse.json({
+      ...parsed,
+      activeRouteId: route?.id,
+      activeRouteName: route?.name
+    });
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Failed to load route planner';
     return NextResponse.json({ error: message }, { status: 500 });
@@ -35,10 +45,10 @@ export async function GET() {
 export async function DELETE() {
   try {
     const userId = await getLastLegUserId();
-    const route = await prisma.route.findFirst({
-      where: { assignedToUserId: userId },
-      orderBy: { updatedAt: 'desc' }
-    });
+    const activeId = await findActiveRouteIdForUser(userId);
+    const route = activeId
+      ? await prisma.route.findFirst({ where: { id: activeId, assignedToUserId: userId } })
+      : null;
     if (!route) {
       return NextResponse.json({ ok: true });
     }

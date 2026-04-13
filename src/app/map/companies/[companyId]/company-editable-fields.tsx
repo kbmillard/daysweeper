@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
@@ -33,6 +34,8 @@ export type CompanyEditableData = {
   status: string | null;
   /** Stored in company.metadata.productType */
   productType: string | null;
+  /** Buyer / vendor research (grey map pins when geocoded) */
+  isBuyer: boolean;
 };
 
 type Props = {
@@ -56,7 +59,8 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     phone: company.phone ?? '',
     email: company.email ?? '',
     status: displayStatus(company.status) ?? '',
-    productType: company.productType ?? ''
+    productType: company.productType ?? '',
+    isBuyer: company.isBuyer ?? false
   });
 
   useEffect(() => {
@@ -66,7 +70,8 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
       phone: company.phone ?? '',
       email: company.email ?? '',
       status: displayStatus(company.status) ?? '',
-      productType: company.productType ?? ''
+      productType: company.productType ?? '',
+      isBuyer: company.isBuyer ?? false
     });
   }, [
     company.id,
@@ -75,7 +80,8 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     company.phone,
     company.email,
     company.status,
-    company.productType
+    company.productType,
+    company.isBuyer
   ]);
 
   useEffect(() => {
@@ -163,7 +169,8 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
             phone,
             email: form.email.trim() || null,
             status: form.status.trim() || null,
-            productType: form.productType.trim() || null
+            productType: form.productType.trim() || null,
+            isBuyer: form.isBuyer
           })
         }),
         primaryLocationId
@@ -203,6 +210,17 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
         </Button>
       </CardHeader>
       <CardContent className='space-y-4'>
+        <div className='flex items-center gap-2 rounded-md border p-3'>
+          <Checkbox
+            id='isBuyer'
+            checked={form.isBuyer}
+            onCheckedChange={(c) => setForm((prev) => ({ ...prev, isBuyer: Boolean(c) }))}
+          />
+          <Label htmlFor='isBuyer' className='cursor-pointer text-sm font-normal leading-snug'>
+            Mark as buyer (competitor / vendor research — shows grey pin on map when address is geocoded)
+          </Label>
+        </div>
+
         <div className='grid gap-4 md:grid-cols-2'>
           <div>
             <Label htmlFor='name'>Company name</Label>

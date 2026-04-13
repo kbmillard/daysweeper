@@ -24,6 +24,8 @@ model Company {
   subtype            String?
   subtypeGroup       String?
   status             String?              // Contacted - no answer | Contacted - not interested | Contacted - meeting set | APR Account
+  /** Competitor / vendor research imports (grey pins on map when geocoded) */
+  isBuyer            Boolean              @default(false)
   hidden             Boolean              @default(false)
   primaryLocationId  String?              @unique
   legacyJson         Json?
@@ -45,6 +47,7 @@ model Company {
   @@index([tier])
   @@index([userId])
   @@index([status])
+  @@index([isBuyer])
 }
 
 model Customer {
@@ -127,7 +130,7 @@ model GeocodeCache {
 // Map pins (three sources on the Daysweeper map):
 // - MapPin: red/blue dots route pins (canonical pin set, synced from dots JSON/KML).
 // - Location (+ Company / Target on routes): purple company facility pins (geocoded addresses).
-// - Seller: grey seller pins. New pins INSERT into the table for that layer.
+// - Company.isBuyer + Location: grey buyer/vendor pins (same Location row, overlay layer).
 
 model Location {
   id                String                   @id
@@ -364,6 +367,14 @@ enum StopOutcome {
   NO_ANSWER
   WRONG_ADDRESS
   FOLLOW_UP
+  /// LastLeg: visited, not interested — client shows black / faded until reactivate
+  NOT_INTERESTED
+  /// LastLeg: revisiting, interested — yellow
+  REVISITING_INTERESTED
+  /// LastLeg: visited, deal made — green
+  DEAL_MADE
+  /// LastLeg: containers cleared — white / faded until reactivate
+  CONTAINERS_CLEARED
 }
 
 model Route {
@@ -473,26 +484,4 @@ model HiddenDot {
 
   @@unique([latitude, longitude])
   @@index([latitude, longitude])
-}
-
-// Grey seller pins (imported seller list + geocode). See /api/sellers and map sellers UI.
-model Seller {
-  id                String   @id @default(cuid())
-  externalId        String   @unique
-  name              String
-  addressRaw        String   @default("")
-  addressNormalized String?
-  addressComponents Json?
-  latitude          Decimal? @db.Decimal(9, 6)
-  longitude         Decimal? @db.Decimal(9, 6)
-  phone             String?
-  website           String?
-  role              String?
-  notes             String?  @db.Text
-  importCategory    String?
-  legacyJson        Json?
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
-
-  @@index([importCategory])
 }

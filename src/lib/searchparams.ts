@@ -22,6 +22,8 @@ export const searchParams = {
   website: parseAsString,
   status: parseAsString,
   state: parseAsArrayOf(parseAsString, ','),
+  /** Buyer / vendor research companies (`Company.isBuyer`) */
+  buyer: parseAsArrayOf(parseAsString, ','),
   address: parseAsString,
   subCategory: parseAsString,
   subCategoryGroup: parseAsString,

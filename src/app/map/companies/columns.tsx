@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { displayStatus } from '@/constants/company-status';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Column, ColumnDef } from '@tanstack/react-table';
-import { Text, Globe, MapPin, Package } from 'lucide-react';
+import { Text, Globe, MapPin, Package, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
 import { CellAction } from './cell-action';
@@ -14,6 +14,7 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
+  isBuyer: boolean;
   metadata: unknown;
   createdAt: Date;
   updatedAt: Date;
@@ -113,6 +114,33 @@ export function getColumns(options?: {
         variant: 'multiSelect',
         options: stateOptions,
         icon: MapPin
+      },
+      enableColumnFilter: true
+    },
+    {
+      id: 'buyer',
+      accessorFn: (row) => (row.isBuyer ? 'yes' : 'no'),
+      enableSorting: true,
+      enableHiding: true,
+      header: ({ column }: { column: Column<Company, unknown> }) => (
+        <DataTableColumnHeader column={column} title='Buyer' />
+      ),
+      cell: ({ row }) =>
+        row.original.isBuyer ? (
+          <Badge variant='secondary' className='text-xs'>
+            Buyer
+          </Badge>
+        ) : (
+          <span className='text-muted-foreground'>—</span>
+        ),
+      meta: {
+        label: 'Buyer',
+        variant: 'select',
+        options: [
+          { label: 'Buyer', value: 'yes' },
+          { label: 'Not buyer', value: 'no' }
+        ],
+        icon: ShoppingBag
       },
       enableColumnFilter: true
     },

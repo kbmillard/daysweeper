@@ -119,9 +119,17 @@ function numberOrNull(v: unknown): number | null {
 function mapPinKindFromLegacy(legacyJson: unknown): 'seller' | 'container' {
   if (legacyJson && typeof legacyJson === 'object') {
     const k = (legacyJson as Record<string, unknown>).daysweeper_pin_kind;
-    if (k === 'seller') return 'seller';
+    if (typeof k === 'string' && k.trim().toLowerCase() === 'seller') return 'seller';
   }
   return 'container';
+}
+
+/** Expose Daysweeper `Seller.id` for LastLeg when target was added from seller layer. */
+function sellerIdFromLegacy(legacyJson: unknown): string | null {
+  if (!legacyJson || typeof legacyJson !== 'object') return null;
+  const o = legacyJson as Record<string, unknown>;
+  const sid = o.sellerId ?? o.seller_id;
+  return typeof sid === 'string' && sid.trim() ? sid.trim() : null;
 }
 
 export function targetToLead(target: {
@@ -211,7 +219,8 @@ export function targetToLead(target: {
     account_state: target.accountState ?? null,
     route_outcome: routeOutcome,
     s: seq ?? null,
-    /** LastLeg map: grey pins for competitors imported as Seller rows. */
-    map_pin_kind: mapPinKindFromLegacy(target.legacyJson)
+    /** LastLeg: grey active pins when `seller` (competitor / supplier research — not CRM “buyer”). */
+    map_pin_kind: mapPinKindFromLegacy(target.legacyJson),
+    seller_id: sellerIdFromLegacy(target.legacyJson)
   };
 }

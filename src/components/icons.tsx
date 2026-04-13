@@ -80,6 +80,6 @@ export const Icons = {
   profile: IconUser,
   companies: IconBuilding,
   mapPin: IconMapPin,
-  /** Competitors / vendor research (Sellers nav) */
+  /** Reserved — was Sellers nav; buyers live under Companies */
   sellers: IconShoppingBag
 };

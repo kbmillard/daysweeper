@@ -1,0 +1,528 @@
+{
+  "vendor_count": 19,
+  "vendors": [
+    {
+      "vendor_id": "GA-001",
+      "company_name": "ORBIS Corporation",
+      "role": "manufacturer",
+      "street_address": "94 Logistics Lane",
+      "city": "Talmo",
+      "state": "GA",
+      "zip": "30575",
+      "primary_phone": "(800) 890-7292",
+      "website_url": "https://www.orbiscorporation.com/en-us/",
+      "product_notes": "Reusable plastic packaging; bulk containers including collapsible options; BulkPak® brand bulk containers.",
+      "brands_or_product_lines": [
+        "BulkPak"
+      ],
+      "verification_notes": "Georgia address confirmed on ORBIS locations page; collapsible bulk container offering confirmed on ORBIS bulk containers page.",
+      "sources": [
+        {
+          "source_type": "official_company_locations",
+          "url": "https://www.orbiscorporation.com/en-us/about-orbis/locations/"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.orbiscorporation.com/en-us/products/bulk-containers/"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-002",
+      "company_name": "IPL Schoeller",
+      "role": "manufacturer",
+      "street_address": "165 Industrial Park Rd.",
+      "city": "Forsyth",
+      "state": "GA",
+      "zip": "31029",
+      "primary_phone": "(478) 994-0702",
+      "website_url": "https://www.iplschoeller.com/us/",
+      "product_notes": "Reusable transport packaging; offers foldable large containers (FLC) including Magnum Optimum® and Maxipac® lines.",
+      "brands_or_product_lines": [
+        "Magnum Optimum",
+        "Maxipac"
+      ],
+      "verification_notes": "Forsyth, GA address and phone listed on IPL Schoeller locations page; foldable large container product category confirms FLC offerings.",
+      "sources": [
+        {
+          "source_type": "official_company_locations",
+          "url": "https://www.iplschoeller.com/us/locations"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.iplschoeller.com/us/products/foldable-large-containers"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-003",
+      "company_name": "TranPak Inc. (Atlanta Warehouse)",
+      "role": "manufacturer_and_distributor",
+      "street_address": "1640 Stone Ridge Dr.",
+      "city": "Stone Mountain",
+      "state": "GA",
+      "zip": "30083",
+      "primary_phone": "(800) 827-2474",
+      "website_url": "https://www.tranpak.com/",
+      "product_notes": "Sells collapsible/returnable plastic bins (notably AIAG 48\" x 45\" footprint) and other plastic material-handling items; Atlanta warehouse listed by TranPak.",
+      "brands_or_product_lines": [
+        "Collapsible & Returnable Bins",
+        "Plastic Pallets",
+        "Intermediate Bulk Containers (liquid)"
+      ],
+      "verification_notes": "Atlanta warehouse address + main phone shown on TranPak site; collapsible bin category page describes collapsible returnable bins and AIAG footprint.",
+      "sources": [
+        {
+          "source_type": "official_company_page",
+          "url": "https://www.tranpak.com/"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.tranpak.com/plastic-bins/collapsible-returnable/"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-004",
+      "company_name": "Container Exchanger",
+      "role": "reseller_and_marketplace",
+      "street_address": "6025 Lagrange Blvd. SW",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30336",
+      "primary_phone": "(888) 551-5528",
+      "website_url": "https://containerexchanger.com/",
+      "product_notes": "Marketplace focused on reusable packaging; advertises buying/selling new and used pallet containers and bulk containers, including collapsible plastic bulk containers.",
+      "brands_or_product_lines": [
+        "Pallet Containers",
+        "Plastic Collapsible Bulk Containers",
+        "Gaylord Boxes (including used)"
+      ],
+      "verification_notes": "Address and phone(s) displayed on site footer; product category text references collapsible plastic bulk containers.",
+      "sources": [
+        {
+          "source_type": "official_company_page",
+          "url": "https://containerexchanger.com/"
+        },
+        {
+          "source_type": "official_product_information",
+          "url": "https://containerexchanger.com/pages/plastic-gaylord-boxes"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-005",
+      "company_name": "Tosca (Global Headquarters)",
+      "role": "pooling_provider_and_packaging_supplier",
+      "street_address": "1175 Peachtree St. Suite 1900",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30361",
+      "primary_phone": "(920) 617-4000",
+      "website_url": "https://www.toscaltd.com/office/georgia/",
+      "product_notes": "Reusable plastic packaging and pooling provider; Georgia page lists products including bulk bins.",
+      "brands_or_product_lines": [
+        "Bulk bins",
+        "Reusable crates",
+        "Pallets"
+      ],
+      "verification_notes": "HQ address and phone listed on Tosca Georgia office page; product navigation includes bulk bins.",
+      "sources": [
+        {
+          "source_type": "official_company_locations",
+          "url": "https://www.toscaltd.com/office/georgia/"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-006",
+      "company_name": "Uline (Atlanta / Georgia Branch)",
+      "role": "distributor",
+      "street_address": "705 Braselton Industrial Blvd.",
+      "city": "Braselton",
+      "state": "GA",
+      "zip": "30517",
+      "primary_phone": "(706) 824-3700",
+      "website_url": "https://www.uline.com/Corporate/AtlantaGA",
+      "product_notes": "Large catalog distributor; sells bulk containers including collapsible bulk containers (plastic). Georgia facility and local contact number listed on Uline contact page.",
+      "brands_or_product_lines": [
+        "Bulk Containers",
+        "Collapsible Bulk Containers"
+      ],
+      "verification_notes": "Georgia branch address and local phone from Uline contact page; collapsible bulk container catalog category confirms product availability.",
+      "sources": [
+        {
+          "source_type": "official_contact_page",
+          "url": "https://www.uline.com/CustomerService/Contacts"
+        },
+        {
+          "source_type": "official_georgia_facility_page",
+          "url": "https://www.uline.com/Corporate/AtlantaGA"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.uline.com/BL_8205/Collapsible-Bulk-Containers"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-007",
+      "company_name": "Global Industrial (Georgia Distribution Center)",
+      "role": "distributor",
+      "street_address": "2505 Mill Center Parkway",
+      "city": "Buford",
+      "state": "GA",
+      "zip": "30518",
+      "primary_phone": "(770) 822-5600",
+      "website_url": "https://www.globalindustrial.com/",
+      "product_notes": "Industrial supplier with a Buford, GA distribution center; bulk container catalog includes collapsible plastic bulk containers and folding bulk shipping containers (including ORBIS / BulkPak-style folding containers).",
+      "brands_or_product_lines": [
+        "Bulk Containers",
+        "Plastic Bulk Containers",
+        "Collapsible Plastic Bulk Containers",
+        "Folding Bulk Shipping Containers"
+      ],
+      "verification_notes": "Buford distribution center address published on Global Industrial distribution center page; local phone sourced from a store locator directory entry; collapsible plastic bulk container category confirmed on Global Industrial bulk container category page.",
+      "sources": [
+        {
+          "source_type": "official_distribution_centers",
+          "url": "https://www.globalindustrial.com/distributioncenters"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.globalindustrial.com/c/storage/bins_totes_containers/bulk_containers"
+        },
+        {
+          "source_type": "official_product_example",
+          "url": "https://www.globalindustrial.com/p/orbis-folding-bulk-shipping-container-48x45x34-1500-lb-capacity"
+        },
+        {
+          "source_type": "industry_directory_store_locator",
+          "url": "https://www.locally.com/store/144607/global-industrial"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-008",
+      "company_name": "MSC Industrial Supply (Atlanta Customer Fulfillment Center)",
+      "role": "distributor",
+      "street_address": "6700 Discovery Blvd.",
+      "city": "Mableton",
+      "state": "GA",
+      "zip": "30126",
+      "primary_phone": "(770) 732-8650",
+      "website_url": "https://www.mscdirect.com/about-msc/msc-locations",
+      "product_notes": "Industrial distributor with a Georgia fulfillment center; sells collapsible bulk storage containers including ORBIS collapsible bulk containers (plastic).",
+      "brands_or_product_lines": [
+        "Bulk Storage Containers",
+        "Collapsible Bulk Containers (assorted brands, including ORBIS)"
+      ],
+      "verification_notes": "Georgia address and local phone listed on MSC locations page; collapsible ORBIS container evidence from MSC product page.",
+      "sources": [
+        {
+          "source_type": "official_company_locations",
+          "url": "https://www.mscdirect.com/about-msc/msc-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.mscdirect.com/product/details/99025074"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-009",
+      "company_name": "CHEP (North America Headquarters)",
+      "role": "pooling_provider",
+      "street_address": "5897 Windward Pkwy",
+      "city": "Alpharetta",
+      "state": "GA",
+      "zip": "30005",
+      "primary_phone": "(800) 243-7872",
+      "website_url": "https://www.chep.com/us/en/locations",
+      "product_notes": "Pallet/container pooling provider; publishes foldable large container (FLC) documentation for automotive container solutions.",
+      "brands_or_product_lines": [
+        "Foldable Large Container (FLC)"
+      ],
+      "verification_notes": "Alpharetta HQ address on CHEP locations page; foldable large container product documentation includes the Alpharetta address and describes FLC use-case.",
+      "sources": [
+        {
+          "source_type": "official_locations",
+          "url": "https://www.chep.com/us/en/locations"
+        },
+        {
+          "source_type": "official_product_pdf",
+          "url": "https://www.chep.com/us/en/print/pdf/node/15521?measurement=imperial"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-010",
+      "company_name": "OrderPallets.com",
+      "role": "authorized_dealer_and_reseller",
+      "street_address": "unspecified",
+      "city": "Bethlehem",
+      "state": "GA",
+      "zip": "30620",
+      "primary_phone": "(844) 209-0606",
+      "website_url": "https://www.orderpallets.com/heavy-duty-crate",
+      "product_notes": "Advertises collapsible bulk containers and foldable large containers; states it is an authorized dealer of IPL Schoeller and references ORBIS folding bulk shipping containers (BulkPak folding containers). Mailing address is provided as a PO Box.",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers",
+        "Magnum Optimum (IPL Schoeller)",
+        "ORBIS folding bulk shipping containers"
+      ],
+      "verification_notes": "Only a PO Box mailing address is published on the referenced page; physical street address not provided and therefore marked unspecified.",
+      "sources": [
+        {
+          "source_type": "official_company_page",
+          "url": "https://www.orderpallets.com/heavy-duty-crate"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-011",
+      "company_name": "Pacman Inc (Atlanta warehouse presence)",
+      "role": "reseller_and_container_services",
+      "street_address": "unspecified",
+      "city": "Atlanta (warehouse presence stated; street address not published)",
+      "state": "GA",
+      "zip": "unspecified",
+      "primary_phone": "(706) 431-6657",
+      "website_url": "https://www.pacmaninc.com/",
+      "product_notes": "Container services company stating an Atlanta warehouse presence; advertises collapsible containers (including refurb/used) and references brands such as ORBIS and Buckhorn among others.",
+      "brands_or_product_lines": [
+        "Collapsible Containers (refurbished)",
+        "Returnable Bulk Containers",
+        "Container rentals/repairs/parts"
+      ],
+      "verification_notes": "Atlanta warehouse presence is stated on-site, but street address is not published on the contact page; address fields are marked unspecified.",
+      "sources": [
+        {
+          "source_type": "official_company_page",
+          "url": "https://www.pacmaninc.com/"
+        },
+        {
+          "source_type": "official_contact_page",
+          "url": "https://www.pacmaninc.com/contact-pacman-inc-today/"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-012",
+      "company_name": "Grainger Industrial Supply (Atlanta Branch)",
+      "role": "distributor",
+      "street_address": "1721 Marietta Blvd NW",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30318",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Atlanta-Branch-052",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Address sourced from a U.S. government physical-locations procurement listing; product evidence from Grainger product page showing ORBIS collapsible bulk container (plastic).",
+      "sources": [
+        {
+          "source_type": "government_directory",
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs/federal-strategic-sourcing-initiative/maintenance-repair-facility-supplies-generation-2/physical-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-013",
+      "company_name": "Grainger Industrial Supply (Marietta Branch)",
+      "role": "distributor",
+      "street_address": "631 S. Marietta Pkwy SE",
+      "city": "Marietta",
+      "state": "GA",
+      "zip": "30060",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Marietta-Branch-036",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Branch address sourced from government physical-locations listing and/or Grainger branch locator context; product evidence from Grainger product page.",
+      "sources": [
+        {
+          "source_type": "government_directory",
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs/federal-strategic-sourcing-initiative/maintenance-repair-facility-supplies-generation-2/physical-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-014",
+      "company_name": "Grainger Industrial Supply (Forest Park Branch)",
+      "role": "distributor",
+      "street_address": "5300 Frontage Rd. Suite A-1",
+      "city": "Forest Park",
+      "state": "GA",
+      "zip": "30297",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Forest-Park-Branch-041",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Branch address sourced from government physical-locations listing; product evidence from Grainger product page.",
+      "sources": [
+        {
+          "source_type": "government_directory",
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs/federal-strategic-sourcing-initiative/maintenance-repair-facility-supplies-generation-2/physical-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-015",
+      "company_name": "Grainger Industrial Supply (Norcross Branch)",
+      "role": "distributor",
+      "street_address": "6655 Crescent Dr",
+      "city": "Norcross",
+      "state": "GA",
+      "zip": "30071",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Norcross-Branch-038",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Branch address sourced from government physical-locations listing; product evidence from Grainger product page.",
+      "sources": [
+        {
+          "source_type": "government_directory",
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs/federal-strategic-sourcing-initiative/maintenance-repair-facility-supplies-generation-2/physical-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-016",
+      "company_name": "Grainger Industrial Supply (Athens Branch)",
+      "role": "distributor",
+      "street_address": "1205 Commerce Rd.",
+      "city": "Athens",
+      "state": "GA",
+      "zip": "30607",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Athens-Branch-046",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Branch address sourced from government physical-locations listing; product evidence from Grainger product page.",
+      "sources": [
+        {
+          "source_type": "government_directory",
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs/federal-strategic-sourcing-initiative/maintenance-repair-facility-supplies-generation-2/physical-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-017",
+      "company_name": "Grainger Industrial Supply (Macon Branch #051)",
+      "role": "distributor",
+      "street_address": "2048 Paul Walsh Dr.",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Macon-Branch-051",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Address and phone confirmed via Grainger Macon branch page; product evidence from Grainger product page.",
+      "sources": [
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Macon-Branch-051"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-018",
+      "company_name": "Grainger Industrial Supply (Augusta Branch)",
+      "role": "distributor",
+      "street_address": "1516 Gordon Hwy.",
+      "city": "Augusta",
+      "state": "GA",
+      "zip": "30906",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "unspecified",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Branch address sourced from a U.S. government physical-locations procurement listing; branch-specific URL not captured in sources and marked unspecified.",
+      "sources": [
+        {
+          "source_type": "government_directory",
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs/federal-strategic-sourcing-initiative/maintenance-repair-facility-supplies-generation-2/physical-locations"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    },
+    {
+      "vendor_id": "GA-019",
+      "company_name": "Grainger Industrial Supply (Garden City Branch #745)",
+      "role": "distributor",
+      "street_address": "1324 US Highway 80 W",
+      "city": "Garden City",
+      "state": "GA",
+      "zip": "31408",
+      "primary_phone": "1-800-472-4643",
+      "website_url": "https://www.grainger.com/branch/Garden-City-Branch-745",
+      "product_notes": "Industrial catalog distributor; sells collapsible plastic bulk containers (example: ORBIS collapsible bulk container listed as material = plastic).",
+      "brands_or_product_lines": [
+        "Collapsible Bulk Containers (plastic, various brands including ORBIS)"
+      ],
+      "verification_notes": "Address and phone confirmed via Grainger Garden City branch page; YellowPages listing also provides local phone context; product evidence from Grainger product page.",
+      "sources": [
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Garden-City-Branch-745"
+        },
+        {
+          "source_type": "industry_directory_yellowpages",
+          "url": "https://www.yellowpages.com/garden-city-ga/mip/grainger-461809050"
+        },
+        {
+          "source_type": "product_page_example",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-3HFJ7"
+        }
+      ]
+    }
+  ],
+  "generated_at_local": "2026-04-13 America/New_York",
+  "coverage_notes": {
+    "inclusion_rule": "Vendors were included when (a) a Georgia street address (or at minimum a stated Georgia warehouse presence) was found, and (b) the vendor explicitly sells collapsible plastic bulk containers / foldable pallet boxes or provides an identified catalog category for them.",
+    "fields_marked_unspecified": "Any missing address/phone/role values not found in the cited sources are marked as \"unspecified\"."
+  }
+}

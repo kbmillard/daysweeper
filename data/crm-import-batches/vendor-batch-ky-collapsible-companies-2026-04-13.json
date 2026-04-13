@@ -1,0 +1,225 @@
+{
+  "generated_at": "2026-04-13",
+  "state": "KY",
+  "category": "collapsible_plastic_bulk_container_sellers",
+  "mode": "full_sweeper_b",
+  "inclusion_rule": "Include Kentucky manufacturers, distributors, resellers, and refurbishers that also sell collapsible plastic bulk containers or plastic Gaylord-style bulk containers. Exclude repair-only companies with no public sales evidence.",
+  "company_count": 5,
+  "location_count": 8,
+  "companies": [
+    {
+      "company_id": "KY-001",
+      "company_name": "ORBIS Corporation",
+      "role": "manufacturer_and_reusable_packaging_provider",
+      "confidence": "high",
+      "website_url": "https://www.orbiscorporation.com/",
+      "product_keywords": [
+        "BulkPak",
+        "bulk containers",
+        "collapsible plastic bulk containers",
+        "returnable packaging"
+      ],
+      "evidence_summary": "ORBIS publishes Kentucky manufacturing and RPM service locations and explicitly markets collapsible plastic bulk containers under its BulkPak line.",
+      "locations": [
+        {
+          "location_id": "KY-001-L1",
+          "location_type": "manufacturing",
+          "street_address": "705 Wilson Parkway",
+          "city": "Bardstown",
+          "state": "KY",
+          "zip": "40004",
+          "phone": "800-890-7292"
+        },
+        {
+          "location_id": "KY-001-L2",
+          "location_type": "manufacturing",
+          "street_address": "120 Commerce Court",
+          "city": "Georgetown",
+          "state": "KY",
+          "zip": "40324",
+          "phone": "800-890-7292"
+        },
+        {
+          "location_id": "KY-001-L3",
+          "location_type": "rpm_service_center",
+          "street_address": "3101 Brooke Elizabeth Way",
+          "city": "Louisville",
+          "state": "KY",
+          "zip": "40219",
+          "phone": "800-890-7292"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_locations",
+          "url": "https://www.orbiscorporation.com/en-us/about-orbis/locations/"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.orbiscorporation.com/en-us/products/bulk-containers"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-002",
+      "company_name": "IPL Schoeller",
+      "role": "manufacturer",
+      "confidence": "high",
+      "website_url": "https://www.iplschoeller.com/",
+      "product_keywords": [
+        "Foldable Large Containers",
+        "Magnum Optimum",
+        "Maxipac",
+        "bulk RTP"
+      ],
+      "evidence_summary": "IPL Schoeller lists a Shelbyville, Kentucky location and markets Foldable Large Containers as reusable, space-saving logistics containers.",
+      "locations": [
+        {
+          "location_id": "KY-002-L1",
+          "location_type": "manufacturing_or_operations",
+          "street_address": "545 Pearce Industrial Road",
+          "city": "Shelbyville",
+          "state": "KY",
+          "zip": "40065",
+          "phone": "502-647-5353"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_locations",
+          "url": "https://www.iplschoeller.com/us/locations"
+        },
+        {
+          "source_type": "official_product_category",
+          "url": "https://www.iplschoeller.com/us/products/foldable-large-containers/"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-003",
+      "company_name": "Top Line Containers",
+      "role": "stocking_reseller",
+      "confidence": "high",
+      "website_url": "https://www.toplinecontainers.com/",
+      "product_keywords": [
+        "collapsible bulk containers",
+        "bulk containers",
+        "returnable containers",
+        "plastic totes",
+        "pallets"
+      ],
+      "evidence_summary": "Top Line says it stocks bulk containers and collapsible containers in Louisville and publishes specific 32x30 and 48x45 collapsible bulk container models.",
+      "locations": [
+        {
+          "location_id": "KY-003-L1",
+          "location_type": "warehouse_and_sales",
+          "street_address": "2600 Holloway Road",
+          "city": "Louisville",
+          "state": "KY",
+          "zip": "40299",
+          "phone": "502-297-8686"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_homepage",
+          "url": "https://www.toplinecontainers.com/"
+        },
+        {
+          "source_type": "official_bulk_container_page",
+          "url": "https://www.toplinecontainers.com/bulk-containers.html"
+        },
+        {
+          "source_type": "official_about_page",
+          "url": "https://www.toplinecontainers.com/about.html"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-004",
+      "company_name": "Kyana Packaging Solutions",
+      "role": "distributor",
+      "confidence": "medium",
+      "website_url": "https://www.kyanaind.com/",
+      "product_keywords": [
+        "plastic shipping containers",
+        "stack and nest totes",
+        "attached lid containers",
+        "collapsible bulk box"
+      ],
+      "evidence_summary": "Kyana publishes a Louisville address and phone on its official site. ThomasNet identifies Kyana as a distributor of plastic shipping containers and collapsible bulk box products.",
+      "locations": [
+        {
+          "location_id": "KY-004-L1",
+          "location_type": "warehouse_and_sales",
+          "street_address": "2501 Ampere Drive",
+          "city": "Louisville",
+          "state": "KY",
+          "zip": "40299-3863",
+          "phone": "502-992-3333"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_contact_page",
+          "url": "https://www.kyanaind.com/ContactUs.html"
+        },
+        {
+          "source_type": "official_faq_page",
+          "url": "https://www.kyanaind.com/FAQ.html"
+        },
+        {
+          "source_type": "industrial_directory_product_evidence",
+          "url": "https://www.thomasnet.com/suppliers/kentucky/all-cities/bulk-containers-17780909"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-005",
+      "company_name": "Grainger",
+      "role": "industrial_distributor",
+      "confidence": "high",
+      "website_url": "https://www.grainger.com/",
+      "product_keywords": [
+        "ORBIS collapsible bulk container",
+        "plastic bulk container",
+        "industrial supply"
+      ],
+      "evidence_summary": "Grainger has Kentucky branches in Louisville and Lexington and publicly lists ORBIS collapsible bulk containers made of plastic.",
+      "locations": [
+        {
+          "location_id": "KY-005-L1",
+          "location_type": "branch",
+          "street_address": "1901 Plantside Dr.",
+          "city": "Louisville",
+          "state": "KY",
+          "zip": "40299",
+          "phone": "1-800-472-4643"
+        },
+        {
+          "location_id": "KY-005-L2",
+          "location_type": "branch",
+          "street_address": "1351 Georgetown Rd.",
+          "city": "Lexington",
+          "state": "KY",
+          "zip": "40511",
+          "phone": "1-800-472-4643"
+        }
+      ],
+      "sources": [
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Louisville-Branch-448"
+        },
+        {
+          "source_type": "official_branch_page",
+          "url": "https://www.grainger.com/branch/Lexington-Branch-429"
+        },
+        {
+          "source_type": "official_product_page",
+          "url": "https://www.grainger.com/product/ORBIS-Collapsible-Bulk-Container-8CAG7"
+        }
+      ]
+    }
+  ]
+}

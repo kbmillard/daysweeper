@@ -1,5 +1,4 @@
 {
-  "buildCommand": "prisma generate && node scripts/vercel-build-preflight.mjs && next build --webpack",
-  "installCommand": "npm install",
-  "alias": ["daysweeper.apr.recyclicbravery.com", "daysweeper.recyclicbravery.com", "daysweeper.aprtest.recyclicbravery.com"]
+  "buildCommand": "prisma migrate deploy && prisma generate && node scripts/vercel-build-preflight.mjs && next build --webpack",
+  "installCommand": "npm install"
 }

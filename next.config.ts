@@ -58,11 +58,10 @@ let configWithPlugins = baseConfig;
 // Conditionally enable Sentry configuration
 if (!process.env.NEXT_PUBLIC_SENTRY_DISABLED) {
   configWithPlugins = withSentryConfig(configWithPlugins, {
-    // For all available options, see:
-    // https://www.npmjs.com/package/@sentry/webpack-plugin#options
-    // FIXME: Add your Sentry organization and project names
+    // Vercel: NEXT_PUBLIC_SENTRY_ORG, NEXT_PUBLIC_SENTRY_PROJECT, SENTRY_AUTH_TOKEN (source maps / releases)
     org: process.env.NEXT_PUBLIC_SENTRY_ORG,
     project: process.env.NEXT_PUBLIC_SENTRY_PROJECT,
+    authToken: process.env.SENTRY_AUTH_TOKEN,
     // Only print logs for uploading source maps in CI
     silent: !process.env.CI,
 
