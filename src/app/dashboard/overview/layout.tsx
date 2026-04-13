@@ -59,7 +59,7 @@ export default async function OverViewLayout({
             description='Companies (sellers)'
             value={s.countCompaniesSeller}
             badgeText='by CRM status'
-            footerMuted='Buyer / vendor companies (grey map layer when geocoded)'
+            footerMuted='Seller / vendor-research companies (grey map layer when geocoded)'
             statusRows={s.breakdownCompaniesSeller}
           />
 
@@ -82,7 +82,7 @@ export default async function OverViewLayout({
                 ? `${(s.locationsSeller / s.countCompaniesSeller).toFixed(1)} per company`
                 : '—'
             }
-            footerMuted='All location rows for seller / buyer companies'
+            footerMuted='All location rows for seller (vendor research) companies'
           />
 
           <OverviewKpiCard

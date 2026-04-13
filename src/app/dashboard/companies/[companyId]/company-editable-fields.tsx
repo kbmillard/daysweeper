@@ -34,7 +34,7 @@ export type CompanyEditableData = {
   status: string | null;
   /** Stored in company.metadata.productType */
   productType: string | null;
-  isBuyer: boolean;
+  isSeller: boolean;
 };
 
 type Props = {
@@ -59,7 +59,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     email: company.email ?? '',
     status: displayStatus(company.status) ?? '',
     productType: company.productType ?? '',
-    isBuyer: company.isBuyer ?? false
+    isSeller: company.isSeller ?? false
   });
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
       email: company.email ?? '',
       status: displayStatus(company.status) ?? '',
       productType: company.productType ?? '',
-      isBuyer: company.isBuyer ?? false
+      isSeller: company.isSeller ?? false
     });
   }, [
     company.id,
@@ -80,7 +80,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     company.email,
     company.status,
     company.productType,
-    company.isBuyer
+    company.isSeller
   ]);
 
   useEffect(() => {
@@ -169,7 +169,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
             email: form.email.trim() || null,
             status: form.status.trim() || null,
             productType: form.productType.trim() || null,
-            isBuyer: form.isBuyer
+            isSeller: form.isSeller
           })
         }),
         primaryLocationId
@@ -211,12 +211,12 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
       <CardContent className='space-y-4'>
         <div className='flex items-center gap-2 rounded-md border p-3'>
           <Checkbox
-            id='isBuyer'
-            checked={form.isBuyer}
-            onCheckedChange={(c) => setForm((prev) => ({ ...prev, isBuyer: Boolean(c) }))}
+            id='isSeller'
+            checked={form.isSeller}
+            onCheckedChange={(c) => setForm((prev) => ({ ...prev, isSeller: Boolean(c) }))}
           />
-          <Label htmlFor='isBuyer' className='cursor-pointer text-sm font-normal leading-snug'>
-            Mark as buyer (competitor / vendor research — shows grey pin on map when address is geocoded)
+          <Label htmlFor='isSeller' className='cursor-pointer text-sm font-normal leading-snug'>
+            Mark as seller (competitor / vendor research — grey pin on map when address is geocoded)
           </Label>
         </div>
 

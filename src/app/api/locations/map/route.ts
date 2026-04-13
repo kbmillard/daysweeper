@@ -15,7 +15,7 @@ export async function GET() {
       where: {
         latitude: { not: null },
         longitude: { not: null },
-        Company: { hidden: false, isBuyer: false }
+        Company: { hidden: false, isSeller: false }
       },
       select: { id: true, companyId: true, addressRaw: true, latitude: true, longitude: true }
     });

@@ -4,8 +4,8 @@ export const revalidate = 0;
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import {
-  isBuyerVendorImportBody,
-  runBuyerVendorImport
+  isSellerVendorImportBody,
+  runSellerVendorImport
 } from '@/lib/buyer-vendor-import';
 import { runCrmSupplierImport, type CrmSupplierJson } from '@/lib/crm-supplier-import';
 import { runGeocodeBulkQueue } from '@/lib/geocode-bulk-queue';
@@ -123,27 +123,27 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json().catch(() => null);
-    const hasBuyerPayload = Boolean(body && isBuyerVendorImportBody(body));
+    const hasSellerPayload = Boolean(body && isSellerVendorImportBody(body));
     const suppliers = Array.isArray(body)
       ? body
       : Array.isArray(body?.suppliers)
         ? body.suppliers
         : [];
 
-    if (!hasBuyerPayload && !suppliers.length) {
+    if (!hasSellerPayload && !suppliers.length) {
       return NextResponse.json(
         {
           error:
-            'Provide JSON: { suppliers: [...] } (CRM), { vendors: [...] } or { companies: [...] } (buyers / vendor research), or both in one object. Or send CSV (Content-Type: text/csv).'
+            'Provide JSON: { suppliers: [...] } (CRM), { vendors: [...] } or { companies: [...] } (seller / vendor research), or both in one object. Or send CSV (Content-Type: text/csv).'
         },
         { status: 400 }
       );
     }
 
     let geocodeSuppliers = { success: 0, failed: 0 };
-    let geocodeBuyers = { success: 0, failed: 0 };
+    let geocodeSellers = { success: 0, failed: 0 };
     let crmResult: Awaited<ReturnType<typeof runCrmSupplierImport>> | null = null;
-    let buyerResult: Awaited<ReturnType<typeof runBuyerVendorImport>> | null = null;
+    let sellerResult: Awaited<ReturnType<typeof runSellerVendorImport>> | null = null;
 
     if (suppliers.length) {
       crmResult = await runCrmSupplierImport(prisma, suppliers);
@@ -155,12 +155,12 @@ export async function POST(req: Request) {
       });
     }
 
-    if (hasBuyerPayload) {
-      buyerResult = await runBuyerVendorImport(prisma, body);
-      geocodeBuyers = buyerResult.geocode;
+    if (hasSellerPayload) {
+      sellerResult = await runSellerVendorImport(prisma, body);
+      geocodeSellers = sellerResult.geocode;
     }
 
-    if (crmResult && !buyerResult) {
+    if (crmResult && !sellerResult) {
       return NextResponse.json({
         ok: true,
         companiesCreated: crmResult.companiesCreated,
@@ -172,13 +172,13 @@ export async function POST(req: Request) {
       });
     }
 
-    if (buyerResult && !crmResult) {
+    if (sellerResult && !crmResult) {
       return NextResponse.json({
         ok: true,
-        importKind: 'buyers',
-        upserted: buyerResult.upserted,
-        locationExternalIdsTouched: buyerResult.locationExternalIdsTouched,
-        geocode: geocodeBuyers
+        importKind: 'sellers',
+        upserted: sellerResult.upserted,
+        locationExternalIdsTouched: sellerResult.locationExternalIdsTouched,
+        geocode: geocodeSellers
       });
     }
 
@@ -193,10 +193,10 @@ export async function POST(req: Request) {
         rowsRemappedToDbMaster: crmResult!.rowsRemappedToDbMaster,
         geocode: geocodeSuppliers
       },
-      buyers: {
-        upserted: buyerResult!.upserted,
-        locationExternalIdsTouched: buyerResult!.locationExternalIdsTouched,
-        geocode: geocodeBuyers
+      sellers: {
+        upserted: sellerResult!.upserted,
+        locationExternalIdsTouched: sellerResult!.locationExternalIdsTouched,
+        geocode: geocodeSellers
       }
     });
   } catch (e: unknown) {

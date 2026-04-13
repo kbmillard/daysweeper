@@ -5,7 +5,7 @@ import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-type BuyerPin = {
+type SellerPin = {
   /** Same as companyId (legacy grey-pin id) */
   id: string;
   companyId: string;
@@ -20,9 +20,10 @@ type BuyerPin = {
   notes?: string;
 };
 
-function buyerImportMeta(metadata: unknown): { role?: string; notes?: string } {
+function sellerImportMeta(metadata: unknown): { role?: string; notes?: string } {
   if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) return {};
-  const bi = (metadata as { buyerImport?: unknown }).buyerImport;
+  const meta = metadata as { sellerImport?: unknown; buyerImport?: unknown };
+  const bi = meta.sellerImport ?? meta.buyerImport;
   if (!bi || typeof bi !== 'object' || Array.isArray(bi)) return {};
   const o = bi as Record<string, unknown>;
   const role = typeof o.role === 'string' ? o.role : undefined;
@@ -31,13 +32,13 @@ function buyerImportMeta(metadata: unknown): { role?: string; notes?: string } {
 }
 
 /**
- * GET — Grey buyer/vendor pins (Company.isBuyer + geocoded Location). Same auth pattern as /api/locations/map (open).
+ * GET — Grey seller/vendor-research pins (Company.isSeller + geocoded Location). Same auth pattern as /api/locations/map (open).
  */
 export async function GET() {
   try {
     const companies = await prisma.company.findMany({
       where: {
-        isBuyer: true,
+        isSeller: true,
         hidden: false,
         Location: {
           some: {
@@ -69,7 +70,7 @@ export async function GET() {
       }
     });
 
-    const pins: BuyerPin[] = [];
+    const pins: SellerPin[] = [];
 
     for (const c of companies) {
       const loc = c.Location[0];
@@ -77,7 +78,7 @@ export async function GET() {
       const lat = loc.latitude != null ? Number(loc.latitude) : null;
       const lng = loc.longitude != null ? Number(loc.longitude) : null;
       if (!isValidMapboxCoordinate(lat, lng)) continue;
-      const { role, notes } = buyerImportMeta(c.metadata);
+      const { role, notes } = sellerImportMeta(c.metadata);
       pins.push({
         id: c.id,
         companyId: c.id,

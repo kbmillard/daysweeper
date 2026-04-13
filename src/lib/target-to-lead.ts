@@ -119,7 +119,11 @@ function numberOrNull(v: unknown): number | null {
 function mapPinKindFromLegacy(legacyJson: unknown): 'seller' | 'container' {
   if (legacyJson && typeof legacyJson === 'object') {
     const k = (legacyJson as Record<string, unknown>).daysweeper_pin_kind;
-    if (typeof k === 'string' && k.trim().toLowerCase() === 'seller') return 'seller';
+    if (typeof k === 'string') {
+      const t = k.trim().toLowerCase();
+      // `buyer` was the legacy value before isSeller rename; treat as seller pin for LastLeg.
+      if (t === 'seller' || t === 'buyer') return 'seller';
+    }
   }
   return 'container';
 }
@@ -219,7 +223,7 @@ export function targetToLead(target: {
     account_state: target.accountState ?? null,
     route_outcome: routeOutcome,
     s: seq ?? null,
-    /** LastLeg: grey active pins when `seller` (competitor / supplier research — not CRM “buyer”). */
+    /** LastLeg: grey active pins for seller / vendor-research companies. */
     map_pin_kind: mapPinKindFromLegacy(target.legacyJson),
     seller_id: sellerIdFromLegacy(target.legacyJson)
   };

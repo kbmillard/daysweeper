@@ -42,15 +42,17 @@ export default function CompaniesImportPage() {
       const d = data as {
         importKind?: string;
         upserted?: number;
+        sellers?: { upserted?: number };
         buyers?: { upserted?: number };
         crm?: { locationsCreated?: number };
       };
-      if (d.importKind === 'buyers' || d.importKind === 'mixed') {
-        const n = d.buyers?.upserted ?? d.upserted ?? 0;
+      if (d.importKind === 'sellers' || d.importKind === 'buyers' || d.importKind === 'mixed') {
+        const n =
+          d.sellers?.upserted ?? d.buyers?.upserted ?? d.upserted ?? 0;
         toast.success(
           d.importKind === 'mixed'
-            ? `CRM + buyers import done (${n} buyer row(s) touched)`
-            : `Imported ${n} buyer companies · geocode batch run`
+            ? `CRM + sellers import done (${n} seller row(s) touched)`
+            : `Imported ${n} seller companies · geocode batch run`
         );
       } else {
         toast.success('CRM import done · geocode batch run');
@@ -66,7 +68,7 @@ export default function CompaniesImportPage() {
     <PageContainer
       scrollable
       pageTitle='Import companies'
-      pageDescription='CRM suppliers: { "suppliers": [...] } or JSON array. Buyers / vendor research: { "vendors": [...] } (same shapes as before). You can send both keys in one request. Geocoding runs automatically.'
+      pageDescription='CRM suppliers: { "suppliers": [...] } or JSON array. Sellers / vendor research: { "vendors": [...] } (same shapes as before). You can send both keys in one request. Geocoding runs automatically.'
     >
       <div className='mb-4'>
         <Link href='/map/companies'>

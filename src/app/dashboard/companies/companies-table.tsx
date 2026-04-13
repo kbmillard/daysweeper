@@ -17,7 +17,7 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
-  isBuyer: boolean;
+  isSeller: boolean;
   metadata: unknown;
   createdAt: Date;
   updatedAt: Date;

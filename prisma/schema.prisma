@@ -25,7 +25,7 @@ model Company {
   subtypeGroup       String?
   status             String?              // Contacted - no answer | Contacted - not interested | Contacted - meeting set | APR Account
   /** Competitor / vendor research imports (grey pins on map when geocoded) */
-  isBuyer            Boolean              @default(false)
+  isSeller           Boolean              @default(false)
   hidden             Boolean              @default(false)
   primaryLocationId  String?              @unique
   legacyJson         Json?
@@ -47,7 +47,7 @@ model Company {
   @@index([tier])
   @@index([userId])
   @@index([status])
-  @@index([isBuyer])
+  @@index([isSeller])
 }
 
 model Customer {
@@ -130,7 +130,7 @@ model GeocodeCache {
 // Map pins (three sources on the Daysweeper map):
 // - MapPin: red/blue dots route pins (canonical pin set, synced from dots JSON/KML).
 // - Location (+ Company / Target on routes): purple company facility pins (geocoded addresses).
-// - Company.isBuyer + Location: grey buyer/vendor pins (same Location row, overlay layer).
+// - Company.isSeller + Location: grey seller/vendor-research pins (same Location row, overlay layer).
 
 model Location {
   id                String                   @id

@@ -6,7 +6,7 @@ import { getRedPinsCount } from '@/lib/red-pins-count';
 export const mapSupplierPinsWhere = {
   latitude: { not: null },
   longitude: { not: null },
-  Company: { hidden: false, isBuyer: false }
+  Company: { hidden: false, isSeller: false }
 } as const;
 
 export type StatusCountRow = { label: string; count: number };
@@ -34,8 +34,8 @@ function targetAccountStateBreakdown(
 
 export async function getOverviewKpiStats() {
   const hasLocation = { Location: { some: {} }, hidden: false };
-  const companiesNonSeller = { hidden: false, isBuyer: false, Location: { some: {} } } as const;
-  const companiesSeller = { hidden: false, isBuyer: true, Location: { some: {} } } as const;
+  const companiesNonSeller = { hidden: false, isSeller: false, Location: { some: {} } } as const;
+  const companiesSeller = { hidden: false, isSeller: true, Location: { some: {} } } as const;
 
   const monthStart = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 
@@ -72,10 +72,10 @@ export async function getOverviewKpiStats() {
       _count: { _all: true }
     }),
     prisma.location.count({
-      where: { Company: { hidden: false, isBuyer: false } }
+      where: { Company: { hidden: false, isSeller: false } }
     }),
     prisma.location.count({
-      where: { Company: { hidden: false, isBuyer: true } }
+      where: { Company: { hidden: false, isSeller: true } }
     }),
     prisma.location.count({
       where: {

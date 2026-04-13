@@ -68,8 +68,11 @@ export async function PATCH(
       phone,
       email,
       productType,
-      isBuyer
+      isSeller: isSellerBody,
+      isBuyer: isBuyerLegacy
     } = body;
+    const isSeller =
+      isSellerBody !== undefined ? isSellerBody : isBuyerLegacy;
 
     if (name !== undefined) {
       if (typeof name !== 'string' || !name.trim()) {
@@ -96,8 +99,8 @@ export async function PATCH(
       );
     }
 
-    if (isBuyer !== undefined && typeof isBuyer !== 'boolean') {
-      return NextResponse.json({ error: 'isBuyer must be a boolean' }, { status: 400 });
+    if (isSeller !== undefined && typeof isSeller !== 'boolean') {
+      return NextResponse.json({ error: 'isSeller must be a boolean' }, { status: 400 });
     }
 
     if (status !== undefined && status !== null) {
@@ -199,7 +202,7 @@ export async function PATCH(
         ...(mergedMetadata !== undefined && {
           metadata: mergedMetadata as Prisma.InputJsonValue
         }),
-        ...(isBuyer !== undefined && { isBuyer }),
+        ...(isSeller !== undefined && { isSeller }),
         updatedAt: new Date()
       }
     });

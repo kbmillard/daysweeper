@@ -104,7 +104,7 @@ type RedPin = {
   targetId?: string;
 };
 type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
-/** Grey pins: buyer companies (Company.isBuyer + geocoded location) */
+/** Grey pins: seller / vendor-research companies (Company.isSeller + geocoded location) */
 type SellerPin = {
   id: string;
   companyId: string;

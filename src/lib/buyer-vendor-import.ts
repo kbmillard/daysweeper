@@ -255,7 +255,7 @@ export type BuyerVendorImportResult = {
   geocode: { success: number; failed: number };
 };
 
-function mergeBuyerMetadata(
+function mergeSellerMetadata(
   existing: unknown,
   patch: { role: string | null; notes: string | null; importCategory: string | null }
 ): Prisma.InputJsonValue {
@@ -263,8 +263,12 @@ function mergeBuyerMetadata(
     existing && typeof existing === 'object' && !Array.isArray(existing)
       ? { ...(existing as Record<string, unknown>) }
       : {};
-  base.buyerImport = {
-    ...((base.buyerImport as Record<string, unknown>) || {}),
+  const prev =
+    (base.sellerImport as Record<string, unknown>) ||
+    (base.buyerImport as Record<string, unknown>) ||
+    {};
+  base.sellerImport = {
+    ...prev,
     ...Object.fromEntries(
       Object.entries({
         role: patch.role,
@@ -277,10 +281,10 @@ function mergeBuyerMetadata(
 }
 
 /**
- * Upsert companies marked as buyers (competitors / vendor research) + primary buyer location row.
+ * Upsert companies marked as sellers (competitors / vendor research) + primary location row.
  * Geocodes new/changed locations via the same bulk queue as CRM imports.
  */
-export async function runBuyerVendorImport(
+export async function runSellerVendorImport(
   prisma: PrismaClient,
   body: BuyerVendorImportPayload
 ): Promise<BuyerVendorImportResult> {
@@ -310,9 +314,9 @@ export async function runBuyerVendorImport(
         phone: r.phone,
         website: r.website,
         hidden: false,
-        isBuyer: true,
+        isSeller: true,
         legacyJson: r.legacyJson,
-        metadata: mergeBuyerMetadata(null, {
+        metadata: mergeSellerMetadata(null, {
           role: r.role,
           notes: r.notes,
           importCategory: r.importCategory
@@ -324,9 +328,9 @@ export async function runBuyerVendorImport(
         name: r.name,
         phone: r.phone,
         website: r.website,
-        isBuyer: true,
+        isSeller: true,
         legacyJson: r.legacyJson,
-        metadata: mergeBuyerMetadata(existing?.metadata ?? null, {
+        metadata: mergeSellerMetadata(existing?.metadata ?? null, {
           role: r.role,
           notes: r.notes,
           importCategory: r.importCategory
@@ -351,11 +355,11 @@ export async function runBuyerVendorImport(
       }
     });
 
-    const buyerLoc = await prisma.location.findFirst({
+    const sellerLoc = await prisma.location.findFirst({
       where: { externalId: locExt, companyId: company.id },
       select: { id: true }
     });
-    if (buyerLoc) {
+    if (sellerLoc) {
       const prim = await prisma.company.findUnique({
         where: { id: company.id },
         select: { primaryLocationId: true }
@@ -363,7 +367,7 @@ export async function runBuyerVendorImport(
       if (!prim?.primaryLocationId) {
         await prisma.company.update({
           where: { id: company.id },
-          data: { primaryLocationId: buyerLoc.id, updatedAt: now }
+          data: { primaryLocationId: sellerLoc.id, updatedAt: now }
         });
       }
     }
@@ -379,8 +383,14 @@ export async function runBuyerVendorImport(
   return { upserted, locationExternalIdsTouched, geocode };
 }
 
-export function isBuyerVendorImportBody(body: unknown): body is BuyerVendorImportPayload {
+export function isSellerVendorImportBody(body: unknown): body is BuyerVendorImportPayload {
   if (!body || typeof body !== 'object') return false;
   const o = body as { vendors?: unknown; companies?: unknown };
   return Array.isArray(o.vendors) || Array.isArray(o.companies);
 }
+
+/** @deprecated Use `isSellerVendorImportBody` */
+export const isBuyerVendorImportBody = isSellerVendorImportBody;
+
+/** @deprecated Use `runSellerVendorImport` */
+export const runBuyerVendorImport = runSellerVendorImport;

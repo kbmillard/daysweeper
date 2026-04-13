@@ -14,7 +14,7 @@ type Company = {
   name: string;
   website: string | null;
   status: string | null;
-  isBuyer: boolean;
+  isSeller: boolean;
   metadata: unknown;
   createdAt: Date;
   updatedAt: Date;
@@ -118,27 +118,27 @@ export function getColumns(options?: {
       enableColumnFilter: true
     },
     {
-      id: 'buyer',
-      accessorFn: (row) => (row.isBuyer ? 'yes' : 'no'),
+      id: 'seller',
+      accessorFn: (row) => (row.isSeller ? 'yes' : 'no'),
       enableSorting: true,
       enableHiding: true,
       header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Buyer' />
+        <DataTableColumnHeader column={column} title='Seller' />
       ),
       cell: ({ row }) =>
-        row.original.isBuyer ? (
+        row.original.isSeller ? (
           <Badge variant='secondary' className='text-xs'>
-            Buyer
+            Seller
           </Badge>
         ) : (
           <span className='text-muted-foreground'>—</span>
         ),
       meta: {
-        label: 'Buyer',
+        label: 'Seller (vendor research)',
         variant: 'select',
         options: [
-          { label: 'Buyer', value: 'yes' },
-          { label: 'Not buyer', value: 'no' }
+          { label: 'Seller', value: 'yes' },
+          { label: 'Not seller', value: 'no' }
         ],
         icon: ShoppingBag
       },

@@ -38,11 +38,14 @@ export default async function Page(props: pageProps) {
   const addressFilterRaw = searchParamsCache.get('address');
   const statusFilterRaw = searchParamsCache.get('status');
   const stateFilterRaw = searchParamsCache.get('state');
-  const buyerFilterRaw = searchParamsCache.get('buyer');
+  const sellerFilterRaw = searchParamsCache.get('seller');
+  const buyerLegacyRaw = searchParamsCache.get('buyer');
   const addressFilter = Array.isArray(addressFilterRaw) ? addressFilterRaw[0] : addressFilterRaw;
   const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const stateFilter = stateFilterRaw?.filter(Boolean) ?? [];
-  const buyerVals = buyerFilterRaw?.filter(Boolean) ?? [];
+  const sellerVals =
+    (sellerFilterRaw?.filter(Boolean)?.length ? sellerFilterRaw : buyerLegacyRaw)?.filter(Boolean) ??
+    [];
   const sort = searchParamsCache.get('sort');
 
   const skip = (Number(page) - 1) * Number(perPage);
@@ -77,9 +80,9 @@ export default async function Page(props: pageProps) {
         : { equals: statusFilter, mode: 'insensitive' as const };
   }
 
-  if (buyerVals.length === 1) {
-    if (buyerVals[0] === 'yes') where.isBuyer = true;
-    else if (buyerVals[0] === 'no') where.isBuyer = false;
+  if (sellerVals.length === 1) {
+    if (sellerVals[0] === 'yes') where.isSeller = true;
+    else if (sellerVals[0] === 'no') where.isSeller = false;
   }
 
   const orderBy = buildCompaniesListOrderBy(sort);
@@ -96,7 +99,7 @@ export default async function Page(props: pageProps) {
         name: true,
         website: true,
         status: true,
-        isBuyer: true,
+        isSeller: true,
         metadata: true,
         createdAt: true,
         updatedAt: true,

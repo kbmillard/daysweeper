@@ -134,7 +134,7 @@ export async function POST(req: NextRequest) {
       where: {
         latitude: { not: null },
         longitude: { not: null },
-        Company: { hidden: false, isBuyer: false }
+        Company: { hidden: false, isSeller: false }
       },
       select: { id: true, addressRaw: true, latitude: true, longitude: true }
     });

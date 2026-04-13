@@ -1,11 +1,11 @@
 /**
- * @deprecated Import from `@/lib/buyer-vendor-import` — buyers are Company rows with `isBuyer`.
+ * @deprecated Import from `@/lib/buyer-vendor-import` — sellers are Company rows with `isSeller`.
  */
 export type {
   BuyerVendorImportPayload as SellerImportPayload,
   BuyerVendorImportResult as SellerImportResult
 } from '@/lib/buyer-vendor-import';
 export {
-  runBuyerVendorImport as runSellerImport,
-  isBuyerVendorImportBody as isSellerImportBody
+  runSellerVendorImport as runSellerImport,
+  isSellerVendorImportBody as isSellerImportBody
 } from '@/lib/buyer-vendor-import';

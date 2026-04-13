@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Import buyer/vendor research JSON ({ vendors } or { companies + locations }) and run geocode queue.
+ * Import seller/vendor research JSON ({ vendors } or { companies + locations }) and run geocode queue.
  * Uses DATABASE_URL from .env.local / .env (point at production to update daysweeper.recyclicbravery.com).
  *
  * Usage:
@@ -18,8 +18,8 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { Pool } from 'pg';
 import {
-  isBuyerVendorImportBody,
-  runBuyerVendorImport
+  isSellerVendorImportBody,
+  runSellerVendorImport
 } from '../src/lib/buyer-vendor-import';
 
 config({ path: join(process.cwd(), '.env.local') });
@@ -40,7 +40,7 @@ if (!fileArg || fileArg.startsWith('-')) {
 const abs = join(process.cwd(), fileArg);
 const body = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
 
-if (!isBuyerVendorImportBody(body)) {
+if (!isSellerVendorImportBody(body)) {
   console.error('JSON must include non-empty "vendors" or "companies" array.');
   process.exit(1);
 }
@@ -70,7 +70,7 @@ async function main() {
   if (removeLegacy) {
     await removeLegacyOrbisKy();
   }
-  const result = await runBuyerVendorImport(prisma, body);
+  const result = await runSellerVendorImport(prisma, body);
   console.log(JSON.stringify(result, null, 2));
 }
 

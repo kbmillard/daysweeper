@@ -9,7 +9,7 @@ export const revalidate = 0;
 
 /**
  * POST - Add a location (company + geocode) or a pin (lat/lng) to the current user's LastLeg route.
- * Body: { locationId, companyId } OR { sellerId } (legacy: buyer company id) OR { latitude, longitude, label? }
+ * Body: { locationId, companyId } OR { sellerId } (seller / vendor-research company id) OR { latitude, longitude, label? }
  * Creates Target and RouteStop in daysweeper DB. LastLeg app fetches via GET /api/targets.
  */
 const SHARED_USER_ID = 'shared';
@@ -40,8 +40,8 @@ export async function POST(req: Request) {
     let targetLegacyJson: Record<string, unknown> | undefined;
 
     if (sellerId && typeof sellerId === 'string') {
-      const buyerCompany = await prisma.company.findFirst({
-        where: { id: sellerId, isBuyer: true, hidden: false },
+      const sellerCompany = await prisma.company.findFirst({
+        where: { id: sellerId, isSeller: true, hidden: false },
         include: {
           Location: {
             where: {
@@ -53,22 +53,22 @@ export async function POST(req: Request) {
           }
         }
       });
-      if (!buyerCompany) {
-        return NextResponse.json({ error: 'Buyer company not found' }, { status: 404 });
+      if (!sellerCompany) {
+        return NextResponse.json({ error: 'Seller company not found' }, { status: 404 });
       }
-      const loc = buyerCompany.Location[0];
+      const loc = sellerCompany.Location[0];
       lat = loc?.latitude != null ? Number(loc.latitude) : null;
       lng = loc?.longitude != null ? Number(loc.longitude) : null;
-      companyName = buyerCompany.name;
+      companyName = sellerCompany.name;
       addressRaw = loc?.addressRaw ?? '';
-      website = buyerCompany.website ?? undefined;
-      phone = loc?.phone ?? buyerCompany.phone ?? undefined;
-      email = buyerCompany.email ?? undefined;
+      website = sellerCompany.website ?? undefined;
+      phone = loc?.phone ?? sellerCompany.phone ?? undefined;
+      email = sellerCompany.email ?? undefined;
       targetLegacyJson = {
-        daysweeper_pin_kind: 'buyer',
-        companyId: buyerCompany.id,
+        daysweeper_pin_kind: 'seller',
+        companyId: sellerCompany.id,
         locationId: loc?.id,
-        companyExternalId: buyerCompany.externalId
+        companyExternalId: sellerCompany.externalId
       };
     } else if (locationId && companyId) {
       const location = await prisma.location.findUnique({
@@ -107,7 +107,7 @@ export async function POST(req: Request) {
       email = undefined;
     } else {
       return NextResponse.json(
-        { error: 'Provide locationId+companyId, sellerId (buyer company id), or latitude+longitude' },
+        { error: 'Provide locationId+companyId, sellerId (vendor-research company id), or latitude+longitude' },
         { status: 400 }
       );
     }

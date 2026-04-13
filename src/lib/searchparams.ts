@@ -22,7 +22,9 @@ export const searchParams = {
   website: parseAsString,
   status: parseAsString,
   state: parseAsArrayOf(parseAsString, ','),
-  /** Buyer / vendor research companies (`Company.isBuyer`) */
+  /** Seller / vendor-research companies (`Company.isSeller`) */
+  seller: parseAsArrayOf(parseAsString, ','),
+  /** @deprecated Use `seller` — kept so old bookmarked URLs still filter */
   buyer: parseAsArrayOf(parseAsString, ','),
   address: parseAsString,
   subCategory: parseAsString,

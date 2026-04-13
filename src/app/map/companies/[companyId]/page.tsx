@@ -38,7 +38,7 @@ export default async function Page(props: PageProps) {
       phone: true,
       email: true,
       status: true,
-      isBuyer: true,
+      isSeller: true,
       metadata: true,
       primaryLocationId: true,
       Location: {
