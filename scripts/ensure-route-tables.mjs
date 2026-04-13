@@ -5,6 +5,7 @@
  * No-op if DATABASE_URL is missing. Safe to run multiple times (uses IF NOT EXISTS).
  */
 import { Client } from 'pg';
+import { isNeonDataTransferQuotaExceeded } from './lib/neon-quota.mjs';
 
 const dbUrl = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
 if (!dbUrl) {
@@ -130,6 +131,12 @@ async function main() {
 
     console.log('Route, Target, RouteStop tables ensured');
   } catch (e) {
+    if (isNeonDataTransferQuotaExceeded(e)) {
+      console.warn(
+        'ensure-route-tables: Neon data transfer quota exceeded; skipping (upgrade Neon or run this script locally).'
+      );
+      process.exit(0);
+    }
     console.error('ensure-route-tables:', e?.message || e);
     process.exit(1);
   } finally {
