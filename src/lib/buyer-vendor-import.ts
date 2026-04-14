@@ -57,6 +57,10 @@ type VendorCompanyNested = {
   evidence_summary?: string | null;
   locations?: unknown;
   sources?: unknown;
+  states_covered?: string[];
+  alternate_name?: string | null;
+  parent_company_name?: string | null;
+  relationship_notes?: unknown;
 };
 
 type VendorLocationNested = {
@@ -221,6 +225,12 @@ function normalizeRows(body: BuyerVendorImportPayload): {
           .filter((x): x is string => Boolean(x && x.length))
           .join('\n\n');
         const web = co.website_url?.trim();
+        const alt = co.alternate_name?.trim();
+        const states = co.states_covered;
+        const parentCo = co.parent_company_name?.trim();
+        const relNotes = Array.isArray(co.relationship_notes)
+          ? co.relationship_notes.filter((x): x is string => typeof x === 'string' && x.trim().length > 0)
+          : [];
         out.push({
           externalId: ext,
           name,
@@ -239,7 +249,11 @@ function normalizeRows(body: BuyerVendorImportPayload): {
             product_keywords: kw,
             evidence_summary: evidence ?? null,
             sources: co.sources ?? null,
-            role: co.role ?? null
+            role: co.role ?? null,
+            ...(Array.isArray(states) && states.length ? { states_covered: states } : {}),
+            ...(alt ? { alternate_name: alt } : {}),
+            ...(parentCo ? { parent_company_name: parentCo } : {}),
+            ...(relNotes.length ? { relationship_notes: relNotes } : {})
           } as unknown as Prisma.InputJsonValue
         });
       }
@@ -252,7 +266,9 @@ function normalizeRows(body: BuyerVendorImportPayload): {
 export type BuyerVendorImportResult = {
   upserted: number;
   locationExternalIdsTouched: string[];
-  geocode: { success: number; failed: number };
+  geocode:
+    | { success: number; failed: number }
+    | typeof IMPORT_GEOCODE_DEFERRED;
 };
 
 function mergeSellerMetadata(

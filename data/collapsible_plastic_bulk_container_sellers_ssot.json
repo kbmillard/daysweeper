@@ -1,0 +1,1533 @@
+{
+  "generated_at": "2026-04-13",
+  "category": "collapsible_plastic_bulk_container_sellers",
+  "mode": "single_source_of_truth",
+  "excluded_companies": [
+    "Grainger",
+    "ORBIS",
+    "CHEP"
+  ],
+  "notes": "De-duped combined seller dataset for SC, GA, KY, TN, IN, OH, and MI, plus one requested HQ location in MO. One company entry per retained company, with all counted locations nested under that company.",
+  "company_count": 53,
+  "location_count": 72,
+  "location_count_7_states_only": 71,
+  "counts_by_state": {
+    "SC": {
+      "company_presence_count": 8,
+      "location_count": 8
+    },
+    "GA": {
+      "company_presence_count": 10,
+      "location_count": 10
+    },
+    "KY": {
+      "company_presence_count": 5,
+      "location_count": 6
+    },
+    "TN": {
+      "company_presence_count": 9,
+      "location_count": 10
+    },
+    "IN": {
+      "company_presence_count": 11,
+      "location_count": 15
+    },
+    "OH": {
+      "company_presence_count": 11,
+      "location_count": 13
+    },
+    "MI": {
+      "company_presence_count": 8,
+      "location_count": 9
+    },
+    "MO": {
+      "company_presence_count": 1,
+      "location_count": 1
+    }
+  },
+  "companies": [
+    {
+      "company_id": "SC-001",
+      "company_name": "Con-Pearl North America Inc.",
+      "website_url": "https://www.con-pearl.com/",
+      "states_covered": [
+        "SC"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "plastic gaylord",
+        "foldable transport packaging",
+        "plastic bulk containers"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-001-L1",
+          "street_address": "6400 Augusta Road, Suite 101",
+          "city": "Greenville",
+          "state": "SC",
+          "zip": "29605-3752",
+          "phone": "864-365-0674"
+        }
+      ]
+    },
+    {
+      "company_id": "SC-002",
+      "company_name": "Returnable Packaging Resource",
+      "website_url": "https://rprinc.com/",
+      "states_covered": [
+        "SC"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "bulk containers",
+        "plastic containers",
+        "packaging programs"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-002-L1",
+          "street_address": "34 Pelham Davis Circle",
+          "city": "Greenville",
+          "state": "SC",
+          "zip": "29615",
+          "phone": "864-288-3900"
+        }
+      ]
+    },
+    {
+      "company_id": "SC-003",
+      "company_name": "Del-Tec Packaging",
+      "website_url": "https://del-tec.com/",
+      "states_covered": [
+        "SC"
+      ],
+      "product_keywords": [
+        "bulk bins",
+        "containers",
+        "crates",
+        "racks",
+        "dunnage"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-003-L1",
+          "street_address": "4020 Pelham Court",
+          "city": "Greer",
+          "state": "SC",
+          "zip": "29650",
+          "phone": "864-288-7390"
+        }
+      ]
+    },
+    {
+      "company_id": "SC-004",
+      "company_name": "PackIQ",
+      "website_url": "https://www.packiq.com/",
+      "states_covered": [
+        "SC"
+      ],
+      "product_keywords": [
+        "reusable packaging",
+        "bulk containers",
+        "totes",
+        "washing",
+        "repair"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-004-L1",
+          "street_address": "1 American Way",
+          "city": "Anderson",
+          "state": "SC",
+          "zip": "29621",
+          "phone": "864-231-8908"
+        }
+      ]
+    },
+    {
+      "company_id": "SC-005",
+      "company_name": "Custom Equipment Company",
+      "website_url": "https://www.cecmhs.com/",
+      "states_covered": [
+        "SC"
+      ],
+      "product_keywords": [
+        "bulk collapsible containers",
+        "reusable containers",
+        "stackable containers"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-005-L1",
+          "street_address": "2700 Hwy 41",
+          "city": "Charleston",
+          "state": "SC",
+          "zip": "29492",
+          "phone": "855-905-0875"
+        }
+      ]
+    },
+    {
+      "company_id": "SC-006",
+      "company_name": "repurposedMATERIALS",
+      "website_url": "https://www.repurposedmaterialsinc.com/",
+      "states_covered": [
+        "SC"
+      ],
+      "product_keywords": [
+        "used collapsible bulk containers",
+        "surplus bulk containers",
+        "used plastic containers"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-006-L1",
+          "street_address": "70 State St",
+          "city": "Williston",
+          "state": "SC",
+          "zip": "29853",
+          "phone": "877-282-8733"
+        }
+      ]
+    },
+    {
+      "company_id": "SC-007",
+      "company_name": "Warehouse Rack & Shelf LLC",
+      "website_url": "https://rackandshelf.com/",
+      "states_covered": [
+        "SC",
+        "GA",
+        "KY",
+        "IN",
+        "OH",
+        "MO"
+      ],
+      "product_keywords": [
+        "collapsible bulk containers",
+        "plastic bulk containers",
+        "storage containers"
+      ],
+      "locations": [
+        {
+          "location_id": "SC-007-L1",
+          "street_address": "",
+          "city": "Sumter",
+          "state": "SC",
+          "zip": "",
+          "phone": "800-763-9020",
+          "location_type": "service_market"
+        },
+        {
+          "location_id": "SC-007-L2",
+          "street_address": "132 Workman Ct",
+          "city": "Eureka",
+          "state": "MO",
+          "zip": "63025",
+          "phone": "1-800-763-9020",
+          "location_type": "hq_and_stocking_warehouse"
+        },
+        {
+          "location_id": "SC-007-L3",
+          "street_address": "",
+          "city": "Rome",
+          "state": "GA",
+          "zip": "",
+          "phone": "1-800-763-9020",
+          "location_type": "service_market"
+        },
+        {
+          "location_id": "SC-007-L4",
+          "street_address": "",
+          "city": "Alliance",
+          "state": "OH",
+          "zip": "",
+          "phone": "1-800-763-9020",
+          "location_type": "service_market"
+        },
+        {
+          "location_id": "SC-007-L5",
+          "street_address": "",
+          "city": "Angola",
+          "state": "IN",
+          "zip": "",
+          "phone": "1-800-763-9020",
+          "location_type": "service_market"
+        },
+        {
+          "location_id": "SC-007-L6",
+          "street_address": "",
+          "city": "Springfield",
+          "state": "KY",
+          "zip": "",
+          "phone": "1-800-763-9020",
+          "location_type": "service_market"
+        },
+        {
+          "location_id": "SC-007-L7",
+          "street_address": "",
+          "city": "Frankfort",
+          "state": "KY",
+          "zip": "",
+          "phone": "1-800-763-9020",
+          "location_type": "service_market"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-001",
+      "company_name": "IPL Schoeller",
+      "website_url": "https://www.iplschoeller.com/",
+      "states_covered": [
+        "KY",
+        "GA"
+      ],
+      "product_keywords": [
+        "Foldable Large Containers",
+        "Magnum Optimum",
+        "Maxipac",
+        "bulk RTP"
+      ],
+      "locations": [
+        {
+          "location_id": "KY-001-L1",
+          "street_address": "545 Pearce Industrial Road",
+          "city": "Shelbyville",
+          "state": "KY",
+          "zip": "40065",
+          "phone": "502-647-5353"
+        },
+        {
+          "location_id": "KY-001-L2",
+          "street_address": "165 Industrial Park Rd.",
+          "city": "Forsyth",
+          "state": "GA",
+          "zip": "31029",
+          "phone": "478-994-0702"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-002",
+      "company_name": "Top Line Containers",
+      "website_url": "https://www.toplinecontainers.com/",
+      "states_covered": [
+        "KY"
+      ],
+      "product_keywords": [
+        "collapsible bulk containers",
+        "bulk containers",
+        "returnable containers",
+        "plastic totes",
+        "pallets"
+      ],
+      "locations": [
+        {
+          "location_id": "KY-002-L1",
+          "street_address": "2600 Holloway Road",
+          "city": "Louisville",
+          "state": "KY",
+          "zip": "40299",
+          "phone": "502-297-8686"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-003",
+      "company_name": "Kyana Packaging Solutions",
+      "website_url": "https://www.kyanaind.com/",
+      "states_covered": [
+        "KY"
+      ],
+      "product_keywords": [
+        "plastic containers",
+        "round trip totes",
+        "cargo containers",
+        "bulk containers"
+      ],
+      "locations": [
+        {
+          "location_id": "KY-003-L1",
+          "street_address": "2501 Ampere Drive",
+          "city": "Louisville",
+          "state": "KY",
+          "zip": "40299",
+          "phone": "502-992-3333"
+        }
+      ]
+    },
+    {
+      "company_id": "KY-004",
+      "company_name": "MSC Industrial Supply",
+      "website_url": "https://www.mscdirect.com/",
+      "states_covered": [
+        "KY",
+        "GA"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "bulk storage containers",
+        "collapsible bulk containers"
+      ],
+      "locations": [
+        {
+          "location_id": "KY-004-L1",
+          "street_address": "366 Pearce Industrial Road",
+          "city": "Shelbyville",
+          "state": "KY",
+          "zip": "40065",
+          "phone": "800-645-7270"
+        },
+        {
+          "location_id": "KY-004-L2",
+          "street_address": "6700 Discovery Blvd.",
+          "city": "Mableton",
+          "state": "GA",
+          "zip": "30126",
+          "phone": "770-732-8650"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-001",
+      "company_name": "Nefab / PolyFlex Products",
+      "website_url": "https://www.nefab.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "sleeve pack",
+        "reusable plastic packaging",
+        "plastic pallet base",
+        "folding plastic sleeve",
+        "plastic lid"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-001-L1",
+          "street_address": "904 Red Road",
+          "city": "McMinnville",
+          "state": "TN",
+          "zip": "37110",
+          "phone": "+1 734-458-4194"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-002",
+      "company_name": "Inca Molded Products",
+      "website_url": "http://www.incaproducts.com",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "LLDPE bulk containers",
+        "rotational molding",
+        "materials handling"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-002-L1",
+          "street_address": "6400 Louisiana Ave",
+          "city": "Nashville",
+          "state": "TN",
+          "zip": "37209",
+          "phone": "615-350-7290"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-003",
+      "company_name": "Stamar Packaging",
+      "website_url": "https://stamarpkg.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "bulk container systems",
+        "cargo containers",
+        "Gaylord containers",
+        "speed packs"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-003-L1",
+          "street_address": "5335 Mineral Wells Rd",
+          "city": "Memphis",
+          "state": "TN",
+          "zip": "38141",
+          "phone": "901-375-9990"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-004",
+      "company_name": "C.L. Smith",
+      "website_url": "https://www.clsmith.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "IBC totes",
+        "plastic containers",
+        "rigid packaging",
+        "reconditioned IBC"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-004-L1",
+          "street_address": "372 Titan Drive",
+          "city": "Memphis",
+          "state": "TN",
+          "zip": "38118",
+          "phone": "314-771-1202"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-005",
+      "company_name": "Tennessee Container Services",
+      "website_url": "https://www.tennesseecontainer.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "IBC totes",
+        "reconditioned totes",
+        "poly drums",
+        "steel drums"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-005-L1",
+          "street_address": "108 Industrial Dr.",
+          "city": "Waynesboro",
+          "state": "TN",
+          "zip": "38485",
+          "phone": "931-722-3535"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-006",
+      "company_name": "Pipeline Packaging",
+      "website_url": "https://www.pipelinepackaging.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "IBC totes",
+        "plastic drums",
+        "pails",
+        "tubs",
+        "rigid packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-006-L1",
+          "street_address": "1435 Heil Quaker Blvd Suite A",
+          "city": "La Vergne",
+          "state": "TN",
+          "zip": "37086",
+          "phone": "615-213-0870"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-007",
+      "company_name": "National Tank Outlet",
+      "website_url": "https://www.ntotank.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "plastic storage tanks",
+        "plastic containers",
+        "bulk storage",
+        "HDPE tanks"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-007-L1",
+          "street_address": "4728 Spottswood Ave, Ste 328",
+          "city": "Memphis",
+          "state": "TN",
+          "zip": "38117",
+          "phone": "888-686-8265"
+        }
+      ]
+    },
+    {
+      "company_id": "CO-001",
+      "company_name": "Crown Packaging",
+      "website_url": "https://crownpack.com/",
+      "states_covered": [
+        "IN",
+        "TN"
+      ],
+      "product_keywords": [
+        "boxes and containers",
+        "polyethylene bags",
+        "corrugated",
+        "material handling equipment",
+        "packaging supplies"
+      ],
+      "locations": [
+        {
+          "location_id": "CO-001-L1",
+          "street_address": "4486 Delp Street",
+          "city": "Memphis",
+          "state": "TN",
+          "zip": "38118",
+          "phone": "901-363-5892"
+        },
+        {
+          "location_id": "CO-001-L2",
+          "street_address": "120 Business Park Drive, Suite D",
+          "city": "Lebanon",
+          "state": "TN",
+          "zip": "37090",
+          "phone": "615-834-3616"
+        },
+        {
+          "location_id": "CO-001-L3",
+          "street_address": "701 N. Weinbach Avenue, Suite 320",
+          "city": "Evansville",
+          "state": "IN",
+          "zip": "47711",
+          "phone": "812-476-2933"
+        }
+      ]
+    },
+    {
+      "company_id": "TN-009",
+      "company_name": "Volunteer Case & Container",
+      "website_url": "https://volcase.com/",
+      "states_covered": [
+        "TN"
+      ],
+      "product_keywords": [
+        "polyethylene cases",
+        "PE containers",
+        "plastic containers",
+        "custom crates",
+        "custom cases"
+      ],
+      "locations": [
+        {
+          "location_id": "TN-009-L1",
+          "street_address": "328 Warehouse Rd",
+          "city": "Oak Ridge",
+          "state": "TN",
+          "zip": "37830",
+          "phone": "865-481-3801"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-001",
+      "company_name": "APR Containers",
+      "website_url": "https://aprcontainers.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "collapsible bulk boxes",
+        "custom bulk containers",
+        "buy-back",
+        "rental",
+        "plastic totes",
+        "bulk container repair"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-001-L1",
+          "street_address": "15012 Edgerton Rd",
+          "city": "New Haven",
+          "state": "IN",
+          "zip": "46774",
+          "phone": "260-496-9934"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-002",
+      "company_name": "Universal Package",
+      "website_url": "https://universalpackage.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "plastic bulk containers",
+        "returnable packaging",
+        "sleeve packs",
+        "plastic totes",
+        "cut and weld containers",
+        "clean and repair"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-002-L1",
+          "street_address": "435 Virginia Street",
+          "city": "Ferdinand",
+          "state": "IN",
+          "zip": "47532",
+          "phone": "812-937-3605"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-003",
+      "company_name": "Fibertech Plastics",
+      "website_url": "https://fibertechplastics.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "combo bins",
+        "center flow containers",
+        "plastic repair",
+        "plastic recycling",
+        "leasing"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-003-L1",
+          "street_address": "11744 Blue Bell Road",
+          "city": "Elberfeld",
+          "state": "IN",
+          "zip": "47613",
+          "phone": "800-304-4600"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-004",
+      "company_name": "Stephen Gould",
+      "website_url": "https://www.stephengould.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "reusable packaging",
+        "returnable packaging",
+        "bulk containers",
+        "racks",
+        "industrial packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-004-L1",
+          "street_address": "5727 Industrial Road",
+          "city": "Fort Wayne",
+          "state": "IN",
+          "zip": "46825",
+          "phone": "260-471-2228"
+        },
+        {
+          "location_id": "IN-004-L2",
+          "street_address": "4990 Indianapolis Road",
+          "city": "Whitestown",
+          "state": "IN",
+          "zip": "46075",
+          "phone": "317-769-8282"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-005",
+      "company_name": "Associated",
+      "website_url": "https://www.associated-solutions.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "poly bulk containers",
+        "warehouse storage",
+        "material handling",
+        "totes"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-005-L1",
+          "street_address": "4310 Illinois Road, Unit 1517",
+          "city": "Fort Wayne",
+          "state": "IN",
+          "zip": "46804",
+          "phone": "260-482-9556"
+        },
+        {
+          "location_id": "IN-005-L2",
+          "street_address": "5905 Decatur Boulevard",
+          "city": "Indianapolis",
+          "state": "IN",
+          "zip": "46241",
+          "phone": "317-821-0300"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-006",
+      "company_name": "FlexPAC",
+      "website_url": "https://www.flexp.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "packaging solutions",
+        "custom package design",
+        "warehouse and office",
+        "manufacturing packaging",
+        "distribution packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-006-L1",
+          "street_address": "6075 Lakeside Blvd",
+          "city": "Indianapolis",
+          "state": "IN",
+          "zip": "46278",
+          "phone": "317-872-0097"
+        },
+        {
+          "location_id": "IN-006-L2",
+          "street_address": "2910 Industrial Pkwy",
+          "city": "Elkhart",
+          "state": "IN",
+          "zip": "46516",
+          "phone": "574-293-3435"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-007",
+      "company_name": "The Cary Company",
+      "alternate_name": "Gurman Container division",
+      "website_url": "https://www.thecarycompany.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "IBC totes",
+        "industrial containers",
+        "drums and totes",
+        "IBC accessories",
+        "packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-007-L1",
+          "street_address": "4334 N County Rd 1000 E Ste 120",
+          "city": "Brownsburg",
+          "state": "IN",
+          "zip": "46112",
+          "phone": "812-232-3413"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-008",
+      "company_name": "FCA Packaging",
+      "website_url": "https://fcapackaging.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "reusable packaging",
+        "collapsible packaging",
+        "steel plastic and hybrid containers",
+        "custom packaging",
+        "returnable solutions"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-008-L1",
+          "street_address": "3517 Crouch St",
+          "city": "Lafayette",
+          "state": "IN",
+          "zip": "47905",
+          "phone": "765-448-1775"
+        }
+      ]
+    },
+    {
+      "company_id": "IN-009",
+      "company_name": "Elkhart Plastics",
+      "website_url": "https://epi-roto.com/",
+      "states_covered": [
+        "IN"
+      ],
+      "product_keywords": [
+        "Tuff Stack IBC",
+        "Tuff Cube IBC",
+        "reusable IBC",
+        "rotomolded plastic solutions",
+        "material handling"
+      ],
+      "locations": [
+        {
+          "location_id": "IN-009-L1",
+          "street_address": "3300 N. Kenmore",
+          "city": "South Bend",
+          "state": "IN",
+          "zip": "46628",
+          "phone": "574-232-8066"
+        },
+        {
+          "location_id": "IN-009-L2",
+          "street_address": "51703 Packard Drive",
+          "city": "Middlebury",
+          "state": "IN",
+          "zip": "46540",
+          "phone": "888-605-2068"
+        }
+      ]
+    },
+    {
+      "company_id": "GA-001",
+      "company_name": "TranPak Inc.",
+      "website_url": "https://www.tranpak.com/",
+      "states_covered": [
+        "GA"
+      ],
+      "product_keywords": [
+        "collapsible returnable bins",
+        "plastic bins",
+        "plastic pallets",
+        "bulk containers"
+      ],
+      "locations": [
+        {
+          "location_id": "GA-001-L1",
+          "street_address": "1640 Stone Ridge Dr.",
+          "city": "Stone Mountain",
+          "state": "GA",
+          "zip": "30083",
+          "phone": "800-827-2474"
+        }
+      ]
+    },
+    {
+      "company_id": "GA-002",
+      "company_name": "Container Exchanger",
+      "website_url": "https://containerexchanger.com/",
+      "states_covered": [
+        "GA"
+      ],
+      "product_keywords": [
+        "collapsible plastic bulk containers",
+        "pallet containers",
+        "plastic gaylord boxes",
+        "used bulk containers"
+      ],
+      "locations": [
+        {
+          "location_id": "GA-002-L1",
+          "street_address": "6025 Lagrange Blvd. SW",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "30336",
+          "phone": "888-551-5528"
+        }
+      ]
+    },
+    {
+      "company_id": "GA-003",
+      "company_name": "Tosca",
+      "website_url": "https://www.toscaltd.com/",
+      "states_covered": [
+        "GA"
+      ],
+      "product_keywords": [
+        "bulk bins",
+        "reusable crates",
+        "pallets",
+        "pooled reusable packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "GA-003-L1",
+          "street_address": "1175 Peachtree St. Suite 1900",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "30361",
+          "phone": "920-617-4000"
+        }
+      ]
+    },
+    {
+      "company_id": "GA-004",
+      "company_name": "Uline",
+      "website_url": "https://www.uline.com/",
+      "states_covered": [
+        "GA"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "collapsible bulk containers",
+        "shipping supplies"
+      ],
+      "locations": [
+        {
+          "location_id": "GA-004-L1",
+          "street_address": "705 Braselton Industrial Blvd.",
+          "city": "Braselton",
+          "state": "GA",
+          "zip": "30517",
+          "phone": "706-824-3700"
+        }
+      ]
+    },
+    {
+      "company_id": "GA-005",
+      "company_name": "Global Industrial",
+      "website_url": "https://www.globalindustrial.com/",
+      "states_covered": [
+        "GA"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "plastic bulk containers",
+        "collapsible plastic bulk containers",
+        "folding bulk shipping containers"
+      ],
+      "locations": [
+        {
+          "location_id": "GA-005-L1",
+          "street_address": "2505 Mill Center Parkway",
+          "city": "Buford",
+          "state": "GA",
+          "zip": "30518",
+          "phone": "770-822-5600"
+        }
+      ]
+    },
+    {
+      "company_id": "GA-006",
+      "company_name": "OrderPallets.com",
+      "website_url": "https://www.orderpallets.com/",
+      "states_covered": [
+        "GA"
+      ],
+      "product_keywords": [
+        "collapsible bulk containers",
+        "Magnum Optimum",
+        "folding bulk shipping containers"
+      ],
+      "relationship_notes": [
+        "Authorized dealer of IPL Schoeller"
+      ],
+      "locations": [
+        {
+          "location_id": "GA-006-L1",
+          "street_address": "306 Exchange Blvd #11",
+          "city": "Bethlehem",
+          "state": "GA",
+          "zip": "30620",
+          "phone": "844-209-0606"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-003",
+      "company_name": "Pacman Inc",
+      "parent_company_name": "LJS Solutions",
+      "website_url": "https://www.pacmaninc.com/",
+      "states_covered": [
+        "MI",
+        "GA",
+        "SC"
+      ],
+      "product_keywords": [
+        "collapsible containers",
+        "returnable bulk containers",
+        "bulk bins",
+        "container rental",
+        "container repair"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-003-L1",
+          "street_address": "14841 Meyers Rd",
+          "city": "Detroit",
+          "state": "MI",
+          "zip": "48227",
+          "phone": "248-997-7613",
+          "location_type": "warehouse"
+        },
+        {
+          "location_id": "MI-003-L2",
+          "street_address": "",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "",
+          "phone": "706-431-6657",
+          "location_type": "regional_market"
+        },
+        {
+          "location_id": "MI-003-L3",
+          "street_address": "740 N Wise Dr",
+          "city": "Sumter",
+          "state": "SC",
+          "zip": "29153",
+          "phone": "1-888-511-1445",
+          "location_type": "parent_company_hq"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-001",
+      "company_name": "RPP Containers",
+      "alternate_name": "Bulk Container Express",
+      "website_url": "https://www.rppcontainers.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "collapsible bulk containers",
+        "plastic gaylords",
+        "used bulk containers",
+        "custom bulk containers",
+        "pallet pack containers",
+        "refurbished bulk bins"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-001-L1",
+          "street_address": "10111 Evendale Commons Drive",
+          "city": "Cincinnati",
+          "state": "OH",
+          "zip": "45241",
+          "phone": "1-800-945-8304"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-002",
+      "company_name": "Hudson Exchange",
+      "website_url": "https://www.hudsonex.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "industrial collapsible bulk containers",
+        "collapsible plastic bulk containers",
+        "industrial storage containers",
+        "commercial grade bulk containers"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-002-L1",
+          "street_address": "4945 Scarlet Ln Ste 6",
+          "city": "Stow",
+          "state": "OH",
+          "zip": "44224",
+          "phone": "234-200-6070"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-003",
+      "company_name": "Buckhorn",
+      "website_url": "https://buckhorninc.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "collapsible bulk containers",
+        "intermediate bulk containers",
+        "CenterFlow containers",
+        "reusable plastic packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-003-L1",
+          "street_address": "400 TechneCenter Drive, Suite 215",
+          "city": "Milford",
+          "state": "OH",
+          "zip": "45150",
+          "phone": "1-800-543-4454"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-004",
+      "company_name": "Solo Products, Inc.",
+      "website_url": "https://www.soloproductsandcontainers.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "plastic bulk containers",
+        "collapsible bulk boxes",
+        "plastic gaylord container",
+        "used reusable packaging",
+        "container repair and refurbishment"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-004-L1",
+          "street_address": "838 Reedy Street",
+          "city": "Cincinnati",
+          "state": "OH",
+          "zip": "45202",
+          "phone": "513-321-7884"
+        },
+        {
+          "location_id": "OH-004-L2",
+          "street_address": "800 W. 5th Street",
+          "city": "Cincinnati",
+          "state": "OH",
+          "zip": "45203",
+          "phone": "513-321-7884"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-005",
+      "company_name": "Amatech Inc.",
+      "website_url": "https://www.amatechinc.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "bulk containers",
+        "returnable packaging",
+        "containers",
+        "plastic corrugated reusable packaging",
+        "knock-down reusable packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-005-L1",
+          "street_address": "1633 Woodland Avenue",
+          "city": "Columbus",
+          "state": "OH",
+          "zip": "43219",
+          "phone": "1-800-403-6920"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-006",
+      "company_name": "MH Containers & Equipment Co.",
+      "website_url": "https://www.mhcontainers.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "used collapsible plastic containers",
+        "used bulk boxes",
+        "new returnable packaging",
+        "used returnable containers",
+        "reconditioned containers"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-006-L1",
+          "street_address": "36235 Ridge Road",
+          "city": "Willoughby",
+          "state": "OH",
+          "zip": "44094",
+          "phone": "440-951-4900"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-007",
+      "company_name": "Interior Packaging Design, LLC",
+      "alternate_name": "Returnable Packaging",
+      "website_url": "https://returnables.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "returnable containers",
+        "bulk reusable containers",
+        "collapsible reusable containers",
+        "pallets and top caps",
+        "bulk container repair"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-007-L1",
+          "street_address": "5145 River Valley Road",
+          "city": "Milford",
+          "state": "OH",
+          "zip": "45150",
+          "phone": "513-575-4228"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-008",
+      "company_name": "Container Compliance Corp",
+      "website_url": "https://www.containercompliance.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "cage and bottle totes",
+        "reconditioned totes",
+        "new totes",
+        "plastic drums",
+        "industrial containers"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-008-L1",
+          "street_address": "5151 Denison Avenue",
+          "city": "Cleveland",
+          "state": "OH",
+          "zip": "44102-5827",
+          "phone": "216-961-0035"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-009",
+      "company_name": "HPJ Industries",
+      "website_url": "https://www.hpjind.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "bulk containers",
+        "container leasing",
+        "bulk container repair",
+        "container washing"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-009-L1",
+          "street_address": "510 W Broadway Street",
+          "city": "North Baltimore",
+          "state": "OH",
+          "zip": "45872",
+          "phone": "419-278-1000"
+        },
+        {
+          "location_id": "OH-009-L2",
+          "street_address": "299 S Chestnut Street",
+          "city": "Deshler",
+          "state": "OH",
+          "zip": "43516",
+          "phone": "419-278-1000"
+        }
+      ]
+    },
+    {
+      "company_id": "OH-010",
+      "company_name": "Immage Manufacturing Systems and Components",
+      "website_url": "https://immagemanufacturing.com/",
+      "states_covered": [
+        "OH"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "plastic totes",
+        "custom sleeve packs",
+        "structural foam collapsible containers",
+        "collapsible container rental and repair"
+      ],
+      "locations": [
+        {
+          "location_id": "OH-010-L1",
+          "street_address": "130 Sylvan Court",
+          "city": "Circleville",
+          "state": "OH",
+          "zip": "43113",
+          "phone": "614-937-6374"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-001",
+      "company_name": "Michigan Industrial Container",
+      "website_url": "https://micontainer.us/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "bulk plastic containers",
+        "buy sell rent bulk plastic containers",
+        "used plastic bulk bins",
+        "container programs",
+        "knockdowns"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-001-L1",
+          "street_address": "7441 Division Ave S, Suite C",
+          "city": "Grand Rapids",
+          "state": "MI",
+          "zip": "49548",
+          "phone": "616-916-3180"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-002",
+      "company_name": "Returnable Packaging Corporation",
+      "website_url": "https://www.rpcusa.net/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "industrial packaging systems",
+        "new container fabrication",
+        "container modifications",
+        "container repair"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-002-L1",
+          "street_address": "15890 Sturgeon Ct.",
+          "city": "Roseville",
+          "state": "MI",
+          "zip": "48066",
+          "phone": "586-294-4700"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-004",
+      "company_name": "ITB Packaging",
+      "website_url": "https://itbpackaging.com/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "collapsible returnable bulk bin",
+        "returnable transport packaging",
+        "automotive packaging",
+        "returnable totes"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-004-L1",
+          "street_address": "430 W 18th Street, Suite 100",
+          "city": "Holland",
+          "state": "MI",
+          "zip": "49423",
+          "phone": "616-392-3480"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-005",
+      "company_name": "Carter Associates",
+      "website_url": "https://www.carterassociatesmfg.com/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "returnable collapsible containers",
+        "plastic bulk containers",
+        "corrugated plastic sleeves",
+        "reusable packaging",
+        "thermoformed packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-005-L1",
+          "street_address": "318 E. Industrial Ln.",
+          "city": "Burr Oak",
+          "state": "MI",
+          "zip": "49030",
+          "phone": "269-489-5021"
+        },
+        {
+          "location_id": "MI-005-L2",
+          "street_address": "110 North Franks Avenue",
+          "city": "Sturgis",
+          "state": "MI",
+          "zip": "49091",
+          "phone": "269-489-5021"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-006",
+      "company_name": "Robinson Industries",
+      "website_url": "https://www.robinsonind.com/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "returnable packaging",
+        "reusable plastic pallets",
+        "plastic shipping containers",
+        "dunnage containers",
+        "custom plastic packaging"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-006-L1",
+          "street_address": "3051 West Curtis Road",
+          "city": "Coleman",
+          "state": "MI",
+          "zip": "48618",
+          "phone": "989-465-6111"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-007",
+      "company_name": "Shuert Industries",
+      "website_url": "https://shuert.com/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "Uni-Pak reusable shipping and storage system",
+        "Uni-Pak bulk system",
+        "plastic material handling products",
+        "bulk boxes",
+        "containers and pallets"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-007-L1",
+          "street_address": "6600 Dobry Dr",
+          "city": "Sterling Heights",
+          "state": "MI",
+          "zip": "48314",
+          "phone": "586-254-4590"
+        }
+      ]
+    },
+    {
+      "company_id": "MI-008",
+      "company_name": "Pak-Rite Michigan",
+      "website_url": "https://www.pak-ritemichigan.com/",
+      "states_covered": [
+        "MI"
+      ],
+      "product_keywords": [
+        "reusable collapsible bulk containers",
+        "Sure-Lok crates",
+        "plastic reusable crates",
+        "collapsible shipping containers",
+        "custom returnable crates"
+      ],
+      "locations": [
+        {
+          "location_id": "MI-008-L1",
+          "street_address": "31060 Oak Creek Dr",
+          "city": "Wixom",
+          "state": "MI",
+          "zip": "48393",
+          "phone": "248-624-1885"
+        }
+      ]
+    }
+  ]
+}
