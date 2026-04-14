@@ -60,7 +60,7 @@ export async function resolveSellerCompanyIdsForTargets(
 
   if (legacyIds.size > 0) {
     const rows = await prisma.company.findMany({
-      where: { id: { in: [...legacyIds] }, isSeller: true, hidden: false },
+      where: { id: { in: Array.from(legacyIds) }, isSeller: true, hidden: false },
       select: { id: true }
     });
     const sellerSet = new Set(rows.map((r) => r.id));
