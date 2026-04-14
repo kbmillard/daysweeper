@@ -66,6 +66,7 @@ export async function POST(req: Request) {
       email = sellerCompany.email ?? undefined;
       targetLegacyJson = {
         daysweeper_pin_kind: 'seller',
+        seller_id: sellerCompany.id,
         companyId: sellerCompany.id,
         locationId: loc?.id,
         companyExternalId: sellerCompany.externalId

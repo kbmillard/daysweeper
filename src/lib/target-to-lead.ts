@@ -118,7 +118,8 @@ function numberOrNull(v: unknown): number | null {
 
 function mapPinKindFromLegacy(legacyJson: unknown): 'seller' | 'container' {
   if (legacyJson && typeof legacyJson === 'object') {
-    const k = (legacyJson as Record<string, unknown>).daysweeper_pin_kind;
+    const o = legacyJson as Record<string, unknown>;
+    const k = o.daysweeper_pin_kind ?? o.map_pin_kind;
     if (typeof k === 'string') {
       const t = k.trim().toLowerCase();
       // `buyer` was the legacy value before isSeller rename; treat as seller pin for LastLeg.
@@ -128,12 +129,32 @@ function mapPinKindFromLegacy(legacyJson: unknown): 'seller' | 'container' {
   return 'container';
 }
 
-/** Expose Daysweeper `Seller.id` for LastLeg when target was added from seller layer. */
-function sellerIdFromLegacy(legacyJson: unknown): string | null {
+/** LastLeg iOS: grey seller pins when `map_pin_kind` / `seller_id` decode (snake_case). */
+function mapPinKindForLead(
+  legacyJson: unknown,
+  category: string | null | undefined
+): 'seller' | 'container' {
+  if (mapPinKindFromLegacy(legacyJson) === 'seller') return 'seller';
+  const c = typeof category === 'string' ? category.trim().toLowerCase() : '';
+  if (c === 'seller') return 'seller';
+  return 'container';
+}
+
+/**
+ * Expose seller company id for LastLeg (`seller_id` on lead JSON).
+ * Accepts legacy `seller_id` / `sellerId`, or `companyId` when pin is seller-flavored.
+ */
+function sellerIdForLead(
+  legacyJson: unknown,
+  category: string | null | undefined
+): string | null {
   if (!legacyJson || typeof legacyJson !== 'object') return null;
   const o = legacyJson as Record<string, unknown>;
   const sid = o.sellerId ?? o.seller_id;
-  return typeof sid === 'string' && sid.trim() ? sid.trim() : null;
+  if (typeof sid === 'string' && sid.trim()) return sid.trim();
+  if (mapPinKindForLead(legacyJson, category) !== 'seller') return null;
+  const companyId = o.companyId ?? o.company_id;
+  return typeof companyId === 'string' && companyId.trim() ? companyId.trim() : null;
 }
 
 export function targetToLead(target: {
@@ -143,6 +164,7 @@ export function targetToLead(target: {
   website?: string | null;
   phone?: string | null;
   email?: string | null;
+  /** When `'SELLER'` (e.g. add-to-route vendor path), LastLeg treats the lead as a seller pin. */
   category?: string | null;
   segment?: string | null;
   addressRaw?: string | null;
@@ -223,8 +245,8 @@ export function targetToLead(target: {
     account_state: target.accountState ?? null,
     route_outcome: routeOutcome,
     s: seq ?? null,
-    /** LastLeg: grey active pins for seller / vendor-research companies. */
-    map_pin_kind: mapPinKindFromLegacy(target.legacyJson),
-    seller_id: sellerIdFromLegacy(target.legacyJson)
+    /** LastLeg: grey active pins for seller / vendor-research companies (decoder expects snake_case). */
+    map_pin_kind: mapPinKindForLead(target.legacyJson, target.category),
+    seller_id: sellerIdForLead(target.legacyJson, target.category)
   };
 }
