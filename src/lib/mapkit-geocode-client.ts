@@ -4,7 +4,8 @@
  * Client-side geocoding via Apple MapKit JS (browser). Server route planner no longer geocodes addresses.
  */
 
-const MAPKIT_SCRIPT = 'https://cdn.apple-mapkit.com/mk/v5/full/mapkit.js';
+/** Autoupdate URL per Apple — legacy `mk/v5/full/mapkit.js` now 404s (ORB blocks the error body). */
+const MAPKIT_SCRIPT = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js';
 
 type MapKitCoordinate = { latitude: number; longitude: number };
 type GeocoderCb = (
@@ -64,8 +65,7 @@ function loadMapKitScript(): Promise<void> {
     const s = document.createElement('script');
     s.src = MAPKIT_SCRIPT;
     s.async = true;
-    // Do not set crossOrigin: Apple's CDN does not always participate in CORS for this script;
-    // crossorigin="anonymous" can cause the browser to block execution.
+    s.crossOrigin = 'anonymous';
     s.onload = () => resolve();
     s.onerror = () => reject(new Error('Failed to load MapKit JS'));
     document.head.appendChild(s);
@@ -105,13 +105,14 @@ export async function ensureMapKitInitialized(): Promise<void> {
   }
 }
 
-/** Parse `lat, lng` (same as LastLeg iOS). */
+/** Parse `lat, lng` (same as LastLeg iOS). Rejects out-of-range values so junk is not flown to. */
 export function tryParseLatLng(text: string): { lat: number; lng: number } | null {
   const parts = text.split(',').map((s) => s.trim());
   if (parts.length !== 2) return null;
   const lat = Number(parts[0]);
   const lng = Number(parts[1]);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return null;
   return { lat, lng };
 }
 
@@ -124,7 +125,7 @@ export async function geocodeWithAppleMapKit(address: string): Promise<{ lat: nu
 
   await ensureMapKitInitialized();
   const Geocoder = getMapKit().Geocoder;
-  const geocoder = new Geocoder({ language: 'en-US', getsUserLocation: true });
+  const geocoder = new Geocoder({ language: 'en-US', getsUserLocation: false });
 
   return new Promise((resolve, reject) => {
     geocoder.lookup(q, (err, data) => {
