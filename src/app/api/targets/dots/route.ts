@@ -1,11 +1,15 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
+import {
+  LASTLEG_CANONICAL_PINS_ROUTE_NAME,
+  SHARED_USER_ID as LASTLEG_SHARED_USER_ID
+} from '@/lib/lastleg-route-user';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const SHARED_USER_ID = 'shared';
+const SHARED_USER_ID = 'shared'; // Clerk fallback when unauthenticated
 const INTERNAL_API_KEY = process.env.INTERNAL_API_KEY ?? '';
 
 function getSnake(obj: Record<string, unknown>, ...keys: string[]): unknown {
@@ -66,7 +70,8 @@ function targetToRedPin(t: {
 /**
  * GET /api/targets/dots
  * Red-pin overlay data for the map: LastLeg route targets with enrichment.
- * - Browser: Clerk session; returns only targets on the signed-in user's current route.
+ * - Browser: Clerk session; prefers shared “LastLeg Canonical Pins” targets (MapPin sync) so
+ *   corridor ids match red dots; otherwise the signed-in user’s current route.
  * - Scripts: X-API-Key matching INTERNAL_API_KEY; returns up to 2000 geocoded targets (internal).
  */
 export async function GET(req: Request) {
@@ -101,22 +106,36 @@ export async function GET(req: Request) {
       (authResult && 'userId' in authResult ? (authResult as { userId: string }).userId : null) ??
       SHARED_USER_ID;
 
-    const route = await prisma.route.findFirst({
-      where: { assignedToUserId: userId },
-      orderBy: { updatedAt: 'desc' },
-      include: {
-        stops: {
-          orderBy: { seq: 'asc' },
-          include: {
-            target: {
-              include: {
-                TargetEnrichment: { select: { enrichedJson: true } },
-              },
+    const dotsInclude = {
+      stops: {
+        orderBy: { seq: 'asc' as const },
+        include: {
+          target: {
+            include: {
+              TargetEnrichment: { select: { enrichedJson: true } },
             },
           },
         },
       },
+    } as const;
+
+    const canonicalRoute = await prisma.route.findFirst({
+      where: {
+        assignedToUserId: LASTLEG_SHARED_USER_ID,
+        name: LASTLEG_CANONICAL_PINS_ROUTE_NAME
+      },
+      orderBy: { updatedAt: 'desc' },
+      include: dotsInclude
     });
+
+    const userRoute = await prisma.route.findFirst({
+      where: { assignedToUserId: userId },
+      orderBy: { updatedAt: 'desc' },
+      include: dotsInclude
+    });
+
+    const route =
+      canonicalRoute && canonicalRoute.stops.length > 0 ? canonicalRoute : userRoute;
 
     if (!route) {
       return NextResponse.json({ pins: [] }, { headers: { 'Cache-Control': 'no-store' } });

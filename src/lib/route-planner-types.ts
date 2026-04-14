@@ -1,8 +1,8 @@
 import type { LatLng } from '@/lib/route-corridor';
 
-/** One row for the route sheet “in corridor” list (targets + company locations). */
+/** One row for the route sheet “in corridor” list (targets + company + seller locations). */
 export type CorridorLine = {
-  kind: 'target' | 'location';
+  kind: 'target' | 'location' | 'seller';
   label: string;
 };
 
@@ -20,6 +20,9 @@ export type RoutePlannerState = {
   /** Purple company pins inside the corridor (Location ids). */
   filteredLocationIds?: string[];
   rankedLocationIds?: string[];
+  /** Grey seller pins inside the corridor (Location ids). */
+  filteredSellerLocationIds?: string[];
+  rankedSellerLocationIds?: string[];
   /** Ordered labels for the route popout (subset). */
   corridorLines?: CorridorLine[];
   updatedAt: string;
@@ -41,6 +44,8 @@ export function emptyRoutePlannerResponse(): RoutePlannerState {
     rankedTargetIds: [],
     filteredLocationIds: [],
     rankedLocationIds: [],
+    filteredSellerLocationIds: [],
+    rankedSellerLocationIds: [],
     corridorLines: [],
     updatedAt: new Date(0).toISOString()
   };
@@ -84,12 +89,19 @@ export function parseStoredPlanner(raw: unknown): RoutePlannerState | null {
   const rankedLocationIds = Array.isArray(o.rankedLocationIds)
     ? o.rankedLocationIds.filter((x): x is string => typeof x === 'string')
     : [];
+  const filteredSellerLocationIds = Array.isArray(o.filteredSellerLocationIds)
+    ? o.filteredSellerLocationIds.filter((x): x is string => typeof x === 'string')
+    : [];
+  const rankedSellerLocationIds = Array.isArray(o.rankedSellerLocationIds)
+    ? o.rankedSellerLocationIds.filter((x): x is string => typeof x === 'string')
+    : [];
   const corridorLines = Array.isArray(o.corridorLines)
     ? o.corridorLines
         .map((row) => {
           if (!row || typeof row !== 'object') return null;
           const r = row as Record<string, unknown>;
-          const kind = r.kind === 'location' || r.kind === 'target' ? r.kind : null;
+          const kind =
+            r.kind === 'location' || r.kind === 'target' || r.kind === 'seller' ? r.kind : null;
           const label = typeof r.label === 'string' ? r.label : '';
           if (!kind || !label.trim()) return null;
           return { kind, label: label.trim() } as CorridorLine;
@@ -109,6 +121,8 @@ export function parseStoredPlanner(raw: unknown): RoutePlannerState | null {
     rankedTargetIds,
     filteredLocationIds,
     rankedLocationIds,
+    filteredSellerLocationIds,
+    rankedSellerLocationIds,
     corridorLines,
     updatedAt
   };

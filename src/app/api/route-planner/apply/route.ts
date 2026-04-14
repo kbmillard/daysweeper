@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getLastLegUserId } from '@/lib/lastleg-route-user';
+import {
+  getLastLegUserId,
+  LASTLEG_CANONICAL_PINS_ROUTE_NAME,
+  SHARED_USER_ID
+} from '@/lib/lastleg-route-user';
 import {
   arcPositionAlongPolyline,
   filterAndRankTargetsAlongCorridor,
@@ -115,7 +119,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const targets = route.stops
+    const targetsFromUserRoute = route.stops
       .map((s) => s.target)
       .filter((t) => t.latitude != null && t.longitude != null)
       .map((t) => ({
@@ -124,8 +128,29 @@ export async function POST(req: NextRequest) {
         lng: Number(t.longitude)
       }));
 
+    const canonicalRoute = await prisma.route.findFirst({
+      where: { assignedToUserId: SHARED_USER_ID, name: LASTLEG_CANONICAL_PINS_ROUTE_NAME },
+      orderBy: { updatedAt: 'desc' },
+      include: routeInclude
+    });
+
+    const canonicalTargets =
+      canonicalRoute?.stops
+        .map((s) => s.target)
+        .filter((t) => t.latitude != null && t.longitude != null)
+        .map((t) => ({
+          id: t.id,
+          lat: Number(t.latitude),
+          lng: Number(t.longitude)
+        })) ?? [];
+
+    const corridorTargetRoute =
+      canonicalTargets.length > 0 && canonicalRoute ? canonicalRoute : route;
+    const targetPoints =
+      canonicalTargets.length > 0 ? canonicalTargets : targetsFromUserRoute;
+
     const { filteredIds, rankedIds } = filterAndRankTargetsAlongCorridor(
-      targets,
+      targetPoints,
       vertices,
       radiusMeters
     );
@@ -152,11 +177,30 @@ export async function POST(req: NextRequest) {
       radiusMeters
     );
 
+    const sellerRows = await prisma.location.findMany({
+      where: {
+        latitude: { not: null },
+        longitude: { not: null },
+        Company: { hidden: false, isSeller: true }
+      },
+      select: { id: true, addressRaw: true, latitude: true, longitude: true }
+    });
+    const sellerPoints = sellerRows
+      .map((l) => ({
+        id: l.id,
+        lat: Number(l.latitude),
+        lng: Number(l.longitude)
+      }))
+      .filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng));
+
+    const { filteredIds: filteredSellerIds, rankedIds: rankedSellerIds } =
+      filterAndRankTargetsAlongCorridor(sellerPoints, vertices, radiusMeters);
+
     const targetById = new Map(
-      route.stops.map((s) => [s.target.id, s.target] as const)
+      corridorTargetRoute.stops.map((s) => [s.target.id, s.target] as const)
     );
 
-    const lineCands: { kind: 'target' | 'location'; label: string; arc: number }[] = [];
+    const lineCands: { kind: 'target' | 'location' | 'seller'; label: string; arc: number }[] = [];
     for (const id of rankedIds) {
       const t = targetById.get(id);
       if (!t || t.latitude == null || t.longitude == null) continue;
@@ -177,6 +221,18 @@ export async function POST(req: NextRequest) {
       const lng = Number(loc.longitude);
       lineCands.push({
         kind: 'location',
+        label: (loc.addressRaw || id).trim() || id,
+        arc: arcPositionAlongPolyline({ lat, lng }, vertices)
+      });
+    }
+    const sellerById = new Map(sellerRows.map((l) => [l.id, l] as const));
+    for (const id of rankedSellerIds) {
+      const loc = sellerById.get(id);
+      if (!loc || loc.latitude == null || loc.longitude == null) continue;
+      const lat = Number(loc.latitude);
+      const lng = Number(loc.longitude);
+      lineCands.push({
+        kind: 'seller',
         label: (loc.addressRaw || id).trim() || id,
         arc: arcPositionAlongPolyline({ lat, lng }, vertices)
       });
@@ -203,6 +259,8 @@ export async function POST(req: NextRequest) {
       rankedTargetIds: rankedIds,
       filteredLocationIds: Array.from(filteredLocIds),
       rankedLocationIds: rankedLocIds,
+      filteredSellerLocationIds: Array.from(filteredSellerIds),
+      rankedSellerLocationIds: rankedSellerIds,
       corridorLines,
       updatedAt: now.toISOString()
     };

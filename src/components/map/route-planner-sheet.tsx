@@ -62,6 +62,7 @@ function corridorVisibleCount(state: RoutePlannerState | null, layers: MapPinLay
   let n = 0;
   if (L.containers) n += state.filteredTargetIds.length;
   if (L.companies) n += state.filteredLocationIds?.length ?? 0;
+  if (L.sellers) n += state.filteredSellerLocationIds?.length ?? 0;
   return n;
 }
 
@@ -315,6 +316,7 @@ export function RoutePlannerSheet({
       const parts: string[] = [];
       if (L.containers) parts.push(`${data.filteredTargetIds.length} route targets`);
       if (L.companies) parts.push(`${data.filteredLocationIds?.length ?? 0} company pins`);
+      if (L.sellers) parts.push(`${data.filteredSellerLocationIds?.length ?? 0} seller pins`);
       toast.success(
         vis > 0 ? `${vis} in corridor (${parts.join(' · ')})` : 'Corridor applied (no pins in range for visible layers)'
       );
@@ -461,8 +463,9 @@ export function RoutePlannerSheet({
           {activeSummary?.active && (
             <div className='rounded-xl border border-pink-500/30 bg-pink-500/10 px-3 py-2 text-[13px] text-pink-100'>
               Active: {activeSummary.filteredTargetIds.length} route targets ·{' '}
-              {activeSummary.filteredLocationIds?.length ?? 0} company locations · {activeSummary.radiusMiles}{' '}
-              mi radius
+              {activeSummary.filteredLocationIds?.length ?? 0} company locations ·{' '}
+              {activeSummary.filteredSellerLocationIds?.length ?? 0} seller locations ·{' '}
+              {activeSummary.radiusMiles} mi radius
             </div>
           )}
 
@@ -475,7 +478,11 @@ export function RoutePlannerSheet({
                 {(activeSummary.corridorLines ?? []).map((line, i) => (
                   <li key={`${line.kind}-${i}`}>
                     <span className='text-white/50'>
-                      {line.kind === 'target' ? 'Route · ' : 'Company · '}
+                      {line.kind === 'target'
+                        ? 'Route · '
+                        : line.kind === 'seller'
+                          ? 'Seller · '
+                          : 'Company · '}
                     </span>
                     {line.label}
                   </li>

@@ -638,6 +638,12 @@ export default function EmptyMapClient() {
             planner?.active && planner.vertices.length >= 2
               ? planner.radiusMiles * 1609.34
               : null;
+          const targetInCorridor =
+            planner?.active &&
+            Array.isArray(planner.filteredTargetIds) &&
+            planner.filteredTargetIds.length > 0
+              ? new Set(planner.filteredTargetIds)
+              : null;
           pins.forEach((p) => {
             try {
               let color = '#dc2626';
@@ -645,10 +651,17 @@ export default function EmptyMapClient() {
               let label: string | undefined;
               let z = 1;
               let opacity = 1;
-              const insideCorridor =
-                planner?.active && radiusM != null && planner.vertices.length >= 2
-                  ? minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM
-                  : true;
+              let insideCorridor = true;
+              if (planner?.active && radiusM != null && planner.vertices.length >= 2) {
+                if (targetInCorridor) {
+                  insideCorridor = p.targetId
+                    ? targetInCorridor.has(p.targetId)
+                    : minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM;
+                } else {
+                  insideCorridor =
+                    minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM;
+                }
+              }
               if (!insideCorridor) {
                 color = '#57534e';
                 size = 4;
@@ -719,12 +732,23 @@ export default function EmptyMapClient() {
             planner?.active && planner.vertices.length >= 2
               ? planner.radiusMiles * 1609.34
               : null;
+          const sellerInCorridor =
+            planner?.active &&
+            Array.isArray(planner.filteredSellerLocationIds) &&
+            planner.filteredSellerLocationIds.length > 0
+              ? new Set(planner.filteredSellerLocationIds)
+              : null;
           pins.forEach((p) => {
             try {
-              const insideCorridor =
-                planner?.active && radiusM != null && planner.vertices.length >= 2
-                  ? minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM
-                  : true;
+              let insideCorridor = true;
+              if (planner?.active && radiusM != null && planner.vertices.length >= 2) {
+                if (sellerInCorridor) {
+                  insideCorridor = sellerInCorridor.has(p.locationId);
+                } else {
+                  insideCorridor =
+                    minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM;
+                }
+              }
               const marker = new g.maps.Marker({
                 map,
                 position: { lat: p.lat, lng: p.lng },
