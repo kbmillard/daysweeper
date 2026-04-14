@@ -48,12 +48,17 @@ export function buildSellersKml(pins: SellerMapPin[]): string {
     <description>${escapeXml(`Exported from Daysweeper seller map data. ${pins.length} placemark(s).`)}</description>
     <Style id="sellerPin">
       <IconStyle>
-        <color>ff6b6b6b</color>
-        <scale>1.1</scale>
+        <!-- aabbggrr: opaque dark charcoal grey -->
+        <color>ff1e1e1e</color>
+        <scale>0.9</scale>
         <Icon>
-          <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
         </Icon>
+        <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction" />
       </IconStyle>
+      <LabelStyle>
+        <scale>0.62</scale>
+      </LabelStyle>
     </Style>
     <Folder>
       <name>Sellers</name>
