@@ -16,6 +16,7 @@ const scripts = [
   'scripts/ensure-route-tables.mjs',
   'scripts/generate-dots-pins.mjs',
   'scripts/sync-mappins-from-dots-json.mjs',
+  'scripts/prune-orphan-targets-and-hidden-dots.mjs',
   'scripts/sync-shared-route-to-mappins.mjs'
 ];
 

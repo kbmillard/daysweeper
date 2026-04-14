@@ -1,7 +1,6 @@
 import React from 'react';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollablePageShell } from '@/components/layout/scrollable-page-shell';
 import { Heading } from '../ui/heading';
-import type { InfobarContent } from '@/components/ui/infobar';
 
 function PageSkeleton() {
   return (
@@ -26,7 +25,6 @@ export default function PageContainer({
   accessFallback,
   pageTitle,
   pageDescription,
-  infoContent,
   pageHeaderAction
 }: {
   children: React.ReactNode;
@@ -36,7 +34,6 @@ export default function PageContainer({
   accessFallback?: React.ReactNode;
   pageTitle?: string;
   pageDescription?: string;
-  infoContent?: InfobarContent;
   pageHeaderAction?: React.ReactNode;
 }) {
   if (!access) {
@@ -53,30 +50,34 @@ export default function PageContainer({
 
   const content = isloading ? <PageSkeleton /> : children;
 
-  return scrollable ? (
-    <ScrollArea className='h-[calc(100dvh-52px)]'>
-      <div className='flex min-h-fit flex-col p-4 md:px-6'>
-        <div className='mb-4 flex items-start justify-between'>
-          <Heading
-            title={pageTitle ?? ''}
-            description={pageDescription ?? ''}
-            infoContent={infoContent}
-          />
-          {pageHeaderAction && <div>{pageHeaderAction}</div>}
-        </div>
-        {content}
-      </div>
-    </ScrollArea>
-  ) : (
-    <div className='flex flex-1 flex-col p-4 md:px-6'>
+  const showPageHeader =
+    Boolean(
+      (pageTitle && pageTitle.trim()) ||
+        (pageDescription && pageDescription.trim()) ||
+        pageHeaderAction
+    );
+
+  const headerBlock =
+    showPageHeader ? (
       <div className='mb-4 flex items-start justify-between'>
         <Heading
           title={pageTitle ?? ''}
           description={pageDescription ?? ''}
-          infoContent={infoContent}
         />
-        {pageHeaderAction && <div>{pageHeaderAction}</div>}
+        {pageHeaderAction ? <div>{pageHeaderAction}</div> : null}
       </div>
+    ) : null;
+
+  return scrollable ? (
+    <ScrollablePageShell className='h-[calc(100dvh-52px)] min-w-0'>
+      <div className='flex min-h-fit min-w-0 flex-col p-4 md:px-6'>
+        {headerBlock}
+        {content}
+      </div>
+    </ScrollablePageShell>
+  ) : (
+    <div className='flex min-w-0 flex-1 flex-col p-4 md:px-6'>
+      {headerBlock}
       {content}
     </div>
   );

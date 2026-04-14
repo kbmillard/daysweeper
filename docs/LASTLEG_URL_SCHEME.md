@@ -143,7 +143,13 @@ Copy everything in the block below as a single message when aligning another cod
 
 ---
 
-## §5 — Override scheme
+## §5 — LastLeg iOS builds & credentials (Fastlane)
+
+App Store Connect **`.p8` path**, **`fastlane/.env`** (`ASC_*`, Google Maps / Gemini keys for release builds), and the **single “what to tell LastLeg”** paste block live in the **rb-lastleg-ios** repo: **`docs/LASTLEG_URL_SCHEME.md`** (sections **5–6** there).
+
+---
+
+## §6 — Override scheme
 
 **Daysweeper (web):** set **`NEXT_PUBLIC_LASTLEG_URL_SCHEME`** in `.env` (e.g. `rbLastLeg`) so `src/lib/lastleg-url.ts` emits that scheme instead of `lastleg`.
 

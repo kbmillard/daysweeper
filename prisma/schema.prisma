@@ -373,7 +373,7 @@ enum StopOutcome {
   REVISITING_INTERESTED
   /// LastLeg: visited, deal made — green
   DEAL_MADE
-  /// LastLeg: containers cleared — white / faded until reactivate
+  /// LastLeg: material cleared — white / faded until reactivate (API: CONTAINERS_CLEARED)
   CONTAINERS_CLEARED
 }
 

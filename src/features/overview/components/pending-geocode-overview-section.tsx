@@ -17,26 +17,35 @@ function pickComponent(
   return '';
 }
 
+/** Cap rows sent through the RSC boundary — very large lists break production renders. */
+const PENDING_GEOCODE_ROW_CAP = 2500;
+
 /**
- * All locations in the database with a non-empty address and no coordinates (not scoped to
- * non-hidden companies).
+ * Locations with a non-empty address and no coordinates (not scoped to non-hidden companies).
+ * Newest first; total may exceed the cap — see `totalPending` on the client table.
  */
 export async function PendingGeocodeOverviewSection() {
-  const raw = await prisma.location.findMany({
-    where: {
-      addressRaw: { not: '' },
-      latitude: null,
-      longitude: null
-    },
-    select: {
-      id: true,
-      externalId: true,
-      addressRaw: true,
-      addressComponents: true,
-      Company: { select: { id: true, name: true, hidden: true } }
-    },
-    orderBy: { createdAt: 'desc' }
-  });
+  const where = {
+    addressRaw: { not: '' },
+    latitude: null,
+    longitude: null
+  } as const;
+
+  const [totalPending, raw] = await Promise.all([
+    prisma.location.count({ where }),
+    prisma.location.findMany({
+      where,
+      select: {
+        id: true,
+        externalId: true,
+        addressRaw: true,
+        addressComponents: true,
+        Company: { select: { id: true, name: true, hidden: true, isSeller: true } }
+      },
+      orderBy: { createdAt: 'desc' },
+      take: PENDING_GEOCODE_ROW_CAP
+    })
+  ]);
 
   const rows: PendingGeocodeLocationRow[] = raw.map((loc) => {
     const ac = loc.addressComponents;
@@ -49,9 +58,16 @@ export async function PendingGeocodeOverviewSection() {
       country: pickComponent(ac, 'country', 'Country', 'country_code'),
       companyId: loc.Company.id,
       companyName: loc.Company.name,
-      companyHidden: loc.Company.hidden
+      companyHidden: loc.Company.hidden,
+      companyIsSeller: loc.Company.isSeller
     };
   });
 
-  return <PendingGeocodeLocationsTableClient rows={rows} />;
+  return (
+    <PendingGeocodeLocationsTableClient
+      rows={rows}
+      totalPending={totalPending}
+      rowCap={PENDING_GEOCODE_ROW_CAP}
+    />
+  );
 }

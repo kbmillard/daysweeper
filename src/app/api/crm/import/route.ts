@@ -3,10 +3,7 @@ export const revalidate = 0;
 
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import {
-  isSellerVendorImportBody,
-  runSellerVendorImport
-} from '@/lib/buyer-vendor-import';
+import { isSellerVendorImportBody, runSellerVendorImport } from '@/lib/buyer-vendor-import';
 import { runCrmSupplierImport, type CrmSupplierJson } from '@/lib/crm-supplier-import';
 import { IMPORT_GEOCODE_DEFERRED } from '@/lib/geocode-import-deferred';
 

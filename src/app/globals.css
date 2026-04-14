@@ -463,6 +463,40 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* Map page: satellite/road backdrop washes out default bubble & glass text */
+.map-page-chrome .ios-bubble-secondary {
+  color: hsl(222 55% 16%);
+  font-weight: 600;
+}
+.map-page-chrome .ios-bubble-secondary:hover {
+  color: hsl(222 55% 12%);
+}
+.dark .map-page-chrome .ios-bubble-secondary {
+  color: hsl(210 45% 82%);
+  font-weight: 600;
+}
+.dark .map-page-chrome .ios-bubble-secondary:hover {
+  color: hsl(210 50% 90%);
+}
+.map-page-chrome .ios-glass:not(.text-white) {
+  color: hsl(222 47% 12%);
+}
+.map-page-chrome .ios-glass input {
+  color: hsl(222 47% 10%);
+}
+.map-page-chrome .ios-glass input::placeholder {
+  color: hsl(222 22% 36%);
+}
+.dark .map-page-chrome .ios-glass:not(.text-white) {
+  color: hsl(210 18% 96%);
+}
+.dark .map-page-chrome .ios-glass input {
+  color: hsl(210 15% 98%);
+}
+.dark .map-page-chrome .ios-glass input::placeholder {
+  color: hsl(215 12% 58%);
+}
+
 /* iOS-style link with liquid feel */
 .ios-link {
   color: hsl(210 100% 50%);

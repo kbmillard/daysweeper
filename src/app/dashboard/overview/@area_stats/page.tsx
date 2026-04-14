@@ -1,4 +1,4 @@
-import { CompanyAreaGraph } from '@/features/overview/components/company-area-graph';
+import { CompanyAreaGraphLazy } from '@/features/overview/components/company-area-graph-lazy';
 import { COMPANY_STATUSES, normalizeStatus } from '@/constants/company-status';
 import { prisma } from '@/lib/prisma';
 
@@ -49,6 +49,6 @@ export default async function AreaStats() {
   const chartData = Array.from(monthMap.values());
   const categories = COMPANY_STATUSES.map((label) => ({ key: safeKey(label), label }));
 
-  return <CompanyAreaGraph data={chartData} categories={categories} />;
+  return <CompanyAreaGraphLazy data={chartData} categories={categories} />;
 }
 

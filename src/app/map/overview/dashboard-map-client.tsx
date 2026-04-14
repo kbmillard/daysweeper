@@ -3,7 +3,6 @@
 import { Component, useEffect, useRef, useState } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
 import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
@@ -12,6 +11,7 @@ import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
 
 const COMPANY_PIN_COLOR = '#9333ea';
+const SELLER_PIN_COLOR = '#9ca3af';
 
 function isMobile(): boolean {
   if (typeof navigator === 'undefined') return false;
@@ -39,7 +39,38 @@ type RedPin = {
   website?: string;
   summary?: string;
 };
-type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
+type LocationPin = {
+  locationId: string;
+  companyId: string;
+  addressRaw?: string;
+  lat: number;
+  lng: number;
+  isSeller?: boolean;
+  companyName?: string;
+  role?: string;
+  notes?: string;
+  importCategory?: string;
+  phone?: string;
+  website?: string;
+  companyLegacyJson?: unknown;
+  locationLegacyJson?: unknown;
+};
+
+type SellerMapPin = {
+  companyId: string;
+  locationId: string;
+  lat: number;
+  lng: number;
+  label: string;
+  addressRaw?: string;
+  phone?: string;
+  website?: string;
+  role?: string;
+  notes?: string;
+  importCategory?: string;
+  companyLegacyJson?: unknown;
+  locationLegacyJson?: unknown;
+};
 type GeoJSONFeature = {
   type: 'Feature';
   geometry: { type: 'Point'; coordinates: [number, number] };
@@ -57,6 +88,39 @@ function createDot(g: typeof google, color: string, size: number): google.maps.S
     strokeColor: '#fff',
     strokeWeight: 1,
   };
+}
+
+function parseSellerMapPins(body: unknown): SellerMapPin[] {
+  if (!body || typeof body !== 'object') return [];
+  const pins = (body as { pins?: unknown }).pins;
+  if (!Array.isArray(pins)) return [];
+  const out: SellerMapPin[] = [];
+  for (const p of pins) {
+    if (!p || typeof p !== 'object') continue;
+    const o = p as Record<string, unknown>;
+    const lat = safeNum(o.lat);
+    const lng = safeNum(o.lng);
+    const companyId = typeof o.companyId === 'string' ? o.companyId : '';
+    const locationId = typeof o.locationId === 'string' ? o.locationId : '';
+    const label = typeof o.label === 'string' ? o.label : '';
+    if (!companyId || !locationId || !label || lat == null || lng == null) continue;
+    out.push({
+      companyId,
+      locationId,
+      lat,
+      lng,
+      label,
+      addressRaw: typeof o.addressRaw === 'string' ? o.addressRaw : undefined,
+      phone: typeof o.phone === 'string' ? o.phone : undefined,
+      website: typeof o.website === 'string' ? o.website : undefined,
+      role: typeof o.role === 'string' ? o.role : undefined,
+      notes: typeof o.notes === 'string' ? o.notes : undefined,
+      importCategory: typeof o.importCategory === 'string' ? o.importCategory : undefined,
+      companyLegacyJson: o.companyLegacyJson,
+      locationLegacyJson: o.locationLegacyJson
+    });
+  }
+  return out;
 }
 
 // ── Error boundary ───────────────────────────────────────────────────────────
@@ -84,12 +148,14 @@ function DashboardMapClientInner() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const locationMarkersRef = useRef<google.maps.Marker[]>([]);
+  const sellerMarkersRef = useRef<google.maps.Marker[]>([]);
   const dotMarkersRef = useRef<google.maps.Marker[]>([]);
   const unsubMapRef = useRef<(() => void) | null>(null);
   const listenersRef = useRef<google.maps.MapsEventListener[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [needingGeocode, setNeedingGeocode] = useState<LocationNeedingGeocode[]>([]);
   const [locationCount, setLocationCount] = useState<number | null>(null);
+  const [sellerPinCount, setSellerPinCount] = useState<number | null>(null);
   const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
   const [selectedPin, setSelectedPin] = useState<{ type: 'location'; data: LocationPin } | { type: 'dot'; data: RedPin } | null>(null);
   const [addingToLastLeg, setAddingToLastLeg] = useState(false);
@@ -206,14 +272,18 @@ function DashboardMapClientInner() {
       try {
         let geojson: GeoJSONResponse = { type: 'FeatureCollection', features: [] };
         let dotsPins: RedPin[] = [];
+        let sellerPins: SellerMapPin[] = [];
         try {
-          const [locRes, dotsRes] = await Promise.all([
+          const [locRes, sellerRes, dotsRes] = await Promise.all([
             fetch('/api/locations/map', { cache: 'no-store' }),
-            fetch('/api/dots-pins', { cache: 'no-store' }),
+            fetch('/api/sellers/map', { cache: 'no-store' }),
+            fetch('/api/dots-pins', { cache: 'no-store' })
           ]);
           const locData = await locRes.json() as { features?: GeoJSONFeature[] };
+          const sellerData = await sellerRes.json().catch(() => ({}));
           const dotsData = await dotsRes.json() as { pins?: unknown[] };
           if (locData?.features) geojson = locData as GeoJSONResponse;
+          sellerPins = parseSellerMapPins(sellerData);
           if (Array.isArray(dotsData?.pins)) {
             dotsPins = dotsData.pins.flatMap((p) => {
               if (typeof p !== 'object' || p === null) return [];
@@ -229,6 +299,7 @@ function DashboardMapClientInner() {
 
         if (cancelled || !containerRef.current) return;
         setLocationCount(geojson.features.length);
+        setSellerPinCount(sellerPins.length);
 
         const google = await loadGoogleMaps().catch(() => null);
         if (!google || cancelled || !containerRef.current) {
@@ -253,6 +324,48 @@ function DashboardMapClientInner() {
         const clearDotMarkers = () => {
           dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
           dotMarkersRef.current = [];
+        };
+        const clearSellerMarkers = () => {
+          sellerMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
+          sellerMarkersRef.current = [];
+        };
+
+        const addSellerMarkers = (pins: SellerMapPin[]) => {
+          clearSellerMarkers();
+          pins.forEach((p) => {
+            try {
+              const marker = new google.maps.Marker({
+                map,
+                position: { lat: p.lat, lng: p.lng },
+                icon: createDot(google, SELLER_PIN_COLOR, 6),
+                zIndex: 3
+              });
+              listenersRef.current.push(
+                marker.addListener('click', () => {
+                  setSelectedPin({
+                    type: 'location',
+                    data: {
+                      locationId: p.locationId,
+                      companyId: p.companyId,
+                      addressRaw: p.addressRaw,
+                      lat: p.lat,
+                      lng: p.lng,
+                      isSeller: true,
+                      companyName: p.label,
+                      role: p.role,
+                      notes: p.notes,
+                      importCategory: p.importCategory,
+                      phone: p.phone,
+                      website: p.website,
+                      companyLegacyJson: p.companyLegacyJson,
+                      locationLegacyJson: p.locationLegacyJson
+                    }
+                  });
+                })
+              );
+              sellerMarkersRef.current.push(marker);
+            } catch { /* skip */ }
+          });
         };
 
         const addLocationMarkers = (features: GeoJSONFeature[]) => {
@@ -310,6 +423,7 @@ function DashboardMapClientInner() {
         };
 
         addLocationMarkers(geojson.features);
+        addSellerMarkers(sellerPins);
         addDotMarkers(dotsPins);
 
         refetchDotsRef.current = async () => {
@@ -342,22 +456,28 @@ function DashboardMapClientInner() {
           } catch { /* ignore */ }
         };
 
-        // fitBounds on company location pins only — red dots are cosmetic, never affect viewport
+        // fitBounds: supplier (purple) + seller (grey) pins; red route dots excluded
         try {
-          const blueCount = geojson.features.length;
-          if (blueCount > 1) {
-            const bounds = new google.maps.LatLngBounds();
-            geojson.features.forEach((f) => {
-              const la = safeNum(f.geometry.coordinates[1]);
-              const lo = safeNum(f.geometry.coordinates[0]);
-              if (la != null && lo != null) bounds.extend({ lat: la, lng: lo });
-            });
+          const bounds = new google.maps.LatLngBounds();
+          geojson.features.forEach((f) => {
+            const la = safeNum(f.geometry.coordinates[1]);
+            const lo = safeNum(f.geometry.coordinates[0]);
+            if (la != null && lo != null) bounds.extend({ lat: la, lng: lo });
+          });
+          sellerPins.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
+          const n = geojson.features.length + sellerPins.length;
+          if (n > 1) {
             map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
-          } else if (blueCount === 1) {
-            const f = geojson.features[0]!;
-            const la = safeNum(f.geometry.coordinates[1]) ?? DEFAULT_CENTER.lat;
-            const lo = safeNum(f.geometry.coordinates[0]) ?? DEFAULT_CENTER.lng;
-            map.setCenter({ lat: la, lng: lo });
+          } else if (n === 1) {
+            if (geojson.features.length === 1) {
+              const f = geojson.features[0]!;
+              const la = safeNum(f.geometry.coordinates[1]) ?? DEFAULT_CENTER.lat;
+              const lo = safeNum(f.geometry.coordinates[0]) ?? DEFAULT_CENTER.lng;
+              map.setCenter({ lat: la, lng: lo });
+            } else {
+              const p = sellerPins[0]!;
+              map.setCenter({ lat: p.lat, lng: p.lng });
+            }
             map.setZoom(8);
           }
         } catch { /* ignore fitBounds failure */ }
@@ -367,9 +487,20 @@ function DashboardMapClientInner() {
         unsubMapRef.current = subscribeToLocationsMapUpdate(async () => {
           if (cancelled) return;
           try {
-            const res = await fetch('/api/locations/map', { cache: 'no-store' });
+            const [res, sRes] = await Promise.all([
+              fetch('/api/locations/map', { cache: 'no-store' }),
+              fetch('/api/sellers/map', { cache: 'no-store' })
+            ]);
             const data = await res.json() as { features?: GeoJSONFeature[] };
-            if (data?.features != null && mapRef.current) addLocationMarkers(data.features);
+            const sData = await sRes.json().catch(() => ({}));
+            if (!mapRef.current) return;
+            if (data?.features != null) {
+              addLocationMarkers(data.features);
+              setLocationCount(data.features.length);
+            }
+            const nextSellers = parseSellerMapPins(sData);
+            addSellerMarkers(nextSellers);
+            setSellerPinCount(nextSellers.length);
           } catch { /* ignore */ }
         });
       } catch (err) {
@@ -385,6 +516,8 @@ function DashboardMapClientInner() {
       refetchDotsRef.current = null;
       locationMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       locationMarkersRef.current = [];
+      sellerMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
+      sellerMarkersRef.current = [];
       dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       dotMarkersRef.current = [];
       mapRef.current = null;
@@ -408,11 +541,11 @@ function DashboardMapClientInner() {
         loading={deletingRedDot}
         description='This map pin will be removed from the database.'
       />
-      {locationCount !== null && (
+      {(locationCount !== null || sellerPinCount !== null) && (
         <p className='text-[14px] text-muted-foreground/80 mb-3'>
-          {locationCount === 0
-            ? 'No locations with coordinates.'
-            : `${locationCount} location${locationCount === 1 ? '' : 's'} on map (click → company).`}
+          {(locationCount ?? 0) === 0 && (sellerPinCount ?? 0) === 0
+            ? 'No company locations with coordinates yet.'
+            : `${locationCount ?? 0} supplier pin${(locationCount ?? 0) === 1 ? '' : 's'} (purple) · ${sellerPinCount ?? 0} seller / vendor research pin${(sellerPinCount ?? 0) === 1 ? '' : 's'} (grey). Click a pin for details.`}
         </p>
       )}
       <div className='relative rounded-2xl overflow-hidden shadow-lg'>
@@ -421,9 +554,62 @@ function DashboardMapClientInner() {
           <div className='absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md ios-card ios-animate-in p-5'>
             <p className='text-[15px] font-semibold text-foreground/90 mb-1 leading-snug'>
               {selectedPin.type === 'location'
-                ? (selectedPin.data.addressRaw || 'Location')
+                ? selectedPin.data.isSeller && selectedPin.data.companyName
+                  ? selectedPin.data.companyName
+                  : (selectedPin.data.addressRaw || 'Location')
                 : (selectedPin.data.label || `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`)}
             </p>
+            {selectedPin.type === 'location' && selectedPin.data.isSeller && (
+              <p className='text-[12px] text-muted-foreground/70 mb-2'>Seller / vendor research (grey pin)</p>
+            )}
+            {selectedPin.type === 'location' && selectedPin.data.isSeller && (
+              <div className='mb-4 space-y-1 text-[14px]'>
+                {selectedPin.data.addressRaw && (
+                  <p className='text-muted-foreground/80'>{selectedPin.data.addressRaw}</p>
+                )}
+                {selectedPin.data.importCategory && (
+                  <p className='text-muted-foreground/80'>Category: {selectedPin.data.importCategory}</p>
+                )}
+                {selectedPin.data.role && <p className='text-muted-foreground/80'>Role: {selectedPin.data.role}</p>}
+                {selectedPin.data.notes && (
+                  <p className='text-muted-foreground/80 whitespace-pre-wrap'>{selectedPin.data.notes}</p>
+                )}
+                {selectedPin.data.phone && (
+                  <p>
+                    <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className='ios-link'>
+                      {selectedPin.data.phone}
+                    </a>
+                  </p>
+                )}
+                {selectedPin.data.website && (
+                  <p>
+                    <a
+                      href={selectedPin.data.website}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='ios-link break-all'
+                    >
+                      {selectedPin.data.website}
+                    </a>
+                  </p>
+                )}
+                {(selectedPin.data.companyLegacyJson != null || selectedPin.data.locationLegacyJson != null) && (
+                  <details className='mt-2 text-[12px]'>
+                    <summary className='cursor-pointer text-muted-foreground'>Imported JSON (company + location)</summary>
+                    <pre className='mt-2 max-h-40 overflow-auto rounded-md bg-muted/50 p-2 text-[11px] leading-snug'>
+                      {(() => {
+                        const payload = {
+                          company: selectedPin.data.companyLegacyJson,
+                          location: selectedPin.data.locationLegacyJson
+                        };
+                        const s = JSON.stringify(payload, null, 2);
+                        return s.length > 4000 ? `${s.slice(0, 4000)}\n…` : s;
+                      })()}
+                    </pre>
+                  </details>
+                )}
+              </div>
+            )}
             {selectedPin.type === 'dot' && (selectedPin.data.addressRaw || selectedPin.data.phone || selectedPin.data.website || selectedPin.data.summary) && (
               <div className='mb-4 space-y-1 text-[14px]'>
                 {selectedPin.data.addressRaw && (
@@ -512,6 +698,13 @@ function DashboardMapClientInner() {
       </div>
       <section className='ios-card p-5 mt-4'>
         <h3 className='ios-section-label mb-3'>Geocodes to get</h3>
+        <p className='text-[13px] text-muted-foreground/80 mb-3'>
+          Full sortable list (suppliers + sellers) lives on the{' '}
+          <Link href='/dashboard/overview#overview-pending-geocode' className='ios-link'>
+            Dashboard overview
+          </Link>
+          .
+        </p>
         {needingGeocode.length === 0 ? (
           <p className='text-[14px] text-muted-foreground/70'>All locations have coordinates.</p>
         ) : (

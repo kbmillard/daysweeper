@@ -7,7 +7,7 @@ export type LastLegVisualStatus =
   | 'notInterested'
   | 'revisitingInterested'
   | 'dealMade'
-  | 'containersCleared';
+  | 'materialCleared';
 
 export function deriveLastLegVisualStatus(input: {
   accountState?: string | null;
@@ -18,7 +18,7 @@ export function deriveLastLegVisualStatus(input: {
   if (ro === 'NOT_INTERESTED') return 'notInterested';
   if (ro === 'REVISITING_INTERESTED') return 'revisitingInterested';
   if (ro === 'DEAL_MADE') return 'dealMade';
-  if (ro === 'CONTAINERS_CLEARED') return 'containersCleared';
+  if (ro === 'CONTAINERS_CLEARED') return 'materialCleared';
   if (ro === 'WRONG_ADDRESS') return 'skipped';
   if (ro === 'VISITED' || input.accountState === 'ACCOUNT') return 'visited';
   if (ro === 'NO_ANSWER' || input.accountState === 'NEW_CONTACTED_NO_ANSWER') {
@@ -45,7 +45,7 @@ export function lastLegStatusColorHex(status: LastLegVisualStatus): string {
       return '#171717';
     case 'revisitingInterested':
       return '#EAB308';
-    case 'containersCleared':
+    case 'materialCleared':
       return '#F5F5F5';
   }
 }
@@ -68,8 +68,8 @@ export function lastLegStatusLabel(status: LastLegVisualStatus): string {
       return 'Not interested';
     case 'revisitingInterested':
       return 'Revisiting';
-    case 'containersCleared':
-      return 'Containers cleared';
+    case 'materialCleared':
+      return 'Material Cleared';
   }
 }
 
@@ -100,7 +100,7 @@ export function lastLegPatchPayload(status: LastLegVisualStatus): {
       return { status: 'visited', account_state: 'NEW_UNCONTACTED', route_outcome: 'NOT_INTERESTED' };
     case 'revisitingInterested':
       return { status: 'active', account_state: 'NEW_UNCONTACTED', route_outcome: 'REVISITING_INTERESTED' };
-    case 'containersCleared':
+    case 'materialCleared':
       return { status: 'visited', account_state: 'NEW_UNCONTACTED', route_outcome: 'CONTAINERS_CLEARED' };
   }
 }

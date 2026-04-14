@@ -25,8 +25,16 @@ export default function MapError({
           /map
         </a>
         ; other routes here use the same shell and may fail for a different
-        reason (for example a missing database table after deploy).
+        reason (for example a missing database column if{' '}
+        <code className='text-xs'>prisma migrate deploy</code> did not run on
+        the production database). Check Vercel → this project → Logs for the
+        request to this path; use digest below when contacting support.
       </p>
+      {error.digest ? (
+        <p className='text-muted-foreground font-mono text-xs'>
+          Digest: {error.digest}
+        </p>
+      ) : null}
       {error.message ? (
         <p className='text-muted-foreground font-mono max-w-lg break-all text-xs'>
           {error.message}

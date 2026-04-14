@@ -12,8 +12,6 @@ import { useOrganization } from '@clerk/nextjs';
 import { PricingTable } from '@clerk/nextjs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
-import { billingInfoContent } from '@/config/infoconfig';
-
 export default function BillingPage() {
   const { organization, isLoaded } = useOrganization();
 
@@ -32,7 +30,6 @@ export default function BillingPage() {
           </div>
         </div>
       }
-      infoContent={billingInfoContent}
       pageTitle='Billing & Plans'
       pageDescription={`Manage your subscription and usage limits for ${organization?.name}`}
     >

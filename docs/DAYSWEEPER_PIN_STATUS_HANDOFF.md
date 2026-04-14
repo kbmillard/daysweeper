@@ -21,7 +21,7 @@ This document is the **Daysweeper** source of truth for how **container / route 
 | Visited — not interested | Black, faded until **Reactivate** | `NOT_INTERESTED` |
 | Revisiting — interested | Yellow | `REVISITING_INTERESTED` |
 | Visited — deal made | Green | `DEAL_MADE` |
-| Containers cleared | White, faded until **Reactivate** | `CONTAINERS_CLEARED` |
+| Material Cleared | White, faded until **Reactivate** | `CONTAINERS_CLEARED` |
 
 **Fade / inactive** is **client-side only**. The API does **not** store a “faded” flag — only **`route_outcome`** + **`visitedAt`** on **`RouteStop`**.
 
@@ -111,4 +111,4 @@ When applying **`route_outcome`**:
 
 ## § Handoff blurb (paste to iOS / Slack)
 
-> Daysweeper persists LastLeg pin lifecycle on **`RouteStop.outcome`** as **`StopOutcome`**: `NOT_INTERESTED`, `REVISITING_INTERESTED`, `DEAL_MADE`, `CONTAINERS_CLEARED`, plus the original four. **GET** leads include **`route_outcome`** from **`targetToLead`**. **PATCH `/api/targets/:id`** accepts **`route_outcome`** (or **`routeOutcome`**); JSON **`null`** clears outcome + **`visitedAt`** for reactivate. Response includes **`{ ok: true, target }`**. Fade is client-only. See **`docs/DAYSWEEPER_PIN_STATUS_HANDOFF.md`** in daysweeper-main.
+> Daysweeper persists LastLeg pin lifecycle on **`RouteStop.outcome`** as **`StopOutcome`**: `NOT_INTERESTED`, `REVISITING_INTERESTED`, `DEAL_MADE`, `CONTAINERS_CLEARED` (product: **Material Cleared**), plus the original four. **GET** leads include **`route_outcome`** from **`targetToLead`**. **PATCH `/api/targets/:id`** accepts **`route_outcome`** (or **`routeOutcome`**); JSON **`null`** clears outcome + **`visitedAt`** for reactivate. Response includes **`{ ok: true, target }`**. Fade is client-only. See **`docs/DAYSWEEPER_PIN_STATUS_HANDOFF.md`** in daysweeper-main.

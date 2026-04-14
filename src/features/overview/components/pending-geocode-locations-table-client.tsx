@@ -32,6 +32,7 @@ export type PendingGeocodeLocationRow = {
   companyId: string;
   companyName: string;
   companyHidden: boolean;
+  companyIsSeller: boolean;
 };
 
 function contains(hay: string, needle: string) {
@@ -40,9 +41,14 @@ function contains(hay: string, needle: string) {
 }
 
 export function PendingGeocodeLocationsTableClient({
-  rows
+  rows,
+  totalPending,
+  rowCap
 }: {
   rows: PendingGeocodeLocationRow[];
+  /** Full count in DB (may be larger than `rows.length` when capped). */
+  totalPending?: number;
+  rowCap?: number;
 }) {
   const [companyQ, setCompanyQ] = useState('');
   const [cityQ, setCityQ] = useState('');
@@ -89,7 +95,7 @@ export function PendingGeocodeLocationsTableClient({
   ]);
 
   return (
-    <Card>
+    <Card id='overview-pending-geocode'>
       <CardHeader>
         <CardTitle>Locations missing geocode</CardTitle>
         <CardDescription>
@@ -168,6 +174,13 @@ export function PendingGeocodeLocationsTableClient({
 
         <p className='text-muted-foreground text-sm'>
           Showing {filtered.length} of {rows.length} locations
+          {totalPending != null && totalPending > rows.length ? (
+            <>
+              {' '}
+              ({totalPending.toLocaleString()} total pending — newest{' '}
+              {rowCap != null ? rowCap.toLocaleString() : rows.length} loaded)
+            </>
+          ) : null}
         </p>
 
         {rows.length === 0 ? (
@@ -201,6 +214,11 @@ export function PendingGeocodeLocationsTableClient({
                         >
                           {r.companyName}
                         </Link>
+                        {r.companyIsSeller ? (
+                          <Badge variant='outline' className='text-xs'>
+                            seller
+                          </Badge>
+                        ) : null}
                         {r.companyHidden ? (
                           <Badge variant='secondary' className='text-xs'>
                             hidden

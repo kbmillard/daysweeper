@@ -1,4 +1,5 @@
 import { auth } from '@clerk/nextjs/server';
+import type { Prisma } from '@prisma/client';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
@@ -18,7 +19,7 @@ export async function GET() {
   return NextResponse.json({
     preferences: prefs
       ? {
-          layout: (prefs.layout as { sidebarOpen?: boolean }) ?? {}
+          layout: (prefs.layout as Record<string, unknown>) ?? {}
         }
       : null
   });
@@ -31,11 +32,11 @@ export async function PATCH(req: Request) {
   }
 
   const body = await req.json().catch(() => ({}));
-  const layout = body.layout as { sidebarOpen?: boolean } | undefined;
+  const layout = body.layout as Record<string, unknown> | undefined;
 
-  if (!layout || typeof layout !== 'object') {
+  if (!layout || typeof layout !== 'object' || Array.isArray(layout)) {
     return NextResponse.json(
-      { error: 'Expected { layout: { sidebarOpen?: boolean } }' },
+      { error: 'Expected { layout: { ... } }' },
       { status: 400 }
     );
   }
@@ -47,7 +48,7 @@ export async function PATCH(req: Request) {
   const mergedLayout = {
     ...((existing?.layout as Record<string, unknown>) ?? {}),
     ...layout
-  };
+  } as Prisma.InputJsonValue;
 
   const prefs = await prisma.userPreference.upsert({
     where: { userId },
@@ -62,7 +63,7 @@ export async function PATCH(req: Request) {
 
   return NextResponse.json({
     preferences: {
-      layout: (prefs.layout as { sidebarOpen?: boolean }) ?? {}
+      layout: (prefs.layout as Record<string, unknown>) ?? {}
     }
   });
 }

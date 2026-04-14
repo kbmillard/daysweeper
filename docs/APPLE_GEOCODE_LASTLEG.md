@@ -36,7 +36,7 @@ DAYSWEEPER_URL=http://localhost:3000 ./scripts/geocode-apple
   Saves Apple geocode result.  
   - Body: `{ "latitude": 42.123, "longitude": -83.456 }`
 
-Use your deployed daysweeper base URL (e.g. `https://daysweeper.apr.recyclicbravery.com`).
+Use your deployed daysweeper base URL (e.g. `https://daysweeper.recyclicbravery.com`).
 
 ## 2. LastLeg (Xcode): fetch, geocode with Apple, then PATCH back
 
@@ -56,7 +56,7 @@ Example Swift (iOS/macOS with `CoreLocation`):
 import Foundation
 import CoreLocation
 
-let baseURL = "https://daysweeper.apr.recyclicbravery.com" // or your daysweeper URL
+let baseURL = "https://daysweeper.recyclicbravery.com" // or your daysweeper URL
 
 struct LocationItem: Codable {
     let id: String

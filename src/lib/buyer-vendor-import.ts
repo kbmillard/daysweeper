@@ -17,6 +17,24 @@ function buildAddressRaw(parts: (string | null | undefined)[]): string {
     .join(', ');
 }
 
+function addressComponentsFromParts(
+  city?: string | null,
+  state?: string | null,
+  postalCode?: string | null,
+  country?: string | null
+): Prisma.InputJsonValue | undefined {
+  const o: Record<string, string> = {};
+  const c = typeof city === 'string' ? city.trim() : '';
+  const s = typeof state === 'string' ? state.trim() : '';
+  const z = typeof postalCode === 'string' ? postalCode.trim() : '';
+  const co = typeof country === 'string' ? country.trim() : '';
+  if (c) o.city = c;
+  if (s) o.state = s;
+  if (z) o.postalCode = z;
+  if (co) o.country = co;
+  return Object.keys(o).length ? (o as Prisma.InputJsonValue) : undefined;
+}
+
 /** Shape A: SC-style `vendors` + `category`. */
 type VendorRowA = {
   company: string;
@@ -103,6 +121,7 @@ function normalizeRows(body: BuyerVendorImportPayload): {
   externalId: string;
   name: string;
   addressRaw: string;
+  addressComponents: Prisma.InputJsonValue | undefined;
   phone: string | null;
   website: string | null;
   role: string | null;
@@ -146,6 +165,7 @@ function normalizeRows(body: BuyerVendorImportPayload): {
           externalId: ext,
           name: row.company_name.trim(),
           addressRaw: addr || buildAddressRaw([row.city, row.state, row.zip]),
+          addressComponents: addressComponentsFromParts(row.city, row.state, row.zip),
           phone: row.primary_phone?.trim() || null,
           website: web && !/^unspecified$/i.test(web) ? web : null,
           role: row.role?.trim() || null,
@@ -174,6 +194,7 @@ function normalizeRows(body: BuyerVendorImportPayload): {
           externalId: ext,
           name,
           addressRaw: addr || buildAddressRaw([row.city, row.state, row.zip]),
+          addressComponents: addressComponentsFromParts(row.city, row.state, row.zip),
           phone: row.phone?.trim() || null,
           website: row.website?.trim() || null,
           role: row.role?.trim() || null,
@@ -235,6 +256,7 @@ function normalizeRows(body: BuyerVendorImportPayload): {
           externalId: ext,
           name,
           addressRaw: addr || buildAddressRaw([loc.city, loc.state, loc.zip]),
+          addressComponents: addressComponentsFromParts(loc.city, loc.state, loc.zip),
           phone: loc.phone?.trim() || null,
           website: web && !/^unspecified$/i.test(web) ? web : null,
           role: co.role?.trim() || null,
@@ -266,9 +288,7 @@ function normalizeRows(body: BuyerVendorImportPayload): {
 export type BuyerVendorImportResult = {
   upserted: number;
   locationExternalIdsTouched: string[];
-  geocode:
-    | { success: number; failed: number }
-    | typeof IMPORT_GEOCODE_DEFERRED;
+  geocode: typeof IMPORT_GEOCODE_DEFERRED;
 };
 
 function mergeSellerMetadata(
@@ -306,7 +326,7 @@ export async function runSellerVendorImport(
 ): Promise<BuyerVendorImportResult> {
   const rows = normalizeRows(body);
   if (rows.length === 0) {
-    return { upserted: 0, locationExternalIdsTouched: [], geocode: { success: 0, failed: 0 } };
+    return { upserted: 0, locationExternalIdsTouched: [], geocode: IMPORT_GEOCODE_DEFERRED };
   }
 
   const now = new Date();
@@ -362,11 +382,15 @@ export async function runSellerVendorImport(
         companyId: company.id,
         externalId: locExt,
         addressRaw: r.addressRaw || '',
+        legacyJson: r.legacyJson,
+        ...(r.addressComponents != null ? { addressComponents: r.addressComponents } : {}),
         updatedAt: now
       },
       update: {
         companyId: company.id,
         addressRaw: r.addressRaw || '',
+        legacyJson: r.legacyJson,
+        ...(r.addressComponents != null ? { addressComponents: r.addressComponents } : {}),
         updatedAt: now
       }
     });

@@ -7,7 +7,7 @@ Cross-team snapshot: what to tell LastLeg, what Daysweeper shipped, and how to d
 ## Tell the LastLeg person
 
 - **Daysweeper has shipped** **`route_outcome`** persistence on **`RouteStop.outcome`** (**`StopOutcome`** enum), **PATCH** + **GET** contract, and **`{ ok: true, target }`** on PATCH. See **`docs/DAYSWEEPER_PIN_STATUS_HANDOFF.md`**.
-- **LastLeg iOS** should **PATCH** canonical values (**`NOT_INTERESTED`**, **`DEAL_MADE`**, **`REVISITING_INTERESTED`**, **`CONTAINERS_CLEARED`**, plus originals) — aligned with shipped **`API.forPinStatus`**.
+- **LastLeg iOS** should **PATCH** canonical values (**`NOT_INTERESTED`**, **`DEAL_MADE`**, **`REVISITING_INTERESTED`**, **`CONTAINERS_CLEARED`** (UI: **Material Cleared**), plus originals) — aligned with shipped **`API.forPinStatus`**.
 - If anything still looks wrong after that, it’s usually **deploy / base URL**, **Clerk auth**, or **no `RouteStop` for that user’s route** — not “API missing fields” on current main.
 
 ---

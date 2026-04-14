@@ -5,9 +5,21 @@ import { isValidMapboxCoordinate } from '@/lib/geocode-address';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-type SellerPin = {
-  /** Same as companyId (legacy grey-pin id) */
-  id: string;
+type SellerImportSlice = { role?: string; notes?: string; importCategory?: string };
+
+function sellerImportMeta(metadata: unknown): SellerImportSlice {
+  if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) return {};
+  const meta = metadata as { sellerImport?: unknown; buyerImport?: unknown };
+  const bi = meta.sellerImport ?? meta.buyerImport;
+  if (!bi || typeof bi !== 'object' || Array.isArray(bi)) return {};
+  const o = bi as Record<string, unknown>;
+  const role = typeof o.role === 'string' ? o.role : undefined;
+  const notes = typeof o.notes === 'string' ? o.notes : undefined;
+  const importCategory = typeof o.importCategory === 'string' ? o.importCategory : undefined;
+  return { role, notes, importCategory };
+}
+
+export type SellerMapPin = {
   companyId: string;
   locationId: string;
   lat: number;
@@ -18,69 +30,58 @@ type SellerPin = {
   website?: string;
   role?: string;
   notes?: string;
+  importCategory?: string;
+  companyLegacyJson?: unknown;
+  locationLegacyJson?: unknown;
+  companyExternalId?: string | null;
+  locationExternalId?: string | null;
 };
 
-function sellerImportMeta(metadata: unknown): { role?: string; notes?: string } {
-  if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) return {};
-  const meta = metadata as { sellerImport?: unknown; buyerImport?: unknown };
-  const bi = meta.sellerImport ?? meta.buyerImport;
-  if (!bi || typeof bi !== 'object' || Array.isArray(bi)) return {};
-  const o = bi as Record<string, unknown>;
-  const role = typeof o.role === 'string' ? o.role : undefined;
-  const notes = typeof o.notes === 'string' ? o.notes : undefined;
-  return { role, notes };
-}
-
 /**
- * GET — Grey seller/vendor-research pins (Company.isSeller + geocoded Location). Same auth pattern as /api/locations/map (open).
+ * GET — Grey seller/vendor-research pins: every geocoded Location for non-hidden `Company.isSeller`.
+ * Includes import `legacyJson` on company and location for map popovers / LastLeg handoff.
  */
 export async function GET() {
   try {
-    const companies = await prisma.company.findMany({
+    const locs = await prisma.location.findMany({
       where: {
-        isSeller: true,
-        hidden: false,
-        Location: {
-          some: {
-            latitude: { not: null },
-            longitude: { not: null }
-          }
-        }
+        latitude: { not: null },
+        longitude: { not: null },
+        Company: { isSeller: true, hidden: false }
       },
       select: {
         id: true,
-        name: true,
-        phone: true,
-        website: true,
-        metadata: true,
-        Location: {
-          where: {
-            latitude: { not: null },
-            longitude: { not: null }
-          },
-          orderBy: { createdAt: 'asc' },
-          take: 1,
+        externalId: true,
+        addressRaw: true,
+        latitude: true,
+        longitude: true,
+        legacyJson: true,
+        Company: {
           select: {
             id: true,
-            addressRaw: true,
-            latitude: true,
-            longitude: true
+            externalId: true,
+            name: true,
+            phone: true,
+            website: true,
+            metadata: true,
+            legacyJson: true
           }
         }
-      }
+      },
+      orderBy: { createdAt: 'asc' }
     });
 
-    const pins: SellerPin[] = [];
+    const pins: SellerMapPin[] = [];
 
-    for (const c of companies) {
-      const loc = c.Location[0];
-      if (!loc) continue;
+    for (const loc of locs) {
       const lat = loc.latitude != null ? Number(loc.latitude) : null;
       const lng = loc.longitude != null ? Number(loc.longitude) : null;
       if (!isValidMapboxCoordinate(lat, lng)) continue;
-      const { role, notes } = sellerImportMeta(c.metadata);
+
+      const c = loc.Company;
+      const { role, notes, importCategory } = sellerImportMeta(c.metadata);
+
       pins.push({
-        id: c.id,
         companyId: c.id,
         locationId: loc.id,
         lat: lat!,
@@ -90,7 +91,12 @@ export async function GET() {
         phone: c.phone ?? undefined,
         website: c.website ?? undefined,
         role,
-        notes
+        notes,
+        importCategory,
+        companyLegacyJson: c.legacyJson ?? undefined,
+        locationLegacyJson: loc.legacyJson ?? undefined,
+        companyExternalId: c.externalId,
+        locationExternalId: loc.externalId
       });
     }
 

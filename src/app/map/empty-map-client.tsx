@@ -27,6 +27,24 @@ import { minDistanceToPolyline } from '@/lib/route-corridor';
 /** Company / location markers on the map (not red dots). */
 const COMPANY_PIN_COLOR = '#9333ea';
 
+/**
+ * Browsers/password managers sometimes autofill the first visible text field with a saved
+ * Google Maps API key (AIza…) or a JWT (e.g. after visiting /api/mapkit-js/token). Never
+ * keep those in the address box.
+ */
+function looksLikeGoogleBrowserApiKey(raw: string): boolean {
+  const t = raw.trim().replace(/\s/g, '');
+  if (!t.startsWith('AIza')) return false;
+  return t.length >= 35 && t.length <= 256 && /^AIza[0-9A-Za-z_-]+$/.test(t);
+}
+
+function looksLikeJwt(raw: string): boolean {
+  const t = raw.trim();
+  if (!t.startsWith('eyJ')) return false;
+  const parts = t.split('.');
+  return parts.length === 3 && t.length >= 80 && parts.every((p) => p.length > 0);
+}
+
 function isMobileDevice(): boolean {
   if (typeof navigator === 'undefined') return false;
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || navigator.maxTouchPoints > 0;
@@ -263,6 +281,23 @@ export default function EmptyMapClient() {
     setAddressSuggestions([]);
     setSuggestOpen(false);
   }, []);
+
+  const handleAddressSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const v = e.target.value;
+      if (looksLikeGoogleBrowserApiKey(v) || looksLikeJwt(v)) {
+        setAddressSearch('');
+        setAddressSuggestions([]);
+        setSuggestOpen(false);
+        toast.message(
+          'Cleared: that text looks like an API key or token, not an address. If this keeps happening, disable autofill for this field or site.'
+        );
+        return;
+      }
+      setAddressSearch(v);
+    },
+    []
+  );
 
   const pickSuggestion = useCallback((s: MapKitAddressSuggestion) => {
     setAddressSearch(s.geocodeQuery);
@@ -1069,16 +1104,18 @@ export default function EmptyMapClient() {
         </div>
       )}
 
-      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 max-w-sm sm:max-w-md">
+      <div className="map-page-chrome absolute top-4 left-4 z-10 flex flex-col gap-2 max-w-sm sm:max-w-md">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start">
           <div className="relative min-w-0 flex-1">
             <div className="ios-glass flex min-h-10 items-center gap-2 rounded-2xl py-1.5 pl-3 pr-1 min-w-0">
-              <IconSearch className="h-[18px] w-[18px] shrink-0 text-muted-foreground/60" aria-hidden />
+              <IconSearch className="h-[18px] w-[18px] shrink-0 text-slate-700/85 dark:text-zinc-400" aria-hidden />
               <input
                 type="text"
+                id="daysweeper-map-geocode-input"
+                name="daysweeper-map-geocode-query"
                 placeholder="Address, lat,lng, or DMS…"
                 value={addressSearch}
-                onChange={(e) => setAddressSearch(e.target.value)}
+                onChange={handleAddressSearchChange}
                 onFocus={() => addressSuggestions.length > 0 && setSuggestOpen(true)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') void handleAddressGo();
@@ -1086,8 +1123,14 @@ export default function EmptyMapClient() {
                     setSuggestOpen(false);
                   }
                 }}
-                autoComplete="off"
-                className="min-h-9 w-full min-w-0 flex-1 bg-transparent border-none py-1.5 outline-none text-[15px] placeholder:text-muted-foreground/50"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                data-1p-ignore
+                data-lpignore="true"
+                data-form-type="other"
+                className="min-h-9 w-full min-w-0 flex-1 bg-transparent border-none py-1.5 outline-none text-[15px]"
               />
               {addressSearch.trim().length > 0 ? (
                 <button
@@ -1146,7 +1189,7 @@ export default function EmptyMapClient() {
       </div>
 
       {/* Route planner + map type */}
-      <div className="absolute top-4 right-4 z-10 flex flex-col items-end gap-2 sm:flex-row sm:items-center">
+      <div className="map-page-chrome absolute top-4 right-4 z-10 flex flex-col items-end gap-2 sm:flex-row sm:items-center">
         <MapPinLayersControl variant="dark" value={pinLayers} onChange={setPinLayers} />
         <RoutePlannerSheet
           onApplied={(state) => setCorridorPlanner(state)}

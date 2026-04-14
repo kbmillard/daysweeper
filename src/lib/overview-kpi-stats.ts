@@ -1,4 +1,4 @@
-import type { AccountState } from '@prisma/client';
+import type { StopOutcome } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { getRedPinsCount } from '@/lib/red-pins-count';
 
@@ -9,7 +9,15 @@ export const mapSupplierPinsWhere = {
   Company: { hidden: false, isSeller: false }
 } as const;
 
+const LASTLEG_SHARED_ROUTE = {
+  assignedToUserId: 'shared',
+  name: 'LastLeg Canonical Pins'
+} as const;
+
 export type StatusCountRow = { label: string; count: number };
+
+/** Container pins row: label + count + dot color (hex) for dashboard KPI. */
+export type ContainerRouteStatusRow = StatusCountRow & { dotColor: string };
 
 function companyStatusBreakdown(
   rows: { status: string | null; _count: { _all: number } }[]
@@ -22,14 +30,81 @@ function companyStatusBreakdown(
     .sort((a, b) => b.count - a.count);
 }
 
-function targetAccountStateBreakdown(
-  rows: { accountState: AccountState | null; _count: { _all: number } }[]
-): StatusCountRow[] {
-  const label = (s: AccountState | null) =>
-    s != null ? String(s).replaceAll('_', ' ') : 'No state';
+const OUTCOME_META: Record<
+  string,
+  { label: string; dotColor: string; sort: number }
+> = {
+  __NULL__: {
+    label: 'New',
+    dotColor: '#2563eb',
+    sort: 0
+  },
+  NOT_INTERESTED: {
+    label: 'Visited - Not Interested (pin deactivated)',
+    dotColor: '#171717',
+    sort: 1
+  },
+  REVISITING_INTERESTED: {
+    label: 'Revisiting — interested',
+    dotColor: '#eab308',
+    sort: 2
+  },
+  DEAL_MADE: {
+    label: 'Visited - Deal made',
+    dotColor: '#22c55e',
+    sort: 3
+  },
+  CONTAINERS_CLEARED: {
+    label: 'Material removed (pin deactivated)',
+    dotColor: '#fafafa',
+    sort: 4
+  },
+  VISITED: {
+    label: 'Visited',
+    dotColor: '#0d9488',
+    sort: 5
+  },
+  NO_ANSWER: {
+    label: 'No answer',
+    dotColor: '#64748b',
+    sort: 6
+  },
+  WRONG_ADDRESS: {
+    label: 'Wrong address',
+    dotColor: '#64748b',
+    sort: 7
+  },
+  FOLLOW_UP: {
+    label: 'Follow up',
+    dotColor: '#64748b',
+    sort: 8
+  }
+};
+
+function outcomeKey(o: StopOutcome | null): string {
+  return o === null ? '__NULL__' : o;
+}
+
+function containerRouteBreakdown(
+  rows: { outcome: StopOutcome | null; _count: { _all: number } }[]
+): ContainerRouteStatusRow[] {
   return rows
-    .map((r) => ({ label: label(r.accountState), count: r._count._all }))
-    .sort((a, b) => b.count - a.count);
+    .map((r) => {
+      const k = outcomeKey(r.outcome);
+      const meta = OUTCOME_META[k] ?? {
+        label: k === '__NULL__' ? 'New' : String(r.outcome).replaceAll('_', ' '),
+        dotColor: '#64748b',
+        sort: 50
+      };
+      return {
+        label: meta.label,
+        count: r._count._all,
+        dotColor: meta.dotColor,
+        _sort: meta.sort
+      };
+    })
+    .sort((a, b) => a._sort - b._sort || b.count - a.count)
+    .map(({ _sort: _, ...row }) => row);
 }
 
 export async function getOverviewKpiStats() {
@@ -51,9 +126,10 @@ export async function getOverviewKpiStats() {
     locationsGeocoded,
     locationsNotGeocoded,
     mapSupplierPinsCount,
+    locationsSellerGeocoded,
     totalLocations,
     containerPinsCount,
-    groupTargetState
+    sharedRoute
   ] = await Promise.all([
     prisma.company.count({ where: hasLocation }),
     prisma.company.count({
@@ -92,25 +168,40 @@ export async function getOverviewKpiStats() {
       }
     }),
     prisma.location.count({ where: mapSupplierPinsWhere }),
+    prisma.location.count({
+      where: {
+        Company: { hidden: false, isSeller: true },
+        latitude: { not: null },
+        longitude: { not: null }
+      }
+    }),
     prisma.location.count({ where: { Company: { hidden: false } } }),
     getRedPinsCount(),
-    prisma.target
+    prisma.route.findFirst({
+      where: LASTLEG_SHARED_ROUTE,
+      select: { id: true },
+      orderBy: { updatedAt: 'desc' }
+    })
+  ]);
+
+  let breakdownContainerRoute: ContainerRouteStatusRow[] = [];
+  if (sharedRoute) {
+    const grouped = await prisma.routeStop
       .groupBy({
-        by: ['accountState'],
-        where: {
-          latitude: { not: null },
-          longitude: { not: null }
-        },
+        by: ['outcome'],
+        where: { routeId: sharedRoute.id },
         _count: { _all: true }
       })
-      .catch((): { accountState: AccountState | null; _count: { _all: number } }[] => [])
-  ]);
+      .catch((): { outcome: StopOutcome | null; _count: { _all: number } }[] => []);
+    breakdownContainerRoute = containerRouteBreakdown(grouped);
+  }
 
   return {
     totalCompanies,
     companiesThisMonth,
     totalLocations,
     mapSupplierPinsCount,
+    locationsSellerGeocoded,
     countCompaniesNonSeller,
     countCompaniesSeller,
     breakdownCompaniesNonSeller: companyStatusBreakdown(groupNonSeller),
@@ -120,6 +211,8 @@ export async function getOverviewKpiStats() {
     locationsGeocoded,
     locationsNotGeocoded,
     containerPinsCount,
-    breakdownContainerTargets: targetAccountStateBreakdown(groupTargetState)
+    breakdownContainerRoute
   };
 }
+
+export type OverviewKpiStats = Awaited<ReturnType<typeof getOverviewKpiStats>>;
