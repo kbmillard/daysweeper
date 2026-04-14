@@ -51,11 +51,11 @@ export default function CompaniesImportPage() {
           d.sellers?.upserted ?? d.buyers?.upserted ?? d.upserted ?? 0;
         toast.success(
           d.importKind === 'mixed'
-            ? `CRM + sellers import done (${n} seller row(s) touched)`
-            : `Imported ${n} seller companies · geocode batch run`
+            ? `CRM + sellers import done (${n} seller row(s) touched) — geocode via LastLeg or /api/geocode/bulk`
+            : `Imported ${n} seller companies — geocode via LastLeg or /api/geocode/bulk`
         );
       } else {
-        toast.success('CRM import done · geocode batch run');
+        toast.success('CRM import done — geocode missing rows via LastLeg or /api/geocode/bulk');
       }
     } catch (e) {
       toast.error(e instanceof Error ? e.message : 'Import failed');
@@ -68,7 +68,7 @@ export default function CompaniesImportPage() {
     <PageContainer
       scrollable
       pageTitle='Import companies'
-      pageDescription='CRM suppliers: { "suppliers": [...] } or JSON array. Sellers / vendor research: { "vendors": [...] } (same shapes as before). You can send both keys in one request. Geocoding runs automatically.'
+      pageDescription='CRM suppliers: { "suppliers": [...] } or JSON array. Sellers: { "vendors": [...] }, { "companies": [...] } with nested locations, or { "states": { "kentucky": { "companies": [...] }, ... } }. You can combine keys in one request. Coordinates are not bulk-geocoded on import — use LastLeg iOS, geocode-apple.swift, or POST /api/geocode/bulk when you want server batch.'
     >
       <div className='mb-4'>
         <Link href='/map/companies'>
@@ -86,7 +86,7 @@ export default function CompaniesImportPage() {
       />
       <div className='mt-4 flex gap-2'>
         <Button type='button' onClick={() => void submit()} disabled={loading}>
-          {loading ? 'Importing…' : 'Import & geocode'}
+          {loading ? 'Importing…' : 'Import'}
         </Button>
       </div>
       {result ? (

@@ -16,8 +16,8 @@ import { join } from 'path';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { Pool } from 'pg';
+import { IMPORT_GEOCODE_DEFERRED } from '../src/lib/geocode-import-deferred';
 import { runCrmSupplierImport, type CrmSupplierJson } from '../src/lib/crm-supplier-import';
-import { runGeocodeBulkQueue } from '../src/lib/geocode-bulk-queue';
 
 config({ path: join(process.cwd(), '.env.local') });
 config({ path: join(process.cwd(), '.env') });
@@ -52,13 +52,7 @@ const prisma = new PrismaClient({ adapter: new PrismaPg(pool) });
 
 async function main() {
   const result = await runCrmSupplierImport(prisma, suppliers);
-  const geocode = await runGeocodeBulkQueue(prisma, {
-    locationExternalIds:
-      result.locationExternalIdsTouched.length > 0
-        ? result.locationExternalIdsTouched
-        : undefined
-  });
-  console.log(JSON.stringify({ ...result, geocode }, null, 2));
+  console.log(JSON.stringify({ ...result, geocode: IMPORT_GEOCODE_DEFERRED }, null, 2));
 }
 
 main()

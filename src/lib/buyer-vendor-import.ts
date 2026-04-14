@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import type { Prisma, PrismaClient } from '@prisma/client';
-import { runGeocodeBulkQueue } from '@/lib/geocode-bulk-queue';
+import { IMPORT_GEOCODE_DEFERRED } from '@/lib/geocode-import-deferred';
 
 function slugPart(s: string): string {
   return s
@@ -376,11 +376,7 @@ export async function runSellerVendorImport(
     upserted++;
   }
 
-  const geocode = await runGeocodeBulkQueue(prisma, {
-    locationExternalIds: locationExternalIdsTouched
-  });
-
-  return { upserted, locationExternalIdsTouched, geocode };
+  return { upserted, locationExternalIdsTouched, geocode: IMPORT_GEOCODE_DEFERRED };
 }
 
 export function isSellerVendorImportBody(body: unknown): body is BuyerVendorImportPayload {

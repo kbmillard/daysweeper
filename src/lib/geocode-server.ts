@@ -1,6 +1,7 @@
 /**
  * Server-side geocoding. Nominatim first, then Mapbox. No Google.
- * Use when creating or updating a location so new addresses get lat/lng automatically.
+ * Used by POST /api/geocode/bulk and other explicit server paths — not by CRM/seller JSON import
+ * (import defers coordinates to the Apple / LastLeg pipeline; see geocode-import-deferred.ts).
  */
 import {
   normalizeAddressForGeocode,

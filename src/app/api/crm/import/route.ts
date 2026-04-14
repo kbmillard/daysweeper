@@ -8,7 +8,7 @@ import {
   runSellerVendorImport
 } from '@/lib/buyer-vendor-import';
 import { runCrmSupplierImport, type CrmSupplierJson } from '@/lib/crm-supplier-import';
-import { runGeocodeBulkQueue } from '@/lib/geocode-bulk-queue';
+import { IMPORT_GEOCODE_DEFERRED } from '@/lib/geocode-import-deferred';
 
 export const runtime = 'nodejs';
 
@@ -104,13 +104,6 @@ export async function POST(req: Request) {
 
       const result = await runCrmSupplierImport(prisma, suppliers);
 
-      const geocode = await runGeocodeBulkQueue(prisma, {
-        locationExternalIds:
-          result.locationExternalIdsTouched.length > 0
-            ? result.locationExternalIdsTouched
-            : undefined
-      });
-
       return NextResponse.json({
         ok: true,
         companiesCreated: result.companiesCreated,
@@ -118,7 +111,7 @@ export async function POST(req: Request) {
         parentsLinked: result.parentsLinked,
         locationsCreated: result.locationsCreated,
         rowsRemappedToDbMaster: result.rowsRemappedToDbMaster,
-        geocode
+        geocode: IMPORT_GEOCODE_DEFERRED
       });
     }
 
@@ -140,19 +133,14 @@ export async function POST(req: Request) {
       );
     }
 
-    let geocodeSuppliers = { success: 0, failed: 0 };
-    let geocodeSellers = { success: 0, failed: 0 };
+    let geocodeSuppliers: typeof IMPORT_GEOCODE_DEFERRED | null = null;
+    let geocodeSellers: typeof IMPORT_GEOCODE_DEFERRED | null = null;
     let crmResult: Awaited<ReturnType<typeof runCrmSupplierImport>> | null = null;
     let sellerResult: Awaited<ReturnType<typeof runSellerVendorImport>> | null = null;
 
     if (suppliers.length) {
       crmResult = await runCrmSupplierImport(prisma, suppliers);
-      geocodeSuppliers = await runGeocodeBulkQueue(prisma, {
-        locationExternalIds:
-          crmResult.locationExternalIdsTouched.length > 0
-            ? crmResult.locationExternalIdsTouched
-            : undefined
-      });
+      geocodeSuppliers = IMPORT_GEOCODE_DEFERRED;
     }
 
     if (hasSellerPayload) {
@@ -168,7 +156,7 @@ export async function POST(req: Request) {
         parentsLinked: crmResult.parentsLinked,
         locationsCreated: crmResult.locationsCreated,
         rowsRemappedToDbMaster: crmResult.rowsRemappedToDbMaster,
-        geocode: geocodeSuppliers
+        geocode: geocodeSuppliers ?? IMPORT_GEOCODE_DEFERRED
       });
     }
 
@@ -178,7 +166,7 @@ export async function POST(req: Request) {
         importKind: 'sellers',
         upserted: sellerResult.upserted,
         locationExternalIdsTouched: sellerResult.locationExternalIdsTouched,
-        geocode: geocodeSellers
+        geocode: geocodeSellers ?? IMPORT_GEOCODE_DEFERRED
       });
     }
 
@@ -191,12 +179,12 @@ export async function POST(req: Request) {
         parentsLinked: crmResult!.parentsLinked,
         locationsCreated: crmResult!.locationsCreated,
         rowsRemappedToDbMaster: crmResult!.rowsRemappedToDbMaster,
-        geocode: geocodeSuppliers
+        geocode: geocodeSuppliers ?? IMPORT_GEOCODE_DEFERRED
       },
       sellers: {
         upserted: sellerResult!.upserted,
         locationExternalIdsTouched: sellerResult!.locationExternalIdsTouched,
-        geocode: geocodeSellers
+        geocode: geocodeSellers ?? IMPORT_GEOCODE_DEFERRED
       }
     });
   } catch (e: unknown) {
