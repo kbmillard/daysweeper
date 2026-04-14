@@ -6,6 +6,7 @@ import {
   parseStoredPlanner,
   type RoutePlannerState
 } from '@/lib/route-planner-types';
+import { resolveSellerCompanyIdsForTargets } from '@/lib/lastleg-resolve-seller-targets';
 import { targetToLead } from '@/lib/target-to-lead';
 
 export const dynamic = 'force-dynamic';
@@ -65,11 +66,15 @@ export async function GET(
           activeRouteName: route.name
         };
 
+    const sellerByTarget = await resolveSellerCompanyIdsForTargets(route.stops.map((s) => s.target));
     const targets = route.stops.map((s) =>
-      targetToLead({
-        ...s.target,
-        RouteStop: [{ seq: s.seq, outcome: s.outcome }]
-      })
+      targetToLead(
+        {
+          ...s.target,
+          RouteStop: [{ seq: s.seq, outcome: s.outcome }]
+        },
+        { resolvedSellerCompanyId: sellerByTarget.get(s.target.id) ?? null }
+      )
     );
 
     return NextResponse.json({

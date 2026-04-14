@@ -8,6 +8,7 @@ import {
   stopFieldsFromRouteOutcome,
   type RouteOutcomeValue
 } from '@/lib/route-stop-outcome';
+import { resolveSellerCompanyIdsForTargets } from '@/lib/lastleg-resolve-seller-targets';
 import { targetToLead } from '@/lib/target-to-lead';
 
 export const dynamic = 'force-dynamic';
@@ -48,7 +49,12 @@ export async function GET(
       return NextResponse.json({ error: 'Target not found' }, { status: 404 });
     }
 
-    return NextResponse.json({ target: targetToLead(target) });
+    const sellerByTarget = await resolveSellerCompanyIdsForTargets([target]);
+    return NextResponse.json({
+      target: targetToLead(target, {
+        resolvedSellerCompanyId: sellerByTarget.get(target.id) ?? null
+      })
+    });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to fetch target';
     return NextResponse.json({ error: message }, { status: 500 });
@@ -225,9 +231,18 @@ export async function PATCH(
     }
 
     const refreshed = await fetchTargetForLead(id);
+    const sellerByTarget = refreshed
+      ? await resolveSellerCompanyIdsForTargets([refreshed])
+      : new Map<string, string>();
     return NextResponse.json({
       ok: true,
-      ...(refreshed ? { target: targetToLead(refreshed) } : {})
+      ...(refreshed
+        ? {
+            target: targetToLead(refreshed, {
+              resolvedSellerCompanyId: sellerByTarget.get(refreshed.id) ?? null
+            })
+          }
+        : {})
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to update target';

@@ -157,25 +157,36 @@ function sellerIdForLead(
   return typeof companyId === 'string' && companyId.trim() ? companyId.trim() : null;
 }
 
-export function targetToLead(target: {
-  id: string;
-  company: string;
-  parentCompany?: string | null;
-  website?: string | null;
-  phone?: string | null;
-  email?: string | null;
-  /** When `'SELLER'` (e.g. add-to-route vendor path), LastLeg treats the lead as a seller pin. */
-  category?: string | null;
-  segment?: string | null;
-  addressRaw?: string | null;
-  addressNormalized?: string | null;
-  latitude?: unknown;
-  longitude?: unknown;
-  accountState?: string | null;
-  legacyJson?: unknown;
-  RouteStop?: Array<{ seq: number; outcome?: string | null }>;
-  TargetEnrichment?: { enrichedJson?: unknown } | null;
-}) {
+export type TargetToLeadOptions = {
+  /**
+   * When a route `Target` matches a CRM seller (`Company.isSeller` + legacy companyId or
+   * coordinate match). Forces LastLeg `map_pin_kind` / `seller_id` for iOS grey layer.
+   */
+  resolvedSellerCompanyId?: string | null;
+};
+
+export function targetToLead(
+  target: {
+    id: string;
+    company: string;
+    parentCompany?: string | null;
+    website?: string | null;
+    phone?: string | null;
+    email?: string | null;
+    /** When `'SELLER'` (e.g. add-to-route vendor path), LastLeg treats the lead as a seller pin. */
+    category?: string | null;
+    segment?: string | null;
+    addressRaw?: string | null;
+    addressNormalized?: string | null;
+    latitude?: unknown;
+    longitude?: unknown;
+    accountState?: string | null;
+    legacyJson?: unknown;
+    RouteStop?: Array<{ seq: number; outcome?: string | null }>;
+    TargetEnrichment?: { enrichedJson?: unknown } | null;
+  },
+  options?: TargetToLeadOptions
+) {
   const lat = target.latitude != null ? Number(target.latitude) : null;
   const lng = target.longitude != null ? Number(target.longitude) : null;
   const seq = target.RouteStop?.[0]?.seq;
@@ -194,6 +205,13 @@ export function targetToLead(target: {
     target.phone ??
     stringOrNull(pinResearch?.phone) ??
     stringOrNull(snapshot?.contactPhone);
+
+  const dbSellerId = options?.resolvedSellerCompanyId?.trim() || null;
+  const map_pin_kind: 'seller' | 'container' = dbSellerId
+    ? 'seller'
+    : mapPinKindForLead(target.legacyJson, target.category);
+  const seller_id: string | null =
+    dbSellerId ?? sellerIdForLead(target.legacyJson, target.category);
 
   return {
     id: target.id,
@@ -246,7 +264,7 @@ export function targetToLead(target: {
     route_outcome: routeOutcome,
     s: seq ?? null,
     /** LastLeg: grey active pins for seller / vendor-research companies (decoder expects snake_case). */
-    map_pin_kind: mapPinKindForLead(target.legacyJson, target.category),
-    seller_id: sellerIdForLead(target.legacyJson, target.category)
+    map_pin_kind,
+    seller_id
   };
 }

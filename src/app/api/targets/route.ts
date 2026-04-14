@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@clerk/nextjs/server';
+import { resolveSellerCompanyIdsForTargets } from '@/lib/lastleg-resolve-seller-targets';
 import { targetToLead } from '@/lib/target-to-lead';
 
 export const dynamic = 'force-dynamic';
@@ -46,11 +47,15 @@ export async function GET() {
       return NextResponse.json({ targets: [] });
     }
 
+    const sellerByTarget = await resolveSellerCompanyIdsForTargets(route.stops.map((s) => s.target));
     const targets = route.stops.map((s) =>
-      targetToLead({
-        ...s.target,
-        RouteStop: [{ seq: s.seq, outcome: s.outcome }]
-      })
+      targetToLead(
+        {
+          ...s.target,
+          RouteStop: [{ seq: s.seq, outcome: s.outcome }]
+        },
+        { resolvedSellerCompanyId: sellerByTarget.get(s.target.id) ?? null }
+      )
     );
 
     return NextResponse.json({ targets });

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 import { prisma } from '@/lib/prisma';
+import { resolveSellerCompanyIdsForTargets } from '@/lib/lastleg-resolve-seller-targets';
 import { targetToLead } from '@/lib/target-to-lead';
 
 export const dynamic = 'force-dynamic';
@@ -86,8 +87,13 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ target: null }, { headers: { 'Cache-Control': 'no-store' } });
     }
 
+    const sellerByTarget = await resolveSellerCompanyIdsForTargets([nearest.target]);
     return NextResponse.json(
-      { target: targetToLead(nearest.target) },
+      {
+        target: targetToLead(nearest.target, {
+          resolvedSellerCompanyId: sellerByTarget.get(nearest.target.id) ?? null
+        })
+      },
       { headers: { 'Cache-Control': 'no-store' } }
     );
   } catch (error: unknown) {
