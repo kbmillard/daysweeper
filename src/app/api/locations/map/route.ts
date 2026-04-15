@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { toMapboxCoordinates } from '@/lib/geocode-address';
+import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -17,7 +18,20 @@ export async function GET() {
         longitude: { not: null },
         Company: { hidden: false, isSeller: false }
       },
-      select: { id: true, companyId: true, addressRaw: true, latitude: true, longitude: true }
+      select: {
+        id: true,
+        companyId: true,
+        addressRaw: true,
+        addressNormalized: true,
+        latitude: true,
+        longitude: true,
+        locationName: true,
+        phone: true,
+        email: true,
+        website: true,
+        metadata: true,
+        Company: { select: { name: true } }
+      }
     });
 
     const features = locs
@@ -26,6 +40,9 @@ export async function GET() {
         const lng = loc.longitude != null ? Number(loc.longitude) : null;
         const coords = toMapboxCoordinates(lat, lng);
         if (!coords) return null;
+        const meta = parseLocationMetadata(loc.metadata);
+        const crmStatus = typeof meta.status === 'string' ? meta.status : '';
+        const companyName = (loc.Company.name ?? '').trim();
         return {
           type: 'Feature' as const,
           geometry: {
@@ -35,7 +52,17 @@ export async function GET() {
           properties: {
             id: loc.id,
             companyId: loc.companyId,
-            addressRaw: loc.addressRaw ?? ''
+            addressRaw: loc.addressRaw ?? '',
+            companyName,
+            displayTitle: companyName || loc.addressRaw || 'Location',
+            addressNormalized: loc.addressNormalized ?? '',
+            locationName: loc.locationName ?? '',
+            phone: loc.phone ?? '',
+            email: loc.email ?? '',
+            website: loc.website ?? '',
+            latDisplay: lat != null ? lat.toFixed(6) : '',
+            lngDisplay: lng != null ? lng.toFixed(6) : '',
+            crmStatus
           }
         };
       })

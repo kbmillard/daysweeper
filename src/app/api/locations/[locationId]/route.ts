@@ -32,13 +32,15 @@ export async function PATCH(
       website,
       status,
       productType,
-      userTookOwnershipOfPrimaryFields
+      userTookOwnershipOfPrimaryFields,
+      appendLinkedMapPin
     } = body;
 
     const wantsMetadataRead =
       userTookOwnershipOfPrimaryFields === true ||
       status !== undefined ||
-      productType !== undefined;
+      productType !== undefined ||
+      appendLinkedMapPin != null;
 
     let mergedMetadata: Prisma.InputJsonValue | undefined;
     if (wantsMetadataRead) {
@@ -60,8 +62,22 @@ export async function PATCH(
       const needsMetadataMerge =
         userTookOwnershipOfPrimaryFields === true || applyStatus || applyProductType;
 
-      if (needsMetadataMerge) {
+      if (needsMetadataMerge || appendLinkedMapPin != null) {
         const m = parseLocationMetadata(existing.metadata);
+        if (appendLinkedMapPin != null && typeof appendLinkedMapPin === 'object') {
+          const raw = appendLinkedMapPin as Record<string, unknown>;
+          const la = Number(raw.lat);
+          const lo = Number(raw.lng);
+          if (!Number.isFinite(la) || !Number.isFinite(lo)) {
+            return NextResponse.json(
+              { error: 'appendLinkedMapPin requires numeric lat and lng' },
+              { status: 400 }
+            );
+          }
+          const prev = Array.isArray(m.linkedMapPins) ? [...(m.linkedMapPins as object[])] : [];
+          prev.push({ lat: la, lng: lo });
+          m.linkedMapPins = prev;
+        }
         if (userTookOwnershipOfPrimaryFields === true) {
           m.suppressCompanyPrimarySync = true;
         }

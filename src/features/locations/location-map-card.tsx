@@ -20,7 +20,9 @@ const DEFAULT_ZOOM_NO_COORDS = 4;
 
 /** Single location pin on this page only (no global dots-pins layer). */
 const LOCATION_DOT_COLOR = '#9333ea';
+const LINKED_CONTAINER_DOT = '#2563EB';
 const LOCATION_DOT_PX = 7;
+const LINKED_DOT_PX = 6;
 
 function safeNum(v: unknown): number | null {
   const n = Number(v);
@@ -63,14 +65,17 @@ type Props = {
   longitude: number | null;
   address?: string | null;
   locationId?: string | null;
+  /** Extra pins (e.g. container / object-detection dots) linked from the main map. */
+  linkedPins?: { lat: number; lng: number }[];
 };
 
 // ── Inner map component ──────────────────────────────────────────────────────
-function LocationMapCardInner({ latitude, longitude, address, locationId }: Props) {
+function LocationMapCardInner({ latitude, longitude, address, locationId, linkedPins = [] }: Props) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const markerRef = useRef<google.maps.Marker | null>(null);
+  const linkedMarkersRef = useRef<google.maps.Marker[]>([]);
   const listenersRef = useRef<google.maps.MapsEventListener[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [showCard, setShowCard] = useState(false);
@@ -235,6 +240,23 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
           listenersRef.current.push(marker.addListener('click', () => { try { setShowCard(true); } catch { /* ignore */ } }));
         }
 
+        linkedMarkersRef.current.forEach((m) => {
+          try { m.setMap(null); } catch { /* ignore */ }
+        });
+        linkedMarkersRef.current = [];
+        const linkedIcon = svgPin(LINKED_CONTAINER_DOT, LINKED_DOT_PX);
+        for (const lp of linkedPins) {
+          if (!Number.isFinite(lp.lat) || !Number.isFinite(lp.lng)) continue;
+          const lm = new google.maps.Marker({
+            map,
+            position: { lat: lp.lat, lng: lp.lng },
+            icon: linkedIcon,
+            zIndex: 1,
+            title: 'Linked map pin',
+          });
+          linkedMarkersRef.current.push(lm);
+        }
+
         // Click to place/move pin
         if (canEdit) {
           listenersRef.current.push(
@@ -276,9 +298,13 @@ function LocationMapCardInner({ latitude, longitude, address, locationId }: Prop
       cleanupListeners();
       try { markerRef.current?.setMap(null); } catch { /* ignore */ }
       markerRef.current = null;
+      linkedMarkersRef.current.forEach((m) => {
+        try { m.setMap(null); } catch { /* ignore */ }
+      });
+      linkedMarkersRef.current = [];
       mapRef.current = null;
     };
-  }, [showMap, canEdit, hasCoords, savedLat, savedLng, addressHint?.lat, addressHint?.lng]);
+  }, [showMap, canEdit, hasCoords, savedLat, savedLng, addressHint?.lat, addressHint?.lng, linkedPins]);
 
   useEffect(() => {
     try {

@@ -46,7 +46,21 @@ export async function GET() {
         select: { id: true, latitude: true, longitude: true }
       });
       mapPinTableAvailable = true;
-      const keys = userPins.map((p) =>
+      let hiddenSet = new Set<string>();
+      try {
+        const hiddenRows = await prisma.hiddenDot.findMany({
+          select: { latitude: true, longitude: true }
+        });
+        hiddenSet = new Set(
+          hiddenRows.map((h) => coordKey(Number(h.latitude), Number(h.longitude)))
+        );
+      } catch {
+        /* HiddenDot may be absent */
+      }
+      const visiblePins = userPins.filter(
+        (p) => !hiddenSet.has(coordKey(Number(p.latitude), Number(p.longitude)))
+      );
+      const keys = visiblePins.map((p) =>
         pinResearchDefaultCacheKey(Number(p.latitude), Number(p.longitude))
       );
       const cachedRows = keys.length
@@ -64,7 +78,7 @@ export async function GET() {
       }
       // Use kml so map colors match LastLeg route targets (active=blue). MapPin rows are the
       // canonical synced dot layer (KML/build pipeline), not ad-hoc "user" drop semantics.
-      dbPins = userPins.map((p) => ({
+      dbPins = visiblePins.map((p) => ({
         lng: Number(p.longitude),
         lat: Number(p.latitude),
         id: p.id,

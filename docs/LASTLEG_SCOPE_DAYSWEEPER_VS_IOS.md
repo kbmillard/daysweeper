@@ -4,6 +4,7 @@
 
 Daysweeper **owns** persistence and the HTTP contract for:
 
+- **Lead wire fields (`map_pin_kind`, `seller_id`, `category`):** **`docs/LASTLEG_MAP_PIN_KIND_CONTRACT.md`** in the **LastLeg iOS** repo (`rb-lastleg-ios`) (vs enrichment “layers”; distinct grey seller pins not a current LastLeg iOS goal).
 - **Planned routes:** `lastleg://planned-route` → **`GET /api/routes/[routeId]/lastleg`** (see **`docs/LASTLEG_URL_SCHEME.md`**).
 - **Pin / stop outcomes:** **`RouteStop.outcome`** (`StopOutcome`), **PATCH/GET** **`route_outcome`** on leads (see **`docs/DAYSWEEPER_PIN_STATUS_HANDOFF.md`**).
 

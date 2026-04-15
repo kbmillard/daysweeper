@@ -9,6 +9,22 @@ import { SetAsHeadquartersButton } from '@/features/companies/set-as-headquarter
 import CompanyInteractions from '../../company-interactions';
 import { AddChildCompanySearch } from '@/app/dashboard/companies/[companyId]/add-child-company-search';
 import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
+import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
+
+function linkedPinsFromMetadata(metadata: unknown): { lat: number; lng: number }[] {
+  const m = parseLocationMetadata(metadata);
+  const raw = m.linkedMapPins;
+  if (!Array.isArray(raw)) return [];
+  const out: { lat: number; lng: number }[] = [];
+  for (const item of raw) {
+    if (!item || typeof item !== 'object') continue;
+    const o = item as Record<string, unknown>;
+    const la = Number(o.lat);
+    const lo = Number(o.lng);
+    if (Number.isFinite(la) && Number.isFinite(lo)) out.push({ lat: la, lng: lo });
+  }
+  return out;
+}
 
 type LocationWithCompany = {
   id: string;
@@ -35,6 +51,7 @@ type LocationWithCompany = {
     phone: string | null;
     email: string | null;
     status: string | null;
+    isSeller?: boolean;
     metadata: unknown;
     primaryLocationId: string | null;
     Location: Array<{
@@ -57,6 +74,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
   const lng = location.longitude != null ? Number(location.longitude) : null;
   const isPrimaryLocation = company.primaryLocationId === location.id;
   const companyProductType = productTypeFromMetadata(company.metadata);
+  const linkedMapPins = linkedPinsFromMetadata(location.metadata);
 
   return (
     <div className='flex flex-col gap-6 pb-8'>
@@ -108,6 +126,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
         longitude={lng}
         address={location.addressRaw}
         locationId={location.id}
+        linkedPins={linkedMapPins}
       />
 
       <LocationEditableFields
@@ -134,7 +153,8 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
           email: company.email,
           status: company.status,
           productType: companyProductType || null,
-          primaryLocationId: company.primaryLocationId
+          primaryLocationId: company.primaryLocationId,
+          isSeller: company.isSeller
         }}
         editableLocationContact
         isPrimaryLocation={isPrimaryLocation}

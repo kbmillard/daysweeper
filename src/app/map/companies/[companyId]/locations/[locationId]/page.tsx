@@ -50,6 +50,7 @@ const locationDetailSelect = {
       phone: true,
       email: true,
       status: true,
+      isSeller: true,
       metadata: true,
       primaryLocationId: true,
       Location: {

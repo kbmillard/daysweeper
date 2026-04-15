@@ -34,7 +34,14 @@ export async function DELETE(req: Request) {
 
     if (id) {
       try {
-        await prisma.mapPin.delete({ where: { id } });
+        const row = await prisma.mapPin.delete({ where: { id } });
+        try {
+          await prisma.hiddenDot.create({
+            data: { latitude: row.latitude, longitude: row.longitude }
+          });
+        } catch {
+          /* duplicate = already hidden */
+        }
       } catch (e: unknown) {
         const err = e as { code?: string };
         if (err?.code === 'P2025') {
@@ -61,21 +68,19 @@ export async function DELETE(req: Request) {
       where: { latitude: dLat, longitude: dLng }
     });
 
-    let hiddenRemoved = 0;
+    /** Record hide so deploy-time MapPin re-sync does not show this coordinate again. */
     try {
-      const hd = await prisma.hiddenDot.deleteMany({
-        where: { latitude: dLat, longitude: dLng }
+      await prisma.hiddenDot.create({
+        data: { latitude: dLat, longitude: dLng }
       });
-      hiddenRemoved = hd.count;
     } catch {
-      /* HiddenDot table may be absent */
+      /* duplicate or table missing */
     }
 
     return NextResponse.json({
       ok: true,
       by: 'coordinates' as const,
-      deletedMapPins: pins.count,
-      deletedHiddenDots: hiddenRemoved
+      deletedMapPins: pins.count
     });
   } catch (e) {
     return NextResponse.json(

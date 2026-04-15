@@ -80,7 +80,7 @@ export async function getSellerMapPins(): Promise<SellerMapPin[]> {
       locationId: loc.id,
       lat: lat!,
       lng: lng!,
-      label: c.name,
+      label: (c.name ?? '').trim() || loc.addressRaw || 'Seller',
       addressRaw: loc.addressRaw || undefined,
       phone: c.phone ?? undefined,
       website: c.website ?? undefined,

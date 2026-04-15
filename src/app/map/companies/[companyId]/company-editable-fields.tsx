@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -21,7 +22,8 @@ import {
   DialogHeader,
   DialogTitle
 } from '@/components/ui/dialog';
-import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
+import { displayStatus } from '@/constants/company-status';
+import { CrmPipelineStatusField } from '@/components/crm/crm-pipeline-status-field';
 import { toast } from 'sonner';
 import { IconPlus } from '@tabler/icons-react';
 
@@ -45,6 +47,10 @@ type Props = {
 };
 
 export default function CompanyEditableFields({ company, primaryLocationId }: Props) {
+  const saveTintClass =
+    company.isSeller === true
+      ? 'before:hidden bg-slate-600 hover:bg-slate-600 text-white shadow-md hover:-translate-y-0.5'
+      : 'before:hidden bg-violet-600 hover:bg-violet-700 text-white shadow-md hover:-translate-y-0.5';
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [productTypeOptions, setProductTypeOptions] = useState<string[]>([]);
@@ -205,7 +211,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     <Card>
       <CardHeader className='flex flex-row items-center justify-between space-y-0'>
         <CardTitle>Company Details</CardTitle>
-        <Button onClick={handleSave} disabled={saving} size='sm'>
+        <Button onClick={handleSave} disabled={saving} size='sm' className={cn(saveTintClass)}>
           {saving ? 'Saving…' : 'Save'}
         </Button>
       </CardHeader>
@@ -233,23 +239,13 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
             />
           </div>
           <div>
-            <Label htmlFor='status'>Status</Label>
-            <Select
-              value={form.status || '__none__'}
-              onValueChange={(v) => handleChange('status', v === '__none__' ? '' : v)}
-            >
-              <SelectTrigger id='status' className='mt-1'>
-                <SelectValue placeholder='Status' />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value='__none__'>— No status —</SelectItem>
-                {COMPANY_STATUSES.map((s) => (
-                  <SelectItem key={s} value={s}>
-                    {s}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <CrmPipelineStatusField
+              id='status'
+              label='Status'
+              helperText='Same lanes as the big map and LastLeg route pins.'
+              value={form.status}
+              onChange={(v) => handleChange('status', v)}
+            />
           </div>
           <div>
             <Label htmlFor='website'>Website</Label>

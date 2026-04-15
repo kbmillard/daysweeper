@@ -107,6 +107,7 @@ export function RoutePlannerSheet({
   const [routeName, setRouteName] = useState('');
   const [selectedRouteId, setSelectedRouteId] = useState('');
   const [routes, setRoutes] = useState<RouteRow[]>([]);
+  const [savingRouteName, setSavingRouteName] = useState(false);
 
   const loadRoutes = useCallback(async () => {
     try {
@@ -346,6 +347,36 @@ export function RoutePlannerSheet({
     }
   };
 
+  const saveRouteName = async () => {
+    const id = selectedRouteId.trim();
+    if (!id) {
+      toast.error('Choose a route in “LastLeg route” first.');
+      return;
+    }
+    const name = routeName.trim();
+    if (!name) {
+      toast.error('Enter a route name');
+      return;
+    }
+    setSavingRouteName(true);
+    try {
+      const res = await fetch(`/api/routes/${encodeURIComponent(id)}`, {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name }),
+      });
+      const j = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) throw new Error(j.error ?? 'Could not save name');
+      toast.success('Route name saved');
+      await loadRoutes();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : 'Save failed');
+    } finally {
+      setSavingRouteName(false);
+    }
+  };
+
   const sendRouteToLastLeg = async () => {
     const routeId = selectedRouteId.trim();
     if (!routeId) {
@@ -383,6 +414,15 @@ export function RoutePlannerSheet({
   const gUrl = activeSummary?.active ? googleDirectionsUrl(activeSummary.vertices) : null;
   const aUrl = activeSummary?.active ? appleMapsUrl(activeSummary.vertices) : null;
   const badgeCount = corridorVisibleCount(activeSummary, pinLayers);
+  const L = pinLayers ?? DEFAULT_LAYERS;
+  const visibleCorridorLines =
+    activeSummary?.active && Array.isArray(activeSummary.corridorLines)
+      ? activeSummary.corridorLines.filter((line) => {
+          if (line.kind === 'target') return L.containers;
+          if (line.kind === 'seller') return L.sellers;
+          return L.companies;
+        })
+      : [];
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -444,12 +484,23 @@ export function RoutePlannerSheet({
 
           <div className='space-y-2'>
             <Label className='text-white/80'>Route name</Label>
-            <Input
-              value={routeName}
-              onChange={(e) => setRouteName(e.target.value)}
-              placeholder='Name shown in Daysweeper + LastLeg'
-              className='border-white/15 bg-white/5 text-white placeholder:text-white/35'
-            />
+            <div className='flex gap-2'>
+              <Input
+                value={routeName}
+                onChange={(e) => setRouteName(e.target.value)}
+                placeholder='Name shown in Daysweeper + LastLeg'
+                className='min-w-0 flex-1 border-white/15 bg-white/5 text-white placeholder:text-white/35'
+              />
+              <Button
+                type='button'
+                variant='secondary'
+                className='shrink-0 text-white'
+                disabled={savingRouteName || !selectedRouteId.trim()}
+                onClick={() => void saveRouteName()}
+              >
+                {savingRouteName ? 'Saving…' : 'Save'}
+              </Button>
+            </div>
           </div>
 
           {pinLayers && onPinLayersChange && (
@@ -469,13 +520,13 @@ export function RoutePlannerSheet({
             </div>
           )}
 
-          {activeSummary?.active && (activeSummary.corridorLines?.length ?? 0) > 0 && (
+          {activeSummary?.active && visibleCorridorLines.length > 0 && (
             <div className='rounded-xl border border-white/10 bg-white/5 px-3 py-2'>
               <p className='mb-2 text-[12px] font-medium uppercase tracking-wide text-white/50'>
                 In corridor (along route)
               </p>
               <ol className='max-h-48 list-decimal space-y-1 overflow-y-auto pl-4 text-[13px] text-white/85'>
-                {(activeSummary.corridorLines ?? []).map((line, i) => (
+                {visibleCorridorLines.map((line, i) => (
                   <li key={`${line.kind}-${i}`}>
                     <span className='text-white/50'>
                       {line.kind === 'target'

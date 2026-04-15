@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
-import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
+import { subscribeToLocationsMapUpdate, notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
@@ -23,6 +23,12 @@ import {
 import { resolveRouteWaypoint } from '@/lib/route-geocode-client';
 import { useDebouncedCallback } from '@/hooks/use-debounced-callback';
 import { minDistanceToPolyline } from '@/lib/route-corridor';
+import {
+  dotColorFromLastLegSignals,
+  statusButtonSelectionFromSignals,
+  statusButtonToPatch
+} from '@/lib/map-pin-colors';
+import { CRM_LANE_CHIPS } from '@/lib/crm-pipeline-alignment';
 
 /** Company / location markers on the map (not red dots). */
 const COMPANY_PIN_COLOR = '#9333ea';
@@ -55,7 +61,10 @@ function openLastLegApp(): void {
 // SVG data-URI pin — never flashes white on zoom (unlike SymbolPath.CIRCLE)
 function svgPin(g: typeof google, color: string, size: number): google.maps.Icon {
   const d = size * 2;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${d}" height="${d}"><circle cx="${size}" cy="${size}" r="${size - 1}" fill="${color}" stroke="#fff" stroke-width="1.5"/></svg>`;
+  const lightFill = /^#f3f4f6$/i.test(color);
+  const stroke = lightFill ? '#64748b' : '#ffffff';
+  const sw = lightFill ? 2 : 1.5;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${d}" height="${d}"><circle cx="${size}" cy="${size}" r="${size - 1}" fill="${color}" stroke="${stroke}" stroke-width="${sw}"/></svg>`;
   return {
     url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
     scaledSize: new g.maps.Size(d, d),
@@ -102,7 +111,21 @@ const MAP_PIN_HOLD_MOVE_PX = 12;
 type GeoJSONFeature = {
   type: 'Feature';
   geometry: { type: 'Point'; coordinates: [number, number] };
-  properties: { id: string; companyId: string; addressRaw: string };
+  properties: {
+    id: string;
+    companyId: string;
+    addressRaw: string;
+    companyName?: string;
+    displayTitle?: string;
+    addressNormalized?: string;
+    locationName?: string;
+    phone?: string;
+    email?: string;
+    website?: string;
+    latDisplay?: string;
+    lngDisplay?: string;
+    crmStatus?: string;
+  };
 };
 type GeoJSONResponse = { type: 'FeatureCollection'; features: GeoJSONFeature[] };
 type RedPin = {
@@ -119,9 +142,27 @@ type RedPin = {
   summary?: string;
   alternativeNames?: string[];
   accountState?: string;
+  /** From `RouteStop.outcome` when target is on the user’s route — drives pin color with `accountState`. */
+  routeOutcome?: string;
   targetId?: string;
 };
-type LocationPin = { locationId: string; companyId: string; addressRaw?: string; lat: number; lng: number };
+type LocationPin = {
+  locationId: string;
+  companyId: string;
+  addressRaw?: string;
+  lat: number;
+  lng: number;
+  companyName?: string;
+  displayTitle?: string;
+  addressNormalized?: string;
+  locationName?: string;
+  phone?: string;
+  email?: string;
+  website?: string;
+  latDisplay?: string;
+  lngDisplay?: string;
+  crmStatus?: string;
+};
 /** Grey pins: seller / vendor-research companies (Company.isSeller + geocoded location) */
 type SellerPin = {
   id: string;
@@ -189,6 +230,8 @@ export default function EmptyMapClient() {
   const [addToLastLegLocked, setAddToLastLegLocked] = useState(false);
   const [deleteDotConfirmOpen, setDeleteDotConfirmOpen] = useState(false);
   const [deletingRedDot, setDeletingRedDot] = useState(false);
+  const [attachLocationId, setAttachLocationId] = useState('');
+  const [attachSaving, setAttachSaving] = useState(false);
   const [placeResearchHint, setPlaceResearchHint] = useState('');
   const [placeResearchLoading, setPlaceResearchLoading] = useState(false);
   const [placeResearchResult, setPlaceResearchResult] = useState<PinResearchApiOk | null>(null);
@@ -305,7 +348,9 @@ export default function EmptyMapClient() {
     setSuggestOpen(false);
   }, []);
   const [settingPrimary, setSettingPrimary] = useState(false);
-  const [pinStatus, setPinStatus] = useState<string | null>(null);
+  const [pinStatus, setPinStatus] = useState<
+    'NEW_UNCONTACTED' | 'NEW_CONTACTED_NO_ANSWER' | 'ACCOUNT' | null
+  >(null);
 
   useEffect(() => {
     if (!selectedPin) {
@@ -332,10 +377,14 @@ export default function EmptyMapClient() {
     applyMarkerLayersRef.current?.();
   }, [pinLayers]);
 
-  // Sync local pin status from accountState when pin changes
   useEffect(() => {
     if (selectedPin?.type === 'dot') {
-      setPinStatus(selectedPin.data.accountState ?? null);
+      setPinStatus(
+        statusButtonSelectionFromSignals(
+          selectedPin.data.accountState,
+          selectedPin.data.routeOutcome
+        )
+      );
     } else {
       setPinStatus(null);
     }
@@ -367,19 +416,36 @@ export default function EmptyMapClient() {
   const handleSetStatus = async (newState: string) => {
     if (!selectedPin || selectedPin.type !== 'dot' || !selectedPin.data.targetId) return;
     const prev = pinStatus;
-    setPinStatus(newState);
+    const patch = statusButtonToPatch(newState);
+    setPinStatus(statusButtonSelectionFromSignals(patch.account_state, patch.route_outcome));
     try {
+      const body: Record<string, unknown> = { account_state: patch.account_state };
+      if (patch.route_outcome === null) {
+        body.route_outcome = null;
+      } else {
+        body.route_outcome = patch.route_outcome;
+      }
       const res = await fetch(`/api/targets/${selectedPin.data.targetId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ account_state: newState }),
+        body: JSON.stringify(body),
       });
       if (!res.ok) throw new Error('Failed');
       setSelectedPin((p) =>
-        p?.type === 'dot' ? { ...p, data: { ...p.data, accountState: newState } } : p
+        p?.type === 'dot'
+          ? {
+              ...p,
+              data: {
+                ...p.data,
+                accountState: patch.account_state,
+                routeOutcome: patch.route_outcome ?? undefined,
+              },
+            }
+          : p
       );
       toast.success('Status updated');
+      await refetchDotsRef.current?.();
     } catch {
       setPinStatus(prev);
       toast.error('Failed to update status');
@@ -540,6 +606,44 @@ export default function EmptyMapClient() {
     }
   };
 
+  const copyToClipboard = async (text: string, label = 'Copied') => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.success(label);
+    } catch {
+      toast.error('Could not copy');
+    }
+  };
+
+  const handleAttachDotToLocation = async () => {
+    if (!selectedPin || selectedPin.type !== 'dot') return;
+    const lid = attachLocationId.trim();
+    if (!lid) {
+      toast.error('Paste the location ID from the purple pin’s location page URL (…/locations/[id]).');
+      return;
+    }
+    setAttachSaving(true);
+    try {
+      const res = await fetch(`/api/locations/${encodeURIComponent(lid)}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          appendLinkedMapPin: { lat: selectedPin.data.lat, lng: selectedPin.data.lng },
+        }),
+      });
+      const j = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) throw new Error(j.error ?? 'Attach failed');
+      toast.success('Container / dot pin linked to that location. Open the location page to see it on the map.');
+      setAttachLocationId('');
+      notifyLocationsMapUpdate();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Attach failed');
+    } finally {
+      setAttachSaving(false);
+    }
+  };
+
   useEffect(() => {
     if (!containerRef.current) return;
     let cancelled = false;
@@ -619,11 +723,29 @@ export default function EmptyMapClient() {
                 opacity: inCorridor ? 1 : 0.32
               });
               marker.addListener('click', () => {
-                if (props?.id && props?.companyId)
+                if (props?.id && props?.companyId) {
+                  const p = props as GeoJSONFeature['properties'];
                   setSelectedPin({
                     type: 'location',
-                    data: { locationId: props.id, companyId: props.companyId, addressRaw: props.addressRaw, lat, lng }
+                    data: {
+                      locationId: p.id,
+                      companyId: p.companyId,
+                      addressRaw: p.addressRaw,
+                      lat,
+                      lng,
+                      companyName: p.companyName,
+                      displayTitle: p.displayTitle,
+                      addressNormalized: p.addressNormalized,
+                      locationName: p.locationName,
+                      phone: p.phone,
+                      email: p.email,
+                      website: p.website,
+                      latDisplay: p.latDisplay,
+                      lngDisplay: p.lngDisplay,
+                      crmStatus: p.crmStatus,
+                    },
                   });
+                }
               });
               locationMarkersRef.current.push(marker);
             } catch { /* skip bad feature */ }
@@ -646,8 +768,9 @@ export default function EmptyMapClient() {
               : null;
           pins.forEach((p) => {
             try {
-              let color = '#dc2626';
-              let size = 5;
+              const statusColor = dotColorFromLastLegSignals(p.accountState, p.routeOutcome);
+              let color = statusColor;
+              let size = 10;
               let label: string | undefined;
               let z = 1;
               let opacity = 1;
@@ -664,26 +787,27 @@ export default function EmptyMapClient() {
               }
               if (!insideCorridor) {
                 color = '#57534e';
-                size = 4;
+                size = 7;
                 z = 0;
                 opacity = 0.3;
               } else if (planner?.active && p.targetId) {
                 const idx = planner.rankedTargetIds.indexOf(p.targetId);
                 if (idx >= 0) {
-                  color = '#ec4899';
-                  size = 6;
+                  color = statusColor;
+                  size = 15;
                   label = String(idx + 1);
-                  z = 3;
+                  z = 4;
                 } else {
-                  color = '#78716c';
-                  size = 4;
-                  z = 1;
+                  color = statusColor;
+                  size = 10;
+                  z = 2;
                 }
               } else if (planner?.active) {
                 color = '#9ca3af';
-                size = 4;
+                size = 8;
                 z = 1;
               }
+              const labelLight = /^#f3f4f6$/i.test(color);
               const marker = new g.maps.Marker({
                 map,
                 position: { lat: p.lat, lng: p.lng },
@@ -691,7 +815,12 @@ export default function EmptyMapClient() {
                 zIndex: z,
                 opacity,
                 label: label
-                  ? { text: label, color: '#ffffff', fontSize: '11px', fontWeight: 'bold' }
+                  ? {
+                      text: label,
+                      color: labelLight ? '#171717' : '#ffffff',
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                    }
                   : undefined
               });
               marker.addListener('click', () => {
@@ -712,6 +841,7 @@ export default function EmptyMapClient() {
                     summary: p.summary,
                     alternativeNames: p.alternativeNames,
                     accountState: p.accountState,
+                    routeOutcome: p.routeOutcome,
                     targetId: p.targetId,
                   }
                 });
@@ -1209,7 +1339,7 @@ export default function EmptyMapClient() {
             </button>
           </div>
         </div>
-        <p className="text-white/70 text-[13px] drop-shadow-sm pl-1">Or press and hold the map to drop a red pin</p>
+        <p className="text-white/70 text-[13px] drop-shadow-sm pl-1">Or press and hold the map to drop a pin</p>
       </div>
 
       {/* Route planner + map type */}
@@ -1232,15 +1362,95 @@ export default function EmptyMapClient() {
       </div>
 
       {selectedPin && (
-        <div className="absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md ios-card ios-animate-in p-5">
+        <div className="absolute top-16 right-3 z-10 w-[min(100vw-1.5rem,28rem)] max-h-[min(85vh,calc(100vh-5rem))] overflow-y-auto ios-card ios-animate-in p-5 shadow-2xl border border-white/10 sm:right-4">
+          <div className="relative z-[1]">
           {/* Pin title */}
           <p className="text-[15px] font-semibold text-foreground/90 mb-1 leading-snug">
             {selectedPin.type === 'location'
-              ? (selectedPin.data.addressRaw || 'Location')
+              ? (selectedPin.data.displayTitle ||
+                  selectedPin.data.companyName ||
+                  selectedPin.data.addressRaw ||
+                  'Location')
               : selectedPin.type === 'seller'
-                ? selectedPin.data.label
+                ? (selectedPin.data.label || selectedPin.data.addressRaw || 'Seller')
                 : (selectedPin.data.label || `Dot ${selectedPin.data.lat.toFixed(5)}, ${selectedPin.data.lng.toFixed(5)}`)}
           </p>
+          {(selectedPin.type === 'location' || selectedPin.type === 'seller' || selectedPin.type === 'dot') && (
+            <div className="mb-3 flex flex-wrap items-center gap-2 text-[12px] font-mono text-muted-foreground">
+              <span>
+                {selectedPin.type === 'location' && selectedPin.data.latDisplay && selectedPin.data.lngDisplay
+                  ? `${selectedPin.data.latDisplay}, ${selectedPin.data.lngDisplay}`
+                  : `${selectedPin.data.lat.toFixed(6)}, ${selectedPin.data.lng.toFixed(6)}`}
+              </span>
+              <button
+                type="button"
+                onClick={() =>
+                  void copyToClipboard(
+                    selectedPin.type === 'location' && selectedPin.data.latDisplay && selectedPin.data.lngDisplay
+                      ? `${selectedPin.data.latDisplay}, ${selectedPin.data.lngDisplay}`
+                      : `${selectedPin.data.lat.toFixed(6)}, ${selectedPin.data.lng.toFixed(6)}`,
+                    'Coordinates copied'
+                  )
+                }
+                className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-sans text-foreground hover:bg-white/20"
+              >
+                Copy lat,lng
+              </button>
+            </div>
+          )}
+
+          {selectedPin.type === 'location' && (
+            <div className="mb-4 space-y-1.5 rounded-lg border border-white/10 bg-white/5 p-3 text-[13px]">
+              {selectedPin.data.companyName ? (
+                <p>
+                  <span className="text-muted-foreground">Company </span>
+                  <span className="font-medium">{selectedPin.data.companyName}</span>
+                </p>
+              ) : null}
+              {selectedPin.data.addressNormalized ? (
+                <p className="text-muted-foreground">{selectedPin.data.addressNormalized}</p>
+              ) : null}
+              {selectedPin.data.locationName ? (
+                <p>
+                  <span className="text-muted-foreground">Location name </span>
+                  {selectedPin.data.locationName}
+                </p>
+              ) : null}
+              {selectedPin.data.phone ? (
+                <p>
+                  <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className="ios-link">
+                    {selectedPin.data.phone}
+                  </a>
+                </p>
+              ) : null}
+              {selectedPin.data.email ? (
+                <p>
+                  <a href={`mailto:${selectedPin.data.email}`} className="ios-link break-all">
+                    {selectedPin.data.email}
+                  </a>
+                </p>
+              ) : null}
+              {selectedPin.data.website ? (
+                <p>
+                  <a href={selectedPin.data.website} target="_blank" rel="noopener noreferrer" className="ios-link break-all">
+                    {selectedPin.data.website}
+                  </a>
+                </p>
+              ) : null}
+              {selectedPin.data.crmStatus ? (
+                <p className="text-[12px]">
+                  <span className="text-muted-foreground">Status </span>
+                  {selectedPin.data.crmStatus}
+                </p>
+              ) : null}
+              <Link
+                href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`}
+                className="inline-block pt-1 text-[13px] font-semibold text-primary underline-offset-2 hover:underline"
+              >
+                Edit on location page →
+              </Link>
+            </div>
+          )}
 
           {/* Additional pin details */}
           {selectedPin.type === 'seller' &&
@@ -1311,6 +1521,33 @@ export default function EmptyMapClient() {
             </div>
           )}
 
+          {selectedPin.type === 'dot' && (
+            <div className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3">
+              <p className="ios-section-label mb-1 text-amber-200">Attach to location</p>
+              <p className="mb-2 text-[12px] text-muted-foreground">
+                Paste the <span className="text-foreground/90">location ID</span> from the purple pin’s URL{' '}
+                <span className="font-mono text-[11px]">…/locations/[id]</span>, then link this dot to that facility map.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <input
+                  type="text"
+                  value={attachLocationId}
+                  onChange={(e) => setAttachLocationId(e.target.value)}
+                  placeholder="Location ID (UUID)"
+                  className="min-h-9 min-w-0 flex-1 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[13px] text-foreground placeholder:text-white/35"
+                />
+                <button
+                  type="button"
+                  disabled={attachSaving || !attachLocationId.trim()}
+                  onClick={() => void handleAttachDotToLocation()}
+                  className="shrink-0 rounded-full bg-amber-600 px-4 py-2 text-[13px] font-semibold text-white hover:bg-amber-500 disabled:opacity-50"
+                >
+                  {attachSaving ? 'Linking…' : 'Attach pin to location'}
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Other company names onsite */}
           {selectedPin.type === 'dot' && selectedPin.data.alternativeNames && selectedPin.data.alternativeNames.length > 0 && (
             <div className="mb-4">
@@ -1338,22 +1575,23 @@ export default function EmptyMapClient() {
             <div className="mb-4">
               <p className="ios-section-label mb-2">Pin status</p>
               <div className="flex gap-2 flex-wrap">
-                {([
-                  { state: 'NEW_UNCONTACTED', label: 'Active', color: 'bg-gray-500/20 text-gray-300' },
-                  { state: 'NEW_CONTACTED_NO_ANSWER', label: 'No Answer', color: 'bg-red-500/20 text-red-300' },
-                  { state: 'ACCOUNT', label: 'Visited', color: 'bg-blue-500/20 text-blue-300' },
-                ] as const).map(({ state, label, color }) => (
+                {CRM_LANE_CHIPS.map(({ lane: state, label, activeClass }) => {
+                  const on = pinStatus === state;
+                  return (
                   <button
                     key={state}
                     type="button"
                     onClick={() => void handleSetStatus(state)}
-                    className={`rounded-full px-3 py-1 text-[13px] font-medium transition-all ${color} ${
-                      pinStatus === state ? 'ring-2 ring-white/50 scale-105' : 'opacity-60 hover:opacity-90'
+                    className={`rounded-full px-3 py-2 text-[13px] font-semibold transition-all border border-black/10 shadow-sm dark:border-white/20 ${
+                      on
+                        ? activeClass
+                        : 'bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-zinc-800/95 dark:text-zinc-50 dark:hover:bg-zinc-700/95'
                     }`}
                   >
                     {label}
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -1404,14 +1642,6 @@ export default function EmptyMapClient() {
             >
               Regrid
             </a>
-            {selectedPin.type === 'location' && (
-              <Link
-                href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`}
-                className="ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center"
-              >
-                Location page
-              </Link>
-            )}
             {selectedPin.type === 'seller' && (
               <Link
                 href={`/map/companies/${selectedPin.data.companyId}`}
@@ -1506,6 +1736,7 @@ export default function EmptyMapClient() {
                 )}
               </div>
             )}
+          </div>
           </div>
         </div>
       )}

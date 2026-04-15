@@ -30,8 +30,10 @@ import { parseDmsCoordinates } from '@/lib/geocode-address';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
+import { CrmPipelineStatusField } from '@/components/crm/crm-pipeline-status-field';
 import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
 import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
+import { cn } from '@/lib/utils';
 
 type AddressComponents = {
   city?: string;
@@ -67,6 +69,8 @@ type CompanyEditableData = {
   /** From company.metadata.productType when isPrimaryLocation */
   productType?: string | null;
   primaryLocationId?: string | null;
+  /** Grey map pins / seller flow — Save buttons use slate; otherwise violet */
+  isSeller?: boolean;
 };
 
 type Props = {
@@ -97,6 +101,10 @@ export default function LocationEditableFields({
   editableLocationContact = false,
   isPrimaryLocation = false
 }: Props) {
+  const saveTintClass =
+    company.isSeller === true
+      ? 'before:hidden bg-slate-600 hover:bg-slate-600 text-white shadow-md hover:-translate-y-0.5'
+      : 'before:hidden bg-violet-600 hover:bg-violet-700 text-white shadow-md hover:-translate-y-0.5';
   const router = useRouter();
   const pathname = usePathname();
   const companiesBase = pathname.startsWith('/map') ? '/map' : '/dashboard';
@@ -452,7 +460,12 @@ export default function LocationEditableFields({
             </CardTitle>
             <CardDescription>Address and location information</CardDescription>
           </div>
-          <Button onClick={handleSaveLocation} disabled={savingLocation} size='sm'>
+          <Button
+            onClick={handleSaveLocation}
+            disabled={savingLocation}
+            size='sm'
+            className={cn(saveTintClass)}
+          >
             {savingLocation ? 'Saving…' : 'Save'}
           </Button>
         </CardHeader>
@@ -628,7 +641,12 @@ export default function LocationEditableFields({
                 : 'Contact, site-only status, and product type for this location — does not change the company record.'}
             </CardDescription>
           </div>
-          <Button onClick={handleSaveLocationContact} disabled={savingLocationContact} size='sm'>
+          <Button
+            onClick={handleSaveLocationContact}
+            disabled={savingLocationContact}
+            size='sm'
+            className={cn(saveTintClass)}
+          >
             {savingLocationContact ? 'Saving…' : 'Save'}
           </Button>
         </CardHeader>
@@ -675,23 +693,35 @@ export default function LocationEditableFields({
             />
           </div>
           <div>
-            <Label htmlFor='locStatus'>Status</Label>
-            <Select
-              value={locContactForm.status || '__none__'}
-              onValueChange={(v) => handleLocContactChange('status', v === '__none__' ? '' : v)}
-            >
-              <SelectTrigger id='locStatus' className='mt-1'>
-                <SelectValue placeholder='Status' />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value='__none__'>— No status —</SelectItem>
-                {COMPANY_STATUSES.map((s) => (
-                  <SelectItem key={s} value={s}>
-                    {s}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            {companiesBase === '/map' ? (
+              <CrmPipelineStatusField
+                id='locStatus'
+                label='Status'
+                helperText='Matches LastLeg map pins: New, no answer, visited, plus not interested / meeting set.'
+                value={locContactForm.status}
+                onChange={(v) => handleLocContactChange('status', v)}
+              />
+            ) : (
+              <>
+                <Label htmlFor='locStatus'>Status</Label>
+                <Select
+                  value={locContactForm.status || '__none__'}
+                  onValueChange={(v) => handleLocContactChange('status', v === '__none__' ? '' : v)}
+                >
+                  <SelectTrigger id='locStatus' className='mt-1'>
+                    <SelectValue placeholder='Status' />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value='__none__'>— No status —</SelectItem>
+                    {COMPANY_STATUSES.map((s) => (
+                      <SelectItem key={s} value={s}>
+                        {s}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </>
+            )}
           </div>
           <div>
             <Label htmlFor='loc-product-type'>Product type</Label>
@@ -765,7 +795,12 @@ export default function LocationEditableFields({
             </CardTitle>
             <CardDescription>Parent company information</CardDescription>
           </div>
-          <Button onClick={handleSaveCompany} disabled={savingCompany} size='sm'>
+          <Button
+            onClick={handleSaveCompany}
+            disabled={savingCompany}
+            size='sm'
+            className={cn(saveTintClass)}
+          >
             {savingCompany ? 'Saving…' : 'Save'}
           </Button>
         </CardHeader>
