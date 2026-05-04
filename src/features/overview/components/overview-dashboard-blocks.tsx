@@ -34,7 +34,7 @@ import { OverviewKpiCard } from './overview-kpi-card';
 const BLOCK_GRID_CLASS =
   'grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs';
 
-const LOCAL_KEY = 'daysweeper-overview-block-order';
+const LOCAL_KEY = 'daysweeper-overview-block-order-v2';
 
 /** Default grid (4 cols): locations-suppliers is column 2 of row 2, under companies-suppliers. */
 export const OVERVIEW_KPI_IDS = [
