@@ -195,7 +195,7 @@ function renderKpiCard(id: OverviewKpiId, s: OverviewKpiStats) {
           }
           value={s.countCompaniesNonSeller}
           badgeText='by CRM status'
-          footerMuted='Non-seller (buyer) companies with at least one location'
+          footerMuted='Buyer companies with at least one location'
           statusRows={s.breakdownCompaniesNonSeller}
         />
       );
