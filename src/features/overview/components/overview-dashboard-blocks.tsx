@@ -36,13 +36,14 @@ const BLOCK_GRID_CLASS =
 
 const LOCAL_KEY = 'daysweeper-overview-block-order';
 
+/** Default grid (4 cols): locations-suppliers is column 2 of row 2, under companies-suppliers. */
 export const OVERVIEW_KPI_IDS = [
   'leads',
   'companies-suppliers',
   'companies-sellers',
-  'locations-suppliers',
   'locations-geocoded',
   'locations-not-geocoded',
+  'locations-suppliers',
   'locations-sellers',
   'container-pins'
 ] as const;
@@ -189,12 +190,12 @@ function renderKpiCard(id: OverviewKpiId, s: OverviewKpiStats) {
           description={
             <>
               <TitleDot color={DOT.supplierPurple} />
-              Companies (suppliers)
+              Companies (buyers)
             </>
           }
           value={s.countCompaniesNonSeller}
           badgeText='by CRM status'
-          footerMuted='Non-seller companies with at least one location'
+          footerMuted='Non-seller (buyer) companies with at least one location'
           statusRows={s.breakdownCompaniesNonSeller}
         />
       );
@@ -219,7 +220,7 @@ function renderKpiCard(id: OverviewKpiId, s: OverviewKpiStats) {
           description={
             <>
               <TitleDot color={DOT.supplierPurple} />
-              Locations (suppliers)
+              Locations (buyers)
             </>
           }
           value={s.locationsNonSeller}
@@ -228,7 +229,8 @@ function renderKpiCard(id: OverviewKpiId, s: OverviewKpiStats) {
               ? `${(s.locationsNonSeller / s.countCompaniesNonSeller).toFixed(1)} per company`
               : '—'
           }
-          footerMuted='All location rows for supplier companies'
+          footerMuted='All location rows for buyer companies (status = HQ uses company row, else location metadata)'
+          statusRows={s.breakdownLocationsNonSeller}
         />
       );
     case 'locations-geocoded':
@@ -244,7 +246,7 @@ function renderKpiCard(id: OverviewKpiId, s: OverviewKpiStats) {
           footerMuted={
             <span className='inline-flex flex-wrap items-center gap-x-1.5 gap-y-1'>
               <span className='inline-flex items-center gap-1'>
-                Supplier (
+                Buyer (
                 <span
                   className='inline-block size-2 shrink-0 rounded-full ring-1 ring-border'
                   style={{ backgroundColor: DOT.supplierPurple }}
@@ -294,7 +296,8 @@ function renderKpiCard(id: OverviewKpiId, s: OverviewKpiStats) {
               ? `${(s.locationsSeller / s.countCompaniesSeller).toFixed(1)} per company`
               : '—'
           }
-          footerMuted='All location rows for seller (vendor research) companies'
+          footerMuted='All location rows for seller companies (status = HQ uses company row, else location metadata)'
+          statusRows={s.breakdownLocationsSeller}
         />
       );
     case 'container-pins':
