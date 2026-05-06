@@ -9,6 +9,7 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
+import { pinLatLngClipboardText } from '@/lib/regrid-copy';
 import { IconSearch, IconX } from '@tabler/icons-react';
 import { RoutePlannerSheet } from '@/components/map/route-planner-sheet';
 import {
@@ -1639,6 +1640,12 @@ export default function EmptyMapClient() {
               target="_blank"
               rel="noopener noreferrer"
               className="ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center"
+              onClick={() => {
+                void copyToClipboard(
+                  pinLatLngClipboardText(selectedPin.data.lat, selectedPin.data.lng),
+                  'Lat/long copied for Regrid'
+                );
+              }}
             >
               Regrid
             </a>

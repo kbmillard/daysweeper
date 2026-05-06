@@ -12,6 +12,7 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
+import { pinLatLngClipboardText } from '@/lib/regrid-copy';
 import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
@@ -336,6 +337,18 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', pr
                       target='_blank'
                       rel='noopener noreferrer'
                       className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center'
+                      onClick={() => {
+                        void (async () => {
+                          try {
+                            await navigator.clipboard.writeText(
+                              pinLatLngClipboardText(selectedPin.data.lat, selectedPin.data.lng)
+                            );
+                            toast.success('Lat/long copied for Regrid');
+                          } catch {
+                            toast.error('Could not copy coordinates');
+                          }
+                        })();
+                      }}
                     >
                       Regrid
                     </a>

@@ -11,6 +11,7 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
+import { pinLatLngClipboardText } from '@/lib/regrid-copy';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 
@@ -23,6 +24,15 @@ const LOCATION_DOT_COLOR = '#9333ea';
 const LINKED_CONTAINER_DOT = '#2563EB';
 const LOCATION_DOT_PX = 7;
 const LINKED_DOT_PX = 6;
+
+async function copyLatLngForRegridToast(lat: number, lng: number): Promise<void> {
+  try {
+    await navigator.clipboard.writeText(pinLatLngClipboardText(lat, lng));
+    toast.success('Lat/long copied for Regrid');
+  } catch {
+    toast.error('Could not copy coordinates');
+  }
+}
 
 function safeNum(v: unknown): number | null {
   const n = Number(v);
@@ -353,7 +363,13 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
                     <a href={googleEarthUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
                       Google Earth
                     </a>
-                    <a href={regridUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+                    <a
+                      href={regridUrl(lat, lng)}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-sm text-primary hover:underline'
+                      onClick={() => void copyLatLngForRegridToast(lat, lng)}
+                    >
                       Regrid
                     </a>
                     <Button variant='ghost' size='sm' onClick={() => setShowCard(false)}>Close</Button>
@@ -366,7 +382,13 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
                 <a href={googleEarthUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline mr-4'>
                   Open in Google Earth
                 </a>
-                <a href={regridUrl(lat, lng)} target='_blank' rel='noopener noreferrer' className='text-sm text-primary hover:underline'>
+                <a
+                  href={regridUrl(lat, lng)}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-sm text-primary hover:underline'
+                  onClick={() => void copyLatLngForRegridToast(lat, lng)}
+                >
                   Open in Regrid
                 </a>
               </div>

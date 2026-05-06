@@ -9,6 +9,7 @@ import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
+import { pinLatLngClipboardText } from '@/lib/regrid-copy';
 import { dotColorFromLastLegSignals } from '@/lib/map-pin-colors';
 
 const COMPANY_PIN_COLOR = '#9333ea';
@@ -565,6 +566,18 @@ function DashboardMapClientInner() {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center'
+                onClick={() => {
+                  void (async () => {
+                    try {
+                      await navigator.clipboard.writeText(
+                        pinLatLngClipboardText(selectedPin.data.lat, selectedPin.data.lng)
+                      );
+                      toast.success('Lat/long copied for Regrid');
+                    } catch {
+                      toast.error('Could not copy coordinates');
+                    }
+                  })();
+                }}
               >
                 Regrid
               </a>
