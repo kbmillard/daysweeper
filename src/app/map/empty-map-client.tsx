@@ -9,7 +9,7 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
-import { pinLatLngClipboardText } from '@/lib/regrid-copy';
+import { handleRegridAnchorClick } from '@/lib/regrid-interaction';
 import { IconSearch, IconX } from '@tabler/icons-react';
 import { RoutePlannerSheet } from '@/components/map/route-planner-sheet';
 import {
@@ -25,14 +25,13 @@ import { resolveRouteWaypoint } from '@/lib/route-geocode-client';
 import { useDebouncedCallback } from '@/hooks/use-debounced-callback';
 import { minDistanceToPolyline } from '@/lib/route-corridor';
 import {
-  dotColorFromLastLegSignals,
-  statusButtonSelectionFromSignals,
-  statusButtonToPatch
+  dotColorFromLastLegSignals
 } from '@/lib/map-pin-colors';
-import { CRM_LANE_CHIPS } from '@/lib/crm-pipeline-alignment';
+import { CrmPipelineStatusField } from '@/components/crm/crm-pipeline-status-field';
+import { displayStatus } from '@/constants/company-status';
 
-/** Company / location markers on the map (not red dots). */
-const COMPANY_PIN_COLOR = '#9333ea';
+/** Company / location markers on the map (not red dots) — align with LastLeg ACTIVE blue dots. */
+const COMPANY_PIN_COLOR = '#2563EB';
 
 /**
  * Browsers/password managers sometimes autofill the first visible text field with a saved
@@ -126,6 +125,8 @@ type GeoJSONFeature = {
     latDisplay?: string;
     lngDisplay?: string;
     crmStatus?: string;
+    /** Headquarters location for this company — pipeline status PATCH goes to Company row */
+    isPrimaryLocation?: boolean;
   };
 };
 type GeoJSONResponse = { type: 'FeatureCollection'; features: GeoJSONFeature[] };
@@ -163,6 +164,7 @@ type LocationPin = {
   latDisplay?: string;
   lngDisplay?: string;
   crmStatus?: string;
+  isPrimaryLocation?: boolean;
 };
 /** Grey pins: seller / vendor-research companies (Company.isSeller + geocoded location) */
 type SellerPin = {
@@ -177,6 +179,8 @@ type SellerPin = {
   website?: string;
   role?: string;
   notes?: string;
+  crmStatus?: string;
+  isPrimaryLocation?: boolean;
 };
 
 type PinResearchChosen = {
@@ -349,9 +353,68 @@ export default function EmptyMapClient() {
     setSuggestOpen(false);
   }, []);
   const [settingPrimary, setSettingPrimary] = useState(false);
-  const [pinStatus, setPinStatus] = useState<
-    'NEW_UNCONTACTED' | 'NEW_CONTACTED_NO_ANSWER' | 'ACCOUNT' | null
-  >(null);
+  const [pipelineStatusSaving, setPipelineStatusSaving] = useState(false);
+
+  const pipelineFormValueFromCrmStatus = useCallback((raw: string | null | undefined): string => {
+    return displayStatus(raw?.trim() || null)?.trim() ?? '';
+  }, []);
+
+  const persistPipelineStatusFromMap = useCallback(
+    async (pinSnapshot: { type: 'location' | 'seller'; data: LocationPin | SellerPin }, nextRaw: string) => {
+      const trimmed = nextRaw.trim();
+      const bodyStatus = trimmed === '' ? null : trimmed;
+      const locationId = pinSnapshot.data.locationId;
+      const companyId = pinSnapshot.data.companyId;
+      const isPrimary =
+        Boolean('isPrimaryLocation' in pinSnapshot.data ? pinSnapshot.data.isPrimaryLocation : false);
+
+      setPipelineStatusSaving(true);
+      try {
+        if (isPrimary) {
+          const res = await fetch(`/api/companies/${companyId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ status: bodyStatus }),
+          });
+          const d = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error((d as { error?: string }).error ?? 'Failed to save status');
+        } else {
+          const res = await fetch(`/api/locations/${locationId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ status: bodyStatus }),
+          });
+          const d = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error((d as { error?: string }).error ?? 'Failed to save status');
+        }
+
+        const nextDisplay =
+          (displayStatus(trimmed === '' ? null : trimmed)?.trim() ?? '').length > 0
+            ? (displayStatus(trimmed === '' ? null : trimmed) ?? '').trim()
+            : '';
+
+        setSelectedPin((prev) => {
+          if (!prev || prev.type !== pinSnapshot.type) return prev;
+          if (prev.data.locationId !== locationId || prev.data.companyId !== companyId) return prev;
+          const next = nextDisplay || undefined;
+          if (prev.type === 'location') {
+            return { type: 'location', data: { ...prev.data, crmStatus: next } };
+          }
+          return { type: 'seller', data: { ...prev.data, crmStatus: next } };
+        });
+
+        toast.success('Status updated');
+        notifyLocationsMapUpdate();
+      } catch (err) {
+        toast.error(err instanceof Error ? err.message : 'Failed to save status');
+      } finally {
+        setPipelineStatusSaving(false);
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     if (!selectedPin) {
@@ -378,19 +441,6 @@ export default function EmptyMapClient() {
     applyMarkerLayersRef.current?.();
   }, [pinLayers]);
 
-  useEffect(() => {
-    if (selectedPin?.type === 'dot') {
-      setPinStatus(
-        statusButtonSelectionFromSignals(
-          selectedPin.data.accountState,
-          selectedPin.data.routeOutcome
-        )
-      );
-    } else {
-      setPinStatus(null);
-    }
-  }, [selectedPin]);
-
   const handleSetPrimary = async (name: string) => {
     if (!selectedPin || selectedPin.type !== 'dot' || !selectedPin.data.targetId || settingPrimary) return;
     setSettingPrimary(true);
@@ -411,45 +461,6 @@ export default function EmptyMapClient() {
       toast.error('Failed to set primary name');
     } finally {
       setSettingPrimary(false);
-    }
-  };
-
-  const handleSetStatus = async (newState: string) => {
-    if (!selectedPin || selectedPin.type !== 'dot' || !selectedPin.data.targetId) return;
-    const prev = pinStatus;
-    const patch = statusButtonToPatch(newState);
-    setPinStatus(statusButtonSelectionFromSignals(patch.account_state, patch.route_outcome));
-    try {
-      const body: Record<string, unknown> = { account_state: patch.account_state };
-      if (patch.route_outcome === null) {
-        body.route_outcome = null;
-      } else {
-        body.route_outcome = patch.route_outcome;
-      }
-      const res = await fetch(`/api/targets/${selectedPin.data.targetId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify(body),
-      });
-      if (!res.ok) throw new Error('Failed');
-      setSelectedPin((p) =>
-        p?.type === 'dot'
-          ? {
-              ...p,
-              data: {
-                ...p.data,
-                accountState: patch.account_state,
-                routeOutcome: patch.route_outcome ?? undefined,
-              },
-            }
-          : p
-      );
-      toast.success('Status updated');
-      await refetchDotsRef.current?.();
-    } catch {
-      setPinStatus(prev);
-      toast.error('Failed to update status');
     }
   };
 
@@ -620,7 +631,7 @@ export default function EmptyMapClient() {
     if (!selectedPin || selectedPin.type !== 'dot') return;
     const lid = attachLocationId.trim();
     if (!lid) {
-      toast.error('Paste the location ID from the purple pin’s location page URL (…/locations/[id]).');
+      toast.error('Paste the location ID from the company pin’s location page URL (…/locations/[id]).');
       return;
     }
     setAttachSaving(true);
@@ -719,7 +730,7 @@ export default function EmptyMapClient() {
               const marker = new g.maps.Marker({
                 map,
                 position: { lat, lng },
-                icon: svgPin(g, inCorridor ? COMPANY_PIN_COLOR : '#7c3aed', inCorridor ? 6 : 5),
+                icon: svgPin(g, inCorridor ? COMPANY_PIN_COLOR : '#64748b', inCorridor ? 6 : 5),
                 zIndex: inCorridor ? 2 : 1,
                 opacity: inCorridor ? 1 : 0.32
               });
@@ -744,6 +755,7 @@ export default function EmptyMapClient() {
                       latDisplay: p.latDisplay,
                       lngDisplay: p.lngDisplay,
                       crmStatus: p.crmStatus,
+                      isPrimaryLocation: Boolean(p.isPrimaryLocation),
                     },
                   });
                 }
@@ -1047,7 +1059,9 @@ export default function EmptyMapClient() {
                 phone: typeof o.phone === 'string' ? o.phone : undefined,
                 website: typeof o.website === 'string' ? o.website : undefined,
                 role: typeof o.role === 'string' ? o.role : undefined,
-                notes: typeof o.notes === 'string' ? o.notes : undefined
+                notes: typeof o.notes === 'string' ? o.notes : undefined,
+                crmStatus: typeof o.crmStatus === 'string' ? o.crmStatus : undefined,
+                isPrimaryLocation: o.isPrimaryLocation === true
               });
             }
             boundsState.sellers = sellers;
@@ -1259,7 +1273,7 @@ export default function EmptyMapClient() {
         </div>
       )}
 
-      <div className="map-page-chrome absolute top-4 left-4 z-10 flex flex-col gap-2 max-w-sm sm:max-w-md">
+      <div className="map-page-chrome absolute top-4 left-4 z-[60] flex flex-col gap-2 max-w-sm sm:max-w-md">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start">
           <div className="relative min-w-0 flex-1">
             <div className="ios-glass flex min-h-10 items-center gap-2 rounded-2xl py-1.5 pl-3 pr-1 min-w-0">
@@ -1344,7 +1358,7 @@ export default function EmptyMapClient() {
       </div>
 
       {/* Route planner + map type */}
-      <div className="map-page-chrome absolute top-4 right-4 z-10 flex flex-col items-end gap-2 sm:flex-row sm:items-center">
+      <div className="map-page-chrome absolute top-4 right-4 z-[60] flex flex-col items-end gap-2 sm:flex-row sm:items-center">
         <MapPinLayersControl variant="dark" value={pinLayers} onChange={setPinLayers} />
         <RoutePlannerSheet
           onApplied={(state) => setCorridorPlanner(state)}
@@ -1363,8 +1377,9 @@ export default function EmptyMapClient() {
       </div>
 
       {selectedPin && (
-        <div className="absolute top-16 right-3 z-10 w-[min(100vw-1.5rem,28rem)] max-h-[min(85vh,calc(100vh-5rem))] overflow-y-auto ios-card ios-animate-in p-5 shadow-2xl border border-white/10 sm:right-4">
-          <div className="relative z-[1]">
+        <div className="absolute top-16 right-3 z-[60] flex min-h-0 w-[min(100vw-1.5rem,28rem)] max-h-[min(85dvh,calc(100dvh-5rem))] flex-col sm:right-4">
+          <div className="ios-card ios-animate-in flex max-h-full min-h-0 flex-1 flex-col overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative z-[1] min-h-0 flex-1 overflow-y-auto overscroll-contain p-5">
           {/* Pin title */}
           <p className="text-[15px] font-semibold text-foreground/90 mb-1 leading-snug">
             {selectedPin.type === 'location'
@@ -1438,12 +1453,6 @@ export default function EmptyMapClient() {
                   </a>
                 </p>
               ) : null}
-              {selectedPin.data.crmStatus ? (
-                <p className="text-[12px]">
-                  <span className="text-muted-foreground">Status </span>
-                  {selectedPin.data.crmStatus}
-                </p>
-              ) : null}
               <Link
                 href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`}
                 className="inline-block pt-1 text-[13px] font-semibold text-primary underline-offset-2 hover:underline"
@@ -1487,6 +1496,23 @@ export default function EmptyMapClient() {
               </div>
             )}
 
+          {(selectedPin.type === 'location' || selectedPin.type === 'seller') && (
+            <div className={pipelineStatusSaving ? 'mb-4 opacity-60 pointer-events-none' : 'mb-4'}>
+              <CrmPipelineStatusField
+                id={`map-popout-pipeline-${selectedPin.data.locationId}`}
+                label="Status"
+                helperText="Buyers & sellers: New, no answer, and Account (HQ uses the company row; other sites use this location). Not interested and meeting set apply everywhere."
+                value={pipelineFormValueFromCrmStatus(selectedPin.data.crmStatus)}
+                onChange={(v) => {
+                  const snap = selectedPin;
+                  if (snap.type === 'location' || snap.type === 'seller') {
+                    void persistPipelineStatusFromMap(snap, v);
+                  }
+                }}
+              />
+            </div>
+          )}
+
           {selectedPin.type === 'dot' && (selectedPin.data.addressRaw || selectedPin.data.phone || selectedPin.data.email || selectedPin.data.website || selectedPin.data.industry || selectedPin.data.summary) && (
             <div className="mb-4 space-y-1 text-[14px]">
               {selectedPin.data.addressRaw && (
@@ -1526,7 +1552,7 @@ export default function EmptyMapClient() {
             <div className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3">
               <p className="ios-section-label mb-1 text-amber-200">Attach to location</p>
               <p className="mb-2 text-[12px] text-muted-foreground">
-                Paste the <span className="text-foreground/90">location ID</span> from the purple pin’s URL{' '}
+                Paste the <span className="text-foreground/90">location ID</span> from the company pin’s URL{' '}
                 <span className="font-mono text-[11px]">…/locations/[id]</span>, then link this dot to that facility map.
               </p>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -1567,32 +1593,6 @@ export default function EmptyMapClient() {
                     <span className="text-[11px] text-muted-foreground/60">↑ set primary</span>
                   </button>
                 ))}
-              </div>
-            </div>
-          )}
-
-          {/* Pin status */}
-          {selectedPin.type === 'dot' && selectedPin.data.targetId && (
-            <div className="mb-4">
-              <p className="ios-section-label mb-2">Pin status</p>
-              <div className="flex gap-2 flex-wrap">
-                {CRM_LANE_CHIPS.map(({ lane: state, label, activeClass }) => {
-                  const on = pinStatus === state;
-                  return (
-                  <button
-                    key={state}
-                    type="button"
-                    onClick={() => void handleSetStatus(state)}
-                    className={`rounded-full px-3 py-2 text-[13px] font-semibold transition-all border border-black/10 shadow-sm dark:border-white/20 ${
-                      on
-                        ? activeClass
-                        : 'bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-zinc-800/95 dark:text-zinc-50 dark:hover:bg-zinc-700/95'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                  );
-                })}
               </div>
             </div>
           )}
@@ -1640,12 +1640,12 @@ export default function EmptyMapClient() {
               target="_blank"
               rel="noopener noreferrer"
               className="ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center"
-              onClick={() => {
-                void copyToClipboard(
-                  pinLatLngClipboardText(selectedPin.data.lat, selectedPin.data.lng),
-                  'Lat/long copied for Regrid'
-                );
-              }}
+              onClick={(e) =>
+                handleRegridAnchorClick(e, selectedPin.data.lat, selectedPin.data.lng, {
+                  onCopied: () => toast.success('Lat/long copied for Regrid'),
+                  onCopyFailed: () => toast.error('Could not copy coordinates'),
+                })
+              }
             >
               Regrid
             </a>
@@ -1744,9 +1744,10 @@ export default function EmptyMapClient() {
               </div>
             )}
           </div>
-          </div>
         </div>
-      )}
+      </div>
+    </div>
+    )}
     </div>
   );
 }

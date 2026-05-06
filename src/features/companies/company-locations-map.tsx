@@ -1,6 +1,6 @@
 'use client';
 
-import { Component, useEffect, useRef, useState } from 'react';
+import { Component, useCallback, useEffect, useRef, useState } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -12,15 +12,17 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
-import { pinLatLngClipboardText } from '@/lib/regrid-copy';
-import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
+import { handleRegridAnchorClick } from '@/lib/regrid-interaction';
+import { subscribeToLocationsMapUpdate, notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
+import { CrmPipelineStatusField } from '@/components/crm/crm-pipeline-status-field';
+import { displayStatus } from '@/constants/company-status';
 
 const DEFAULT_ZOOM = 15;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_POINTS = 3;
-const COMPANY_PIN_COLOR = '#9333ea';
+const COMPANY_PIN_COLOR = '#2563EB';
 
 function isMobile(): boolean {
   if (typeof navigator === 'undefined') return false;
@@ -78,6 +80,10 @@ type LocationWithCoords = {
   addressRaw: string;
   latitude?: number | null | unknown;
   longitude?: number | null | unknown;
+  /** From company detail preload — pipeline effective label */
+  crmStatus?: string;
+  /** True when this row is HQ for its `companyId` (status saves on Company) */
+  isPrimarySite?: boolean;
 };
 type Props = {
   locations: LocationWithCoords[];
@@ -86,7 +92,15 @@ type Props = {
   companyId?: string | null;
   primaryLocationId?: string | null;
 };
-type LocationPoint = { lat: number; lng: number; address: string; locationId?: string; companyId?: string };
+type LocationPoint = {
+  lat: number;
+  lng: number;
+  address: string;
+  locationId?: string;
+  companyId?: string;
+  crmStatus?: string;
+  isPrimarySite?: boolean;
+};
 type SelectedPin = { type: 'location'; data: LocationPoint };
 
 // ── Inner map component ──────────────────────────────────────────────────────
@@ -159,11 +173,77 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', pr
     catch { return undefined; }
   }, [router]);
 
+  const [pipelineSaving, setPipelineSaving] = useState(false);
+
+  const pipelineFormValue = useCallback((raw: string | null | undefined) => {
+    return displayStatus(raw?.trim() || null)?.trim() ?? '';
+  }, []);
+
+  const persistCompanyMapPipeline = useCallback(
+    async (snap: LocationPoint, nextRaw: string) => {
+      const lid = snap.locationId;
+      const cid = snap.companyId;
+      if (!lid || !cid) return;
+      const trimmed = nextRaw.trim();
+      const bodyStatus = trimmed === '' ? null : trimmed;
+      const isPrimary = Boolean(snap.isPrimarySite);
+      setPipelineSaving(true);
+      try {
+        if (isPrimary) {
+          const res = await fetch(`/api/companies/${cid}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ status: bodyStatus }),
+          });
+          const d = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error((d as { error?: string }).error ?? 'Failed to save status');
+        } else {
+          const res = await fetch(`/api/locations/${lid}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ status: bodyStatus }),
+          });
+          const d = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error((d as { error?: string }).error ?? 'Failed to save status');
+        }
+        const nextDisplay =
+          (displayStatus(trimmed === '' ? null : trimmed)?.trim() ?? '').length > 0
+            ? (displayStatus(trimmed === '' ? null : trimmed) ?? '').trim()
+            : '';
+        setSelectedPin((prev) =>
+          prev && prev.data.locationId === lid && prev.data.companyId === cid
+            ? { ...prev, data: { ...prev.data, crmStatus: nextDisplay || undefined } }
+            : prev
+        );
+        toast.success('Status updated');
+        notifyLocationsMapUpdate();
+        router.refresh();
+      } catch (e) {
+        toast.error(e instanceof Error ? e.message : 'Failed to save status');
+      } finally {
+        setPipelineSaving(false);
+      }
+    },
+    [router]
+  );
+
   const pointsWithCoords: LocationPoint[] = locations
     .flatMap((loc) => {
       const c = safeCoord(loc.latitude, loc.longitude);
       if (!c) return [];
-      return [{ lat: c.lat, lng: c.lng, address: loc.addressRaw || 'Location', locationId: loc.id, companyId: loc.companyId }];
+      return [
+        {
+          lat: c.lat,
+          lng: c.lng,
+          address: loc.addressRaw || 'Location',
+          locationId: loc.id,
+          companyId: loc.companyId,
+          crmStatus: typeof loc.crmStatus === 'string' ? loc.crmStatus : undefined,
+          isPrimarySite: Boolean(loc.isPrimarySite),
+        },
+      ];
     })
     .sort((a, b) => {
       if (primaryLocationId) {
@@ -292,10 +372,21 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', pr
             <div className='relative rounded-2xl overflow-hidden min-h-[280px] shadow-lg'>
               <div ref={containerRef} className='h-[280px] w-full min-h-[280px] bg-[#1a1a2e]' />
               {selectedPin && (
-                <div className='absolute bottom-4 left-4 right-4 z-10 mx-auto max-w-md ios-card ios-animate-in p-5'>
+                <div className='absolute bottom-4 left-4 right-4 z-[60] mx-auto max-h-[min(50vh,22rem)] max-w-md overflow-y-auto overscroll-contain ios-card ios-animate-in p-5 shadow-lg'>
                   <p className='text-[15px] font-semibold text-foreground/90 mb-3 leading-snug'>
                     {selectedPin.data.address}
                   </p>
+                  {selectedPin.data.locationId && selectedPin.data.companyId ? (
+                    <div className={pipelineSaving ? 'mb-4 opacity-60 pointer-events-none' : 'mb-4'}>
+                      <CrmPipelineStatusField
+                        id={`company-map-pipeline-${selectedPin.data.locationId}`}
+                        label='Status'
+                        helperText='HQ saves on the company row; other sites on this location. Same pipeline as the main map.'
+                        value={pipelineFormValue(selectedPin.data.crmStatus)}
+                        onChange={(v: string) => void persistCompanyMapPipeline(selectedPin.data, v)}
+                      />
+                    </div>
+                  ) : null}
                   <div className='flex flex-wrap gap-2.5 items-center mb-4'>
                     <button
                       type='button'
@@ -337,18 +428,12 @@ function CompanyLocationsMapInner({ locations, companyName, basePath = 'map', pr
                       target='_blank'
                       rel='noopener noreferrer'
                       className='ios-bubble ios-bubble-secondary h-9 px-4 rounded-full text-[14px] inline-flex items-center justify-center'
-                      onClick={() => {
-                        void (async () => {
-                          try {
-                            await navigator.clipboard.writeText(
-                              pinLatLngClipboardText(selectedPin.data.lat, selectedPin.data.lng)
-                            );
-                            toast.success('Lat/long copied for Regrid');
-                          } catch {
-                            toast.error('Could not copy coordinates');
-                          }
-                        })();
-                      }}
+                      onClick={(e) =>
+                        handleRegridAnchorClick(e, selectedPin.data.lat, selectedPin.data.lng, {
+                          onCopied: () => toast.success('Lat/long copied for Regrid'),
+                          onCopyFailed: () => toast.error('Could not copy coordinates'),
+                        })
+                      }
                     >
                       Regrid
                     </a>

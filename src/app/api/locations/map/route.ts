@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { toMapboxCoordinates } from '@/lib/geocode-address';
-import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
+import { effectiveLocationCrmStatus } from '@/lib/location-crm-status';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -30,7 +30,9 @@ export async function GET() {
         email: true,
         website: true,
         metadata: true,
-        Company: { select: { name: true } }
+        Company: {
+          select: { name: true, status: true, primaryLocationId: true }
+        }
       }
     });
 
@@ -40,8 +42,15 @@ export async function GET() {
         const lng = loc.longitude != null ? Number(loc.longitude) : null;
         const coords = toMapboxCoordinates(lat, lng);
         if (!coords) return null;
-        const meta = parseLocationMetadata(loc.metadata);
-        const crmStatus = typeof meta.status === 'string' ? meta.status : '';
+        const crmStatus = effectiveLocationCrmStatus({
+          locationId: loc.id,
+          companyStatus: loc.Company.status,
+          companyPrimaryLocationId: loc.Company.primaryLocationId,
+          locationMetadata: loc.metadata
+        });
+        const primaryId = loc.Company.primaryLocationId;
+        const isPrimaryLocation =
+          typeof primaryId === 'string' && primaryId.length > 0 && primaryId === loc.id;
         const companyName = (loc.Company.name ?? '').trim();
         return {
           type: 'Feature' as const,
@@ -62,7 +71,8 @@ export async function GET() {
             website: loc.website ?? '',
             latDisplay: lat != null ? lat.toFixed(6) : '',
             lngDisplay: lng != null ? lng.toFixed(6) : '',
-            crmStatus
+            crmStatus,
+            isPrimaryLocation
           }
         };
       })

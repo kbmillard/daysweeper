@@ -18,6 +18,7 @@ import { RemoveAsHeadquartersButton } from '@/features/companies/remove-as-headq
 import CompanyLocationsMap from '@/features/companies/company-locations-map';
 import { filterLegacyKeyFacts } from '@/lib/filter-legacy-metadata';
 import { googleEarthUrl } from '@/lib/google-earth-url';
+import { effectiveLocationCrmStatus } from '@/lib/location-crm-status';
 
 type CompanyMetadata = {
   productType?: string | null;
@@ -57,6 +58,7 @@ type CompanyData = {
     latitude?: number | null | unknown;
     longitude?: number | null | unknown;
     phone?: string | null;
+    metadata?: unknown;
     createdAt?: Date;
     updatedAt?: Date;
   }>;
@@ -197,12 +199,33 @@ export default function CompanyDetailView({ company, baseUrl }: Props) {
         companyId={company.id}
         primaryLocationId={company.primaryLocationId ?? company.Location?.[0]?.id ?? null}
         locations={[
-          ...(company.Location ?? []).map((loc) => ({ ...loc, companyId: company.id })),
+          ...(company.Location ?? []).map((loc) => ({
+            ...loc,
+            companyId: company.id,
+            crmStatus: loc.id
+              ? effectiveLocationCrmStatus({
+                  locationId: loc.id,
+                  companyStatus: company.status,
+                  companyPrimaryLocationId: company.primaryLocationId,
+                  locationMetadata: loc.metadata
+                })
+              : '',
+            isPrimarySite: Boolean(company.primaryLocationId && loc.id === company.primaryLocationId)
+          })),
           ...(company.other_Company ?? []).flatMap((child) =>
             (child.Location ?? []).map((loc) => ({
               ...loc,
               companyId: child.id,
-              addressRaw: loc.addressRaw ? `${loc.addressRaw} · ${child.name}` : child.name
+              addressRaw: loc.addressRaw ? `${loc.addressRaw} · ${child.name}` : child.name,
+              crmStatus: loc.id
+                ? effectiveLocationCrmStatus({
+                    locationId: loc.id,
+                    companyStatus: child.status,
+                    companyPrimaryLocationId: child.primaryLocationId,
+                    locationMetadata: loc.metadata
+                  })
+                : '',
+              isPrimarySite: Boolean(child.primaryLocationId && loc.id === child.primaryLocationId)
             }))
           )
         ]}

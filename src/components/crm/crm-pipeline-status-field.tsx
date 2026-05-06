@@ -67,7 +67,7 @@ export function CrmPipelineStatusField({ id, label, value, onChange, helperText 
           onClick={() => onChange(PIPELINE_EXTRA_NOT_INTERESTED)}
           className={`rounded-full px-3 py-1.5 text-[12px] font-medium transition-colors border ${
             ni
-              ? 'border-neutral-700 bg-neutral-800 text-white dark:bg-neutral-700'
+              ? 'border-red-700 bg-red-600 text-white ring-2 ring-red-300'
               : 'border-border bg-muted/50 text-muted-foreground hover:bg-muted'
           }`}
         >
@@ -78,7 +78,7 @@ export function CrmPipelineStatusField({ id, label, value, onChange, helperText 
           onClick={() => onChange(PIPELINE_EXTRA_MEETING_SET)}
           className={`rounded-full px-3 py-1.5 text-[12px] font-medium transition-colors border ${
             ms
-              ? 'border-sky-600 bg-sky-600 text-white'
+              ? 'border-emerald-700 bg-emerald-600 text-white ring-2 ring-emerald-300'
               : 'border-border bg-muted/50 text-muted-foreground hover:bg-muted'
           }`}
         >

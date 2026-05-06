@@ -12,7 +12,7 @@ import { regridUrl } from '@/lib/regrid-url';
 import { pinLatLngClipboardText } from '@/lib/regrid-copy';
 import { dotColorFromLastLegSignals } from '@/lib/map-pin-colors';
 
-const COMPANY_PIN_COLOR = '#9333ea';
+const COMPANY_PIN_COLOR = '#2563EB';
 
 function isMobile(): boolean {
   if (typeof navigator === 'undefined') return false;

@@ -18,7 +18,7 @@ export const CRM_LANE_CHIPS: readonly {
     label: 'No answer',
     activeClass: 'bg-amber-500 text-white ring-2 ring-amber-300'
   },
-  { lane: 'ACCOUNT', label: 'Visited', activeClass: 'bg-emerald-600 text-white ring-2 ring-emerald-300' }
+  { lane: 'ACCOUNT', label: 'Account', activeClass: 'bg-emerald-600 text-white ring-2 ring-emerald-300' }
 ] as const;
 
 /** Extra CRM strings kept for kanban / legacy — not one of the three lanes. */

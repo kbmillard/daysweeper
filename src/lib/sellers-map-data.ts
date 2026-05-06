@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { isValidMapboxCoordinate } from '@/lib/geocode-address';
+import { effectiveLocationCrmStatus } from '@/lib/location-crm-status';
 
 type SellerImportSlice = { role?: string; notes?: string; importCategory?: string };
 
@@ -31,6 +32,10 @@ export type SellerMapPin = {
   locationLegacyJson?: unknown;
   companyExternalId?: string | null;
   locationExternalId?: string | null;
+  /** Resolved pipeline label for popover */
+  crmStatus?: string;
+  /** HQ row: status PATCH goes to Company, else Location metadata */
+  isPrimaryLocation?: boolean;
 };
 
 /**
@@ -49,6 +54,7 @@ export async function getSellerMapPins(): Promise<SellerMapPin[]> {
       addressRaw: true,
       latitude: true,
       longitude: true,
+      metadata: true,
       legacyJson: true,
       Company: {
         select: {
@@ -58,7 +64,9 @@ export async function getSellerMapPins(): Promise<SellerMapPin[]> {
           phone: true,
           website: true,
           metadata: true,
-          legacyJson: true
+          legacyJson: true,
+          status: true,
+          primaryLocationId: true
         }
       }
     },
@@ -74,6 +82,15 @@ export async function getSellerMapPins(): Promise<SellerMapPin[]> {
 
     const c = loc.Company;
     const { role, notes, importCategory } = sellerImportMeta(c.metadata);
+    const primaryId = c.primaryLocationId;
+    const isPrimaryLocation =
+      typeof primaryId === 'string' && primaryId.length > 0 && primaryId === loc.id;
+    const crmStatus = effectiveLocationCrmStatus({
+      locationId: loc.id,
+      companyStatus: c.status,
+      companyPrimaryLocationId: c.primaryLocationId,
+      locationMetadata: loc.metadata
+    });
 
     pins.push({
       companyId: c.id,
@@ -90,7 +107,9 @@ export async function getSellerMapPins(): Promise<SellerMapPin[]> {
       companyLegacyJson: c.legacyJson ?? undefined,
       locationLegacyJson: loc.legacyJson ?? undefined,
       companyExternalId: c.externalId,
-      locationExternalId: loc.externalId
+      locationExternalId: loc.externalId,
+      crmStatus,
+      isPrimaryLocation
     });
   }
 
