@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
 import { prisma } from '@/lib/prisma';
+import { resolveApiUserIdOr401 } from '@/lib/clerk-api-optional';
 import { resolveSellerCompanyIdsForTargets } from '@/lib/lastleg-resolve-seller-targets';
 import { targetToLead } from '@/lib/target-to-lead';
 
@@ -31,10 +31,8 @@ function distanceMeters(lat1: number, lng1: number, lat2: number, lng2: number):
 
 export async function GET(req: NextRequest) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
 
     const lat = Number(req.nextUrl.searchParams.get('latitude'));
     const lng = Number(req.nextUrl.searchParams.get('longitude'));

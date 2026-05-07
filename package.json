@@ -32,7 +32,12 @@
     "crm:import-json": "tsx scripts/import-crm-json-file.ts",
     "generate:dots-pins": "node scripts/generate-dots-pins.mjs",
     "neon": "env -u CI neon",
-    "neon:open": "vercel integration open neon"
+    "neon:open": "vercel integration open neon",
+    "demo:export": "tsx scripts/demo-db-subset.ts export",
+    "demo:import": "tsx scripts/demo-db-subset.ts import",
+    "demo:verify": "tsx scripts/demo-db-subset.ts verify",
+    "slim:corridor-demo": "tsx scripts/slim-corridor-states-demo.ts",
+    "demo:db:migrate": "node scripts/demo-db-migrate.mjs"
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,css,less,scss,sass}": [

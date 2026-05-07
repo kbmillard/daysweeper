@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -25,6 +24,7 @@ import {
 import { displayStatus } from '@/constants/company-status';
 import { CrmPipelineStatusField } from '@/components/crm/crm-pipeline-status-field';
 import { toast } from 'sonner';
+import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { IconPlus } from '@tabler/icons-react';
 
 export type CompanyEditableData = {
@@ -47,10 +47,9 @@ type Props = {
 };
 
 export default function CompanyEditableFields({ company, primaryLocationId }: Props) {
-  const saveTintClass =
-    company.isSeller === true
-      ? 'before:hidden bg-slate-600 hover:bg-slate-600 text-white shadow-md hover:-translate-y-0.5'
-      : 'before:hidden bg-violet-600 hover:bg-violet-700 text-white shadow-md hover:-translate-y-0.5';
+  const isSeller = company.isSeller === true;
+  const sellerSaveClassName =
+    'before:hidden bg-slate-600 hover:bg-slate-700 text-white shadow-md hover:-translate-y-0.5';
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [productTypeOptions, setProductTypeOptions] = useState<string[]>([]);
@@ -199,6 +198,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
         return;
       }
       toast.success('Company saved');
+      notifyLocationsMapUpdate();
       router.refresh();
     } catch {
       toast.error('Failed to save');
@@ -211,7 +211,13 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     <Card>
       <CardHeader className='flex flex-row items-center justify-between space-y-0'>
         <CardTitle>Company Details</CardTitle>
-        <Button onClick={handleSave} disabled={saving} size='sm' className={cn(saveTintClass)}>
+        <Button
+          onClick={handleSave}
+          disabled={saving}
+          size='sm'
+          variant={isSeller ? 'secondary' : 'default'}
+          className={isSeller ? sellerSaveClassName : undefined}
+        >
           {saving ? 'Saving…' : 'Save'}
         </Button>
       </CardHeader>

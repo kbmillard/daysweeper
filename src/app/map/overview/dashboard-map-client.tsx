@@ -5,14 +5,12 @@ import type { ErrorInfo, ReactNode } from 'react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
-import { subscribeToLocationsMapUpdate } from '@/lib/locations-map-update';
+import { subscribeToLocationsMapUpdate, notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loader';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
 import { pinLatLngClipboardText } from '@/lib/regrid-copy';
-import { dotColorFromLastLegSignals } from '@/lib/map-pin-colors';
-
-const COMPANY_PIN_COLOR = '#2563EB';
+import { dotColorFromLastLegSignals, dotColorFromCrmDisplayStatus } from '@/lib/map-pin-colors';
 
 function isMobile(): boolean {
   if (typeof navigator === 'undefined') return false;
@@ -117,7 +115,7 @@ type LocationPin = { locationId: string; companyId: string; addressRaw?: string;
 type GeoJSONFeature = {
   type: 'Feature';
   geometry: { type: 'Point'; coordinates: [number, number] };
-  properties: { id: string; companyId: string; addressRaw: string };
+  properties: { id: string; companyId: string; addressRaw: string; crmStatus?: string };
 };
 type GeoJSONResponse = { type: 'FeatureCollection'; features: GeoJSONFeature[] };
 type LocationNeedingGeocode = { id: string; companyId: string; addressRaw: string; addressForGeocode: string };
@@ -170,6 +168,8 @@ function DashboardMapClientInner() {
   const [addToLastLegLocked, setAddToLastLegLocked] = useState(false);
   const [deleteDotConfirmOpen, setDeleteDotConfirmOpen] = useState(false);
   const [deletingRedDot, setDeletingRedDot] = useState(false);
+  const [deleteLocationConfirmOpen, setDeleteLocationConfirmOpen] = useState(false);
+  const [deletingLocation, setDeletingLocation] = useState(false);
 
   useEffect(() => {
     if (!selectedPin) return;
@@ -215,15 +215,54 @@ function DashboardMapClientInner() {
     }
   };
 
+  const handleDeleteLocationPin = async () => {
+    if (!selectedPin || selectedPin.type !== 'location') return;
+    const locationId = selectedPin.data.locationId;
+    if (!locationId) return;
+    setDeletingLocation(true);
+    try {
+      const res = await fetch(`/api/locations/${locationId}`, { method: 'DELETE', credentials: 'include' });
+      if (!res.ok) {
+        let d: { error?: string } = {};
+        try {
+          d = await res.json();
+        } catch {
+          /* ignore */
+        }
+        throw new Error(d?.error ?? 'Failed to delete location');
+      }
+      toast.success('Location removed');
+      setSelectedPin(null);
+      setDeleteLocationConfirmOpen(false);
+      notifyLocationsMapUpdate();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to delete location');
+    } finally {
+      setDeletingLocation(false);
+    }
+  };
+
   const handleDeleteRedPin = async () => {
     if (!selectedPin || selectedPin.type !== 'dot') return;
     const { id, lat, lng } = selectedPin.data;
     setDeletingRedDot(true);
     try {
+      const targetId =
+        typeof selectedPin.data.targetId === 'string' && selectedPin.data.targetId.trim()
+          ? selectedPin.data.targetId.trim()
+          : '';
+      const body: Record<string, unknown> = {};
+      if (targetId) body.targetId = targetId;
+      if (id) body.id = id;
+      if (!id) {
+        body.latitude = lat;
+        body.longitude = lng;
+      }
       const res = await fetch('/api/map-pins', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(id ? { id } : { latitude: lat, longitude: lng })
+        credentials: 'include',
+        body: JSON.stringify(body)
       });
       if (!res.ok) {
         let d: { error?: string } = {};
@@ -332,7 +371,9 @@ function DashboardMapClientInner() {
               const lng = safeNum(rawLng);
               if (lat == null || lng == null) return;
               const props = f.properties;
-              const marker = new google.maps.Marker({ map, position: { lat, lng }, icon: createDot(google, COMPANY_PIN_COLOR, 6), zIndex: 2 });
+              const crmRaw = typeof props?.crmStatus === 'string' ? props.crmStatus : null;
+              const pinColor = dotColorFromCrmDisplayStatus(crmRaw);
+              const marker = new google.maps.Marker({ map, position: { lat, lng }, icon: createDot(google, pinColor, 6), zIndex: 2 });
               listenersRef.current.push(
                 marker.addListener('click', () => {
                   try {
@@ -352,7 +393,7 @@ function DashboardMapClientInner() {
           pins.forEach((p) => {
             try {
               const color = dotColorFromLastLegSignals(p.accountState, p.routeOutcome);
-              const size = 10;
+              const size = p.source === 'user' ? 6 : 10;
               const marker = new google.maps.Marker({
                 map,
                 position: { lat: p.lat, lng: p.lng },
@@ -474,6 +515,14 @@ function DashboardMapClientInner() {
         loading={deletingRedDot}
         description='This map pin will be removed from the database.'
       />
+      <AlertModal
+        isOpen={deleteLocationConfirmOpen}
+        onClose={() => setDeleteLocationConfirmOpen(false)}
+        onConfirm={() => void handleDeleteLocationPin()}
+        loading={deletingLocation}
+        title='Remove this location?'
+        description='This location will be removed from the database.'
+      />
       {locationCount !== null && (
         <p className='text-[14px] text-muted-foreground/80 mb-3'>
           {locationCount === 0
@@ -542,15 +591,17 @@ function DashboardMapClientInner() {
               >
                 Reactivate pin
               </button>
-              {selectedPin.type === 'dot' && (
-                <button
-                  type='button'
-                  onClick={() => setDeleteDotConfirmOpen(true)}
-                  className='ios-bubble ios-bubble-destructive h-9 px-4 rounded-full text-[14px]'
-                >
-                  Delete pin
-                </button>
-              )}
+              <button
+                type='button'
+                onClick={() =>
+                  selectedPin.type === 'dot'
+                    ? setDeleteDotConfirmOpen(true)
+                    : setDeleteLocationConfirmOpen(true)
+                }
+                className='ios-bubble ios-bubble-destructive h-9 px-4 rounded-full text-[14px]'
+              >
+                Delete pin
+              </button>
             </div>
             <div className='flex flex-wrap gap-2.5 items-center'>
               <a

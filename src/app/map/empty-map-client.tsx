@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { AlertModal } from '@/components/modal/alert-modal';
 import { subscribeToLocationsMapUpdate, notifyLocationsMapUpdate } from '@/lib/locations-map-update';
@@ -24,14 +25,8 @@ import {
 import { resolveRouteWaypoint } from '@/lib/route-geocode-client';
 import { useDebouncedCallback } from '@/hooks/use-debounced-callback';
 import { minDistanceToPolyline } from '@/lib/route-corridor';
-import {
-  dotColorFromLastLegSignals
-} from '@/lib/map-pin-colors';
-import { CrmPipelineStatusField } from '@/components/crm/crm-pipeline-status-field';
-import { displayStatus } from '@/constants/company-status';
-
-/** Company / location markers on the map (not red dots) — align with LastLeg ACTIVE blue dots. */
-const COMPANY_PIN_COLOR = '#2563EB';
+import { dotColorFromLastLegSignals, dotColorFromCrmDisplayStatus } from '@/lib/map-pin-colors';
+import { parseDmsCoordinates } from '@/lib/geocode-address';
 
 /**
  * Browsers/password managers sometimes autofill the first visible text field with a saved
@@ -202,6 +197,7 @@ type PinResearchApiOk = {
 };
 
 export default function EmptyMapClient() {
+  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const locationMarkersRef = useRef<google.maps.Marker[]>([]);
@@ -209,6 +205,7 @@ export default function EmptyMapClient() {
   const sellerMarkersRef = useRef<google.maps.Marker[]>([]);
   const unsubMapRef = useRef<(() => void) | null>(null);
   const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
+  const refetchSellersRef = useRef<(() => Promise<void>) | null>(null);
   const selectedMarkerRef = useRef<google.maps.Marker | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
@@ -235,8 +232,24 @@ export default function EmptyMapClient() {
   const [addToLastLegLocked, setAddToLastLegLocked] = useState(false);
   const [deleteDotConfirmOpen, setDeleteDotConfirmOpen] = useState(false);
   const [deletingRedDot, setDeletingRedDot] = useState(false);
+  const [deleteLocationConfirmOpen, setDeleteLocationConfirmOpen] = useState(false);
+  const [deletingLocation, setDeletingLocation] = useState(false);
   const [attachLocationId, setAttachLocationId] = useState('');
   const [attachSaving, setAttachSaving] = useState(false);
+  const [newCoName, setNewCoName] = useState('');
+  const [newCoAddress, setNewCoAddress] = useState('');
+  const [newCoAddressNorm, setNewCoAddressNorm] = useState('');
+  const [newCoCity, setNewCoCity] = useState('');
+  const [newCoState, setNewCoState] = useState('');
+  const [newCoPostal, setNewCoPostal] = useState('');
+  const [newCoCountry, setNewCoCountry] = useState('');
+  const [newCoLat, setNewCoLat] = useState('');
+  const [newCoLng, setNewCoLng] = useState('');
+  const [newCoPhone, setNewCoPhone] = useState('');
+  const [newCoWebsite, setNewCoWebsite] = useState('');
+  const [newCoAutofilling, setNewCoAutofilling] = useState(false);
+  const [newCoSaving, setNewCoSaving] = useState(false);
+  const [sellerToggleSaving, setSellerToggleSaving] = useState(false);
   const [placeResearchHint, setPlaceResearchHint] = useState('');
   const [placeResearchLoading, setPlaceResearchLoading] = useState(false);
   const [placeResearchResult, setPlaceResearchResult] = useState<PinResearchApiOk | null>(null);
@@ -353,68 +366,6 @@ export default function EmptyMapClient() {
     setSuggestOpen(false);
   }, []);
   const [settingPrimary, setSettingPrimary] = useState(false);
-  const [pipelineStatusSaving, setPipelineStatusSaving] = useState(false);
-
-  const pipelineFormValueFromCrmStatus = useCallback((raw: string | null | undefined): string => {
-    return displayStatus(raw?.trim() || null)?.trim() ?? '';
-  }, []);
-
-  const persistPipelineStatusFromMap = useCallback(
-    async (pinSnapshot: { type: 'location' | 'seller'; data: LocationPin | SellerPin }, nextRaw: string) => {
-      const trimmed = nextRaw.trim();
-      const bodyStatus = trimmed === '' ? null : trimmed;
-      const locationId = pinSnapshot.data.locationId;
-      const companyId = pinSnapshot.data.companyId;
-      const isPrimary =
-        Boolean('isPrimaryLocation' in pinSnapshot.data ? pinSnapshot.data.isPrimaryLocation : false);
-
-      setPipelineStatusSaving(true);
-      try {
-        if (isPrimary) {
-          const res = await fetch(`/api/companies/${companyId}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ status: bodyStatus }),
-          });
-          const d = await res.json().catch(() => ({}));
-          if (!res.ok) throw new Error((d as { error?: string }).error ?? 'Failed to save status');
-        } else {
-          const res = await fetch(`/api/locations/${locationId}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ status: bodyStatus }),
-          });
-          const d = await res.json().catch(() => ({}));
-          if (!res.ok) throw new Error((d as { error?: string }).error ?? 'Failed to save status');
-        }
-
-        const nextDisplay =
-          (displayStatus(trimmed === '' ? null : trimmed)?.trim() ?? '').length > 0
-            ? (displayStatus(trimmed === '' ? null : trimmed) ?? '').trim()
-            : '';
-
-        setSelectedPin((prev) => {
-          if (!prev || prev.type !== pinSnapshot.type) return prev;
-          if (prev.data.locationId !== locationId || prev.data.companyId !== companyId) return prev;
-          const next = nextDisplay || undefined;
-          if (prev.type === 'location') {
-            return { type: 'location', data: { ...prev.data, crmStatus: next } };
-          }
-          return { type: 'seller', data: { ...prev.data, crmStatus: next } };
-        });
-
-        toast.success('Status updated');
-        notifyLocationsMapUpdate();
-      } catch (err) {
-        toast.error(err instanceof Error ? err.message : 'Failed to save status');
-      } finally {
-        setPipelineStatusSaving(false);
-      }
-    },
-    []
-  );
 
   useEffect(() => {
     if (!selectedPin) {
@@ -557,7 +508,12 @@ export default function EmptyMapClient() {
     setSuggestOpen(false);
     try {
       const { lat, lng } = await resolveRouteWaypoint(q);
-      const pinRes = await fetch('/api/map-pins', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ latitude: lat, longitude: lng }) });
+      const pinRes = await fetch('/api/map-pins', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ latitude: lat, longitude: lng }),
+      });
       const pinData = await pinRes.json();
       if (!pinRes.ok) throw new Error(pinData?.error ?? 'Failed to add pin');
       const pin = pinData?.pin as { id: string; lat: number; lng: number } | undefined;
@@ -573,6 +529,34 @@ export default function EmptyMapClient() {
     } finally { setSearching(false); }
   };
 
+  const handleDeleteLocationPin = async () => {
+    if (!selectedPin || (selectedPin.type !== 'location' && selectedPin.type !== 'seller')) return;
+    const locationId = selectedPin.data.locationId;
+    if (!locationId) return;
+    setDeletingLocation(true);
+    try {
+      const res = await fetch(`/api/locations/${locationId}`, { method: 'DELETE', credentials: 'include' });
+      if (!res.ok) {
+        let d: { error?: string } = {};
+        try {
+          d = await res.json();
+        } catch {
+          /* ignore */
+        }
+        throw new Error(d?.error ?? 'Failed to delete location');
+      }
+      toast.success('Location removed from map');
+      setSelectedPin(null);
+      setDeleteLocationConfirmOpen(false);
+      notifyLocationsMapUpdate();
+      await refetchSellersRef.current?.();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to delete location');
+    } finally {
+      setDeletingLocation(false);
+    }
+  };
+
   const handleDeleteRedPin = async () => {
     if (!selectedPin || selectedPin.type !== 'dot') return;
     const { id, lat, lng } = selectedPin.data;
@@ -586,10 +570,22 @@ export default function EmptyMapClient() {
     setSelectedPin(null);
     setDeleteDotConfirmOpen(false);
     try {
+      const targetId =
+        typeof selectedPin.data.targetId === 'string' && selectedPin.data.targetId.trim()
+          ? selectedPin.data.targetId.trim()
+          : '';
+      const body: Record<string, unknown> = {};
+      if (targetId) body.targetId = targetId;
+      if (id) body.id = id;
+      if (!id) {
+        body.latitude = lat;
+        body.longitude = lng;
+      }
       const res = await fetch('/api/map-pins', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(id ? { id } : { latitude: lat, longitude: lng })
+        credentials: 'include',
+        body: JSON.stringify(body)
       });
       if (!res.ok) {
         let d: { error?: string } = {};
@@ -653,6 +649,257 @@ export default function EmptyMapClient() {
       toast.error(err instanceof Error ? err.message : 'Attach failed');
     } finally {
       setAttachSaving(false);
+    }
+  };
+
+  const handleMapPopoutIsSellerChange = async (nextIsSeller: boolean) => {
+    if (!selectedPin || (selectedPin.type !== 'location' && selectedPin.type !== 'seller')) return;
+    const pinSnap = selectedPin;
+    const isSellerPin = pinSnap.type === 'seller';
+    if (nextIsSeller === isSellerPin) return;
+
+    const companyId = pinSnap.data.companyId;
+    setSellerToggleSaving(true);
+    try {
+      const res = await fetch(`/api/companies/${encodeURIComponent(companyId)}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ isSeller: nextIsSeller }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) throw new Error(data.error ?? 'Failed to update company');
+      toast.success(
+        nextIsSeller
+          ? 'Marked as seller — grey pin when the address is geocoded'
+          : 'Marked as buyer — shows on the company layer'
+      );
+      notifyLocationsMapUpdate();
+
+      if (nextIsSeller && pinSnap.type === 'location') {
+        const d = pinSnap.data;
+        const label = d.displayTitle || d.companyName || d.addressRaw || 'Location';
+        setSelectedPin({
+          type: 'seller',
+          data: {
+            id: d.companyId,
+            companyId: d.companyId,
+            locationId: d.locationId,
+            lat: d.lat,
+            lng: d.lng,
+            label,
+            addressRaw: d.addressNormalized || d.addressRaw,
+            phone: d.phone,
+            website: d.website,
+            crmStatus: d.crmStatus,
+            isPrimaryLocation: d.isPrimaryLocation,
+          },
+        });
+      } else if (!nextIsSeller && pinSnap.type === 'seller') {
+        const s = pinSnap.data;
+        setSelectedPin({
+          type: 'location',
+          data: {
+            locationId: s.locationId,
+            companyId: s.companyId,
+            addressRaw: s.addressRaw,
+            lat: s.lat,
+            lng: s.lng,
+            companyName: s.label,
+            displayTitle: s.label,
+            phone: s.phone,
+            website: s.website,
+            latDisplay: s.lat.toFixed(6),
+            lngDisplay: s.lng.toFixed(6),
+            crmStatus: s.crmStatus,
+            isPrimaryLocation: s.isPrimaryLocation,
+          },
+        });
+      }
+
+      await refetchSellersRef.current?.();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to update');
+    } finally {
+      setSellerToggleSaving(false);
+    }
+  };
+
+  const selectedDotKey =
+    selectedPin?.type === 'dot'
+      ? `${selectedPin.data.id ?? ''}:${selectedPin.data.lat.toFixed(6)}:${selectedPin.data.lng.toFixed(6)}`
+      : '';
+  useEffect(() => {
+    if (!selectedDotKey || !selectedPin || selectedPin.type !== 'dot') return;
+    setNewCoName('');
+    setNewCoAddress('');
+    setNewCoAddressNorm('');
+    setNewCoCity('');
+    setNewCoState('');
+    setNewCoPostal('');
+    setNewCoCountry('');
+    setNewCoPhone('');
+    setNewCoWebsite('');
+    setNewCoLat(selectedPin.data.lat.toFixed(6));
+    setNewCoLng(selectedPin.data.lng.toFixed(6));
+  }, [selectedDotKey, selectedPin]);
+
+  const applyDmsPasteToNewCo = (raw: string): boolean => {
+    const parsed = parseDmsCoordinates(raw);
+    if (!parsed) return false;
+    setNewCoLat(parsed.lat.toFixed(6));
+    setNewCoLng(parsed.lng.toFixed(6));
+    toast.success('Coordinates pasted');
+    return true;
+  };
+
+  const handleNewCoAutofill = async () => {
+    const addr = newCoAddress.trim();
+    if (!addr) {
+      toast.error('Enter an address first');
+      return;
+    }
+    setNewCoAutofilling(true);
+    try {
+      const res = await fetch('/api/geocode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ address: addr }),
+      });
+      const data = (await res.json()) as {
+        error?: string;
+        latitude?: unknown;
+        longitude?: unknown;
+        addressNormalized?: unknown;
+        addressComponents?: Record<string, unknown>;
+      };
+      if (!res.ok) {
+        toast.error(data.error ?? 'Could not geocode address');
+        return;
+      }
+      const ac = data.addressComponents ?? {};
+      const str = (v: unknown) => (typeof v === 'string' && v.trim() ? v.trim() : '');
+      setNewCoCity(str(ac.city));
+      setNewCoState(str(ac.state));
+      setNewCoPostal(str(ac.postal_code));
+      setNewCoCountry(str(ac.country));
+      setNewCoAddressNorm(
+        data.addressNormalized != null && String(data.addressNormalized).trim()
+          ? String(data.addressNormalized).trim()
+          : ''
+      );
+      if (data.latitude != null && data.longitude != null) {
+        const lat = typeof data.latitude === 'number' ? data.latitude : Number(data.latitude);
+        const lng = typeof data.longitude === 'number' ? data.longitude : Number(data.longitude);
+        if (Number.isFinite(lat) && Number.isFinite(lng)) {
+          setNewCoLat(lat.toFixed(6));
+          setNewCoLng(lng.toFixed(6));
+        }
+      }
+      toast.success('Filled from address');
+    } catch {
+      toast.error('Could not autofill address');
+    } finally {
+      setNewCoAutofilling(false);
+    }
+  };
+
+  const handleCreateCompanyFromDot = async () => {
+    if (!selectedPin || selectedPin.type !== 'dot' || newCoSaving) return;
+    const name = newCoName.trim();
+    const addressRaw = newCoAddress.trim();
+    if (!name) {
+      toast.error('Company name is required');
+      return;
+    }
+    if (!addressRaw) {
+      toast.error('Address is required to create the location');
+      return;
+    }
+    const latNum = Number(newCoLat.trim());
+    const lngNum = Number(newCoLng.trim());
+    if (!Number.isFinite(latNum) || latNum < -90 || latNum > 90) {
+      toast.error('Latitude must be a number between -90 and 90');
+      return;
+    }
+    if (!Number.isFinite(lngNum) || lngNum < -180 || lngNum > 180) {
+      toast.error('Longitude must be a number between -180 and 180');
+      return;
+    }
+    setNewCoSaving(true);
+    const dotId = selectedPin.data.id;
+    const dotLat = selectedPin.data.lat;
+    const dotLng = selectedPin.data.lng;
+    try {
+      const hasComponents =
+        Boolean(newCoCity.trim()) ||
+        Boolean(newCoState.trim()) ||
+        Boolean(newCoPostal.trim()) ||
+        Boolean(newCoCountry.trim());
+      const addressComponents = hasComponents
+        ? {
+            ...(newCoCity.trim() && { city: newCoCity.trim() }),
+            ...(newCoState.trim() && { state: newCoState.trim() }),
+            ...(newCoPostal.trim() && { postal_code: newCoPostal.trim() }),
+            ...(newCoCountry.trim() && { country: newCoCountry.trim() }),
+          }
+        : undefined;
+      const res = await fetch('/api/companies', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          name,
+          addressRaw,
+          phone: newCoPhone.trim() || undefined,
+          website: newCoWebsite.trim() || undefined,
+          latitude: latNum,
+          longitude: lngNum,
+          ...(newCoAddressNorm.trim() && { addressNormalized: newCoAddressNorm.trim() }),
+          ...(addressComponents && { addressComponents }),
+        }),
+      });
+      const data = (await res.json()) as {
+        error?: string;
+        company?: { id: string; primaryLocationId: string | null };
+      };
+      if (!res.ok) throw new Error(data.error ?? 'Failed to create company');
+      const company = data.company;
+      if (!company?.id) throw new Error('Invalid response from server');
+      const locId = company.primaryLocationId;
+      toast.success('Company and location created');
+      notifyLocationsMapUpdate();
+      try {
+        if (dotId) {
+          await fetch('/api/map-pins', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ id: dotId }),
+          });
+        } else {
+          await fetch('/api/map-pins', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ latitude: dotLat, longitude: dotLng }),
+          });
+        }
+      } catch {
+        /* pin cleanup is best-effort */
+      }
+      await refetchDotsRef.current?.();
+      setSelectedPin(null);
+      if (locId) {
+        router.push(`/map/companies/${company.id}/locations/${locId}`);
+      } else {
+        router.push(`/map/companies/${company.id}`);
+      }
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to create company');
+    } finally {
+      setNewCoSaving(false);
     }
   };
 
@@ -727,10 +974,12 @@ export default function EmptyMapClient() {
                     minDistanceToPolyline({ lat, lng }, planner.vertices) <= radiusM;
                 }
               }
+              const crmRaw = typeof props?.crmStatus === 'string' ? props.crmStatus : null;
+              const statusColor = dotColorFromCrmDisplayStatus(crmRaw);
               const marker = new g.maps.Marker({
                 map,
                 position: { lat, lng },
-                icon: svgPin(g, inCorridor ? COMPANY_PIN_COLOR : '#64748b', inCorridor ? 6 : 5),
+                icon: svgPin(g, inCorridor ? statusColor : '#64748b', inCorridor ? 6 : 5),
                 zIndex: inCorridor ? 2 : 1,
                 opacity: inCorridor ? 1 : 0.32
               });
@@ -820,6 +1069,13 @@ export default function EmptyMapClient() {
                 size = 8;
                 z = 1;
               }
+              /** User-dropped pins: match company location marker size (5px dimmed / 6px corridor). */
+              if (p.source === 'user') {
+                size = insideCorridor ? 6 : 5;
+                opacity = insideCorridor ? 1 : 0.32;
+                z = insideCorridor ? 2 : 1;
+                label = undefined;
+              }
               const labelLight = /^#f3f4f6$/i.test(color);
               const marker = new g.maps.Marker({
                 map,
@@ -892,12 +1148,13 @@ export default function EmptyMapClient() {
                     minDistanceToPolyline({ lat: p.lat, lng: p.lng }, planner.vertices) <= radiusM;
                 }
               }
+              const sellerDimOpacity = 0.62;
               const marker = new g.maps.Marker({
                 map,
                 position: { lat: p.lat, lng: p.lng },
-                icon: svgPin(g, SELLER_PIN_COLOR, insideCorridor ? 6 : 5),
+                icon: svgPin(g, SELLER_PIN_COLOR, insideCorridor ? 6 : 6),
                 zIndex: insideCorridor ? 2 : 1,
-                opacity: insideCorridor ? 1 : 0.32
+                opacity: insideCorridor ? 1 : sellerDimOpacity,
               });
               marker.addListener('click', () => {
                 selectedMarkerRef.current = marker;
@@ -969,6 +1226,53 @@ export default function EmptyMapClient() {
           } catch { /* ignore */ }
         };
 
+        refetchSellersRef.current = async () => {
+          if (cancelled || !mapRef.current) return;
+          try {
+            const res = await fetchWithTimeout('/api/sellers/map', 8000, { credentials: 'include' });
+            const data = (await res.json().catch(() => ({}))) as { pins?: unknown[] };
+            if (cancelled || !Array.isArray(data?.pins)) return;
+            const sellers: SellerPin[] = [];
+            for (const raw of data.pins) {
+              if (typeof raw !== 'object' || raw === null) continue;
+              const o = raw as Record<string, unknown>;
+              const lat = typeof o.lat === 'number' ? o.lat : Number(o.lat);
+              const lng = typeof o.lng === 'number' ? o.lng : Number(o.lng);
+              const companyId =
+                typeof o.companyId === 'string'
+                  ? o.companyId
+                  : typeof o.id === 'string'
+                    ? o.id
+                    : '';
+              const locationId = typeof o.locationId === 'string' ? o.locationId : '';
+              const rawLabel = typeof o.label === 'string' ? o.label.trim() : '';
+              const rawAddr = typeof o.addressRaw === 'string' ? o.addressRaw.trim() : '';
+              const label =
+                rawLabel.length > 0 ? rawLabel : rawAddr.length > 0 ? rawAddr.slice(0, 140) : 'Seller';
+              if (!companyId || !locationId || !Number.isFinite(lat) || !Number.isFinite(lng)) {
+                continue;
+              }
+              sellers.push({
+                id: companyId,
+                companyId,
+                locationId,
+                lat,
+                lng,
+                label,
+                addressRaw: typeof o.addressRaw === 'string' ? o.addressRaw : undefined,
+                phone: typeof o.phone === 'string' ? o.phone : undefined,
+                website: typeof o.website === 'string' ? o.website : undefined,
+                role: typeof o.role === 'string' ? o.role : undefined,
+                notes: typeof o.notes === 'string' ? o.notes : undefined,
+                crmStatus: typeof o.crmStatus === 'string' ? o.crmStatus : undefined,
+                isPrimaryLocation: o.isPrimaryLocation === true
+              });
+            }
+            boundsState.sellers = sellers;
+            applyAllMarkerLayers(false);
+          } catch { /* ignore */ }
+        };
+
         /** Fast static pin coords (CDN); replaced when /api/dots-pins returns. */
         let dotsApiSettled = false;
         void (async () => {
@@ -1026,48 +1330,7 @@ export default function EmptyMapClient() {
           } catch { /* ignore */ }
         })();
 
-        void (async () => {
-          try {
-            const res = await fetchWithTimeout('/api/sellers/map', 8000);
-            const data = (await res.json().catch(() => ({}))) as { pins?: unknown[] };
-            if (cancelled || !Array.isArray(data?.pins)) return;
-            const sellers: SellerPin[] = [];
-            for (const raw of data.pins) {
-              if (typeof raw !== 'object' || raw === null) continue;
-              const o = raw as Record<string, unknown>;
-              const lat = typeof o.lat === 'number' ? o.lat : Number(o.lat);
-              const lng = typeof o.lng === 'number' ? o.lng : Number(o.lng);
-              const companyId =
-                typeof o.companyId === 'string'
-                  ? o.companyId
-                  : typeof o.id === 'string'
-                    ? o.id
-                    : '';
-              const locationId = typeof o.locationId === 'string' ? o.locationId : '';
-              const label = typeof o.label === 'string' ? o.label : '';
-              if (!companyId || !locationId || !label || !Number.isFinite(lat) || !Number.isFinite(lng)) {
-                continue;
-              }
-              sellers.push({
-                id: companyId,
-                companyId,
-                locationId,
-                lat,
-                lng,
-                label,
-                addressRaw: typeof o.addressRaw === 'string' ? o.addressRaw : undefined,
-                phone: typeof o.phone === 'string' ? o.phone : undefined,
-                website: typeof o.website === 'string' ? o.website : undefined,
-                role: typeof o.role === 'string' ? o.role : undefined,
-                notes: typeof o.notes === 'string' ? o.notes : undefined,
-                crmStatus: typeof o.crmStatus === 'string' ? o.crmStatus : undefined,
-                isPrimaryLocation: o.isPrimaryLocation === true
-              });
-            }
-            boundsState.sellers = sellers;
-            applyAllMarkerLayers();
-          } catch { /* ignore */ }
-        })();
+        void refetchSellersRef.current?.();
 
         if (cancelled) return;
 
@@ -1233,6 +1496,7 @@ export default function EmptyMapClient() {
       unsubMapRef.current?.();
       unsubMapRef.current = null;
       refetchDotsRef.current = null;
+      refetchSellersRef.current = null;
       locationMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
       locationMarkersRef.current = [];
       dotMarkersRef.current.forEach((m) => { try { m.setMap(null); } catch { /* ignore */ } });
@@ -1259,6 +1523,14 @@ export default function EmptyMapClient() {
         onConfirm={() => void handleDeleteRedPin()}
         loading={deletingRedDot}
         description="This map pin will be removed from the database."
+      />
+      <AlertModal
+        isOpen={deleteLocationConfirmOpen}
+        onClose={() => setDeleteLocationConfirmOpen(false)}
+        onConfirm={() => void handleDeleteLocationPin()}
+        loading={deletingLocation}
+        title="Remove this location?"
+        description="This location will be removed from the database."
       />
       {/* Dark background shown until map tiles load — eliminates white flash */}
       <div ref={containerRef} className="absolute inset-0 h-full w-full bg-[#1a1a2e]" />
@@ -1357,8 +1629,8 @@ export default function EmptyMapClient() {
         <p className="text-white/70 text-[13px] drop-shadow-sm pl-1">Or press and hold the map to drop a pin</p>
       </div>
 
-      {/* Route planner + map type */}
-      <div className="map-page-chrome absolute top-4 right-4 z-[60] flex flex-col items-end gap-2 sm:flex-row sm:items-center">
+      {/* Route planner + map type — below sheet overlays (z-50) so route drawer isn’t covered */}
+      <div className="map-page-chrome absolute top-4 right-4 z-40 flex flex-col items-end gap-2 sm:flex-row sm:items-center">
         <MapPinLayersControl variant="dark" value={pinLayers} onChange={setPinLayers} />
         <RoutePlannerSheet
           onApplied={(state) => setCorridorPlanner(state)}
@@ -1415,44 +1687,82 @@ export default function EmptyMapClient() {
             </div>
           )}
 
-          {selectedPin.type === 'location' && (
+          {(selectedPin.type === 'location' || selectedPin.type === 'seller') && (
             <div className="mb-4 space-y-1.5 rounded-lg border border-white/10 bg-white/5 p-3 text-[13px]">
-              {selectedPin.data.companyName ? (
-                <p>
-                  <span className="text-muted-foreground">Company </span>
-                  <span className="font-medium">{selectedPin.data.companyName}</span>
-                </p>
-              ) : null}
-              {selectedPin.data.addressNormalized ? (
-                <p className="text-muted-foreground">{selectedPin.data.addressNormalized}</p>
-              ) : null}
-              {selectedPin.data.locationName ? (
-                <p>
-                  <span className="text-muted-foreground">Location name </span>
-                  {selectedPin.data.locationName}
-                </p>
-              ) : null}
-              {selectedPin.data.phone ? (
-                <p>
-                  <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className="ios-link">
-                    {selectedPin.data.phone}
-                  </a>
-                </p>
-              ) : null}
-              {selectedPin.data.email ? (
-                <p>
-                  <a href={`mailto:${selectedPin.data.email}`} className="ios-link break-all">
-                    {selectedPin.data.email}
-                  </a>
-                </p>
-              ) : null}
-              {selectedPin.data.website ? (
-                <p>
-                  <a href={selectedPin.data.website} target="_blank" rel="noopener noreferrer" className="ios-link break-all">
-                    {selectedPin.data.website}
-                  </a>
-                </p>
-              ) : null}
+              {selectedPin.type === 'location' ? (
+                <>
+                  {selectedPin.data.companyName ? (
+                    <p>
+                      <span className="text-muted-foreground">Company </span>
+                      <span className="font-medium">{selectedPin.data.companyName}</span>
+                    </p>
+                  ) : null}
+                  {selectedPin.data.addressNormalized ? (
+                    <p className="text-muted-foreground">{selectedPin.data.addressNormalized}</p>
+                  ) : null}
+                  {selectedPin.data.locationName ? (
+                    <p>
+                      <span className="text-muted-foreground">Location name </span>
+                      {selectedPin.data.locationName}
+                    </p>
+                  ) : null}
+                  {selectedPin.data.phone ? (
+                    <p>
+                      <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className="ios-link">
+                        {selectedPin.data.phone}
+                      </a>
+                    </p>
+                  ) : null}
+                  {selectedPin.data.email ? (
+                    <p>
+                      <a href={`mailto:${selectedPin.data.email}`} className="ios-link break-all">
+                        {selectedPin.data.email}
+                      </a>
+                    </p>
+                  ) : null}
+                  {selectedPin.data.website ? (
+                    <p>
+                      <a
+                        href={selectedPin.data.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ios-link break-all"
+                      >
+                        {selectedPin.data.website}
+                      </a>
+                    </p>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  <p>
+                    <span className="text-muted-foreground">Company </span>
+                    <span className="font-medium">{selectedPin.data.label}</span>
+                  </p>
+                  {selectedPin.data.addressRaw ? (
+                    <p className="text-muted-foreground">{selectedPin.data.addressRaw}</p>
+                  ) : null}
+                  {selectedPin.data.phone ? (
+                    <p>
+                      <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className="ios-link">
+                        {selectedPin.data.phone}
+                      </a>
+                    </p>
+                  ) : null}
+                  {selectedPin.data.website ? (
+                    <p>
+                      <a
+                        href={selectedPin.data.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ios-link break-all"
+                      >
+                        {selectedPin.data.website}
+                      </a>
+                    </p>
+                  ) : null}
+                </>
+              )}
               <Link
                 href={`/map/companies/${selectedPin.data.companyId}/locations/${selectedPin.data.locationId}`}
                 className="inline-block pt-1 text-[13px] font-semibold text-primary underline-offset-2 hover:underline"
@@ -1462,56 +1772,58 @@ export default function EmptyMapClient() {
             </div>
           )}
 
-          {/* Additional pin details */}
-          {selectedPin.type === 'seller' &&
-            (selectedPin.data.addressRaw ||
-              selectedPin.data.role ||
-              selectedPin.data.phone ||
-              selectedPin.data.website ||
-              selectedPin.data.notes) && (
+          {(selectedPin.type === 'location' || selectedPin.type === 'seller') && (
+            <div className={`mb-4 ${sellerToggleSaving ? 'opacity-60 pointer-events-none' : ''}`}>
+              <p className="mb-2 text-[13px] font-semibold text-foreground/90">Company Details</p>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                <p className="mb-2 text-[12px] text-muted-foreground">
+                  Competitor/vendor research vs buyer. Seller uses grey pin when the site is geocoded.
+                </p>
+                <div
+                  className="inline-flex w-full max-w-[280px] rounded-lg border border-white/15 bg-black/25 p-0.5"
+                  role="group"
+                  aria-label="Buyer or seller"
+                >
+                  <button
+                    type="button"
+                    disabled={sellerToggleSaving}
+                    onClick={() => void handleMapPopoutIsSellerChange(true)}
+                    className={`flex-1 rounded-md px-3 py-2 text-center text-[13px] font-medium transition-colors ${
+                      selectedPin.type === 'seller'
+                        ? 'bg-slate-500 text-white shadow-sm'
+                        : 'text-muted-foreground hover:bg-white/10 hover:text-foreground'
+                    }`}
+                  >
+                    Seller
+                  </button>
+                  <button
+                    type="button"
+                    disabled={sellerToggleSaving}
+                    onClick={() => void handleMapPopoutIsSellerChange(false)}
+                    className={`flex-1 rounded-md px-3 py-2 text-center text-[13px] font-medium transition-colors ${
+                      selectedPin.type === 'location'
+                        ? 'bg-primary text-primary-foreground shadow-sm'
+                        : 'text-muted-foreground hover:bg-white/10 hover:text-foreground'
+                    }`}
+                  >
+                    Buyer
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Seller-only extras (role / notes) — address & contact are in the card above */}
+          {selectedPin.type === 'seller' && (selectedPin.data.role || selectedPin.data.notes) && (
               <div className="mb-4 space-y-1 text-[14px]">
                 {selectedPin.data.role && (
                   <p className="text-muted-foreground/70 text-[13px] italic">{selectedPin.data.role}</p>
-                )}
-                {selectedPin.data.addressRaw && (
-                  <p className="text-muted-foreground/80">{selectedPin.data.addressRaw}</p>
-                )}
-                {selectedPin.data.phone && (
-                  <p>
-                    <a href={`tel:${selectedPin.data.phone.replace(/\s/g, '')}`} className="ios-link">
-                      {selectedPin.data.phone}
-                    </a>
-                  </p>
-                )}
-                {selectedPin.data.website && (
-                  <p>
-                    <a href={selectedPin.data.website} target="_blank" rel="noopener noreferrer" className="ios-link break-all">
-                      {selectedPin.data.website}
-                    </a>
-                  </p>
                 )}
                 {selectedPin.data.notes && (
                   <p className="text-muted-foreground/80">{selectedPin.data.notes}</p>
                 )}
               </div>
             )}
-
-          {(selectedPin.type === 'location' || selectedPin.type === 'seller') && (
-            <div className={pipelineStatusSaving ? 'mb-4 opacity-60 pointer-events-none' : 'mb-4'}>
-              <CrmPipelineStatusField
-                id={`map-popout-pipeline-${selectedPin.data.locationId}`}
-                label="Status"
-                helperText="Buyers & sellers: New, no answer, and Account (HQ uses the company row; other sites use this location). Not interested and meeting set apply everywhere."
-                value={pipelineFormValueFromCrmStatus(selectedPin.data.crmStatus)}
-                onChange={(v) => {
-                  const snap = selectedPin;
-                  if (snap.type === 'location' || snap.type === 'seller') {
-                    void persistPipelineStatusFromMap(snap, v);
-                  }
-                }}
-              />
-            </div>
-          )}
 
           {selectedPin.type === 'dot' && (selectedPin.data.addressRaw || selectedPin.data.phone || selectedPin.data.email || selectedPin.data.website || selectedPin.data.industry || selectedPin.data.summary) && (
             <div className="mb-4 space-y-1 text-[14px]">
@@ -1545,6 +1857,182 @@ export default function EmptyMapClient() {
               {selectedPin.data.summary && (
                 <p className="text-muted-foreground/80">{selectedPin.data.summary}</p>
               )}
+            </div>
+          )}
+
+          {selectedPin.type === 'dot' && (
+            <div className="mb-4 rounded-lg border border-sky-500/30 bg-sky-500/5 p-3">
+              <p className="ios-section-label mb-1 text-sky-200">Add company (buyer)</p>
+              <p className="mb-3 text-[12px] text-muted-foreground">
+                Same fields as Location Details: autofill from the address line, or paste Google Earth coordinates into lat/long.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <label htmlFor="map-new-co-name" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                    Company name
+                  </label>
+                  <input
+                    id="map-new-co-name"
+                    type="text"
+                    value={newCoName}
+                    onChange={(e) => setNewCoName(e.target.value)}
+                    placeholder="Company name"
+                    autoComplete="organization"
+                    className="ios-input w-full text-[14px]"
+                  />
+                </div>
+                <div>
+                  <div className="mb-1 flex items-center justify-between gap-2">
+                    <label htmlFor="map-new-co-address" className="text-[12px] font-medium text-foreground/80">
+                      Address
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => void handleNewCoAutofill()}
+                      disabled={newCoAutofilling || !newCoAddress.trim()}
+                      className="text-[12px] font-medium text-sky-300 hover:text-sky-200 disabled:opacity-40"
+                    >
+                      {newCoAutofilling ? 'Filling…' : 'Autofill'}
+                    </button>
+                  </div>
+                  <textarea
+                    id="map-new-co-address"
+                    value={newCoAddress}
+                    onChange={(e) => setNewCoAddress(e.target.value)}
+                    placeholder="Full address"
+                    rows={2}
+                    className="ios-input w-full min-h-[64px] resize-y text-[14px]"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label htmlFor="map-new-co-city" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                      City
+                    </label>
+                    <input
+                      id="map-new-co-city"
+                      type="text"
+                      value={newCoCity}
+                      onChange={(e) => setNewCoCity(e.target.value)}
+                      placeholder="City"
+                      className="ios-input w-full text-[13px]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="map-new-co-state" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                      State
+                    </label>
+                    <input
+                      id="map-new-co-state"
+                      type="text"
+                      value={newCoState}
+                      onChange={(e) => setNewCoState(e.target.value)}
+                      placeholder="State"
+                      className="ios-input w-full text-[13px]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="map-new-co-zip" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                      ZIP
+                    </label>
+                    <input
+                      id="map-new-co-zip"
+                      type="text"
+                      value={newCoPostal}
+                      onChange={(e) => setNewCoPostal(e.target.value)}
+                      placeholder="ZIP"
+                      className="ios-input w-full text-[13px]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="map-new-co-country" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                      Country
+                    </label>
+                    <input
+                      id="map-new-co-country"
+                      type="text"
+                      value={newCoCountry}
+                      onChange={(e) => setNewCoCountry(e.target.value)}
+                      placeholder="Country"
+                      className="ios-input w-full text-[13px]"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label htmlFor="map-new-co-lat" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                      Latitude
+                    </label>
+                    <input
+                      id="map-new-co-lat"
+                      type="text"
+                      inputMode="decimal"
+                      value={newCoLat}
+                      onChange={(e) => setNewCoLat(e.target.value)}
+                      onPaste={(e) => {
+                        const pasted = e.clipboardData.getData('text');
+                        if (applyDmsPasteToNewCo(pasted)) e.preventDefault();
+                      }}
+                      placeholder="e.g. 29.785993"
+                      className="ios-input w-full font-mono text-[13px]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="map-new-co-lng" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                      Longitude
+                    </label>
+                    <input
+                      id="map-new-co-lng"
+                      type="text"
+                      inputMode="decimal"
+                      value={newCoLng}
+                      onChange={(e) => setNewCoLng(e.target.value)}
+                      onPaste={(e) => {
+                        const pasted = e.clipboardData.getData('text');
+                        if (applyDmsPasteToNewCo(pasted)) e.preventDefault();
+                      }}
+                      placeholder="e.g. -95.593065"
+                      className="ios-input w-full font-mono text-[13px]"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="map-new-co-phone" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                    Phone
+                  </label>
+                  <input
+                    id="map-new-co-phone"
+                    type="tel"
+                    value={newCoPhone}
+                    onChange={(e) => setNewCoPhone(e.target.value)}
+                    placeholder="Phone"
+                    autoComplete="tel"
+                    className="ios-input w-full text-[14px]"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="map-new-co-website" className="mb-1 block text-[12px] font-medium text-foreground/80">
+                    Website
+                  </label>
+                  <input
+                    id="map-new-co-website"
+                    type="url"
+                    value={newCoWebsite}
+                    onChange={(e) => setNewCoWebsite(e.target.value)}
+                    placeholder="https://…"
+                    autoComplete="url"
+                    className="ios-input w-full text-[14px]"
+                  />
+                </div>
+                <button
+                  type="button"
+                  disabled={newCoSaving || !newCoName.trim() || !newCoAddress.trim()}
+                  onClick={() => void handleCreateCompanyFromDot()}
+                  className="w-full rounded-full bg-sky-600 px-4 py-2.5 text-[13px] font-semibold text-white hover:bg-sky-500 disabled:opacity-50"
+                >
+                  {newCoSaving ? 'Creating…' : 'Create company & location'}
+                </button>
+              </div>
             </div>
           )}
 
@@ -1614,10 +2102,16 @@ export default function EmptyMapClient() {
             >
               Reactivate pin
             </button>
-            {selectedPin.type === 'dot' && (
+            {(selectedPin.type === 'dot' ||
+              selectedPin.type === 'location' ||
+              selectedPin.type === 'seller') && (
               <button
                 type="button"
-                onClick={() => setDeleteDotConfirmOpen(true)}
+                onClick={() =>
+                  selectedPin.type === 'dot'
+                    ? setDeleteDotConfirmOpen(true)
+                    : setDeleteLocationConfirmOpen(true)
+                }
                 className="ios-bubble ios-bubble-destructive h-9 px-4 rounded-full text-[14px]"
               >
                 Delete pin

@@ -1,4 +1,5 @@
 import type { StopOutcome } from '@prisma/client';
+import { effectiveLocationCrmStatus } from '@/lib/location-crm-status';
 import { prisma } from '@/lib/prisma';
 import { getRedPinsCount } from '@/lib/red-pins-count';
 
@@ -27,6 +28,37 @@ function companyStatusBreakdown(
       label: r.status?.trim() ? r.status.trim() : 'No status',
       count: r._count._all
     }))
+    .sort((a, b) => b.count - a.count);
+}
+
+type LocationStatusRow = {
+  id: string;
+  metadata: unknown;
+  Company: {
+    isSeller: boolean;
+    status: string | null;
+    primaryLocationId: string | null;
+  };
+};
+
+function locationStatusBreakdownFromRows(
+  rows: LocationStatusRow[],
+  isSeller: boolean
+): StatusCountRow[] {
+  const counts = new Map<string, number>();
+  for (const r of rows) {
+    if (r.Company.isSeller !== isSeller) continue;
+    const st = effectiveLocationCrmStatus({
+      locationId: r.id,
+      companyStatus: r.Company.status,
+      companyPrimaryLocationId: r.Company.primaryLocationId,
+      locationMetadata: r.metadata
+    });
+    const label = st?.trim() ? st.trim() : 'No status';
+    counts.set(label, (counts.get(label) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([label, count]) => ({ label, count }))
     .sort((a, b) => b.count - a.count);
 }
 
@@ -129,7 +161,8 @@ export async function getOverviewKpiStats() {
     locationsSellerGeocoded,
     totalLocations,
     containerPinsCount,
-    sharedRoute
+    sharedRoute,
+    locationRowsForStatus
   ] = await Promise.all([
     prisma.company.count({ where: hasLocation }),
     prisma.company.count({
@@ -181,6 +214,16 @@ export async function getOverviewKpiStats() {
       where: LASTLEG_SHARED_ROUTE,
       select: { id: true },
       orderBy: { updatedAt: 'desc' }
+    }),
+    prisma.location.findMany({
+      where: { Company: { hidden: false } },
+      select: {
+        id: true,
+        metadata: true,
+        Company: {
+          select: { isSeller: true, status: true, primaryLocationId: true }
+        }
+      }
     })
   ]);
 
@@ -196,6 +239,15 @@ export async function getOverviewKpiStats() {
     breakdownContainerRoute = containerRouteBreakdown(grouped);
   }
 
+  const breakdownLocationsNonSeller = locationStatusBreakdownFromRows(
+    locationRowsForStatus as LocationStatusRow[],
+    false
+  );
+  const breakdownLocationsSeller = locationStatusBreakdownFromRows(
+    locationRowsForStatus as LocationStatusRow[],
+    true
+  );
+
   return {
     totalCompanies,
     companiesThisMonth,
@@ -208,6 +260,8 @@ export async function getOverviewKpiStats() {
     breakdownCompaniesSeller: companyStatusBreakdown(groupSeller),
     locationsNonSeller,
     locationsSeller,
+    breakdownLocationsNonSeller,
+    breakdownLocationsSeller,
     locationsGeocoded,
     locationsNotGeocoded,
     containerPinsCount,

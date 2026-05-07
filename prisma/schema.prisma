@@ -467,11 +467,13 @@ model MetaKV {
 
 // Red/blue dots pins (LastLeg canonical set). See preflight sync from public/dots-pins.json.
 model MapPin {
-  id        String   @id @default(cuid())
-  latitude  Decimal  @db.Decimal(10, 6)
-  longitude Decimal  @db.Decimal(11, 6)
-  hidden    Boolean  @default(false)
-  createdAt DateTime @default(now())
+  id            String   @id @default(cuid())
+  latitude      Decimal  @db.Decimal(10, 6)
+  longitude     Decimal  @db.Decimal(11, 6)
+  hidden        Boolean  @default(false)
+  /** True when created from the main map (press-hold / Add pin); smaller marker on map. */
+  droppedByUser Boolean  @default(false)
+  createdAt     DateTime @default(now())
 
   @@index([latitude, longitude])
 }

@@ -43,7 +43,7 @@ export async function GET() {
     try {
       const userPins = await prisma.mapPin.findMany({
         where: { hidden: false },
-        select: { id: true, latitude: true, longitude: true }
+        select: { id: true, latitude: true, longitude: true, droppedByUser: true },
       });
       mapPinTableAvailable = true;
       let hiddenSet = new Set<string>();
@@ -76,13 +76,12 @@ export async function GET() {
           cachedMap.set(row.key, value.payload as PinPlaceResearchResult);
         }
       }
-      // Use kml so map colors match LastLeg route targets (active=blue). MapPin rows are the
-      // canonical synced dot layer (KML/build pipeline), not ad-hoc "user" drop semantics.
+      // User-dropped pins (`droppedByUser`) get `source: user` for smaller markers; synced/KML pipeline uses `kml`.
       dbPins = visiblePins.map((p) => ({
         lng: Number(p.longitude),
         lat: Number(p.latitude),
         id: p.id,
-        source: 'kml' as const,
+        source: p.droppedByUser ? ('user' as const) : ('kml' as const),
         label: cachedMap.get(pinResearchDefaultCacheKey(Number(p.latitude), Number(p.longitude)))?.chosen?.name ?? undefined,
         addressRaw: cachedMap.get(pinResearchDefaultCacheKey(Number(p.latitude), Number(p.longitude)))?.chosen?.formattedAddress ?? undefined,
         phone: cachedMap.get(pinResearchDefaultCacheKey(Number(p.latitude), Number(p.longitude)))?.chosen?.phone ?? undefined,

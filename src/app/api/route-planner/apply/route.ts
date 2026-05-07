@@ -12,6 +12,7 @@ import {
 } from '@/lib/route-corridor';
 import type { CorridorLine, RoutePlannerState } from '@/lib/route-planner-types';
 import { findActiveRouteIdForUser } from '@/lib/user-active-route';
+import { getDemoMapCompanyIds } from '@/lib/map-demo-layer';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -26,6 +27,8 @@ type ApplyBody = {
   intermediateAddresses?: string[];
   /** Updates `Route.name` when non-empty. */
   routeName?: string;
+  /** Corridor uses demo company locations only; no container targets or sellers in corridor math. */
+  mapDemoLayer?: boolean;
 };
 
 function parseVertices(raw: unknown): LatLng[] | null {
@@ -85,6 +88,18 @@ export async function POST(req: NextRequest) {
     }
 
     const radiusMeters = radiusMiles * 1609.34;
+
+    const mapDemoLayer = body.mapDemoLayer === true;
+    const demoCompanyIds = getDemoMapCompanyIds();
+    if (mapDemoLayer && demoCompanyIds.length === 0) {
+      return NextResponse.json(
+        {
+          error:
+            'mapDemoLayer needs at least one company id in DEMO_MAP_COMPANY_IDS (src/lib/map-demo-layer.ts).'
+        },
+        { status: 400 }
+      );
+    }
 
     const routeInclude = {
       stops: {
@@ -146,8 +161,11 @@ export async function POST(req: NextRequest) {
 
     const corridorTargetRoute =
       canonicalTargets.length > 0 && canonicalRoute ? canonicalRoute : route;
-    const targetPoints =
+    let targetPoints =
       canonicalTargets.length > 0 ? canonicalTargets : targetsFromUserRoute;
+    if (mapDemoLayer) {
+      targetPoints = [];
+    }
 
     const { filteredIds, rankedIds } = filterAndRankTargetsAlongCorridor(
       targetPoints,
@@ -159,7 +177,8 @@ export async function POST(req: NextRequest) {
       where: {
         latitude: { not: null },
         longitude: { not: null },
-        Company: { hidden: false, isSeller: false }
+        Company: { hidden: false, isSeller: false },
+        ...(mapDemoLayer ? { companyId: { in: demoCompanyIds } } : {})
       },
       select: { id: true, addressRaw: true, latitude: true, longitude: true }
     });
@@ -177,14 +196,16 @@ export async function POST(req: NextRequest) {
       radiusMeters
     );
 
-    const sellerRows = await prisma.location.findMany({
-      where: {
-        latitude: { not: null },
-        longitude: { not: null },
-        Company: { hidden: false, isSeller: true }
-      },
-      select: { id: true, addressRaw: true, latitude: true, longitude: true }
-    });
+    const sellerRows = mapDemoLayer
+      ? []
+      : await prisma.location.findMany({
+          where: {
+            latitude: { not: null },
+            longitude: { not: null },
+            Company: { hidden: false, isSeller: true }
+          },
+          select: { id: true, addressRaw: true, latitude: true, longitude: true }
+        });
     const sellerPoints = sellerRows
       .map((l) => ({
         id: l.id,

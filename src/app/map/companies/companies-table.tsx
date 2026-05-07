@@ -15,7 +15,6 @@ type Company = {
   id: string;
   name: string;
   website: string | null;
-  status: string | null;
   isSeller: boolean;
   metadata: unknown;
   createdAt: Date;
@@ -54,6 +53,7 @@ export default function CompaniesTable({
     shallow: false,
     debounceMs: 500,
     initialState: {
+      sorting: [{ id: 'name', desc: false }],
       columnVisibility: { state: false, actions: true }
     }
   });

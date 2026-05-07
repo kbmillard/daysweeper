@@ -1,7 +1,6 @@
 'use client';
 import type { Option } from '@/types/data-table';
 import { Badge } from '@/components/ui/badge';
-import { displayStatus } from '@/constants/company-status';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Column, ColumnDef } from '@tanstack/react-table';
 import { Text, Globe, MapPin, Package, ShoppingBag } from 'lucide-react';
@@ -13,7 +12,6 @@ type Company = {
   id: string;
   name: string;
   website: string | null;
-  status: string | null;
   isSeller: boolean;
   metadata: unknown;
   createdAt: Date;
@@ -123,7 +121,7 @@ export function getColumns(options?: {
       enableSorting: true,
       enableHiding: true,
       header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Seller' />
+        <DataTableColumnHeader column={column} title='Buyer / seller' />
       ),
       cell: ({ row }) =>
         row.original.isSeller ? (
@@ -131,14 +129,16 @@ export function getColumns(options?: {
             Seller
           </Badge>
         ) : (
-          <span className='text-muted-foreground'>—</span>
+          <Badge variant='outline' className='text-xs font-normal'>
+            Buyer
+          </Badge>
         ),
       meta: {
-        label: 'Seller (vendor research)',
+        label: 'Buyer / seller',
         variant: 'select',
         options: [
           { label: 'Seller', value: 'yes' },
-          { label: 'Not seller', value: 'no' }
+          { label: 'Buyer', value: 'no' }
         ],
         icon: ShoppingBag
       },
@@ -196,37 +196,6 @@ export function getColumns(options?: {
         icon: Package
       },
       enableColumnFilter: false
-    },
-    {
-      id: 'status',
-      accessorKey: 'status',
-      enableSorting: true,
-      enableHiding: true,
-      header: ({ column }: { column: Column<Company, unknown> }) => (
-        <DataTableColumnHeader column={column} title='Status' />
-      ),
-      cell: ({ cell }) => {
-        const status = cell.getValue<Company['status']>();
-        const label = status ? displayStatus(status) : null;
-        return label ? (
-          <Badge variant='outline' className='text-xs'>
-            {label}
-          </Badge>
-        ) : (
-          <span className='text-muted-foreground'>—</span>
-        );
-      },
-      meta: {
-        label: 'Status',
-        variant: 'select',
-        options: [
-          { label: 'Account', value: 'Account' },
-          { label: 'Contacted - meeting set', value: 'Contacted - meeting set' },
-          { label: 'Contacted - no answer', value: 'Contacted - no answer' },
-          { label: 'Contacted - not interested', value: 'Contacted - not interested' }
-        ]
-      },
-      enableColumnFilter: true
     },
     {
       id: 'actions',

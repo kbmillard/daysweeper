@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { resolveApiUserIdOr401 } from '@/lib/clerk-api-optional';
 import { searchBidSpotter } from '@/lib/auction-sources/bidspotter';
 import { searchProxibid } from '@/lib/auction-sources/proxibid';
 
@@ -15,10 +15,8 @@ export const maxDuration = 60;
  */
 export async function GET(req: Request) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
 
     const { searchParams } = new URL(req.url);
     const platform = searchParams.get('platform');

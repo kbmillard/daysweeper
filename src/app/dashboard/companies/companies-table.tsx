@@ -58,6 +58,7 @@ export default function CompaniesTable({
     shallow: false,
     debounceMs: 500,
     initialState: {
+      sorting: [{ id: 'name', desc: false }],
       columnVisibility: { state: false, actions: true }
     }
   });

@@ -1,6 +1,7 @@
 import { auth } from '@clerk/nextjs/server';
 import type { Prisma } from '@prisma/client';
 import { NextResponse } from 'next/server';
+import { resolveApiUserIdOr401 } from '@/lib/clerk-api-optional';
 import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
@@ -26,10 +27,9 @@ export async function GET() {
 }
 
 export async function PATCH(req: Request) {
-  const { userId } = await auth();
-  if (!userId) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
+  const gate = await resolveApiUserIdOr401();
+  if (!gate.ok) return gate.response;
+  const { userId } = gate;
 
   const body = await req.json().catch(() => ({}));
   const layout = body.layout as Record<string, unknown> | undefined;

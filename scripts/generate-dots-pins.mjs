@@ -6,6 +6,9 @@
  * 1. docs/Dots.kml (manual verified pin source)
  * 2. JSON/round2/Dots.csv (legacy fallback)
  *
+ * KML: skips any `<Placemark>` that contains `<visibility>0</visibility>` (Google Earth “hidden”).
+ * CSV has no visibility — keep it aligned with *visible* dots only, or it will resurrect pins if KML is absent.
+ *
  * Run: npm run generate:dots-pins
  *
  * Vercel runs this via scripts/vercel-build-preflight.mjs before next build.
@@ -35,7 +38,10 @@ function parseKmlPins(xml) {
     const vis = block.match(/<visibility>\s*(\d+)\s*<\/visibility>/);
     if (vis && vis[1] === '0') continue;
 
-    const coordMatch = block.match(/<coordinates>\s*([^<]+)\s*<\/coordinates>/);
+    // Prefer <Point> center so MultiGeometry doesn’t use a LineString vertex by mistake.
+    const coordMatch =
+      block.match(/<Point>[\s\S]*?<coordinates>\s*([^<]+?)\s*<\/coordinates>/i) ??
+      block.match(/<coordinates>\s*([^<]+?)\s*<\/coordinates>/);
     if (!coordMatch) continue;
     const nums = coordMatch[1].trim().split(/[\s,]+/).filter(Boolean);
     const lng = parseFloat(nums[0]);

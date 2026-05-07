@@ -463,38 +463,128 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Map page: satellite/road backdrop washes out default bubble & glass text */
+/* Map page: frosted controls sit on satellite/road — always use dark, high-contrast labels */
+/* !important beats theme utilities (e.g. Green) that were forcing white/light foreground on buttons */
 .map-page-chrome .ios-bubble-secondary {
-  color: hsl(222 55% 16%);
+  color: #0a0a0a !important;
   font-weight: 600;
 }
 .map-page-chrome .ios-bubble-secondary:hover {
-  color: hsl(222 55% 12%);
+  color: #050505 !important;
 }
 .dark .map-page-chrome .ios-bubble-secondary {
-  color: hsl(210 45% 82%);
+  color: #0a0a0a !important;
   font-weight: 600;
 }
 .dark .map-page-chrome .ios-bubble-secondary:hover {
-  color: hsl(210 50% 90%);
+  color: #050505 !important;
 }
+
+/* Primary on map: light frosted blue so label stays dark (not white-on-blue) */
+.map-page-chrome .ios-bubble-primary {
+  background: linear-gradient(
+    180deg,
+    hsl(210 100% 94%) 0%,
+    hsl(210 90% 86%) 100%
+  );
+  color: #0a0a0a !important;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  box-shadow:
+    0 6px 24px rgba(37, 99, 235, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 2px 2px rgba(255, 255, 255, 0.75),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.05);
+}
+.map-page-chrome .ios-bubble-primary::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, transparent 55%);
+}
+.map-page-chrome .ios-bubble-primary:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(210 100% 91%) 0%,
+    hsl(210 90% 82%) 100%
+  );
+  color: #050505 !important;
+  box-shadow:
+    0 10px 36px rgba(37, 99, 235, 0.22),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 2px 2px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.04);
+}
+.map-page-chrome .ios-bubble-primary:active {
+  background: linear-gradient(
+    180deg,
+    hsl(210 90% 84%) 0%,
+    hsl(210 85% 76%) 100%
+  );
+  color: #0a0a0a !important;
+}
+.map-page-chrome .ios-bubble-primary:disabled {
+  background: linear-gradient(180deg, hsl(222 15% 88%) 0%, hsl(222 12% 82%) 100%);
+  color: #404040 !important;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.map-page-chrome .ios-bubble-primary:disabled::before {
+  opacity: 0.35;
+}
+.dark .map-page-chrome .ios-bubble-primary {
+  background: linear-gradient(
+    180deg,
+    hsl(210 100% 94%) 0%,
+    hsl(210 90% 86%) 100%
+  );
+  color: #0a0a0a !important;
+  border-color: rgba(37, 99, 235, 0.35);
+}
+.dark .map-page-chrome .ios-bubble-primary:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(210 100% 91%) 0%,
+    hsl(210 90% 82%) 100%
+  );
+  color: #050505 !important;
+}
+.dark .map-page-chrome .ios-bubble-primary:disabled {
+  color: #404040 !important;
+}
+
+/* Satellite / roadmap behind frosted glass — push opaque backing + dark type (any body.theme-*) */
 .map-page-chrome .ios-glass:not(.text-white) {
-  color: hsl(222 47% 12%);
+  background: rgba(252, 252, 252, 0.94) !important;
+  border-color: rgba(15, 23, 42, 0.16) !important;
+  color: #020617 !important;
+  box-shadow:
+    0 4px 22px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+.map-page-chrome .ios-glass:not(.text-white)::before {
+  opacity: 0.22 !important;
 }
 .map-page-chrome .ios-glass input {
-  color: hsl(222 47% 10%);
+  color: #020617 !important;
 }
 .map-page-chrome .ios-glass input::placeholder {
-  color: hsl(222 22% 36%);
+  color: #334155 !important;
+  opacity: 1 !important;
 }
 .dark .map-page-chrome .ios-glass:not(.text-white) {
-  color: hsl(210 18% 96%);
+  background: rgba(252, 252, 252, 0.94) !important;
+  border-color: rgba(15, 23, 42, 0.16) !important;
+  color: #020617 !important;
+  box-shadow:
+    0 4px 22px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+.dark .map-page-chrome .ios-glass:not(.text-white)::before {
+  opacity: 0.22 !important;
 }
 .dark .map-page-chrome .ios-glass input {
-  color: hsl(210 15% 98%);
+  color: #020617 !important;
 }
 .dark .map-page-chrome .ios-glass input::placeholder {
-  color: hsl(215 12% 58%);
+  color: #334155 !important;
+  opacity: 1 !important;
 }
 
 /* iOS-style link with liquid feel */

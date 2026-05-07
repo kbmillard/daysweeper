@@ -10,6 +10,7 @@ import CompanyInteractions from '../../company-interactions';
 import { AddChildCompanySearch } from '@/app/dashboard/companies/[companyId]/add-child-company-search';
 import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
 import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
+import { effectiveLocationCrmStatus } from '@/lib/location-crm-status';
 
 function linkedPinsFromMetadata(metadata: unknown): { lat: number; lng: number }[] {
   const m = parseLocationMetadata(metadata);
@@ -75,6 +76,12 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
   const isPrimaryLocation = company.primaryLocationId === location.id;
   const companyProductType = productTypeFromMetadata(company.metadata);
   const linkedMapPins = linkedPinsFromMetadata(location.metadata);
+  const crmStatusForPin = effectiveLocationCrmStatus({
+    locationId: location.id,
+    companyStatus: company.status,
+    companyPrimaryLocationId: company.primaryLocationId,
+    locationMetadata: location.metadata
+  });
 
   return (
     <div className='flex flex-col gap-6 pb-8'>
@@ -126,6 +133,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
         longitude={lng}
         address={location.addressRaw}
         locationId={location.id}
+        crmStatus={crmStatusForPin}
         linkedPins={linkedMapPins}
       />
 

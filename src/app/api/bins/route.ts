@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { auth } from '@clerk/nextjs/server';
+import { resolveApiUserIdOr401 } from '@/lib/clerk-api-optional';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -17,10 +17,9 @@ function withPrice(item: { price: unknown }) {
 
 export async function GET() {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
+    const { userId } = gate;
 
     const items = await prisma.warehouseItem.findMany({
       orderBy: { updatedAt: 'desc' },
@@ -38,10 +37,9 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
+    const { userId } = gate;
 
     const body = await req.json().catch(() => ({}));
     const partNumber =
@@ -92,10 +90,8 @@ export async function POST(req: Request) {
 /** DELETE /api/bins — clear all bins (WarehouseItem rows). */
 export async function DELETE() {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
 
     const r = await prisma.warehouseItem.deleteMany({});
     return NextResponse.json({ deleted: r.count });

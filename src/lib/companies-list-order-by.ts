@@ -8,7 +8,7 @@ export function buildCompaniesListOrderBy(
 ): Prisma.CompanyOrderByWithRelationInput {
   const first = sort?.[0];
   if (!first?.id) {
-    return { createdAt: 'desc' };
+    return { name: 'asc' };
   }
 
   const dir = first.desc ? ('desc' as const) : ('asc' as const);
@@ -43,6 +43,6 @@ export function buildCompaniesListOrderBy(
         }
       } as Prisma.CompanyOrderByWithRelationInput;
     default:
-      return { createdAt: 'desc' };
+      return { name: 'asc' };
   }
 }

@@ -1,5 +1,8 @@
 import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
 
+/** ISO timestamp written when HQ or site pipeline status is saved (dashboard account-growth chart). */
+export const CRM_STATUS_CHANGED_AT_METADATA_KEY = 'crmStatusChangedAt';
+
 /**
  * When a user saves the location detail page, we set suppressCompanyPrimarySync on Location.metadata
  * so PATCH /api/companies no longer overwrites contact fields until that location becomes HQ again.
@@ -34,7 +37,7 @@ export function withCompanyPrimarySyncSuppressed(
 export function mergePrimaryLocationMirrorMetadata(
   locationMetadata: unknown,
   company: { metadata: unknown },
-  options: { clearSuppress: boolean }
+  options: { clearSuppress: boolean; recordPipelineStatusChange?: boolean }
 ): Record<string, unknown> {
   const m = parseLocationMetadata(locationMetadata);
   if (options.clearSuppress) delete m.suppressCompanyPrimarySync;
@@ -44,6 +47,10 @@ export function mergePrimaryLocationMirrorMetadata(
   const pt = productTypeFromMetadata(company.metadata);
   if (pt) m.productType = pt;
   else delete m.productType;
+
+  if (options.recordPipelineStatusChange) {
+    m[CRM_STATUS_CHANGED_AT_METADATA_KEY] = new Date().toISOString();
+  }
 
   return m;
 }

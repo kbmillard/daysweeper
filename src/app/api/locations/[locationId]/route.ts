@@ -4,7 +4,10 @@ export const revalidate = 0;
 import { Prisma } from '@prisma/client';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { parseLocationMetadata } from '@/lib/location-primary-sync-metadata';
+import {
+  CRM_STATUS_CHANGED_AT_METADATA_KEY,
+  parseLocationMetadata
+} from '@/lib/location-primary-sync-metadata';
 import { isValidStatus, normalizeStatus } from '@/constants/company-status';
 
 /**
@@ -98,6 +101,7 @@ export async function PATCH(
             if (ns) m.status = ns;
             else delete m.status;
           }
+          m[CRM_STATUS_CHANGED_AT_METADATA_KEY] = new Date().toISOString();
         }
         if (applyProductType) {
           if (productType === null || (typeof productType === 'string' && productType.trim() === '')) {

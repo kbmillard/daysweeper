@@ -11,28 +11,19 @@ import { loadGoogleMaps, GOOGLE_MAPS_ERROR_MESSAGE } from '@/lib/google-maps-loa
 import { addStateLines } from '@/lib/add-state-lines';
 import { googleEarthUrl } from '@/lib/google-earth-url';
 import { regridUrl } from '@/lib/regrid-url';
-import { pinLatLngClipboardText } from '@/lib/regrid-copy';
+import { handleRegridAnchorClick } from '@/lib/regrid-interaction';
 import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
+import { dotColorFromCrmDisplayStatus } from '@/lib/map-pin-colors';
 import { toast } from 'sonner';
 
 const DEFAULT_ZOOM = 18;
 const DEFAULT_CENTER = { lat: 39, lng: -98 };
 const DEFAULT_ZOOM_NO_COORDS = 4;
 
-/** Single location pin on this page only (no global dots-pins layer). */
-const LOCATION_DOT_COLOR = '#9333ea';
+/** Linked reference pins (e.g. container dots from main map) — neutral blue. */
 const LINKED_CONTAINER_DOT = '#2563EB';
 const LOCATION_DOT_PX = 7;
 const LINKED_DOT_PX = 6;
-
-async function copyLatLngForRegridToast(lat: number, lng: number): Promise<void> {
-  try {
-    await navigator.clipboard.writeText(pinLatLngClipboardText(lat, lng));
-    toast.success('Lat/long copied for Regrid');
-  } catch {
-    toast.error('Could not copy coordinates');
-  }
-}
 
 function safeNum(v: unknown): number | null {
   const n = Number(v);
@@ -41,7 +32,10 @@ function safeNum(v: unknown): number | null {
 function svgPin(color: string, size: number): google.maps.Icon {
   const r = size;
   const d = r * 2;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${d}" height="${d}"><circle cx="${r}" cy="${r}" r="${r - 1}" fill="${color}" stroke="#fff" stroke-width="1.5"/></svg>`;
+  const lightFill = /^#f3f4f6$/i.test(color);
+  const stroke = lightFill ? '#64748b' : '#ffffff';
+  const sw = lightFill ? 2 : 1.5;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${d}" height="${d}"><circle cx="${r}" cy="${r}" r="${r - 1}" fill="${color}" stroke="${stroke}" stroke-width="${sw}"/></svg>`;
   return {
     url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
     scaledSize: new google.maps.Size(d, d),
@@ -75,12 +69,14 @@ type Props = {
   longitude: number | null;
   address?: string | null;
   locationId?: string | null;
+  /** Effective CRM pipeline label for pin color (HQ → company status; other sites → location metadata). */
+  crmStatus?: string | null;
   /** Extra pins (e.g. container / object-detection dots) linked from the main map. */
   linkedPins?: { lat: number; lng: number }[];
 };
 
 // ── Inner map component ──────────────────────────────────────────────────────
-function LocationMapCardInner({ latitude, longitude, address, locationId, linkedPins = [] }: Props) {
+function LocationMapCardInner({ latitude, longitude, address, locationId, crmStatus, linkedPins = [] }: Props) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
@@ -93,6 +89,13 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
   const [saving, setSaving] = useState(false);
   /** Geocoded position for this address when DB coords are missing (map-only; Save persists). */
   const [addressHint, setAddressHint] = useState<{ lat: number; lng: number } | null>(null);
+
+  /** Stable string — parent often passes a new linkedPins[] each render; effect deps must not thrash. */
+  const linkedPinsSig = linkedPins
+    .map((p) => `${Number(p.lat).toFixed(6)},${Number(p.lng).toFixed(6)}`)
+    .sort()
+    .join('|');
+  const hasLinkedPins = linkedPins.length > 0;
 
   const hasCoords = isValidMapboxCoordinate(latitude, longitude);
   const savedLat = safeNum(latitude);
@@ -205,30 +208,49 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
         });
         void addStateLines(map);
 
-        // Tight view on this location only (no other pins on this map).
-        if (savedLat != null && savedLng != null) {
-          listenersRef.current.push(
-            google.maps.event.addListenerOnce(map, 'idle', () => {
-              try {
-                map.setCenter({ lat: savedLat, lng: savedLng });
-                map.setZoom(19);
-                map.setTilt(0);
-              } catch { /* ignore */ }
-            })
-          );
-        } else if (hint != null) {
-          listenersRef.current.push(
-            google.maps.event.addListenerOnce(map, 'idle', () => {
-              try {
-                map.setCenter({ lat: hint.lat, lng: hint.lng });
-                map.setZoom(19);
-                map.setTilt(0);
-              } catch { /* ignore */ }
-            })
-          );
-        }
+        // Camera: fit all pins when a container pin is linked; otherwise tight on the saved/hint point.
+        const fitCamera = () => {
+          try {
+            if (linkedPins.length > 0) {
+              const bounds = new google.maps.LatLngBounds();
+              if (savedLat != null && savedLng != null) {
+                bounds.extend({ lat: savedLat, lng: savedLng });
+              } else if (hint != null) {
+                bounds.extend({ lat: hint.lat, lng: hint.lng });
+              }
+              for (const lp of linkedPins) {
+                if (Number.isFinite(lp.lat) && Number.isFinite(lp.lng)) {
+                  bounds.extend({ lat: lp.lat, lng: lp.lng });
+                }
+              }
+              map.fitBounds(bounds, { top: 32, right: 32, bottom: 32, left: 32 });
+              map.setTilt(0);
+              google.maps.event.addListenerOnce(map, 'idle', () => {
+                try {
+                  const z = map.getZoom();
+                  if (z != null && z > 20) map.setZoom(20);
+                } catch { /* ignore */ }
+              });
+              return;
+            }
+            if (savedLat != null && savedLng != null) {
+              map.setCenter({ lat: savedLat, lng: savedLng });
+              map.setZoom(19);
+              map.setTilt(0);
+              return;
+            }
+            if (hint != null) {
+              map.setCenter({ lat: hint.lat, lng: hint.lng });
+              map.setZoom(19);
+              map.setTilt(0);
+            }
+          } catch { /* ignore */ }
+        };
 
-        const pinIcon = svgPin(LOCATION_DOT_COLOR, LOCATION_DOT_PX);
+        listenersRef.current.push(google.maps.event.addListenerOnce(map, 'idle', fitCamera));
+
+        const mainPinColor = dotColorFromCrmDisplayStatus(crmStatus);
+        const pinIcon = svgPin(mainPinColor, LOCATION_DOT_PX);
         const pinLat = draft?.lat ?? savedLat ?? hint?.lat ?? null;
         const pinLng = draft?.lng ?? savedLng ?? hint?.lng ?? null;
         const pinPos = pinLat != null && pinLng != null ? { lat: pinLat, lng: pinLng } : null;
@@ -314,7 +336,7 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
       linkedMarkersRef.current = [];
       mapRef.current = null;
     };
-  }, [showMap, canEdit, hasCoords, savedLat, savedLng, addressHint?.lat, addressHint?.lng, linkedPins]);
+  }, [showMap, canEdit, hasCoords, savedLat, savedLng, addressHint?.lat, addressHint?.lng, linkedPinsSig, crmStatus]);
 
   useEffect(() => {
     try {
@@ -347,6 +369,14 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
           </div>
         ) : showMap ? (
           <div className='space-y-2'>
+            {hasLinkedPins ? (
+              <div
+                role='status'
+                className='rounded-md border border-sky-200/90 bg-sky-50 px-3 py-2.5 text-sm leading-snug text-sky-950 shadow-sm dark:border-sky-800/70 dark:bg-sky-950/45 dark:text-sky-50'
+              >
+                Container pin attached
+              </div>
+            ) : null}
             {canEdit && isDirty && (
               <Button size='sm' onClick={handleSavePin} disabled={saving}>
                 {saving ? 'Saving…' : 'Save pin'}
@@ -368,7 +398,12 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
                       target='_blank'
                       rel='noopener noreferrer'
                       className='text-sm text-primary hover:underline'
-                      onClick={() => void copyLatLngForRegridToast(lat, lng)}
+                      onClick={(e) =>
+                        handleRegridAnchorClick(e, lat, lng, {
+                          onCopied: () => toast.success('Lat/long copied for Regrid'),
+                          onCopyFailed: () => toast.error('Could not copy coordinates'),
+                        })
+                      }
                     >
                       Regrid
                     </a>
@@ -387,7 +422,12 @@ function LocationMapCardInner({ latitude, longitude, address, locationId, linked
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-sm text-primary hover:underline'
-                  onClick={() => void copyLatLngForRegridToast(lat, lng)}
+                  onClick={(e) =>
+                    handleRegridAnchorClick(e, lat, lng, {
+                      onCopied: () => toast.success('Lat/long copied for Regrid'),
+                      onCopyFailed: () => toast.error('Could not copy coordinates'),
+                    })
+                  }
                 >
                   Open in Regrid
                 </a>

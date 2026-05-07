@@ -21,7 +21,7 @@ const CompanyAreaGraph = dynamic(
       <Card className='@container/card'>
         <CardHeader>
           <CardTitle>Account Growth - Last 6 Months</CardTitle>
-          <CardDescription>Leads added by company status</CardDescription>
+          <CardDescription>New leads and pipeline status updates (company + locations)</CardDescription>
         </CardHeader>
         <CardContent className='flex h-[250px] items-center justify-center'>
           <p className='text-muted-foreground text-sm'>Loading chart…</p>

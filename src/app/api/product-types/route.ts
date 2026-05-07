@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { resolveApiUserIdOr401 } from '@/lib/clerk-api-optional';
 import { addProductTypeOption, getProductTypeOptions } from '@/lib/product-types-kv';
 
 export const dynamic = 'force-dynamic';
@@ -7,10 +7,8 @@ export const revalidate = 0;
 
 export async function GET() {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
     const types = await getProductTypeOptions();
     return NextResponse.json({ types });
   } catch (error: unknown) {
@@ -21,10 +19,8 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
     const body = await req.json();
     const name = body?.name;
     if (typeof name !== 'string') {

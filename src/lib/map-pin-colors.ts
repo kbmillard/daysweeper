@@ -1,3 +1,25 @@
+import { displayStatus } from '@/constants/company-status';
+import {
+  companyStatusToCrmLane,
+  isPipelineMeetingSet,
+  isPipelineNotInterested
+} from '@/lib/crm-pipeline-alignment';
+
+/**
+ * Pin fill for company / location CRM pipeline labels (web display strings).
+ * Aligns with {@link CRM_LANE_CHIPS} and the three-lane selector on map popouts.
+ */
+export function dotColorFromCrmDisplayStatus(status: string | null | undefined): string {
+  const d = displayStatus(typeof status === 'string' ? status.trim() || null : null);
+  if (!d) return '#2563EB';
+  if (isPipelineNotInterested(d)) return '#171717';
+  if (isPipelineMeetingSet(d)) return '#10B981';
+  const lane = companyStatusToCrmLane(d);
+  if (lane === 'ACCOUNT') return '#10B981';
+  if (lane === 'NEW_CONTACTED_NO_ANSWER') return '#EAB308';
+  return '#2563EB';
+}
+
 /**
  * Map dot colors aligned with LastLeg iOS `Lead.serverStatus`
  * (`route_outcome` wins, then `account_state`).

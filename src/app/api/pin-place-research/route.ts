@@ -3,7 +3,16 @@ export const revalidate = 0;
 
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
+import { isPublicCrmHostname } from '@/lib/public-crm-host';
+import { isClerkApiEnforcementOptional } from '@/lib/clerk-api-optional';
 import { researchPinPlace, DEFAULT_PIN_RESEARCH_RADIUS_METERS } from '@/lib/pin-place-research';
+
+function requestHostname(req: NextRequest): string {
+  const forwarded = req.headers.get('x-forwarded-host');
+  const fromForwarded = forwarded?.split(',')[0]?.trim().split(':')[0];
+  const fromHost = req.headers.get('host')?.split(':')[0];
+  return (fromForwarded || fromHost || req.nextUrl.hostname || '').toLowerCase();
+}
 
 /**
  * POST /api/pin-place-research
@@ -17,11 +26,16 @@ import { researchPinPlace, DEFAULT_PIN_RESEARCH_RADIUS_METERS } from '@/lib/pin-
  * - GEMINI_API_KEY when PIN_RESEARCH_LLM=gemini (default)
  * - OPENAI_API_KEY when PIN_RESEARCH_LLM=openai
  * - ANTHROPIC_API_KEY when PIN_RESEARCH_LLM=anthropic
+ *
+ * Auth: requires a signed-in Clerk user, except on the public CRM hostname (see `isPublicCrmHostname` — same idea as public /map).
  */
 export async function POST(req: NextRequest) {
   try {
     const { userId } = await auth();
-    if (!userId) {
+    /** Public CRM host serves /map without Clerk; allow the same users to run research here. */
+    const allowWithoutClerk =
+      isPublicCrmHostname(requestHostname(req)) || isClerkApiEnforcementOptional();
+    if (!userId && !allowWithoutClerk) {
       return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
     }
 

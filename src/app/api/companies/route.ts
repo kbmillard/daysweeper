@@ -1,5 +1,22 @@
 import { NextResponse } from 'next/server';
+import type { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
+
+function parseAddressComponentsFromBody(raw: unknown): Prisma.InputJsonValue | undefined {
+  if (raw == null || typeof raw !== 'object' || Array.isArray(raw)) return undefined;
+  const o = raw as Record<string, unknown>;
+  const city = typeof o.city === 'string' ? o.city.trim() : '';
+  const state = typeof o.state === 'string' ? o.state.trim() : '';
+  const postal_code = typeof o.postal_code === 'string' ? o.postal_code.trim() : '';
+  const country = typeof o.country === 'string' ? o.country.trim() : '';
+  if (!city && !state && !postal_code && !country) return undefined;
+  const out: Record<string, string> = {};
+  if (city) out.city = city;
+  if (state) out.state = state;
+  if (postal_code) out.postal_code = postal_code;
+  if (country) out.country = country;
+  return out as Prisma.InputJsonValue;
+}
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -41,6 +58,8 @@ export async function POST(req: Request) {
       website,
       phone,
       addressRaw,
+      addressNormalized,
+      addressComponents,
       latitude,
       longitude,
       removeLocationId,
@@ -71,6 +90,12 @@ export async function POST(req: Request) {
 
     const hasAddress =
       typeof addressRaw === 'string' && addressRaw.trim().length > 0;
+
+    const normalizedForCreate =
+      typeof addressNormalized === 'string' && addressNormalized.trim().length > 0
+        ? addressNormalized.trim()
+        : null;
+    const addressComponentsJson = parseAddressComponentsFromBody(addressComponents);
 
     let lat: number | undefined;
     let lng: number | undefined;
@@ -137,6 +162,8 @@ export async function POST(req: Request) {
             addressRaw: String(addressRaw).trim(),
             updatedAt: now,
             locationName: name.trim(),
+            ...(normalizedForCreate != null && { addressNormalized: normalizedForCreate }),
+            ...(addressComponentsJson != null && { addressComponents: addressComponentsJson }),
             ...(typeof phone === 'string' && phone.trim() && { phone: phone.trim() }),
             ...(typeof website === 'string' && website.trim() && { website: website.trim() }),
             ...(lat !== undefined && { latitude: lat }),

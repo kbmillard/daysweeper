@@ -58,6 +58,7 @@ export default async function Page(props: PageProps) {
           latitude: true,
           longitude: true,
           phone: true,
+          metadata: true,
           createdAt: true,
           updatedAt: true
         }
@@ -83,7 +84,8 @@ export default async function Page(props: PageProps) {
               addressComponents: true,
               latitude: true,
               longitude: true,
-              phone: true
+              phone: true,
+              metadata: true
             }
           }
         }
@@ -100,6 +102,7 @@ export default async function Page(props: PageProps) {
           segment: true,
           status: true,
           metadata: true,
+          primaryLocationId: true,
           Location: {
             orderBy: { createdAt: 'desc' },
             select: {
@@ -108,7 +111,8 @@ export default async function Page(props: PageProps) {
               addressComponents: true,
               latitude: true,
               longitude: true,
-              phone: true
+              phone: true,
+              metadata: true
             }
           }
         }

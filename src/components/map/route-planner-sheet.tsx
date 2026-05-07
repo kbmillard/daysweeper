@@ -28,6 +28,7 @@ import {
   MapPinLayersControl,
   type MapPinLayers
 } from '@/components/map/map-pin-layers-control';
+import { effectivePinLayers } from '@/lib/map-demo-layer';
 import {
   buildLastLegPlannedRouteUrl,
   safeOpenLastLegPlannedRoute
@@ -40,6 +41,8 @@ type Props = {
   onServerPlannerState?: (state: RoutePlannerState | null) => void;
   pinLayers?: MapPinLayers;
   onPinLayersChange?: (next: MapPinLayers) => void;
+  /** When true, corridor apply filters to demo companies only (same as map). */
+  mapDemoLayer?: boolean;
 };
 
 type RouteRow = {
@@ -56,9 +59,12 @@ const DEFAULT_LAYERS: MapPinLayers = {
 };
 
 /** Corridor hit count for layers that are turned on (matches map emphasis). */
-function corridorVisibleCount(state: RoutePlannerState | null, layers: MapPinLayers | undefined): number {
+function corridorVisibleCount(
+  state: RoutePlannerState | null,
+  layers: MapPinLayers | undefined
+): number {
   if (!state?.active) return 0;
-  const L = layers ?? DEFAULT_LAYERS;
+  const L = effectivePinLayers('custom', layers ?? DEFAULT_LAYERS);
   let n = 0;
   if (L.containers) n += state.filteredTargetIds.length;
   if (L.companies) n += state.filteredLocationIds?.length ?? 0;
@@ -95,7 +101,8 @@ export function RoutePlannerSheet({
   onCleared,
   onServerPlannerState,
   pinLayers,
-  onPinLayersChange
+  onPinLayersChange,
+  mapDemoLayer = false
 }: Props) {
   const [open, setOpen] = useState(false);
   const [startAddress, setStartAddress] = useState('');
@@ -108,6 +115,7 @@ export function RoutePlannerSheet({
   const [selectedRouteId, setSelectedRouteId] = useState('');
   const [routes, setRoutes] = useState<RouteRow[]>([]);
   const [savingRouteName, setSavingRouteName] = useState(false);
+  const [creatingRoute, setCreatingRoute] = useState(false);
 
   const loadRoutes = useCallback(async () => {
     try {
@@ -138,6 +146,10 @@ export function RoutePlannerSheet({
         onServerPlannerState?.(data);
       } else {
         setActiveSummary(null);
+        setStartAddress('');
+        setEndAddress('');
+        setVias([]);
+        setRadiusMiles(25);
         onServerPlannerState?.(null);
       }
     } catch {
@@ -151,7 +163,7 @@ export function RoutePlannerSheet({
     void loadRoutes();
   }, [open, loadState, loadRoutes]);
 
-  const onPickRoute = async (routeId: string) => {
+  const activateRouteAndReload = async (routeId: string): Promise<boolean> => {
     setSelectedRouteId(routeId);
     try {
       const res = await fetch('/api/route-planner/active-route', {
@@ -165,9 +177,48 @@ export function RoutePlannerSheet({
         throw new Error(j.error ?? 'Could not switch route');
       }
       await loadState();
-      toast.success('Switched active route — corridor loaded for this route.');
+      return true;
     } catch (e) {
       toast.error(e instanceof Error ? e.message : 'Could not switch route');
+      return false;
+    }
+  };
+
+  const onPickRoute = async (routeId: string) => {
+    const ok = await activateRouteAndReload(routeId);
+    if (ok) {
+      toast.success('Switched active route — corridor loaded for this route.');
+    }
+  };
+
+  const createNewRoute = async () => {
+    setCreatingRoute(true);
+    try {
+      const res = await fetch('/api/routes', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: routeName.trim() || undefined,
+          makeActive: true
+        })
+      });
+      const j = (await res.json().catch(() => ({}))) as { route?: RouteRow; error?: string };
+      if (!res.ok) throw new Error(j.error ?? 'Could not create route');
+      const r = j.route;
+      if (!r) throw new Error('Invalid response');
+      await loadRoutes();
+      setRouteName(r.name);
+      const ok = await activateRouteAndReload(r.id);
+      if (ok) {
+        toast.success(
+          `Created “${r.name}” — set as active route. Add waypoints below, then apply.`
+        );
+      }
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : 'Could not create route');
+    } finally {
+      setCreatingRoute(false);
     }
   };
 
@@ -303,7 +354,8 @@ export function RoutePlannerSheet({
           radiusMiles,
           vertices,
           vertexLabels,
-          routeName: routeName.trim() || undefined
+          routeName: routeName.trim() || undefined,
+          mapDemoLayer
         })
       });
       const data = (await res.json()) as RoutePlannerState & { error?: string };
@@ -313,7 +365,7 @@ export function RoutePlannerSheet({
       if (typeof data.activeRouteId === 'string') setSelectedRouteId(data.activeRouteId);
       onApplied(data);
       const vis = corridorVisibleCount(data, pinLayers);
-      const L = pinLayers ?? DEFAULT_LAYERS;
+      const L = effectivePinLayers('custom', pinLayers ?? DEFAULT_LAYERS);
       const parts: string[] = [];
       if (L.containers) parts.push(`${data.filteredTargetIds.length} route targets`);
       if (L.companies) parts.push(`${data.filteredLocationIds?.length ?? 0} company pins`);
@@ -414,7 +466,7 @@ export function RoutePlannerSheet({
   const gUrl = activeSummary?.active ? googleDirectionsUrl(activeSummary.vertices) : null;
   const aUrl = activeSummary?.active ? appleMapsUrl(activeSummary.vertices) : null;
   const badgeCount = corridorVisibleCount(activeSummary, pinLayers);
-  const L = pinLayers ?? DEFAULT_LAYERS;
+  const L = effectivePinLayers('custom', pinLayers ?? DEFAULT_LAYERS);
   const visibleCorridorLines =
     activeSummary?.active && Array.isArray(activeSummary.corridorLines)
       ? activeSummary.corridorLines.filter((line) => {
@@ -429,13 +481,13 @@ export function RoutePlannerSheet({
       <SheetTrigger asChild>
         <button
           type='button'
-          className='ios-glass flex h-10 items-center gap-2 rounded-2xl px-3 text-[14px] font-semibold text-foreground shadow-sm'
+          className='ios-glass flex h-10 items-center gap-2 rounded-2xl px-3 text-[14px] font-semibold !text-neutral-950 shadow-sm'
           title='Route corridor planner (same as LastLeg route tab)'
         >
-          <IconMapRoute className='h-[18px] w-[18px] shrink-0 text-pink-500' />
+          <IconMapRoute className='h-[18px] w-[18px] shrink-0 !text-pink-700' />
           <span className='hidden sm:inline'>Route</span>
           {activeSummary?.active && (
-            <span className='rounded-full bg-pink-500/20 px-2 py-0.5 text-[11px] text-pink-200'>
+            <span className='rounded-full bg-pink-500/25 px-2 py-0.5 text-[11px] font-semibold !text-pink-950'>
               {badgeCount}
             </span>
           )}
@@ -461,24 +513,36 @@ export function RoutePlannerSheet({
         <div className='flex flex-1 flex-col gap-4 px-4 py-4'>
           <div className='space-y-2'>
             <Label className='text-white/80'>LastLeg route</Label>
-            <Select
-              value={selectedRouteId || undefined}
-              onValueChange={(v) => void onPickRoute(v)}
-            >
-              <SelectTrigger className='h-10 w-full max-w-full border-white/15 bg-white/5 text-white'>
-                <SelectValue placeholder='Select route…' />
-              </SelectTrigger>
-              <SelectContent>
-                {routes.map((r) => (
-                  <SelectItem key={r.id} value={r.id}>
-                    {r.name} ({r._count.stops} stops)
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <div className='flex gap-2'>
+              <Select
+                value={selectedRouteId || undefined}
+                onValueChange={(v) => void onPickRoute(v)}
+              >
+                <SelectTrigger className='h-10 min-h-10 min-w-0 flex-1 border-white/15 bg-white/5 text-white'>
+                  <SelectValue placeholder='Select route…' />
+                </SelectTrigger>
+                <SelectContent>
+                  {routes.map((r) => (
+                    <SelectItem key={r.id} value={r.id}>
+                      {r.name} ({r._count.stops} stops)
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Button
+                type='button'
+                variant='outline'
+                className='h-10 shrink-0 whitespace-nowrap border-white/25 bg-white/10 text-[13px] text-white hover:bg-white/15'
+                disabled={creatingRoute}
+                onClick={() => void createNewRoute()}
+              >
+                {creatingRoute ? '…' : 'New route'}
+              </Button>
+            </div>
             <p className='text-[12px] text-white/45'>
-              Choosing a route loads its saved corridor (if any). Apply below updates this route for the
-              LastLeg app after refresh.
+              New route creates an empty Daysweeper / LastLeg route, makes it active, and clears waypoint fields
+              here. Optionally type a name first (Route name row), or rename after create.
+              Choosing another route loads its saved corridor when present.
             </p>
           </div>
 
@@ -508,7 +572,11 @@ export function RoutePlannerSheet({
               <p className='mb-2 text-[12px] font-medium uppercase tracking-wide text-white/50'>
                 Map pin layers
               </p>
-              <MapPinLayersControl variant='dark' value={pinLayers} onChange={onPinLayersChange} />
+              <MapPinLayersControl
+                variant='dark'
+                value={pinLayers}
+                onChange={onPinLayersChange}
+              />
             </div>
           )}
           {activeSummary?.active && (

@@ -1,5 +1,8 @@
-import { Metadata } from 'next';
 import SignInViewPage from '@/features/auth/components/sign-in-view';
+import { isPublicCrmHostname } from '@/lib/public-crm-host';
+import { Metadata } from 'next';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Authentication | Sign In',
@@ -7,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
+  const h = await headers();
+  const host = h.get('x-forwarded-host') ?? h.get('host');
+  if (isPublicCrmHostname(host)) {
+    redirect('/dashboard/overview');
+  }
   return <SignInViewPage />;
 }

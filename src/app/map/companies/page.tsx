@@ -14,8 +14,11 @@ import {
   getDistinctCompanyLocationStates,
   getLocationIdsWithBlankParsedState
 } from '@/lib/company-location-states';
+import { FREEZE_COMPANIES_LIST_FOR_DEMO } from '@/lib/map-demo-layer';
 import { prisma } from '@/lib/prisma';
+import { CompaniesFrozenHeaderActions } from './companies-frozen-header-actions';
 import CompaniesTable from './companies-table';
+import { CompaniesTableInteractionFreeze } from './companies-table-interaction-freeze';
 
 export const metadata = {
   title: 'Dashboard: Companies'
@@ -36,12 +39,10 @@ export default async function Page(props: pageProps) {
   const nameFilter = searchParamsCache.get('name');
   const companyFilter = searchParamsCache.get('company');
   const addressFilterRaw = searchParamsCache.get('address');
-  const statusFilterRaw = searchParamsCache.get('status');
   const stateFilterRaw = searchParamsCache.get('state');
   const sellerFilterRaw = searchParamsCache.get('seller');
   const buyerLegacyRaw = searchParamsCache.get('buyer');
   const addressFilter = Array.isArray(addressFilterRaw) ? addressFilterRaw[0] : addressFilterRaw;
-  const statusFilter = Array.isArray(statusFilterRaw) ? statusFilterRaw[0] : statusFilterRaw;
   const stateFilter = stateFilterRaw?.filter(Boolean) ?? [];
   const sellerVals =
     (sellerFilterRaw?.filter(Boolean)?.length ? sellerFilterRaw : buyerLegacyRaw)?.filter(Boolean) ??
@@ -72,20 +73,14 @@ export default async function Page(props: pageProps) {
     where.name = { contains: filterValue, mode: 'insensitive' as const };
   }
 
-  // Status (Account, Contacted - meeting set, etc.; "Account" includes legacy "APR Account")
-  if (statusFilter) {
-    where.status =
-      statusFilter === 'Account'
-        ? { in: ['Account', 'APR Account'], mode: 'insensitive' as const }
-        : { equals: statusFilter, mode: 'insensitive' as const };
-  }
-
   if (sellerVals.length === 1) {
     if (sellerVals[0] === 'yes') where.isSeller = true;
     else if (sellerVals[0] === 'no') where.isSeller = false;
   }
 
   const orderBy = buildCompaniesListOrderBy(sort);
+
+  const companiesListFrozen = FREEZE_COMPANIES_LIST_FOR_DEMO;
 
   const [stateOptions, companies, total] = await Promise.all([
     getDistinctCompanyLocationStates(),
@@ -98,7 +93,6 @@ export default async function Page(props: pageProps) {
         id: true,
         name: true,
         website: true,
-        status: true,
         isSeller: true,
         metadata: true,
         createdAt: true,
@@ -122,21 +116,25 @@ export default async function Page(props: pageProps) {
       pageTitle='Companies'
       pageDescription='Manage companies and targets'
       pageHeaderAction={
-        <div className='flex flex-wrap items-center gap-2'>
-          <Link
-            href='/map/companies/import'
-            className={cn(buttonVariants({ variant: 'outline' }), 'text-xs md:text-sm')}
-          >
-            <IconUpload className='mr-2 h-4 w-4' />
-            Import JSON
-          </Link>
-          <Link
-            href='/map/companies/new'
-            className={cn(buttonVariants(), 'text-xs md:text-sm')}
-          >
-            <IconPlus className='mr-2 h-4 w-4' /> Add New
-          </Link>
-        </div>
+        companiesListFrozen ? (
+          <CompaniesFrozenHeaderActions />
+        ) : (
+          <div className='flex flex-wrap items-center gap-2'>
+            <Link
+              href='/map/companies/import'
+              className={cn(buttonVariants({ variant: 'outline' }), 'text-xs md:text-sm')}
+            >
+              <IconUpload className='mr-2 h-4 w-4' />
+              Import JSON
+            </Link>
+            <Link
+              href='/map/companies/new'
+              className={cn(buttonVariants(), 'text-xs md:text-sm')}
+            >
+              <IconPlus className='mr-2 h-4 w-4' /> Add New
+            </Link>
+          </div>
+        )
       }
     >
       <Suspense
@@ -144,11 +142,13 @@ export default async function Page(props: pageProps) {
           <DataTableSkeleton columnCount={8} rowCount={8} filterCount={5} />
         }
       >
-        <CompaniesTable
-          data={companies}
-          totalItems={total}
-          stateOptions={stateOptions}
-        />
+        <CompaniesTableInteractionFreeze active={companiesListFrozen}>
+          <CompaniesTable
+            data={companies}
+            totalItems={total}
+            stateOptions={stateOptions}
+          />
+        </CompaniesTableInteractionFreeze>
       </Suspense>
     </PageContainer>
   );

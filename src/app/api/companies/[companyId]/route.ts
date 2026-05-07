@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { isValidStatus, normalizeStatus } from '@/constants/company-status';
 import {
+  CRM_STATUS_CHANGED_AT_METADATA_KEY,
   isCompanyPrimarySyncSuppressed,
   mergePrimaryLocationMirrorMetadata
 } from '@/lib/location-primary-sync-metadata';
@@ -162,7 +163,7 @@ export async function PATCH(
     }
 
     let mergedMetadata: Record<string, unknown> | undefined;
-    if (productType !== undefined) {
+    if (productType !== undefined || status !== undefined) {
       const current = await prisma.company.findUnique({
         where: { id: companyId },
         select: { metadata: true }
@@ -172,10 +173,15 @@ export async function PATCH(
         raw && typeof raw === 'object' && !Array.isArray(raw)
           ? { ...(raw as Record<string, unknown>) }
           : {};
-      if (productType === null || (typeof productType === 'string' && productType.trim() === '')) {
-        delete base.productType;
-      } else {
-        base.productType = (productType as string).trim();
+      if (productType !== undefined) {
+        if (productType === null || (typeof productType === 'string' && productType.trim() === '')) {
+          delete base.productType;
+        } else {
+          base.productType = (productType as string).trim();
+        }
+      }
+      if (status !== undefined) {
+        base[CRM_STATUS_CHANGED_AT_METADATA_KEY] = new Date().toISOString();
       }
       mergedMetadata = base;
     }
@@ -226,7 +232,8 @@ export async function PATCH(
             website: company.website,
             email: company.email,
             metadata: mergePrimaryLocationMirrorMetadata(loc.metadata, company, {
-              clearSuppress: true
+              clearSuppress: true,
+              recordPipelineStatusChange: status !== undefined
             }) as Prisma.InputJsonValue,
             updatedAt: new Date()
           }
@@ -255,7 +262,8 @@ export async function PATCH(
             website: company.website,
             email: company.email,
             metadata: mergePrimaryLocationMirrorMetadata(loc.metadata, company, {
-              clearSuppress: false
+              clearSuppress: false,
+              recordPipelineStatusChange: status !== undefined
             }) as Prisma.InputJsonValue,
             updatedAt: new Date()
           }

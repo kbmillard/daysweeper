@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
-import { auth } from '@clerk/nextjs/server';
+import { resolveApiUserIdOr401 } from '@/lib/clerk-api-optional';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -15,10 +15,9 @@ export async function PATCH(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
+    const { userId } = gate;
 
     const { id } = await params;
     const body = await _req.json().catch(() => ({}));
@@ -65,10 +64,8 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const gate = await resolveApiUserIdOr401();
+    if (!gate.ok) return gate.response;
 
     const { id } = await params;
     await prisma.warehouseItem.delete({ where: { id } });

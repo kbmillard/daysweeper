@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/dialog';
 import { COMPANY_STATUSES, displayStatus } from '@/constants/company-status';
 import { toast } from 'sonner';
+import { notifyLocationsMapUpdate } from '@/lib/locations-map-update';
 import { IconPlus } from '@tabler/icons-react';
 
 export type CompanyEditableData = {
@@ -192,6 +193,7 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
         return;
       }
       toast.success('Company saved');
+      notifyLocationsMapUpdate();
       router.refresh();
     } catch {
       toast.error('Failed to save');

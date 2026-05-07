@@ -68729,30 +68729,6 @@
 				<Folder id="5933AC286A001232">
 					<name>7 states</name>
 					<styleUrl>#__managed_style_089497BEDE3E9E86B7C4</styleUrl>
-					<Placemark id="5933AC286A001233">
-						<name>AK</name>
-						<description><![CDATA[Company Name: Cummins<br>City: Anchorage<br>Address: 2618 Commercial Dr, Anchorage, AK 99501<br>Facility Type: Sales and Service<br>full address: 2618 Commercial Dr, Anchorage, AK 99501]]></description>
-						<styleUrl>#__managed_style_0CF1B7E0313E9E86B7CE</styleUrl>
-						<ExtendedData>
-							<SchemaData schemaUrl="#__managed_schema">
-								<SimpleData name="COL5933AC294D97DA40">Cummins</SimpleData>
-								<SimpleData name="COL5933AC294DF07C80">Anchorage</SimpleData>
-								<SimpleData name="COL5933AC294D599E15">2618 Commercial Dr, Anchorage, AK 99501</SimpleData>
-								<SimpleData name="COL5933AC294D0A127A">Sales and Service</SimpleData>
-								<SimpleData name="COL5933AC294D70E95A">2618 Commercial Dr, Anchorage, AK 99501</SimpleData>
-							</SchemaData>
-						</ExtendedData>
-						<MultiGeometry>
-							<Point>
-								<coordinates>-149.8310295,61.2211002,0</coordinates>
-							</Point>
-							<LineString>
-								<coordinates>
-									-149.833135939973,61.21952037002039,0 -149.833135939973,61.22268002997959,0 -149.828923060027,61.22268002997959,0 -149.828923060027,61.21952037002039,0 -149.833135939973,61.21952037002039,0 
-								</coordinates>
-							</LineString>
-						</MultiGeometry>
-					</Placemark>
 					<Placemark id="5933AC286A001234">
 						<name>NC</name>
 						<description><![CDATA[Company Name: American Honda Motor Co.<br>City: Swepsonville<br>Address: 10100 NC Highway 73, Swepsonville, NC 28359<br>Facility Type: Power Equipment Plant<br>full address: 10100 NC Highway 73, Swepsonville, NC 28359]]></description>

@@ -9,6 +9,7 @@ import { SetAsHeadquartersButton } from '@/features/companies/set-as-headquarter
 import CompanyInteractions from '../../company-interactions';
 import { AddChildCompanySearch } from '../../add-child-company-search';
 import { productTypeFromMetadata } from '@/lib/product-type-from-metadata';
+import { effectiveLocationCrmStatus } from '@/lib/location-crm-status';
 
 type LocationWithCompany = {
   id: string;
@@ -57,6 +58,12 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
   const lng = location.longitude != null ? Number(location.longitude) : null;
   const isPrimaryLocation = company.primaryLocationId === location.id;
   const companyProductType = productTypeFromMetadata(company.metadata);
+  const crmStatusForPin = effectiveLocationCrmStatus({
+    locationId: location.id,
+    companyStatus: company.status,
+    companyPrimaryLocationId: company.primaryLocationId,
+    locationMetadata: location.metadata
+  });
 
   return (
     <div className='flex flex-col gap-6 pb-8'>
@@ -108,6 +115,7 @@ export default function LocationDetailView({ location, baseUrl }: Props) {
         longitude={lng}
         address={location.addressRaw}
         locationId={location.id}
+        crmStatus={crmStatusForPin}
       />
 
       <LocationEditableFields
