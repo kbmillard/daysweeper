@@ -46,6 +46,24 @@ function looksLikeJwt(raw: string): boolean {
   return parts.length === 3 && t.length >= 80 && parts.every((p) => p.length > 0);
 }
 
+const UUID_IN_TEXT_RE = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
+
+function extractUuidFromText(raw: string): string | null {
+  const t = raw.trim();
+  const m = t.match(UUID_IN_TEXT_RE);
+  return m?.[0] ?? null;
+}
+
+/** Prefer location id from …/locations/[uuid] so full company URLs don’t pick the company id first. */
+function resolveLocationIdForAttach(raw: string): string | null {
+  const t = raw.trim();
+  if (!t) return null;
+  const fromLocations = t.match(new RegExp(`/locations/(${UUID_IN_TEXT_RE.source})`, 'i'));
+  if (fromLocations?.[1]) return fromLocations[1];
+  if (new RegExp(`^${UUID_IN_TEXT_RE.source}$`, 'i').test(t)) return t;
+  return extractUuidFromText(t);
+}
+
 function isMobileDevice(): boolean {
   if (typeof navigator === 'undefined') return false;
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || navigator.maxTouchPoints > 0;
@@ -626,22 +644,43 @@ export default function EmptyMapClient() {
 
   const handleAttachDotToLocation = async () => {
     if (!selectedPin || selectedPin.type !== 'dot') return;
-    const lid = attachLocationId.trim();
+    const resolved = resolveLocationIdForAttach(attachLocationId);
+    let lid = (resolved ?? attachLocationId).trim();
     if (!lid) {
-      toast.error('Paste the location ID from the company pin’s location page URL (…/locations/[id]).');
+      toast.error('Paste the location page URL or the location UUID (segment after …/locations/).');
       return;
     }
     setAttachSaving(true);
     try {
-      const res = await fetch(`/api/locations/${encodeURIComponent(lid)}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({
-          appendLinkedMapPin: { lat: selectedPin.data.lat, lng: selectedPin.data.lng },
-        }),
-      });
-      const j = (await res.json().catch(() => ({}))) as { error?: string };
+      const patchBody = {
+        appendLinkedMapPin: { lat: selectedPin.data.lat, lng: selectedPin.data.lng },
+      };
+      const patch = (locationId: string) =>
+        fetch(`/api/locations/${encodeURIComponent(locationId)}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(patchBody),
+        });
+
+      let res = await patch(lid);
+      let j = (await res.json().catch(() => ({}))) as { error?: string };
+      const notFound =
+        !res.ok && (res.status === 404 || j.error === 'Location not found');
+      if (notFound) {
+        const coRes = await fetch(`/api/companies/${encodeURIComponent(lid)}`, {
+          credentials: 'include',
+        });
+        const coJ = (await coRes.json().catch(() => ({}))) as {
+          company?: { primaryLocationId?: string | null };
+        };
+        const primary = coRes.ok ? coJ.company?.primaryLocationId : null;
+        if (primary) {
+          lid = primary;
+          res = await patch(lid);
+          j = (await res.json().catch(() => ({}))) as { error?: string };
+        }
+      }
       if (!res.ok) throw new Error(j.error ?? 'Attach failed');
       toast.success('Container / dot pin linked to that location. Open the location page to see it on the map.');
       setAttachLocationId('');
@@ -2061,15 +2100,16 @@ export default function EmptyMapClient() {
             <div className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3">
               <p className="ios-section-label mb-1 text-amber-200">Attach to location</p>
               <p className="mb-2 text-[12px] text-muted-foreground">
-                Paste the <span className="text-foreground/90">location ID</span> from the company pin’s URL{' '}
-                <span className="font-mono text-[11px]">…/locations/[id]</span>, then link this dot to that facility map.
+                Paste the full location page URL or only the <span className="text-foreground/90">location</span> UUID (
+                <span className="font-mono text-[11px]">…/locations/[id]</span>
+                ). If you paste a company UUID, we’ll use its primary location when set.
               </p>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
                 <input
                   type="text"
                   value={attachLocationId}
                   onChange={(e) => setAttachLocationId(e.target.value)}
-                  placeholder="Location ID (UUID)"
+                  placeholder="Location URL or location UUID"
                   className="min-h-9 min-w-0 flex-1 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[13px] text-foreground placeholder:text-white/35"
                 />
                 <button

@@ -19,7 +19,14 @@ export async function GET(
     const { companyId } = await params;
     const company = await prisma.company.findUnique({
       where: { id: companyId },
-      select: { id: true, name: true, website: true, phone: true, email: true }
+      select: {
+        id: true,
+        name: true,
+        website: true,
+        phone: true,
+        email: true,
+        primaryLocationId: true
+      }
     });
     if (!company) {
       return NextResponse.json({ error: 'Company not found' }, { status: 404 });
