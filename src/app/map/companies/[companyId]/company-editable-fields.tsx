@@ -163,6 +163,8 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
     setSaving(true);
     try {
       const phone = form.phone.trim() || null;
+      const website = form.website.trim() || null;
+      const email = form.email.trim() || null;
 
       const [companyRes, locationRes] = await Promise.all([
         fetch(`/api/companies/${company.id}`, {
@@ -170,9 +172,9 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: form.name.trim(),
-            website: form.website.trim() || null,
+            website,
             phone,
-            email: form.email.trim() || null,
+            email,
             status: form.status.trim() || null,
             productType: form.productType.trim() || null,
             isSeller: form.isSeller
@@ -182,7 +184,11 @@ export default function CompanyEditableFields({ company, primaryLocationId }: Pr
           ? fetch(`/api/locations/${primaryLocationId}`, {
               method: 'PATCH',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ phone })
+              body: JSON.stringify({
+                phone,
+                email,
+                website
+              })
             })
           : Promise.resolve(null)
       ]);

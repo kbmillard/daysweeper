@@ -206,6 +206,7 @@ export default function EmptyMapClient() {
   const unsubMapRef = useRef<(() => void) | null>(null);
   const refetchDotsRef = useRef<(() => Promise<void>) | null>(null);
   const refetchSellersRef = useRef<(() => Promise<void>) | null>(null);
+  const sellersFetchInFlightRef = useRef<Promise<void> | null>(null);
   const selectedMarkerRef = useRef<google.maps.Marker | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
@@ -1227,50 +1228,65 @@ export default function EmptyMapClient() {
         };
 
         refetchSellersRef.current = async () => {
-          if (cancelled || !mapRef.current) return;
-          try {
-            const res = await fetchWithTimeout('/api/sellers/map', 8000, { credentials: 'include' });
-            const data = (await res.json().catch(() => ({}))) as { pins?: unknown[] };
-            if (cancelled || !Array.isArray(data?.pins)) return;
-            const sellers: SellerPin[] = [];
-            for (const raw of data.pins) {
-              if (typeof raw !== 'object' || raw === null) continue;
-              const o = raw as Record<string, unknown>;
-              const lat = typeof o.lat === 'number' ? o.lat : Number(o.lat);
-              const lng = typeof o.lng === 'number' ? o.lng : Number(o.lng);
-              const companyId =
-                typeof o.companyId === 'string'
-                  ? o.companyId
-                  : typeof o.id === 'string'
-                    ? o.id
-                    : '';
-              const locationId = typeof o.locationId === 'string' ? o.locationId : '';
-              const rawLabel = typeof o.label === 'string' ? o.label.trim() : '';
-              const rawAddr = typeof o.addressRaw === 'string' ? o.addressRaw.trim() : '';
-              const label =
-                rawLabel.length > 0 ? rawLabel : rawAddr.length > 0 ? rawAddr.slice(0, 140) : 'Seller';
-              if (!companyId || !locationId || !Number.isFinite(lat) || !Number.isFinite(lng)) {
-                continue;
+          if (cancelled) return;
+          if (sellersFetchInFlightRef.current) return sellersFetchInFlightRef.current;
+
+          const p = (async () => {
+            try {
+              const res = await fetchWithTimeout('/api/sellers/map', 8000, { credentials: 'include' });
+              const data = (await res.json().catch(() => ({}))) as { pins?: unknown[] };
+              if (cancelled || !Array.isArray(data?.pins)) return;
+
+              const sellers: SellerPin[] = [];
+              for (const raw of data.pins) {
+                if (typeof raw !== 'object' || raw === null) continue;
+                const o = raw as Record<string, unknown>;
+                const lat = typeof o.lat === 'number' ? o.lat : Number(o.lat);
+                const lng = typeof o.lng === 'number' ? o.lng : Number(o.lng);
+                const companyId =
+                  typeof o.companyId === 'string'
+                    ? o.companyId
+                    : typeof o.id === 'string'
+                      ? o.id
+                      : '';
+                const locationId = typeof o.locationId === 'string' ? o.locationId : '';
+                const rawLabel = typeof o.label === 'string' ? o.label.trim() : '';
+                const rawAddr = typeof o.addressRaw === 'string' ? o.addressRaw.trim() : '';
+                const label =
+                  rawLabel.length > 0 ? rawLabel : rawAddr.length > 0 ? rawAddr.slice(0, 140) : 'Seller';
+                if (!companyId || !locationId || !Number.isFinite(lat) || !Number.isFinite(lng)) {
+                  continue;
+                }
+                sellers.push({
+                  id: companyId,
+                  companyId,
+                  locationId,
+                  lat,
+                  lng,
+                  label,
+                  addressRaw: typeof o.addressRaw === 'string' ? o.addressRaw : undefined,
+                  phone: typeof o.phone === 'string' ? o.phone : undefined,
+                  website: typeof o.website === 'string' ? o.website : undefined,
+                  role: typeof o.role === 'string' ? o.role : undefined,
+                  notes: typeof o.notes === 'string' ? o.notes : undefined,
+                  crmStatus: typeof o.crmStatus === 'string' ? o.crmStatus : undefined,
+                  isPrimaryLocation: o.isPrimaryLocation === true
+                });
               }
-              sellers.push({
-                id: companyId,
-                companyId,
-                locationId,
-                lat,
-                lng,
-                label,
-                addressRaw: typeof o.addressRaw === 'string' ? o.addressRaw : undefined,
-                phone: typeof o.phone === 'string' ? o.phone : undefined,
-                website: typeof o.website === 'string' ? o.website : undefined,
-                role: typeof o.role === 'string' ? o.role : undefined,
-                notes: typeof o.notes === 'string' ? o.notes : undefined,
-                crmStatus: typeof o.crmStatus === 'string' ? o.crmStatus : undefined,
-                isPrimaryLocation: o.isPrimaryLocation === true
-              });
+
+              boundsState.sellers = sellers;
+              applyAllMarkerLayers(false);
+            } catch {
+              /* ignore */
             }
-            boundsState.sellers = sellers;
-            applyAllMarkerLayers(false);
-          } catch { /* ignore */ }
+          })();
+
+          sellersFetchInFlightRef.current = p;
+          p.finally(() => {
+            sellersFetchInFlightRef.current = null;
+          });
+
+          return p;
         };
 
         /** Fast static pin coords (CDN); replaced when /api/dots-pins returns. */
@@ -1330,6 +1346,7 @@ export default function EmptyMapClient() {
           } catch { /* ignore */ }
         })();
 
+        // Seller/geo fetches can start before `mapRef.current` is set; marker redraw happens once the map is ready.
         void refetchSellersRef.current?.();
 
         if (cancelled) return;
@@ -1459,6 +1476,10 @@ export default function EmptyMapClient() {
 
         mapRef.current = map;
         setReady(true);
+
+        /** Fetches above may finish before `mapRef` existed; `apply*` bailed early. Replay bounds + catch seller fetch once the map ref exists. */
+        applyAllMarkerLayers(false);
+        void refetchSellersRef.current?.();
 
         unsubMapRef.current = subscribeToLocationsMapUpdate(async () => {
           if (cancelled) return;

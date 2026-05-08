@@ -335,13 +335,19 @@ export default function LocationEditableFields({
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
+            website: locContactForm.website.trim() || null,
+            phone: locContactForm.phone.trim() || null,
+            email: locContactForm.email.trim() || null,
             status: locContactForm.status.trim() || null,
             productType: locContactForm.productType.trim() || null
           })
         });
         const cd = await cr.json();
         if (!cr.ok) {
-          toast.error(cd.error ?? 'Saved location contact but failed to update company status/type');
+          toast.error(
+            cd.error ??
+              'Saved location contact but failed to mirror website / contact + status/type to company'
+          );
           router.refresh();
           return;
         }
